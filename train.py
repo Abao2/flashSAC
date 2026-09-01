@@ -36,12 +36,22 @@ def run(args: argparse.Namespace) -> None:
     overrides = args.overrides
 
     # eval resolver
-    OmegaConf.register_new_resolver("eval", lambda s: eval(s))
+    if not OmegaConf.has_resolver("eval"):
+        OmegaConf.register_new_resolver("eval", lambda s: eval(s))
 
     # initialize config
-    hydra.initialize(version_base=None, config_path=config_path)
+    if os.path.isabs(config_path):
+        hydra.initialize_config_dir(version_base=None, config_dir=config_path)
+    else:
+        hydra.initialize(version_base=None, config_path=config_path)
     cfg = hydra.compose(config_name=config_name, overrides=overrides)
     OmegaConf.resolve(cfg)
+    # Some external task packages register the same resolver during task import.
+    # The composed config is fully resolved, so keeping this global name is unnecessary.
+    OmegaConf.clear_resolver("eval")
+
+    if cfg.get("require_agent_load", False) and cfg.agent_load_path is None:
+        raise ValueError("This training stage requires agent_load_path (run stage 1/2 first).")
 
     ###############################
     # seeding / configuration
@@ -93,8 +103,12 @@ def run(args: argparse.Namespace) -> None:
     # load model if given
     script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
     save_path_resolved = cfg.save_path.replace("TIMESTAMP", datetime.now().strftime("%m%d-%H%M%S"))
-    save_path_base = script_dir + "/" + save_path_resolved
-    if cfg.agent_load_path is not None:
+    output_root = str(cfg.output_root)
+    if not os.path.isabs(output_root):
+        output_root = os.path.join(script_dir, output_root)
+    save_path_base = os.path.join(output_root, save_path_resolved)
+    agent_loaded = cfg.agent_load_path is not None
+    if agent_loaded:
         load_path = os.path.join(script_dir, cfg.agent_load_path)
         agent.load(load_path)
     if cfg.buffer_load_path is not None:
@@ -121,7 +135,7 @@ def run(args: argparse.Namespace) -> None:
         env_step = interaction_step * cfg.num_train_envs
 
         # collect data. use random actions until agent.can_start_training()
-        if agent.can_start_training() and transition is not None:
+        if transition is not None and (agent_loaded or agent.can_start_training()):
             actions = agent.sample_actions(interaction_step, prev_transition=transition, training=True)
         else:
             actions = train_env.action_space.sample()
@@ -130,9 +144,10 @@ def run(args: argparse.Namespace) -> None:
         actions = np.array(actions)
         next_observations, rewards, terminateds, truncateds, env_infos = train_env.step(actions)
         next_buffer_observations = next_observations.copy()
-        for env_idx in range(cfg.num_train_envs):
-            if terminateds[env_idx] or truncateds[env_idx]:
-                next_buffer_observations[env_idx] = env_infos["final_obs"][env_idx]
+        final_observations = env_infos.get("final_obs")
+        if final_observations is not None:
+            done_mask = np.logical_or(terminateds, truncateds)
+            next_buffer_observations[done_mask] = final_observations[done_mask]
 
         if "episode_info" in env_infos:
             logger.update_metric(**env_infos["episode_info"])

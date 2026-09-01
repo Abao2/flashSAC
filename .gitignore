@@ -162,3 +162,4 @@ tmp/**
 
 # saved checkpoints
 models/**
+runs/**

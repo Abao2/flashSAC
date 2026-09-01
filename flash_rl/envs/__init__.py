@@ -89,6 +89,20 @@ def create_envs(
             env_name=env_name,
             num_envs=num_train_envs,
             seed=seed,
+            **{
+                key: kwargs[key]
+                for key in (
+                    "headless",
+                    "device",
+                    "action_bounds",
+                    "registration_modules",
+                    "env_cfg_yaml_entry_point",
+                    "task_cfg_overrides",
+                    "bootstrap_timeouts",
+                    "success_path",
+                )
+                if key in kwargs
+            },
         )
         # NOTE: IsaacLab/IsaacSim only supports one SimulationApp instance per process by design.
         # See https://github.com/isaac-sim/IsaacLab/discussions/1241

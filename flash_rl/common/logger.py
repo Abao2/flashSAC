@@ -1,3 +1,4 @@
+import os
 from typing import Any, Optional
 
 import numpy as np
@@ -22,7 +23,9 @@ class WandbTrainerLogger:
 
     def update_metric(self, **kwargs: Any) -> None:
         for k, v in kwargs.items():
-            if isinstance(v, (float, int)):
+            if isinstance(v, tuple) and len(v) == 2 and isinstance(v[0], (float, int)):
+                self.average_meter_dict.update(k, float(v[0]), n=int(v[1]))
+            elif isinstance(v, (float, int)):
                 self.average_meter_dict.update(k, v)
             elif isinstance(v, np.ndarray) and v.ndim == 5:
                 self.media_dict[k] = self._wandb.Video(v, fps=30, format="gif")
@@ -47,7 +50,13 @@ class TensorboardTrainerLogger:
         from torch.utils.tensorboard import SummaryWriter
 
         timestamp = datetime.now().strftime("%m%d_%H%M%S")
-        log_dir = f"runs/{cfg.group_name}/{cfg.exp_name}/{cfg.env.env_name}_seed{cfg.seed}_{timestamp}"
+        log_dir = os.path.join(
+            str(cfg.output_root),
+            "runs",
+            str(cfg.group_name),
+            str(cfg.exp_name),
+            f"{cfg.env.env_name}_seed{cfg.seed}_{timestamp}",
+        )
         self.writer = SummaryWriter(log_dir=log_dir)  # type: ignore[no-untyped-call]
         self.writer.add_text("config", OmegaConf.to_yaml(cfg))  # type: ignore[no-untyped-call]
         self.media_dict: dict[str, Any] = {}
@@ -55,7 +64,9 @@ class TensorboardTrainerLogger:
 
     def update_metric(self, **kwargs: Any) -> None:
         for k, v in kwargs.items():
-            if isinstance(v, (float, int)):
+            if isinstance(v, tuple) and len(v) == 2 and isinstance(v[0], (float, int)):
+                self.average_meter_dict.update(k, float(v[0]), n=int(v[1]))
+            elif isinstance(v, (float, int)):
                 self.average_meter_dict.update(k, v)
             else:
                 self.media_dict[k] = v

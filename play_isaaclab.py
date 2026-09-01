@@ -28,7 +28,10 @@ def play(args: argparse.Namespace) -> None:
 
     # Load config (same as train.py)
     OmegaConf.register_new_resolver("eval", lambda s: eval(s))
-    hydra.initialize(version_base=None, config_path=config_path)
+    if os.path.isabs(config_path):
+        hydra.initialize_config_dir(version_base=None, config_dir=config_path)
+    else:
+        hydra.initialize(version_base=None, config_path=config_path)
     cfg = hydra.compose(config_name=config_name, overrides=overrides)
     OmegaConf.resolve(cfg)
 
@@ -49,6 +52,13 @@ def play(args: argparse.Namespace) -> None:
         num_envs=num_envs,
         seed=cfg.seed,
         headless=False,
+        device=cfg.env.device,
+        action_bounds=cfg.env.action_bounds,
+        registration_modules=cfg.env.get("registration_modules"),
+        env_cfg_yaml_entry_point=cfg.env.get("env_cfg_yaml_entry_point", "env_cfg_yaml_entry_point"),
+        task_cfg_overrides=cfg.env.get("task_cfg_overrides"),
+        bootstrap_timeouts=cfg.env.get("bootstrap_timeouts", False),
+        success_path=cfg.env.get("success_path"),
     )
 
     # Create agent using config (same as train.py)

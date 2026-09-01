@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<robot name="wuji_m6_left" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!--
+    Cross-vendor mount reconstructed from the vendor CAD/link frames and
+    checked against the physical assembly:
+      * M6 flange z=+7 mm mates with docking z=-28 mm, hence 35 mm.
+      * docking z=+22 mm mates with palm z=0; the palm's z=-9 mm locating
+        features then land on the docking's z=+13 mm recess.
+      * The palm M4 pattern is centered at y=-0.5635074 mm in its published
+        link frame.  After the +90 degree yaw, x=-0.5635074 mm aligns it with
+        the docking M4 pattern centered at x=0.
+      * flange -> docking is +45 degrees and docking -> palm is +90 degrees
+        in the published link frames, both verified against the physical
+        assembly.  The composed flange_L -> palm rotation is +135 degrees.
+
+    Keep these as arguments so a measured hardware variant can override them
+    without editing either vendor description.
+
+    Build note: the vendor Xacros expose flange_L, tracking_base_link, and
+    camera_link as empty calibration frames. scripts/build_wuji_m6_left_urdf.sh
+    removes them from the dynamics URDF, composes flange_L's two fixed
+    transforms, and records all original frames in
+    generated/wuji_m6_left.frames.json. Runtime USDs restore them only as
+    massless Xforms.
+  -->
+  <xacro:arg name="flange_to_docking_xyz" default="0 0 0.035"/>
+  <xacro:arg name="flange_to_docking_rpy" default="0 0 0.7853981633974483"/>
+  <xacro:arg name="docking_to_palm_xyz" default="-0.0005635074 0 0.022"/>
+  <xacro:arg name="docking_to_palm_rpy" default="0 0 1.5707963267948966"/>
+
+  <xacro:include filename="../vendor/marvin_description/urdf/stand_v3.urf.xacro"/>
+  <xacro:include filename="../vendor/marvin_description/urdf/M6-S-L-CCS-696-V4.urdf.xacro"/>
+  <xacro:include filename="../vendor/wuji-description/hand/attachment/impact-resistant-attachment/urdf/docking.urdf"/>
+  <xacro:include filename="../vendor/wuji-description/hand/body/urdf/left.urdf"/>
+
+  <xacro:stand/>
+  <xacro:M6-S-L-CCS-696-V4/>
+
+  <joint name="base_to_left_arm" type="fixed">
+    <parent link="base_link"/>
+    <child link="Base_L"/>
+    <origin xyz="0 0.026 1.121" rpy="-1.57 0 0"/>
+  </joint>
+
+  <joint name="flange_to_hand_docking" type="fixed">
+    <parent link="flange_L"/>
+    <child link="hand_docking_link"/>
+    <origin xyz="$(arg flange_to_docking_xyz)" rpy="$(arg flange_to_docking_rpy)"/>
+  </joint>
+
+  <joint name="hand_docking_to_left_palm" type="fixed">
+    <parent link="hand_docking_link"/>
+    <child link="left_palm_link"/>
+    <origin xyz="$(arg docking_to_palm_xyz)" rpy="$(arg docking_to_palm_rpy)"/>
+  </joint>
+</robot>

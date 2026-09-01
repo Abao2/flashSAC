@@ -28,6 +28,8 @@ dependencies = [
     "gym>=0.26.0",
     "Cython==0.29.37",
     "pymeshlab==2023.12.post3",
+    "PyYAML>=6.0",
+    "trimesh>=4.0",
     "dm-control>=1.0.20",
     "setuptools<=65",
 

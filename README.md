@@ -27,6 +27,14 @@ This repository (**FlashSAC**) provides the full training framework, agent imple
 
 If you're using PPO, try **FlashSAC**!
 
+## Robotics adapters in this fork
+
+This branch adds an external Isaac Lab adapter, the SimToolReal integration,
+and an Isaac Lab port of Dex4D's XArm6 + LEAP teacher task for FlashSAC.
+
+- [Robotics training guide](docs/robotics_training.md)
+- [Dex4D Isaac Lab port, validation, and training](docs/dex4d_isaaclab_port.md)
+
 ## Installation
 
 ### 1. Install uv

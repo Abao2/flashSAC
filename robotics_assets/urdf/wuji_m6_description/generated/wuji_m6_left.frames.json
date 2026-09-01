@@ -1,0 +1,45 @@
+{
+  "camera_link": {
+    "parent_body": "base_link",
+    "removed_joint": "camera_joint",
+    "rpy": [
+      0.0,
+      0.785,
+      0.0
+    ],
+    "xyz": [
+      0.0369887,
+      0.0,
+      0.48752
+    ]
+  },
+  "flange_L": {
+    "parent_body": "Link7_L",
+    "removed_joint": "joint_flange_L",
+    "replacement_joint": "link7_to_hand_docking",
+    "rpy": [
+      1.5708,
+      -1.5708,
+      0.0
+    ],
+    "xyz": [
+      0.0,
+      -0.088,
+      0.0
+    ]
+  },
+  "tracking_base_link": {
+    "parent_body": "base_link",
+    "removed_joint": "base_to_tracking_base",
+    "rpy": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "xyz": [
+      0.0,
+      0.0,
+      -0.1
+    ]
+  }
+}

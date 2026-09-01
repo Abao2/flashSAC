@@ -1,0 +1,36 @@
+defaults:
+  - flashSAC_base
+  - override /env: dex4d_m6_wuji
+  - _self_
+
+group_name: "dex4d_m6_wuji"
+exp_name: "flashsac_stage12_bottle"
+logger_type: "tensorboard"
+
+# Same controlled FlashSAC comparison budget as the XArm/LEAP Stage1/2 run.
+num_env_steps: 50_000_896
+num_train_envs: 1024
+num_eval_envs: null
+num_record_envs: null
+num_eval_episodes: 0
+num_record_episodes: 0
+evaluation_per_interaction_step: null
+save_checkpoint_per_interaction_step: 4_439
+save_buffer_per_interaction_step: 48_829
+
+updates_per_interaction_step: 2
+gamma: 0.99
+n_step: 1
+
+env:
+  env_name: "FlashSAC-Dex4D-M6Wuji-Stage12-Direct-v0"
+  task_cfg_overrides:
+    curriculum_policy_step: 29_297
+
+agent:
+  asymmetric_observation: false
+  buffer_max_length: 1_000_000
+  buffer_min_length: 100_000
+  buffer_device_type: "cuda"
+  sample_batch_size: 2048
+  use_amp: true

@@ -1,0 +1,39 @@
+defaults:
+  - flashSAC_base
+  - override /env: dex4d
+  - _self_
+
+group_name: "dex4d"
+exp_name: "flashsac_stage3"
+logger_type: "tensorboard"
+require_agent_load: true
+
+# FlashSAC's GPU-simulator topology and comparison budget.
+num_env_steps: 50_000_896
+num_train_envs: 1024
+num_eval_envs: null
+num_record_envs: null
+num_eval_episodes: 0
+num_record_episodes: 0
+evaluation_per_interaction_step: null
+# 48,829 interactions total; save ten intermediate network checkpoints plus
+# the final checkpoint. Replay is saved only at the end.
+save_checkpoint_per_interaction_step: 4_439
+save_buffer_per_interaction_step: 48_829
+
+updates_per_interaction_step: 2
+gamma: 0.99
+n_step: 1
+
+agent:
+  # Dex4D teacher exposes one 1,041D policy observation to actor and critic.
+  asymmetric_observation: false
+  buffer_max_length: 1_000_000
+  buffer_min_length: 100_000
+  buffer_device_type: "cuda"
+  sample_batch_size: 2048
+  use_amp: true
+  # Stage 3 normally initializes from a stage-1/2 FlashSAC checkpoint, matching
+  # Dex4D's network-only PPO transfer. Override to true only for same-stage resume.
+  load_optimizer: false
+  load_reward_normalizer: false

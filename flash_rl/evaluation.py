@@ -13,6 +13,8 @@ def evaluate(
     num_episodes: int,
     env_type: str,
 ) -> dict[str, float]:
+    if num_episodes == 0:
+        return {}
     num_envs = env.num_envs
 
     assert num_episodes % num_envs == 0, "num_episodes must be divisible by env.num_envs"
@@ -54,13 +56,12 @@ def evaluate(
                 success_once = np.logical_or(success_once, success)
 
             if "final_info" in infos:
-                for idx in range(num_envs):
-                    final_info = infos["final_info"]
-                    if "success" in final_info:
-                        final_success = final_info["success"][idx].astype("float") * (1 - dones[idx])
-                        success_end[idx] = final_success
-            else:
-                pass
+                final_info = infos["final_info"]
+                if "success" in final_info:
+                    step_dones = np.logical_or(terminateds, truncateds)
+                    new_dones = np.logical_and(step_dones, np.logical_not(dones.astype(bool)))
+                    final_success = np.asarray(final_info["success"], dtype=float)
+                    success_end[new_dones] = final_success[new_dones]
 
             # once an episode is done in a sub-environment, we assume it to be done.
             # also, we assume to be done whether it is terminated or truncated during evaluation.
