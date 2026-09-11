@@ -133,6 +133,7 @@ termination:
   success_steps: 10
   max_consecutive_successes: 50
   force_consecutive_near_goal_steps: false
+  reset_when_dropped: false
   tolerance_curriculum_increment: 0.9
   tolerance_curriculum_interval: 3000
 

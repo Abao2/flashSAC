@@ -308,7 +308,14 @@ if __name__ == "__main__":
         vec_env = None
         while True:
             cfg_n_env = launch_rlg_hydra(cfg, vec_env)
-            if not isinstance(cfg_n_env, tuple):
+            # A config/environment tuple requests an in-process restart.  A
+            # completed rl_games training run also returns a tuple
+            # (last_mean_reward, epoch), which must terminate normally.
+            if (
+                not isinstance(cfg_n_env, tuple)
+                or len(cfg_n_env) != 2
+                or not isinstance(cfg_n_env[0], DictConfig)
+            ):
                 break
             cfg, vec_env = cfg_n_env
             vec_env.change_on_restart(omegaconf_to_dict(cfg.task))

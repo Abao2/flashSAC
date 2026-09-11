@@ -1,3 +1,28 @@
+# SimToolReal — Local Research Companion Fork
+
+This snapshot preserves **our local modifications** to SimToolReal. Its source is included
+at `third_party/simtoolreal/` in the Abao2/flashSAC research monorepo using Git subtree. It is not an untouched official checkout.
+
+- Upstream: `https://github.com/tylerlum/simtoolreal`.
+- Snapshot base: `84058661` (verify the full revision in Git history).
+- Purpose: preserve environment, observation/reset/termination, diagnostic and play changes
+  needed to continue FlashSAC experiments on another machine.
+- Start with [Research snapshot notes](docs/RESEARCH_SNAPSHOT.md).
+- Keep upstream attribution/licenses; the original README is retained below.
+
+The enclosing FlashSAC repository owns the algorithm and experiment configurations.
+This repository owns the STR simulation task, controllers, rewards, reset logic,
+official player and DexToolBench task definitions. A normal monorepo clone includes both codebases.
+
+Large checkpoints, downloaded assets, videos, simulator installations, virtual environments
+and training outputs remain external. In particular, `pretrained_policy/` is not a Git backup.
+This snapshot does not certify paper reproduction, convergence, real-robot safety, or
+complete equivalence between legacy Isaac Gym and the current Lab backend.
+
+---
+
+## Upstream README (preserved)
+
 # SimToolReal: An Object-Centric Policy for Zero-Shot Dexterous Tool Manipulation
 
 [Project Page](https://simtoolreal.github.io/)
@@ -53,6 +78,8 @@ simtoolreal
 The recommended setup runs SimToolReal in **Isaac Sim** (via Isaac Lab, Python 3.11, pip-installable): see the [IsaacSim Installation](docs/isaacsim_installation.md) documentation.
 
 The legacy **Isaac Gym** environment (Python 3.8, manual binary download) is covered in the [IsaacGym Installation](docs/isaacgym_installation.md) documentation. The two environments live in separate venvs (`.venv_isaacsim` and `.venv`) and can coexist.
+
+For a paper-faithful protocol, version boundaries, artifact checksums, and verified local results, see the [Reproduction Notes](docs/reproduction.md).
 
 # Quick Start
 
@@ -122,6 +149,13 @@ Evaluate a policy numerically on all 24 DexToolBench combinations:
 
 (Isaac Gym variant: `python dextoolbench/run_all_evals_isaacgym.py`.)
 
+Summarize and validate a timestamped Isaac Gym evaluation directory (the
+command exits nonzero for missing or invalid results):
+
+```
+python -m dextoolbench.summarize_evals evals/<timestamp>
+```
+
 # DexToolBench
 
 DexToolBench covers 6 tool categories (hammer, marker, eraser, brush, spatula, screwdriver) × 2 objects × 2 tasks each. See the [DexToolBench Reference](docs/dextoolbench.md) for dataset download, visualization tooling, creating new tasks and objects, real-world data collection, and acquiring the physical objects.
@@ -169,3 +203,5 @@ This implementation builds on the following codebases:
 # Contact
 
 If you have any questions, issues, or feedback, please contact [Tyler Lum](https://tylerlum.github.io/) or [Kushal Kedia](https://kushal2000.github.io/).
+
+

@@ -112,37 +112,47 @@ def _keypoints_world(
     return center_pos.unsqueeze(1) + quat_apply(rot_r, offsets_r).reshape(n_envs, k, 3)
 
 
-def _episode_start(env) -> torch.Tensor:
-    return (env.episode_length_buf == 0) & (env._successes == 0)
+def _episode_start(env, env_ids: torch.Tensor) -> torch.Tensor:
+    return (env.episode_length_buf[env_ids] == 0) & (env._successes[env_ids] == 0)
 
 
 def _sample_delay(
     queue: torch.Tensor,
     values: torch.Tensor,
     env,
+    env_ids: torch.Tensor,
     flush: torch.Tensor | None = None,
 ) -> tuple[torch.Tensor, torch.Tensor]:
     """Push current values into a rolling queue and sample per-env delay."""
+    selected = queue[env_ids]
     if flush is not None and flush.any():
-        queue[flush] = values[flush].unsqueeze(1).expand(-1, queue.shape[1], -1)
+        selected[flush] = values[flush].unsqueeze(1).expand(-1, queue.shape[1], -1)
 
-    queue = torch.roll(queue, shifts=1, dims=1)
-    queue[:, 0, :] = values
-    idx = torch.randint(0, queue.shape[1], (env.num_envs,), device=env.device)
-    delayed = queue[torch.arange(env.num_envs, device=env.device), idx]
+    selected = torch.roll(selected, shifts=1, dims=1)
+    selected[:, 0, :] = values
+    queue[env_ids] = selected
+    count = env_ids.numel()
+    idx = torch.randint(0, queue.shape[1], (count,), device=env.device)
+    delayed = selected[torch.arange(count, device=env.device), idx]
     return queue, delayed
 
 
-def _canonical_joint_obs(env) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+def _canonical_joint_obs(
+    env, env_ids: torch.Tensor
+) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
     """Return policy-order joint pos, vel, and previous targets."""
     perm = env._perm_lab_to_canon
-    joint_pos_raw = env.robot.data.joint_pos[:, perm]
+    joint_pos_raw = env.robot.data.joint_pos[env_ids][:, perm]
     joint_pos = (
         2.0 * (joint_pos_raw - env._joint_lower_canon)
         / (env._joint_upper_canon - env._joint_lower_canon)
         - 1.0
     )
-    return joint_pos, env.robot.data.joint_vel[:, perm], env._prev_targets[:, perm]
+    return (
+        joint_pos,
+        env.robot.data.joint_vel[env_ids][:, perm],
+        env._prev_targets[env_ids][:, perm],
+    )
 
 
 # ----------------------------------------------------------------------------
@@ -207,12 +217,18 @@ def compute_intermediate_values(env) -> None:
 # ----------------------------------------------------------------------------
 
 
-def _apply_object_state_dr(env, obj_pos, obj_rot, obj_linvel, obj_angvel):
+def _apply_object_state_dr(
+    env, env_ids, obj_pos, obj_rot, obj_linvel, obj_angvel
+):
     """Apply object-state delay and pose noise."""
     dr = env.cfg.domain_randomization
     state = torch.cat([obj_pos, obj_rot, obj_linvel, obj_angvel], dim=-1)
     env._object_state_queue, delayed = _sample_delay(
-        env._object_state_queue, state, env, flush=_episode_start(env)
+        env._object_state_queue,
+        state,
+        env,
+        env_ids,
+        flush=_episode_start(env, env_ids),
     )
     noisy_pos = delayed[:, 0:3] + torch.randn_like(delayed[:, 0:3]) * dr.object_state_xyz_noise_std
     noisy_rot = _perturb_quat(delayed[:, 3:7], dr.object_state_rotation_noise_degrees)
@@ -220,32 +236,45 @@ def _apply_object_state_dr(env, obj_pos, obj_rot, obj_linvel, obj_angvel):
     return noisy_pos, noisy_rot, noisy_vel
 
 
-def _apply_obs_delay(env, policy_tensor: torch.Tensor) -> torch.Tensor:
+def _apply_obs_delay(
+    env, env_ids: torch.Tensor, policy_tensor: torch.Tensor
+) -> torch.Tensor:
     """Apply per-env policy-observation delay."""
     env._obs_queue, delayed = _sample_delay(
-        env._obs_queue, policy_tensor, env, flush=_episode_start(env)
+        env._obs_queue,
+        policy_tensor,
+        env,
+        env_ids,
+        flush=_episode_start(env, env_ids),
     )
     return delayed
 
 
-def build_observations(env) -> dict[str, torch.Tensor]:
+def build_observations(
+    env, env_ids: torch.Tensor | None = None
+) -> dict[str, torch.Tensor]:
     """Assemble actor-critic observations with obs-side DR."""
+    if env_ids is None:
+        env_ids = torch.arange(env.num_envs, device=env.device)
+    count = env_ids.numel()
     dr = env.cfg.domain_randomization
-    env_origins = env.scene.env_origins
+    env_origins = env.scene.env_origins[env_ids]
 
-    joint_pos, joint_vel, prev_targets_canon = _canonical_joint_obs(env)
+    joint_pos, joint_vel, prev_targets_canon = _canonical_joint_obs(env, env_ids)
 
-    palm_state = env.robot.data.body_state_w[:, env._palm_body_id, :]  # (N, 13)
+    palm_state = env.robot.data.body_state_w[env_ids, env._palm_body_id, :]  # (N, 13)
     palm_pos_w = palm_state[:, 0:3]
     palm_rot = palm_state[:, 3:7]  # wxyz (Isaac Lab convention)
     palm_vel = palm_state[:, 7:13]
 
     palm_center_pos_w = _apply_local_offset(
-        palm_pos_w, palm_rot, PALM_CENTER_OFFSET, (env.num_envs,)
+        palm_pos_w, palm_rot, PALM_CENTER_OFFSET, (count,)
     )
     palm_pos = palm_center_pos_w - env_origins
 
-    ft_state = env.robot.data.body_state_w[:, env._fingertip_body_ids, :]  # (N, 5, 13)
+    ft_state = env.robot.data.body_state_w[env_ids][
+        :, env._fingertip_body_ids, :
+    ]  # (N, 5, 13)
     ft_body_pos_w = ft_state[:, :, 0:3]
     ft_body_rot_w = ft_state[:, :, 3:7]  # wxyz
 
@@ -253,36 +282,41 @@ def build_observations(env) -> dict[str, torch.Tensor]:
         ft_body_pos_w,
         ft_body_rot_w,
         FINGERTIP_OFFSET,
-        (env.num_envs, NUM_FINGERTIPS),
+        (count, NUM_FINGERTIPS),
     )
 
-    obj_pos = env.object.data.root_pos_w - env_origins
-    obj_rot = env.object.data.root_quat_w  # wxyz
-    obj_linvel = env.object.data.root_lin_vel_w
-    obj_angvel = env.object.data.root_ang_vel_w
+    obj_pos = env.object.data.root_pos_w[env_ids] - env_origins
+    obj_rot = env.object.data.root_quat_w[env_ids]  # wxyz
+    obj_linvel = env.object.data.root_lin_vel_w[env_ids]
+    obj_angvel = env.object.data.root_ang_vel_w[env_ids]
     obj_vel = torch.cat([obj_linvel, obj_angvel], dim=-1)
 
-    goal_pos = env.goal_viz.data.root_pos_w - env_origins
-    goal_rot = env.goal_viz.data.root_quat_w  # wxyz
+    goal_pos = env.goal_viz.data.root_pos_w[env_ids] - env_origins
+    goal_rot = env.goal_viz.data.root_quat_w[env_ids]  # wxyz
 
     if dr.use_object_state_delay_noise:
         noisy_obj_pos, noisy_obj_rot, noisy_obj_vel = _apply_object_state_dr(
-            env, obj_pos, obj_rot, obj_linvel, obj_angvel
+            env, env_ids, obj_pos, obj_rot, obj_linvel, obj_angvel
         )
     else:
         noisy_obj_pos, noisy_obj_rot, noisy_obj_vel = obj_pos, obj_rot, obj_vel
 
-    kp_offsets = env._keypoint_offsets * env._object_scale_multiplier.unsqueeze(1)
+    kp_offsets = (
+        env._keypoint_offsets[env_ids]
+        * env._object_scale_multiplier[env_ids].unsqueeze(1)
+    )
     obj_kp = _keypoints_world(obj_pos, obj_rot, kp_offsets)
     goal_kp = _keypoints_world(goal_pos, goal_rot, kp_offsets)
     noisy_obj_kp = _keypoints_world(noisy_obj_pos, noisy_obj_rot, kp_offsets)
 
     # Optional per-env yaw noise on the observed goal (world +Z about goal_pos).
     goal_yaw_obs_noise = getattr(env, "goal_yaw_obs_noise", None)
+    if goal_yaw_obs_noise is not None:
+        goal_yaw_obs_noise = goal_yaw_obs_noise[env_ids]
     if goal_yaw_obs_noise is not None and torch.any(goal_yaw_obs_noise != 0):
         z_axis = torch.tensor(
             [0.0, 0.0, 1.0], device=goal_rot.device, dtype=goal_rot.dtype
-        ).unsqueeze(0).expand(env.num_envs, -1)
+        ).unsqueeze(0).expand(count, -1)
         yaw_q = quat_from_angle_axis(goal_yaw_obs_noise, z_axis)
         noisy_goal_rot = quat_mul(yaw_q, goal_rot)
         noisy_goal_kp = _keypoints_world(goal_pos, noisy_goal_rot, kp_offsets)
@@ -298,7 +332,9 @@ def build_observations(env) -> dict[str, torch.Tensor]:
         (ft_pos_w - env_origins.unsqueeze(1)) - palm_pos.unsqueeze(1)
     )  # (N, 5, 3)
 
-    object_scales_obs = env._object_scale_per_env * env._object_scale_multiplier
+    object_scales_obs = (
+        env._object_scale_per_env[env_ids] * env._object_scale_multiplier[env_ids]
+    )
 
     # Policy obs use legacy Isaac Gym xyzw; internal math stays wxyz.
     palm_rot_xyzw = convert_quat(palm_rot, to="xyzw")
@@ -318,12 +354,12 @@ def build_observations(env) -> dict[str, torch.Tensor]:
         "keypoints_rel_palm": keypoints_rel_palm_clean,
         "keypoints_rel_goal": keypoints_rel_goal_clean,
         "object_scales": object_scales_obs,
-        "closest_keypoint_max_dist": env._closest_keypoint_max_dist.unsqueeze(-1),
-        "closest_fingertip_dist": env._closest_fingertip_dist,
-        "lifted_object": env._lifted_object.float().unsqueeze(-1),
-        "progress": torch.log(env.episode_length_buf.float() / 10.0 + 1.0).unsqueeze(-1),
-        "successes": torch.log(env._successes.float() + 1.0).unsqueeze(-1),
-        "reward": (env.reward_buf * 0.01).unsqueeze(-1),
+        "closest_keypoint_max_dist": env._closest_keypoint_max_dist[env_ids].unsqueeze(-1),
+        "closest_fingertip_dist": env._closest_fingertip_dist[env_ids],
+        "lifted_object": env._lifted_object[env_ids].float().unsqueeze(-1),
+        "progress": torch.log(env.episode_length_buf[env_ids].float() / 10.0 + 1.0).unsqueeze(-1),
+        "successes": torch.log(env._successes[env_ids].float() + 1.0).unsqueeze(-1),
+        "reward": (env.reward_buf[env_ids] * 0.01).unsqueeze(-1),
     }
 
     obs_noisy = dict(obs_clean)
@@ -340,7 +376,7 @@ def build_observations(env) -> dict[str, torch.Tensor]:
     policy_tensor = _stack_obs_dict(obs_noisy, env.cfg.obs.obs_list)
 
     if dr.use_obs_delay:
-        policy_tensor = _apply_obs_delay(env, policy_tensor)
+        policy_tensor = _apply_obs_delay(env, env_ids, policy_tensor)
 
     clip = env.cfg.obs.clamp_abs_observations
     policy_tensor = policy_tensor.clamp(-clip, clip)

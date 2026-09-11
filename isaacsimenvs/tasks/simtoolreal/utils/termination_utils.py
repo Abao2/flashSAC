@@ -4,8 +4,6 @@ from __future__ import annotations
 
 import torch
 
-from .reset_utils import reset_goal_trackers
-
 
 def update_tolerance_curriculum(env) -> None:
     """Shrink success tolerance when completed episodes average enough goals."""
@@ -44,11 +42,7 @@ def compute_terminations(env) -> tuple[torch.Tensor, torch.Tensor]:
 
     # Authoritative updates on goal-hit.
     env._successes = env._successes + is_success.long()
-    goal_reset_ids = is_success.nonzero(as_tuple=False).squeeze(-1)
-    if goal_reset_ids.numel() > 0:
-        reset_goal_trackers(env, goal_reset_ids)
-        # zero the length buf so truncation doesn't fire
-        env.episode_length_buf[goal_reset_ids] = 0
+    env._pending_goal_reset.copy_(is_success)
 
     # Termination causes.
     object_z_local = env.object.data.root_pos_w[:, 2] - env_origins[:, 2]
@@ -61,12 +55,29 @@ def compute_terminations(env) -> tuple[torch.Tensor, torch.Tensor]:
 
     hand_far = env._curr_fingertip_distances.max(dim=-1).values > 1.5
 
-    terminated = fall | max_successes_reached | hand_far
-    truncated = env.episode_length_buf >= env.max_episode_length
+    # Exact legacy resetWhenDropped rule (env.py:_compute_resets): after the
+    # object has ever crossed the lift threshold, reset if it falls below the
+    # initial object height for this episode.  _lifted_object is latched, so
+    # its value from the preceding reward hook is authoritative here.
+    if term_cfg.reset_when_dropped:
+        dropped = (object_z_local < env._object_init_z) & env._lifted_object
+    else:
+        dropped = torch.zeros_like(fall)
+
+    terminated = fall | max_successes_reached | hand_far | dropped
+    # A goal hit starts a fresh per-goal horizon after reward calculation, so
+    # it must not simultaneously become a time-limit truncation.
+    truncated = (
+        # Legacy Isaac Gym checks progress >= max_episode_length - 1.
+        (env.episode_length_buf >= env.max_episode_length - 1)
+        & ~is_success
+        & ~terminated
+    )
     env._termination_reasons = {
         "fall": fall,
         "max_successes": max_successes_reached,
         "hand_far": hand_far,
+        "dropped": dropped,
         "timeout": truncated,
     }
     return terminated, truncated

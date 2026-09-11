@@ -109,6 +109,19 @@ def allocate_state_buffers(env) -> None:
     env._near_goal_steps = torch.zeros(
         env.num_envs, dtype=torch.long, device=env.device
     )
+    # Goal hits are detected in _get_dones, but applied only after the current
+    # step's reward has consumed the old goal and its progress trackers.
+    env._pending_goal_reset = torch.zeros(
+        env.num_envs, dtype=torch.bool, device=env.device
+    )
+    env._final_obs_buf = {
+        "policy": torch.zeros(
+            env.num_envs, env.cfg.observation_space, device=env.device
+        ),
+        "critic": torch.zeros(
+            env.num_envs, env.cfg.state_space, device=env.device
+        ),
+    }
 
     # --- Tolerance curriculum state ---
     env._current_success_tolerance: float = env.cfg.termination.success_tolerance
@@ -301,6 +314,64 @@ def _reset_object_pose(env, env_ids: torch.Tensor) -> None:
     env._object_init_z[env_ids] = pos_local[:, 2]
 
 
+def _reset_functional_object(env, env_ids: torch.Tensor) -> None:
+    """Reset the pancake face-up on the table at a fixed local XY position."""
+    n = env_ids.numel()
+    env_origins = env.scene.env_origins[env_ids]
+    support_height = env.cfg.assets.functional_support_height
+
+    pos_local = torch.zeros(n, 3, device=env.device)
+    position_xy = torch.tensor(
+        env.cfg.assets.functional_object_position_xy,
+        device=env.device,
+        dtype=pos_local.dtype,
+    )
+    pos_local[:, :2] = position_xy
+    # Table is 0.30 m tall; pancake is 0.012 m tall.
+    pos_local[:, 2] = (
+        env._table_z_per_env[env_ids] + 0.15 + support_height + 0.006
+    )
+    quat = torch.tensor(
+        [1.0, 0.0, 0.0, 0.0], device=env.device
+    ).unsqueeze(0).expand(n, -1)
+
+    env.functional_object.write_root_pose_to_sim(
+        torch.cat([pos_local + env_origins, quat], dim=-1), env_ids=env_ids
+    )
+    env.functional_object.write_root_velocity_to_sim(
+        torch.zeros(n, 6, device=env.device), env_ids=env_ids
+    )
+
+    if hasattr(env, "functional_support"):
+        support_pos = pos_local.clone()
+        support_pos[:, 2] = (
+            env._table_z_per_env[env_ids] + 0.15 + support_height * 0.5
+        )
+        env.functional_support.write_root_pose_to_sim(
+            torch.cat([support_pos + env_origins, quat], dim=-1), env_ids=env_ids
+        )
+        env.functional_support.write_root_velocity_to_sim(
+            torch.zeros(n, 6, device=env.device), env_ids=env_ids
+        )
+    support_spacing = env.cfg.assets.functional_support_half_spacing
+    for name, y_sign in (("left", -1.0), ("right", 1.0)):
+        support_name = f"functional_support_{name}"
+        if not hasattr(env, support_name):
+            continue
+        support = getattr(env, support_name)
+        support_pos = pos_local.clone()
+        support_pos[:, 1] += y_sign * support_spacing
+        support_pos[:, 2] = (
+            env._table_z_per_env[env_ids] + 0.15 + support_height * 0.5
+        )
+        support.write_root_pose_to_sim(
+            torch.cat([support_pos + env_origins, quat], dim=-1), env_ids=env_ids
+        )
+        support.write_root_velocity_to_sim(
+            torch.zeros(n, 6, device=env.device), env_ids=env_ids
+        )
+
+
 def _reset_goal_pose(env, env_ids: torch.Tensor, mode: str) -> None:
     """Resample the goal pose and write it to GoalViz."""
     cfg = env.cfg.reset
@@ -388,6 +459,8 @@ def reset_env_state(env, env_ids: torch.Tensor) -> None:
     _randomize_robot_dof_state(env, env_ids)
     _reset_table_pose(env, env_ids)
     _reset_object_pose(env, env_ids)
+    if env.cfg.assets.enable_functional_object:
+        _reset_functional_object(env, env_ids)
     _reset_goal_pose(env, env_ids, mode="absolute")  # full reset → always absolute
 
     env._prev_episode_successes[env_ids] = env._successes[env_ids]
@@ -395,6 +468,7 @@ def reset_env_state(env, env_ids: torch.Tensor) -> None:
     _clear_goal_trackers(env, env_ids)
     env._lifted_object[env_ids] = False
     env._successes[env_ids] = 0
+    env._pending_goal_reset[env_ids] = False
 
     env._action_queue[env_ids] = 0.0
     env._obs_queue[env_ids] = 0.0

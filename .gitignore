@@ -232,3 +232,24 @@ videos/
 outputs/
 evals_isaacsim/
 evals/
+
+# Local research artifacts: preserve metadata, not multi-GB binary payloads.
+*.pt
+*.pth
+*.npz
+*.npy
+*.mp4
+*.webm
+*.mkv
+*.avi
+*.mov
+events.out.tfevents*
+*.pid
+*.sock
+# Local authentication/configuration must not enter the research snapshot.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+

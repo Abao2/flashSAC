@@ -58,6 +58,14 @@ class AssetsCfg:
         "assets/urdf/kuka_sharpa_description/iiwa14_left_sharpa_adjusted_restricted.urdf"
     )
     table_urdf: str = "assets/urdf/table_narrow.urdf"
+    enable_functional_object: bool = False
+    functional_object_position_xy: tuple[float, float] = (0.0, 0.05)
+    # Optional thin support below the pancake, used as a simplified pan bottom.
+    functional_support_height: float = 0.0
+    functional_support_radius: float = 0.11
+    # Non-zero creates two supports at center_y +/- this offset, leaving a
+    # central channel for a tool.  Zero preserves the legacy single support.
+    functional_support_half_spacing: float = 0.0
     # Per-env scale ranges applied to the table mesh at scene-build time.
     # Sampled independently per env: sx ~ U(table_scale_range_x), sy ~ U(table_scale_range_y).
     # Z is held at 1.0 so the table surface height stays at table_reset_z (which the
@@ -437,6 +445,10 @@ class TerminationCfg:
     success_steps: int = 10
     max_consecutive_successes: int = 50
     force_consecutive_near_goal_steps: bool = False
+    # Legacy ``resetWhenDropped``: once lifted, terminate when the object
+    # falls below its per-episode initial height.  The public base config is
+    # false; pretrained_policy/config.yaml overrides it to true.
+    reset_when_dropped: bool = False
 
     # Tolerance curriculum (the only curriculum in v1).
     tolerance_curriculum_increment: float = 0.9  # multiplicative per step

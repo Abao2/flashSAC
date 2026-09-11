@@ -15,7 +15,7 @@ UrdfConverter or actuator behavior):
   6. Object quaternion in the policy obs is xyzw (Isaac Gym convention),
      not Isaac Lab's native wxyz.
   7. USD physics flags: contact_offset=0.002, robot gravity disabled,
-     self-collisions disabled.
+     self-collisions enabled (with the legacy adjacent-link filters).
 
     .venv_isaacsim/bin/python isaacsimenvs/tests/test_transfer_invariants.py \\
       --num_envs 2 --num_assets_per_type 1
@@ -185,8 +185,8 @@ def main() -> None:
             n_rb += 1
         if prim.HasAPI(UsdPhysics.ArticulationRootAPI):
             attr = prim.GetAttribute("physxArticulation:enabledSelfCollisions")
-            assert attr and attr.Get() is False, (
-                f"{prim.GetPath()}: self-collisions not disabled"
+            assert attr and attr.Get() is True, (
+                f"{prim.GetPath()}: self-collisions not enabled"
             )
             n_art += 1
     assert n_collision > 0 and n_rb > 0 and n_art > 0, (
@@ -194,7 +194,7 @@ def main() -> None:
     )
     print(
         f"[test] 7. contact_offset=0.002 on {n_collision} collision prims, "
-        f"gravity off on {n_rb} bodies, self-collision off on {n_art} articulation root(s)"
+        f"gravity off on {n_rb} bodies, self-collision on for {n_art} articulation root(s)"
     )
 
     print("[test] transfer invariants test OK")

@@ -192,6 +192,68 @@ def build_rigid_object_cfg(prim_path: str, usd_paths: list[str]) -> RigidObjectC
     )
 
 
+def build_functional_pancake_cfg(
+    position_xy: tuple[float, float], support_height: float
+) -> RigidObjectCfg:
+    """Build the pancake acted on by the policy-controlled tool."""
+    return RigidObjectCfg(
+        prim_path="/World/envs/env_.*/FunctionalObject",
+        spawn=sim_utils.CylinderCfg(
+            radius=0.08,
+            height=0.012,
+            rigid_props=sim_utils.RigidBodyPropertiesCfg(),
+            mass_props=sim_utils.MassPropertiesCfg(mass=0.08),
+            collision_props=sim_utils.CollisionPropertiesCfg(),
+            physics_material=sim_utils.RigidBodyMaterialCfg(
+                static_friction=0.8,
+                dynamic_friction=0.6,
+                restitution=0.05,
+            ),
+            visual_material=sim_utils.PreviewSurfaceCfg(
+                diffuse_color=(0.85, 0.55, 0.20),
+            ),
+        ),
+        # Nominal table top: 0.38 + half of the 0.30 m table height.
+        init_state=RigidObjectCfg.InitialStateCfg(
+            pos=(position_xy[0], position_xy[1], 0.536 + support_height),
+            rot=(1.0, 0.0, 0.0, 0.0),
+        ),
+    )
+
+
+def build_functional_support_cfg(
+    height: float,
+    radius: float,
+    position_xy: tuple[float, float],
+    prim_name: str = "FunctionalSupport",
+) -> RigidObjectCfg:
+    """Build a fixed circular support that acts as a simplified pan bottom."""
+    return RigidObjectCfg(
+        prim_path=f"/World/envs/env_.*/{prim_name}",
+        spawn=sim_utils.CylinderCfg(
+            radius=radius,
+            height=height,
+            rigid_props=sim_utils.RigidBodyPropertiesCfg(
+                kinematic_enabled=True,
+                disable_gravity=True,
+            ),
+            collision_props=sim_utils.CollisionPropertiesCfg(),
+            physics_material=sim_utils.RigidBodyMaterialCfg(
+                static_friction=0.6,
+                dynamic_friction=0.5,
+                restitution=0.0,
+            ),
+            visual_material=sim_utils.PreviewSurfaceCfg(
+                diffuse_color=(0.18, 0.18, 0.20),
+            ),
+        ),
+        init_state=RigidObjectCfg.InitialStateCfg(
+            pos=(position_xy[0], position_xy[1], 0.530 + height * 0.5),
+            rot=(1.0, 0.0, 0.0, 0.0),
+        ),
+    )
+
+
 def _log_scene_step(start_time: float, message: str) -> None:
     print(f"[scene_utils][+{time.perf_counter() - start_time:.2f}s] {message}", flush=True)
 
@@ -1656,7 +1718,7 @@ def _build_object_scale_tensor(env, object_scales_normalized, num_object_usds: i
 
 
 def setup_scene(env) -> None:
-    """Build and register robot, table, object, goal, ground, and light."""
+    """Build and register robot, table, tool, functional object, goal, ground, and light."""
     assets_cfg = env.cfg.assets
     setup_t0 = time.perf_counter()
     _log_scene_step(
@@ -1801,7 +1863,47 @@ def setup_scene(env) -> None:
     env.table = RigidObject(build_rigid_object_cfg("/World/envs/env_.*/Table", table_usd_paths))
     env.object = RigidObject(build_rigid_object_cfg("/World/envs/env_.*/Object", object_usd_paths))
     env.goal_viz = RigidObject(build_rigid_object_cfg("/World/envs/env_.*/GoalViz", goalviz_usd_paths))
-    _log_scene_step(setup_t0, "spawned robot/table/object/goalviz")
+    if assets_cfg.enable_functional_object:
+        env.functional_object = RigidObject(
+            build_functional_pancake_cfg(
+                assets_cfg.functional_object_position_xy,
+                assets_cfg.functional_support_height,
+            )
+        )
+        if assets_cfg.functional_support_height > 0.0:
+            support_spacing = assets_cfg.functional_support_half_spacing
+            if support_spacing > 0.0:
+                for name, y_sign in (("left", -1.0), ("right", 1.0)):
+                    support_xy = (
+                        assets_cfg.functional_object_position_xy[0],
+                        assets_cfg.functional_object_position_xy[1]
+                        + y_sign * support_spacing,
+                    )
+                    setattr(
+                        env,
+                        f"functional_support_{name}",
+                        RigidObject(
+                            build_functional_support_cfg(
+                                assets_cfg.functional_support_height,
+                                assets_cfg.functional_support_radius,
+                                support_xy,
+                                prim_name=f"FunctionalSupport{name.title()}",
+                            )
+                        ),
+                    )
+            else:
+                env.functional_support = RigidObject(
+                    build_functional_support_cfg(
+                        assets_cfg.functional_support_height,
+                        assets_cfg.functional_support_radius,
+                        assets_cfg.functional_object_position_xy,
+                    )
+                )
+    _log_scene_step(
+        setup_t0,
+        "spawned robot/table/object/goalviz"
+        + ("/functional_object" if assets_cfg.enable_functional_object else ""),
+    )
 
     # 5. Ground plane + dome light (global, outside env_*).
     spawn_ground_plane(prim_path="/World/ground", cfg=GroundPlaneCfg())
@@ -1816,6 +1918,14 @@ def setup_scene(env) -> None:
     env.scene.rigid_objects["table"] = env.table
     env.scene.rigid_objects["object"] = env.object
     env.scene.rigid_objects["goal_viz"] = env.goal_viz
+    if assets_cfg.enable_functional_object:
+        env.scene.rigid_objects["functional_object"] = env.functional_object
+        if hasattr(env, "functional_support"):
+            env.scene.rigid_objects["functional_support"] = env.functional_support
+        for name in ("left", "right"):
+            support_name = f"functional_support_{name}"
+            if hasattr(env, support_name):
+                env.scene.rigid_objects[support_name] = getattr(env, support_name)
     hide_goal_viz_for_student_camera(env)
     setup_student_camera(env)
     _log_scene_step(setup_t0, "registered assets with scene")

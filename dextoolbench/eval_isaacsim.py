@@ -21,14 +21,19 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import sys
 import tempfile
+import time
 from pathlib import Path
 
 from isaaclab.app import AppLauncher
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(REPO_ROOT))
 
 CONTROL_HZ = 60.0
+PLAY_HZ = float(os.environ.get("S2R_PLAY_HZ", str(CONTROL_HZ)))
 
 TABLE_URDF = "assets/urdf/table_narrow.urdf"
 TABLE_WHITEBOARD_URDF = "assets/urdf/table_narrow_whiteboard.urdf"
@@ -62,6 +67,11 @@ def _build_parser() -> argparse.ArgumentParser:
                         default=True,
                         help="Always use the default table URDF regardless of category.")
     parser.add_argument("--rl_device", default="cuda")
+    parser.add_argument(
+        "--play",
+        action="store_true",
+        help="Open the native Isaac Lab GUI and pace policy steps at 60 Hz.",
+    )
     return parser
 
 
@@ -69,7 +79,7 @@ def _launch_app():
     parser = _build_parser()
     AppLauncher.add_app_launcher_args(parser)
     args = parser.parse_args()
-    args.headless = True
+    args.headless = not args.play
     app = AppLauncher(args).app
     return app, args
 
@@ -163,6 +173,24 @@ def main() -> None:
     inner = env.unwrapped
     inner._replay_target_lab_order = None
 
+    if args.play:
+        import isaaclab.sim as sim_utils
+        from isaaclab.sim.utils import get_current_stage
+        from pxr import UsdGeom
+
+        goal_path = "/World/envs/env_0/GoalViz"
+        material_path = "/World/Looks/PolicyGoalGreen"
+        material = sim_utils.PreviewSurfaceCfg(
+            diffuse_color=(0.0, 1.0, 0.0), opacity=1.0
+        )
+        material.func(material_path, material)
+        sim_utils.bind_visual_material(goal_path, material_path)
+        UsdGeom.Imageable(get_current_stage().GetPrimAtPath(goal_path)).MakeVisible()
+        inner.sim.set_camera_view(
+            eye=(0.55, -0.65, 0.95), target=(0.03, 0.05, 0.68)
+        )
+        print("[play] native Isaac Lab GUI; black=tool, green=current goal")
+
     n_act = cfg.action_space
     player = RlPlayer(
         num_observations=inner.cfg.observation_space,
@@ -183,13 +211,14 @@ def main() -> None:
         # policy action (gym's first step doubles as the reset trigger).
         obs, _, _, _, _ = env.step(torch.zeros((1, n_act), device=inner.device))
 
-        step, done, goals_reached = 0, False, 0
+        step, done, goals_reached, reported_goals = 0, False, 0, -1
         # Loop on the env's own done signal only (matches eval_isaacgym.py and the
         # interactive worker). episode_length_s is a PER-GOAL timeout that the env
         # resets on each goal reached, so a multi-goal trajectory legitimately runs
         # far longer than episode_length_s; a fixed max-step cap here would guillotine
         # slow multi-goal tasks (e.g. flip_over) after the first goal's budget.
-        while not done:
+        while not done and (not args.play or _app.is_running()):
+            step_started = time.perf_counter()
             policy_obs = obs["policy"].to(args.rl_device)
             action = player.get_normalized_action(policy_obs, deterministic_actions=True)
             obs, _, terminated, truncated, _ = env.step(action.to(inner.device))
@@ -201,6 +230,19 @@ def main() -> None:
             else:
                 goals_reached = max(goals_reached, int(inner._successes[0].item()))
             step += 1
+            if args.play and goals_reached != reported_goals:
+                print(f"[play] progress={goals_reached}/{n_goals}")
+                reported_goals = goals_reached
+            if args.play:
+                time.sleep(max(
+                    0.0, 1.0 / PLAY_HZ - (time.perf_counter() - step_started)
+                ))
+
+        if args.play and not _app.is_running():
+            print("[play] GUI closed; stopping without recording a partial episode")
+            sys.stdout.flush()
+            sys.stderr.flush()
+            os._exit(0)
 
         goal_pct = 100.0 * goals_reached / n_goals
         episode_goal_pcts.append(goal_pct)
@@ -229,8 +271,6 @@ def main() -> None:
             )
         print(f"[eval] wrote {output_dir / 'eval.json'}")
 
-    import os
-    import sys
     # Skip Kit teardown (it hangs); os._exit makes cleanup moot.
     sys.stdout.flush()
     sys.stderr.flush()

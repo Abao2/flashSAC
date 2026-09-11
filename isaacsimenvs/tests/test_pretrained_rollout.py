@@ -43,6 +43,7 @@ def main() -> None:
 
     import gymnasium as gym
     import torch
+    import yaml
 
     import isaacsimenvs  # noqa: F401  registers gym envs
     from isaacsimenvs.tasks.simtoolreal.simtoolreal_env_cfg import SimToolRealEnvCfg
@@ -51,6 +52,12 @@ def main() -> None:
     cfg = SimToolRealEnvCfg()
     cfg.scene.num_envs = args.num_envs
     cfg.assets.num_assets_per_type = args.num_assets_per_type
+
+    with open(args.config) as f:
+        checkpoint_env_cfg = yaml.safe_load(f)["task"]["env"]
+    cfg.reset.target_volume_mins = tuple(checkpoint_env_cfg["targetVolumeMins"])
+    cfg.reset.target_volume_maxs = tuple(checkpoint_env_cfg["targetVolumeMaxs"])
+    cfg.termination.reset_when_dropped = bool(checkpoint_env_cfg["resetWhenDropped"])
 
     # All DR / reset noise off (mirrors debug_differences/policy_eval_isaacsim.py).
     dr = cfg.domain_randomization
@@ -78,7 +85,6 @@ def main() -> None:
 
     if args.success_tolerance >= 0:
         cfg.termination.eval_success_tolerance = float(args.success_tolerance)
-
     env = gym.make("Isaacsimenvs-SimToolReal-Direct-v0", cfg=cfg)
     inner = env.unwrapped
     inner._replay_target_lab_order = None
