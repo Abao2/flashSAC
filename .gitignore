@@ -184,3 +184,7 @@ events.out.tfevents*
 *.pem
 *.key
 
+
+# Local-only link to downloaded pretrained weights (not a portable source file).
+/third_party/simtoolreal/pretrained_policy
+

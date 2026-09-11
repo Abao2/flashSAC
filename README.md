@@ -40,6 +40,20 @@ See `docs/LOCAL_ARTIFACTS.json` for the local artifact inventory.
 A Git clone alone cannot resume training without separately restoring the required model,
 optimizer, normalizer and replay files.
 
+## Continue on another machine
+
+```bash
+git clone https://github.com/Abao2/flashSAC.git flashsac-robotics
+cd flashsac-robotics
+export SIMTOOLREAL_ROOT="$PWD/third_party/simtoolreal"
+export PYTHONPATH="$PWD:$SIMTOOLREAL_ROOT${PYTHONPATH:+:$PYTHONPATH}"
+export PYTHON_BIN=/path/to/your/isaaclab/python
+```
+
+Use an installed Isaac Lab Python environment, restore external assets/checkpoints as needed,
+and inspect the selected experiment configuration before starting a run. No second STR clone
+or `git submodule update` is required. `PYTHON_BIN` overrides the local play/launch Python path.
+
 ## Local behavior comparison
 
 With an Isaac Lab Python environment and the required pretrained files restored:
@@ -51,7 +65,7 @@ bash scripts/play_str_compare.sh
 One GUI, two copies of the same hammer task: official STR on the left, the selected
 FlashSAC 100M checkpoint on the right. Both share the same controller and task settings.
 “Best” remains a historical/provisional label, not proof of global checkpoint optimality.
-The convenience launcher currently contains an abao-local Python path; adjust it on a new machine.
+The convenience launcher defaults to an abao-local Python path; set `PYTHON_BIN` on a new machine.
 
 ---
 
@@ -319,5 +333,6 @@ uv sync --dev    # install formatters, linter, type checker
   year={2026}
 }
 ```
+
 
 

@@ -3,7 +3,7 @@
 set -euo pipefail
 repo="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 str_root="${SIMTOOLREAL_ROOT:-${repo}/third_party/simtoolreal}"
-play_python="${STR_PLAY_PYTHON:-/home/abao/play2perfect/.venv_isaacsim/bin/python}"
+play_python="${STR_PLAY_PYTHON:-${PYTHON_BIN:-/home/abao/play2perfect/.venv_isaacsim/bin/python}}"
 mode="${1:-}"
 if [[ "$mode" != best && "$mode" != official ]]; then
     echo '用法: bash scripts/play_str_behavior.sh best|official [--print-command]' >&2
@@ -64,6 +64,7 @@ if [[ -z "${DISPLAY:-}" ]]; then
     exit 3
 fi
 exec "${command[@]}"
+
 
 
 
