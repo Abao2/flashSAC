@@ -1,0 +1,35 @@
+[
+  {
+    "task": "scoop_and_lift",
+    "goal_sequence": "pedestal_scoop",
+    "goal_z_offset": 0.028,
+    "pan_height": 0.04,
+    "support_radius": 0.02,
+    "seed": 0,
+    "functional_success": false,
+    "functional_progress": 0.0,
+    "trajectory_progress": 1.0,
+    "max_lift_height": 0.007606923580169678,
+    "initial_pancake_xyz": [
+      0.0009879365097731352,
+      0.04923023283481598,
+      0.5788498520851135
+    ],
+    "final_pancake_xyz": [
+      0.020281987264752388,
+      0.03180621564388275,
+      0.5729635953903198
+    ],
+    "max_pancake_displacement_xy": 0.02698931097984314,
+    "max_pre_scoop_pancake_displacement_xy": 0.02434014156460762,
+    "final_flip_angle_deg": 20.515310287475586,
+    "final_target_distance": 0.037722598761320114,
+    "min_blade_distance": 0.0200362466275692,
+    "near_blade_steps": 128,
+    "time_to_success_sec": null,
+    "episode_length": 427,
+    "wall_time_sec": 18.528033488895744,
+    "failure_reason": "timeout",
+    "stopped_by": "post_trajectory_settle_timeout"
+  }
+]

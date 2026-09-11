@@ -1,0 +1,9 @@
+{
+  "num_episodes": 1,
+  "functional_success_rate": 0.0,
+  "mean_functional_progress": 0.0,
+  "mean_trajectory_progress": 1.0,
+  "failure_counts": {
+    "timeout": 1
+  }
+}

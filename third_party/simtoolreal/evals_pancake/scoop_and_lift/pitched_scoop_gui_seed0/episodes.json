@@ -1,0 +1,20 @@
+[
+  {
+    "task": "scoop_and_lift",
+    "goal_sequence": "pitched_scoop",
+    "seed": 0,
+    "functional_success": false,
+    "functional_progress": 0.0,
+    "trajectory_progress": 1.0,
+    "max_lift_height": 0.0002447366714477539,
+    "final_flip_angle_deg": 0.0,
+    "final_target_distance": 0.06325579434633255,
+    "min_blade_distance": 0.030896253883838654,
+    "near_blade_steps": 275,
+    "time_to_success_sec": null,
+    "episode_length": 448,
+    "wall_time_sec": 13.868729105219245,
+    "failure_reason": "timeout",
+    "stopped_by": "post_trajectory_settle_timeout"
+  }
+]
