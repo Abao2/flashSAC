@@ -1,0 +1,25 @@
+{
+  "scope": "Source snapshot before full-STR trial; existing dirty code is retained",
+  "hashes": {
+    "/home/abao/flashsac-robotics/configs/simtoolreal_full_nodr.yaml": "3358be80d996a0abe28f78f9aed34470a4ad86804b2fd04a05845a3ad7f26ad1",
+    "/home/abao/flashsac-robotics/configs/simtoolreal_flashsac.yaml": "0a1881e50c6e3bf3539c3fcf09e1435ab17f0b78c8e1024f341351232afb89ad",
+    "/home/abao/flashsac-robotics/configs/env/simtoolreal.yaml": "520402418b76501e2f8d7137170ccae2edc24e8cb01c04c10433d7a550b2efec",
+    "/home/abao/flashsac-robotics/configs/agent/flashSAC.yaml": "4dabed9818df0a6529cfce40925d40e384c01d9f6287fb6d9170a0c5a50582a8",
+    "/home/abao/flashsac-robotics/train.py": "a7697d6e5e84cae5bff49002d8cd99956b42576f9140ba8f65a93973e587be87",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/agent.py": "079962c5307f0118338329ba8ebbf89055356f9f1446e9d533462aa57d936c9a",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/update.py": "50c571fc466276aa6caac56c2c13d3e42029bb669cce58a6a73a98bf9e01d5ba",
+    "/home/abao/flashsac-robotics/flash_rl/envs/isaaclab.py": "fbf0aac07d527f589064ebb6fde009ff1b4d79e2513451121d5a3309907dc7a4",
+    "/home/abao/flashsac-robotics/scripts/check_str_full_nodr.py": "223c89b321cc0fd9e75bbb6aade3fdfcd129fc1d079eb0726de04f632803f85b",
+    "/home/abao/flashsac-robotics/scripts/eval_str_full_nodr.py": "cf6384e0aeb242cb5beb8b02c779dbd2faeb61c44cf35b0f9a18f042332ead14",
+    "/home/abao/flashsac-robotics/scripts/run_str_full_nodr_queue.py": "02f9dd9e4933bd5d6ff406c8127983bc921c222264375e35ded8abb8afa6761b",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/simtoolreal_env.py": "1701cbae43b243198fb84803dbb19829ff6f5a8a2e41c019eb8e87682367f17d",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/simtoolreal_env_cfg.py": "aff33b7f7650e0d4ff20f38444c1182776ad32842f27562f891e7c623f9a7ca4",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/reset_utils.py": "3f053396b43e56782b6daa72849811d8a9ad5cca956f824c9cd772691ea9bd6e",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/termination_utils.py": "42a29203129abe5d9fe0fb147aaff5a0064117403f05cc91c1e06c1a93146b1b",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/obs_utils.py": "2f36d5c5f50eb59e0debff98fc08d447d8c40b5cdb82d8aad54527c704437cc0",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/goal_sampling.py": "26c64f1542bf5221d8ebd0b172605b23982a9dddda91ea509eab2397a9c188f2",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/scene_utils.py": "e18cdbae5d4ce9df147832777915258bcd5934eeb8e7bf57f51891576eb85895",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/generate_objects.py": "f176869ed6c4cd36a93019643ea448ce238dcd931df6b80243c1678f22c46b4c",
+    "/home/abao/simtoolreal/isaacsimenvs/cfg/task/SimToolReal.yaml": "3f7b10d06a9312e31c808dcb69cbe9866493e29045452873d4359fb012871709"
+  }
+}

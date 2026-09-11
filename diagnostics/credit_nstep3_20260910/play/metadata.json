@@ -1,0 +1,34 @@
+{
+  "status": "complete",
+  "checkpoint": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/candidate/models/seed0/step48830/actor.pt",
+  "config_name": "simtoolreal_full_arm1_nstep3",
+  "actor_sha256": "7f01a2e2fd58ec4b0b041ab47b6a8afbadd0347ed5b23f604c486adca11efcd5",
+  "learning": false,
+  "seed": 0,
+  "num_envs": 64,
+  "numpy_version": "1.26.0",
+  "numpy_file": "/home/abao/play2perfect/.venv_isaacsim/lib/python3.11/site-packages/numpy/__init__.py",
+  "max_steps_per_mode": 1200,
+  "frozen_tolerance": 0.075,
+  "protocol": "Same first reset in each mode; first episode per env only; censor at step cap. NOT paper evaluation.",
+  "pairing_intervention": "Reseed all RNGs; zero previous reward before each full reset; freeze tolerance.",
+  "contact_note": "No contact-force measurement. Height and fingertip distances are geometric proxies, NOT grasp success.",
+  "video_env_ids": [
+    1,
+    6,
+    8,
+    0
+  ],
+  "model_before": "82b4806c4516e327388918d4192cb6116490123a6be4dd34cb69a4bb098611a4",
+  "paired_initial_max_abs_errors": {
+    "obs": 2.384185791015625e-07,
+    "joint_pos": 0.0,
+    "joint_vel": 0.0,
+    "object": 0.0,
+    "goal": 0.0,
+    "prev_targets": 0.0,
+    "cur_targets": 0.0
+  },
+  "model_after": "82b4806c4516e327388918d4192cb6116490123a6be4dd34cb69a4bb098611a4",
+  "elapsed_seconds": 390.93261035718024
+}

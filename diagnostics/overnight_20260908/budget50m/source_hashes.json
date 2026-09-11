@@ -1,0 +1,240 @@
+{
+  "captured_utc": "2026-09-08T15:07:49.800345+00:00",
+  "captured_before_launch": true,
+  "files": [
+    {
+      "path": "/home/abao/flashsac-robotics/configs/agent/flashSAC.yaml",
+      "resolved_path": "/home/abao/flashsac-robotics/configs/agent/flashSAC.yaml",
+      "size_bytes": 1446,
+      "sha256": "4dabed9818df0a6529cfce40925d40e384c01d9f6287fb6d9170a0c5a50582a8"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/configs/env/simtoolreal.yaml",
+      "resolved_path": "/home/abao/flashsac-robotics/configs/env/simtoolreal.yaml",
+      "size_bytes": 1241,
+      "sha256": "520402418b76501e2f8d7137170ccae2edc24e8cb01c04c10433d7a550b2efec"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/configs/flashSAC_base.yaml",
+      "resolved_path": "/home/abao/flashsac-robotics/configs/flashSAC_base.yaml",
+      "size_bytes": 2023,
+      "sha256": "d07194a552f364ca1c32ea41cd2ad29dcb8c0363dd2b73a890e97459ff3ec383"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/configs/simtoolreal_flashsac.yaml",
+      "resolved_path": "/home/abao/flashsac-robotics/configs/simtoolreal_flashsac.yaml",
+      "size_bytes": 1186,
+      "sha256": "0a1881e50c6e3bf3539c3fcf09e1435ab17f0b78c8e1024f341351232afb89ad"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/configs/simtoolreal_state_teacher.yaml",
+      "resolved_path": "/home/abao/flashsac-robotics/configs/simtoolreal_state_teacher.yaml",
+      "size_bytes": 2368,
+      "sha256": "deee7d27a5395155e5d21ba6c778a6e66853f71fbd720898d938e1673e88f30c"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/config_assertions.json",
+      "resolved_path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/config_assertions.json",
+      "size_bytes": 4013,
+      "sha256": "dacefced19814b71447e838e8bd5f20154f9efa39ec7376401ee93b211b85083"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/configs/arm1_hand01_seed0.json",
+      "resolved_path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/configs/arm1_hand01_seed0.json",
+      "size_bytes": 5387,
+      "sha256": "bf037d1d9fee0f2293d2f3442daf3a4d63e2474e7b5c8ce5b34cbe1d8f6871d4"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/configs/arm1_hand1_seed0.json",
+      "resolved_path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/configs/arm1_hand1_seed0.json",
+      "size_bytes": 5385,
+      "sha256": "f98658b2eaad205e62feb99d874c75d43ee47fbc654ab6848274ae11923b5f05"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/manifest.json",
+      "resolved_path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/manifest.json",
+      "size_bytes": 53107,
+      "sha256": "1a2bebe03c0376e5ec17e5ee360d271ba96a12cf4eb441c47c36cd1ca17918f3"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/prepare_manifest.py",
+      "resolved_path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/prepare_manifest.py",
+      "size_bytes": 11757,
+      "sha256": "f3743cbbff2f45232ce222ede6c9e7290cda049d7afc799b1658adf09a4257f4"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/flash_rl/agents/base_agent.py",
+      "resolved_path": "/home/abao/flashsac-robotics/flash_rl/agents/base_agent.py",
+      "size_bytes": 1933,
+      "sha256": "d58f98e02eed8887c16f5f7d83d97f16e4a7ac0d104dc40d1809bf3832a72dfc"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/agent.py",
+      "resolved_path": "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/agent.py",
+      "size_bytes": 20911,
+      "sha256": "079962c5307f0118338329ba8ebbf89055356f9f1446e9d533462aa57d936c9a"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/layer.py",
+      "resolved_path": "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/layer.py",
+      "size_bytes": 10886,
+      "sha256": "7af7b2954c22a5ae56595b8d3139017e2a44b17dbd63c2f54c4e65dbd17ef7cc"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/network.py",
+      "resolved_path": "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/network.py",
+      "size_bytes": 3432,
+      "sha256": "4068098466f195fac2c7d91e3cb1abe0c4daf42c4d1cd85f3940dca9edfd4c98"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/update.py",
+      "resolved_path": "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/update.py",
+      "size_bytes": 10059,
+      "sha256": "50c571fc466276aa6caac56c2c13d3e42029bb669cce58a6a73a98bf9e01d5ba"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/flash_rl/agents/utils/network.py",
+      "resolved_path": "/home/abao/flashsac-robotics/flash_rl/agents/utils/network.py",
+      "size_bytes": 6946,
+      "sha256": "02b1e8c27ae2d75ba39969a5ea6b21e1bc596dbab71fdd6c5dc9cd5d7aab1d69"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/flash_rl/agents/utils/reward_normalization.py",
+      "resolved_path": "/home/abao/flashsac-robotics/flash_rl/agents/utils/reward_normalization.py",
+      "size_bytes": 5712,
+      "sha256": "b673f5fba40468f6bb183d3cc82daa05111e95407ccb6b73de854f338c7b70b8"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/flash_rl/agents/utils/scheduler.py",
+      "resolved_path": "/home/abao/flashsac-robotics/flash_rl/agents/utils/scheduler.py",
+      "size_bytes": 2662,
+      "sha256": "b3732509dbe01a01d76b3018d062386287bf7cb669973e2a465192c584030811"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/flash_rl/buffers/base_buffer.py",
+      "resolved_path": "/home/abao/flashsac-robotics/flash_rl/buffers/base_buffer.py",
+      "size_bytes": 1835,
+      "sha256": "75a067a6d8a3d4d6098961a557d78bbb42e73bfd5e6e1e37b41c9d70fb263699"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/flash_rl/buffers/torch_buffer.py",
+      "resolved_path": "/home/abao/flashsac-robotics/flash_rl/buffers/torch_buffer.py",
+      "size_bytes": 10292,
+      "sha256": "451fdb9bd0fe5dce93bcf3a1da48a9215351841b738faa971ebc6a09aa025bf1"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/flash_rl/common/logger.py",
+      "resolved_path": "/home/abao/flashsac-robotics/flash_rl/common/logger.py",
+      "size_bytes": 5868,
+      "sha256": "299fcf3bcf2c0b629310c29ed9a47c7fdf28d4a77a49ad265606e00496f4acf5"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/flash_rl/envs/__init__.py",
+      "resolved_path": "/home/abao/flashsac-robotics/flash_rl/envs/__init__.py",
+      "size_bytes": 10527,
+      "sha256": "ec3898cf18052e0277d79bae77f7b3363e441574a7e261b89b4d60b2d6e6d838"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/flash_rl/envs/isaaclab.py",
+      "resolved_path": "/home/abao/flashsac-robotics/flash_rl/envs/isaaclab.py",
+      "size_bytes": 20176,
+      "sha256": "fbf0aac07d527f589064ebb6fde009ff1b4d79e2513451121d5a3309907dc7a4"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/scripts/diagnose_str_critic.py",
+      "resolved_path": "/home/abao/flashsac-robotics/scripts/diagnose_str_critic.py",
+      "size_bytes": 19031,
+      "sha256": "e427e6ce297403cd8de0b81188fb4a7584c9174d8ec34ab7382121a4dd384a0d"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+      "resolved_path": "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+      "size_bytes": 35269,
+      "sha256": "88260cab2138d14103771591994abd3c8f55ce76d99f05a777cd1cd3a8d193eb"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/scripts/run_simtoolreal.sh",
+      "resolved_path": "/home/abao/flashsac-robotics/scripts/run_simtoolreal.sh",
+      "size_bytes": 945,
+      "sha256": "82d52305a83dd11c3cb0ac8ec3cd769bd220a2e3bbd672de2b3d3b4bf66d35fa"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/scripts/run_str_state_teacher.sh",
+      "resolved_path": "/home/abao/flashsac-robotics/scripts/run_str_state_teacher.sh",
+      "size_bytes": 311,
+      "sha256": "c5c6b25884c57a0e4083d3f3826cd598dc76f79062d9bd3bd0efe424178d5697"
+    },
+    {
+      "path": "/home/abao/flashsac-robotics/train.py",
+      "resolved_path": "/home/abao/flashsac-robotics/train.py",
+      "size_bytes": 8794,
+      "sha256": "a7697d6e5e84cae5bff49002d8cd99956b42576f9140ba8f65a93973e587be87"
+    },
+    {
+      "path": "/home/abao/simtoolreal/isaacsimenvs/cfg/task/SimToolReal.yaml",
+      "resolved_path": "/home/abao/simtoolreal/isaacsimenvs/cfg/task/SimToolReal.yaml",
+      "size_bytes": 6635,
+      "sha256": "3f7b10d06a9312e31c808dcb69cbe9866493e29045452873d4359fb012871709"
+    },
+    {
+      "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/__init__.py",
+      "resolved_path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/__init__.py",
+      "size_bytes": 1353,
+      "sha256": "541cc33366262372b81980cf2cb06ec401e72e2ac0518b81f9aff97bd49fd35e"
+    },
+    {
+      "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/simtoolreal_env.py",
+      "resolved_path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/simtoolreal_env.py",
+      "size_bytes": 4698,
+      "sha256": "1701cbae43b243198fb84803dbb19829ff6f5a8a2e41c019eb8e87682367f17d"
+    },
+    {
+      "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/simtoolreal_env_cfg.py",
+      "resolved_path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/simtoolreal_env_cfg.py",
+      "size_bytes": 27208,
+      "sha256": "aff33b7f7650e0d4ff20f38444c1182776ad32842f27562f891e7c623f9a7ca4"
+    },
+    {
+      "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/action_utils.py",
+      "resolved_path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/action_utils.py",
+      "size_bytes": 5114,
+      "sha256": "2e38294d4555062c6a022c46d1d9cd48b4074df4c80c0adc0b2006b7bed723d6"
+    },
+    {
+      "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/logging_utils.py",
+      "resolved_path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/logging_utils.py",
+      "size_bytes": 1014,
+      "sha256": "31a1c425d83669fc48bc12b41ccc00ce0190fbae3056a452cd4f55645975abc4"
+    },
+    {
+      "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/obs_utils.py",
+      "resolved_path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/obs_utils.py",
+      "size_bytes": 17772,
+      "sha256": "2f36d5c5f50eb59e0debff98fc08d447d8c40b5cdb82d8aad54527c704437cc0"
+    },
+    {
+      "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/reset_utils.py",
+      "resolved_path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/reset_utils.py",
+      "size_bytes": 20172,
+      "sha256": "3f053396b43e56782b6daa72849811d8a9ad5cca956f824c9cd772691ea9bd6e"
+    },
+    {
+      "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/reward_utils.py",
+      "resolved_path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/reward_utils.py",
+      "size_bytes": 5676,
+      "sha256": "ec2cb758f5ebd2791aee7356111a0c2e28abbeca801e942b3cbee29848c78205"
+    },
+    {
+      "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/scene_utils.py",
+      "resolved_path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/scene_utils.py",
+      "size_bytes": 82632,
+      "sha256": "e18cdbae5d4ce9df147832777915258bcd5934eeb8e7bf57f51891576eb85895"
+    },
+    {
+      "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/termination_utils.py",
+      "resolved_path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/termination_utils.py",
+      "size_bytes": 3479,
+      "sha256": "42a29203129abe5d9fe0fb147aaff5a0064117403f05cc91c1e06c1a93146b1b"
+    }
+  ]
+}

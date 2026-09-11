@@ -1,0 +1,330 @@
+{
+  "pass": true,
+  "first_difference": null,
+  "fields": {
+    "action": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "applied_targets": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "apply_calls": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "control_oracle": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "final_obs_mask": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "final_observation": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "initial/cur_targets": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "initial/episode_length": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "initial/goal": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "initial/joint_pos": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "initial/joint_vel": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "initial/lifted": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "initial/object": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "initial/object_init_z": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "initial/observation": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "initial/pending_goal_reset": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "initial/prev_targets": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "initial/successes": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "observation": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "physx_joint_targets": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "post_reset/cur_targets": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "post_reset/episode_length": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "post_reset/goal": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "post_reset/joint_pos": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "post_reset/joint_vel": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "post_reset/lifted": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "post_reset/object": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "post_reset/object_init_z": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "post_reset/pending_goal_reset": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "post_reset/prev_targets": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "post_reset/successes": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "pre_reset/cur_targets": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "pre_reset/episode_length": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "pre_reset/goal": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "pre_reset/joint_pos": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "pre_reset/joint_vel": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "pre_reset/lifted": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "pre_reset/object": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "pre_reset/object_init_z": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "pre_reset/pending_goal_reset": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "pre_reset/prev_targets": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "pre_reset/successes": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "reason/dropped": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "reason/fall": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "reason/hand_far": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "reason/max_successes": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "reason/timeout": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "received_action": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "reward": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "reward/bonus_rew": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "reward/fingertip_delta_rew": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "reward/hand_actions_penalty": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "reward/keypoint_rew": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "reward/kuka_actions_penalty": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "reward/lift_bonus_rew": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "reward/lifting_rew": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "reward/total_reward": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "terminated": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    },
+    "truncated": {
+      "pass": true,
+      "max_abs_difference": 0.0,
+      "different_elements": 0
+    }
+  },
+  "metadata_checks": {
+    "seed": true,
+    "num_envs": true,
+    "steps": true,
+    "task_signature": true,
+    "assets": true,
+    "control_parameters": true,
+    "actor_sha256": true,
+    "action_tape_sha256": true,
+    "initial_rng_sha256": true
+  },
+  "atol": 1e-06,
+  "rtol": 0,
+  "native": "/home/abao/flashsac-robotics/diagnostics/str_fourway_audit_20260911/interface/native",
+  "other": "/home/abao/flashsac-robotics/diagnostics/str_fourway_audit_20260911/interface/wrapper",
+  "coverage_native": {
+    "terminated": 30,
+    "truncated": 11,
+    "goal_hits": 33,
+    "final_obs_rows": 41
+  },
+  "coverage_other": {
+    "terminated": 30,
+    "truncated": 11,
+    "goal_hits": 33,
+    "final_obs_rows": 41
+  },
+  "scope": "Current independent native STR Lab entry vs adapter; no legacy Gym or real hardware equivalence claim.",
+  "caveat": "A cross-process mismatch alone is not an adapter bug: run native again with --tape for a native-self baseline."
+}

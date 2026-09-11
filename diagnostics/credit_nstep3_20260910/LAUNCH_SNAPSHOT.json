@@ -1,0 +1,45 @@
+{
+  "status": "training",
+  "event_file": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/candidate/runs/str_credit_ab/full_arm1_nstep3_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0910_025120/events.out.tfevents.1788979880.ubuntu2204LTS.36059.0",
+  "snapshot_note": "Early training only, not learned-task evidence. Reported step fields are copied verbatim from TensorBoard; the listed tags use environment transitions here, distinct from native checkpoint update count.",
+  "latest": {
+    "episode/return": {
+      "step": 25804800,
+      "value": 183.5175323486328
+    },
+    "episode/final/successes": {
+      "step": 25804800,
+      "value": 0
+    },
+    "episode/cumulative/lift_bonus_rew": {
+      "step": 25804800,
+      "value": 139.0086212158203
+    },
+    "episode/final/done_fall": {
+      "step": 25804800,
+      "value": 0.806034505367279
+    },
+    "episode/final/done_hand_far": {
+      "step": 25804800,
+      "value": 0.015086207538843155
+    },
+    "episode/final/height_proxy_above_10cm_1s": {
+      "step": 25804800,
+      "value": 0.021551724523305893
+    },
+    "actor/loss": {
+      "step": 25804800,
+      "value": -0.0891992598772049
+    },
+    "critic/loss": {
+      "step": 25804800,
+      "value": 0.952035129070282
+    },
+    "task/current_success_tolerance": {
+      "step": 25804800,
+      "value": 0.07500000298023224
+    }
+  },
+  "nonfinite_scalar_count": 0,
+  "checked_utc": "2026-09-09 19:02:38 UTC"
+}

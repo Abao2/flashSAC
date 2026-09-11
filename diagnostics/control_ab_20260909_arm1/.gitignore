@@ -1,0 +1,8 @@
+# Machine-local training output; keep configuration/provenance in Git.
+train.log
+models/
+runs/
+tb/
+play_*.log
+play_*/*.mp4
+play_*/*.npz

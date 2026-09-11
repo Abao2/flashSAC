@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "tests_passed": 59,
+  "command": "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python -m pytest -q tests/test_flashsac_history_agent.py tests/test_history_buffer.py tests/test_flashsac_history_network.py tests/test_str_memory_comparison_config.py tests/test_external_isaaclab_adapter.py tests/test_n_step_discount.py tests/test_str_full_nodr.py tests/test_str_full_nodr_eval.py tests/test_str_full_nodr_queue.py",
+  "scope": "Real CPU SAC updates and LSTM gradients, history/replay/timeout/bootstrap/warmup contracts, opt-in FF path, config equality, checkpoint roundtrip; no policy evaluation"
+}

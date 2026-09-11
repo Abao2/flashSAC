@@ -1,0 +1,48 @@
+{
+  "resume_loaded": {
+    "checkpoint": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/candidate/models/seed0/step48830",
+    "env_step_offset": 100003840,
+    "resume_tolerance": 0.03228504075,
+    "update_step": 195120,
+    "replay_length": 10000000,
+    "replay_current_idx": 9999744,
+    "cleared_G_r_elements": 2048,
+    "reward_rms_count": 100003840,
+    "exact_environment_resume": false,
+    "boundary_note": "Fresh environment/RNG/noise, empty n-step queue, native first random action; curriculum cooldown restarted."
+  },
+  "event_path": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_continue_20260910/candidate/runs/str_continuation/full_nstep3_resume100m_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0910_144327/events.out.tfevents.1789022607.ubuntu2204LTS.870663.0",
+  "scalar_tags_count": 29,
+  "latest": {
+    "episode/return": {
+      "step": 101027840,
+      "value": 1368.9207763671875
+    },
+    "episode/final/successes": {
+      "step": 101027840,
+      "value": 0.9777777791023254
+    },
+    "task/current_success_tolerance": {
+      "step": 101027840,
+      "value": 0.032285042107105255
+    },
+    "critic/loss": {
+      "step": 101027840,
+      "value": 1.4550498723983765
+    },
+    "actor/loss": {
+      "step": 101027840,
+      "value": -0.22207458317279816
+    }
+  },
+  "nonfinite_count": 0,
+  "merged_curve": {
+    "first_transition": 204800,
+    "last_transition": 101027840,
+    "points": 986,
+    "linked_files": 2
+  },
+  "checked_utc": "2026-09-10 06:45:04 UTC",
+  "status": "confirmed_learning_resume",
+  "note": "Fresh simulator reset; policy/replay/optimizer/RMS restored. Early post-restart window is not a convergence assessment."
+}

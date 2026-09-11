@@ -1,0 +1,35 @@
+{
+  "prepared_utc": "2026-09-08T15:47:57.899430+00:00",
+  "prepared_only": true,
+  "required_prior_status": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/queue_status.json",
+  "launch_note": "Main only: existing runner requires explicit --after-status. This file never launches. Regenerate after original evaluations complete, before queue launch.",
+  "hard_deadline_utc": "2026-09-09T01:00:00Z",
+  "checked_summaries": [
+    {
+      "job": "immediate_update10_deterministic",
+      "completed": 64,
+      "requested": 64
+    },
+    {
+      "job": "immediate_update10_stochastic",
+      "completed": 128,
+      "requested": 128
+    },
+    {
+      "job": "immediate_update100_deterministic",
+      "completed": 64,
+      "requested": 64
+    },
+    {
+      "job": "immediate_update100_stochastic",
+      "completed": 128,
+      "requested": 128
+    },
+    {
+      "job": "immediate_update1000_deterministic",
+      "completed": 64,
+      "requested": 64
+    }
+  ],
+  "jobs": []
+}

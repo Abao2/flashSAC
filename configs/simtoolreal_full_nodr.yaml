@@ -1,0 +1,44 @@
+defaults:
+  - simtoolreal_flashsac
+  - _self_
+
+# Restore the registered STR task distribution, not state_teacher diagnostics.
+# Actor140 / critic162, six object families, random resets and rotating goal
+# chains, original reward, controller and tolerance curriculum are inherited.
+# DR is deliberately disabled: this is not strict paper/sim-to-real reproduction.
+group_name: "str_full_nodr"
+exp_name: "full_distribution_seed${seed}"
+num_env_steps: 100_003_840  # 48,830 vector steps; exactly five saved intervals.
+# The official six families contain12 size sub-distributions:1200 assets.
+# 2048 envs cover every generated asset. Double updates alongside env count
+# to preserve the1024-env / two-update baseline's updates per transition.
+num_train_envs: 2048
+updates_per_interaction_step: 4
+logging_per_interaction_step: 50
+metrics_per_interaction_step: 250
+save_checkpoint_per_interaction_step: 9766
+recording_per_interaction_step: 0
+
+# Keep the successful overnight algorithm recipe; do not silently stretch its
+# learning-rate schedule when increasing the trial budget or load its162D actor.
+agent_load_path: null
+buffer_load_path: null
+agent:
+  buffer_min_length: 100_000
+  learning_rate_warmup_step: 0
+  learning_rate_decay_step: 19532
+
+env:
+  task_cfg_overrides:
+    domain_randomization:
+      use_obs_delay: false
+      use_action_delay: false
+      use_object_state_delay_noise: false
+      object_state_xyz_noise_std: 0.0
+      object_state_rotation_noise_degrees: 0.0
+      object_scale_noise_multiplier_range: [1.0, 1.0]
+      joint_velocity_obs_noise_std: 0.0
+      force_scale: 0.0
+      torque_scale: 0.0
+      object_friction_scale_range: [1.0, 1.0]
+      fingertip_friction_scale_range: [1.0, 1.0]

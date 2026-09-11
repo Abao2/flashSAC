@@ -1,0 +1,135 @@
+{
+  "status": "validated_cpu_only",
+  "no_gpu_launched": true,
+  "tests": "11 passed: gate8 + reset3; fresh, nonzero/odd counter, always-frozen final audit",
+  "jobs": [
+    {
+      "job": "frozen_actor_train",
+      "arguments_and_expected_output_paths_valid": true
+    },
+    {
+      "job": "frozen_actor_relative100_deterministic",
+      "arguments_and_expected_output_paths_valid": true
+    },
+    {
+      "job": "frozen_actor_relative100_stochastic",
+      "arguments_and_expected_output_paths_valid": true
+    },
+    {
+      "job": "frozen_actor_relative1000_deterministic",
+      "arguments_and_expected_output_paths_valid": true
+    },
+    {
+      "job": "frozen_actor_relative1000_stochastic",
+      "arguments_and_expected_output_paths_valid": true
+    },
+    {
+      "job": "frozen_actor_relativefinal_deterministic",
+      "arguments_and_expected_output_paths_valid": true
+    },
+    {
+      "job": "frozen_actor_relativefinal_stochastic",
+      "arguments_and_expected_output_paths_valid": true
+    },
+    {
+      "job": "normal_train",
+      "arguments_and_expected_output_paths_valid": true
+    },
+    {
+      "job": "normal_relative100_deterministic",
+      "arguments_and_expected_output_paths_valid": true
+    },
+    {
+      "job": "normal_relative100_stochastic",
+      "arguments_and_expected_output_paths_valid": true
+    },
+    {
+      "job": "normal_relative1000_deterministic",
+      "arguments_and_expected_output_paths_valid": true
+    },
+    {
+      "job": "normal_relative1000_stochastic",
+      "arguments_and_expected_output_paths_valid": true
+    },
+    {
+      "job": "normal_relativefinal_deterministic",
+      "arguments_and_expected_output_paths_valid": true
+    },
+    {
+      "job": "normal_relativefinal_stochastic",
+      "arguments_and_expected_output_paths_valid": true
+    }
+  ],
+  "resolved_config_differences": [
+    "exp_name",
+    "output_root"
+  ],
+  "agent_config_exactly_matches50m_training": true,
+  "env_config_only_diff_from50m": "num_env_steps budget50001920 to5000192; all task fields identical",
+  "expected_new_network_calls": 9572,
+  "sha256": {
+    "/home/abao/flashsac-robotics/scripts/train_str_warmstart.py": "0c560a4d49629472351f054b4f232ce46bcc9ce962168e2096a0c53c6824462d",
+    "/home/abao/flashsac-robotics/tests/test_str_warmstart.py": "b1391dc62e73edf01b6ad101bfea439b405127355101e750c41b4c643c472192",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/source_backup/train_str_warmstart_before_relative.py": "7bd77a786a8463451c33971b503a2dd8a9b823db48aaf9c5980948ec44ff576a",
+    "/home/abao/flashsac-robotics/train.py": "a7697d6e5e84cae5bff49002d8cd99956b42576f9140ba8f65a93973e587be87",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/agent.py": "079962c5307f0118338329ba8ebbf89055356f9f1446e9d533462aa57d936c9a",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/manifest.json": "faedcabd4da290343965ce455a0522fc3f4caa6188059c8a8a761b1cf258fd65",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830/temperature.pt": "f5d85d570622d10b30f6ae9790a191377865db0fd124ee02e34757e9194585f5",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830/critic.pt": "9bc785d5ce0a1ac62543dfe107dd11d9fd400f2de8882a9c367fea2b12ae12a1",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830/reward_normalizer.pt": "a569ecb15900bef0a167a6b65c85188a391a6c11489f44c436e2f33915c4e60e",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830/actor.pt": "b5c9ac919b74ad78620e7f8a0ee2b41296aac72e4fdf736a85fd11b97f47f438",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830/agent_state.pt": "2fe7bd25a6706ad36bbab6bce3a3e8527870c8601fbc8959ce7c1b3d93db49d5",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830/target_critic.pt": "801ae7569698d9e8b6b5978665f3398d686d498f3a86ec2ed23fe5191c05acad"
+  },
+  "native_full_checkpoint_cpu_load": {
+    "models_all4_exact": true,
+    "optimizers_schedulers_all3_exact": true,
+    "agent_update_step": 97466,
+    "grad_scaler_exact": true,
+    "grad_scaler_state": {
+      "scale": 2097152,
+      "growth_factor": 2,
+      "backoff_factor": 0.5,
+      "growth_interval": 2000,
+      "_growth_tracker": 1851
+    },
+    "reward_normalizer_allfields_exact": true,
+    "normalizer_count": 50001920,
+    "G_r_shape": [
+      1024
+    ],
+    "CPU_only_adjustments": "CPU device, replay/sample1, eager compile namespace wrapper; no GPU kernels or training updates.",
+    "network_audits": {
+      "actor": {
+        "parameter_digest": "38b9b49cff1ad501ecf18f5a1e6fc0500236d61ffcac0420bb01e012864aab39",
+        "buffer_digest": "da1f4d9fa36a0b7d7d23c4a0b96fccdcbe1dd6da3a7aee2db59f2f01ed15c120",
+        "optimizer_step_min": 48726,
+        "optimizer_step_max": 48726,
+        "learning_rates": [
+          0.00015
+        ],
+        "scheduler_last_epoch": 48733
+      },
+      "critic": {
+        "parameter_digest": "ed8a7ae0f5a7c680ff4fec892e445d4e52809663e19103233d99a2852da2a481",
+        "buffer_digest": "9f65b4f193d9ffcbc4b733f59a137239e427e3e1ae834199f01f4d1099421af7",
+        "optimizer_step_min": 97415,
+        "optimizer_step_max": 97415,
+        "learning_rates": [
+          0.00015
+        ],
+        "scheduler_last_epoch": 97466
+      },
+      "temperature": {
+        "parameter_digest": "71b8ff34c6a6e0a01a01762f6ce2a6534ad44889694010dd7d55b49da1c36ff4",
+        "buffer_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "optimizer_step_min": 48733,
+        "optimizer_step_max": 48733,
+        "learning_rates": [
+          0.00015
+        ],
+        "scheduler_last_epoch": 48733
+      }
+    }
+  }
+}

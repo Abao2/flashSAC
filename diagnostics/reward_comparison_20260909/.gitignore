@@ -1,0 +1,2 @@
+# Raw historical TensorBoard snapshots are large; plots/scripts/source notes remain trackable.
+remote_sources/**/events.out.tfevents*

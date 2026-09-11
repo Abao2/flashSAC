@@ -1,0 +1,87 @@
+{
+  "validation_status": "passed",
+  "validated_utc": "2026-09-08T15:17:51.521697+00:00",
+  "scope": "CPU post-hoc validation of the existing GPU plumbing smoke; no new simulator or training run.",
+  "original_audit": {
+    "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/gpu_plumbing_smoke/warmup_audit.json",
+    "sha256": "db1d1526cc08f61ca7dab7de6af740d8cc293c926662134422805278ec1a87fe",
+    "status": "running",
+    "preserved_without_modification": true
+  },
+  "training_completion": {
+    "final_checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/gpu_plumbing_smoke/models/final/step112",
+    "interaction_steps": 112,
+    "num_envs": 1024,
+    "reward_normalizer_transition_count": 114688,
+    "native_agent_update_step": 30,
+    "attempted_updates": {
+      "critic": 30,
+      "actor": 5,
+      "temperature": 5
+    },
+    "checkpoint_files": {
+      "actor.pt": {
+        "bytes": 3556821,
+        "finite_tensor_count": 90,
+        "saved_update_step_field": 0,
+        "distinct_optimizer_steps": [
+          5
+        ]
+      },
+      "critic.pt": {
+        "bytes": 27167761,
+        "finite_tensor_count": 83,
+        "saved_update_step_field": 0,
+        "distinct_optimizer_steps": [
+          30
+        ]
+      },
+      "target_critic.pt": {
+        "bytes": 9088798,
+        "finite_tensor_count": 29,
+        "saved_update_step_field": 0,
+        "distinct_optimizer_steps": []
+      },
+      "temperature.pt": {
+        "bytes": 3077,
+        "finite_tensor_count": 4,
+        "saved_update_step_field": 0,
+        "distinct_optimizer_steps": [
+          5
+        ]
+      },
+      "reward_normalizer.pt": {
+        "bytes": 6855,
+        "finite_tensor_count": 5,
+        "saved_update_step_field": null,
+        "distinct_optimizer_steps": []
+      },
+      "agent_state.pt": {
+        "bytes": 1477,
+        "finite_tensor_count": 0,
+        "saved_update_step_field": 30,
+        "distinct_optimizer_steps": []
+      }
+    }
+  },
+  "warmup_validation": {
+    "critic_only_calls": 20,
+    "actor_and_temperature_parameters_and_buffers_exactly_equal_update0_vs20": true,
+    "actor_and_temperature_optimizer_and_scheduler_audits_unchanged_through_warmup": true,
+    "post_warmup_critic_calls": 10,
+    "actor_optimizer_steps_after_warmup": 5,
+    "temperature_optimizer_steps_after_warmup": 5
+  },
+  "stale_status_explanation": {
+    "reported_process_exit_code": 0,
+    "exit_code_source": "Parent agent observed the completed GPU process; not inferred from checkpoint existence.",
+    "observed_code_path": "train.run saves the final checkpoint, then calls train_env.close. IsaacLab.close calls SimulationApp.close, which can exit before control returns to the isolated wrapper.",
+    "interpretation": "The preserved running status is a missing final audit write, not evidence of incomplete network updates. Full finite step112 checkpoint and warmup/resume counts were verified independently.",
+    "wrapper_fix": "Persist complete audit immediately before native training-env close on the normal end-of-training path. Exception cleanup does not mark complete; core trainer/environment are unchanged."
+  },
+  "limits": [
+    "This short run proves training plumbing, freeze and resume, not task learning or policy retention.",
+    "The initial native stochastic BC policy had already failed its frozen rollout gate; this smoke is not a meaningful retention comparison.",
+    "Native individual network saved update_step fields remain zero in this code path; optimizer-state step fields and the agent-level update_step establish actual update counts."
+  ]
+}

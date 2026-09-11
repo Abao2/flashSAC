@@ -1,3 +1,62 @@
+# FlashSAC Robotics — Local Research Snapshot
+
+This is **our research fork of upstream FlashSAC**, not an upstream implementation of
+FlashSAC + SimToolReal + Dex4D and not a claim that all tasks converge.
+It preserves successful and failed local experiments so work can continue on another machine.
+
+- Algorithm ancestry: `Holiday-Robot/FlashSAC`, base `87edc9061150ae9e962dd84e6544e27a1554b3ab`.
+- Local adapters first committed as `d83b714`; subsequent experiments and fixes are included in this snapshot.
+- **Read [Research handoff](docs/RESEARCH_HANDOFF.md) first**, including when continuing with Codex.
+- Preserve upstream licenses, acknowledgements, and history. The original README follows below.
+
+## Repository map
+
+```text
+flash_rl/                 FlashSAC networks, updates, replay and simulator adapter
+robotics_tasks/dex4d/     Our Isaac Lab port of the Dex4D teacher tasks
+configs/                 Task configurations and experimental variants
+scripts/                 Training, play, evaluation and diagnostic entry points
+tests/                   Regression tests and small diagnostic checks
+diagnostics/             Experiment reports/configs/results; large binaries excluded
+third_party/simtoolreal/  Included STR source, local modifications and upstream history
+docs/                    Port documentation and research handoff
+train.py                 Shared training entry
+play_isaaclab.py          Generic FlashSAC GUI player
+```
+
+STR environment source and its local modifications are included at **`third_party/simtoolreal/`**
+using Git subtree, not a submodule. A normal clone includes both codebases; no second STR
+clone or submodule initialization is needed. Dex4D robot/object assets remain external
+and are selected through `DEX4D_ROOT`. Simulator installation and large artifacts still
+need to be restored separately.
+
+## What is and is not backed up by Git
+
+Code, experiment configurations, diagnostic scripts, small plots, JSON/JSONL results,
+and historical notes are retained, including unsuccessful attempts.
+Checkpoint/replay tensors, rollout arrays, TensorBoard event files, videos, logs,
+virtual environments and caches are **not** uploaded as new Git blobs.
+See `docs/LOCAL_ARTIFACTS.json` for the local artifact inventory.
+A Git clone alone cannot resume training without separately restoring the required model,
+optimizer, normalizer and replay files.
+
+## Local behavior comparison
+
+With an Isaac Lab Python environment and the required pretrained files restored:
+
+```bash
+bash scripts/play_str_compare.sh
+```
+
+One GUI, two copies of the same hammer task: official STR on the left, the selected
+FlashSAC 100M checkpoint on the right. Both share the same controller and task settings.
+“Best” remains a historical/provisional label, not proof of global checkpoint optimality.
+The convenience launcher currently contains an abao-local Python path; adjust it on a new machine.
+
+---
+
+## Upstream README (preserved)
+
 <h1><img src="docs/images/icon/flashsac_logo.svg" alt="FlasahSAC" height="60"></h1>
 
 Official implementation of 
@@ -260,3 +319,5 @@ uv sync --dev    # install formatters, linter, type checker
   year={2026}
 }
 ```
+
+

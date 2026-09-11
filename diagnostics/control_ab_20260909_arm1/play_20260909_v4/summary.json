@@ -1,0 +1,24 @@
+{
+  "deterministic": {
+    "episodes": 64,
+    "completed": 64,
+    "lifted": 62,
+    "above_10cm_at_least_1s": 8,
+    "at_least_one_goal": 11,
+    "total_goals": 32,
+    "mean_goals": 0.5,
+    "ended_dropped": 0,
+    "ended_timeout": 2
+  },
+  "stochastic": {
+    "episodes": 64,
+    "completed": 64,
+    "lifted": 59,
+    "above_10cm_at_least_1s": 7,
+    "at_least_one_goal": 10,
+    "total_goals": 28,
+    "mean_goals": 0.4375,
+    "ended_dropped": 0,
+    "ended_timeout": 2
+  }
+}

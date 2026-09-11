@@ -1,0 +1,1101 @@
+{
+  "upstream_commit": "87edc9061150ae9e962dd84e6544e27a1554b3ab",
+  "upstream_root": "/home/abao/Documents/Codex/flashsac-official-play/FlashSAC",
+  "adapted_root": "/home/abao/flashsac-robotics",
+  "checkpoint_before": {
+    "temperature.pt": "19a494e0bd94462e3952b0a940f47af4b533313c8c5195db3b9602c2a576ca96",
+    "critic.pt": "00246a27856082751a885c87965cdeec63892647b22e537613277a1ecf86ba85",
+    "reward_normalizer.pt": "3f670df68521ccab430b81fd341adcae9f45c755ab0c009b15d57707b546536d",
+    "actor.pt": "7f01a2e2fd58ec4b0b041ab47b6a8afbadd0347ed5b23f604c486adca11efcd5",
+    "agent_state.pt": "d66d4729dc19be05ae40623168e87f5a424fe0fb248c1671bfe4870c61ba2395",
+    "target_critic.pt": "01f76a3084ccb141ebd4f384326cf51a4fbdc6ae1a162b4ef0aeb494b296086b"
+  },
+  "cases": [
+    {
+      "case": "str_trained",
+      "mode": "cuda_compiled_amp_trainflags",
+      "snapshots": [
+        {
+          "pass_exact": true,
+          "groups": {
+            "model": {
+              "fields": 89,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "optimizer": {
+              "fields": 195,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "scheduler": {
+              "fields": 18,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "normalizer": {
+              "fields": 5,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "agent_step": {
+              "fields": 1,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "grad_scaler": {
+              "fields": 5,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "rng": {
+              "fields": 2,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            }
+          },
+          "first_differences": [],
+          "num_different_fields": 0,
+          "snapshot": "initial.pt"
+        },
+        {
+          "pass_exact": false,
+          "groups": {
+            "prepared_batch": {
+              "fields": 8,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "actor_update_due": {
+              "fields": 1,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "step_gradients": {
+              "fields": 39,
+              "max_abs_diff": 9.5367431640625e-07,
+              "unequal_fields": 16
+            },
+            "losses_and_metrics": {
+              "fields": 7,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "model": {
+              "fields": 89,
+              "max_abs_diff": 1.1920928955078125e-07,
+              "unequal_fields": 15
+            },
+            "optimizer": {
+              "fields": 195,
+              "max_abs_diff": 9.537325240671635e-08,
+              "unequal_fields": 28
+            },
+            "scheduler": {
+              "fields": 18,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "normalizer": {
+              "fields": 5,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "agent_step": {
+              "fields": 1,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "grad_scaler": {
+              "fields": 5,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "rng": {
+              "fields": 2,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            }
+          },
+          "first_differences": [
+            {
+              "field": "step_gradients/critic/embedder.norm.weight",
+              "max_abs_diff": 4.7904904931783676e-08
+            },
+            {
+              "field": "step_gradients/critic/embedder.norm.bias",
+              "max_abs_diff": 9.167706593871117e-08
+            },
+            {
+              "field": "step_gradients/critic/embedder.w.weight",
+              "max_abs_diff": 9.5367431640625e-07
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.w1.weight",
+              "max_abs_diff": 1.1920928955078125e-07
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.w2.weight",
+              "max_abs_diff": 1.1920928955078125e-07
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.norm1.weight",
+              "max_abs_diff": 1.6167177818715572e-08
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.norm1.bias",
+              "max_abs_diff": 1.4733814168721437e-08
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.norm2.weight",
+              "max_abs_diff": 1.3929820852354169e-08
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.norm2.bias",
+              "max_abs_diff": 1.4963006833568215e-08
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.w1.weight",
+              "max_abs_diff": 5.960464477539063e-08
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.w2.weight",
+              "max_abs_diff": 1.1920928955078125e-07
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.norm1.weight",
+              "max_abs_diff": 1.2732925824820995e-10
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.norm1.bias",
+              "max_abs_diff": 1.1641532182693481e-10
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.norm2.weight",
+              "max_abs_diff": 5.093170329928398e-11
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.norm2.bias",
+              "max_abs_diff": 2.9103830456733704e-11
+            },
+            {
+              "field": "step_gradients/critic/post_norm.weight",
+              "max_abs_diff": 8.731149137020111e-11
+            },
+            {
+              "field": "model/critic/embedder.norm.weight",
+              "max_abs_diff": 1.1920928955078125e-07
+            },
+            {
+              "field": "model/critic/embedder.norm.bias",
+              "max_abs_diff": 2.9802322387695312e-08
+            },
+            {
+              "field": "model/critic/embedder.w.weight",
+              "max_abs_diff": 3.725290298461914e-08
+            },
+            {
+              "field": "model/critic/encoder.0.w1.weight",
+              "max_abs_diff": 4.470348358154297e-08
+            }
+          ],
+          "num_different_fields": 59,
+          "snapshot": "step00.pt",
+          "normalized_reward_range": [
+            -0.0008074880461208522,
+            0.20810925960540771
+          ],
+          "parameter_changes": {
+            "actor": 0.00022700056433677673,
+            "critic": 0.00017792638391256332,
+            "target_critic": 5.7220458984375e-05,
+            "temperature": 3.4332275390625e-05
+          }
+        },
+        {
+          "pass_exact": false,
+          "groups": {
+            "prepared_batch": {
+              "fields": 8,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "actor_update_due": {
+              "fields": 1,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "step_gradients": {
+              "fields": 18,
+              "max_abs_diff": 3.7476420402526855e-05,
+              "unequal_fields": 18
+            },
+            "losses_and_metrics": {
+              "fields": 2,
+              "max_abs_diff": 8.344650268554688e-07,
+              "unequal_fields": 1
+            },
+            "model": {
+              "fields": 89,
+              "max_abs_diff": 2.2388994693756104e-05,
+              "unequal_fields": 43
+            },
+            "optimizer": {
+              "fields": 195,
+              "max_abs_diff": 3.7476420402526855e-06,
+              "unequal_fields": 36
+            },
+            "scheduler": {
+              "fields": 18,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "normalizer": {
+              "fields": 5,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "agent_step": {
+              "fields": 1,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "grad_scaler": {
+              "fields": 5,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "rng": {
+              "fields": 2,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            }
+          },
+          "first_differences": [
+            {
+              "field": "step_gradients/critic/embedder.norm.weight",
+              "max_abs_diff": 8.390052244067192e-06
+            },
+            {
+              "field": "step_gradients/critic/embedder.norm.bias",
+              "max_abs_diff": 5.069712642580271e-06
+            },
+            {
+              "field": "step_gradients/critic/embedder.w.weight",
+              "max_abs_diff": 1.3828277587890625e-05
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.w1.weight",
+              "max_abs_diff": 3.0994415283203125e-06
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.w2.weight",
+              "max_abs_diff": 1.0967254638671875e-05
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.norm1.weight",
+              "max_abs_diff": 2.03519084607251e-06
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.norm1.bias",
+              "max_abs_diff": 3.521592589095235e-06
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.norm2.weight",
+              "max_abs_diff": 2.2898457245901227e-06
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.norm2.bias",
+              "max_abs_diff": 4.506011464400217e-06
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.w1.weight",
+              "max_abs_diff": 1.4152377843856812e-05
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.w2.weight",
+              "max_abs_diff": 3.7476420402526855e-05
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.norm1.weight",
+              "max_abs_diff": 3.097709850408137e-06
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.norm1.bias",
+              "max_abs_diff": 6.7633227445185184e-06
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.norm2.weight",
+              "max_abs_diff": 2.045911969617009e-06
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.norm2.bias",
+              "max_abs_diff": 1.3827426300849766e-05
+            },
+            {
+              "field": "step_gradients/critic/post_norm.weight",
+              "max_abs_diff": 1.3692042557522655e-06
+            },
+            {
+              "field": "step_gradients/critic/predictor.bias",
+              "max_abs_diff": 3.829365596175194e-06
+            },
+            {
+              "field": "step_gradients/critic/predictor.w.weight",
+              "max_abs_diff": 7.62939453125e-06
+            },
+            {
+              "field": "losses_and_metrics/critic/loss",
+              "max_abs_diff": 8.344650268554688e-07
+            },
+            {
+              "field": "model/critic/embedder.norm.weight",
+              "max_abs_diff": 5.21540641784668e-07
+            }
+          ],
+          "num_different_fields": 98,
+          "snapshot": "step01.pt",
+          "normalized_reward_range": [
+            -0.0008045006543397903,
+            0.21217499673366547
+          ],
+          "parameter_changes": {
+            "actor": 0.00022700056433677673,
+            "critic": 0.00034896470606327057,
+            "target_critic": 0.00011420249938964844,
+            "temperature": 3.4332275390625e-05
+          }
+        },
+        {
+          "pass_exact": false,
+          "groups": {
+            "prepared_batch": {
+              "fields": 8,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "actor_update_due": {
+              "fields": 1,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "step_gradients": {
+              "fields": 39,
+              "max_abs_diff": 7.539987564086914e-05,
+              "unequal_fields": 38
+            },
+            "losses_and_metrics": {
+              "fields": 7,
+              "max_abs_diff": 5.1975250244140625e-05,
+              "unequal_fields": 3
+            },
+            "model": {
+              "fields": 89,
+              "max_abs_diff": 4.254281520843506e-05,
+              "unequal_fields": 76
+            },
+            "optimizer": {
+              "fields": 195,
+              "max_abs_diff": 7.539987564086914e-06,
+              "unequal_fields": 76
+            },
+            "scheduler": {
+              "fields": 18,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "normalizer": {
+              "fields": 5,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "agent_step": {
+              "fields": 1,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "grad_scaler": {
+              "fields": 5,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "rng": {
+              "fields": 2,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            }
+          },
+          "first_differences": [
+            {
+              "field": "step_gradients/actor/embedder.norm.weight",
+              "max_abs_diff": 4.092452581971884e-05
+            },
+            {
+              "field": "step_gradients/actor/embedder.norm.bias",
+              "max_abs_diff": 9.682669769972563e-06
+            },
+            {
+              "field": "step_gradients/actor/embedder.w.w.weight",
+              "max_abs_diff": 7.271766662597656e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.0.w1.w.weight",
+              "max_abs_diff": 2.8640031814575195e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.0.w2.w.weight",
+              "max_abs_diff": 3.236532211303711e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.0.norm1.weight",
+              "max_abs_diff": 1.2920912922709249e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.0.norm1.bias",
+              "max_abs_diff": 1.3000557373743504e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.0.norm2.weight",
+              "max_abs_diff": 1.7687947547528893e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.0.norm2.bias",
+              "max_abs_diff": 1.2482945749070495e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.1.w1.w.weight",
+              "max_abs_diff": 1.5437602996826172e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.1.w2.w.weight",
+              "max_abs_diff": 3.007054328918457e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.1.norm1.weight",
+              "max_abs_diff": 5.216998033574782e-06
+            },
+            {
+              "field": "step_gradients/actor/encoder.1.norm1.bias",
+              "max_abs_diff": 5.506855814019218e-06
+            },
+            {
+              "field": "step_gradients/actor/encoder.1.norm2.weight",
+              "max_abs_diff": 7.158692824305035e-06
+            },
+            {
+              "field": "step_gradients/actor/encoder.1.norm2.bias",
+              "max_abs_diff": 8.776030881563202e-06
+            },
+            {
+              "field": "step_gradients/actor/post_norm.weight",
+              "max_abs_diff": 5.619293006020598e-06
+            },
+            {
+              "field": "step_gradients/actor/predictor.mean_bias",
+              "max_abs_diff": 6.986389053054154e-06
+            },
+            {
+              "field": "step_gradients/actor/predictor.std_bias",
+              "max_abs_diff": 1.8132253899239004e-05
+            },
+            {
+              "field": "step_gradients/actor/predictor.mean_w.w.weight",
+              "max_abs_diff": 3.102421760559082e-05
+            },
+            {
+              "field": "step_gradients/actor/predictor.std_w.w.weight",
+              "max_abs_diff": 7.539987564086914e-05
+            }
+          ],
+          "num_different_fields": 193,
+          "snapshot": "step02.pt",
+          "normalized_reward_range": [
+            -0.0008074880461208522,
+            0.20810925960540771
+          ],
+          "parameter_changes": {
+            "actor": 0.0004588402807712555,
+            "critic": 0.0005119731649756432,
+            "target_critic": 0.00017118453979492188,
+            "temperature": 7.43865966796875e-05
+          }
+        },
+        {
+          "pass_exact": false,
+          "groups": {
+            "prepared_batch": {
+              "fields": 8,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "actor_update_due": {
+              "fields": 1,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "step_gradients": {
+              "fields": 18,
+              "max_abs_diff": 0.00010514259338378906,
+              "unequal_fields": 18
+            },
+            "losses_and_metrics": {
+              "fields": 2,
+              "max_abs_diff": 1.0609626770019531e-05,
+              "unequal_fields": 2
+            },
+            "model": {
+              "fields": 89,
+              "max_abs_diff": 6.060302257537842e-05,
+              "unequal_fields": 76
+            },
+            "optimizer": {
+              "fields": 195,
+              "max_abs_diff": 1.047241676133126e-05,
+              "unequal_fields": 76
+            },
+            "scheduler": {
+              "fields": 18,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "normalizer": {
+              "fields": 5,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "agent_step": {
+              "fields": 1,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "grad_scaler": {
+              "fields": 5,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "rng": {
+              "fields": 2,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            }
+          },
+          "first_differences": [
+            {
+              "field": "step_gradients/critic/embedder.norm.weight",
+              "max_abs_diff": 2.9469956643879414e-05
+            },
+            {
+              "field": "step_gradients/critic/embedder.norm.bias",
+              "max_abs_diff": 3.834022209048271e-06
+            },
+            {
+              "field": "step_gradients/critic/embedder.w.weight",
+              "max_abs_diff": 3.6716461181640625e-05
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.w1.weight",
+              "max_abs_diff": 2.1725893020629883e-05
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.w2.weight",
+              "max_abs_diff": 0.00010514259338378906
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.norm1.weight",
+              "max_abs_diff": 9.898227290250361e-06
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.norm1.bias",
+              "max_abs_diff": 1.9300563508295454e-05
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.norm2.weight",
+              "max_abs_diff": 5.337627953849733e-06
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.norm2.bias",
+              "max_abs_diff": 2.4085311451926827e-05
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.w1.weight",
+              "max_abs_diff": 2.6982277631759644e-05
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.w2.weight",
+              "max_abs_diff": 7.285177707672119e-05
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.norm1.weight",
+              "max_abs_diff": 4.359715603641234e-06
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.norm1.bias",
+              "max_abs_diff": 9.803516149986535e-06
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.norm2.weight",
+              "max_abs_diff": 2.693606074899435e-05
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.norm2.bias",
+              "max_abs_diff": 2.9711503884755075e-05
+            },
+            {
+              "field": "step_gradients/critic/post_norm.weight",
+              "max_abs_diff": 2.7775822672992945e-06
+            },
+            {
+              "field": "step_gradients/critic/predictor.bias",
+              "max_abs_diff": 4.941830411553383e-06
+            },
+            {
+              "field": "step_gradients/critic/predictor.w.weight",
+              "max_abs_diff": 2.6702880859375e-05
+            },
+            {
+              "field": "losses_and_metrics/critic/loss",
+              "max_abs_diff": 1.0609626770019531e-05
+            },
+            {
+              "field": "losses_and_metrics/critic/max_entropy_bonus",
+              "max_abs_diff": 1.2619420886039734e-07
+            }
+          ],
+          "num_different_fields": 172,
+          "snapshot": "step03.pt",
+          "normalized_reward_range": [
+            -0.0008045006543397903,
+            0.21217499673366547
+          ],
+          "parameter_changes": {
+            "actor": 0.0004588402807712555,
+            "critic": 0.000670132227241993,
+            "target_critic": 0.00022792816162109375,
+            "temperature": 7.43865966796875e-05
+          }
+        },
+        {
+          "pass_exact": false,
+          "groups": {
+            "prepared_batch": {
+              "fields": 8,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "actor_update_due": {
+              "fields": 1,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "step_gradients": {
+              "fields": 39,
+              "max_abs_diff": 8.440017700195312e-05,
+              "unequal_fields": 39
+            },
+            "losses_and_metrics": {
+              "fields": 7,
+              "max_abs_diff": 0.00211334228515625,
+              "unequal_fields": 6
+            },
+            "model": {
+              "fields": 89,
+              "max_abs_diff": 8.565932512283325e-05,
+              "unequal_fields": 84
+            },
+            "optimizer": {
+              "fields": 195,
+              "max_abs_diff": 1.092493585019838e-05,
+              "unequal_fields": 78
+            },
+            "scheduler": {
+              "fields": 18,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "normalizer": {
+              "fields": 5,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "agent_step": {
+              "fields": 1,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "grad_scaler": {
+              "fields": 5,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "rng": {
+              "fields": 2,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            }
+          },
+          "first_differences": [
+            {
+              "field": "step_gradients/actor/embedder.norm.weight",
+              "max_abs_diff": 3.1213159672915936e-05
+            },
+            {
+              "field": "step_gradients/actor/embedder.norm.bias",
+              "max_abs_diff": 7.059974450385198e-06
+            },
+            {
+              "field": "step_gradients/actor/embedder.w.w.weight",
+              "max_abs_diff": 7.513165473937988e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.0.w1.w.weight",
+              "max_abs_diff": 2.9206275939941406e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.0.w2.w.weight",
+              "max_abs_diff": 6.461143493652344e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.0.norm1.weight",
+              "max_abs_diff": 1.9353823518031277e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.0.norm1.bias",
+              "max_abs_diff": 1.3747616321779788e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.0.norm2.weight",
+              "max_abs_diff": 2.6558214358374244e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.0.norm2.bias",
+              "max_abs_diff": 1.60904492076952e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.1.w1.w.weight",
+              "max_abs_diff": 3.24249267578125e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.1.w2.w.weight",
+              "max_abs_diff": 3.88026237487793e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.1.norm1.weight",
+              "max_abs_diff": 1.546786916151177e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.1.norm1.bias",
+              "max_abs_diff": 1.626940502319485e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.1.norm2.weight",
+              "max_abs_diff": 1.186830422739149e-05
+            },
+            {
+              "field": "step_gradients/actor/encoder.1.norm2.bias",
+              "max_abs_diff": 1.1586937034735456e-05
+            },
+            {
+              "field": "step_gradients/actor/post_norm.weight",
+              "max_abs_diff": 1.0424060747027397e-05
+            },
+            {
+              "field": "step_gradients/actor/predictor.mean_bias",
+              "max_abs_diff": 1.0155818017665297e-05
+            },
+            {
+              "field": "step_gradients/actor/predictor.std_bias",
+              "max_abs_diff": 2.3066389985615388e-05
+            },
+            {
+              "field": "step_gradients/actor/predictor.mean_w.w.weight",
+              "max_abs_diff": 4.9151480197906494e-05
+            },
+            {
+              "field": "step_gradients/actor/predictor.std_w.w.weight",
+              "max_abs_diff": 8.440017700195312e-05
+            }
+          ],
+          "num_different_fields": 207,
+          "snapshot": "step04.pt",
+          "normalized_reward_range": [
+            -0.0008074880461208522,
+            0.20810925960540771
+          ],
+          "parameter_changes": {
+            "actor": 0.0006999783217906952,
+            "critic": 0.0008759833872318268,
+            "target_critic": 0.0002846717834472656,
+            "temperature": 0.0001201629638671875
+          }
+        },
+        {
+          "pass_exact": false,
+          "groups": {
+            "prepared_batch": {
+              "fields": 8,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "actor_update_due": {
+              "fields": 1,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "step_gradients": {
+              "fields": 18,
+              "max_abs_diff": 8.387863636016846e-05,
+              "unequal_fields": 18
+            },
+            "losses_and_metrics": {
+              "fields": 2,
+              "max_abs_diff": 9.417533874511719e-06,
+              "unequal_fields": 2
+            },
+            "model": {
+              "fields": 89,
+              "max_abs_diff": 0.00010880455374717712,
+              "unequal_fields": 84
+            },
+            "optimizer": {
+              "fields": 195,
+              "max_abs_diff": 1.092493585019838e-05,
+              "unequal_fields": 78
+            },
+            "scheduler": {
+              "fields": 18,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "normalizer": {
+              "fields": 5,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "agent_step": {
+              "fields": 1,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "grad_scaler": {
+              "fields": 5,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            },
+            "rng": {
+              "fields": 2,
+              "max_abs_diff": 0.0,
+              "unequal_fields": 0
+            }
+          },
+          "first_differences": [
+            {
+              "field": "step_gradients/critic/embedder.norm.weight",
+              "max_abs_diff": 2.070382470265031e-05
+            },
+            {
+              "field": "step_gradients/critic/embedder.norm.bias",
+              "max_abs_diff": 6.749120075255632e-06
+            },
+            {
+              "field": "step_gradients/critic/embedder.w.weight",
+              "max_abs_diff": 3.8623809814453125e-05
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.w1.weight",
+              "max_abs_diff": 4.208087921142578e-05
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.w2.weight",
+              "max_abs_diff": 8.387863636016846e-05
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.norm1.weight",
+              "max_abs_diff": 8.063027053140104e-06
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.norm1.bias",
+              "max_abs_diff": 3.231968003092334e-05
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.norm2.weight",
+              "max_abs_diff": 4.770161467604339e-06
+            },
+            {
+              "field": "step_gradients/critic/encoder.0.norm2.bias",
+              "max_abs_diff": 1.5529092706856318e-05
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.w1.weight",
+              "max_abs_diff": 3.0841678380966187e-05
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.w2.weight",
+              "max_abs_diff": 5.2541494369506836e-05
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.norm1.weight",
+              "max_abs_diff": 7.13500048732385e-06
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.norm1.bias",
+              "max_abs_diff": 1.5138321032281965e-05
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.norm2.weight",
+              "max_abs_diff": 9.65591607382521e-06
+            },
+            {
+              "field": "step_gradients/critic/encoder.1.norm2.bias",
+              "max_abs_diff": 1.8671242287382483e-05
+            },
+            {
+              "field": "step_gradients/critic/post_norm.weight",
+              "max_abs_diff": 5.87984686717391e-06
+            },
+            {
+              "field": "step_gradients/critic/predictor.bias",
+              "max_abs_diff": 2.1297135390341282e-05
+            },
+            {
+              "field": "step_gradients/critic/predictor.w.weight",
+              "max_abs_diff": 7.557868957519531e-05
+            },
+            {
+              "field": "losses_and_metrics/critic/loss",
+              "max_abs_diff": 9.417533874511719e-06
+            },
+            {
+              "field": "losses_and_metrics/critic/max_entropy_bonus",
+              "max_abs_diff": 1.5674158930778503e-06
+            }
+          ],
+          "num_different_fields": 182,
+          "snapshot": "step05.pt",
+          "normalized_reward_range": [
+            -0.0008045006543397903,
+            0.21217499673366547
+          ],
+          "parameter_changes": {
+            "actor": 0.0006999783217906952,
+            "critic": 0.0010897815227508545,
+            "target_critic": 0.00034117698669433594,
+            "temperature": 0.0001201629638671875
+          }
+        }
+      ],
+      "official": {
+        "sources": {
+          "agent": {
+            "path": "/home/abao/Documents/Codex/flashsac-official-play/FlashSAC/flash_rl/agents/flashSAC/agent.py",
+            "sha256": "e1bb9c49cdf1b72507705403801a5dc993471a89f69dbcee973f14949895595a"
+          },
+          "update": {
+            "path": "/home/abao/Documents/Codex/flashsac-official-play/FlashSAC/flash_rl/agents/flashSAC/update.py",
+            "sha256": "6134612e4ad43089dd44ce06cb6644546e864a3de13bb12525cb631e65aa30ef"
+          },
+          "network_wrapper": {
+            "path": "/home/abao/Documents/Codex/flashsac-official-play/FlashSAC/flash_rl/agents/utils/network.py",
+            "sha256": "02b1e8c27ae2d75ba39969a5ea6b21e1bc596dbab71fdd6c5dc9cd5d7aab1d69"
+          },
+          "reward_normalizer": {
+            "path": "/home/abao/Documents/Codex/flashsac-official-play/FlashSAC/flash_rl/agents/utils/reward_normalization.py",
+            "sha256": "b673f5fba40468f6bb183d3cc82daa05111e95407ccb6b73de854f338c7b70b8"
+          },
+          "scheduler": {
+            "path": "/home/abao/Documents/Codex/flashsac-official-play/FlashSAC/flash_rl/agents/utils/scheduler.py",
+            "sha256": "b3732509dbe01a01d76b3018d062386287bf7cb669973e2a465192c584030811"
+          },
+          "architecture": {
+            "path": "/home/abao/Documents/Codex/flashsac-official-play/FlashSAC/flash_rl/agents/flashSAC/network.py",
+            "sha256": "4068098466f195fac2c7d91e3cb1abe0c4daf42c4d1cd85f3940dca9edfd4c98"
+          },
+          "layers": {
+            "path": "/home/abao/Documents/Codex/flashsac-official-play/FlashSAC/flash_rl/agents/flashSAC/layer.py",
+            "sha256": "7af7b2954c22a5ae56595b8d3139017e2a44b17dbd63c2f54c4e65dbd17ef7cc"
+          }
+        },
+        "torch": "2.7.0+cu126",
+        "device": "cuda",
+        "compiled": true,
+        "amp": true,
+        "steps": 6,
+        "case": "str_trained",
+        "forward_hooks_enabled": false,
+        "optimizer_gradient_hooks": true,
+        "deterministic_algorithms": false,
+        "tf32": true,
+        "cudnn_benchmark": true
+      },
+      "adapted": {
+        "sources": {
+          "agent": {
+            "path": "/home/abao/Documents/Codex/flashsac-official-play/FlashSAC/flash_rl/agents/flashSAC/agent.py",
+            "sha256": "e1bb9c49cdf1b72507705403801a5dc993471a89f69dbcee973f14949895595a"
+          },
+          "update": {
+            "path": "/home/abao/Documents/Codex/flashsac-official-play/FlashSAC/flash_rl/agents/flashSAC/update.py",
+            "sha256": "6134612e4ad43089dd44ce06cb6644546e864a3de13bb12525cb631e65aa30ef"
+          },
+          "network_wrapper": {
+            "path": "/home/abao/Documents/Codex/flashsac-official-play/FlashSAC/flash_rl/agents/utils/network.py",
+            "sha256": "02b1e8c27ae2d75ba39969a5ea6b21e1bc596dbab71fdd6c5dc9cd5d7aab1d69"
+          },
+          "reward_normalizer": {
+            "path": "/home/abao/Documents/Codex/flashsac-official-play/FlashSAC/flash_rl/agents/utils/reward_normalization.py",
+            "sha256": "b673f5fba40468f6bb183d3cc82daa05111e95407ccb6b73de854f338c7b70b8"
+          },
+          "scheduler": {
+            "path": "/home/abao/Documents/Codex/flashsac-official-play/FlashSAC/flash_rl/agents/utils/scheduler.py",
+            "sha256": "b3732509dbe01a01d76b3018d062386287bf7cb669973e2a465192c584030811"
+          },
+          "architecture": {
+            "path": "/home/abao/Documents/Codex/flashsac-official-play/FlashSAC/flash_rl/agents/flashSAC/network.py",
+            "sha256": "4068098466f195fac2c7d91e3cb1abe0c4daf42c4d1cd85f3940dca9edfd4c98"
+          },
+          "layers": {
+            "path": "/home/abao/Documents/Codex/flashsac-official-play/FlashSAC/flash_rl/agents/flashSAC/layer.py",
+            "sha256": "7af7b2954c22a5ae56595b8d3139017e2a44b17dbd63c2f54c4e65dbd17ef7cc"
+          }
+        },
+        "torch": "2.7.0+cu126",
+        "device": "cuda",
+        "compiled": true,
+        "amp": true,
+        "steps": 6,
+        "case": "str_trained",
+        "forward_hooks_enabled": false,
+        "optimizer_gradient_hooks": true,
+        "deterministic_algorithms": false,
+        "tf32": true,
+        "cudnn_benchmark": true
+      },
+      "comparator_negative_control_detected": true,
+      "nonzero_parameter_update": true,
+      "pass_exact": false
+    }
+  ],
+  "strict_bitwise": true,
+  "script_sha256": "065b3ecbe45f50ef030d5eaec2e2945eba10ece48afea78a23d50f36c253506f",
+  "self_check": "official",
+  "scope": "Full-n3 learner parity, NOT physics/environment parity or training convergence.",
+  "fixture": {
+    "batch_size": 2048,
+    "source": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/candidate/models/seed0/step48830",
+    "index_sha256": "be6db8e4610ecbe3416c1cf1fbeac31d1e3614e1af5b9cf64907b9f11e3835f2",
+    "full_n3_rows": 4096,
+    "terminated_rows": 3,
+    "truncated_rows": 3,
+    "actor_critic_prefix_equal": false
+  },
+  "checkpoint_after": {
+    "temperature.pt": "19a494e0bd94462e3952b0a940f47af4b533313c8c5195db3b9602c2a576ca96",
+    "critic.pt": "00246a27856082751a885c87965cdeec63892647b22e537613277a1ecf86ba85",
+    "reward_normalizer.pt": "3f670df68521ccab430b81fd341adcae9f45c755ab0c009b15d57707b546536d",
+    "actor.pt": "7f01a2e2fd58ec4b0b041ab47b6a8afbadd0347ed5b23f604c486adca11efcd5",
+    "agent_state.pt": "d66d4729dc19be05ae40623168e87f5a424fe0fb248c1671bfe4870c61ba2395",
+    "target_critic.pt": "01f76a3084ccb141ebd4f384326cf51a4fbdc6ae1a162b4ef0aeb494b296086b"
+  },
+  "checkpoint_unchanged": true,
+  "elapsed_seconds": 18.523422214668244,
+  "pass_exact": false
+}

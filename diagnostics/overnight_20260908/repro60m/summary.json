@@ -1,0 +1,2124 @@
+{
+  "created_utc": "2026-09-08T20:33:06.105318+00:00",
+  "queue_status": "completed",
+  "protocol": "Fresh random native feed-forward SAC, continuous60M; training seeds0/1/2, common rollout seed0; no BC or reload.",
+  "manifest_sha256": "6a8ac26ef3292bfb5afe7f5a152b8245a7385b4323618f97a54abc8745a63db8",
+  "validation_sha256": "274d45ea018c47d2904f2d1284543acda818c299deaada5cbede9004275ab4e7",
+  "source_hashes": {
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/configs/arm1_hand01_seed0.json": "bf037d1d9fee0f2293d2f3442daf3a4d63e2474e7b5c8ce5b34cbe1d8f6871d4",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/manifest.json": "1a2bebe03c0376e5ec17e5ee360d271ba96a12cf4eb441c47c36cd1ca17918f3",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/manifest.json": "6a8ac26ef3292bfb5afe7f5a152b8245a7385b4323618f97a54abc8745a63db8",
+    "/home/abao/flashsac-robotics/train.py": "a7697d6e5e84cae5bff49002d8cd99956b42576f9140ba8f65a93973e587be87",
+    "/home/abao/flashsac-robotics/scripts/run_str_state_teacher.sh": "c5c6b25884c57a0e4083d3f3826cd598dc76f79062d9bd3bd0efe424178d5697",
+    "/home/abao/flashsac-robotics/scripts/run_simtoolreal.sh": "82d52305a83dd11c3cb0ac8ec3cd769bd220a2e3bbd672de2b3d3b4bf66d35fa",
+    "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py": "a6e1914a6fffabcd7f38cd842cdc87013d4112a7a0bcab3caeaeb2d13939fcdf",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/agent.py": "079962c5307f0118338329ba8ebbf89055356f9f1446e9d533462aa57d936c9a",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/network.py": "4068098466f195fac2c7d91e3cb1abe0c4daf42c4d1cd85f3940dca9edfd4c98",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/update.py": "50c571fc466276aa6caac56c2c13d3e42029bb669cce58a6a73a98bf9e01d5ba",
+    "/home/abao/flashsac-robotics/flash_rl/agents/utils/network.py": "02b1e8c27ae2d75ba39969a5ea6b21e1bc596dbab71fdd6c5dc9cd5d7aab1d69",
+    "/home/abao/flashsac-robotics/flash_rl/envs/isaaclab.py": "fbf0aac07d527f589064ebb6fde009ff1b4d79e2513451121d5a3309907dc7a4",
+    "/home/abao/flashsac-robotics/configs/simtoolreal_state_teacher.yaml": "deee7d27a5395155e5d21ba6c778a6e66853f71fbd720898d938e1673e88f30c",
+    "/home/abao/flashsac-robotics/configs/simtoolreal_flashsac.yaml": "0a1881e50c6e3bf3539c3fcf09e1435ab17f0b78c8e1024f341351232afb89ad",
+    "/home/abao/flashsac-robotics/configs/flashSAC_base.yaml": "d07194a552f364ca1c32ea41cd2ad29dcb8c0363dd2b73a890e97459ff3ec383",
+    "/home/abao/flashsac-robotics/configs/agent/flashSAC.yaml": "4dabed9818df0a6529cfce40925d40e384c01d9f6287fb6d9170a0c5a50582a8",
+    "/home/abao/flashsac-robotics/configs/env/simtoolreal.yaml": "520402418b76501e2f8d7137170ccae2edc24e8cb01c04c10433d7a550b2efec"
+  },
+  "seeds": {
+    "0": {
+      "training_status": "completed",
+      "config_sha256": "01c2c20e1a59a9c579d4e35e9774c0409a71996f80bad091119f27205507a55f",
+      "online_curves": [
+        {
+          "directory": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/runs/repro60m/arm1_hand01_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_025211",
+          "curves": {
+            "episode/return": {
+              "points": 1171,
+              "first": {
+                "step": 102400,
+                "value": 56.71156692504883
+              },
+              "last": {
+                "step": 60002304,
+                "value": 1288.4517822265625
+              },
+              "peak": {
+                "step": 53606400,
+                "value": 1355.0458984375
+              },
+              "minimum": {
+                "step": 102400,
+                "value": 56.71156692504883
+              },
+              "last_10_windows_unweighted_mean": 1291.47373046875,
+              "positive_windows": 1171,
+              "last10_samples": [
+                {
+                  "step": 59545600,
+                  "value": 1333.5146484375
+                },
+                {
+                  "step": 59596800,
+                  "value": 1342.8497314453125
+                },
+                {
+                  "step": 59648000,
+                  "value": 1338.3153076171875
+                },
+                {
+                  "step": 59699200,
+                  "value": 1316.7889404296875
+                },
+                {
+                  "step": 59750400,
+                  "value": 1285.3101806640625
+                },
+                {
+                  "step": 59801600,
+                  "value": 1218.930908203125
+                },
+                {
+                  "step": 59852800,
+                  "value": 1251.805908203125
+                },
+                {
+                  "step": 59904000,
+                  "value": 1247.53466796875
+                },
+                {
+                  "step": 59955200,
+                  "value": 1291.2352294921875
+                },
+                {
+                  "step": 60002304,
+                  "value": 1288.4517822265625
+                }
+              ]
+            },
+            "episode/cumulative/lift_bonus_rew": {
+              "points": 1171,
+              "first": {
+                "step": 102400,
+                "value": 0.0
+              },
+              "last": {
+                "step": 60002304,
+                "value": 300.0
+              },
+              "peak": {
+                "step": 16793600,
+                "value": 300.0
+              },
+              "minimum": {
+                "step": 102400,
+                "value": 0.0
+              },
+              "last_10_windows_unweighted_mean": 300.0,
+              "positive_windows": 1041,
+              "last10_samples": [
+                {
+                  "step": 59545600,
+                  "value": 300.0
+                },
+                {
+                  "step": 59596800,
+                  "value": 300.0
+                },
+                {
+                  "step": 59648000,
+                  "value": 300.0
+                },
+                {
+                  "step": 59699200,
+                  "value": 300.0
+                },
+                {
+                  "step": 59750400,
+                  "value": 300.0
+                },
+                {
+                  "step": 59801600,
+                  "value": 300.0
+                },
+                {
+                  "step": 59852800,
+                  "value": 300.0
+                },
+                {
+                  "step": 59904000,
+                  "value": 300.0
+                },
+                {
+                  "step": 59955200,
+                  "value": 300.0
+                },
+                {
+                  "step": 60002304,
+                  "value": 300.0
+                }
+              ]
+            },
+            "episode/final/all_goals_hit": {
+              "points": 1171,
+              "first": {
+                "step": 102400,
+                "value": 0.0
+              },
+              "last": {
+                "step": 60002304,
+                "value": 0.823104739189148
+              },
+              "peak": {
+                "step": 58470400,
+                "value": 1.0
+              },
+              "minimum": {
+                "step": 102400,
+                "value": 0.0
+              },
+              "last_10_windows_unweighted_mean": 0.8397080481052399,
+              "positive_windows": 248,
+              "last10_samples": [
+                {
+                  "step": 59545600,
+                  "value": 0.9517241716384888
+                },
+                {
+                  "step": 59596800,
+                  "value": 0.9874476790428162
+                },
+                {
+                  "step": 59648000,
+                  "value": 0.9817517995834351
+                },
+                {
+                  "step": 59699200,
+                  "value": 0.8976377844810486
+                },
+                {
+                  "step": 59750400,
+                  "value": 0.8153846263885498
+                },
+                {
+                  "step": 59801600,
+                  "value": 0.6811594367027283
+                },
+                {
+                  "step": 59852800,
+                  "value": 0.7254902124404907
+                },
+                {
+                  "step": 59904000,
+                  "value": 0.6960784196853638
+                },
+                {
+                  "step": 59955200,
+                  "value": 0.8373016119003296
+                },
+                {
+                  "step": 60002304,
+                  "value": 0.823104739189148
+                }
+              ]
+            },
+            "actor/entropy": {
+              "points": 1171,
+              "first": {
+                "step": 102400,
+                "value": -95.2658462524414
+              },
+              "last": {
+                "step": 60002304,
+                "value": -22.325767517089844
+              },
+              "peak": {
+                "step": 6553600,
+                "value": 19.596805572509766
+              },
+              "minimum": {
+                "step": 102400,
+                "value": -95.2658462524414
+              },
+              "last_10_windows_unweighted_mean": -22.81053352355957,
+              "positive_windows": 902,
+              "last10_samples": [
+                {
+                  "step": 59545600,
+                  "value": -23.0543155670166
+                },
+                {
+                  "step": 59596800,
+                  "value": -23.387733459472656
+                },
+                {
+                  "step": 59648000,
+                  "value": -23.3884220123291
+                },
+                {
+                  "step": 59699200,
+                  "value": -23.51397705078125
+                },
+                {
+                  "step": 59750400,
+                  "value": -22.903766632080078
+                },
+                {
+                  "step": 59801600,
+                  "value": -22.735458374023438
+                },
+                {
+                  "step": 59852800,
+                  "value": -22.01551055908203
+                },
+                {
+                  "step": 59904000,
+                  "value": -22.264646530151367
+                },
+                {
+                  "step": 59955200,
+                  "value": -22.515737533569336
+                },
+                {
+                  "step": 60002304,
+                  "value": -22.325767517089844
+                }
+              ]
+            },
+            "temperature/value": {
+              "points": 1171,
+              "first": {
+                "step": 102400,
+                "value": 0.010002996772527695
+              },
+              "last": {
+                "step": 60002304,
+                "value": 6.647743430221453e-05
+              },
+              "peak": {
+                "step": 204800,
+                "value": 0.010111000388860703
+              },
+              "minimum": {
+                "step": 48025600,
+                "value": 9.833527656155638e-06
+              },
+              "last_10_windows_unweighted_mean": 6.451059671235271e-05,
+              "positive_windows": 1171,
+              "last10_samples": [
+                {
+                  "step": 59545600,
+                  "value": 6.252290768316016e-05
+                },
+                {
+                  "step": 59596800,
+                  "value": 6.295310595305637e-05
+                },
+                {
+                  "step": 59648000,
+                  "value": 6.339747051242739e-05
+                },
+                {
+                  "step": 59699200,
+                  "value": 6.385530286934227e-05
+                },
+                {
+                  "step": 59750400,
+                  "value": 6.430970825022087e-05
+                },
+                {
+                  "step": 59801600,
+                  "value": 6.475358532043174e-05
+                },
+                {
+                  "step": 59852800,
+                  "value": 6.51858645142056e-05
+                },
+                {
+                  "step": 59904000,
+                  "value": 6.560437759617344e-05
+                },
+                {
+                  "step": 59955200,
+                  "value": 6.604621012229472e-05
+                },
+                {
+                  "step": 60002304,
+                  "value": 6.647743430221453e-05
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "checkpoints": {
+        "48830": {
+          "transitions": 50001920,
+          "checkpoint": {
+            "status": "saved_complete",
+            "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/models/seed0/step48830",
+            "all_finite": true,
+            "files": {
+              "actor.pt": {
+                "all_finite": true,
+                "sha256": "688d97b734499f904630e4dcfaa0266c230e5e6a21c820dfd56b1db2b2a99830",
+                "optimizer_applied_steps": [
+                  48727
+                ],
+                "scheduler_last_epoch": 48733,
+                "stored_update_step": 0
+              },
+              "critic.pt": {
+                "all_finite": true,
+                "sha256": "e7f54d6b5fd01f4ca81c896dab6b073402c451e1d6119fd99df0f95473f94ebf",
+                "optimizer_applied_steps": [
+                  97420
+                ],
+                "scheduler_last_epoch": 97466,
+                "stored_update_step": 0
+              },
+              "target_critic.pt": {
+                "all_finite": true,
+                "sha256": "4a3bc24e88770ee32677245f2aacdc42a1566412691fc2139bf9946a2ecf0fbc",
+                "optimizer_applied_steps": [],
+                "scheduler_last_epoch": null,
+                "stored_update_step": 0
+              },
+              "temperature.pt": {
+                "all_finite": true,
+                "sha256": "9cf6e47188a04306c1dac450cafc6f3ae45f47f7b7f418457824df5ea15f9f44",
+                "optimizer_applied_steps": [
+                  48733
+                ],
+                "scheduler_last_epoch": 48733,
+                "stored_update_step": 0
+              },
+              "reward_normalizer.pt": {
+                "all_finite": true,
+                "sha256": "1fe34e459338a9a1e23ef93a04f00a6e65416dbe5a501b12f08a2e7acf44b128",
+                "optimizer_applied_steps": [],
+                "scheduler_last_epoch": null,
+                "stored_update_step": null
+              },
+              "agent_state.pt": {
+                "all_finite": true,
+                "sha256": "d0286e4f7176257771fb8ed1cca04bc7fdac0697e5216c75581f3d8265a2a425",
+                "optimizer_applied_steps": [],
+                "scheduler_last_epoch": null,
+                "stored_update_step": 97466,
+                "grad_scaler": {
+                  "scale": 8388608.0,
+                  "growth_factor": 2.0,
+                  "backoff_factor": 0.5,
+                  "growth_interval": 2000,
+                  "_growth_tracker": 646
+                }
+              }
+            },
+            "alpha": 1.3550703442888334e-05,
+            "reward_normalizer_count": 50001920.0,
+            "count_matches_budget": true,
+            "reward_divisor": 251.954345703125,
+            "expected_native_calls": 97466,
+            "native_counter_matches_budget": true
+          },
+          "online_brackets": [
+            {
+              "directory": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/runs/repro60m/arm1_hand01_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_025211",
+              "brackets": {
+                "actor/entropy": {
+                  "at_or_before": {
+                    "step": 49971200,
+                    "value": -38.55533981323242
+                  },
+                  "at_or_after": {
+                    "step": 50022400,
+                    "value": -39.80236053466797
+                  }
+                },
+                "temperature/value": {
+                  "at_or_before": {
+                    "step": 49971200,
+                    "value": 1.3372845387493726e-05
+                  },
+                  "at_or_after": {
+                    "step": 50022400,
+                    "value": 1.3532935554394498e-05
+                  }
+                },
+                "episode/return": {
+                  "at_or_before": {
+                    "step": 49971200,
+                    "value": 1071.529052734375
+                  },
+                  "at_or_after": {
+                    "step": 50022400,
+                    "value": 1072.33056640625
+                  }
+                },
+                "episode/final/all_goals_hit": {
+                  "at_or_before": {
+                    "step": 49971200,
+                    "value": 0.0
+                  },
+                  "at_or_after": {
+                    "step": 50022400,
+                    "value": 0.0
+                  }
+                }
+              }
+            }
+          ],
+          "evaluations": {
+            "deterministic": {
+              "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed0/step48830/deterministic/summary.json",
+              "sha256": "c3c59431987938345a05508113dd87f509c0c01bdeeab1b6cc350fa52981d84d",
+              "status": "complete",
+              "episodes": 64,
+              "requested": 64,
+              "complete_budget": true,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 64,
+                "ever_sustained_lift_near_palm_proxy": 64,
+                "dropped_below_reset_after_task_lift": 64,
+                "terminated": 0,
+                "truncated": 64
+              },
+              "mean_return": 969.6216170031839,
+              "mean_length": 600.0,
+              "reward_components": {
+                "fingertip_delta_rew": 26.51292819948867,
+                "lifting_rew": 24.573298189789057,
+                "lift_bonus_rew": 300.0,
+                "keypoint_rew": 6.375111425761133,
+                "kuka_actions_penalty": -17.002088565637678,
+                "hand_actions_penalty": -16.150128927947662,
+                "bonus_rew": 645.3125,
+                "total_reward": 969.6216170031839
+              },
+              "model_unchanged": true,
+              "rollout_seed": 0,
+              "checkpoint_matches": true,
+              "metadata_sha256": "bade28ce633bdd8f215cc6d4cce07a42b3446b9e6f21f8d2808046110c540f3c"
+            },
+            "stochastic": {
+              "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed0/step48830/stochastic/summary.json",
+              "sha256": "0f52a2f01dfcabc57317c0dc386ec4a7603cd1f07fc2ca806c366aceeae59959",
+              "status": "complete",
+              "episodes": 128,
+              "requested": 128,
+              "complete_budget": true,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 128,
+                "ever_sustained_lift_near_palm_proxy": 128,
+                "dropped_below_reset_after_task_lift": 128,
+                "terminated": 0,
+                "truncated": 128
+              },
+              "mean_return": 951.8861986223055,
+              "mean_length": 600.0,
+              "reward_components": {
+                "fingertip_delta_rew": 26.510048135358375,
+                "lifting_rew": 24.22723506577313,
+                "lift_bonus_rew": 300.0,
+                "keypoint_rew": 6.677168356953189,
+                "kuka_actions_penalty": -17.04531924507137,
+                "hand_actions_penalty": -17.389184280069458,
+                "bonus_rew": 628.90625,
+                "total_reward": 951.8861986223055
+              },
+              "model_unchanged": true,
+              "rollout_seed": 0,
+              "checkpoint_matches": true,
+              "metadata_sha256": "3328b3ca7c4dd17338c8d26a05d738872a206f790f4fa677b382baee6f67685b"
+            }
+          }
+        },
+        "58596": {
+          "transitions": 60002304,
+          "checkpoint": {
+            "status": "saved_complete",
+            "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/models/seed0/step58596",
+            "all_finite": true,
+            "files": {
+              "actor.pt": {
+                "all_finite": true,
+                "sha256": "35fa7ad9d88a8a8ef850e698acc13a0a9bceb7ad7f5d88fd3d4d0cceee4199c1",
+                "optimizer_applied_steps": [
+                  58488
+                ],
+                "scheduler_last_epoch": 58499,
+                "stored_update_step": 0
+              },
+              "critic.pt": {
+                "all_finite": true,
+                "sha256": "96a78e14661fb8e414759f159a31469ddfc7a608dd4ab7b378edb211877f2470",
+                "optimizer_applied_steps": [
+                  116945
+                ],
+                "scheduler_last_epoch": 116998,
+                "stored_update_step": 0
+              },
+              "target_critic.pt": {
+                "all_finite": true,
+                "sha256": "6d6805070eb98adc428b95b66008e3dece010270c7f6d0f94be74c7ef48880be",
+                "optimizer_applied_steps": [],
+                "scheduler_last_epoch": null,
+                "stored_update_step": 0
+              },
+              "temperature.pt": {
+                "all_finite": true,
+                "sha256": "0ab6fb1243eb0c9737d19ff831d042396f942f122e04ec24799cd2e4c7dc7354",
+                "optimizer_applied_steps": [
+                  58499
+                ],
+                "scheduler_last_epoch": 58499,
+                "stored_update_step": 0
+              },
+              "reward_normalizer.pt": {
+                "all_finite": true,
+                "sha256": "30742f1ef5569ca0181af74740f371d99aebe3c016701ce6d26b96767d63f328",
+                "optimizer_applied_steps": [],
+                "scheduler_last_epoch": null,
+                "stored_update_step": null
+              },
+              "agent_state.pt": {
+                "all_finite": true,
+                "sha256": "b789185a220ef8a8da8c0e8c5a25a7050d4a3f41d914a6dcc2dfa23eeaf15a61",
+                "optimizer_applied_steps": [],
+                "scheduler_last_epoch": null,
+                "stored_update_step": 116998,
+                "grad_scaler": {
+                  "scale": 4194304.0,
+                  "growth_factor": 2.0,
+                  "backoff_factor": 0.5,
+                  "growth_interval": 2000,
+                  "_growth_tracker": 80
+                }
+              }
+            },
+            "alpha": 6.66894848109223e-05,
+            "reward_normalizer_count": 60002304.0,
+            "count_matches_budget": true,
+            "reward_divisor": 252.8810302734375,
+            "expected_native_calls": 116998,
+            "native_counter_matches_budget": true
+          },
+          "online_brackets": [
+            {
+              "directory": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/runs/repro60m/arm1_hand01_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_025211",
+              "brackets": {
+                "actor/entropy": {
+                  "at_or_before": {
+                    "step": 60002304,
+                    "value": -22.325767517089844
+                  },
+                  "at_or_after": {
+                    "step": 60002304,
+                    "value": -22.325767517089844
+                  }
+                },
+                "temperature/value": {
+                  "at_or_before": {
+                    "step": 60002304,
+                    "value": 6.647743430221453e-05
+                  },
+                  "at_or_after": {
+                    "step": 60002304,
+                    "value": 6.647743430221453e-05
+                  }
+                },
+                "episode/return": {
+                  "at_or_before": {
+                    "step": 60002304,
+                    "value": 1288.4517822265625
+                  },
+                  "at_or_after": {
+                    "step": 60002304,
+                    "value": 1288.4517822265625
+                  }
+                },
+                "episode/final/all_goals_hit": {
+                  "at_or_before": {
+                    "step": 60002304,
+                    "value": 0.823104739189148
+                  },
+                  "at_or_after": {
+                    "step": 60002304,
+                    "value": 0.823104739189148
+                  }
+                }
+              }
+            }
+          ],
+          "evaluations": {
+            "deterministic": {
+              "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed0/step58596/deterministic/summary.json",
+              "sha256": "6efbfdee43dad0f1e72e6317273fa13c5cceca13a50236e554734095b864379d",
+              "status": "complete",
+              "episodes": 64,
+              "requested": 64,
+              "complete_budget": true,
+              "counts": {
+                "success": 62,
+                "ever_task_lift": 64,
+                "ever_sustained_lift_near_palm_proxy": 64,
+                "dropped_below_reset_after_task_lift": 1,
+                "terminated": 62,
+                "truncated": 2
+              },
+              "mean_return": 1333.0987545428798,
+              "mean_length": 194.375,
+              "reward_components": {
+                "fingertip_delta_rew": 29.17864612606354,
+                "lifting_rew": 22.420957814902067,
+                "lift_bonus_rew": 300.0,
+                "keypoint_rew": 7.978583759628236,
+                "kuka_actions_penalty": -11.119669289313606,
+                "hand_actions_penalty": -9.109758691532988,
+                "bonus_rew": 993.75,
+                "total_reward": 1333.0987545428798
+              },
+              "model_unchanged": true,
+              "rollout_seed": 0,
+              "checkpoint_matches": true,
+              "metadata_sha256": "e6051b12262adc7b24161681be54b337f7b6a59337696faa035e1f3bbffb8244"
+            },
+            "stochastic": {
+              "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed0/step58596/stochastic/summary.json",
+              "sha256": "2728500f92cbc8a485d9cebe1f4145f9e25ddabd5faf071e34afef5eb3352f38",
+              "status": "complete",
+              "episodes": 128,
+              "requested": 128,
+              "complete_budget": true,
+              "counts": {
+                "success": 127,
+                "ever_task_lift": 128,
+                "ever_sustained_lift_near_palm_proxy": 122,
+                "dropped_below_reset_after_task_lift": 3,
+                "terminated": 127,
+                "truncated": 1
+              },
+              "mean_return": 1338.6487761608732,
+              "mean_length": 184.28125,
+              "reward_components": {
+                "fingertip_delta_rew": 29.30841872980818,
+                "lifting_rew": 22.032799692824483,
+                "lift_bonus_rew": 300.0,
+                "keypoint_rew": 9.470958279154729,
+                "kuka_actions_penalty": -11.139134988421574,
+                "hand_actions_penalty": -9.461764061932627,
+                "bonus_rew": 998.4375,
+                "total_reward": 1338.6487761608732
+              },
+              "model_unchanged": true,
+              "rollout_seed": 0,
+              "checkpoint_matches": true,
+              "metadata_sha256": "651997a8cf46e437ae7bd9011d4f39cef56f7c45241c1e0d56d484c2116e39b9"
+            }
+          }
+        }
+      }
+    },
+    "1": {
+      "training_status": "completed",
+      "config_sha256": "5a37dbdd72dd7c05316fd510d132c14fc75fcd2cdd65b92dedaeff5bf34b933e",
+      "online_curves": [
+        {
+          "directory": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/runs/repro60m/arm1_hand01_seed1/Isaacsimenvs-SimToolReal-Direct-v0_seed1_0909_032251",
+          "curves": {
+            "episode/return": {
+              "points": 1171,
+              "first": {
+                "step": 102400,
+                "value": 62.150794982910156
+              },
+              "last": {
+                "step": 60002304,
+                "value": 1215.6370849609375
+              },
+              "peak": {
+                "step": 57804800,
+                "value": 1361.2276611328125
+              },
+              "minimum": {
+                "step": 102400,
+                "value": 62.150794982910156
+              },
+              "last_10_windows_unweighted_mean": 1258.8068603515626,
+              "positive_windows": 1171,
+              "last10_samples": [
+                {
+                  "step": 59545600,
+                  "value": 1091.2401123046875
+                },
+                {
+                  "step": 59596800,
+                  "value": 1286.5545654296875
+                },
+                {
+                  "step": 59648000,
+                  "value": 1303.2159423828125
+                },
+                {
+                  "step": 59699200,
+                  "value": 1327.84814453125
+                },
+                {
+                  "step": 59750400,
+                  "value": 1340.13134765625
+                },
+                {
+                  "step": 59801600,
+                  "value": 1318.56884765625
+                },
+                {
+                  "step": 59852800,
+                  "value": 1259.19091796875
+                },
+                {
+                  "step": 59904000,
+                  "value": 1217.609375
+                },
+                {
+                  "step": 59955200,
+                  "value": 1228.072265625
+                },
+                {
+                  "step": 60002304,
+                  "value": 1215.6370849609375
+                }
+              ]
+            },
+            "episode/cumulative/lift_bonus_rew": {
+              "points": 1171,
+              "first": {
+                "step": 102400,
+                "value": 0.0
+              },
+              "last": {
+                "step": 60002304,
+                "value": 300.0
+              },
+              "peak": {
+                "step": 16691200,
+                "value": 300.0
+              },
+              "minimum": {
+                "step": 102400,
+                "value": 0.0
+              },
+              "last_10_windows_unweighted_mean": 300.0,
+              "positive_windows": 997,
+              "last10_samples": [
+                {
+                  "step": 59545600,
+                  "value": 300.0
+                },
+                {
+                  "step": 59596800,
+                  "value": 300.0
+                },
+                {
+                  "step": 59648000,
+                  "value": 300.0
+                },
+                {
+                  "step": 59699200,
+                  "value": 300.0
+                },
+                {
+                  "step": 59750400,
+                  "value": 300.0
+                },
+                {
+                  "step": 59801600,
+                  "value": 300.0
+                },
+                {
+                  "step": 59852800,
+                  "value": 300.0
+                },
+                {
+                  "step": 59904000,
+                  "value": 300.0
+                },
+                {
+                  "step": 59955200,
+                  "value": 300.0
+                },
+                {
+                  "step": 60002304,
+                  "value": 300.0
+                }
+              ]
+            },
+            "episode/final/all_goals_hit": {
+              "points": 1171,
+              "first": {
+                "step": 102400,
+                "value": 0.0
+              },
+              "last": {
+                "step": 60002304,
+                "value": 0.4488189220428467
+              },
+              "peak": {
+                "step": 48640000,
+                "value": 0.9937694668769836
+              },
+              "minimum": {
+                "step": 102400,
+                "value": 0.0
+              },
+              "last_10_windows_unweighted_mean": 0.5897584334015846,
+              "positive_windows": 288,
+              "last10_samples": [
+                {
+                  "step": 59545600,
+                  "value": 0.15100671350955963
+                },
+                {
+                  "step": 59596800,
+                  "value": 0.6790697574615479
+                },
+                {
+                  "step": 59648000,
+                  "value": 0.7416974306106567
+                },
+                {
+                  "step": 59699200,
+                  "value": 0.8738738894462585
+                },
+                {
+                  "step": 59750400,
+                  "value": 0.9621211886405945
+                },
+                {
+                  "step": 59801600,
+                  "value": 0.7868852615356445
+                },
+                {
+                  "step": 59852800,
+                  "value": 0.4864864945411682
+                },
+                {
+                  "step": 59904000,
+                  "value": 0.30434784293174744
+                },
+                {
+                  "step": 59955200,
+                  "value": 0.46327683329582214
+                },
+                {
+                  "step": 60002304,
+                  "value": 0.4488189220428467
+                }
+              ]
+            },
+            "actor/entropy": {
+              "points": 1171,
+              "first": {
+                "step": 102400,
+                "value": -115.2926025390625
+              },
+              "last": {
+                "step": 60002304,
+                "value": -12.645376205444336
+              },
+              "peak": {
+                "step": 6451200,
+                "value": 19.61205291748047
+              },
+              "minimum": {
+                "step": 102400,
+                "value": -115.2926025390625
+              },
+              "last_10_windows_unweighted_mean": -12.869119453430176,
+              "positive_windows": 719,
+              "last10_samples": [
+                {
+                  "step": 59545600,
+                  "value": -13.268633842468262
+                },
+                {
+                  "step": 59596800,
+                  "value": -13.018112182617188
+                },
+                {
+                  "step": 59648000,
+                  "value": -12.9224214553833
+                },
+                {
+                  "step": 59699200,
+                  "value": -13.084151268005371
+                },
+                {
+                  "step": 59750400,
+                  "value": -13.066997528076172
+                },
+                {
+                  "step": 59801600,
+                  "value": -12.619296073913574
+                },
+                {
+                  "step": 59852800,
+                  "value": -12.60876178741455
+                },
+                {
+                  "step": 59904000,
+                  "value": -12.851295471191406
+                },
+                {
+                  "step": 59955200,
+                  "value": -12.606148719787598
+                },
+                {
+                  "step": 60002304,
+                  "value": -12.645376205444336
+                }
+              ]
+            },
+            "temperature/value": {
+              "points": 1171,
+              "first": {
+                "step": 102400,
+                "value": 0.01000299770385027
+              },
+              "last": {
+                "step": 60002304,
+                "value": 0.0002669144014362246
+              },
+              "peak": {
+                "step": 307200,
+                "value": 0.010208654217422009
+              },
+              "minimum": {
+                "step": 42496000,
+                "value": 2.247079464723356e-05
+              },
+              "last_10_windows_unweighted_mean": 0.0002710578148253262,
+              "positive_windows": 1171,
+              "last10_samples": [
+                {
+                  "step": 59545600,
+                  "value": 0.0002744798839557916
+                },
+                {
+                  "step": 59596800,
+                  "value": 0.00027392219635657966
+                },
+                {
+                  "step": 59648000,
+                  "value": 0.0002731346758082509
+                },
+                {
+                  "step": 59699200,
+                  "value": 0.0002724474179558456
+                },
+                {
+                  "step": 59750400,
+                  "value": 0.0002718106843531132
+                },
+                {
+                  "step": 59801600,
+                  "value": 0.0002710223780013621
+                },
+                {
+                  "step": 59852800,
+                  "value": 0.00026992487255483866
+                },
+                {
+                  "step": 59904000,
+                  "value": 0.0002689445100259036
+                },
+                {
+                  "step": 59955200,
+                  "value": 0.0002679771278053522
+                },
+                {
+                  "step": 60002304,
+                  "value": 0.0002669144014362246
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "checkpoints": {
+        "48830": {
+          "transitions": 50001920,
+          "checkpoint": {
+            "status": "saved_complete",
+            "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/models/seed1/step48830",
+            "all_finite": true,
+            "files": {
+              "actor.pt": {
+                "all_finite": true,
+                "sha256": "dff380468d1bfec60b2697881eb1dc8e3530d09c5b1c83fca5d29de7ccdbc5b9",
+                "optimizer_applied_steps": [
+                  48730
+                ],
+                "scheduler_last_epoch": 48733,
+                "stored_update_step": 0
+              },
+              "critic.pt": {
+                "all_finite": true,
+                "sha256": "7a26711e57ef8d40fa08e762bb94ab4a9df5aaec04fed7b082db8f3366d80183",
+                "optimizer_applied_steps": [
+                  97413
+                ],
+                "scheduler_last_epoch": 97466,
+                "stored_update_step": 0
+              },
+              "target_critic.pt": {
+                "all_finite": true,
+                "sha256": "81266b936907cb07eca7207e8ca7e0c40ef0da264b5a03d3e24741d48f1285b6",
+                "optimizer_applied_steps": [],
+                "scheduler_last_epoch": null,
+                "stored_update_step": 0
+              },
+              "temperature.pt": {
+                "all_finite": true,
+                "sha256": "745cbf9980248c1cdac2ade97140764b0d0415e61d47ec88ab4445a73504a511",
+                "optimizer_applied_steps": [
+                  48733
+                ],
+                "scheduler_last_epoch": 48733,
+                "stored_update_step": 0
+              },
+              "reward_normalizer.pt": {
+                "all_finite": true,
+                "sha256": "68691ee5f0d759636405da507c962c03065bd1ebead97dc74067aaf619ba1125",
+                "optimizer_applied_steps": [],
+                "scheduler_last_epoch": null,
+                "stored_update_step": null
+              },
+              "agent_state.pt": {
+                "all_finite": true,
+                "sha256": "1a3542d66931557dcbb5be1d987793b217cb9263702d05f4dae99be78204eb9b",
+                "optimizer_applied_steps": [],
+                "scheduler_last_epoch": null,
+                "stored_update_step": 97466,
+                "grad_scaler": {
+                  "scale": 8388608.0,
+                  "growth_factor": 2.0,
+                  "backoff_factor": 0.5,
+                  "growth_interval": 2000,
+                  "_growth_tracker": 420
+                }
+              }
+            },
+            "alpha": 8.302221249323338e-05,
+            "reward_normalizer_count": 50001920.0,
+            "count_matches_budget": true,
+            "reward_divisor": 249.0703125,
+            "expected_native_calls": 97466,
+            "native_counter_matches_budget": true
+          },
+          "online_brackets": [
+            {
+              "directory": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/runs/repro60m/arm1_hand01_seed1/Isaacsimenvs-SimToolReal-Direct-v0_seed1_0909_032251",
+              "brackets": {
+                "actor/entropy": {
+                  "at_or_before": {
+                    "step": 49971200,
+                    "value": -30.669296264648438
+                  },
+                  "at_or_after": {
+                    "step": 50022400,
+                    "value": -31.50213623046875
+                  }
+                },
+                "temperature/value": {
+                  "at_or_before": {
+                    "step": 49971200,
+                    "value": 8.212240209104493e-05
+                  },
+                  "at_or_after": {
+                    "step": 50022400,
+                    "value": 8.29315758892335e-05
+                  }
+                },
+                "episode/return": {
+                  "at_or_before": {
+                    "step": 49971200,
+                    "value": 667.3936767578125
+                  },
+                  "at_or_after": {
+                    "step": 50022400,
+                    "value": 588.7271118164062
+                  }
+                },
+                "episode/final/all_goals_hit": {
+                  "at_or_before": {
+                    "step": 49971200,
+                    "value": 0.25
+                  },
+                  "at_or_after": {
+                    "step": 50022400,
+                    "value": 0.1756756752729416
+                  }
+                }
+              }
+            }
+          ],
+          "evaluations": {
+            "deterministic": {
+              "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed1/step48830/deterministic/summary.json",
+              "sha256": "55d01127262e3fa45feb25c57b774356a006c253a8327b85af61e2346c40cca0",
+              "status": "complete",
+              "episodes": 64,
+              "requested": 64,
+              "complete_budget": true,
+              "counts": {
+                "success": 1,
+                "ever_task_lift": 64,
+                "ever_sustained_lift_near_palm_proxy": 64,
+                "dropped_below_reset_after_task_lift": 22,
+                "terminated": 1,
+                "truncated": 63
+              },
+              "mean_return": 419.72209723684864,
+              "mean_length": 595.28125,
+              "reward_components": {
+                "fingertip_delta_rew": 25.802111155353487,
+                "lifting_rew": 22.575607169419527,
+                "lift_bonus_rew": 300.0,
+                "keypoint_rew": 22.4342798080761,
+                "kuka_actions_penalty": -21.62771186063037,
+                "hand_actions_penalty": -13.837185942223869,
+                "bonus_rew": 84.375,
+                "total_reward": 419.72209723684864
+              },
+              "model_unchanged": true,
+              "rollout_seed": 0,
+              "checkpoint_matches": true,
+              "metadata_sha256": "f717e9f048b819be6fb939f17d1b67e607d4b81b869f9500d2e3bdf3b4fbeba8"
+            },
+            "stochastic": {
+              "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed1/step48830/stochastic/summary.json",
+              "sha256": "417c234fd6ad70f84a070ca1981af370cbcf55fe216c3d6b6fe63a56143065a7",
+              "status": "complete",
+              "episodes": 128,
+              "requested": 128,
+              "complete_budget": true,
+              "counts": {
+                "success": 40,
+                "ever_task_lift": 109,
+                "ever_sustained_lift_near_palm_proxy": 97,
+                "dropped_below_reset_after_task_lift": 48,
+                "terminated": 43,
+                "truncated": 85
+              },
+              "mean_return": 732.5832500345641,
+              "mean_length": 486.9296875,
+              "reward_components": {
+                "fingertip_delta_rew": 26.702651925734244,
+                "lifting_rew": 115.4698430467397,
+                "lift_bonus_rew": 255.46875,
+                "keypoint_rew": 18.492800180334598,
+                "kuka_actions_penalty": -30.180889452881274,
+                "hand_actions_penalty": -26.80740655538102,
+                "bonus_rew": 373.4375,
+                "total_reward": 732.5832500345641
+              },
+              "model_unchanged": true,
+              "rollout_seed": 0,
+              "checkpoint_matches": true,
+              "metadata_sha256": "a25bfee05cbeaa383b639327fce2ff63843db05a3d7daa3c90256286b25dbdd3"
+            }
+          }
+        },
+        "58596": {
+          "transitions": 60002304,
+          "checkpoint": {
+            "status": "saved_complete",
+            "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/models/seed1/step58596",
+            "all_finite": true,
+            "files": {
+              "actor.pt": {
+                "all_finite": true,
+                "sha256": "7e4c181f289574b6c8654637f1591a3f3edade99425508ca9e4e16a0326aaed7",
+                "optimizer_applied_steps": [
+                  58493
+                ],
+                "scheduler_last_epoch": 58499,
+                "stored_update_step": 0
+              },
+              "critic.pt": {
+                "all_finite": true,
+                "sha256": "4ac7ad996f01394bd8449fa7a04403a3e233332a8136798b62b65df0f1b21ae5",
+                "optimizer_applied_steps": [
+                  116936
+                ],
+                "scheduler_last_epoch": 116998,
+                "stored_update_step": 0
+              },
+              "target_critic.pt": {
+                "all_finite": true,
+                "sha256": "c6a06e235c0cd0b5962266e78f2c5ebe77a16aee1d1d4aff38a3c3376f4d1111",
+                "optimizer_applied_steps": [],
+                "scheduler_last_epoch": null,
+                "stored_update_step": 0
+              },
+              "temperature.pt": {
+                "all_finite": true,
+                "sha256": "db2aeb6c3295ef19eb90738d1a9cc197b47d17bfe9ca72af14d11ccaaa5981f7",
+                "optimizer_applied_steps": [
+                  58499
+                ],
+                "scheduler_last_epoch": 58499,
+                "stored_update_step": 0
+              },
+              "reward_normalizer.pt": {
+                "all_finite": true,
+                "sha256": "a8ea2ade19efd6df39024aa7f259c21c0389560cb710973b0b1ce372833e7af9",
+                "optimizer_applied_steps": [],
+                "scheduler_last_epoch": null,
+                "stored_update_step": null
+              },
+              "agent_state.pt": {
+                "all_finite": true,
+                "sha256": "c36518dff38fc60115ff0a8db987649d5a58082e10c5ddfcb0897c7410d14cc8",
+                "optimizer_applied_steps": [],
+                "scheduler_last_epoch": null,
+                "stored_update_step": 116998,
+                "grad_scaler": {
+                  "scale": 8388608.0,
+                  "growth_factor": 2.0,
+                  "backoff_factor": 0.5,
+                  "growth_interval": 2000,
+                  "_growth_tracker": 81
+                }
+              }
+            },
+            "alpha": 0.00026639795396476984,
+            "reward_normalizer_count": 60002304.0,
+            "count_matches_budget": true,
+            "reward_divisor": 250.8931396484375,
+            "expected_native_calls": 116998,
+            "native_counter_matches_budget": true
+          },
+          "online_brackets": [
+            {
+              "directory": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/runs/repro60m/arm1_hand01_seed1/Isaacsimenvs-SimToolReal-Direct-v0_seed1_0909_032251",
+              "brackets": {
+                "actor/entropy": {
+                  "at_or_before": {
+                    "step": 60002304,
+                    "value": -12.645376205444336
+                  },
+                  "at_or_after": {
+                    "step": 60002304,
+                    "value": -12.645376205444336
+                  }
+                },
+                "temperature/value": {
+                  "at_or_before": {
+                    "step": 60002304,
+                    "value": 0.0002669144014362246
+                  },
+                  "at_or_after": {
+                    "step": 60002304,
+                    "value": 0.0002669144014362246
+                  }
+                },
+                "episode/return": {
+                  "at_or_before": {
+                    "step": 60002304,
+                    "value": 1215.6370849609375
+                  },
+                  "at_or_after": {
+                    "step": 60002304,
+                    "value": 1215.6370849609375
+                  }
+                },
+                "episode/final/all_goals_hit": {
+                  "at_or_before": {
+                    "step": 60002304,
+                    "value": 0.4488189220428467
+                  },
+                  "at_or_after": {
+                    "step": 60002304,
+                    "value": 0.4488189220428467
+                  }
+                }
+              }
+            }
+          ],
+          "evaluations": {
+            "deterministic": {
+              "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed1/step58596/deterministic/summary.json",
+              "sha256": "e9a2971f663957e0802da1c8e5c8378b5441838a8088611a38a3e218deee05b7",
+              "status": "complete",
+              "episodes": 64,
+              "requested": 64,
+              "complete_budget": true,
+              "counts": {
+                "success": 1,
+                "ever_task_lift": 64,
+                "ever_sustained_lift_near_palm_proxy": 64,
+                "dropped_below_reset_after_task_lift": 0,
+                "terminated": 1,
+                "truncated": 63
+              },
+              "mean_return": 1147.6163917226804,
+              "mean_length": 591.28125,
+              "reward_components": {
+                "fingertip_delta_rew": 29.097056894912384,
+                "lifting_rew": 23.756831660866737,
+                "lift_bonus_rew": 300.0,
+                "keypoint_rew": 19.73620604723692,
+                "kuka_actions_penalty": -11.325450370402905,
+                "hand_actions_penalty": -13.648256001506525,
+                "bonus_rew": 800.0,
+                "total_reward": 1147.6163917226804
+              },
+              "model_unchanged": true,
+              "rollout_seed": 0,
+              "checkpoint_matches": true,
+              "metadata_sha256": "092ec6c3e83544b7d1c2e6b2bd6a0ffb978f9818e15436316cd666baf0bc439a"
+            },
+            "stochastic": {
+              "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed1/step58596/stochastic/summary.json",
+              "sha256": "863eea6dd8f46b5ac6c4cd1428058ad84e36d80c775acf56f7797df3a817d422",
+              "status": "complete",
+              "episodes": 128,
+              "requested": 128,
+              "complete_budget": true,
+              "counts": {
+                "success": 88,
+                "ever_task_lift": 128,
+                "ever_sustained_lift_near_palm_proxy": 111,
+                "dropped_below_reset_after_task_lift": 1,
+                "terminated": 88,
+                "truncated": 40
+              },
+              "mean_return": 1291.2402745844302,
+              "mean_length": 219.0234375,
+              "reward_components": {
+                "fingertip_delta_rew": 28.796782772406004,
+                "lifting_rew": 23.300988795235753,
+                "lift_bonus_rew": 300.0,
+                "keypoint_rew": 19.35359771893127,
+                "kuka_actions_penalty": -10.357304194947574,
+                "hand_actions_penalty": -8.916289622513432,
+                "bonus_rew": 939.0625,
+                "total_reward": 1291.2402745844302
+              },
+              "model_unchanged": true,
+              "rollout_seed": 0,
+              "checkpoint_matches": true,
+              "metadata_sha256": "2cdc948f411f60a6e224bc54a6a2a320a856e71788e019cf43f29ed146b73cf4"
+            }
+          }
+        }
+      }
+    },
+    "2": {
+      "training_status": "completed",
+      "config_sha256": "af7388bdf3fcc1dbbbef7cfb9b6828ca37e24391974d2b48615112c36683dcc4",
+      "online_curves": [
+        {
+          "directory": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/runs/repro60m/arm1_hand01_seed2/Isaacsimenvs-SimToolReal-Direct-v0_seed2_0909_035211",
+          "curves": {
+            "episode/return": {
+              "points": 1171,
+              "first": {
+                "step": 102400,
+                "value": 56.649749755859375
+              },
+              "last": {
+                "step": 60002304,
+                "value": 1347.4608154296875
+              },
+              "peak": {
+                "step": 39475200,
+                "value": 1352.99072265625
+              },
+              "minimum": {
+                "step": 102400,
+                "value": 56.649749755859375
+              },
+              "last_10_windows_unweighted_mean": 1348.575439453125,
+              "positive_windows": 1171,
+              "last10_samples": [
+                {
+                  "step": 59545600,
+                  "value": 1350.51318359375
+                },
+                {
+                  "step": 59596800,
+                  "value": 1350.3604736328125
+                },
+                {
+                  "step": 59648000,
+                  "value": 1350.5313720703125
+                },
+                {
+                  "step": 59699200,
+                  "value": 1347.095703125
+                },
+                {
+                  "step": 59750400,
+                  "value": 1349.3558349609375
+                },
+                {
+                  "step": 59801600,
+                  "value": 1349.410888671875
+                },
+                {
+                  "step": 59852800,
+                  "value": 1349.5657958984375
+                },
+                {
+                  "step": 59904000,
+                  "value": 1349.7335205078125
+                },
+                {
+                  "step": 59955200,
+                  "value": 1341.726806640625
+                },
+                {
+                  "step": 60002304,
+                  "value": 1347.4608154296875
+                }
+              ]
+            },
+            "episode/cumulative/lift_bonus_rew": {
+              "points": 1171,
+              "first": {
+                "step": 102400,
+                "value": 0.0
+              },
+              "last": {
+                "step": 60002304,
+                "value": 300.0
+              },
+              "peak": {
+                "step": 15104000,
+                "value": 300.0
+              },
+              "minimum": {
+                "step": 102400,
+                "value": 0.0
+              },
+              "last_10_windows_unweighted_mean": 299.9766540527344,
+              "positive_windows": 1035,
+              "last10_samples": [
+                {
+                  "step": 59545600,
+                  "value": 300.0
+                },
+                {
+                  "step": 59596800,
+                  "value": 300.0
+                },
+                {
+                  "step": 59648000,
+                  "value": 300.0
+                },
+                {
+                  "step": 59699200,
+                  "value": 300.0
+                },
+                {
+                  "step": 59750400,
+                  "value": 300.0
+                },
+                {
+                  "step": 59801600,
+                  "value": 300.0
+                },
+                {
+                  "step": 59852800,
+                  "value": 300.0
+                },
+                {
+                  "step": 59904000,
+                  "value": 300.0
+                },
+                {
+                  "step": 59955200,
+                  "value": 299.76654052734375
+                },
+                {
+                  "step": 60002304,
+                  "value": 300.0
+                }
+              ]
+            },
+            "episode/final/all_goals_hit": {
+              "points": 1171,
+              "first": {
+                "step": 102400,
+                "value": 0.0
+              },
+              "last": {
+                "step": 60002304,
+                "value": 0.9923254251480103
+              },
+              "peak": {
+                "step": 39475200,
+                "value": 1.0
+              },
+              "minimum": {
+                "step": 102400,
+                "value": 0.0
+              },
+              "last_10_windows_unweighted_mean": 0.9941252887248992,
+              "positive_windows": 534,
+              "last10_samples": [
+                {
+                  "step": 59545600,
+                  "value": 0.9987760186195374
+                },
+                {
+                  "step": 59596800,
+                  "value": 1.0
+                },
+                {
+                  "step": 59648000,
+                  "value": 1.0
+                },
+                {
+                  "step": 59699200,
+                  "value": 0.9901140928268433
+                },
+                {
+                  "step": 59750400,
+                  "value": 0.997735857963562
+                },
+                {
+                  "step": 59801600,
+                  "value": 0.9960907101631165
+                },
+                {
+                  "step": 59852800,
+                  "value": 0.9978991746902466
+                },
+                {
+                  "step": 59904000,
+                  "value": 0.9955489635467529
+                },
+                {
+                  "step": 59955200,
+                  "value": 0.9727626442909241
+                },
+                {
+                  "step": 60002304,
+                  "value": 0.9923254251480103
+                }
+              ]
+            },
+            "actor/entropy": {
+              "points": 1171,
+              "first": {
+                "step": 102400,
+                "value": -123.92393493652344
+              },
+              "last": {
+                "step": 60002304,
+                "value": -14.321409225463867
+              },
+              "peak": {
+                "step": 5990400,
+                "value": 19.527395248413086
+              },
+              "minimum": {
+                "step": 102400,
+                "value": -123.92393493652344
+              },
+              "last_10_windows_unweighted_mean": -13.663344955444336,
+              "positive_windows": 680,
+              "last10_samples": [
+                {
+                  "step": 59545600,
+                  "value": -13.698064804077148
+                },
+                {
+                  "step": 59596800,
+                  "value": -14.244972229003906
+                },
+                {
+                  "step": 59648000,
+                  "value": -13.511384010314941
+                },
+                {
+                  "step": 59699200,
+                  "value": -13.461700439453125
+                },
+                {
+                  "step": 59750400,
+                  "value": -12.902152061462402
+                },
+                {
+                  "step": 59801600,
+                  "value": -13.216365814208984
+                },
+                {
+                  "step": 59852800,
+                  "value": -13.702230453491211
+                },
+                {
+                  "step": 59904000,
+                  "value": -13.556015968322754
+                },
+                {
+                  "step": 59955200,
+                  "value": -14.01915454864502
+                },
+                {
+                  "step": 60002304,
+                  "value": -14.321409225463867
+                }
+              ]
+            },
+            "temperature/value": {
+              "points": 1171,
+              "first": {
+                "step": 102400,
+                "value": 0.01000299770385027
+              },
+              "last": {
+                "step": 60002304,
+                "value": 0.00013108689745422453
+              },
+              "peak": {
+                "step": 307200,
+                "value": 0.010184932500123978
+              },
+              "minimum": {
+                "step": 36300800,
+                "value": 4.410369729157537e-05
+              },
+              "last_10_windows_unweighted_mean": 0.00013257472310215234,
+              "positive_windows": 1171,
+              "last10_samples": [
+                {
+                  "step": 59545600,
+                  "value": 0.000134119633003138
+                },
+                {
+                  "step": 59596800,
+                  "value": 0.0001342737814411521
+                },
+                {
+                  "step": 59648000,
+                  "value": 0.00013444734213408083
+                },
+                {
+                  "step": 59699200,
+                  "value": 0.00013396653230302036
+                },
+                {
+                  "step": 59750400,
+                  "value": 0.0001331147359451279
+                },
+                {
+                  "step": 59801600,
+                  "value": 0.00013186107389628887
+                },
+                {
+                  "step": 59852800,
+                  "value": 0.0001311909145442769
+                },
+                {
+                  "step": 59904000,
+                  "value": 0.00013089674757793546
+                },
+                {
+                  "step": 59955200,
+                  "value": 0.00013078957272227854
+                },
+                {
+                  "step": 60002304,
+                  "value": 0.00013108689745422453
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "checkpoints": {
+        "48830": {
+          "transitions": 50001920,
+          "checkpoint": {
+            "status": "saved_complete",
+            "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/models/seed2/step48830",
+            "all_finite": true,
+            "files": {
+              "actor.pt": {
+                "all_finite": true,
+                "sha256": "35c8508f75f88bb12cc82adcf7fea5b481037e74cce5349329eaa21468507256",
+                "optimizer_applied_steps": [
+                  48728
+                ],
+                "scheduler_last_epoch": 48733,
+                "stored_update_step": 0
+              },
+              "critic.pt": {
+                "all_finite": true,
+                "sha256": "b96e99e8e94962c2341cdd082618b812ea7b01b49689629dc8669ceef1f08f9a",
+                "optimizer_applied_steps": [
+                  97414
+                ],
+                "scheduler_last_epoch": 97466,
+                "stored_update_step": 0
+              },
+              "target_critic.pt": {
+                "all_finite": true,
+                "sha256": "c5739adf1350a5cd8e935ecb68ee97bd9a86f79710be785937a515a70506212c",
+                "optimizer_applied_steps": [],
+                "scheduler_last_epoch": null,
+                "stored_update_step": 0
+              },
+              "temperature.pt": {
+                "all_finite": true,
+                "sha256": "de68409d2049c5769560f704495d1d6af9e2c878543607bef683f5d6550355a2",
+                "optimizer_applied_steps": [
+                  48733
+                ],
+                "scheduler_last_epoch": 48733,
+                "stored_update_step": 0
+              },
+              "reward_normalizer.pt": {
+                "all_finite": true,
+                "sha256": "019c4fe6982c790e28a4cd2eade7c924754b51614cb4326b70760ab2414376cf",
+                "optimizer_applied_steps": [],
+                "scheduler_last_epoch": null,
+                "stored_update_step": null
+              },
+              "agent_state.pt": {
+                "all_finite": true,
+                "sha256": "69926384893a56778e939d12e767fc610f65129cb92398dbcc76b43e43522c72",
+                "optimizer_applied_steps": [],
+                "scheduler_last_epoch": null,
+                "stored_update_step": 97466,
+                "grad_scaler": {
+                  "scale": 4194304.0,
+                  "growth_factor": 2.0,
+                  "backoff_factor": 0.5,
+                  "growth_interval": 2000,
+                  "_growth_tracker": 924
+                }
+              }
+            },
+            "alpha": 0.00016710630734451115,
+            "reward_normalizer_count": 50001920.0,
+            "count_matches_budget": true,
+            "reward_divisor": 252.503662109375,
+            "expected_native_calls": 97466,
+            "native_counter_matches_budget": true
+          },
+          "online_brackets": [
+            {
+              "directory": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/runs/repro60m/arm1_hand01_seed2/Isaacsimenvs-SimToolReal-Direct-v0_seed2_0909_035211",
+              "brackets": {
+                "actor/entropy": {
+                  "at_or_before": {
+                    "step": 49971200,
+                    "value": -9.859793663024902
+                  },
+                  "at_or_after": {
+                    "step": 50022400,
+                    "value": -10.085914611816406
+                  }
+                },
+                "temperature/value": {
+                  "at_or_before": {
+                    "step": 49971200,
+                    "value": 0.0001681654539424926
+                  },
+                  "at_or_after": {
+                    "step": 50022400,
+                    "value": 0.000167213860549964
+                  }
+                },
+                "episode/return": {
+                  "at_or_before": {
+                    "step": 49971200,
+                    "value": 1336.4635009765625
+                  },
+                  "at_or_after": {
+                    "step": 50022400,
+                    "value": 1319.8004150390625
+                  }
+                },
+                "episode/final/all_goals_hit": {
+                  "at_or_before": {
+                    "step": 49971200,
+                    "value": 0.96952223777771
+                  },
+                  "at_or_after": {
+                    "step": 50022400,
+                    "value": 0.9556962251663208
+                  }
+                }
+              }
+            }
+          ],
+          "evaluations": {
+            "deterministic": {
+              "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed2/step48830/deterministic/summary.json",
+              "sha256": "faee2786d7cb8735cac657587f1dfdf7ac8f5298b78cfb715f57678db2016c00",
+              "status": "complete",
+              "episodes": 64,
+              "requested": 64,
+              "complete_budget": true,
+              "counts": {
+                "success": 64,
+                "ever_task_lift": 64,
+                "ever_sustained_lift_near_palm_proxy": 0,
+                "dropped_below_reset_after_task_lift": 0,
+                "terminated": 64,
+                "truncated": 0
+              },
+              "mean_return": 1349.5807598130777,
+              "mean_length": 27.0,
+              "reward_components": {
+                "fingertip_delta_rew": 26.446987592615187,
+                "lifting_rew": 21.557897124439478,
+                "lift_bonus_rew": 300.0,
+                "keypoint_rew": 7.4899448226206005,
+                "kuka_actions_penalty": -3.314307053340599,
+                "hand_actions_penalty": -2.5997597827226855,
+                "bonus_rew": 1000.0,
+                "total_reward": 1349.5807598130777
+              },
+              "model_unchanged": true,
+              "rollout_seed": 0,
+              "checkpoint_matches": true,
+              "metadata_sha256": "7495def86e8796613d489cf71f05880d2dec5f0846007f86dfc613643fc61c12"
+            },
+            "stochastic": {
+              "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed2/step48830/stochastic/summary.json",
+              "sha256": "02e1f23b9030f868adec0627fbb06bfeff4c4beeffc03d6191b68cacb448f209",
+              "status": "complete",
+              "episodes": 128,
+              "requested": 128,
+              "complete_budget": true,
+              "counts": {
+                "success": 125,
+                "ever_task_lift": 126,
+                "ever_sustained_lift_near_palm_proxy": 4,
+                "dropped_below_reset_after_task_lift": 1,
+                "terminated": 125,
+                "truncated": 3
+              },
+              "mean_return": 1330.0309478205163,
+              "mean_length": 41.6328125,
+              "reward_components": {
+                "fingertip_delta_rew": 26.609683466667775,
+                "lifting_rew": 30.55725925602019,
+                "lift_bonus_rew": 295.3125,
+                "keypoint_rew": 9.000183522584848,
+                "kuka_actions_penalty": -4.4414051128405845,
+                "hand_actions_penalty": -3.569772630566149,
+                "bonus_rew": 976.5625,
+                "total_reward": 1330.0309478205163
+              },
+              "model_unchanged": true,
+              "rollout_seed": 0,
+              "checkpoint_matches": true,
+              "metadata_sha256": "0d15efcfb0fce67fe5f373800ef9e87ada00a506a7b6a4bf6e57cf7f7c84863e"
+            }
+          }
+        },
+        "58596": {
+          "transitions": 60002304,
+          "checkpoint": {
+            "status": "saved_complete",
+            "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/models/seed2/step58596",
+            "all_finite": true,
+            "files": {
+              "actor.pt": {
+                "all_finite": true,
+                "sha256": "3bc5f6ead35d751b022998c599ecd8a315cb1ede41d58ee26bacd16d04aa80c9",
+                "optimizer_applied_steps": [
+                  58494
+                ],
+                "scheduler_last_epoch": 58499,
+                "stored_update_step": 0
+              },
+              "critic.pt": {
+                "all_finite": true,
+                "sha256": "a6c99fb089869909937d32f814da679a393b84a834dda6da6d0d00f2448cc426",
+                "optimizer_applied_steps": [
+                  116931
+                ],
+                "scheduler_last_epoch": 116998,
+                "stored_update_step": 0
+              },
+              "target_critic.pt": {
+                "all_finite": true,
+                "sha256": "8e0e6c4bc18bc741bbfa5205cccd10cdcb6044d525b56da5aac3fcdb91435feb",
+                "optimizer_applied_steps": [],
+                "scheduler_last_epoch": null,
+                "stored_update_step": 0
+              },
+              "temperature.pt": {
+                "all_finite": true,
+                "sha256": "9ac16412cdf1ab52d3dd3fa8378e41360fbb2ba3657d79f4d793c57680babae8",
+                "optimizer_applied_steps": [
+                  58499
+                ],
+                "scheduler_last_epoch": 58499,
+                "stored_update_step": 0
+              },
+              "reward_normalizer.pt": {
+                "all_finite": true,
+                "sha256": "3bf3234fb5292306dd011303e7beac174f08b36341ed621b8b3f7233cff0fb65",
+                "optimizer_applied_steps": [],
+                "scheduler_last_epoch": null,
+                "stored_update_step": null
+              },
+              "agent_state.pt": {
+                "all_finite": true,
+                "sha256": "d2384ae89d644952ee478468ad2af5db67c214b326a87c83bb62b87b386bdb69",
+                "optimizer_applied_steps": [],
+                "scheduler_last_epoch": null,
+                "stored_update_step": 116998,
+                "grad_scaler": {
+                  "scale": 1048576.0,
+                  "growth_factor": 2.0,
+                  "backoff_factor": 0.5,
+                  "growth_interval": 2000,
+                  "_growth_tracker": 99
+                }
+              }
+            },
+            "alpha": 0.0001313810789724812,
+            "reward_normalizer_count": 60002304.0,
+            "count_matches_budget": true,
+            "reward_divisor": 265.7500587958731,
+            "expected_native_calls": 116998,
+            "native_counter_matches_budget": true
+          },
+          "online_brackets": [
+            {
+              "directory": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/runs/repro60m/arm1_hand01_seed2/Isaacsimenvs-SimToolReal-Direct-v0_seed2_0909_035211",
+              "brackets": {
+                "actor/entropy": {
+                  "at_or_before": {
+                    "step": 60002304,
+                    "value": -14.321409225463867
+                  },
+                  "at_or_after": {
+                    "step": 60002304,
+                    "value": -14.321409225463867
+                  }
+                },
+                "temperature/value": {
+                  "at_or_before": {
+                    "step": 60002304,
+                    "value": 0.00013108689745422453
+                  },
+                  "at_or_after": {
+                    "step": 60002304,
+                    "value": 0.00013108689745422453
+                  }
+                },
+                "episode/return": {
+                  "at_or_before": {
+                    "step": 60002304,
+                    "value": 1347.4608154296875
+                  },
+                  "at_or_after": {
+                    "step": 60002304,
+                    "value": 1347.4608154296875
+                  }
+                },
+                "episode/final/all_goals_hit": {
+                  "at_or_before": {
+                    "step": 60002304,
+                    "value": 0.9923254251480103
+                  },
+                  "at_or_after": {
+                    "step": 60002304,
+                    "value": 0.9923254251480103
+                  }
+                }
+              }
+            }
+          ],
+          "evaluations": {
+            "deterministic": {
+              "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed2/step58596/deterministic/summary.json",
+              "sha256": "f8bad1304442ffc121d090f5875395db3f691a45ed22ea7f3945cf59702a7e9e",
+              "status": "complete",
+              "episodes": 64,
+              "requested": 64,
+              "complete_budget": true,
+              "counts": {
+                "success": 64,
+                "ever_task_lift": 64,
+                "ever_sustained_lift_near_palm_proxy": 0,
+                "dropped_below_reset_after_task_lift": 0,
+                "terminated": 64,
+                "truncated": 0
+              },
+              "mean_return": 1351.98117010016,
+              "mean_length": 26.015625,
+              "reward_components": {
+                "fingertip_delta_rew": 25.85401777829975,
+                "lifting_rew": 19.243964478373528,
+                "lift_bonus_rew": 300.0,
+                "keypoint_rew": 11.590978384250775,
+                "kuka_actions_penalty": -2.5104533116682433,
+                "hand_actions_penalty": -2.1973372863139957,
+                "bonus_rew": 1000.0,
+                "total_reward": 1351.98117010016
+              },
+              "model_unchanged": true,
+              "rollout_seed": 0,
+              "checkpoint_matches": true,
+              "metadata_sha256": "3c622d712d8bf8a2efba54ef04e732013d118b1a688a5588028de4c0e0d2abb1"
+            },
+            "stochastic": {
+              "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed2/step58596/stochastic/summary.json",
+              "sha256": "025bc82eeea3830fca6a58910536fd638b47c08b0467471ebc9c4cc3569c046d",
+              "status": "complete",
+              "episodes": 128,
+              "requested": 128,
+              "complete_budget": true,
+              "counts": {
+                "success": 128,
+                "ever_task_lift": 128,
+                "ever_sustained_lift_near_palm_proxy": 2,
+                "dropped_below_reset_after_task_lift": 0,
+                "terminated": 128,
+                "truncated": 0
+              },
+              "mean_return": 1350.850941669196,
+              "mean_length": 27.40625,
+              "reward_components": {
+                "fingertip_delta_rew": 25.616044136346318,
+                "lifting_rew": 19.106065053492785,
+                "lift_bonus_rew": 300.0,
+                "keypoint_rew": 11.252919636666775,
+                "kuka_actions_penalty": -2.705867096694419,
+                "hand_actions_penalty": -2.418219366314588,
+                "bonus_rew": 1000.0,
+                "total_reward": 1350.850941669196
+              },
+              "model_unchanged": true,
+              "rollout_seed": 0,
+              "checkpoint_matches": true,
+              "metadata_sha256": "ac310e5440fe364af857af037e0098b0d1ca36a80c67da120b2e314c56543580"
+            }
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Missing data is PENDING, not zero. Partial evaluations are labeled with completed counts.",
+    "TB values are episode logging-window means, not an episode-weighted overall success rate; multiple run directories are not merged.",
+    "Three independent training seeds, each evaluated with the same rollout seed0; correlated vector episodes do not justify an independent-IID confidence interval.",
+    "Fixed eraser/start/goal, DR off, privileged simulator-state162; not paper24-task replication or real-robot validation.",
+    "Extra continuous budget tests whether reload is unnecessary, but does not isolate the previous cold-replay/full-reload cause.",
+    "Checkpoint counters count attempted native calls; AMP can skip applied optimizer steps. Full file audits and normalizer budget checks are separate."
+  ]
+}

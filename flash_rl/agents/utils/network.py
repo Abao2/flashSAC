@@ -130,17 +130,22 @@ class Network:
             load_optimizer (bool): If False, only the parameters are loaded.
         """
         ckpt = torch.load(path, map_location=next(self.network.parameters()).device)
+        # torch.compile prefixes saved keys; support either source/target mode.
+        network = getattr(self.network, "_orig_mod", self.network)
+        torch.nn.modules.utils.consume_prefix_in_state_dict_if_present(
+            ckpt["network_state_dict"], "_orig_mod."
+        )
 
         if param_key:
             # Load only specific parameter key
-            state_dict = self.network.state_dict()
+            state_dict = network.state_dict()
             for key in state_dict.keys():
                 if param_key in key:
                     if key in ckpt["network_state_dict"]:
                         state_dict[key] = ckpt["network_state_dict"][key]
-            self.network.load_state_dict(state_dict)
+            network.load_state_dict(state_dict)
         else:
-            self.network.load_state_dict(ckpt["network_state_dict"])
+            network.load_state_dict(ckpt["network_state_dict"])
 
         if load_optimizer:
             if self.optimizer is not None and ckpt["optimizer_state_dict"] is not None:
@@ -159,3 +164,4 @@ class Network:
                     f"[Warning] load_optimizer=True but scheduler is None or checkpoint has no scheduler state."
                     f" Skipping scheduler load for {path}."
                 )
+

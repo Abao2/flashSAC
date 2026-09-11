@@ -1,0 +1,5 @@
+*.log
+*.lock
+candidate/models/
+candidate/runs/
+tb/

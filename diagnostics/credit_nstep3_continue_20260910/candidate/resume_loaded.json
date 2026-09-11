@@ -1,0 +1,12 @@
+{
+  "checkpoint": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/candidate/models/seed0/step48830",
+  "env_step_offset": 100003840,
+  "resume_tolerance": 0.03228504075,
+  "update_step": 195120,
+  "replay_length": 10000000,
+  "replay_current_idx": 9999744,
+  "cleared_G_r_elements": 2048,
+  "reward_rms_count": 100003840.0,
+  "exact_environment_resume": false,
+  "boundary_note": "Fresh environment/RNG/noise, empty n-step queue, native first random action; curriculum cooldown restarted."
+}

@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "created_utc": "2026-09-08T16:06:48.159464+00:00",
+  "source": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/bc_std005_eigen",
+  "output": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/entropy_ab/initial/alpha_1e-6",
+  "requested_alpha": 1e-06,
+  "actual_alpha": 9.999997701015673e-07,
+  "source_alpha": 0.009999999776482582,
+  "changed_tensor": "temperature.pt:network_state_dict._orig_mod.log_temp",
+  "non_temperature_files_bitwise_identical": true,
+  "temperature_other_fields_exact": true,
+  "source_preserved": true,
+  "source_sha256": {
+    "actor.pt": "f20e3dbea5620c0ea18fb30bd8b03ccdc9eef1b8155c4c83333e3b82251b0f1b",
+    "critic.pt": "73e5c10fb941af0bf29f1ad7a7c5e5dbe64e81b07def7b006a0d3a5b810b6a5e",
+    "target_critic.pt": "2aab6e97a8f3ce195ac1800fddc35d7dcff7573e290e6a0f11899b3f8b297e81",
+    "temperature.pt": "93f7976a82b7a9f8a8252465fe1e5391e43c2c4a44db5205f8f89164d8bfe336",
+    "reward_normalizer.pt": "00b14f3fcd476db1d4203fcbff748e450835acb5ce3cac6165308cac3c793943",
+    "agent_state.pt": "2b7da87f3a272df9d9892a13e9fdf5fe74c32f0abece8269fac29bb6dfee8be5"
+  },
+  "output_sha256": {
+    "actor.pt": "f20e3dbea5620c0ea18fb30bd8b03ccdc9eef1b8155c4c83333e3b82251b0f1b",
+    "critic.pt": "73e5c10fb941af0bf29f1ad7a7c5e5dbe64e81b07def7b006a0d3a5b810b6a5e",
+    "target_critic.pt": "2aab6e97a8f3ce195ac1800fddc35d7dcff7573e290e6a0f11899b3f8b297e81",
+    "temperature.pt": "c041eca76c7e5994d125400ebff4ac953c2261e5608a8bc892be2acb3f88c983",
+    "reward_normalizer.pt": "00b14f3fcd476db1d4203fcbff748e450835acb5ce3cac6165308cac3c793943",
+    "agent_state.pt": "2b7da87f3a272df9d9892a13e9fdf5fe74c32f0abece8269fac29bb6dfee8be5"
+  },
+  "interpretation": "Adaptive initial-alpha intervention. Native temperature updates remain enabled after any critic-only gate; alpha affects both actor objective and critic soft targets, not only actor loss."
+}

@@ -1,0 +1,776 @@
+{
+  "dataset": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/official_wrapper_smoke/transitions.npz",
+  "sha256": "1566dd914c1f18f72b4a293eeb62dab3f42df81ee3aceafb5e27f9aeedd7d2d3",
+  "metadata": {
+    "started_utc": "2026-09-08T12:25:53.320168+00:00",
+    "arguments": {
+      "policy": "official",
+      "checkpoint": "/home/abao/simtoolreal/pretrained_policy/model.pth",
+      "official_config": "/home/abao/simtoolreal/pretrained_policy/config.yaml",
+      "sampling": "deterministic",
+      "noise_multiplier": 1.0,
+      "noise_repeat": 0,
+      "entry": "wrapper",
+      "episodes": 16,
+      "num_envs": 16,
+      "seed": 0,
+      "max_steps": 0,
+      "config_name": "simtoolreal_state_teacher",
+      "override": [],
+      "output_dir": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/official_wrapper_smoke",
+      "no_dataset": false,
+      "self_test": false
+    },
+    "resolved_config": {
+      "project_name": "FlashRL",
+      "entity_name": "draftrec",
+      "group_name": "simtoolreal_diagnostics",
+      "exp_name": "state162_eraser_onegoal_seed0",
+      "seed": 0,
+      "logger_type": "tensorboard",
+      "output_root": ".",
+      "save_path": "models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-TIMESTAMP",
+      "agent_load_path": null,
+      "buffer_load_path": null,
+      "require_agent_load": false,
+      "num_env_steps": 10000384,
+      "num_train_envs": 16,
+      "num_eval_envs": null,
+      "num_record_envs": null,
+      "num_eval_episodes": 0,
+      "num_record_episodes": 0,
+      "gamma": 0.99,
+      "n_step": 1,
+      "num_interaction_steps": 625024.0,
+      "updates_per_interaction_step": 2,
+      "num_update_steps": 1250048.0,
+      "evaluation_per_interaction_step": null,
+      "metrics_per_interaction_step": 250,
+      "recording_per_interaction_step": 625024,
+      "logging_per_interaction_step": 50,
+      "save_checkpoint_per_interaction_step": 976,
+      "save_buffer_per_interaction_step": null,
+      "agent": {
+        "agent_type": "flashSAC",
+        "seed": 0,
+        "device_type": "cuda",
+        "buffer_max_length": 1,
+        "buffer_min_length": 1,
+        "buffer_device_type": "cuda",
+        "sample_batch_size": 1,
+        "normalize_reward": true,
+        "normalized_G_max": 5.0,
+        "asymmetric_observation": true,
+        "learning_rate_init": 0.0003,
+        "learning_rate_peak": 0.0003,
+        "learning_rate_end": 0.00015,
+        "learning_rate_warmup_rate": 1e-06,
+        "learning_rate_warmup_step": 1,
+        "learning_rate_decay_rate": 1.0,
+        "learning_rate_decay_step": 1250048,
+        "actor_num_blocks": 2,
+        "actor_hidden_dim": 128,
+        "actor_bc_alpha": 0.0,
+        "actor_noise_zeta_mu": 2.0,
+        "actor_noise_zeta_max": 16,
+        "actor_update_period": 2,
+        "critic_num_blocks": 2,
+        "critic_hidden_dim": 256,
+        "critic_num_bins": 101,
+        "critic_min_v": -5.0,
+        "critic_max_v": 5.0,
+        "critic_target_update_tau": 0.01,
+        "temp_initial_value": 0.01,
+        "temp_target_sigma": 0.15,
+        "temp_target_entropy": null,
+        "gamma": 0.99,
+        "n_step": 1,
+        "use_compile": false,
+        "compile_mode": "auto",
+        "use_amp": true,
+        "load_optimizer": false,
+        "load_reward_normalizer": false
+      },
+      "env": {
+        "env_type": "isaaclab",
+        "env_name": "Isaacsimenvs-SimToolReal-Direct-v0",
+        "num_env_steps": 10000384,
+        "seed": 0,
+        "num_train_envs": 16,
+        "num_eval_envs": null,
+        "num_record_envs": null,
+        "rescale_action": null,
+        "max_episode_steps": null,
+        "registration_modules": [
+          "isaacsimenvs"
+        ],
+        "env_cfg_yaml_entry_point": "env_cfg_yaml_entry_point",
+        "task_cfg_overrides": {
+          "assets": {
+            "handle_head_types": [
+              "eraser"
+            ],
+            "num_assets_per_type": 1,
+            "shuffle_assets": false
+          },
+          "obs": {
+            "state_list": [
+              "joint_pos",
+              "joint_vel",
+              "prev_action_targets",
+              "palm_pos",
+              "palm_rot",
+              "palm_vel",
+              "object_rot",
+              "object_vel",
+              "fingertip_pos_rel_palm",
+              "keypoints_rel_palm",
+              "keypoints_rel_goal",
+              "object_scales",
+              "closest_keypoint_max_dist",
+              "closest_fingertip_dist",
+              "lifted_object",
+              "progress",
+              "successes",
+              "reward"
+            ],
+            "obs_list": [
+              "joint_pos",
+              "joint_vel",
+              "prev_action_targets",
+              "palm_pos",
+              "palm_rot",
+              "palm_vel",
+              "object_rot",
+              "object_vel",
+              "fingertip_pos_rel_palm",
+              "keypoints_rel_palm",
+              "keypoints_rel_goal",
+              "object_scales",
+              "closest_keypoint_max_dist",
+              "closest_fingertip_dist",
+              "lifted_object",
+              "progress",
+              "successes",
+              "reward"
+            ]
+          },
+          "reset": {
+            "fixed_start_pose": [
+              0.0,
+              0.0,
+              0.555966462104926,
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fixed_goal_pose": [
+              0.05,
+              0.0,
+              0.705966462104926,
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fixed_trajectory_file": "",
+            "fixed_trajectory_count": 0,
+            "reset_dof_pos_random_interval_arm": 0.0,
+            "reset_dof_pos_random_interval_fingers": 0.0,
+            "reset_dof_vel_random_interval": 0.0,
+            "table_reset_z_range": 0.0
+          },
+          "termination": {
+            "max_consecutive_successes": 1,
+            "success_tolerance": 0.02,
+            "target_success_tolerance": 0.02
+          },
+          "domain_randomization": {
+            "use_obs_delay": false,
+            "use_action_delay": false,
+            "use_object_state_delay_noise": false,
+            "object_state_xyz_noise_std": 0.0,
+            "object_state_rotation_noise_degrees": 0.0,
+            "object_scale_noise_multiplier_range": [
+              1.0,
+              1.0
+            ],
+            "joint_velocity_obs_noise_std": 0.0,
+            "force_scale": 0.0,
+            "torque_scale": 0.0,
+            "object_friction_scale_range": [
+              1.0,
+              1.0
+            ],
+            "fingertip_friction_scale_range": [
+              1.0,
+              1.0
+            ]
+          },
+          "action": {
+            "arm_moving_average": 1.0,
+            "hand_moving_average": 1.0
+          }
+        },
+        "device": "cuda:0",
+        "headless": true,
+        "action_bounds": 1.0,
+        "bootstrap_timeouts": true,
+        "success_path": "episode_final.all_goals_hit"
+      }
+    },
+    "state_fields": [
+      "joint_pos",
+      "joint_vel",
+      "prev_action_targets",
+      "palm_pos",
+      "palm_rot",
+      "palm_vel",
+      "object_rot",
+      "object_vel",
+      "fingertip_pos_rel_palm",
+      "keypoints_rel_palm",
+      "keypoints_rel_goal",
+      "object_scales",
+      "closest_keypoint_max_dist",
+      "closest_fingertip_dist",
+      "lifted_object",
+      "progress",
+      "successes",
+      "reward"
+    ],
+    "state_field_slices": {
+      "joint_pos": [
+        0,
+        29
+      ],
+      "joint_vel": [
+        29,
+        58
+      ],
+      "prev_action_targets": [
+        58,
+        87
+      ],
+      "palm_pos": [
+        87,
+        90
+      ],
+      "palm_rot": [
+        90,
+        94
+      ],
+      "palm_vel": [
+        94,
+        100
+      ],
+      "object_rot": [
+        100,
+        104
+      ],
+      "object_vel": [
+        104,
+        110
+      ],
+      "fingertip_pos_rel_palm": [
+        110,
+        125
+      ],
+      "keypoints_rel_palm": [
+        125,
+        137
+      ],
+      "keypoints_rel_goal": [
+        137,
+        149
+      ],
+      "object_scales": [
+        149,
+        152
+      ],
+      "closest_keypoint_max_dist": [
+        152,
+        153
+      ],
+      "closest_fingertip_dist": [
+        153,
+        158
+      ],
+      "lifted_object": [
+        158,
+        159
+      ],
+      "progress": [
+        159,
+        160
+      ],
+      "successes": [
+        160,
+        161
+      ],
+      "reward": [
+        161,
+        162
+      ]
+    },
+    "next_obs_is_pre_reset": true,
+    "successful_episode_ids": [],
+    "official_actor_fields": [
+      "joint_pos",
+      "joint_vel",
+      "prev_action_targets",
+      "palm_pos",
+      "palm_rot",
+      "object_rot",
+      "fingertip_pos_rel_palm",
+      "keypoints_rel_palm",
+      "keypoints_rel_goal",
+      "object_scales"
+    ],
+    "state_dim": 162,
+    "action_dim": 29,
+    "dt_seconds": 0.01666666666,
+    "table_top_m": 0.53,
+    "object_base_size_m": 0.04,
+    "initial_object_z_m": 0.555966462104926,
+    "initial_actor_critic_max_abs_difference": 0.0,
+    "fixed_goal_pose_wxyz": [
+      0.05,
+      0.0,
+      0.705966462104926,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "model_digest_before": "3342302fd955085e41d91b9b50a45921694804342ac509b9d7294a2f2099db94",
+    "thresholds": {
+      "near_object_proxy_m": 0.02,
+      "off_table_box_clearance_m": 0.005,
+      "sustained_lift_near_palm_proxy": {
+        "height_above_reset_m": 0.02,
+        "palm_center_distance_m": 0.2,
+        "relative_world_displacement_per_step_m": 0.005,
+        "consecutive_steps": 13
+      },
+      "task_lift_flag": "sticky object-center lift >0.10 m above reset",
+      "success_keypoint_m": 0.03
+    },
+    "notes": [
+      "No network/optimizer updates; this is frozen-policy sampling, not training.",
+      "Fixed reset is one task; episode noise seeds are one reproducible vector RNG stream.",
+      "Proximity/clearance/sustained-lift proxies are NOT verified contacts or stable grasp.",
+      "Dataset next_obs substitutes pre-reset final_obs at every terminated/truncated step.",
+      "Raw entry bypasses wrapper.step but uses the same Isaac environment initialization.",
+      "Native stochastic Flash uses original global zeta repetition; fixed repeat is per-env.",
+      "No extra reset physics tick is inserted; both entries begin from identical reset API timing."
+    ],
+    "completed_episode_ids": [
+      3,
+      15,
+      4,
+      7,
+      9,
+      2,
+      13,
+      1,
+      8,
+      5,
+      10,
+      11,
+      12,
+      14,
+      6,
+      0
+    ]
+  },
+  "rows": 3135,
+  "episodes": 16,
+  "history_padding": "repeat earliest available state within same contiguous episode segment",
+  "split": "whole episode IDs, seeded random split; not a generalization test on fixed starts",
+  "warnings": [
+    "Prediction targets assume the declared STR state162 field order.",
+    "History-vs-repeat matches parameter count; current baseline has fewer input weights.",
+    "BC std head is untrained; evaluate deterministic actions only.",
+    "History can help dynamics prediction without being necessary for control.",
+    "Offline loss does not prove a grasp/lift skill; requires closed-loop evaluation."
+  ],
+  "probes": [
+    {
+      "task": "prediction",
+      "mode": "current",
+      "status": "complete",
+      "config": {
+        "task": "prediction",
+        "mode": "current",
+        "window": 8,
+        "width": 128,
+        "num_blocks": 2,
+        "input_dim": 191,
+        "obs_dim": 162,
+        "action_dim": 29,
+        "target_columns": [
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148
+        ],
+        "target_names": [
+          "object_velocity_delta[6]",
+          "goal_keypoint_delta[12]",
+          "raw_step_reward"
+        ],
+        "normalization": "train_only_mean_std",
+        "deterministic_only": false,
+        "seed": 0
+      },
+      "parameters": 43539,
+      "updates": 1000,
+      "train_rows": 2646,
+      "validation_rows": 489,
+      "train_episodes": [
+        0,
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        12,
+        13,
+        14,
+        15
+      ],
+      "validation_episodes": [
+        2,
+        3,
+        10,
+        11
+      ],
+      "excluded_terminal_prediction_rows": 0,
+      "successful_episodes_in_dataset": [],
+      "bc_success_only": false,
+      "claim": "History predictability only; does NOT establish LSTM necessity",
+      "train": {
+        "rows": 2646,
+        "normalized_mse": 0.2093094289302826,
+        "train_mean_baseline_normalized_mse": 1.0000001192092896,
+        "raw_rmse": 2.749197483062744,
+        "object_velocity_delta_rmse": 1.1761212348937988,
+        "goal_keypoint_delta_rmse_m": 0.003228259040042758,
+        "step_reward_rmse": 11.632022857666016,
+        "by_phase": {
+          "lifted_flag": {
+            "rows": 1035,
+            "normalized_mse": 0.24404656887054443
+          },
+          "not_lifted_flag": {
+            "rows": 1611,
+            "normalized_mse": 0.18699227273464203
+          }
+        }
+      },
+      "validation": {
+        "rows": 489,
+        "normalized_mse": 1.2717360258102417,
+        "train_mean_baseline_normalized_mse": 1.8782908916473389,
+        "raw_rmse": 3.9358174800872803,
+        "object_velocity_delta_rmse": 1.8241212368011475,
+        "goal_keypoint_delta_rmse_m": 0.01247131172567606,
+        "step_reward_rmse": 16.56369972229004,
+        "by_phase": {
+          "lifted_flag": {
+            "rows": 96,
+            "normalized_mse": 1.9212344884872437
+          },
+          "not_lifted_flag": {
+            "rows": 393,
+            "normalized_mse": 1.1130797863006592
+          }
+        }
+      },
+      "curve": [
+        {
+          "update": 1,
+          "batch_loss": 1.1322143077850342
+        },
+        {
+          "update": 500,
+          "batch_loss": 0.2327166050672531
+        },
+        {
+          "update": 1000,
+          "batch_loss": 0.23823602497577667
+        }
+      ],
+      "seconds": 0.8203573315404356,
+      "checkpoint": "diagnostics/overnight_20260908/memory_official_filter1_smoke_1000/prediction_current.pt"
+    },
+    {
+      "task": "prediction",
+      "mode": "repeat",
+      "status": "complete",
+      "config": {
+        "task": "prediction",
+        "mode": "repeat",
+        "window": 8,
+        "width": 128,
+        "num_blocks": 2,
+        "input_dim": 1325,
+        "obs_dim": 162,
+        "action_dim": 29,
+        "target_columns": [
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148
+        ],
+        "target_names": [
+          "object_velocity_delta[6]",
+          "goal_keypoint_delta[12]",
+          "raw_step_reward"
+        ],
+        "normalization": "train_only_mean_std",
+        "deterministic_only": false,
+        "seed": 0
+      },
+      "parameters": 188691,
+      "updates": 1000,
+      "train_rows": 2646,
+      "validation_rows": 489,
+      "train_episodes": [
+        0,
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        12,
+        13,
+        14,
+        15
+      ],
+      "validation_episodes": [
+        2,
+        3,
+        10,
+        11
+      ],
+      "excluded_terminal_prediction_rows": 0,
+      "successful_episodes_in_dataset": [],
+      "bc_success_only": false,
+      "claim": "History predictability only; does NOT establish LSTM necessity",
+      "train": {
+        "rows": 2646,
+        "normalized_mse": 0.1199672594666481,
+        "train_mean_baseline_normalized_mse": 1.0000001192092896,
+        "raw_rmse": 1.975773572921753,
+        "object_velocity_delta_rmse": 0.8806067109107971,
+        "goal_keypoint_delta_rmse_m": 0.002591891447082162,
+        "step_reward_rmse": 8.337689399719238,
+        "by_phase": {
+          "lifted_flag": {
+            "rows": 1035,
+            "normalized_mse": 0.1506798267364502
+          },
+          "not_lifted_flag": {
+            "rows": 1611,
+            "normalized_mse": 0.10023574531078339
+          }
+        }
+      },
+      "validation": {
+        "rows": 489,
+        "normalized_mse": 1.3885388374328613,
+        "train_mean_baseline_normalized_mse": 1.8782908916473389,
+        "raw_rmse": 4.155094146728516,
+        "object_velocity_delta_rmse": 2.0925824642181396,
+        "goal_keypoint_delta_rmse_m": 0.012771987356245518,
+        "step_reward_rmse": 17.37112808227539,
+        "by_phase": {
+          "lifted_flag": {
+            "rows": 96,
+            "normalized_mse": 2.0938854217529297
+          },
+          "not_lifted_flag": {
+            "rows": 393,
+            "normalized_mse": 1.2162405252456665
+          }
+        }
+      },
+      "curve": [
+        {
+          "update": 1,
+          "batch_loss": 1.122880220413208
+        },
+        {
+          "update": 500,
+          "batch_loss": 0.15505795180797577
+        },
+        {
+          "update": 1000,
+          "batch_loss": 0.11852715909481049
+        }
+      ],
+      "seconds": 2.1446708370931447,
+      "checkpoint": "diagnostics/overnight_20260908/memory_official_filter1_smoke_1000/prediction_repeat.pt"
+    },
+    {
+      "task": "prediction",
+      "mode": "history",
+      "status": "complete",
+      "config": {
+        "task": "prediction",
+        "mode": "history",
+        "window": 8,
+        "width": 128,
+        "num_blocks": 2,
+        "input_dim": 1325,
+        "obs_dim": 162,
+        "action_dim": 29,
+        "target_columns": [
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148
+        ],
+        "target_names": [
+          "object_velocity_delta[6]",
+          "goal_keypoint_delta[12]",
+          "raw_step_reward"
+        ],
+        "normalization": "train_only_mean_std",
+        "deterministic_only": false,
+        "seed": 0
+      },
+      "parameters": 188691,
+      "updates": 1000,
+      "train_rows": 2646,
+      "validation_rows": 489,
+      "train_episodes": [
+        0,
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        12,
+        13,
+        14,
+        15
+      ],
+      "validation_episodes": [
+        2,
+        3,
+        10,
+        11
+      ],
+      "excluded_terminal_prediction_rows": 0,
+      "successful_episodes_in_dataset": [],
+      "bc_success_only": false,
+      "claim": "History predictability only; does NOT establish LSTM necessity",
+      "train": {
+        "rows": 2646,
+        "normalized_mse": 0.06016360595822334,
+        "train_mean_baseline_normalized_mse": 1.0000001192092896,
+        "raw_rmse": 0.8255779147148132,
+        "object_velocity_delta_rmse": 0.6369135975837708,
+        "goal_keypoint_delta_rmse_m": 0.001962878042832017,
+        "step_reward_rmse": 3.242838144302368,
+        "by_phase": {
+          "lifted_flag": {
+            "rows": 1035,
+            "normalized_mse": 0.08274964988231659
+          },
+          "not_lifted_flag": {
+            "rows": 1611,
+            "normalized_mse": 0.045653022825717926
+          }
+        }
+      },
+      "validation": {
+        "rows": 489,
+        "normalized_mse": 1.378401517868042,
+        "train_mean_baseline_normalized_mse": 1.8782908916473389,
+        "raw_rmse": 4.080590724945068,
+        "object_velocity_delta_rmse": 2.0591180324554443,
+        "goal_keypoint_delta_rmse_m": 0.013112623244524002,
+        "step_reward_rmse": 17.056711196899414,
+        "by_phase": {
+          "lifted_flag": {
+            "rows": 96,
+            "normalized_mse": 2.0180552005767822
+          },
+          "not_lifted_flag": {
+            "rows": 393,
+            "normalized_mse": 1.222150206565857
+          }
+        }
+      },
+      "curve": [
+        {
+          "update": 1,
+          "batch_loss": 1.1252377033233643
+        },
+        {
+          "update": 500,
+          "batch_loss": 0.1328955590724945
+        },
+        {
+          "update": 1000,
+          "batch_loss": 0.05323411896824837
+        }
+      ],
+      "seconds": 2.3321473309770226,
+      "checkpoint": "diagnostics/overnight_20260908/memory_official_filter1_smoke_1000/prediction_history.pt"
+    }
+  ]
+}

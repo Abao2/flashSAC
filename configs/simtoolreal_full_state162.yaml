@@ -1,0 +1,15 @@
+defaults:
+  - simtoolreal_full_nodr
+  - _self_
+
+# Information-only comparison: identical full STR task, native FF actor/critic.
+group_name: str_memory_comparison
+exp_name: state162_ff_seed${seed}
+env:
+  task_cfg_overrides:
+    obs:
+      obs_list: [joint_pos, joint_vel, prev_action_targets, palm_pos, palm_rot, palm_vel,
+                 object_rot, object_vel, fingertip_pos_rel_palm, keypoints_rel_palm,
+                 keypoints_rel_goal, object_scales, closest_keypoint_max_dist,
+                 closest_fingertip_dist, lifted_object, progress, successes, reward]
+

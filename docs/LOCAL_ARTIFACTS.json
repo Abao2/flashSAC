@@ -1,0 +1,879 @@
+{
+  "created_utc": "2026-09-11T08:47:20.718768+00:00",
+  "local_root": "/home/abao/flashsac-robotics",
+  "uploaded": false,
+  "note": "Inventory only. These binary files are NOT backed up by Git. Preserve full checkpoint directories to resume optimizer/reward normalization state; replay is needed for learning-state continuation. Local paths do not imply availability on another machine.",
+  "excluded_counts": {
+    ".npz": 387,
+    ".mp4": 5,
+    "tensorboard": 36,
+    ".pt": 1273,
+    ".npy": 2
+  },
+  "excluded_apparent_bytes": {
+    ".npz": 9492722906,
+    ".mp4": 148348408,
+    "tensorboard": 874776191,
+    ".pt": 160978431941,
+    ".npy": 4454656
+  },
+  "key_checkpoint_files": [
+    {
+      "path": "diagnostics/credit_nstep3_20260910/candidate/models/seed0/step48830/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_20260910/candidate/models/seed0/step48830/replay_buffer.pt",
+      "bytes": 25480003499
+    },
+    {
+      "path": "diagnostics/credit_nstep3_20260910/candidate/models/seed0/step9766/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_20260910/candidate/models/seed0/step29298/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_20260910/candidate/models/seed0/step39064/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_20260910/candidate/models/seed0/step19532/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/control_ab_20260909_arm1/models/seed0/step48830/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/control_ab_20260909_arm1/models/seed0/step9766/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/control_ab_20260909_arm1/models/seed0/step29298/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/control_ab_20260909_arm1/models/seed0/step39064/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/control_ab_20260909_arm1/models/seed0/step19532/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step87894/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step185554/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step166022/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step48830/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step48830/replay_buffer.pt",
+      "bytes": 25480003499
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step9766/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step78128/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step156256/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step29298/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step39064/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step126958/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step19532/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step97660/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step97660/replay_buffer.pt",
+      "bytes": 25480003499
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step107426/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step175788/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step68362/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step146490/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step146490/replay_buffer.pt",
+      "bytes": 25480003499
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step58596/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step117192/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step195320/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step195320/replay_buffer.pt",
+      "bytes": 25480003499
+    },
+    {
+      "path": "diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step136724/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/hand_response_20260910/candidate/models/seed0/step48830/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/hand_response_20260910/candidate/models/seed0/step48830/replay_buffer.pt",
+      "bytes": 25480003499
+    },
+    {
+      "path": "diagnostics/hand_response_20260910/candidate/models/seed0/step9766/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/hand_response_20260910/candidate/models/seed0/step29298/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/hand_response_20260910/candidate/models/seed0/step39064/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/hand_response_20260910/candidate/models/seed0/step19532/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/overnight_20260908/control_ab/models/arm1_hand01/seed0/step9766/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/control_ab/models/arm1_hand01/seed1/step9766/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/control_ab/models/arm1_hand01/seed2/step9766/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/control_ab/models/arm1_hand1/seed0/step9766/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/control_ab/models/arm1_hand1/seed1/step9766/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/control_ab/models/arm1_hand1/seed2/step9766/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/native_entry_check/training/frozen_actor/update_snapshots/update10/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/native_entry_check/training/frozen_actor/update_snapshots/update1000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/native_entry_check/training/frozen_actor/update_snapshots/update2000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/native_entry_check/training/frozen_actor/update_snapshots/update100/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/native_entry_check/training/frozen_actor/update_snapshots/update4000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/native_entry_check/training/frozen_actor/update_snapshots/update0/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/native_entry_check/training/frozen_actor/models/final/step4883/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/update_snapshots/update10/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/update_snapshots/update1000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/update_snapshots/update2000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/update_snapshots/update100/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/update_snapshots/update4000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/update_snapshots/update0/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/models/final/step4883/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step9766/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step29298/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step39064/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step19532/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/models/arm1_hand1/seed0/step48830/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/models/arm1_hand1/seed0/step9766/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/models/arm1_hand1/seed0/step29298/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/models/arm1_hand1/seed0/step39064/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/budget50m/models/arm1_hand1/seed0/step19532/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/initial/alpha_1e-4/actor.pt",
+      "bytes": 1194945
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/initial/alpha_1e-6/actor.pt",
+      "bytes": 1194945
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/initial/alpha_1e-2/actor.pt",
+      "bytes": 1194945
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate2000/update_snapshots/update2010/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate2000/update_snapshots/update10/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate2000/update_snapshots/update2001/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate2000/update_snapshots/update3000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate2000/update_snapshots/update2100/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate2000/update_snapshots/update1000/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate2000/update_snapshots/update2000/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate2000/update_snapshots/update100/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate2000/update_snapshots/update0/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate2000/update_snapshots/update2002/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate2000/models/final/step1954/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate2000/update_snapshots/update2010/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate2000/update_snapshots/update10/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate2000/update_snapshots/update2001/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate2000/update_snapshots/update3000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate2000/update_snapshots/update2100/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate2000/update_snapshots/update1000/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate2000/update_snapshots/update2000/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate2000/update_snapshots/update100/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate2000/update_snapshots/update0/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate2000/update_snapshots/update2002/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate2000/models/final/step1954/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/update_snapshots/update2010/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/update_snapshots/update10/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/update_snapshots/update2001/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/update_snapshots/update3000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/update_snapshots/update2100/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/update_snapshots/update1000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/update_snapshots/update2000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/update_snapshots/update100/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/update_snapshots/update0/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/update_snapshots/update2002/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/models/final/step1954/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate0/update_snapshots/update2010/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate0/update_snapshots/update10/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate0/update_snapshots/update2001/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate0/update_snapshots/update3000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate0/update_snapshots/update2100/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate0/update_snapshots/update1000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate0/update_snapshots/update2000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate0/update_snapshots/update100/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate0/update_snapshots/update0/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate0/update_snapshots/update2002/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate0/models/final/step1954/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate0/update_snapshots/update2010/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate0/update_snapshots/update10/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate0/update_snapshots/update2001/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate0/update_snapshots/update3000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate0/update_snapshots/update2100/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate0/update_snapshots/update1000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate0/update_snapshots/update2000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate0/update_snapshots/update100/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate0/update_snapshots/update0/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate0/update_snapshots/update2002/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-2_gate0/models/final/step1954/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate2000/update_snapshots/update2010/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate2000/update_snapshots/update10/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate2000/update_snapshots/update2001/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate2000/update_snapshots/update3000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate2000/update_snapshots/update2100/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate2000/update_snapshots/update1000/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate2000/update_snapshots/update2000/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate2000/update_snapshots/update100/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate2000/update_snapshots/update0/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate2000/update_snapshots/update2002/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-4_gate2000/models/final/step1954/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/bc_initial/actor.pt",
+      "bytes": 1194945
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/bc_std015/actor.pt",
+      "bytes": 1194945
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/bc_std015_eigen/actor.pt",
+      "bytes": 1194945
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/bc_std005_eigen/actor.pt",
+      "bytes": 1194945
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/retention/warmup2000/update_snapshots/update10/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/retention/warmup2000/update_snapshots/update1/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/retention/warmup2000/update_snapshots/update1000/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/retention/warmup2000/update_snapshots/update2000/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/retention/warmup2000/update_snapshots/update100/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/retention/warmup2000/update_snapshots/update4000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/retention/warmup2000/update_snapshots/update2/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/retention/warmup2000/update_snapshots/update0/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/retention/warmup2000/models/final/step9766/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/retention/immediate/update_snapshots/update10/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/retention/immediate/update_snapshots/update1/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/retention/immediate/update_snapshots/update1000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/retention/immediate/update_snapshots/update2000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/retention/immediate/update_snapshots/update100/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/retention/immediate/update_snapshots/update4000/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/retention/immediate/update_snapshots/update2/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/retention/immediate/update_snapshots/update0/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/retention/immediate/models/final/step9766/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/bc_std005/actor.pt",
+      "bytes": 1194945
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/gpu_plumbing_smoke/update_snapshots/update10/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/gpu_plumbing_smoke/update_snapshots/update1/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/gpu_plumbing_smoke/update_snapshots/update20/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/gpu_plumbing_smoke/update_snapshots/update30/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/gpu_plumbing_smoke/update_snapshots/update2/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/gpu_plumbing_smoke/update_snapshots/update0/actor.pt",
+      "bytes": 1195393
+    },
+    {
+      "path": "diagnostics/overnight_20260908/warmstart/gpu_plumbing_smoke/models/final/step112/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/repro60m/models/seed0/step48830/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/repro60m/models/seed0/step9766/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/repro60m/models/seed0/step29298/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/repro60m/models/seed0/step39064/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/repro60m/models/seed0/step19532/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/repro60m/models/seed0/step58596/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/repro60m/models/seed1/step48830/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/repro60m/models/seed1/step9766/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/repro60m/models/seed1/step29298/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/repro60m/models/seed1/step39064/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/repro60m/models/seed1/step19532/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/repro60m/models/seed1/step58596/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/repro60m/models/seed2/step48830/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/repro60m/models/seed2/step9766/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/repro60m/models/seed2/step29298/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/repro60m/models/seed2/step39064/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/repro60m/models/seed2/step19532/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/overnight_20260908/repro60m/models/seed2/step58596/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/full_nodr_20260909_1004/models/seed0/step48830/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/full_nodr_20260909_1004/models/seed0/step9766/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/full_nodr_20260909_1004/models/seed0/step29298/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/full_nodr_20260909_1004/models/seed0/step39064/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/full_nodr_20260909_1004/models/seed0/step19532/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/full_nodr_20260909_1004/models/seed1/step48830/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/full_nodr_20260909_1004/models/seed1/step9766/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/full_nodr_20260909_1004/models/seed1/step29298/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/full_nodr_20260909_1004/models/seed1/step39064/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/full_nodr_20260909_1004/models/seed1/step19532/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/full_nodr_20260909_1004/models/seed2/step48830/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/full_nodr_20260909_1004/models/seed2/step9766/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/full_nodr_20260909_1004/models/seed2/step29298/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/full_nodr_20260909_1004/models/seed2/step39064/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/full_nodr_20260909_1004/models/seed2/step19532/actor.pt",
+      "bytes": 3522005
+    },
+    {
+      "path": "diagnostics/memory_comparison_20260909/models/obs140_lstm32_historyq/seed0/step48830/actor.pt",
+      "bytes": 5390135
+    },
+    {
+      "path": "diagnostics/memory_comparison_20260909/models/obs140_lstm32_historyq/seed0/step9766/actor.pt",
+      "bytes": 5390135
+    },
+    {
+      "path": "diagnostics/memory_comparison_20260909/models/obs140_lstm32_historyq/seed0/step29298/actor.pt",
+      "bytes": 5390135
+    },
+    {
+      "path": "diagnostics/memory_comparison_20260909/models/obs140_lstm32_historyq/seed0/step39064/actor.pt",
+      "bytes": 5390135
+    },
+    {
+      "path": "diagnostics/memory_comparison_20260909/models/obs140_lstm32_historyq/seed0/step19532/actor.pt",
+      "bytes": 5390135
+    },
+    {
+      "path": "diagnostics/memory_comparison_20260909/models/state162_ff/seed0/step48830/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/memory_comparison_20260909/models/state162_ff/seed0/step9766/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/memory_comparison_20260909/models/state162_ff/seed0/step29298/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/memory_comparison_20260909/models/state162_ff/seed0/step39064/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/memory_comparison_20260909/models/state162_ff/seed0/step19532/actor.pt",
+      "bytes": 3556821
+    },
+    {
+      "path": "diagnostics/memory_comparison_20260909/models/state162_ff/seed1/step9766/actor.pt",
+      "bytes": 3556821
+    }
+  ]
+}
+

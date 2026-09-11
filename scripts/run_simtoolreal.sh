@@ -2,8 +2,10 @@
 set -euo pipefail
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-simtoolreal_root="${SIMTOOLREAL_ROOT:-$(cd "${repo_root}/../simtoolreal" && pwd)}"
+simtoolreal_root="${SIMTOOLREAL_ROOT:-${repo_root}/third_party/simtoolreal}"
+export SIMTOOLREAL_ROOT="${simtoolreal_root}"
 python_bin="${PYTHON_BIN:-python}"
+config_name="${SIMTOOLREAL_CONFIG_NAME:-simtoolreal_flashsac}"
 
 if [[ ! -d "${simtoolreal_root}/isaacsimenvs" ]]; then
     echo "SIMTOOLREAL_ROOT does not contain isaacsimenvs: ${simtoolreal_root}" >&2
@@ -19,5 +21,6 @@ export FLASH_SAC_OUTPUT_ROOT="${FLASH_SAC_OUTPUT_ROOT:-${repo_root}}"
 cd "${simtoolreal_root}"
 exec "${python_bin}" "${repo_root}/train.py" \
     --config_path "${repo_root}/configs" \
-    --config_name simtoolreal_flashsac \
+    --config_name "${config_name}" \
     "$@"
+

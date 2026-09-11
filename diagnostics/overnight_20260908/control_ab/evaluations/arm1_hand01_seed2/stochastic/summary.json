@@ -1,0 +1,83 @@
+{
+  "status": "complete",
+  "episodes_completed": 128,
+  "episodes_requested": 128,
+  "transitions": 76583,
+  "wallclock_seconds": 54.428920158185065,
+  "model_unchanged": true,
+  "model_digest_after": "e50c123682c2c7ab495636e5815088d65a0249ed11876f6578fd4f6018c246d6",
+  "dataset": "transitions.npz",
+  "limitations": [
+    "No network/optimizer updates; this is frozen-policy sampling, not training.",
+    "Fixed reset is one task; episode noise seeds are one reproducible vector RNG stream.",
+    "Proximity/clearance/sustained-lift proxies are NOT verified contacts or stable grasp.",
+    "Dataset next_obs substitutes pre-reset final_obs at every terminated/truncated step.",
+    "Raw entry bypasses wrapper.step but uses the same Isaac environment initialization.",
+    "Native stochastic Flash uses original global zeta repetition; fixed repeat is per-env.",
+    "No extra reset physics tick is inserted; both entries begin from identical reset API timing."
+  ],
+  "success": {
+    "mean": 0.0,
+    "count": 128
+  },
+  "ever_task_lift": {
+    "mean": 0.0234375,
+    "count": 128
+  },
+  "ever_near_object_proxy": {
+    "mean": 0.984375,
+    "count": 128
+  },
+  "ever_off_table_proxy": {
+    "mean": 0.03125,
+    "count": 128
+  },
+  "ever_sustained_lift_near_palm_proxy": {
+    "mean": 0.0234375,
+    "count": 128
+  },
+  "dropped_below_reset_after_task_lift": {
+    "mean": 0.015625,
+    "count": 128
+  },
+  "return": {
+    "mean": 524.3724875924236,
+    "count": 128
+  },
+  "discounted_raw_return": {
+    "mean": 109.81056829586657,
+    "count": 128
+  },
+  "length": {
+    "mean": 598.3046875,
+    "count": 128
+  },
+  "position_error_m": {
+    "mean": 0.17873943503946066,
+    "count": 128
+  },
+  "angular_error_rad": {
+    "mean": 0.5937524421735891,
+    "count": 128
+  },
+  "keypoint_error_m": {
+    "mean": 0.20525142768567634,
+    "count": 128
+  },
+  "max_object_center_height_above_reset_m": {
+    "mean": 0.012978042033500987,
+    "count": 128
+  },
+  "actions": {
+    "arm_7": {
+      "mean_abs": 0.4949772672654568,
+      "mean_abs_delta": 0.33432441965566045,
+      "fraction_abs_ge_0.999": 2.9846235923302628e-05
+    },
+    "hand_22": {
+      "mean_abs": 0.5107890872111768,
+      "mean_abs_delta": 0.33065887533233623,
+      "fraction_abs_ge_0.999": 3.501845294410222e-05
+    }
+  }
+}

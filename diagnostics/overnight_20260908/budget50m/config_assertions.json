@@ -1,0 +1,114 @@
+{
+  "prepared_only": true,
+  "launched": false,
+  "all_checks_passed": true,
+  "phase2_relative_allowed_differences": [
+    "env.num_env_steps",
+    "group_name",
+    "num_env_steps",
+    "num_interaction_steps",
+    "num_update_steps",
+    "output_root",
+    "recording_per_interaction_step",
+    "save_path"
+  ],
+  "pair_differences": [
+    "env.task_cfg_overrides.action.hand_moving_average",
+    "exp_name",
+    "save_path"
+  ],
+  "conditions": {
+    "arm1_hand1": {
+      "baseline_config": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/configs/arm1_hand1_seed0.json",
+      "baseline_sha256": "900c0b01e7744dae22bc84cd805fad367f4933ab4418418425add5281220f24a",
+      "resolved_config": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/configs/arm1_hand1_seed0.json",
+      "resolved_sha256": "f98658b2eaad205e62feb99d874c75d43ee47fbc654ab6848274ae11923b5f05",
+      "differences_from_same_phase2_condition": [
+        "env.num_env_steps",
+        "group_name",
+        "num_env_steps",
+        "num_interaction_steps",
+        "num_update_steps",
+        "output_root",
+        "recording_per_interaction_step"
+      ],
+      "overrides": [
+        "seed=0",
+        "num_env_steps=50001920",
+        "num_train_envs=1024",
+        "group_name=budget50m",
+        "exp_name=arm1_hand1",
+        "output_root=/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m",
+        "save_path=models/arm1_hand1/seed0",
+        "save_checkpoint_per_interaction_step=9766",
+        "agent_load_path=null",
+        "buffer_load_path=null",
+        "agent.learning_rate_warmup_step=0",
+        "agent.learning_rate_decay_step=19532",
+        "recording_per_interaction_step=0",
+        "env.task_cfg_overrides.action.arm_moving_average=1.0",
+        "env.task_cfg_overrides.action.hand_moving_average=1.0"
+      ],
+      "first_10m_recipe_preserved": true
+    },
+    "arm1_hand01": {
+      "baseline_config": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/configs/arm1_hand01_seed0.json",
+      "baseline_sha256": "c81498296a344fb6de12a7f2294c0a0ade0ba9378b0d8cd1e36044ca397d61a9",
+      "resolved_config": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/configs/arm1_hand01_seed0.json",
+      "resolved_sha256": "bf037d1d9fee0f2293d2f3442daf3a4d63e2474e7b5c8ce5b34cbe1d8f6871d4",
+      "differences_from_same_phase2_condition": [
+        "env.num_env_steps",
+        "group_name",
+        "num_env_steps",
+        "num_interaction_steps",
+        "num_update_steps",
+        "output_root",
+        "recording_per_interaction_step"
+      ],
+      "overrides": [
+        "seed=0",
+        "num_env_steps=50001920",
+        "num_train_envs=1024",
+        "group_name=budget50m",
+        "exp_name=arm1_hand01",
+        "output_root=/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m",
+        "save_path=models/arm1_hand01/seed0",
+        "save_checkpoint_per_interaction_step=9766",
+        "agent_load_path=null",
+        "buffer_load_path=null",
+        "agent.learning_rate_warmup_step=0",
+        "agent.learning_rate_decay_step=19532",
+        "recording_per_interaction_step=0",
+        "env.task_cfg_overrides.action.arm_moving_average=1.0",
+        "env.task_cfg_overrides.action.hand_moving_average=0.1"
+      ],
+      "first_10m_recipe_preserved": true
+    }
+  },
+  "fixed_learning_rate_warmup_step": 0,
+  "fixed_learning_rate_decay_step": 19532,
+  "training_transitions_each": 50001920,
+  "total_training_transitions": 100003840,
+  "checkpoint_steps": [
+    9766,
+    19532,
+    29298,
+    39064,
+    48830
+  ],
+  "checkpoint_transitions": [
+    10000384,
+    20000768,
+    30001152,
+    40001536,
+    50001920
+  ],
+  "continuous_fresh_training_no_replay_reload": true,
+  "nontraining_change": "recording cadence disabled; both old/new num_record_episodes=0 and recording env=None",
+  "jobs": {
+    "total": 26,
+    "training": 2,
+    "evaluations": 20,
+    "cpu_critic": 4
+  }
+}

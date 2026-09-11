@@ -1,0 +1,82 @@
+{
+  "experiment": "full_STR_FlashSAC_nstep3_seed0",
+  "authorized_request": "继续尝试 必须用flashSAC把她训起来",
+  "deadline_utc": "2026-09-09T21:05:00+00:00",
+  "no_new_training_after_utc": "2026-09-09T20:00:00+00:00",
+  "baseline": "/home/abao/flashsac-robotics/diagnostics/control_ab_20260909_arm1",
+  "prior_rejected_experiment": "/home/abao/flashsac-robotics/diagnostics/hand_response_20260910",
+  "single_variable": "n_step 1 -> 3 relative to arm1/hand0.1 baseline",
+  "initialization": "fresh seed0; no model or replay loaded",
+  "num_train_envs": 2048,
+  "transitions": 100003840,
+  "batch_total_transitions": 200007680,
+  "task_reward_network_gamma_unchanged": true,
+  "hypothesis": "Multi-step returns may improve propagation of sparse goal rewards and post-lift consequences. Not a proven cause; off-policy bias/variance also changes.",
+  "jobs": [
+    {
+      "id": "train_nstep3_seed0_100m",
+      "kind": "training",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/train_str_holding.py",
+        "--output-root",
+        "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/candidate",
+        "--expected-final-checkpoint",
+        "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/candidate/models/seed0/step48830",
+        "--config-name",
+        "simtoolreal_full_arm1_nstep3",
+        "--overrides",
+        "seed=0",
+        "--overrides",
+        "save_path=models/seed0"
+      ],
+      "cwd": "/home/abao/simtoolreal",
+      "env": {
+        "PYTHONPATH": "/home/abao/flashsac-robotics:/home/abao/simtoolreal",
+        "CUDA_VISIBLE_DEVICES": "0",
+        "OMNI_KIT_ACCEPT_EULA": "YES",
+        "OMP_NUM_THREADS": "2",
+        "MKL_NUM_THREADS": "2",
+        "NUMEXPR_NUM_THREADS": "2",
+        "PYTHONUNBUFFERED": "1"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/train.log",
+      "timeout_seconds": 7200,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/candidate/training_complete.json"
+    },
+    {
+      "id": "paired_play_nstep3_seed0",
+      "kind": "diagnostic",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/play_str_full_diagnostic.py",
+        "--config-name",
+        "simtoolreal_full_arm1_nstep3",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/candidate/models/seed0/step48830",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/play",
+        "--num-envs",
+        "64",
+        "--steps",
+        "1200",
+        "--seed",
+        "0"
+      ],
+      "cwd": "/home/abao/simtoolreal",
+      "env": {
+        "PYTHONPATH": "/home/abao/flashsac-robotics:/home/abao/simtoolreal",
+        "CUDA_VISIBLE_DEVICES": "0",
+        "OMNI_KIT_ACCEPT_EULA": "YES",
+        "OMP_NUM_THREADS": "2",
+        "MKL_NUM_THREADS": "2",
+        "NUMEXPR_NUM_THREADS": "2",
+        "PYTHONUNBUFFERED": "1",
+        "STR_PLAY_NUMPY_SITE": "/home/abao/play2perfect/.venv_isaacsim/lib/python3.11/site-packages"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/play.log",
+      "timeout_seconds": 1200,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/play/play_complete.json"
+    }
+  ]
+}

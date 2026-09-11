@@ -1,4 +1,4 @@
-"""Isaac Lab scene construction for the Dex4D XArm6 + LEAP task."""
+"""Isaac Lab scene construction for the supported Dex4D robot profiles."""
 
 from __future__ import annotations
 
@@ -104,9 +104,11 @@ class RobotProfile(NamedTuple):
     hand_effort: dict[str, float] | float | None
     hand_velocity: dict[str, float] | float | None
     merge_fixed_joints: bool
+    make_instanceable: bool
     import_self_collision: bool
     enabled_self_collisions: bool
     self_collision_filter_pairs: tuple[tuple[str, str], ...]
+    finger_distance_scale: float
     rename_numeric_leap_joints: bool
     table_size: tuple[float, float, float]
     table_pos: tuple[float, float, float]
@@ -151,9 +153,11 @@ ROBOT_PROFILES = {
         hand_effort=0.95,
         hand_velocity=8.48,
         merge_fixed_joints=True,
+        make_instanceable=True,
         import_self_collision=False,
         enabled_self_collisions=False,
         self_collision_filter_pairs=(),
+        finger_distance_scale=1.0,
         rename_numeric_leap_joints=True,
         table_size=(1.2, 1.2, 0.6),
         table_pos=(0.0, 0.0, 0.3),
@@ -184,9 +188,13 @@ ROBOT_PROFILES = {
         hand_effort=None,
         hand_velocity=None,
         merge_fixed_joints=False,
+        # Required for authoring per-link FilteredPairsAPI on the Wuji chain.
+        make_instanceable=False,
         import_self_collision=True,
         enabled_self_collisions=True,
         self_collision_filter_pairs=_M6_WUJI_FILTER_PAIRS,
+        # Normalize the five-tip sum to Dex4D's original four-tip reward scale.
+        finger_distance_scale=4.0 / 5.0,
         rename_numeric_leap_joints=False,
         # Same narrow tabletop footprint validated with the stand_v3 root;
         # top remains z=0.6 so Dex4D object/reset/reward geometry is unchanged.
@@ -308,7 +316,11 @@ def _author_collision_properties(usd_path: str) -> None:
         raise RuntimeError(f"No collision schemas found in converted USD physics layers: {usd_path}")
 
 
-def _convert_urdf_with_collision_properties(cfg: sim_utils.UrdfConverterCfg) -> str:
+def _convert_urdf_with_collision_properties(
+    cfg: sim_utils.UrdfConverterCfg,
+    *,
+    self_collision_filter_pairs: tuple[tuple[str, str], ...] = (),
+) -> str:
     """Serialize conversion/cache edits across Dex4D processes."""
     output = Path(cfg.usd_dir) / cfg.usd_file_name
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -317,6 +329,7 @@ def _convert_urdf_with_collision_properties(cfg: sim_utils.UrdfConverterCfg) -> 
         fcntl.flock(lock.fileno(), fcntl.LOCK_EX)
         usd_path = sim_utils.UrdfConverter(cfg).usd_path
         _author_collision_properties(usd_path)
+        _apply_self_collision_filters(usd_path, self_collision_filter_pairs)
         fcntl.flock(lock.fileno(), fcntl.LOCK_UN)
     return usd_path
 
@@ -418,7 +431,7 @@ def setup_scene(env: Any) -> None:
             usd_dir=str(robot_cache),
             usd_file_name=f"{robot_urdf.stem}.usd",
             force_usd_conversion=False,
-            make_instanceable=True,
+            make_instanceable=profile.make_instanceable,
             fix_base=True,
             link_density=1000.0,
             merge_fixed_joints=profile.merge_fixed_joints,
@@ -429,9 +442,9 @@ def setup_scene(env: Any) -> None:
                 gains=sim_utils.UrdfConverterCfg.JointDriveCfg.PDGainsCfg(stiffness=0.0, damping=0.0),
             ),
             collider_type="convex_hull",
-        )
+        ),
+        self_collision_filter_pairs=profile.self_collision_filter_pairs,
     )
-    _apply_self_collision_filters(robot_usd_path, profile.self_collision_filter_pairs)
 
     def actuator(
         joint_expr: str,

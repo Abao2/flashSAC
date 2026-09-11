@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "entry": "native",
+  "step": 600,
+  "coverage": {
+    "terminated": 30,
+    "truncated": 11,
+    "goal_hits": 33,
+    "final_obs_rows": 41
+  }
+}

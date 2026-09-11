@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "tests_passed": 36,
+  "cuda_tests": false,
+  "resolved_native_load_paths_match": true,
+  "source_sha256": {
+    "scripts/train_str_holding.py": "573723957625f5e32ea9b4e26692fca9ad91909d458c375ca35afcd5cf6629bd",
+    "configs/simtoolreal_full_nstep3_continue.yaml": "cdccbcc62447bc5d866b9a2b50ce567618e8b37625b0cb3076984615edb95459",
+    "tests/test_str_resume_holding.py": "70344fcb4ac5afeac19ef0e6b32427b81a2597f8d3a6ba796d9b2feae8e20ee5",
+    "flash_rl/buffers/torch_buffer.py": "1994d9770f2b1da2558c0167c69c341fd2db31154192935d82eb025c6669dc74",
+    "flash_rl/agents/flashSAC/agent.py": "9b415a3194d596706ced6a7895f01a4072712d50866bda6d8fffc61b2795249e",
+    "flash_rl/agents/flashSAC/update.py": "50c571fc466276aa6caac56c2c13d3e42029bb669cce58a6a73a98bf9e01d5ba",
+    "train.py": "a7697d6e5e84cae5bff49002d8cd99956b42576f9140ba8f65a93973e587be87"
+  },
+  "source_checkpoint": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/candidate/models/seed0/step48830",
+  "env_step_offset": 100003840,
+  "additional_transitions": 400015360,
+  "note": "Source learned state validated on CPU; actual GPU load will be confirmed by resume_loaded.json. Simulator reset, not exact physical/RNG continuation."
+}

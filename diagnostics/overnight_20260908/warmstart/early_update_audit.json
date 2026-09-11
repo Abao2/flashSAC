@@ -1,0 +1,2601 @@
+{
+  "status": "complete_cpu_snapshot_audit",
+  "created_utc": "2026-09-08T15:47:02.960286+00:00",
+  "branch": "immediate",
+  "expert_dataset": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/official_filter01_labeled128/transitions.npz",
+  "selection": {
+    "n": 512,
+    "method": "Uniform without replacement over saved expert transitions; fixed RNG20260908, identical states for every checkpoint/hybrid. Not phase-balanced and not training replay.",
+    "transition_indices": [
+      26,
+      41,
+      45,
+      53,
+      79,
+      97,
+      105,
+      174,
+      191,
+      208,
+      242,
+      245,
+      265,
+      276,
+      277,
+      281,
+      299,
+      310,
+      333,
+      339,
+      346,
+      356,
+      387,
+      404,
+      412,
+      414,
+      418,
+      420,
+      471,
+      487,
+      537,
+      548,
+      558,
+      559,
+      571,
+      573,
+      583,
+      592,
+      638,
+      686,
+      703,
+      707,
+      730,
+      737,
+      738,
+      749,
+      753,
+      800,
+      812,
+      814,
+      853,
+      864,
+      876,
+      879,
+      902,
+      935,
+      936,
+      938,
+      945,
+      982,
+      1011,
+      1017,
+      1023,
+      1032,
+      1034,
+      1062,
+      1067,
+      1122,
+      1133,
+      1169,
+      1189,
+      1235,
+      1237,
+      1270,
+      1287,
+      1302,
+      1304,
+      1307,
+      1340,
+      1348,
+      1370,
+      1410,
+      1412,
+      1416,
+      1429,
+      1447,
+      1465,
+      1466,
+      1468,
+      1506,
+      1518,
+      1527,
+      1547,
+      1554,
+      1584,
+      1591,
+      1627,
+      1629,
+      1668,
+      1687,
+      1702,
+      1708,
+      1725,
+      1728,
+      1747,
+      1757,
+      1784,
+      1797,
+      1825,
+      1847,
+      1865,
+      1873,
+      1875,
+      1879,
+      1901,
+      1904,
+      1918,
+      1967,
+      1985,
+      1986,
+      1993,
+      1997,
+      2014,
+      2023,
+      2045,
+      2047,
+      2058,
+      2104,
+      2129,
+      2133,
+      2134,
+      2151,
+      2169,
+      2172,
+      2193,
+      2212,
+      2244,
+      2286,
+      2313,
+      2331,
+      2335,
+      2360,
+      2362,
+      2400,
+      2411,
+      2461,
+      2474,
+      2503,
+      2533,
+      2559,
+      2595,
+      2644,
+      2652,
+      2672,
+      2684,
+      2732,
+      2738,
+      2788,
+      2800,
+      2814,
+      2818,
+      2824,
+      2828,
+      2851,
+      2872,
+      2875,
+      2897,
+      2904,
+      2918,
+      2933,
+      2954,
+      2956,
+      2960,
+      2993,
+      3020,
+      3042,
+      3052,
+      3058,
+      3066,
+      3067,
+      3070,
+      3083,
+      3107,
+      3109,
+      3110,
+      3112,
+      3125,
+      3155,
+      3159,
+      3161,
+      3168,
+      3183,
+      3190,
+      3192,
+      3228,
+      3257,
+      3265,
+      3266,
+      3282,
+      3299,
+      3346,
+      3350,
+      3360,
+      3409,
+      3422,
+      3443,
+      3456,
+      3466,
+      3467,
+      3493,
+      3503,
+      3507,
+      3513,
+      3550,
+      3559,
+      3561,
+      3578,
+      3582,
+      3606,
+      3648,
+      3668,
+      3692,
+      3698,
+      3709,
+      3711,
+      3766,
+      3774,
+      3790,
+      3812,
+      3839,
+      3862,
+      3868,
+      3894,
+      3898,
+      3899,
+      3901,
+      3904,
+      3905,
+      3911,
+      3933,
+      3944,
+      3953,
+      3956,
+      3959,
+      3967,
+      4020,
+      4027,
+      4033,
+      4050,
+      4057,
+      4067,
+      4071,
+      4086,
+      4100,
+      4104,
+      4114,
+      4120,
+      4124,
+      4173,
+      4179,
+      4181,
+      4182,
+      4191,
+      4207,
+      4220,
+      4247,
+      4248,
+      4254,
+      4311,
+      4327,
+      4334,
+      4376,
+      4465,
+      4505,
+      4528,
+      4542,
+      4544,
+      4546,
+      4554,
+      4568,
+      4587,
+      4593,
+      4603,
+      4635,
+      4646,
+      4671,
+      4681,
+      4688,
+      4689,
+      4704,
+      4717,
+      4750,
+      4751,
+      4756,
+      4784,
+      4801,
+      4818,
+      4820,
+      4842,
+      4873,
+      4907,
+      4912,
+      4937,
+      4943,
+      4947,
+      4948,
+      4956,
+      4962,
+      4972,
+      5006,
+      5008,
+      5030,
+      5031,
+      5035,
+      5040,
+      5081,
+      5086,
+      5092,
+      5095,
+      5099,
+      5106,
+      5129,
+      5130,
+      5137,
+      5167,
+      5174,
+      5185,
+      5198,
+      5234,
+      5260,
+      5311,
+      5319,
+      5323,
+      5327,
+      5333,
+      5336,
+      5342,
+      5350,
+      5387,
+      5466,
+      5513,
+      5519,
+      5541,
+      5569,
+      5611,
+      5615,
+      5620,
+      5640,
+      5649,
+      5697,
+      5704,
+      5706,
+      5753,
+      5763,
+      5773,
+      5775,
+      5779,
+      5781,
+      5794,
+      5798,
+      5809,
+      5811,
+      5832,
+      5852,
+      5863,
+      5890,
+      5911,
+      5923,
+      5987,
+      6005,
+      6017,
+      6024,
+      6029,
+      6034,
+      6035,
+      6037,
+      6047,
+      6062,
+      6065,
+      6069,
+      6079,
+      6086,
+      6110,
+      6117,
+      6121,
+      6142,
+      6146,
+      6155,
+      6157,
+      6181,
+      6183,
+      6244,
+      6269,
+      6270,
+      6282,
+      6286,
+      6297,
+      6309,
+      6311,
+      6328,
+      6338,
+      6351,
+      6352,
+      6361,
+      6382,
+      6391,
+      6400,
+      6406,
+      6446,
+      6465,
+      6466,
+      6481,
+      6504,
+      6569,
+      6596,
+      6604,
+      6632,
+      6634,
+      6663,
+      6674,
+      6678,
+      6682,
+      6685,
+      6697,
+      6704,
+      6728,
+      6757,
+      6759,
+      6778,
+      6799,
+      6801,
+      6809,
+      6810,
+      6853,
+      6878,
+      6883,
+      6902,
+      6961,
+      6965,
+      6973,
+      6976,
+      7000,
+      7017,
+      7034,
+      7062,
+      7079,
+      7086,
+      7098,
+      7145,
+      7196,
+      7203,
+      7227,
+      7255,
+      7278,
+      7304,
+      7319,
+      7330,
+      7336,
+      7358,
+      7359,
+      7376,
+      7386,
+      7405,
+      7419,
+      7454,
+      7470,
+      7507,
+      7531,
+      7550,
+      7579,
+      7603,
+      7607,
+      7622,
+      7628,
+      7635,
+      7641,
+      7706,
+      7731,
+      7737,
+      7740,
+      7748,
+      7772,
+      7796,
+      7797,
+      7860,
+      7867,
+      7881,
+      7896,
+      7935,
+      7937,
+      7945,
+      7948,
+      7949,
+      7953,
+      7964,
+      8009,
+      8035,
+      8050,
+      8067,
+      8069,
+      8075,
+      8077,
+      8080,
+      8081,
+      8083,
+      8091,
+      8093,
+      8109,
+      8115,
+      8116,
+      8132,
+      8136
+    ],
+    "indices_sha256": "ba831e647bcff7c8f5731a8a21e637effcf3df0d53750af9b2eee712c3c5ff96",
+    "phase_counts": {
+      "far_from_object": 180,
+      "lifted_proxy": 134,
+      "near_goal_center_proxy": 115,
+      "near_object_proxy": 63,
+      "off_table_proxy": 15,
+      "reset": 5
+    },
+    "episode_count": 127,
+    "step_in_episode": {
+      "mean": 32.880859375,
+      "std": 19.505895163679995,
+      "min": 0,
+      "p50": 34,
+      "p90": 58,
+      "max": 92
+    }
+  },
+  "entropy_method": {
+    "conditional_policy": "tanh(Normal(mean,std)), independent-noise one-step conditional density; cached collector temporal dependence not included.",
+    "formula": "H(Normal)+E[sum(2*(log(2)-z-softplus(-2*z)))]",
+    "mc_draws_per_state": 128,
+    "seed": 20260909,
+    "precision": "float64 Jacobian/MC, FP32 actor inference",
+    "noise_common_across_checkpoints_and_hybrids": true
+  },
+  "gradient_protocol": "Existing actor_gradient_metrics: cloned actor training=True on fixed obs+next_obs batch1024, critic training=False,3 shared RNG repetitions; raw unpreconditioned parameter gradients, not actual replay batch/Adam/AMP/post-step unit normalization.",
+  "counterfactual_protocol": "Inference-only actor hybrids: current parameters with initial running BN, initial parameters with current running BN. BN affine weight/bias count as parameters. Descriptive mechanism decomposition; not alternate training or causal effect estimates.",
+  "limits": [
+    "Single fixed task/expert state distribution; not full rollout retention, learning, or true-Q calibration.",
+    "Inference action differences can be hidden by tanh saturation; both pre-tanh and post-tanh changes reported.",
+    "Entropy gradient dominance on this fixed expert batch does not prove the historical optimizer step or entropy was the sole cause of failure.",
+    "Training-mode metrics change only a disposable clone; no live checkpoint, simulator, replay or optimizer is changed.",
+    "Final checkpoint deliberately omitted from early-onset audit; update2000/4000 included because already available."
+  ],
+  "checkpoints": [
+    {
+      "label": "initial",
+      "checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/bc_std005_eigen",
+      "actor_sha256": "f20e3dbea5620c0ea18fb30bd8b03ccdc9eef1b8155c4c83333e3b82251b0f1b",
+      "alpha": 0.009999999776482582,
+      "reward_normalizer_denominator": 1,
+      "inference": {
+        "mean_action_rmse_vs_initial": 0,
+        "arm_mean_action_rmse_vs_initial": 0,
+        "hand_mean_action_rmse_vs_initial": 0,
+        "pretanh_mean_rmse_vs_initial": 0,
+        "std": {
+          "mean": 0.0792482504648433,
+          "std": 0.09829434682372731,
+          "min": 0.003923255484551191,
+          "p50": 0.05357763729989529,
+          "p90": 0.16101254522800446,
+          "max": 1.0684162378311157
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -138.29041493650635,
+          "std": 28.74182980390601,
+          "min": -217.41492996292672,
+          "p50": -138.29504369554365,
+          "p90": -101.88399579540082,
+          "max": -38.44284231756437
+        },
+        "gaussian_entropy_mean_nats": -44.43766225205727,
+        "entropy_mc_se_fixed_states": 0.004209028518370895,
+        "deterministic_abs_action_mean": 0.8801796436309814,
+        "deterministic_saturated_fraction_abs_ge0999": 0.020676184445619583
+      },
+      "parameters_vs_initial": {
+        "changed_tensors": 0,
+        "total_tensors": 20,
+        "delta_l2": 0,
+        "delta_max_abs": 0,
+        "relative_delta_l2": 0
+      },
+      "bn_buffers_vs_initial": {
+        "changed_tensors": 0,
+        "total_tensors": 10,
+        "delta_l2": 0,
+        "delta_max_abs": 0,
+        "relative_delta_l2": 0
+      },
+      "updated_parameters_original_bn": {
+        "mean_action_rmse_vs_initial": 0,
+        "arm_mean_action_rmse_vs_initial": 0,
+        "hand_mean_action_rmse_vs_initial": 0,
+        "pretanh_mean_rmse_vs_initial": 0,
+        "std": {
+          "mean": 0.0792482504648433,
+          "std": 0.09829434682372731,
+          "min": 0.003923255484551191,
+          "p50": 0.05357763729989529,
+          "p90": 0.16101254522800446,
+          "max": 1.0684162378311157
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -138.29041493650635,
+          "std": 28.74182980390601,
+          "min": -217.41492996292672,
+          "p50": -138.29504369554365,
+          "p90": -101.88399579540082,
+          "max": -38.44284231756437
+        },
+        "gaussian_entropy_mean_nats": -44.43766225205727,
+        "entropy_mc_se_fixed_states": 0.004209028518370895,
+        "deterministic_abs_action_mean": 0.8801796436309814,
+        "deterministic_saturated_fraction_abs_ge0999": 0.020676184445619583
+      },
+      "original_parameters_updated_bn": {
+        "mean_action_rmse_vs_initial": 0,
+        "arm_mean_action_rmse_vs_initial": 0,
+        "hand_mean_action_rmse_vs_initial": 0,
+        "pretanh_mean_rmse_vs_initial": 0,
+        "std": {
+          "mean": 0.0792482504648433,
+          "std": 0.09829434682372731,
+          "min": 0.003923255484551191,
+          "p50": 0.05357763729989529,
+          "p90": 0.16101254522800446,
+          "max": 1.0684162378311157
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -138.29041493650635,
+          "std": 28.74182980390601,
+          "min": -217.41492996292672,
+          "p50": -138.29504369554365,
+          "p90": -101.88399579540082,
+          "max": -38.44284231756437
+        },
+        "gaussian_entropy_mean_nats": -44.43766225205727,
+        "entropy_mc_se_fixed_states": 0.004209028518370895,
+        "deterministic_abs_action_mean": 0.8801796436309814,
+        "deterministic_saturated_fraction_abs_ge0999": 0.020676184445619583
+      },
+      "training_cross_bn_same_expert_batch": {
+        "mean_action_rmse_vs_initial": 0.04231536015868187,
+        "arm_mean_action_rmse_vs_initial": 0.05742497369647026,
+        "hand_mean_action_rmse_vs_initial": 0.036208804696798325,
+        "pretanh_mean_rmse_vs_initial": 0.12686918675899506,
+        "std": {
+          "mean": 0.08918416084497949,
+          "std": 0.12297890400168188,
+          "min": 0.0035220009740442038,
+          "p50": 0.05209271050989628,
+          "p90": 0.1870337873697281,
+          "max": 1.3086365461349487
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -136.28066887234215,
+          "std": 31.22062795761271,
+          "min": -218.42349884835423,
+          "p50": -137.20770946647752,
+          "p90": -93.72177367627458,
+          "max": -34.96713472204699
+        },
+        "gaussian_entropy_mean_nats": -43.061157840706976,
+        "entropy_mc_se_fixed_states": 0.00496973943519673,
+        "deterministic_abs_action_mean": 0.8783272504806519,
+        "deterministic_saturated_fraction_abs_ge0999": 0.020070042461156845
+      },
+      "parameter_groups": {
+        "embedder": {
+          "changed_tensors": 0,
+          "total_tensors": 3,
+          "delta_l2": 0,
+          "delta_max_abs": 0,
+          "relative_delta_l2": 0
+        },
+        "encoder": {
+          "changed_tensors": 0,
+          "total_tensors": 12,
+          "delta_l2": 0,
+          "delta_max_abs": 0,
+          "relative_delta_l2": 0
+        },
+        "post_norm": {
+          "changed_tensors": 0,
+          "total_tensors": 1,
+          "delta_l2": 0,
+          "delta_max_abs": 0,
+          "relative_delta_l2": 0
+        },
+        "mean_head": {
+          "changed_tensors": 0,
+          "total_tensors": 2,
+          "delta_l2": 0,
+          "delta_max_abs": 0,
+          "relative_delta_l2": 0
+        },
+        "std_head": {
+          "changed_tensors": 0,
+          "total_tensors": 2,
+          "delta_l2": 0,
+          "delta_max_abs": 0,
+          "relative_delta_l2": 0
+        }
+      },
+      "native_actor_loss_gradients_expert_batch": {
+        "q_loss_gradient_l2": {
+          "mean": 0.37002936005592346,
+          "std": 0.0016984140916370975,
+          "min": 0.3683870732784271,
+          "p50": 0.36933258175849915,
+          "p90": 0.37176125645637514,
+          "max": 0.3723684251308441
+        },
+        "entropy_loss_gradient_l2": {
+          "mean": 3.5646332105000815,
+          "std": 0.009318531072938722,
+          "min": 3.554680585861206,
+          "p50": 3.562128782272339,
+          "p90": 3.5740979671478272,
+          "max": 3.577090263366699
+        },
+        "total_loss_gradient_l2": {
+          "mean": 3.5710803667704263,
+          "std": 0.004537952021121891,
+          "min": 3.5646770000457764,
+          "p50": 3.573911666870117,
+          "p90": 3.574504280090332,
+          "max": 3.5746524333953857
+        },
+        "q_entropy_gradient_cosine": {
+          "mean": -0.0343616089473168,
+          "std": 0.018773305118945306,
+          "min": -0.06058398634195328,
+          "p50": -0.02484842948615551,
+          "p90": -0.019091614708304405,
+          "max": -0.01765241101384163
+        },
+        "q_to_entropy_gradient_norm_ratio": {
+          "mean": 0.10380538801352183,
+          "std": 0.00028579883056859717,
+          "min": 0.10341767221689224,
+          "p50": 0.10390035808086395,
+          "p90": 0.10405857861042023,
+          "max": 0.1040981337428093
+        },
+        "q_loss": {
+          "mean": 0.3655422230561574,
+          "std": 0.00044246789620820703,
+          "min": 0.36509159207344055,
+          "p50": 0.3653915524482727,
+          "p90": 0.36599313020706176,
+          "max": 0.36614352464675903
+        },
+        "entropy_loss": {
+          "mean": 1.3641897042592366,
+          "std": 0.0009943538575879693,
+          "min": 1.3628976345062256,
+          "p50": 1.3643550872802734,
+          "p90": 1.3651241302490233,
+          "max": 1.365316390991211
+        }
+      },
+      "actual_actor_optimizer_steps": []
+    },
+    {
+      "label": "0",
+      "checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/retention/immediate/update_snapshots/update0",
+      "actor_sha256": "7771fc9b4675006ed5c0cbd6a688ec45f10180e2e0de282e98cb9781d821eabb",
+      "alpha": 0.009999999776482582,
+      "reward_normalizer_denominator": 238.6288818359375,
+      "inference": {
+        "mean_action_rmse_vs_initial": 0,
+        "arm_mean_action_rmse_vs_initial": 0,
+        "hand_mean_action_rmse_vs_initial": 0,
+        "pretanh_mean_rmse_vs_initial": 0,
+        "std": {
+          "mean": 0.0792482504648433,
+          "std": 0.09829434682372731,
+          "min": 0.003923255484551191,
+          "p50": 0.05357763729989529,
+          "p90": 0.16101254522800446,
+          "max": 1.0684162378311157
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -138.29041493650635,
+          "std": 28.74182980390601,
+          "min": -217.41492996292672,
+          "p50": -138.29504369554365,
+          "p90": -101.88399579540082,
+          "max": -38.44284231756437
+        },
+        "gaussian_entropy_mean_nats": -44.43766225205727,
+        "entropy_mc_se_fixed_states": 0.004209028518370895,
+        "deterministic_abs_action_mean": 0.8801796436309814,
+        "deterministic_saturated_fraction_abs_ge0999": 0.020676184445619583
+      },
+      "parameters_vs_initial": {
+        "changed_tensors": 0,
+        "total_tensors": 20,
+        "delta_l2": 0,
+        "delta_max_abs": 0,
+        "relative_delta_l2": 0
+      },
+      "bn_buffers_vs_initial": {
+        "changed_tensors": 0,
+        "total_tensors": 10,
+        "delta_l2": 0,
+        "delta_max_abs": 0,
+        "relative_delta_l2": 0
+      },
+      "updated_parameters_original_bn": {
+        "mean_action_rmse_vs_initial": 0,
+        "arm_mean_action_rmse_vs_initial": 0,
+        "hand_mean_action_rmse_vs_initial": 0,
+        "pretanh_mean_rmse_vs_initial": 0,
+        "std": {
+          "mean": 0.0792482504648433,
+          "std": 0.09829434682372731,
+          "min": 0.003923255484551191,
+          "p50": 0.05357763729989529,
+          "p90": 0.16101254522800446,
+          "max": 1.0684162378311157
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -138.29041493650635,
+          "std": 28.74182980390601,
+          "min": -217.41492996292672,
+          "p50": -138.29504369554365,
+          "p90": -101.88399579540082,
+          "max": -38.44284231756437
+        },
+        "gaussian_entropy_mean_nats": -44.43766225205727,
+        "entropy_mc_se_fixed_states": 0.004209028518370895,
+        "deterministic_abs_action_mean": 0.8801796436309814,
+        "deterministic_saturated_fraction_abs_ge0999": 0.020676184445619583
+      },
+      "original_parameters_updated_bn": {
+        "mean_action_rmse_vs_initial": 0,
+        "arm_mean_action_rmse_vs_initial": 0,
+        "hand_mean_action_rmse_vs_initial": 0,
+        "pretanh_mean_rmse_vs_initial": 0,
+        "std": {
+          "mean": 0.0792482504648433,
+          "std": 0.09829434682372731,
+          "min": 0.003923255484551191,
+          "p50": 0.05357763729989529,
+          "p90": 0.16101254522800446,
+          "max": 1.0684162378311157
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -138.29041493650635,
+          "std": 28.74182980390601,
+          "min": -217.41492996292672,
+          "p50": -138.29504369554365,
+          "p90": -101.88399579540082,
+          "max": -38.44284231756437
+        },
+        "gaussian_entropy_mean_nats": -44.43766225205727,
+        "entropy_mc_se_fixed_states": 0.004209028518370895,
+        "deterministic_abs_action_mean": 0.8801796436309814,
+        "deterministic_saturated_fraction_abs_ge0999": 0.020676184445619583
+      },
+      "training_cross_bn_same_expert_batch": {
+        "mean_action_rmse_vs_initial": 0.04231536015868187,
+        "arm_mean_action_rmse_vs_initial": 0.05742497369647026,
+        "hand_mean_action_rmse_vs_initial": 0.036208804696798325,
+        "pretanh_mean_rmse_vs_initial": 0.12686918675899506,
+        "std": {
+          "mean": 0.08918416084497949,
+          "std": 0.12297890400168188,
+          "min": 0.0035220009740442038,
+          "p50": 0.05209271050989628,
+          "p90": 0.1870337873697281,
+          "max": 1.3086365461349487
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -136.28066887234215,
+          "std": 31.22062795761271,
+          "min": -218.42349884835423,
+          "p50": -137.20770946647752,
+          "p90": -93.72177367627458,
+          "max": -34.96713472204699
+        },
+        "gaussian_entropy_mean_nats": -43.061157840706976,
+        "entropy_mc_se_fixed_states": 0.00496973943519673,
+        "deterministic_abs_action_mean": 0.8783272504806519,
+        "deterministic_saturated_fraction_abs_ge0999": 0.020070042461156845
+      },
+      "parameter_groups": {
+        "embedder": {
+          "changed_tensors": 0,
+          "total_tensors": 3,
+          "delta_l2": 0,
+          "delta_max_abs": 0,
+          "relative_delta_l2": 0
+        },
+        "encoder": {
+          "changed_tensors": 0,
+          "total_tensors": 12,
+          "delta_l2": 0,
+          "delta_max_abs": 0,
+          "relative_delta_l2": 0
+        },
+        "post_norm": {
+          "changed_tensors": 0,
+          "total_tensors": 1,
+          "delta_l2": 0,
+          "delta_max_abs": 0,
+          "relative_delta_l2": 0
+        },
+        "mean_head": {
+          "changed_tensors": 0,
+          "total_tensors": 2,
+          "delta_l2": 0,
+          "delta_max_abs": 0,
+          "relative_delta_l2": 0
+        },
+        "std_head": {
+          "changed_tensors": 0,
+          "total_tensors": 2,
+          "delta_l2": 0,
+          "delta_max_abs": 0,
+          "relative_delta_l2": 0
+        }
+      },
+      "native_actor_loss_gradients_expert_batch": {
+        "q_loss_gradient_l2": {
+          "mean": 0.37002936005592346,
+          "std": 0.0016984140916370975,
+          "min": 0.3683870732784271,
+          "p50": 0.36933258175849915,
+          "p90": 0.37176125645637514,
+          "max": 0.3723684251308441
+        },
+        "entropy_loss_gradient_l2": {
+          "mean": 3.5646332105000815,
+          "std": 0.009318531072938722,
+          "min": 3.554680585861206,
+          "p50": 3.562128782272339,
+          "p90": 3.5740979671478272,
+          "max": 3.577090263366699
+        },
+        "total_loss_gradient_l2": {
+          "mean": 3.5710803667704263,
+          "std": 0.004537952021121891,
+          "min": 3.5646770000457764,
+          "p50": 3.573911666870117,
+          "p90": 3.574504280090332,
+          "max": 3.5746524333953857
+        },
+        "q_entropy_gradient_cosine": {
+          "mean": -0.0343616089473168,
+          "std": 0.018773305118945306,
+          "min": -0.06058398634195328,
+          "p50": -0.02484842948615551,
+          "p90": -0.019091614708304405,
+          "max": -0.01765241101384163
+        },
+        "q_to_entropy_gradient_norm_ratio": {
+          "mean": 0.10380538801352183,
+          "std": 0.00028579883056859717,
+          "min": 0.10341767221689224,
+          "p50": 0.10390035808086395,
+          "p90": 0.10405857861042023,
+          "max": 0.1040981337428093
+        },
+        "q_loss": {
+          "mean": 0.3655422230561574,
+          "std": 0.00044246789620820703,
+          "min": 0.36509159207344055,
+          "p50": 0.3653915524482727,
+          "p90": 0.36599313020706176,
+          "max": 0.36614352464675903
+        },
+        "entropy_loss": {
+          "mean": 1.3641897042592366,
+          "std": 0.0009943538575879693,
+          "min": 1.3628976345062256,
+          "p50": 1.3643550872802734,
+          "p90": 1.3651241302490233,
+          "max": 1.365316390991211
+        }
+      },
+      "actual_actor_optimizer_steps": []
+    },
+    {
+      "label": "1",
+      "checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/retention/immediate/update_snapshots/update1",
+      "actor_sha256": "b9d794923d9ffa4889f721f20c9014ea61e15f492b1f2e3b88361535e9318a3d",
+      "alpha": 0.010002999566495419,
+      "reward_normalizer_denominator": 238.6288818359375,
+      "inference": {
+        "mean_action_rmse_vs_initial": 0.037334516644477844,
+        "arm_mean_action_rmse_vs_initial": 0.03216315060853958,
+        "hand_mean_action_rmse_vs_initial": 0.038835808634757996,
+        "pretanh_mean_rmse_vs_initial": 0.09751785546541214,
+        "std": {
+          "mean": 0.0996314550597131,
+          "std": 0.119703011645452,
+          "min": 0.002252299105748534,
+          "p50": 0.06455186381936073,
+          "p90": 0.2142995446920395,
+          "max": 1.2042003870010376
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -132.69028485439145,
+          "std": 30.882438802144566,
+          "min": -226.7989235967699,
+          "p50": -132.51186512642442,
+          "p90": -94.21827275489707,
+          "max": -34.55877338272718
+        },
+        "gaussian_entropy_mean_nats": -40.247919786075244,
+        "entropy_mc_se_fixed_states": 0.00543127499778243,
+        "deterministic_abs_action_mean": 0.8788987398147583,
+        "deterministic_saturated_fraction_abs_ge0999": 0.018790408968925476
+      },
+      "parameters_vs_initial": {
+        "changed_tensors": 20,
+        "total_tensors": 20,
+        "delta_l2": 0.16219279170036316,
+        "delta_max_abs": 0.0006501823663711548,
+        "relative_delta_l2": 0.0029434107709676027
+      },
+      "bn_buffers_vs_initial": {
+        "changed_tensors": 10,
+        "total_tensors": 10,
+        "delta_l2": 0.13377459347248077,
+        "delta_max_abs": 0.043300628662109375,
+        "relative_delta_l2": 0.004120797850191593
+      },
+      "updated_parameters_original_bn": {
+        "mean_action_rmse_vs_initial": 0.03715493157505989,
+        "arm_mean_action_rmse_vs_initial": 0.03287767618894577,
+        "hand_mean_action_rmse_vs_initial": 0.03841613233089447,
+        "pretanh_mean_rmse_vs_initial": 0.09666884690523148,
+        "std": {
+          "mean": 0.09996897304927188,
+          "std": 0.12099250933720404,
+          "min": 0.0020543141290545464,
+          "p50": 0.06413942947983742,
+          "p90": 0.2148125171661377,
+          "max": 1.2278504371643066
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -132.70638328818194,
+          "std": 30.94512730629714,
+          "min": -226.85724551693556,
+          "p50": -132.21268615805252,
+          "p90": -94.24370590684094,
+          "max": -34.3090656093516
+        },
+        "gaussian_entropy_mean_nats": -40.226069122886805,
+        "entropy_mc_se_fixed_states": 0.005454454727002406,
+        "deterministic_abs_action_mean": 0.8789311647415161,
+        "deterministic_saturated_fraction_abs_ge0999": 0.01865571178495884
+      },
+      "original_parameters_updated_bn": {
+        "mean_action_rmse_vs_initial": 0.005190471187233925,
+        "arm_mean_action_rmse_vs_initial": 0.007354269735515118,
+        "hand_mean_action_rmse_vs_initial": 0.004278337117284536,
+        "pretanh_mean_rmse_vs_initial": 0.014313946478068829,
+        "std": {
+          "mean": 0.07910032471409068,
+          "std": 0.09664569162408185,
+          "min": 0.004323962610214949,
+          "p50": 0.05399806424975395,
+          "p90": 0.15731105208396912,
+          "max": 1.0397006273269653
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -138.19957566117418,
+          "std": 28.68718831369651,
+          "min": -214.55063863074074,
+          "p50": -138.3710432443645,
+          "p90": -101.94316513164328,
+          "max": -39.140265307863885
+        },
+        "gaussian_entropy_mean_nats": -44.378501328890195,
+        "entropy_mc_se_fixed_states": 0.0041644505518739225,
+        "deterministic_abs_action_mean": 0.8801583647727966,
+        "deterministic_saturated_fraction_abs_ge0999": 0.020676184445619583
+      },
+      "training_cross_bn_same_expert_batch": {
+        "mean_action_rmse_vs_initial": 0.04860613867640495,
+        "arm_mean_action_rmse_vs_initial": 0.06336276978254318,
+        "hand_mean_action_rmse_vs_initial": 0.04285825416445732,
+        "pretanh_mean_rmse_vs_initial": 0.1438838690519333,
+        "std": {
+          "mean": 0.1413311958858685,
+          "std": 0.18104921903374085,
+          "min": 0.004565701819956303,
+          "p50": 0.08525794744491577,
+          "p90": 0.3213273286819458,
+          "max": 1.8836603164672852
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -123.1806025719215,
+          "std": 32.13672448343634,
+          "min": -213.7964317461596,
+          "p50": -123.79245523634854,
+          "p90": -83.37829447651654,
+          "max": -36.194516914266984
+        },
+        "gaussian_entropy_mean_nats": -30.9157682682083,
+        "entropy_mc_se_fixed_states": 0.007500477656686425,
+        "deterministic_abs_action_mean": 0.8773610591888428,
+        "deterministic_saturated_fraction_abs_ge0999": 0.018925108015537262
+      },
+      "parameter_groups": {
+        "embedder": {
+          "changed_tensors": 3,
+          "total_tensors": 3,
+          "delta_l2": 0.04341088607907295,
+          "delta_max_abs": 0.0004614293575286865,
+          "relative_delta_l2": 0.002549174940213561
+        },
+        "encoder": {
+          "changed_tensors": 12,
+          "total_tensors": 12,
+          "delta_l2": 0.15419873595237732,
+          "delta_max_abs": 0.00043576955795288086,
+          "relative_delta_l2": 0.003047633683308959
+        },
+        "post_norm": {
+          "changed_tensors": 1,
+          "total_tensors": 1,
+          "delta_l2": 0.003387722885236144,
+          "delta_max_abs": 0.0003204345703125,
+          "relative_delta_l2": 0.000299435225315392
+        },
+        "mean_head": {
+          "changed_tensors": 2,
+          "total_tensors": 2,
+          "delta_l2": 0.017223870381712914,
+          "delta_max_abs": 0.0006501823663711548,
+          "relative_delta_l2": 0.0031975368037819862
+        },
+        "std_head": {
+          "changed_tensors": 2,
+          "total_tensors": 2,
+          "delta_l2": 0.01834624633193016,
+          "delta_max_abs": 0.000315248966217041,
+          "relative_delta_l2": 0.0033822893165051937
+        }
+      },
+      "native_actor_loss_gradients_expert_batch": {
+        "q_loss_gradient_l2": {
+          "mean": 0.37943296631177265,
+          "std": 0.004188583671104899,
+          "min": 0.3751082122325897,
+          "p50": 0.3780898153781891,
+          "p90": 0.38369866013526915,
+          "max": 0.3851008713245392
+        },
+        "entropy_loss_gradient_l2": {
+          "mean": 3.370444138844808,
+          "std": 0.010889763942289014,
+          "min": 3.3582842350006104,
+          "p50": 3.368339776992798,
+          "p90": 3.381434679031372,
+          "max": 3.3847084045410156
+        },
+        "total_loss_gradient_l2": {
+          "mean": 3.369662364323934,
+          "std": 0.003781034166733184,
+          "min": 3.3650901317596436,
+          "p50": 3.3695473670959473,
+          "p90": 3.373389148712158,
+          "max": 3.374349594116211
+        },
+        "q_entropy_gradient_cosine": {
+          "mean": -0.05789384866754214,
+          "std": 0.03570040246564439,
+          "min": -0.10768838971853256,
+          "p50": -0.04021847993135452,
+          "p90": -0.02866343706846237,
+          "max": -0.025774676352739334
+        },
+        "q_to_entropy_gradient_norm_ratio": {
+          "mean": 0.11257372796535492,
+          "std": 0.0008799307877071806,
+          "min": 0.11169638484716415,
+          "p50": 0.11224812269210815,
+          "p90": 0.11347096562385559,
+          "max": 0.11377667635679245
+        },
+        "q_loss": {
+          "mean": 0.3723615010579427,
+          "std": 0.0012388450749832285,
+          "min": 0.3713841140270233,
+          "p50": 0.3715909719467163,
+          "p90": 0.37360572814941406,
+          "max": 0.3741094172000885
+        },
+        "entropy_loss": {
+          "mean": 1.2337497472763062,
+          "std": 0.001212143859478242,
+          "min": 1.232065200805664,
+          "p50": 1.2343169450759888,
+          "p90": 1.2347570657730103,
+          "max": 1.2348670959472656
+        }
+      },
+      "actual_actor_optimizer_steps": [
+        1
+      ]
+    },
+    {
+      "label": "2",
+      "checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/retention/immediate/update_snapshots/update2",
+      "actor_sha256": "b9d794923d9ffa4889f721f20c9014ea61e15f492b1f2e3b88361535e9318a3d",
+      "alpha": 0.010002999566495419,
+      "reward_normalizer_denominator": 238.6288818359375,
+      "inference": {
+        "mean_action_rmse_vs_initial": 0.037334516644477844,
+        "arm_mean_action_rmse_vs_initial": 0.03216315060853958,
+        "hand_mean_action_rmse_vs_initial": 0.038835808634757996,
+        "pretanh_mean_rmse_vs_initial": 0.09751785546541214,
+        "std": {
+          "mean": 0.0996314550597131,
+          "std": 0.119703011645452,
+          "min": 0.002252299105748534,
+          "p50": 0.06455186381936073,
+          "p90": 0.2142995446920395,
+          "max": 1.2042003870010376
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -132.69028485439145,
+          "std": 30.882438802144566,
+          "min": -226.7989235967699,
+          "p50": -132.51186512642442,
+          "p90": -94.21827275489707,
+          "max": -34.55877338272718
+        },
+        "gaussian_entropy_mean_nats": -40.247919786075244,
+        "entropy_mc_se_fixed_states": 0.00543127499778243,
+        "deterministic_abs_action_mean": 0.8788987398147583,
+        "deterministic_saturated_fraction_abs_ge0999": 0.018790408968925476
+      },
+      "parameters_vs_initial": {
+        "changed_tensors": 20,
+        "total_tensors": 20,
+        "delta_l2": 0.16219279170036316,
+        "delta_max_abs": 0.0006501823663711548,
+        "relative_delta_l2": 0.0029434107709676027
+      },
+      "bn_buffers_vs_initial": {
+        "changed_tensors": 10,
+        "total_tensors": 10,
+        "delta_l2": 0.13377459347248077,
+        "delta_max_abs": 0.043300628662109375,
+        "relative_delta_l2": 0.004120797850191593
+      },
+      "updated_parameters_original_bn": {
+        "mean_action_rmse_vs_initial": 0.03715493157505989,
+        "arm_mean_action_rmse_vs_initial": 0.03287767618894577,
+        "hand_mean_action_rmse_vs_initial": 0.03841613233089447,
+        "pretanh_mean_rmse_vs_initial": 0.09666884690523148,
+        "std": {
+          "mean": 0.09996897304927188,
+          "std": 0.12099250933720404,
+          "min": 0.0020543141290545464,
+          "p50": 0.06413942947983742,
+          "p90": 0.2148125171661377,
+          "max": 1.2278504371643066
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -132.70638328818194,
+          "std": 30.94512730629714,
+          "min": -226.85724551693556,
+          "p50": -132.21268615805252,
+          "p90": -94.24370590684094,
+          "max": -34.3090656093516
+        },
+        "gaussian_entropy_mean_nats": -40.226069122886805,
+        "entropy_mc_se_fixed_states": 0.005454454727002406,
+        "deterministic_abs_action_mean": 0.8789311647415161,
+        "deterministic_saturated_fraction_abs_ge0999": 0.01865571178495884
+      },
+      "original_parameters_updated_bn": {
+        "mean_action_rmse_vs_initial": 0.005190471187233925,
+        "arm_mean_action_rmse_vs_initial": 0.007354269735515118,
+        "hand_mean_action_rmse_vs_initial": 0.004278337117284536,
+        "pretanh_mean_rmse_vs_initial": 0.014313946478068829,
+        "std": {
+          "mean": 0.07910032471409068,
+          "std": 0.09664569162408185,
+          "min": 0.004323962610214949,
+          "p50": 0.05399806424975395,
+          "p90": 0.15731105208396912,
+          "max": 1.0397006273269653
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -138.19957566117418,
+          "std": 28.68718831369651,
+          "min": -214.55063863074074,
+          "p50": -138.3710432443645,
+          "p90": -101.94316513164328,
+          "max": -39.140265307863885
+        },
+        "gaussian_entropy_mean_nats": -44.378501328890195,
+        "entropy_mc_se_fixed_states": 0.0041644505518739225,
+        "deterministic_abs_action_mean": 0.8801583647727966,
+        "deterministic_saturated_fraction_abs_ge0999": 0.020676184445619583
+      },
+      "training_cross_bn_same_expert_batch": {
+        "mean_action_rmse_vs_initial": 0.04860613867640495,
+        "arm_mean_action_rmse_vs_initial": 0.06336276978254318,
+        "hand_mean_action_rmse_vs_initial": 0.04285825416445732,
+        "pretanh_mean_rmse_vs_initial": 0.1438838690519333,
+        "std": {
+          "mean": 0.1413311958858685,
+          "std": 0.18104921903374085,
+          "min": 0.004565701819956303,
+          "p50": 0.08525794744491577,
+          "p90": 0.3213273286819458,
+          "max": 1.8836603164672852
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -123.1806025719215,
+          "std": 32.13672448343634,
+          "min": -213.7964317461596,
+          "p50": -123.79245523634854,
+          "p90": -83.37829447651654,
+          "max": -36.194516914266984
+        },
+        "gaussian_entropy_mean_nats": -30.9157682682083,
+        "entropy_mc_se_fixed_states": 0.007500477656686425,
+        "deterministic_abs_action_mean": 0.8773610591888428,
+        "deterministic_saturated_fraction_abs_ge0999": 0.018925108015537262
+      },
+      "parameter_groups": {
+        "embedder": {
+          "changed_tensors": 3,
+          "total_tensors": 3,
+          "delta_l2": 0.04341088607907295,
+          "delta_max_abs": 0.0004614293575286865,
+          "relative_delta_l2": 0.002549174940213561
+        },
+        "encoder": {
+          "changed_tensors": 12,
+          "total_tensors": 12,
+          "delta_l2": 0.15419873595237732,
+          "delta_max_abs": 0.00043576955795288086,
+          "relative_delta_l2": 0.003047633683308959
+        },
+        "post_norm": {
+          "changed_tensors": 1,
+          "total_tensors": 1,
+          "delta_l2": 0.003387722885236144,
+          "delta_max_abs": 0.0003204345703125,
+          "relative_delta_l2": 0.000299435225315392
+        },
+        "mean_head": {
+          "changed_tensors": 2,
+          "total_tensors": 2,
+          "delta_l2": 0.017223870381712914,
+          "delta_max_abs": 0.0006501823663711548,
+          "relative_delta_l2": 0.0031975368037819862
+        },
+        "std_head": {
+          "changed_tensors": 2,
+          "total_tensors": 2,
+          "delta_l2": 0.01834624633193016,
+          "delta_max_abs": 0.000315248966217041,
+          "relative_delta_l2": 0.0033822893165051937
+        }
+      },
+      "native_actor_loss_gradients_expert_batch": {
+        "q_loss_gradient_l2": {
+          "mean": 0.38463632265726727,
+          "std": 0.0027154160688705833,
+          "min": 0.38211342692375183,
+          "p50": 0.38339048624038696,
+          "p90": 0.3874021410942078,
+          "max": 0.38840505480766296
+        },
+        "entropy_loss_gradient_l2": {
+          "mean": 3.370444138844808,
+          "std": 0.010889763942289014,
+          "min": 3.3582842350006104,
+          "p50": 3.368339776992798,
+          "p90": 3.381434679031372,
+          "max": 3.3847084045410156
+        },
+        "total_loss_gradient_l2": {
+          "mean": 3.371102730433146,
+          "std": 0.0030710865166277564,
+          "min": 3.3667798042297363,
+          "p50": 3.372901439666748,
+          "p90": 3.373481845855713,
+          "max": 3.373626947402954
+        },
+        "q_entropy_gradient_cosine": {
+          "mean": -0.055028929064671196,
+          "std": 0.0356535598623641,
+          "min": -0.10341640561819077,
+          "p50": -0.04311336576938629,
+          "p90": -0.02346828579902649,
+          "max": -0.01855701580643654
+        },
+        "q_to_entropy_gradient_norm_ratio": {
+          "mean": 0.11411900818347931,
+          "std": 0.00044851057311514914,
+          "min": 0.11378233879804611,
+          "p50": 0.11382179707288742,
+          "p90": 0.114566670358181,
+          "max": 0.1147528886795044
+        },
+        "q_loss": {
+          "mean": 0.38280195991198224,
+          "std": 0.001229080971777778,
+          "min": 0.3819304406642914,
+          "p50": 0.3819352984428406,
+          "p90": 0.38401917219161985,
+          "max": 0.3845401406288147
+        },
+        "entropy_loss": {
+          "mean": 1.2337497472763062,
+          "std": 0.001212143859478242,
+          "min": 1.232065200805664,
+          "p50": 1.2343169450759888,
+          "p90": 1.2347570657730103,
+          "max": 1.2348670959472656
+        }
+      },
+      "actual_actor_optimizer_steps": [
+        1
+      ]
+    },
+    {
+      "label": "10",
+      "checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/retention/immediate/update_snapshots/update10",
+      "actor_sha256": "bd79e911e78ffd5163ebb31ee487f2c937ca4981cd6552851503372bf3f0de8f",
+      "alpha": 0.010014385916292667,
+      "reward_normalizer_denominator": 238.6288818359375,
+      "inference": {
+        "mean_action_rmse_vs_initial": 0.13947534561157227,
+        "arm_mean_action_rmse_vs_initial": 0.14014552533626556,
+        "hand_mean_action_rmse_vs_initial": 0.13926143944263458,
+        "pretanh_mean_rmse_vs_initial": 0.4157709777355194,
+        "std": {
+          "mean": 0.3711259547568645,
+          "std": 0.36243773550746966,
+          "min": 0.0004911874420940876,
+          "p50": 0.26624369621276855,
+          "p90": 0.8022592067718513,
+          "max": 2.417973518371582
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -88.31213502592513,
+          "std": 32.313352357782435,
+          "min": -260.28358737948275,
+          "p50": -84.13159671646483,
+          "p90": -54.36516546983313,
+          "max": -29.410273424333408
+        },
+        "gaussian_entropy_mean_nats": -1.8250560030805616,
+        "entropy_mc_se_fixed_states": 0.017517040378630545,
+        "deterministic_abs_action_mean": 0.866844117641449,
+        "deterministic_saturated_fraction_abs_ge0999": 0.014951508492231369
+      },
+      "parameters_vs_initial": {
+        "changed_tensors": 20,
+        "total_tensors": 20,
+        "delta_l2": 0.5519893169403076,
+        "delta_max_abs": 0.003186255693435669,
+        "relative_delta_l2": 0.01001728419214487
+      },
+      "bn_buffers_vs_initial": {
+        "changed_tensors": 10,
+        "total_tensors": 10,
+        "delta_l2": 0.6791393756866455,
+        "delta_max_abs": 0.2466282844543457,
+        "relative_delta_l2": 0.02092023566365242
+      },
+      "updated_parameters_original_bn": {
+        "mean_action_rmse_vs_initial": 0.1401718109846115,
+        "arm_mean_action_rmse_vs_initial": 0.14623436331748962,
+        "hand_mean_action_rmse_vs_initial": 0.13818705081939697,
+        "pretanh_mean_rmse_vs_initial": 0.412519633769989,
+        "std": {
+          "mean": 0.3655802565653889,
+          "std": 0.36250897066849236,
+          "min": 0.0005316328606568277,
+          "p50": 0.25482068955898285,
+          "p90": 0.7821582138538362,
+          "max": 2.19907808303833
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -89.04640608609145,
+          "std": 32.36565797937765,
+          "min": -258.5854909149953,
+          "p50": -84.20971395474717,
+          "p90": -54.75993656675211,
+          "max": -28.863046746147624
+        },
+        "gaussian_entropy_mean_nats": -2.330476432772501,
+        "entropy_mc_se_fixed_states": 0.017200156833450917,
+        "deterministic_abs_action_mean": 0.8669201135635376,
+        "deterministic_saturated_fraction_abs_ge0999": 0.014345366507768631
+      },
+      "original_parameters_updated_bn": {
+        "mean_action_rmse_vs_initial": 0.0249736700206995,
+        "arm_mean_action_rmse_vs_initial": 0.035832859575748444,
+        "hand_mean_action_rmse_vs_initial": 0.020336804911494255,
+        "pretanh_mean_rmse_vs_initial": 0.06743369996547699,
+        "std": {
+          "mean": 0.08026308920034353,
+          "std": 0.09186053292323988,
+          "min": 0.004559983965009451,
+          "p50": 0.05519745126366615,
+          "p90": 0.16542911529541016,
+          "max": 0.9302491545677185
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -137.1910077833373,
+          "std": 28.653270865810164,
+          "min": -210.83112541374697,
+          "p50": -136.7985011469334,
+          "p90": -100.15231670557552,
+          "max": -41.62808903067632
+        },
+        "gaussian_entropy_mean_nats": -43.559635599056534,
+        "entropy_mc_se_fixed_states": 0.0041059915110669126,
+        "deterministic_abs_action_mean": 0.8798106908798218,
+        "deterministic_saturated_fraction_abs_ge0999": 0.021821120753884315
+      },
+      "training_cross_bn_same_expert_batch": {
+        "mean_action_rmse_vs_initial": 0.11591944843530655,
+        "arm_mean_action_rmse_vs_initial": 0.13827645778656006,
+        "hand_mean_action_rmse_vs_initial": 0.10783817619085312,
+        "pretanh_mean_rmse_vs_initial": 0.3502916097640991,
+        "std": {
+          "mean": 0.38749183065648796,
+          "std": 0.38796068402733314,
+          "min": 0.0006975224823690951,
+          "p50": 0.2687586545944214,
+          "p90": 0.8332952797412873,
+          "max": 3.0904741287231445
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -87.55169854376065,
+          "std": 31.204503209961576,
+          "min": -246.1909936822297,
+          "p50": -83.6370803965414,
+          "p90": -51.64718254727946,
+          "max": -27.078530541482746
+        },
+        "gaussian_entropy_mean_nats": -0.13410473168733433,
+        "entropy_mc_se_fixed_states": 0.017678802187883737,
+        "deterministic_abs_action_mean": 0.867622435092926,
+        "deterministic_saturated_fraction_abs_ge0999": 0.01421066839247942
+      },
+      "parameter_groups": {
+        "embedder": {
+          "changed_tensors": 3,
+          "total_tensors": 3,
+          "delta_l2": 0.14903075993061066,
+          "delta_max_abs": 0.0019481778144836426,
+          "relative_delta_l2": 0.00875138770788908
+        },
+        "encoder": {
+          "changed_tensors": 12,
+          "total_tensors": 12,
+          "delta_l2": 0.518315315246582,
+          "delta_max_abs": 0.001863136887550354,
+          "relative_delta_l2": 0.010244151577353477
+        },
+        "post_norm": {
+          "changed_tensors": 1,
+          "total_tensors": 1,
+          "delta_l2": 0.01529933512210846,
+          "delta_max_abs": 0.001635730266571045,
+          "relative_delta_l2": 0.001352282939478755
+        },
+        "mean_head": {
+          "changed_tensors": 2,
+          "total_tensors": 2,
+          "delta_l2": 0.08168602734804153,
+          "delta_max_abs": 0.003186255693435669,
+          "relative_delta_l2": 0.015164656564593315
+        },
+        "std_head": {
+          "changed_tensors": 2,
+          "total_tensors": 2,
+          "delta_l2": 0.08321484178304672,
+          "delta_max_abs": 0.001598268747329712,
+          "relative_delta_l2": 0.015341376885771751
+        }
+      },
+      "native_actor_loss_gradients_expert_batch": {
+        "q_loss_gradient_l2": {
+          "mean": 0.49191925923029584,
+          "std": 0.01579082811014153,
+          "min": 0.47146153450012207,
+          "p50": 0.49439334869384766,
+          "p90": 0.5068009853363037,
+          "max": 0.5099028944969177
+        },
+        "entropy_loss_gradient_l2": {
+          "mean": 2.885718504587809,
+          "std": 0.007374286195107011,
+          "min": 2.8802671432495117,
+          "p50": 2.880744695663452,
+          "p90": 2.8930638790130616,
+          "max": 2.896143674850464
+        },
+        "total_loss_gradient_l2": {
+          "mean": 2.9012250105539956,
+          "std": 0.025952759446964752,
+          "min": 2.8658061027526855,
+          "p50": 2.9106011390686035,
+          "p90": 2.9239344596862793,
+          "max": 2.9272677898406982
+        },
+        "q_entropy_gradient_cosine": {
+          "mean": -0.05231732316315174,
+          "std": 0.04629050838232354,
+          "min": -0.11772087216377258,
+          "p50": -0.022064749151468277,
+          "p90": -0.018146028369665147,
+          "max": -0.017166348174214363
+        },
+        "q_to_entropy_gradient_norm_ratio": {
+          "mean": 0.170466015736262,
+          "std": 0.005439366717144,
+          "min": 0.16368673741817474,
+          "p50": 0.17070746421813965,
+          "p90": 0.17574456930160523,
+          "max": 0.17700384557247162
+        },
+        "q_loss": {
+          "mean": 0.5636505881945292,
+          "std": 0.0021733911128433954,
+          "min": 0.5610249638557434,
+          "p50": 0.5635795593261719,
+          "p90": 0.5657937049865722,
+          "max": 0.5663472414016724
+        },
+        "entropy_loss": {
+          "mean": 0.8775421182314554,
+          "std": 0.000842110940100356,
+          "min": 0.8763858079910278,
+          "p50": 0.877873420715332,
+          "p90": 0.8782683849334717,
+          "max": 0.8783671259880066
+        }
+      },
+      "actual_actor_optimizer_steps": [
+        5
+      ]
+    },
+    {
+      "label": "100",
+      "checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/retention/immediate/update_snapshots/update100",
+      "actor_sha256": "7360c5dd562a120b86fd785cef48d142d6e26d9aec52b8929302da0500a4f10b",
+      "alpha": 0.010060516186058521,
+      "reward_normalizer_denominator": 238.6288818359375,
+      "inference": {
+        "mean_action_rmse_vs_initial": 0.6521762013435364,
+        "arm_mean_action_rmse_vs_initial": 0.7967846989631653,
+        "hand_mean_action_rmse_vs_initial": 0.5988861322402954,
+        "pretanh_mean_rmse_vs_initial": 1.6718140840530396,
+        "std": {
+          "mean": 0.8990972097442174,
+          "std": 0.7430617098296056,
+          "min": 0.00622666347771883,
+          "p50": 0.6780077815055847,
+          "p90": 1.9529863953590394,
+          "max": 5.085883140563965
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -29.238593925415252,
+          "std": 16.992823832682888,
+          "min": -123.65600284849127,
+          "p50": -24.878885076656267,
+          "p90": -12.374448981050222,
+          "max": -2.1019389422189034
+        },
+        "gaussian_entropy_mean_nats": 27.575937546847193,
+        "entropy_mc_se_fixed_states": 0.03436547972535403,
+        "deterministic_abs_action_mean": 0.6891886591911316,
+        "deterministic_saturated_fraction_abs_ge0999": 0.007071659434586763
+      },
+      "parameters_vs_initial": {
+        "changed_tensors": 20,
+        "total_tensors": 20,
+        "delta_l2": 2.099783420562744,
+        "delta_max_abs": 0.02568855881690979,
+        "relative_delta_l2": 0.0381060428917408
+      },
+      "bn_buffers_vs_initial": {
+        "changed_tensors": 10,
+        "total_tensors": 10,
+        "delta_l2": 7.2330732345581055,
+        "delta_max_abs": 1.7999591827392578,
+        "relative_delta_l2": 0.2228078693151474
+      },
+      "updated_parameters_original_bn": {
+        "mean_action_rmse_vs_initial": 0.6947519779205322,
+        "arm_mean_action_rmse_vs_initial": 0.8529731631278992,
+        "hand_mean_action_rmse_vs_initial": 0.6362099051475525,
+        "pretanh_mean_rmse_vs_initial": 1.7927483320236206,
+        "std": {
+          "mean": 0.8790717792495532,
+          "std": 0.7189747497457734,
+          "min": 0.01021884847432375,
+          "p50": 0.7012339532375336,
+          "p90": 1.8623855829238902,
+          "max": 5.778745651245117
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -27.828057930693674,
+          "std": 18.018682759005113,
+          "min": -110.46246400163345,
+          "p50": -23.518786596936557,
+          "p90": -9.047011932576225,
+          "max": 2.460856160110068
+        },
+        "gaussian_entropy_mean_nats": 26.923498838015846,
+        "entropy_mc_se_fixed_states": 0.034100815914332436,
+        "deterministic_abs_action_mean": 0.6802575588226318,
+        "deterministic_saturated_fraction_abs_ge0999": 0.008149245753884315
+      },
+      "original_parameters_updated_bn": {
+        "mean_action_rmse_vs_initial": 0.20167194306850433,
+        "arm_mean_action_rmse_vs_initial": 0.30894026160240173,
+        "hand_mean_action_rmse_vs_initial": 0.15245968103408813,
+        "pretanh_mean_rmse_vs_initial": 0.519386887550354,
+        "std": {
+          "mean": 0.0726382236534846,
+          "std": 0.07593235900872572,
+          "min": 0.0020691915415227413,
+          "p50": 0.045511966571211815,
+          "p90": 0.1694553941488266,
+          "max": 0.5747584700584412
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -135.26637890772648,
+          "std": 33.62250909809595,
+          "min": -245.97921660840208,
+          "p50": -134.04385504576013,
+          "p90": -91.37894441135289,
+          "max": -57.144578596498775
+        },
+        "gaussian_entropy_mean_nats": -49.146017182511144,
+        "entropy_mc_se_fixed_states": 0.0037334923045907785,
+        "deterministic_abs_action_mean": 0.8668453693389893,
+        "deterministic_saturated_fraction_abs_ge0999": 0.014008620753884315
+      },
+      "training_cross_bn_same_expert_batch": {
+        "mean_action_rmse_vs_initial": 0.6580896377563477,
+        "arm_mean_action_rmse_vs_initial": 0.7252463698387146,
+        "hand_mean_action_rmse_vs_initial": 0.6352344155311584,
+        "pretanh_mean_rmse_vs_initial": 1.7291744947433472,
+        "std": {
+          "mean": 1.2193160618672696,
+          "std": 0.862425196319246,
+          "min": 0.014012658968567848,
+          "p50": 1.033541202545166,
+          "p90": 2.449624848365784,
+          "max": 5.3353705406188965
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -20.759804692772956,
+          "std": 15.641183888862894,
+          "min": -108.22166761138706,
+          "p50": -17.199094086702893,
+          "p90": -5.528083343983312,
+          "max": 4.807484736583525
+        },
+        "gaussian_entropy_mean_nats": 38.306779610554045,
+        "entropy_mc_se_fixed_states": 0.04591143138586078,
+        "deterministic_abs_action_mean": 0.6768264770507812,
+        "deterministic_saturated_fraction_abs_ge0999": 0.0027613146230578423
+      },
+      "parameter_groups": {
+        "embedder": {
+          "changed_tensors": 3,
+          "total_tensors": 3,
+          "delta_l2": 0.5718458890914917,
+          "delta_max_abs": 0.015642236918210983,
+          "relative_delta_l2": 0.03357994556427002
+        },
+        "encoder": {
+          "changed_tensors": 12,
+          "total_tensors": 12,
+          "delta_l2": 1.8917821645736694,
+          "delta_max_abs": 0.014657486230134964,
+          "relative_delta_l2": 0.03738979250192642
+        },
+        "post_norm": {
+          "changed_tensors": 1,
+          "total_tensors": 1,
+          "delta_l2": 0.0631275475025177,
+          "delta_max_abs": 0.014629483222961426,
+          "relative_delta_l2": 0.005579739809036255
+        },
+        "mean_head": {
+          "changed_tensors": 2,
+          "total_tensors": 2,
+          "delta_l2": 0.6502457857131958,
+          "delta_max_abs": 0.02568855881690979,
+          "relative_delta_l2": 0.12071531265974045
+        },
+        "std_head": {
+          "changed_tensors": 2,
+          "total_tensors": 2,
+          "delta_l2": 0.27647045254707336,
+          "delta_max_abs": 0.013163924217224121,
+          "relative_delta_l2": 0.050969719886779785
+        }
+      },
+      "native_actor_loss_gradients_expert_batch": {
+        "q_loss_gradient_l2": {
+          "mean": 0.8992646535237631,
+          "std": 0.01801010087043715,
+          "min": 0.8756810426712036,
+          "p50": 0.9027254581451416,
+          "p90": 0.9160550594329834,
+          "max": 0.9193874597549438
+        },
+        "entropy_loss_gradient_l2": {
+          "mean": 1.3490233818689983,
+          "std": 0.022598212316340124,
+          "min": 1.3204597234725952,
+          "p50": 1.3508912324905396,
+          "p90": 1.3707535982131958,
+          "max": 1.3757191896438599
+        },
+        "total_loss_gradient_l2": {
+          "mean": 1.465209682782491,
+          "std": 0.02273947306016068,
+          "min": 1.44069504737854,
+          "p50": 1.4594420194625854,
+          "p90": 1.4882819890975951,
+          "max": 1.4954919815063477
+        },
+        "q_entropy_gradient_cosine": {
+          "mean": -0.19822154939174652,
+          "std": 0.029144793847672296,
+          "min": -0.23936611413955688,
+          "p50": -0.1797640025615692,
+          "p90": -0.17638042569160461,
+          "max": -0.17553453147411346
+        },
+        "q_to_entropy_gradient_norm_ratio": {
+          "mean": 0.6669164299964905,
+          "std": 0.021525718563946774,
+          "min": 0.6365259885787964,
+          "p50": 0.6805784702301025,
+          "p90": 0.6830315589904785,
+          "max": 0.6836448311805725
+        },
+        "q_loss": {
+          "mean": 0.5430100162823995,
+          "std": 0.0033535031502167486,
+          "min": 0.5400915145874023,
+          "p50": 0.5412318706512451,
+          "p90": 0.5464117050170898,
+          "max": 0.547706663608551
+        },
+        "entropy_loss": {
+          "mean": 0.203531414270401,
+          "std": 0.0037906851877257943,
+          "min": 0.19891875982284546,
+          "p50": 0.2034720480442047,
+          "p90": 0.2072571575641632,
+          "max": 0.20820343494415283
+        }
+      },
+      "actual_actor_optimizer_steps": [
+        50
+      ]
+    },
+    {
+      "label": "1000",
+      "checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/retention/immediate/update_snapshots/update1000",
+      "actor_sha256": "9fafe8ac30f910fba2affed14225887a10c07fcc1579809e75a8b398ffafd087",
+      "alpha": 0.008921376429498196,
+      "reward_normalizer_denominator": 238.6288818359375,
+      "inference": {
+        "mean_action_rmse_vs_initial": 0.6297750473022461,
+        "arm_mean_action_rmse_vs_initial": 0.7851056456565857,
+        "hand_mean_action_rmse_vs_initial": 0.5715665817260742,
+        "pretanh_mean_rmse_vs_initial": 1.9789427518844604,
+        "std": {
+          "mean": 0.8268228173406458,
+          "std": 0.3281884358658991,
+          "min": 0.20307961106300354,
+          "p50": 0.7837114930152893,
+          "p90": 1.2777270793914794,
+          "max": 2.163731813430786
+        },
+        "true_tanh_entropy_nats": {
+          "mean": 6.452405009076061,
+          "std": 4.776689242494894,
+          "min": -10.611262166364767,
+          "p50": 6.754061308595007,
+          "p90": 12.251469592318676,
+          "max": 15.130680908999672
+        },
+        "gaussian_entropy_mean_nats": 33.30101071600512,
+        "entropy_mc_se_fixed_states": 0.022241941322047303,
+        "deterministic_abs_action_mean": 0.48213082551956177,
+        "deterministic_saturated_fraction_abs_ge0999": 0
+      },
+      "parameters_vs_initial": {
+        "changed_tensors": 20,
+        "total_tensors": 20,
+        "delta_l2": 4.733142852783203,
+        "delta_max_abs": 0.09596943855285645,
+        "relative_delta_l2": 0.08589521050453186
+      },
+      "bn_buffers_vs_initial": {
+        "changed_tensors": 10,
+        "total_tensors": 10,
+        "delta_l2": 39.92073440551758,
+        "delta_max_abs": 7.677223205566406,
+        "relative_delta_l2": 1.229719877243042
+      },
+      "updated_parameters_original_bn": {
+        "mean_action_rmse_vs_initial": 0.8129779100418091,
+        "arm_mean_action_rmse_vs_initial": 1.017919898033142,
+        "hand_mean_action_rmse_vs_initial": 0.735895574092865,
+        "pretanh_mean_rmse_vs_initial": 2.1719791889190674,
+        "std": {
+          "mean": 0.8230566389331592,
+          "std": 0.5498312777297506,
+          "min": 0.03061755560338497,
+          "p50": 0.6712360382080078,
+          "p90": 1.5672346830368042,
+          "max": 3.175018548965454
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -4.176849315418045,
+          "std": 15.34929863613998,
+          "min": -64.06624736422506,
+          "p50": -0.19858489431914808,
+          "p90": 10.302192340913942,
+          "max": 13.566607909880053
+        },
+        "gaussian_entropy_mean_nats": 27.58232487431063,
+        "entropy_mc_se_fixed_states": 0.024381368015273033,
+        "deterministic_abs_action_mean": 0.5122359991073608,
+        "deterministic_saturated_fraction_abs_ge0999": 0
+      },
+      "original_parameters_updated_bn": {
+        "mean_action_rmse_vs_initial": 0.4748222827911377,
+        "arm_mean_action_rmse_vs_initial": 0.6093681454658508,
+        "hand_mean_action_rmse_vs_initial": 0.4231334924697876,
+        "pretanh_mean_rmse_vs_initial": 1.2956223487854004,
+        "std": {
+          "mean": 0.02568480082447877,
+          "std": 0.1013341147255897,
+          "min": 0.00016429496463388205,
+          "p50": 0.004519778536632657,
+          "p90": 0.047027621418237686,
+          "max": 0.9645103216171265
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -172.14386792196512,
+          "std": 47.37436931423699,
+          "min": -275.6893470478629,
+          "p50": -176.1718525893465,
+          "p90": -107.5721005894396,
+          "max": -27.301131150520472
+        },
+        "gaussian_entropy_mean_nats": -112.82031241463666,
+        "entropy_mc_se_fixed_states": 0.0039949386250585465,
+        "deterministic_abs_action_mean": 0.7659718990325928,
+        "deterministic_saturated_fraction_abs_ge0999": 0.03131734952330589
+      },
+      "training_cross_bn_same_expert_batch": {
+        "mean_action_rmse_vs_initial": 0.6957511901855469,
+        "arm_mean_action_rmse_vs_initial": 0.8605192303657532,
+        "hand_mean_action_rmse_vs_initial": 0.6344133615493774,
+        "pretanh_mean_rmse_vs_initial": 2.0367960929870605,
+        "std": {
+          "mean": 1.4214997795021065,
+          "std": 0.5892480852058859,
+          "min": 0.223562553524971,
+          "p50": 1.3941686153411865,
+          "p90": 2.2169338226318365,
+          "max": 3.2980668544769287
+        },
+        "true_tanh_entropy_nats": {
+          "mean": 0.7745842922015909,
+          "std": 9.303346765144369,
+          "min": -38.61818655425788,
+          "p50": 3.799764055928831,
+          "p90": 10.157874512331974,
+          "max": 14.553662846554738
+        },
+        "gaussian_entropy_mean_nats": 48.41693863123385,
+        "entropy_mc_se_fixed_states": 0.03987455535499883,
+        "deterministic_abs_action_mean": 0.48347213864326477,
+        "deterministic_saturated_fraction_abs_ge0999": 0
+      },
+      "parameter_groups": {
+        "embedder": {
+          "changed_tensors": 3,
+          "total_tensors": 3,
+          "delta_l2": 1.3418188095092773,
+          "delta_max_abs": 0.06371939182281494,
+          "relative_delta_l2": 0.07879431545734406
+        },
+        "encoder": {
+          "changed_tensors": 12,
+          "total_tensors": 12,
+          "delta_l2": 4.347252368927002,
+          "delta_max_abs": 0.09596943855285645,
+          "relative_delta_l2": 0.08592049777507782
+        },
+        "post_norm": {
+          "changed_tensors": 1,
+          "total_tensors": 1,
+          "delta_l2": 0.1286008358001709,
+          "delta_max_abs": 0.030199050903320312,
+          "relative_delta_l2": 0.01136681530624628
+        },
+        "mean_head": {
+          "changed_tensors": 2,
+          "total_tensors": 2,
+          "delta_l2": 1.236345887184143,
+          "delta_max_abs": 0.0684308409690857,
+          "relative_delta_l2": 0.22952225804328918
+        },
+        "std_head": {
+          "changed_tensors": 2,
+          "total_tensors": 2,
+          "delta_l2": 0.39812594652175903,
+          "delta_max_abs": 0.014894508756697178,
+          "relative_delta_l2": 0.07339796423912048
+        }
+      },
+      "native_actor_loss_gradients_expert_batch": {
+        "q_loss_gradient_l2": {
+          "mean": 1.5262571970621746,
+          "std": 0.02919806746435204,
+          "min": 1.4919371604919434,
+          "p50": 1.523532748222351,
+          "p90": 1.5553478956222535,
+          "max": 1.563301682472229
+        },
+        "entropy_loss_gradient_l2": {
+          "mean": 1.713274081548055,
+          "std": 0.0076776076466095675,
+          "min": 1.7076977491378784,
+          "p50": 1.707993984222412,
+          "p90": 1.720903205871582,
+          "max": 1.7241305112838745
+        },
+        "total_loss_gradient_l2": {
+          "mean": 1.7258776028951008,
+          "std": 0.015329184786030112,
+          "min": 1.7073782682418823,
+          "p50": 1.7253391742706299,
+          "p90": 1.7410001277923584,
+          "max": 1.7449153661727905
+        },
+        "q_entropy_gradient_cosine": {
+          "mean": -0.43724510073661804,
+          "std": 0.011262219774634806,
+          "min": -0.44649916887283325,
+          "p50": -0.4438442885875702,
+          "p90": -0.4258823335170746,
+          "max": -0.4213918447494507
+        },
+        "q_to_entropy_gradient_norm_ratio": {
+          "mean": 0.8909228245417277,
+          "std": 0.020413870425073987,
+          "min": 0.8653272986412048,
+          "p50": 0.8921559453010559,
+          "p90": 0.9106593728065491,
+          "max": 0.9152852296829224
+        },
+        "q_loss": {
+          "mean": -0.5520348946253458,
+          "std": 0.005318400426229254,
+          "min": -0.5584958791732788,
+          "p50": -0.5521390438079834,
+          "p90": -0.546803617477417,
+          "max": -0.5454697608947754
+        },
+        "entropy_loss": {
+          "mean": -0.008992982873072227,
+          "std": 0.001368991495484536,
+          "min": -0.010019004344940186,
+          "p50": -0.009901825338602066,
+          "p90": -0.007626860216259956,
+          "max": -0.007058118935674429
+        }
+      },
+      "actual_actor_optimizer_steps": [
+        500
+      ]
+    },
+    {
+      "label": "2000",
+      "checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/retention/immediate/update_snapshots/update2000",
+      "actor_sha256": "2191ff6cbd511608487c1d2c34e251b1b3010d9c12e3e9b3c6e01adb37a927fc",
+      "alpha": 0.007572997361421585,
+      "reward_normalizer_denominator": 238.6288818359375,
+      "inference": {
+        "mean_action_rmse_vs_initial": 0.6835587024688721,
+        "arm_mean_action_rmse_vs_initial": 0.8509039878845215,
+        "hand_mean_action_rmse_vs_initial": 0.62092524766922,
+        "pretanh_mean_rmse_vs_initial": 2.0606791973114014,
+        "std": {
+          "mean": 0.7810460041570156,
+          "std": 0.15415422549431632,
+          "min": 0.3127298653125763,
+          "p50": 0.7747719585895538,
+          "p90": 0.9844781279563906,
+          "max": 1.357751488685608
+        },
+        "true_tanh_entropy_nats": {
+          "mean": 8.805127777975578,
+          "std": 6.2089597499343325,
+          "min": -7.161258360542164,
+          "p50": 10.621042591338512,
+          "p90": 15.486891789473006,
+          "max": 17.646802418188777
+        },
+        "gaussian_entropy_mean_nats": 33.40040748252463,
+        "entropy_mc_se_fixed_states": 0.019009632334702944,
+        "deterministic_abs_action_mean": 0.4807950258255005,
+        "deterministic_saturated_fraction_abs_ge0999": 0
+      },
+      "parameters_vs_initial": {
+        "changed_tensors": 20,
+        "total_tensors": 20,
+        "delta_l2": 5.902538776397705,
+        "delta_max_abs": 0.15303784608840942,
+        "relative_delta_l2": 0.1071169450879097
+      },
+      "bn_buffers_vs_initial": {
+        "changed_tensors": 10,
+        "total_tensors": 10,
+        "delta_l2": 56.52656555175781,
+        "delta_max_abs": 9.926398277282715,
+        "relative_delta_l2": 1.7412464618682861
+      },
+      "updated_parameters_original_bn": {
+        "mean_action_rmse_vs_initial": 0.8736245036125183,
+        "arm_mean_action_rmse_vs_initial": 1.0786784887313843,
+        "hand_mean_action_rmse_vs_initial": 0.7973974943161011,
+        "pretanh_mean_rmse_vs_initial": 2.2894997596740723,
+        "std": {
+          "mean": 0.8766135887038625,
+          "std": 0.6504710867747072,
+          "min": 0.038334574550390244,
+          "p50": 0.6548310816287994,
+          "p90": 1.9306944370269776,
+          "max": 3.3869431018829346
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -2.6668795722392487,
+          "std": 12.781095433589499,
+          "min": -63.543204735499906,
+          "p50": -0.9300041599299964,
+          "p90": 11.527231914824323,
+          "max": 15.155385500554038
+        },
+        "gaussian_entropy_mean_nats": 29.25665472174778,
+        "entropy_mc_se_fixed_states": 0.026720325791690976,
+        "deterministic_abs_action_mean": 0.4911153018474579,
+        "deterministic_saturated_fraction_abs_ge0999": 0
+      },
+      "original_parameters_updated_bn": {
+        "mean_action_rmse_vs_initial": 0.4900416433811188,
+        "arm_mean_action_rmse_vs_initial": 0.6489792466163635,
+        "hand_mean_action_rmse_vs_initial": 0.42724621295928955,
+        "pretanh_mean_rmse_vs_initial": 1.3342469930648804,
+        "std": {
+          "mean": 0.021755003189568356,
+          "std": 0.13173844655109296,
+          "min": 0.00010429439134895802,
+          "p50": 0.0021026090253144503,
+          "p90": 0.027895061299204826,
+          "max": 1.3355979919433594
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -197.4654103454476,
+          "std": 52.48977224348513,
+          "min": -287.52552073080756,
+          "p50": -202.64409515552876,
+          "p90": -124.9821487098786,
+          "max": -23.798386777432448
+        },
+        "gaussian_entropy_mean_nats": -136.04160189935888,
+        "entropy_mc_se_fixed_states": 0.0047193174201521845,
+        "deterministic_abs_action_mean": 0.7769143581390381,
+        "deterministic_saturated_fraction_abs_ge0999": 0.04364224150776863
+      },
+      "training_cross_bn_same_expert_batch": {
+        "mean_action_rmse_vs_initial": 0.7935749292373657,
+        "arm_mean_action_rmse_vs_initial": 0.9360871911048889,
+        "hand_mean_action_rmse_vs_initial": 0.7425159811973572,
+        "pretanh_mean_rmse_vs_initial": 2.224740505218506,
+        "std": {
+          "mean": 1.3242731027531935,
+          "std": 0.46270081233252924,
+          "min": 0.22127871215343475,
+          "p50": 1.3197218775749207,
+          "p90": 1.9103532195091253,
+          "max": 2.8705384731292725
+        },
+        "true_tanh_entropy_nats": {
+          "mean": 6.7746818704278535,
+          "std": 7.306640078545233,
+          "min": -26.7980713887666,
+          "p50": 8.64573987702249,
+          "p90": 13.659596368971131,
+          "max": 17.13974789100022
+        },
+        "gaussian_entropy_mean_nats": 47.30901467715097,
+        "entropy_mc_se_fixed_states": 0.034508895560237035,
+        "deterministic_abs_action_mean": 0.41321098804473877,
+        "deterministic_saturated_fraction_abs_ge0999": 0
+      },
+      "parameter_groups": {
+        "embedder": {
+          "changed_tensors": 3,
+          "total_tensors": 3,
+          "delta_l2": 1.7900503873825073,
+          "delta_max_abs": 0.09716956317424774,
+          "relative_delta_l2": 0.1051153764128685
+        },
+        "encoder": {
+          "changed_tensors": 12,
+          "total_tensors": 12,
+          "delta_l2": 5.411584377288818,
+          "delta_max_abs": 0.15303784608840942,
+          "relative_delta_l2": 0.10695630311965942
+        },
+        "post_norm": {
+          "changed_tensors": 1,
+          "total_tensors": 1,
+          "delta_l2": 0.15304838120937347,
+          "delta_max_abs": 0.03458678722381592,
+          "relative_delta_l2": 0.013527694158256054
+        },
+        "mean_head": {
+          "changed_tensors": 2,
+          "total_tensors": 2,
+          "delta_l2": 1.4618266820907593,
+          "delta_max_abs": 0.09065723419189453,
+          "relative_delta_l2": 0.27138179540634155
+        },
+        "std_head": {
+          "changed_tensors": 2,
+          "total_tensors": 2,
+          "delta_l2": 0.4360475540161133,
+          "delta_max_abs": 0.016334354877471924,
+          "relative_delta_l2": 0.08038914203643799
+        }
+      },
+      "native_actor_loss_gradients_expert_batch": {
+        "q_loss_gradient_l2": {
+          "mean": 1.048743764559428,
+          "std": 0.01130484255541266,
+          "min": 1.0380498170852661,
+          "p50": 1.043798565864563,
+          "p90": 1.0602660417556762,
+          "max": 1.0643829107284546
+        },
+        "entropy_loss_gradient_l2": {
+          "mean": 0.8938942750295004,
+          "std": 0.007243432708237735,
+          "min": 0.887896716594696,
+          "p50": 0.8897011876106262,
+          "p90": 0.9012081742286682,
+          "max": 0.9040849208831787
+        },
+        "total_loss_gradient_l2": {
+          "mean": 1.241896112759908,
+          "std": 0.01250333690588287,
+          "min": 1.2296384572982788,
+          "p50": 1.2369880676269531,
+          "p90": 1.2546470642089844,
+          "max": 1.2590618133544922
+        },
+        "q_entropy_gradient_cosine": {
+          "mean": -0.19017918904622397,
+          "std": 0.013669870945418461,
+          "min": -0.20922596752643585,
+          "p50": -0.18352167308330536,
+          "p90": -0.1789362758398056,
+          "max": -0.17778992652893066
+        },
+        "q_to_entropy_gradient_norm_ratio": {
+          "mean": 1.1733482281366985,
+          "std": 0.018652782282828375,
+          "min": 1.1545360088348389,
+          "p50": 1.166739821434021,
+          "p90": 1.1923630475997924,
+          "max": 1.1987688541412354
+        },
+        "q_loss": {
+          "mean": -1.3932026624679565,
+          "std": 0.0014604048441056797,
+          "min": -1.3952175378799438,
+          "p50": -1.3925881385803223,
+          "p90": -1.3919594764709473,
+          "max": -1.3918023109436035
+        },
+        "entropy_loss": {
+          "mean": -0.053155949960152306,
+          "std": 0.0008368070731213688,
+          "min": -0.05426601320505142,
+          "p50": -0.052956148982048035,
+          "p90": -0.05238777995109558,
+          "max": -0.05224568769335747
+        }
+      },
+      "actual_actor_optimizer_steps": [
+        1000
+      ]
+    },
+    {
+      "label": "4000",
+      "checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/retention/immediate/update_snapshots/update4000",
+      "actor_sha256": "825704a0838540a823a9ec4bae7aaf1b77d36263fe4a37fa0c59b2b00f70dd0d",
+      "alpha": 0.005703141912817955,
+      "reward_normalizer_denominator": 238.6288818359375,
+      "inference": {
+        "mean_action_rmse_vs_initial": 0.7772536873817444,
+        "arm_mean_action_rmse_vs_initial": 0.9765372276306152,
+        "hand_mean_action_rmse_vs_initial": 0.7020813226699829,
+        "pretanh_mean_rmse_vs_initial": 2.1739509105682373,
+        "std": {
+          "mean": 0.7875968970474787,
+          "std": 0.0961441259869731,
+          "min": 0.41840338706970215,
+          "p50": 0.7909413874149323,
+          "p90": 0.9056338310241699,
+          "max": 1.1862503290176392
+        },
+        "true_tanh_entropy_nats": {
+          "mean": 9.247973869540044,
+          "std": 6.180190168284689,
+          "min": -7.431723288416769,
+          "p50": 12.168102978655162,
+          "p90": 15.047661602182862,
+          "max": 16.775092123483194
+        },
+        "gaussian_entropy_mean_nats": 34.002758805451535,
+        "entropy_mc_se_fixed_states": 0.017575407339935106,
+        "deterministic_abs_action_mean": 0.5004511475563049,
+        "deterministic_saturated_fraction_abs_ge0999": 0
+      },
+      "parameters_vs_initial": {
+        "changed_tensors": 20,
+        "total_tensors": 20,
+        "delta_l2": 7.274828910827637,
+        "delta_max_abs": 0.19119584560394287,
+        "relative_delta_l2": 0.1320207267999649
+      },
+      "bn_buffers_vs_initial": {
+        "changed_tensors": 10,
+        "total_tensors": 10,
+        "delta_l2": 75.56159973144531,
+        "delta_max_abs": 10.601287841796875,
+        "relative_delta_l2": 2.3276023864746094
+      },
+      "updated_parameters_original_bn": {
+        "mean_action_rmse_vs_initial": 0.898486316204071,
+        "arm_mean_action_rmse_vs_initial": 1.1257909536361694,
+        "hand_mean_action_rmse_vs_initial": 0.8129412531852722,
+        "pretanh_mean_rmse_vs_initial": 2.3277385234832764,
+        "std": {
+          "mean": 0.9640565412391252,
+          "std": 0.91779130651987,
+          "min": 0.01612382009625435,
+          "p50": 0.6392658352851868,
+          "p90": 2.622536206245423,
+          "max": 3.768202781677246
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -10.996324196715701,
+          "std": 19.81941166696783,
+          "min": -85.60615732815765,
+          "p50": -4.74747283892932,
+          "p90": 10.117522128989345,
+          "max": 15.726019926930356
+        },
+        "gaussian_entropy_mean_nats": 24.818962601127726,
+        "entropy_mc_se_fixed_states": 0.03311716437431272,
+        "deterministic_abs_action_mean": 0.47344014048576355,
+        "deterministic_saturated_fraction_abs_ge0999": 0
+      },
+      "original_parameters_updated_bn": {
+        "mean_action_rmse_vs_initial": 0.5295623540878296,
+        "arm_mean_action_rmse_vs_initial": 0.6802251935005188,
+        "hand_mean_action_rmse_vs_initial": 0.4716368317604065,
+        "pretanh_mean_rmse_vs_initial": 1.4107258319854736,
+        "std": {
+          "mean": 0.03318357423140128,
+          "std": 0.22050678854984215,
+          "min": 0.00008012971375137568,
+          "p50": 0.0019214736530557275,
+          "p90": 0.03770848363637924,
+          "max": 2.2389488220214844
+        },
+        "true_tanh_entropy_nats": {
+          "mean": -194.30666243848987,
+          "std": 59.28082872124884,
+          "min": -287.27328925587005,
+          "p50": -198.26192272639713,
+          "p90": -109.15871912879531,
+          "max": -32.262916136789826
+        },
+        "gaussian_entropy_mean_nats": -138.76582214421515,
+        "entropy_mc_se_fixed_states": 0.00738382027008975,
+        "deterministic_abs_action_mean": 0.7546899914741516,
+        "deterministic_saturated_fraction_abs_ge0999": 0.02518857829272747
+      },
+      "training_cross_bn_same_expert_batch": {
+        "mean_action_rmse_vs_initial": 0.8990377187728882,
+        "arm_mean_action_rmse_vs_initial": 1.04582679271698,
+        "hand_mean_action_rmse_vs_initial": 0.8470140099525452,
+        "pretanh_mean_rmse_vs_initial": 2.374551296234131,
+        "std": {
+          "mean": 1.271554973835511,
+          "std": 0.40237272175982,
+          "min": 0.30689674615859985,
+          "p50": 1.2598994374275208,
+          "p90": 1.8052097678184509,
+          "max": 2.7960448265075684
+        },
+        "true_tanh_entropy_nats": {
+          "mean": 9.938716699235343,
+          "std": 5.508009290381672,
+          "min": -21.8993015723795,
+          "p50": 11.527045756529922,
+          "p90": 15.156286512934575,
+          "max": 18.157112349761775
+        },
+        "gaussian_entropy_mean_nats": 46.52028543984261,
+        "entropy_mc_se_fixed_states": 0.03060040217694141,
+        "deterministic_abs_action_mean": 0.3601847290992737,
+        "deterministic_saturated_fraction_abs_ge0999": 0
+      },
+      "parameter_groups": {
+        "embedder": {
+          "changed_tensors": 3,
+          "total_tensors": 3,
+          "delta_l2": 2.380258560180664,
+          "delta_max_abs": 0.15618087351322174,
+          "relative_delta_l2": 0.13977359235286713
+        },
+        "encoder": {
+          "changed_tensors": 12,
+          "total_tensors": 12,
+          "delta_l2": 6.646968841552734,
+          "delta_max_abs": 0.19119584560394287,
+          "relative_delta_l2": 0.1313728392124176
+        },
+        "post_norm": {
+          "changed_tensors": 1,
+          "total_tensors": 1,
+          "delta_l2": 0.1756080538034439,
+          "delta_max_abs": 0.05149555206298828,
+          "relative_delta_l2": 0.015521706081926823
+        },
+        "mean_head": {
+          "changed_tensors": 2,
+          "total_tensors": 2,
+          "delta_l2": 1.6814326047897339,
+          "delta_max_abs": 0.118312768638134,
+          "relative_delta_l2": 0.3121506869792938
+        },
+        "std_head": {
+          "changed_tensors": 2,
+          "total_tensors": 2,
+          "delta_l2": 0.4661177098751068,
+          "delta_max_abs": 0.01782315969467163,
+          "relative_delta_l2": 0.08593283593654633
+        }
+      },
+      "native_actor_loss_gradients_expert_batch": {
+        "q_loss_gradient_l2": {
+          "mean": 0.9137780865033468,
+          "std": 0.0783841539882782,
+          "min": 0.8248789310455322,
+          "p50": 0.900879442691803,
+          "p90": 0.9926365971565246,
+          "max": 1.015575885772705
+        },
+        "entropy_loss_gradient_l2": {
+          "mean": 0.5867250760396322,
+          "std": 0.0011955591375833745,
+          "min": 0.5852086544036865,
+          "p50": 0.5868356823921204,
+          "p90": 0.5878718495368958,
+          "max": 0.5881308913230896
+        },
+        "total_loss_gradient_l2": {
+          "mean": 1.2027041117350261,
+          "std": 0.07425260904331409,
+          "min": 1.120436668395996,
+          "p50": 1.187320351600647,
+          "p90": 1.2777483224868775,
+          "max": 1.300355315208435
+        },
+        "q_entropy_gradient_cosine": {
+          "mean": 0.2476064364115397,
+          "std": 0.01362419075980459,
+          "min": 0.23607181012630463,
+          "p50": 0.24000804126262665,
+          "p90": 0.2613931745290756,
+          "max": 0.26673945784568787
+        },
+        "q_to_entropy_gradient_norm_ratio": {
+          "mean": 1.5576996405919392,
+          "std": 0.1368240731632117,
+          "min": 1.402543067932129,
+          "p50": 1.5351476669311523,
+          "p90": 1.6953560829162597,
+          "max": 1.7354081869125366
+        },
+        "q_loss": {
+          "mean": -3.325531562169393,
+          "std": 0.010283916299763074,
+          "min": -3.3339109420776367,
+          "p50": -3.331636428833008,
+          "p90": -3.315165138244629,
+          "max": -3.311047315597534
+        },
+        "entropy_loss": {
+          "mean": -0.05781207730372747,
+          "std": 0.001208924750180228,
+          "min": -0.059519920498132706,
+          "p50": -0.05702672898769379,
+          "p90": -0.056917011737823486,
+          "max": -0.05688958242535591
+        }
+      },
+      "actual_actor_optimizer_steps": [
+        2000
+      ]
+    }
+  ],
+  "rollout_evidence_at_audit": [
+    {
+      "label": "initial",
+      "sampling": "native_stochastic",
+      "completed": 128,
+      "successes": 128,
+      "summary": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/frozen_bc_std005_eigen/summary.json"
+    },
+    {
+      "label": "10",
+      "sampling": "deterministic",
+      "completed": 64,
+      "successes": 64,
+      "summary": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/retention/immediate/evaluations/update10/deterministic/summary.json"
+    },
+    {
+      "label": "10",
+      "sampling": "native_stochastic",
+      "completed": 128,
+      "successes": 95,
+      "summary": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/retention/immediate/evaluations/update10/stochastic/summary.json"
+    },
+    {
+      "label": "100",
+      "sampling": "deterministic",
+      "completed": 64,
+      "successes": 0,
+      "summary": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/retention/immediate/evaluations/update100/deterministic/summary.json"
+    },
+    {
+      "label": "100",
+      "sampling": "native_stochastic",
+      "completed": 128,
+      "successes": 0,
+      "summary": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/retention/immediate/evaluations/update100/stochastic/summary.json"
+    }
+  ]
+}

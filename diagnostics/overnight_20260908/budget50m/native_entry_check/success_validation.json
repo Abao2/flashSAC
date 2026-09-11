@@ -1,0 +1,211 @@
+{
+  "status": "passed",
+  "device": "cpu",
+  "cuda_initialized": false,
+  "checked_date_local": "2026-09-09",
+  "checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/models/final/step4883",
+  "model_digest": "f35ced3258d0d68dff361c477aeaaec8aec30a98053769644ca5408ed4b9bb9b",
+  "method": "Independently reconstruct fixed reward keypoints from recorded pre-reset next_obs object xyzw quaternion and center inferred from symmetric keypoints_rel_goal; independent NumPy float64 quaternion rotation, not simply norm of observation's actual-size keypoints.",
+  "criterion": {
+    "reward_fixed_size_m": [
+      0.141,
+      0.03025,
+      0.0271
+    ],
+    "keypoint_scale": 1.5,
+    "threshold_m": 0.03,
+    "cumulative_near_frames": 10,
+    "consecutive_required": false,
+    "max_successes": 1,
+    "goal_bonus_per_near_frame": 100,
+    "goal_bonus_when_10_frames_total": 1000,
+    "lift_bonus_once": 300,
+    "lift_condition": "0.05 + object_z - object_reset_z > 0.15, latched once per episode"
+  },
+  "lineage": {
+    "source_training_agent_load_path": null,
+    "source_training_buffer_load_path": null,
+    "source_training_actor_bc_alpha": 0,
+    "source_transitions": 50001920,
+    "new_transitions": 5000192,
+    "total_transitions_across_cold_replay_restart": 55002112,
+    "loaded_checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830",
+    "relative_network_calls": 9572,
+    "final_native_update_counter": 107038,
+    "cold_replay": true,
+    "native_audit_status": "complete"
+  },
+  "checks": {
+    "checkpoint_metadata_and_before_after_model_digests_match": true,
+    "checkpoint_native_state_dict_loaded_strictly_on_cpu": true,
+    "task_overrides_match_training": true,
+    "metadata_json_matches_npz_metadata": true,
+    "episode_ids_match_metadata_and_npz": true,
+    "observations_actions_rewards_finite": true,
+    "steps_contiguous_and_single_done_at_episode_end": true,
+    "first_10th_cumulative_near_frame_equals_terminal_step_for_every_success": true,
+    "independently_reconstructed_success_matches_all_episode_and_npz_labels": true,
+    "successful_episodes_all_terminated_not_truncated": true,
+    "per_episode_raw_return_and_reward_components_match": true,
+    "encoded_success_count_max_abs_error": 3.809308646296472e-9,
+    "within_episode_obs_continuity_max_abs_error": 0,
+    "goal_bonus_reconstruction_max_abs_error": 0,
+    "lift_bonus_reconstruction_max_abs_error": 0,
+    "return_reconstruction_max_abs_error": 0
+  },
+  "modes": {
+    "deterministic": {
+      "episodes": 64,
+      "transitions": 2055,
+      "independent_successes": 64,
+      "success_rate": 1,
+      "terminated": 64,
+      "truncated": 0,
+      "successful_terminated": 64,
+      "successful_truncated": 0,
+      "total_near_frames": 640,
+      "final_keypoint_error_m_successes": {
+        "min": 0.013169276725853205,
+        "mean": 0.01724358343734725,
+        "max": 0.026504837078319972
+      },
+      "length_successes": {
+        "min": 31,
+        "mean": 32.109375,
+        "max": 34
+      },
+      "maximum_lift_m_successes": {
+        "min": 0.15356572866439822,
+        "mean": 0.15644251797348263,
+        "max": 0.16710647344589236
+      },
+      "longest_consecutive_near_run_successes": {
+        "min": 6,
+        "mean": 7.921875,
+        "max": 10
+      },
+      "successful_episodes_without_10_consecutive_near_frames": 53,
+      "cpu_checkpoint_mean_vs_recorded_action_max_abs_difference": 0.00010097026824951172,
+      "cpu_checkpoint_mean_vs_recorded_action_mean_abs_difference": 0.0000060653519540210254
+    },
+    "stochastic": {
+      "episodes": 128,
+      "transitions": 19719,
+      "independent_successes": 110,
+      "success_rate": 0.859375,
+      "terminated": 110,
+      "truncated": 18,
+      "successful_terminated": 110,
+      "successful_truncated": 0,
+      "total_near_frames": 1235,
+      "final_keypoint_error_m_successes": {
+        "min": 0.003105882467649541,
+        "mean": 0.0207291549027661,
+        "max": 0.029836693825549623
+      },
+      "length_successes": {
+        "min": 30,
+        "mean": 81.08181818181818,
+        "max": 565
+      },
+      "maximum_lift_m_successes": {
+        "min": 0.1461647987365723,
+        "mean": 0.16913521398197512,
+        "max": 0.2200516700744629
+      },
+      "longest_consecutive_near_run_successes": {
+        "min": 3,
+        "mean": 7.972727272727273,
+        "max": 10
+      },
+      "successful_episodes_without_10_consecutive_near_frames": 79,
+      "failed_episode_ids": [
+        12,
+        20,
+        27,
+        28,
+        32,
+        45,
+        48,
+        56,
+        59,
+        77,
+        87,
+        92,
+        94,
+        97,
+        103,
+        109,
+        112,
+        127
+      ],
+      "failed_episode_near_frames_in_same_order": [
+        8,
+        9,
+        6,
+        9,
+        9,
+        9,
+        6,
+        4,
+        7,
+        7,
+        8,
+        8,
+        7,
+        8,
+        4,
+        9,
+        9,
+        8
+      ],
+      "failed_episodes_all_timeout_at_600_steps": true
+    }
+  },
+  "runtime": {
+    "eval_seed": 0,
+    "num_envs": 32,
+    "training_startup": false,
+    "noise_multiplier": 1,
+    "noise_repeat": 0,
+    "arm_moving_average": 1,
+    "hand_moving_average": 0.1,
+    "effective_numerics": {
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "cudnn_benchmark": true,
+      "float32_matmul_precision": "highest"
+    }
+  },
+  "limits": [
+    "One training seed and one fixed eraser/start/goal, with domain randomization disabled; not full STR benchmark, paper reproduction, or real-robot readiness.",
+    "Success requires cumulative near-goal frames, not continuous stability. 53/64 deterministic and 79/110 stochastic successes do not contain a 10-frame consecutive near run.",
+    "Frozen evaluation has unchanged weights and clean native reset, but reset does not erase previous-reward history. No further reset intervention was introduced here.",
+    "Geometry/lift does not verify contact forces, force closure, or stable grasp. Stochastic 18 failures remain.",
+    "The positive result follows 50,001,920 scratch transitions plus a fresh-replay/new-simulator continuation of 5,000,192; not an uninterrupted 55M training run.",
+    "Source hashes capture files inspected now; data and model digests match saved evaluation metadata. No GPU or new rollout was run for this validation."
+  ],
+  "source_sha256": {
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/normal/relativefinal/deterministic/summary.json": "9f0aa689e55d8c4ad9cc08d54c24eb83a1a81e1a83c336b3e8fd46750564081d",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/normal/relativefinal/deterministic/metadata.json": "2f24212b6de6258090fdaff6079d7c4d679e2652f8308a2807e554e97a5ad8df",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/normal/relativefinal/deterministic/episodes.jsonl": "7d02d82de6473948f9615844a4287662dc2c00e71a3fa85c5a465e8d0e09273f",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/normal/relativefinal/deterministic/transitions.npz": "18a1879f6f79743222d5ca65786b0806d908b1233b91db92effa4f213e082516",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/normal/relativefinal/stochastic/summary.json": "3fc07763d6bed46f45b186b40302fe7883caf1b2636f78fb5d2c78d6b8b26c3f",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/normal/relativefinal/stochastic/metadata.json": "febe66e7a01335cf0ce9dccbde83a6d2c1c025d25f576af9941e6453d13f1a63",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/normal/relativefinal/stochastic/episodes.jsonl": "f57e7c4c5581c340bec0ce5d0d865b28550a6c9ce82e3d830c82a0bdb97e0aa6",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/normal/relativefinal/stochastic/transitions.npz": "f574d5a4291f72712aacd4339723890ec9adfe3548e3cf340a49cb1d4c141b79",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/models/final/step4883/actor.pt": "2f0c007c62b1d5e69791541266b08273b1c801760c8ab37362f8bb969a3f6cb2",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/models/final/step4883/critic.pt": "422a737150b27ad5e665cda76d7c1b29e4787f3c24aa7b4d125b757e8ce9c3a6",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/models/final/step4883/target_critic.pt": "016e0fcf43c77bd5635adab40390462f842f9c8edcb5306e4ed8101e9bf65621",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/models/final/step4883/temperature.pt": "62b75a7c87607941ece703655577ddd9886ac2427550a8eec70f571367491e87",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/models/final/step4883/reward_normalizer.pt": "e8a9c7f757cd748b417c0156314689ee64394dc3c8d67a208ea6d685422ae358",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/models/final/step4883/agent_state.pt": "28320f43e07566865674283e86096a651b0e20d684a0efdcc739b95ea364830d",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/configs/normal.json": "c36ee4669283a6e41464d19b150f1fc27b3f163520056c42f0696304970b9f7d",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/warmup_audit.json": "bbf56ef879d9432ff2aad20eabfc6cf24a5446d59770465f53fbe775e8f5ae38",
+    "/home/abao/simtoolreal/isaacsimenvs/cfg/task/SimToolReal.yaml": "3f7b10d06a9312e31c808dcb69cbe9866493e29045452873d4359fb012871709",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/obs_utils.py": "2f36d5c5f50eb59e0debff98fc08d447d8c40b5cdb82d8aad54527c704437cc0",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/reward_utils.py": "ec2cb758f5ebd2791aee7356111a0c2e28abbeca801e942b3cbee29848c78205",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/termination_utils.py": "42a29203129abe5d9fe0fb147aaff5a0064117403f05cc91c1e06c1a93146b1b",
+    "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py": "a6e1914a6fffabcd7f38cd842cdc87013d4112a7a0bcab3caeaeb2d13939fcdf"
+  }
+}

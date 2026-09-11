@@ -1,0 +1,10 @@
+{
+  "status": "cpu_preparation_checked_gpu_not_run",
+  "cuda_initialized": false,
+  "jobs": 1,
+  "queue_free_memory_gate_mib": 12288,
+  "timeout_seconds": 900,
+  "hard_deadline_utc": "2026-09-09T01:00:00Z",
+  "selected_phase_rows": 3072,
+  "selection_note": "Each phase alternates512 teacher and512 native rows; first32 has16 of each. Near-goal is center-proximity phase, not true pose success."
+}

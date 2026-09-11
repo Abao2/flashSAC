@@ -6,6 +6,7 @@ os.environ["NUMEXPR_NUM_THREADS"] = "2"
 
 import argparse
 import random
+import time
 from typing import MutableMapping, Optional
 
 import hydra
@@ -34,6 +35,8 @@ def play(args: argparse.Namespace) -> None:
         hydra.initialize(version_base=None, config_path=config_path)
     cfg = hydra.compose(config_name=config_name, overrides=overrides)
     OmegaConf.resolve(cfg)
+    # STR's legacy utility imports register their own resolver during setup.
+    OmegaConf.clear_resolver("eval")
 
     # Seeding
     random.seed(cfg.seed)
@@ -79,7 +82,8 @@ def play(args: argparse.Namespace) -> None:
     completed_episodes = 0
     episode_returns = np.zeros(num_envs)
 
-    while completed_episodes < num_episodes:
+    while completed_episodes < num_episodes and env.simulation_app.is_running():
+        step_started = time.perf_counter()
         actions = agent.sample_actions(interaction_step=0, prev_transition=prev_transition, training=False)
         actions = np.array(actions)
         next_observations, rewards, terminateds, truncateds, infos = env.step(actions)
@@ -97,6 +101,10 @@ def play(args: argparse.Namespace) -> None:
 
         observations = next_observations
         prev_transition = {"next_observation": observations}
+        if args.real_time:
+            remaining = env.envs.unwrapped.step_dt - (time.perf_counter() - step_started)
+            if remaining > 0:
+                time.sleep(remaining)
 
     env.close()
 
@@ -109,5 +117,6 @@ if __name__ == "__main__":
     parser.add_argument("--checkpoint_path", type=str, required=True, help="Path to agent checkpoint directory")
     parser.add_argument("--num_envs", type=int, default=16, help="Number of parallel environments for visualization")
     parser.add_argument("--num_episodes", type=int, default=10, help="Number of episodes to play")
+    parser.add_argument("--real_time", action="store_true", help="Limit playback to simulation speed")
     args = parser.parse_args()
     play(args)

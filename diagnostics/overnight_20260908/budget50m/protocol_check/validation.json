@@ -1,0 +1,85 @@
+{
+  "status": "validated_cpu_only",
+  "no_gpu_launched": true,
+  "job_count": 6,
+  "reused_clean32_verified": true,
+  "checkpoint_actor_tensor_digest_matches_completed_eval": "ebf07a6ff562f7b58c553ac47396462e14a83299f704ff8c57f3c2ed4c4326e5",
+  "task_cfg_overrides_training_vs_completed_eval_exact": true,
+  "task_env_contract_fields_equal": true,
+  "new_job_paths_and_args_passed": true,
+  "module_train_vs_eval_with_explicit_training_false": {
+    "probe_states": 1024,
+    "means_bitwise_equal": true,
+    "stds_bitwise_equal": true,
+    "model_weights_and_bn_unchanged": true
+  },
+  "cpu_first32_in_batch32_vs1024": {
+    "max_mean_difference": 0,
+    "max_std_difference": 0,
+    "limitation": "CPU only; cannot conclude CUDA batch numerical parity"
+  },
+  "compiled_named_method": {
+    "optimized_module_type": "OptimizedModule",
+    "custom_method_bound_to_original_actor": true,
+    "custom_method_qualname": "FlashSACActor.get_mean_and_std",
+    "interpretation": "Native Network.apply calls this named method, not necessarily compiled forward. CPU method-binding audit only; CUDA kernel numerical equivalence not measured."
+  },
+  "dataset": {
+    "rows": 76800,
+    "obs_dim": 162,
+    "unique_observed_object_dimensions_m": [
+      [
+        0.1460571438074112,
+        0.0565996952354908,
+        0.049932923167943954
+      ]
+    ],
+    "initial_observed_progress_min_max": [
+      0,
+      0
+    ],
+    "initial_geometry_note": "Dataset geometric columns are post-action; initial state geometry must use obs, not these columns."
+  },
+  "known_numeric_setting_difference": "train.py enables TF32 and float32 matmul precision high; harness does not explicitly set these. Existing metadata does not capture final post-Isaac global flags. Difference is a candidate for measurement, not a demonstrated cause.",
+  "asset_evidence": "Both logs report one generated eraser URDF, same original KUKA+Sharpa converted USD stem, same self-collision filter count70/bodycount30, same spacing1.2. Generator uses default seed42 and num_per_type1 independent of num_envs. No historical generated USD hashes are preserved in these metadata, so bitwise physics asset equality is not proven.",
+  "sha256": {
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830/actor.pt": "b5c9ac919b74ad78620e7f8a0ee2b41296aac72e4fdf736a85fd11b97f47f438",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830/critic.pt": "9bc785d5ce0a1ac62543dfe107dd11d9fd400f2de8882a9c367fea2b12ae12a1",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830/target_critic.pt": "801ae7569698d9e8b6b5978665f3398d686d498f3a86ec2ed23fe5191c05acad",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830/temperature.pt": "f5d85d570622d10b30f6ae9790a191377865db0fd124ee02e34757e9194585f5",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830/reward_normalizer.pt": "a569ecb15900bef0a167a6b65c85188a391a6c11489f44c436e2f33915c4e60e",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830/agent_state.pt": "2fe7bd25a6706ad36bbab6bce3a3e8527870c8601fbc8959ce7c1b3d93db49d5",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/evaluations/arm1_hand01_seed0/step48830/stochastic/summary.json": "107bb14948411471260e3d3555fee6cf8009ce6c43bb63d29c21af5ea6ba4fa9",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/evaluations/arm1_hand01_seed0/step48830/stochastic/metadata.json": "0572c6f1b15154ff1162819af65472aee9d9eadf386f2f0f18fb1b415d9218fd",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/configs/arm1_hand01_seed0.json": "bf037d1d9fee0f2293d2f3442daf3a4d63e2474e7b5c8ce5b34cbe1d8f6871d4",
+    "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py": "a6e1914a6fffabcd7f38cd842cdc87013d4112a7a0bcab3caeaeb2d13939fcdf",
+    "/home/abao/flashsac-robotics/train.py": "a7697d6e5e84cae5bff49002d8cd99956b42576f9140ba8f65a93973e587be87",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/agent.py": "079962c5307f0118338329ba8ebbf89055356f9f1446e9d533462aa57d936c9a",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/network.py": "4068098466f195fac2c7d91e3cb1abe0c4daf42c4d1cd85f3940dca9edfd4c98",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/layer.py": "7af7b2954c22a5ae56595b8d3139017e2a44b17dbd63c2f54c4e65dbd17ef7cc",
+    "/home/abao/flashsac-robotics/flash_rl/agents/utils/network.py": "02b1e8c27ae2d75ba39969a5ea6b21e1bc596dbab71fdd6c5dc9cd5d7aab1d69",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/scene_utils.py": "e18cdbae5d4ce9df147832777915258bcd5934eeb8e7bf57f51891576eb85895",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/generate_objects.py": "f176869ed6c4cd36a93019643ea448ce238dcd931df6b80243c1678f22c46b4c",
+    "/home/abao/simtoolreal/isaacsimenvs/cfg/task/SimToolReal.yaml": "3f7b10d06a9312e31c808dcb69cbe9866493e29045452873d4359fb012871709",
+    "/home/abao/simtoolreal/assets/urdf/kuka_sharpa_description/iiwa14_left_sharpa_adjusted_restricted.urdf": "3c36492da57eb4326068a0b97b2d064034035d9037c07e345a1317ead195fb71",
+    "/home/abao/flashsac-robotics/tests/test_str_rollout_startup.py": "0f6fcbda224fcd0cfa6efef66c2560caf5d5dd3acbdfd90334ca949e3873c554",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/protocol_check/manifest.json": "aaca698eecceb627f9730988e0d085bb0aae72a9a529f4ed09e766d04f03700f"
+  },
+  "numerics_extension": {
+    "intentional_source_change": "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+    "prior_sha256": "69ddb88c40555d7e809b1f3dadf7f8a1d6931943c5fa3c4554db5a4283cb08be",
+    "current_sha256": "a6e1914a6fffabcd7f38cd842cdc87013d4112a7a0bcab3caeaeb2d13939fcdf",
+    "default_off": true,
+    "default_read_does_not_mutate_cpu_flags": true,
+    "original_first_four_job_objects_exact": true,
+    "new_jobs": [
+      "env32_clean_tf32_seed0",
+      "env1024_clean_tf32_seed0"
+    ],
+    "effective_flags_recorded_after": "Isaac env reset and FrozenPolicy creation/loading, before rollout; again after rollout",
+    "mode_compile_unchanged": true,
+    "intervention": "Precision bundle, not an isolated individual-flag cause",
+    "tests": "4 CPU startup/numerics unit tests, original self-test, CLI6jobs and compilation passed"
+  },
+  "optional_seed1_job_index": 3
+}

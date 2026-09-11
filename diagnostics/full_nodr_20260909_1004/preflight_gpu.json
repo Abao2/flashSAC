@@ -1,0 +1,603 @@
+{
+  "status": "PASS",
+  "mode": "gpu_smoke",
+  "config": "simtoolreal_full_nodr",
+  "cpu": {
+    "actor_dim": 140,
+    "critic_dim": 162,
+    "combined_dim": 302,
+    "action_dim": 29,
+    "asset_pool_size": 1200,
+    "asset_pool_type_counts": {
+      "hammer": 200,
+      "screwdriver": 200,
+      "marker": 100,
+      "spatula": 200,
+      "eraser": 100,
+      "brush": 400
+    },
+    "original_reward_controller_reset_preserved": true,
+    "dr_disabled": true,
+    "resolved_task_config": {
+      "assets": {
+        "robot_urdf": "assets/urdf/kuka_sharpa_description/iiwa14_left_sharpa_adjusted_restricted.urdf",
+        "table_urdf": "assets/urdf/table_narrow.urdf",
+        "enable_functional_object": false,
+        "functional_object_position_xy": [
+          0.0,
+          0.05
+        ],
+        "functional_support_height": 0.0,
+        "functional_support_radius": 0.11,
+        "functional_support_half_spacing": 0.0,
+        "table_scale_range_x": [
+          1.0,
+          1.0
+        ],
+        "table_scale_range_y": [
+          1.0,
+          1.0
+        ],
+        "table_scale_num_variants": 1,
+        "object_name": "handle_head_primitives",
+        "object_urdf": "",
+        "object_scale": null,
+        "handle_head_types": [
+          "hammer",
+          "screwdriver",
+          "marker",
+          "spatula",
+          "eraser",
+          "brush"
+        ],
+        "num_assets_per_type": 100,
+        "shuffle_assets": true,
+        "modify_asset_frictions": true,
+        "robot_friction": 0.5,
+        "finger_tip_friction": 1.5,
+        "object_friction": 0.5,
+        "table_friction": 0.5
+      },
+      "obs": {
+        "state_list": [
+          "joint_pos",
+          "joint_vel",
+          "prev_action_targets",
+          "palm_pos",
+          "palm_rot",
+          "palm_vel",
+          "object_rot",
+          "object_vel",
+          "fingertip_pos_rel_palm",
+          "keypoints_rel_palm",
+          "keypoints_rel_goal",
+          "object_scales",
+          "closest_keypoint_max_dist",
+          "closest_fingertip_dist",
+          "lifted_object",
+          "progress",
+          "successes",
+          "reward"
+        ],
+        "obs_list": [
+          "joint_pos",
+          "joint_vel",
+          "prev_action_targets",
+          "palm_pos",
+          "palm_rot",
+          "object_rot",
+          "fingertip_pos_rel_palm",
+          "keypoints_rel_palm",
+          "keypoints_rel_goal",
+          "object_scales"
+        ],
+        "clamp_abs_observations": 10.0
+      },
+      "action": {
+        "arm_moving_average": 0.1,
+        "hand_moving_average": 0.1,
+        "dof_speed_scale": 1.5
+      },
+      "reward": {
+        "keypoint_rew_scale": 200.0,
+        "keypoint_scale": 1.5,
+        "object_base_size": 0.04,
+        "fixed_size": [
+          0.141,
+          0.03025,
+          0.0271
+        ],
+        "fixed_size_keypoint_reward": true,
+        "lifting_rew_scale": 20.0,
+        "lifting_bonus": 300.0,
+        "lifting_bonus_threshold": 0.15,
+        "distance_delta_rew_scale": 50.0,
+        "reach_goal_bonus": 1000.0,
+        "kuka_actions_penalty_scale": 0.03,
+        "hand_actions_penalty_scale": 0.003
+      },
+      "reset": {
+        "reset_position_noise_x": 0.1,
+        "reset_position_noise_y": 0.1,
+        "reset_position_noise_z": 0.02,
+        "fixed_start_pose": null,
+        "reset_dof_pos_random_interval_arm": 0.1,
+        "reset_dof_pos_random_interval_fingers": 0.1,
+        "reset_dof_vel_random_interval": 0.5,
+        "start_arm_higher": false,
+        "table_reset_z": 0.38,
+        "table_reset_z_range": 0.01,
+        "table_object_z_offset": 0.25,
+        "table_reset_xy_range_m": [
+          0.0,
+          0.0
+        ],
+        "table_reset_yaw_range_deg": 0.0,
+        "goal_sampling_type": "delta",
+        "delta_goal_distance": 0.1,
+        "delta_rotation_degrees": 90.0,
+        "target_volume_mins": [
+          -0.35,
+          -0.2,
+          0.6
+        ],
+        "target_volume_maxs": [
+          0.35,
+          0.2,
+          0.95
+        ],
+        "target_volume_region_scale": 1.0,
+        "fixed_goal_pose": null,
+        "fixed_trajectory_file": "",
+        "fixed_trajectory_count": 0
+      },
+      "termination": {
+        "episode_length": 600,
+        "success_tolerance": 0.075,
+        "target_success_tolerance": 0.01,
+        "eval_success_tolerance": null,
+        "success_steps": 10,
+        "max_consecutive_successes": 50,
+        "force_consecutive_near_goal_steps": false,
+        "reset_when_dropped": false,
+        "tolerance_curriculum_increment": 0.9,
+        "tolerance_curriculum_interval": 3000,
+        "tolerance_curriculum_success_threshold": 3.0
+      },
+      "domain_randomization": {
+        "use_obs_delay": false,
+        "obs_delay_max": 3,
+        "use_action_delay": false,
+        "action_delay_max": 3,
+        "use_object_state_delay_noise": false,
+        "object_state_delay_max": 10,
+        "object_state_xyz_noise_std": 0.0,
+        "object_state_rotation_noise_degrees": 0.0,
+        "object_scale_noise_multiplier_range": [
+          1.0,
+          1.0
+        ],
+        "joint_velocity_obs_noise_std": 0.0,
+        "force_scale": 0.0,
+        "force_prob_range": [
+          0.001,
+          0.1
+        ],
+        "force_decay": 0.0,
+        "force_decay_interval": 0.08,
+        "force_only_when_lifted": true,
+        "torque_scale": 0.0,
+        "torque_prob_range": [
+          0.001,
+          0.1
+        ],
+        "torque_decay": 0.0,
+        "torque_decay_interval": 0.08,
+        "torque_only_when_lifted": true,
+        "object_friction_scale_range": [
+          1.0,
+          1.0
+        ],
+        "fingertip_friction_scale_range": [
+          1.0,
+          1.0
+        ],
+        "friction_n_buckets": 16
+      },
+      "decimation": 2,
+      "episode_length_s": 10.0,
+      "action_space": 29,
+      "sim": {
+        "dt": 0.00833333333,
+        "render_interval": 2,
+        "gravity": [
+          0.0,
+          0.0,
+          -9.81
+        ],
+        "physx": {
+          "solver_type": 1,
+          "min_position_iteration_count": 8,
+          "max_position_iteration_count": 8,
+          "min_velocity_iteration_count": 0,
+          "max_velocity_iteration_count": 0,
+          "bounce_threshold_velocity": 0.2,
+          "friction_offset_threshold": 0.04,
+          "friction_correlation_distance": 0.025
+        }
+      },
+      "scene": {
+        "num_envs": 24576,
+        "env_spacing": 1.2,
+        "replicate_physics": false,
+        "clone_in_fabric": false
+      }
+    }
+  },
+  "resolved_training_config": {
+    "project_name": "FlashRL",
+    "entity_name": "draftrec",
+    "group_name": "str_full_nodr",
+    "exp_name": "full_distribution_seed0",
+    "seed": 0,
+    "logger_type": "tensorboard",
+    "output_root": ".",
+    "save_path": "models/str_full_nodr/full_distribution_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-TIMESTAMP",
+    "agent_load_path": null,
+    "buffer_load_path": null,
+    "require_agent_load": false,
+    "num_env_steps": 100003840,
+    "num_train_envs": 2048,
+    "num_eval_envs": null,
+    "num_record_envs": null,
+    "num_eval_episodes": 0,
+    "num_record_episodes": 0,
+    "gamma": 0.99,
+    "n_step": 1,
+    "num_interaction_steps": 48830.0,
+    "updates_per_interaction_step": 4,
+    "num_update_steps": 195320.0,
+    "evaluation_per_interaction_step": null,
+    "metrics_per_interaction_step": 250,
+    "recording_per_interaction_step": 0,
+    "logging_per_interaction_step": 50,
+    "save_checkpoint_per_interaction_step": 9766,
+    "save_buffer_per_interaction_step": null,
+    "agent": {
+      "agent_type": "flashSAC",
+      "seed": 0,
+      "device_type": "cuda",
+      "buffer_max_length": 10000000,
+      "buffer_min_length": 100000,
+      "buffer_device_type": "cuda",
+      "sample_batch_size": 2048,
+      "normalize_reward": true,
+      "normalized_G_max": 5.0,
+      "asymmetric_observation": true,
+      "learning_rate_init": 0.0003,
+      "learning_rate_peak": 0.0003,
+      "learning_rate_end": 0.00015,
+      "learning_rate_warmup_rate": 1e-06,
+      "learning_rate_warmup_step": 0,
+      "learning_rate_decay_rate": 1.0,
+      "learning_rate_decay_step": 19532,
+      "actor_num_blocks": 2,
+      "actor_hidden_dim": 128,
+      "actor_bc_alpha": 0.0,
+      "actor_noise_zeta_mu": 2.0,
+      "actor_noise_zeta_max": 16,
+      "actor_update_period": 2,
+      "critic_num_blocks": 2,
+      "critic_hidden_dim": 256,
+      "critic_num_bins": 101,
+      "critic_min_v": -5.0,
+      "critic_max_v": 5.0,
+      "critic_target_update_tau": 0.01,
+      "temp_initial_value": 0.01,
+      "temp_target_sigma": 0.15,
+      "temp_target_entropy": null,
+      "gamma": 0.99,
+      "n_step": 1,
+      "use_compile": true,
+      "compile_mode": "auto",
+      "use_amp": true,
+      "load_optimizer": true,
+      "load_reward_normalizer": true
+    },
+    "env": {
+      "env_type": "isaaclab",
+      "env_name": "Isaacsimenvs-SimToolReal-Direct-v0",
+      "num_env_steps": 100003840,
+      "seed": 0,
+      "num_train_envs": 2048,
+      "num_eval_envs": null,
+      "num_record_envs": null,
+      "rescale_action": null,
+      "max_episode_steps": null,
+      "registration_modules": [
+        "isaacsimenvs"
+      ],
+      "env_cfg_yaml_entry_point": "env_cfg_yaml_entry_point",
+      "task_cfg_overrides": {
+        "domain_randomization": {
+          "use_obs_delay": false,
+          "use_action_delay": false,
+          "use_object_state_delay_noise": false,
+          "object_state_xyz_noise_std": 0.0,
+          "object_state_rotation_noise_degrees": 0.0,
+          "object_scale_noise_multiplier_range": [
+            1.0,
+            1.0
+          ],
+          "joint_velocity_obs_noise_std": 0.0,
+          "force_scale": 0.0,
+          "torque_scale": 0.0,
+          "object_friction_scale_range": [
+            1.0,
+            1.0
+          ],
+          "fingertip_friction_scale_range": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "device": "cuda:0",
+      "headless": true,
+      "action_bounds": 1.0,
+      "bootstrap_timeouts": true,
+      "success_path": "episode_final.all_goals_hit"
+    }
+  },
+  "gpu": {
+    "status": "PASS",
+    "num_envs": 2048,
+    "steps": 700,
+    "terminated": 1256,
+    "truncated": 1711,
+    "timeout_final_obs": "PASS",
+    "random_reset_sampling": {
+      "start_position_unique": 2048,
+      "start_orientation_unique": 2048,
+      "goal_position_unique": 2048,
+      "goal_orientation_unique": 2048
+    },
+    "asset_selection": {
+      "pool_size": 1200,
+      "pool_type_counts": {
+        "hammer": 200,
+        "screwdriver": 200,
+        "marker": 100,
+        "spatula": 200,
+        "eraser": 100,
+        "brush": 400
+      },
+      "type_counts": {
+        "hammer": 341,
+        "screwdriver": 338,
+        "marker": 173,
+        "spatula": 338,
+        "eraser": 180,
+        "brush": 678
+      },
+      "unique_assets_selected": 1200,
+      "six_types_selected": "PASS",
+      "all_pool_assets_selected": "PASS"
+    },
+    "resolved_runtime_task": {
+      "actor_dim": 140,
+      "critic_dim": 162,
+      "combined_dim": 302,
+      "action_dim": 29,
+      "asset_pool_size": 1200,
+      "asset_pool_type_counts": {
+        "hammer": 200,
+        "screwdriver": 200,
+        "marker": 100,
+        "spatula": 200,
+        "eraser": 100,
+        "brush": 400
+      },
+      "original_reward_controller_reset_preserved": true,
+      "dr_disabled": true,
+      "resolved_task_config": {
+        "assets": {
+          "robot_urdf": "assets/urdf/kuka_sharpa_description/iiwa14_left_sharpa_adjusted_restricted.urdf",
+          "table_urdf": "assets/urdf/table_narrow.urdf",
+          "enable_functional_object": false,
+          "functional_object_position_xy": [
+            0.0,
+            0.05
+          ],
+          "functional_support_height": 0.0,
+          "functional_support_radius": 0.11,
+          "functional_support_half_spacing": 0.0,
+          "table_scale_range_x": [
+            1.0,
+            1.0
+          ],
+          "table_scale_range_y": [
+            1.0,
+            1.0
+          ],
+          "table_scale_num_variants": 1,
+          "object_name": "handle_head_primitives",
+          "object_urdf": "",
+          "object_scale": null,
+          "handle_head_types": [
+            "hammer",
+            "screwdriver",
+            "marker",
+            "spatula",
+            "eraser",
+            "brush"
+          ],
+          "num_assets_per_type": 100,
+          "shuffle_assets": true,
+          "modify_asset_frictions": true,
+          "robot_friction": 0.5,
+          "finger_tip_friction": 1.5,
+          "object_friction": 0.5,
+          "table_friction": 0.5
+        },
+        "obs": {
+          "state_list": [
+            "joint_pos",
+            "joint_vel",
+            "prev_action_targets",
+            "palm_pos",
+            "palm_rot",
+            "palm_vel",
+            "object_rot",
+            "object_vel",
+            "fingertip_pos_rel_palm",
+            "keypoints_rel_palm",
+            "keypoints_rel_goal",
+            "object_scales",
+            "closest_keypoint_max_dist",
+            "closest_fingertip_dist",
+            "lifted_object",
+            "progress",
+            "successes",
+            "reward"
+          ],
+          "obs_list": [
+            "joint_pos",
+            "joint_vel",
+            "prev_action_targets",
+            "palm_pos",
+            "palm_rot",
+            "object_rot",
+            "fingertip_pos_rel_palm",
+            "keypoints_rel_palm",
+            "keypoints_rel_goal",
+            "object_scales"
+          ],
+          "clamp_abs_observations": 10.0
+        },
+        "action": {
+          "arm_moving_average": 0.1,
+          "hand_moving_average": 0.1,
+          "dof_speed_scale": 1.5
+        },
+        "reward": {
+          "keypoint_rew_scale": 200.0,
+          "keypoint_scale": 1.5,
+          "object_base_size": 0.04,
+          "fixed_size": [
+            0.141,
+            0.03025,
+            0.0271
+          ],
+          "fixed_size_keypoint_reward": true,
+          "lifting_rew_scale": 20.0,
+          "lifting_bonus": 300.0,
+          "lifting_bonus_threshold": 0.15,
+          "distance_delta_rew_scale": 50.0,
+          "reach_goal_bonus": 1000.0,
+          "kuka_actions_penalty_scale": 0.03,
+          "hand_actions_penalty_scale": 0.003
+        },
+        "reset": {
+          "reset_position_noise_x": 0.1,
+          "reset_position_noise_y": 0.1,
+          "reset_position_noise_z": 0.02,
+          "fixed_start_pose": null,
+          "reset_dof_pos_random_interval_arm": 0.1,
+          "reset_dof_pos_random_interval_fingers": 0.1,
+          "reset_dof_vel_random_interval": 0.5,
+          "start_arm_higher": false,
+          "table_reset_z": 0.38,
+          "table_reset_z_range": 0.01,
+          "table_object_z_offset": 0.25,
+          "table_reset_xy_range_m": [
+            0.0,
+            0.0
+          ],
+          "table_reset_yaw_range_deg": 0.0,
+          "goal_sampling_type": "delta",
+          "delta_goal_distance": 0.1,
+          "delta_rotation_degrees": 90.0,
+          "target_volume_mins": [
+            -0.35,
+            -0.2,
+            0.6
+          ],
+          "target_volume_maxs": [
+            0.35,
+            0.2,
+            0.95
+          ],
+          "target_volume_region_scale": 1.0,
+          "fixed_goal_pose": null,
+          "fixed_trajectory_file": "",
+          "fixed_trajectory_count": 0
+        },
+        "termination": {
+          "episode_length": 600,
+          "success_tolerance": 0.075,
+          "target_success_tolerance": 0.01,
+          "eval_success_tolerance": null,
+          "success_steps": 10,
+          "max_consecutive_successes": 50,
+          "force_consecutive_near_goal_steps": false,
+          "reset_when_dropped": false,
+          "tolerance_curriculum_increment": 0.9,
+          "tolerance_curriculum_interval": 3000,
+          "tolerance_curriculum_success_threshold": 3.0
+        },
+        "domain_randomization": {
+          "use_obs_delay": false,
+          "obs_delay_max": 3,
+          "use_action_delay": false,
+          "action_delay_max": 3,
+          "use_object_state_delay_noise": false,
+          "object_state_delay_max": 10,
+          "object_state_xyz_noise_std": 0.0,
+          "object_state_rotation_noise_degrees": 0.0,
+          "object_scale_noise_multiplier_range": [
+            1.0,
+            1.0
+          ],
+          "joint_velocity_obs_noise_std": 0.0,
+          "force_scale": 0.0,
+          "force_prob_range": [
+            0.001,
+            0.1
+          ],
+          "force_decay": 0.0,
+          "force_decay_interval": 0.08,
+          "force_only_when_lifted": true,
+          "torque_scale": 0.0,
+          "torque_prob_range": [
+            0.001,
+            0.1
+          ],
+          "torque_decay": 0.0,
+          "torque_decay_interval": 0.08,
+          "torque_only_when_lifted": true,
+          "object_friction_scale_range": [
+            1.0,
+            1.0
+          ],
+          "fingertip_friction_scale_range": [
+            1.0,
+            1.0
+          ],
+          "friction_n_buckets": 16
+        },
+        "scene": {
+          "num_envs": 2048,
+          "env_spacing": 1.2,
+          "lazy_sensor_update": true,
+          "replicate_physics": false,
+          "filter_collisions": true,
+          "clone_in_fabric": false
+        },
+        "action_space": 29,
+        "decimation": 2,
+        "episode_length_s": 10.0
+      }
+    }
+  }
+}

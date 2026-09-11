@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-09-09T18:00:00+08:00",
+  "step_axis": {
+    "field": "TensorBoard Event.step",
+    "unit": "environment transitions",
+    "resume_policy": "Keep the original global step; do not shift a resumed segment to zero.",
+    "note": "rewards/step and rewards/iter contain the same scalar values and are both written at the global frame step."
+  },
+  "sapg_sampling_note": "For mixed_expl with 24576 actors and a 4096 exploration block, rl_games sets ignore_env_boundary=20480. rewards/* and episode_cumulative/episode_final summaries therefore use completed episodes from the final 4096-env block, not an equal-weight mean over all 24576 environments. successes_per_block/block_0..5 are the explicit per-block diagnostics.",
+  "sources": [
+    {
+      "id": "xug52_original_kuka_sharpa_full_dr",
+      "label": "Original STR SAPG: KUKA iiwa14 + Sharpa, full DR",
+      "remote_run": "/home/lixiyuan/simtoolreal/outputs/2026-08-20/17-56-52/0_s2r_public_release_lab_24576_seed0_resume_ep86400_xug52",
+      "local_event_dir": "/home/abao/flashsac-robotics/diagnostics/reward_comparison_20260909/remote_sources/xug52_original_kuka_full_dr",
+      "config": "config.yaml",
+      "overrides": "overrides.yaml",
+      "embodiment": "assets/urdf/kuka_sharpa_description/iiwa14_left_sharpa_adjusted_restricted.urdf",
+      "task": "handle_head_primitives: hammer, screwdriver, marker, spatula, eraser, brush",
+      "num_envs": 24576,
+      "exploration_scale": 0.005,
+      "exploration_block_size": 4096,
+      "domain_randomization": "full: observation/action/object delays and noise enabled; object scale [0.9,1.1], external force 20, torque 2",
+      "action_moving_average": {"arm": 0.1, "hand": 0.1},
+      "success_tolerance": 0.01,
+      "first_step": 33973862400,
+      "last_step": 66383511552,
+      "metrics": {
+        "return": {"tag": "rewards/step", "last": 10659.212890625, "tail100_mean": 10684.3794140625, "max": 11020.85546875},
+        "episode_total": {"tag": "episode_cumulative/total_reward", "last": 10621.974609375, "tail100_mean": 10690.179375},
+        "successes": {"tag": "successes", "last": 11.344482421875, "tail100_mean": 11.23029541015625, "max": 11.8564453125},
+        "episode_successes": {"tag": "episode_final/successes", "last": 9.982000350952148},
+        "all_goals_hit": {"tag": "episode_final/all_goals_hit", "last": 0.03133333474397659},
+        "block_successes_last": [0.0, 8.18798828125, 10.624755859375, 11.684814453125, 11.585693359375, 11.359130859375]
+      }
+    },
+    {
+      "id": "xug52_wuji_m6_no_dr_noise_expl002",
+      "label": "STR SAPG: M6 + Wuji left, DR/noise/delays disabled",
+      "remote_run": "/home/lixiyuan/wuji-s2r/runs/wuji/nodr_nonoise_expl002_resume_seed0_20260905/0_wuji_m6_left_sapg_24576_seed0_resume_nodr_nonoise_expl002_20260905",
+      "local_event_dir": "/home/abao/flashsac-robotics/diagnostics/reward_comparison_20260909/remote_sources/xug52_wuji_no_dr",
+      "config": "config.yaml",
+      "overrides": "overrides.yaml",
+      "embodiment": "robot_profile=m6_wuji_left; assets/urdf/wuji_m6_description/generated/wuji_m6_left.urdf",
+      "task": "handle_head_primitives: hammer, screwdriver, marker, spatula, eraser, brush",
+      "num_envs": 24576,
+      "exploration_scale": 0.002,
+      "exploration_block_size": 4096,
+      "domain_randomization": "observation/action/object delays and noise disabled; object scale fixed 1; external force/torque disabled; object/fingertip friction scale fixed 1",
+      "action_moving_average": {"arm": 0.1, "hand": 0.07},
+      "success_tolerance_schedule": {"start": 0.075, "end": 0.01},
+      "first_step": 38506856448,
+      "last_step": 62145429504,
+      "metrics": {
+        "return": {"tag": "rewards/step", "last": 44783.9140625, "tail100_mean": 44803.0974609375, "max": 46044.2109375},
+        "episode_total": {"tag": "episode_cumulative/total_reward", "last": 44817.08203125, "tail100_mean": 44784.7048828125},
+        "successes": {"tag": "successes", "last": 43.25537109375, "tail100_mean": 43.3619580078125, "max": 44.787841796875},
+        "episode_successes": {"tag": "episode_final/successes", "last": 43.38199996948242},
+        "all_goals_hit": {"tag": "episode_final/all_goals_hit", "last": 0.7563333511352539},
+        "block_successes_last": [0.0, 46.135498046875, 42.87890625, 43.44970703125, 43.856201171875, 43.25537109375]
+      }
+    }
+  ],
+  "episode_component_tags": {
+    "fingertip": "episode_cumulative/fingertip_delta_rew",
+    "lifting": "episode_cumulative/lifting_rew",
+    "lift_bonus": "episode_cumulative/lift_bonus_rew",
+    "keypoint": "episode_cumulative/keypoint_rew",
+    "arm_action_penalty": "episode_cumulative/kuka_actions_penalty",
+    "hand_action_penalty": "episode_cumulative/hand_actions_penalty",
+    "goal_bonus": "episode_cumulative/bonus_rew"
+  }
+}

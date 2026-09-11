@@ -1,0 +1,270 @@
+{
+  "status": "validated_cpu_only",
+  "no_gpu_launched": true,
+  "tests": "7 passed: reset reward3 + warmstart4",
+  "same_hydra_config_both_branches": true,
+  "runtime_assertion": "Actual observation layout resolved from obs_list/state_list plus OBS_FIELD_SIZES; both returned reward columns checked before first action.",
+  "guard_order": "CPU mock proves output audit is written after harness empty-directory guard and before process-exiting close.",
+  "initial_cohort_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "source_reward_verified": {
+    "source": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/frozen_bc_std005_eigen/transitions.npz",
+    "sha256": "d9c506915e7a706862e662945f381987d09be79e2eaf8055b643b40ea46a6af9",
+    "selection": "terminated & success",
+    "selected_terminal_count": 128,
+    "raw_reward_median": 100.14024353027344,
+    "encoded_reward": 1.0014024353027344
+  },
+  "actor_sha256_verified": "b5c9ac919b74ad78620e7f8a0ee2b41296aac72e4fdf736a85fd11b97f47f438",
+  "checks": [
+    {
+      "job": "initial_reward0_seed0",
+      "raw_previous_reward": 0,
+      "output_absent": true,
+      "harness_cli_valid": true
+    },
+    {
+      "job": "initial_success_reward_seed0",
+      "raw_previous_reward": 100.14024353027344,
+      "output_absent": true,
+      "harness_cli_valid": true
+    }
+  ],
+  "sha256": {
+    "/home/abao/flashsac-robotics/scripts/diagnose_str_reset_reward.py": "6f0a54ac819a8dac0d91ea6fe9305f2d877f79a74a6a9f7cb4c0e75049de3cd8",
+    "/home/abao/flashsac-robotics/tests/test_str_reset_reward.py": "8ee07ab6cdee876f9a8ec9e99f6b8c62f9797237805819ffa1cbcd166ead3189",
+    "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py": "a6e1914a6fffabcd7f38cd842cdc87013d4112a7a0bcab3caeaeb2d13939fcdf",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/reset_reward_probe/manifest.json": "a28657af29213f7dc12d1b4230949421cf62a801f998a7483a20604359aed287"
+  },
+  "resolved_config": {
+    "project_name": "FlashRL",
+    "entity_name": "draftrec",
+    "group_name": "simtoolreal_diagnostics",
+    "exp_name": "state162_eraser_onegoal_seed0",
+    "seed": 0,
+    "logger_type": "tensorboard",
+    "output_root": ".",
+    "save_path": "models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-TIMESTAMP",
+    "agent_load_path": null,
+    "buffer_load_path": null,
+    "require_agent_load": false,
+    "num_env_steps": 10000384,
+    "num_train_envs": 32,
+    "num_eval_envs": null,
+    "num_record_envs": null,
+    "num_eval_episodes": 0,
+    "num_record_episodes": 0,
+    "gamma": 0.99,
+    "n_step": 1,
+    "num_interaction_steps": 312512,
+    "updates_per_interaction_step": 2,
+    "num_update_steps": 625024,
+    "evaluation_per_interaction_step": null,
+    "metrics_per_interaction_step": 250,
+    "recording_per_interaction_step": 312512,
+    "logging_per_interaction_step": 50,
+    "save_checkpoint_per_interaction_step": 976,
+    "save_buffer_per_interaction_step": null,
+    "agent": {
+      "agent_type": "flashSAC",
+      "seed": 0,
+      "device_type": "cuda",
+      "buffer_max_length": 1,
+      "buffer_min_length": 1,
+      "buffer_device_type": "cuda",
+      "sample_batch_size": 1,
+      "normalize_reward": true,
+      "normalized_G_max": 5,
+      "asymmetric_observation": true,
+      "learning_rate_init": 0.0003,
+      "learning_rate_peak": 0.0003,
+      "learning_rate_end": 0.00015,
+      "learning_rate_warmup_rate": 0.000001,
+      "learning_rate_warmup_step": 0,
+      "learning_rate_decay_rate": 1,
+      "learning_rate_decay_step": 625024,
+      "actor_num_blocks": 2,
+      "actor_hidden_dim": 128,
+      "actor_bc_alpha": 0,
+      "actor_noise_zeta_mu": 2,
+      "actor_noise_zeta_max": 16,
+      "actor_update_period": 2,
+      "critic_num_blocks": 2,
+      "critic_hidden_dim": 256,
+      "critic_num_bins": 101,
+      "critic_min_v": -5,
+      "critic_max_v": 5,
+      "critic_target_update_tau": 0.01,
+      "temp_initial_value": 0.01,
+      "temp_target_sigma": 0.15,
+      "temp_target_entropy": null,
+      "gamma": 0.99,
+      "n_step": 1,
+      "use_compile": false,
+      "compile_mode": "auto",
+      "use_amp": true,
+      "load_optimizer": false,
+      "load_reward_normalizer": false
+    },
+    "env": {
+      "env_type": "isaaclab",
+      "env_name": "Isaacsimenvs-SimToolReal-Direct-v0",
+      "num_env_steps": 10000384,
+      "seed": 0,
+      "num_train_envs": 32,
+      "num_eval_envs": null,
+      "num_record_envs": null,
+      "rescale_action": null,
+      "max_episode_steps": null,
+      "registration_modules": [
+        "isaacsimenvs"
+      ],
+      "env_cfg_yaml_entry_point": "env_cfg_yaml_entry_point",
+      "task_cfg_overrides": {
+        "assets": {
+          "handle_head_types": [
+            "eraser"
+          ],
+          "num_assets_per_type": 1,
+          "shuffle_assets": false
+        },
+        "obs": {
+          "state_list": [
+            "joint_pos",
+            "joint_vel",
+            "prev_action_targets",
+            "palm_pos",
+            "palm_rot",
+            "palm_vel",
+            "object_rot",
+            "object_vel",
+            "fingertip_pos_rel_palm",
+            "keypoints_rel_palm",
+            "keypoints_rel_goal",
+            "object_scales",
+            "closest_keypoint_max_dist",
+            "closest_fingertip_dist",
+            "lifted_object",
+            "progress",
+            "successes",
+            "reward"
+          ],
+          "obs_list": [
+            "joint_pos",
+            "joint_vel",
+            "prev_action_targets",
+            "palm_pos",
+            "palm_rot",
+            "palm_vel",
+            "object_rot",
+            "object_vel",
+            "fingertip_pos_rel_palm",
+            "keypoints_rel_palm",
+            "keypoints_rel_goal",
+            "object_scales",
+            "closest_keypoint_max_dist",
+            "closest_fingertip_dist",
+            "lifted_object",
+            "progress",
+            "successes",
+            "reward"
+          ]
+        },
+        "reset": {
+          "fixed_start_pose": [
+            0,
+            0,
+            0.555966462104926,
+            1,
+            0,
+            0,
+            0
+          ],
+          "fixed_goal_pose": [
+            0.05,
+            0,
+            0.705966462104926,
+            1,
+            0,
+            0,
+            0
+          ],
+          "fixed_trajectory_file": "",
+          "fixed_trajectory_count": 0,
+          "reset_dof_pos_random_interval_arm": 0,
+          "reset_dof_pos_random_interval_fingers": 0,
+          "reset_dof_vel_random_interval": 0,
+          "table_reset_z_range": 0
+        },
+        "termination": {
+          "max_consecutive_successes": 1,
+          "success_tolerance": 0.02,
+          "target_success_tolerance": 0.02
+        },
+        "domain_randomization": {
+          "use_obs_delay": false,
+          "use_action_delay": false,
+          "use_object_state_delay_noise": false,
+          "object_state_xyz_noise_std": 0,
+          "object_state_rotation_noise_degrees": 0,
+          "object_scale_noise_multiplier_range": [
+            1,
+            1
+          ],
+          "joint_velocity_obs_noise_std": 0,
+          "force_scale": 0,
+          "torque_scale": 0,
+          "object_friction_scale_range": [
+            1,
+            1
+          ],
+          "fingertip_friction_scale_range": [
+            1,
+            1
+          ]
+        },
+        "action": {
+          "arm_moving_average": 1,
+          "hand_moving_average": 0.1
+        }
+      },
+      "device": "cuda:0",
+      "headless": true,
+      "action_bounds": 1,
+      "bootstrap_timeouts": true,
+      "success_path": "episode_final.all_goals_hit"
+    }
+  }
+}

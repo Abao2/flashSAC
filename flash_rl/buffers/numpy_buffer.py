@@ -61,6 +61,7 @@ class NpyUniformBuffer(BaseBuffer):
         self._rewards = np.empty((m,), dtype=np.float32)
         self._terminateds = np.empty((m,), dtype=np.float32)
         self._truncateds = np.empty((m,), dtype=np.float32)
+        self._discounts = np.empty((m,), dtype=np.float32)
         self._next_observations = np.empty((m,) + observation_shape, dtype=observation_dtype)
 
         self._n_step_transitions: deque[dict[str, NDArray]] = deque(maxlen=self._n_step)
@@ -81,6 +82,7 @@ class NpyUniformBuffer(BaseBuffer):
         n_step_terminated = np.array(curr_transition["terminated"])
         n_step_truncated = np.array(curr_transition["truncated"])
         n_step_next_observation = np.array(curr_transition["next_observation"])
+        n_step_discount = np.full(n_step_reward.shape, self._gamma**self._n_step, dtype=np.float32)
 
         for n_step_idx in reversed(range(self._n_step - 1)):
             transition = self._n_step_transitions[n_step_idx]
@@ -98,10 +100,12 @@ class NpyUniformBuffer(BaseBuffer):
             n_step_terminated[done_mask] = terminated[done_mask]
             n_step_truncated[done_mask] = truncated[done_mask]
             n_step_next_observation[done_mask] = next_observation[done_mask]
+            n_step_discount[done_mask] = self._gamma ** (n_step_idx + 1)
 
         n_step_prev_transition["reward"] = n_step_reward
         n_step_prev_transition["terminated"] = n_step_terminated
         n_step_prev_transition["truncated"] = n_step_truncated
+        n_step_prev_transition["discount"] = n_step_discount
         n_step_prev_transition["next_observation"] = n_step_next_observation
 
         return cast(Batch, n_step_prev_transition)
@@ -124,6 +128,7 @@ class NpyUniformBuffer(BaseBuffer):
             self._rewards[add_idxs] = n_step_prev_transition["reward"]
             self._terminateds[add_idxs] = n_step_prev_transition["terminated"]
             self._truncateds[add_idxs] = n_step_prev_transition["truncated"]
+            self._discounts[add_idxs] = n_step_prev_transition["discount"]
             self._next_observations[add_idxs] = n_step_prev_transition["next_observation"]
 
             self._num_in_buffer = min(self._num_in_buffer + add_batch_size, self._max_length)
@@ -146,6 +151,7 @@ class NpyUniformBuffer(BaseBuffer):
         batch["reward"] = self._rewards[sample_idxs]
         batch["terminated"] = self._terminateds[sample_idxs]
         batch["truncated"] = self._truncateds[sample_idxs]
+        batch["discount"] = self._discounts[sample_idxs]
         batch["next_observation"] = self._next_observations[sample_idxs]
 
         return batch
@@ -157,6 +163,7 @@ class NpyUniformBuffer(BaseBuffer):
         dataset["reward"] = self._rewards[: self._num_in_buffer]
         dataset["terminated"] = self._terminateds[: self._num_in_buffer]
         dataset["truncated"] = self._truncateds[: self._num_in_buffer]
+        dataset["discount"] = self._discounts[: self._num_in_buffer]
         dataset["next_observation"] = self._next_observations[: self._num_in_buffer]
         with open(os.path.join(path, "dataset.pickle"), "wb") as f:
             pickle.dump(dataset, f)

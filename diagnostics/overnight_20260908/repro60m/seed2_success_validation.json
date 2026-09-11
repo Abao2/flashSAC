@@ -1,0 +1,332 @@
+{
+  "status": "passed",
+  "device": "cpu",
+  "checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/models/seed2/step58596",
+  "model_digest": "b7d76bd2640c17497ca3fa2b9294c3b75356814e04ef1db0fed61bc742045a82",
+  "lineage": {
+    "training_seed": 2,
+    "continuous_from_scratch_transitions": 60002304,
+    "vector_steps": 58596,
+    "agent_load_path": null,
+    "buffer_load_path": null,
+    "actor_bc_alpha": 0,
+    "actual_native_update_counter": 116998,
+    "reward_normalizer_count": 60002304,
+    "all_six_checkpoint_files_finite": true
+  },
+  "criterion": {
+    "fixed_reward_size_m": [
+      0.141,
+      0.03025,
+      0.0271
+    ],
+    "keypoint_scale": 1.5,
+    "max_reward_keypoint_error_m": 0.03,
+    "required_cumulative_frames": 10,
+    "requires_consecutive": false,
+    "goal_bonus_each_near_frame": 100,
+    "goal_bonus_per_successful_episode": 1000,
+    "lift_bonus_once": 300
+  },
+  "modes": {
+    "deterministic": {
+      "episodes": 64,
+      "transitions": 1665,
+      "independent_successes": 64,
+      "success_rate": 1,
+      "terminated": 64,
+      "truncated": 0,
+      "with_10_consecutive_near_samples": 64,
+      "without_10_consecutive_near_samples": 0,
+      "drop_below_reset_after_lift": 0,
+      "within_episode_obs_continuity_max_abs_error": 0,
+      "raw_reward_return_max_abs_error": 0,
+      "components_return_max_abs_error": 0.00003466010093688965,
+      "encoded_success_count_max_abs_error": 3.809308646296472e-9,
+      "all_episode_goal_bonus_1000_and_lift_bonus_300": true,
+      "metrics": {
+        "length": {
+          "min": 26,
+          "mean": 26.015625,
+          "median": 26,
+          "p90": 26,
+          "max": 27
+        },
+        "longest_near_run_samples": {
+          "min": 10,
+          "mean": 10,
+          "median": 10,
+          "p90": 10,
+          "max": 10
+        },
+        "longest_near_sample_span_s": {
+          "min": 0.14999999994,
+          "mean": 0.14999999994,
+          "median": 0.14999999994,
+          "p90": 0.14999999994,
+          "max": 0.14999999994
+        },
+        "final_keypoint_error_m": {
+          "min": 0.02473004586645374,
+          "mean": 0.02605066238133634,
+          "median": 0.02565330883092982,
+          "p90": 0.027955682350658793,
+          "max": 0.028149527580692113
+        },
+        "final_linear_speed_m_s": {
+          "min": 0.17965967076022044,
+          "mean": 0.21126535020026788,
+          "median": 0.19609023519426472,
+          "p90": 0.2507169359572232,
+          "max": 0.28373824942233167
+        },
+        "final_angular_speed_deg_s": {
+          "min": 111.35419172402713,
+          "mean": 148.6760498273107,
+          "median": 157.87530574705494,
+          "p90": 166.10210406064715,
+          "max": 168.62910931060156
+        },
+        "last5_near_linear_speed_mean_m_s": {
+          "min": 0.24119637357426466,
+          "mean": 0.25787803637058027,
+          "median": 0.2620086202346116,
+          "p90": 0.2657971465896501,
+          "max": 0.2781934241663022
+        },
+        "last5_near_angular_speed_mean_deg_s": {
+          "min": 106.16056478839191,
+          "mean": 141.19909442201077,
+          "median": 146.8739786685634,
+          "p90": 164.50789261885186,
+          "max": 180.5372067899078
+        },
+        "maximum_height_above_reset_m": {
+          "min": 0.16082187891006472,
+          "mean": 0.16393550448119643,
+          "median": 0.16399832963943484,
+          "p90": 0.16542943716049197,
+          "max": 0.16668173074722292
+        }
+      },
+      "mean_raw_return": 1351.98117010016,
+      "eval_arguments": {
+        "policy": "flash",
+        "checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/models/seed2/step58596",
+        "official_config": "/home/abao/simtoolreal/pretrained_policy/config.yaml",
+        "sampling": "deterministic",
+        "noise_multiplier": 1,
+        "noise_repeat": 0,
+        "entry": "wrapper",
+        "training_startup": false,
+        "training_numerics": false,
+        "episodes": 64,
+        "num_envs": 32,
+        "seed": 0,
+        "max_steps": 2500,
+        "config_name": "simtoolreal_state_teacher",
+        "override": [
+          "env.task_cfg_overrides.action.arm_moving_average=1.0",
+          "env.task_cfg_overrides.action.hand_moving_average=0.1"
+        ],
+        "output_dir": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed2/step58596/deterministic",
+        "no_dataset": false,
+        "self_test": false
+      },
+      "effective_numerics": {
+        "cuda_matmul_allow_tf32": false,
+        "cudnn_allow_tf32": true,
+        "cudnn_benchmark": true,
+        "float32_matmul_precision": "highest"
+      },
+      "cpu_actor_vs_recorded_actions_max_abs_error": 0.0001402348279953003,
+      "cpu_actor_vs_recorded_actions_mean_abs_error": 0.000008619903383078054
+    },
+    "stochastic": {
+      "episodes": 128,
+      "transitions": 3508,
+      "independent_successes": 128,
+      "success_rate": 1,
+      "terminated": 128,
+      "truncated": 0,
+      "with_10_consecutive_near_samples": 90,
+      "without_10_consecutive_near_samples": 38,
+      "drop_below_reset_after_lift": 0,
+      "within_episode_obs_continuity_max_abs_error": 0,
+      "raw_reward_return_max_abs_error": 0,
+      "components_return_max_abs_error": 0.00004591792821884155,
+      "encoded_success_count_max_abs_error": 3.809308646296472e-9,
+      "all_episode_goal_bonus_1000_and_lift_bonus_300": true,
+      "metrics": {
+        "length": {
+          "min": 26,
+          "mean": 27.40625,
+          "median": 27,
+          "p90": 29,
+          "max": 38
+        },
+        "longest_near_run_samples": {
+          "min": 5,
+          "mean": 8.8515625,
+          "median": 10,
+          "p90": 10,
+          "max": 10
+        },
+        "longest_near_sample_span_s": {
+          "min": 0.06666666664,
+          "mean": 0.13085937494765623,
+          "median": 0.14999999994,
+          "p90": 0.14999999994,
+          "max": 0.14999999994
+        },
+        "final_keypoint_error_m": {
+          "min": 0.014312128077931733,
+          "mean": 0.023815910233773205,
+          "median": 0.02432782582621441,
+          "p90": 0.026889086381323344,
+          "max": 0.02974470220503452
+        },
+        "final_linear_speed_m_s": {
+          "min": 0.0683440374854073,
+          "mean": 0.25280937457089603,
+          "median": 0.2527589148072964,
+          "p90": 0.32239863523963364,
+          "max": 0.37683487855036213
+        },
+        "final_angular_speed_deg_s": {
+          "min": 50.43765805666409,
+          "mean": 136.9176864142386,
+          "median": 130.8208340704685,
+          "p90": 203.82018410532638,
+          "max": 273.9768793150759
+        },
+        "last5_near_linear_speed_mean_m_s": {
+          "min": 0.10524446849226192,
+          "mean": 0.23242409475748083,
+          "median": 0.23180457337943744,
+          "p90": 0.27998206503102896,
+          "max": 0.32101207179631774
+        },
+        "last5_near_angular_speed_mean_deg_s": {
+          "min": 41.401689215535974,
+          "mean": 123.94285233659149,
+          "median": 120.56826616348557,
+          "p90": 165.8764559690232,
+          "max": 218.06168370415122
+        },
+        "maximum_height_above_reset_m": {
+          "min": 0.15074648857116701,
+          "mean": 0.16017225394025442,
+          "median": 0.1600708603858948,
+          "p90": 0.16408637762069705,
+          "max": 0.16647013425827029
+        }
+      },
+      "mean_raw_return": 1350.850941669196,
+      "eval_arguments": {
+        "policy": "flash",
+        "checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/models/seed2/step58596",
+        "official_config": "/home/abao/simtoolreal/pretrained_policy/config.yaml",
+        "sampling": "stochastic",
+        "noise_multiplier": 1,
+        "noise_repeat": 0,
+        "entry": "wrapper",
+        "training_startup": false,
+        "training_numerics": false,
+        "episodes": 128,
+        "num_envs": 32,
+        "seed": 0,
+        "max_steps": 2500,
+        "config_name": "simtoolreal_state_teacher",
+        "override": [
+          "env.task_cfg_overrides.action.arm_moving_average=1.0",
+          "env.task_cfg_overrides.action.hand_moving_average=0.1"
+        ],
+        "output_dir": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed2/step58596/stochastic",
+        "no_dataset": false,
+        "self_test": false
+      },
+      "effective_numerics": {
+        "cuda_matmul_allow_tf32": false,
+        "cudnn_allow_tf32": true,
+        "cudnn_benchmark": true,
+        "float32_matmul_precision": "highest"
+      }
+    }
+  },
+  "all_training_seeds_at60m": {
+    "0": {
+      "deterministic": {
+        "successes": 62,
+        "episodes": 64,
+        "success_rate": 0.96875
+      },
+      "stochastic": {
+        "successes": 127,
+        "episodes": 128,
+        "success_rate": 0.9921875
+      }
+    },
+    "1": {
+      "deterministic": {
+        "successes": 1,
+        "episodes": 64,
+        "success_rate": 0.015625
+      },
+      "stochastic": {
+        "successes": 88,
+        "episodes": 128,
+        "success_rate": 0.6875
+      }
+    },
+    "2": {
+      "deterministic": {
+        "successes": 64,
+        "episodes": 64,
+        "success_rate": 1
+      },
+      "stochastic": {
+        "successes": 128,
+        "episodes": 128,
+        "success_rate": 1
+      }
+    }
+  },
+  "source_sha256": {
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed2/step58596/deterministic/metadata.json": "3c622d712d8bf8a2efba54ef04e732013d118b1a688a5588028de4c0e0d2abb1",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed2/step58596/deterministic/summary.json": "f8bad1304442ffc121d090f5875395db3f691a45ed22ea7f3945cf59702a7e9e",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed2/step58596/deterministic/episodes.jsonl": "416dff7d2917f1befafaa53c6e912da7de3d935e439ea4115b9dd236c4c594e5",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed2/step58596/deterministic/transitions.npz": "5d8262b02fc666e7762a8eeb00effa7739694d3bcfe20c86570229db69c26d4f",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed2/step58596/stochastic/metadata.json": "ac310e5440fe364af857af037e0098b0d1ca36a80c67da120b2e314c56543580",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed2/step58596/stochastic/summary.json": "025bc82eeea3830fca6a58910536fd638b47c08b0467471ebc9c4cc3569c046d",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed2/step58596/stochastic/episodes.jsonl": "e570ee23acacf202a7b4ca7225183b0189c1e5c117387125654dbf6959cddb6d",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed2/step58596/stochastic/transitions.npz": "8ae25ea2065305f677e6b24c25358040eb7433561aca33dc9bce5d2114bd9360",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed0/step58596/deterministic/summary.json": "6efbfdee43dad0f1e72e6317273fa13c5cceca13a50236e554734095b864379d",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed0/step58596/stochastic/summary.json": "2728500f92cbc8a485d9cebe1f4145f9e25ddabd5faf071e34afef5eb3352f38",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed1/step58596/deterministic/summary.json": "e9a2971f663957e0802da1c8e5c8378b5441838a8088611a38a3e218deee05b7",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/evaluations/seed1/step58596/stochastic/summary.json": "863eea6dd8f46b5ac6c4cd1428058ad84e36d80c775acf56f7797df3a817d422",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/models/seed2/step58596/actor.pt": "3bc5f6ead35d751b022998c599ecd8a315cb1ede41d58ee26bacd16d04aa80c9",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/models/seed2/step58596/critic.pt": "a6c99fb089869909937d32f814da679a393b84a834dda6da6d0d00f2448cc426",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/models/seed2/step58596/target_critic.pt": "8e0e6c4bc18bc741bbfa5205cccd10cdcb6044d525b56da5aac3fcdb91435feb",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/models/seed2/step58596/temperature.pt": "9ac16412cdf1ab52d3dd3fa8378e41360fbb2ba3657d79f4d793c57680babae8",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/models/seed2/step58596/reward_normalizer.pt": "3bf3234fb5292306dd011303e7beac174f08b36341ed621b8b3f7233cff0fb65",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/models/seed2/step58596/agent_state.pt": "d2384ae89d644952ee478468ad2af5db67c214b326a87c83bb62b87b386bdb69",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/configs/seed2.json": "af7388bdf3fcc1dbbbef7cfb9b6828ca37e24391974d2b48615112c36683dcc4",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/manifest.json": "6a8ac26ef3292bfb5afe7f5a152b8245a7385b4323618f97a54abc8745a63db8",
+    "/home/abao/simtoolreal/isaacsimenvs/cfg/task/SimToolReal.yaml": "3f7b10d06a9312e31c808dcb69cbe9866493e29045452873d4359fb012871709",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/obs_utils.py": "2f36d5c5f50eb59e0debff98fc08d447d8c40b5cdb82d8aad54527c704437cc0",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/reward_utils.py": "ec2cb758f5ebd2791aee7356111a0c2e28abbeca801e942b3cbee29848c78205",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/termination_utils.py": "42a29203129abe5d9fe0fb147aaff5a0064117403f05cc91c1e06c1a93146b1b",
+    "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py": "a6e1914a6fffabcd7f38cd842cdc87013d4112a7a0bcab3caeaeb2d13939fcdf"
+  },
+  "limits": [
+    "Fixed eraser/start/goal with DR disabled; native feed-forward state162 policy. Not full STR benchmark or real-robot evidence.",
+    "192 evaluation episodes use a single fixed checkpoint and rollout seed0; they are not independent training replications. All three training-seed outcomes are retained in this report.",
+    "Original success is cumulative10 near frames, not stable post-goal hold. Auto-reset prevents observing any post-success behavior.",
+    "Motion values are finite-difference object poses over the last dt interval or last5 near samples; last5 may not be consecutive. They are not contact-force measurements.",
+    "A k-sample consecutive near run spans (k-1)*dt; this is sampled support, not proof of continuous dwell between frames.",
+    "Task reset retains its native previous-reward semantics; no reset or sampling intervention was used.",
+    "Seed2 is selected as a demonstration checkpoint after inspecting all three seeds; do not report its perfect score as algorithm-wide performance."
+  ],
+  "cuda_initialized": false
+}

@@ -1,0 +1,18 @@
+defaults:
+  - simtoolreal_full_arm1
+  - _self_
+
+# Single-variable learning trial versus the completed arm1/hand0.1 seed0 run.
+# Fresh seed0, same 100M transitions, full STR distribution and native FlashSAC.
+# Only task change: hand absolute-target EMA from 0.1 to 1.0.
+group_name: "str_hand_response_ab"
+exp_name: "full_arm1_hand1_seed${seed}"
+
+# Keep native model checkpoint cadence; save the final replay as well so a
+# subsequent run need not throw away experience. Environment/RNG not snapshotted.
+save_buffer_per_interaction_step: 48830
+
+env:
+  task_cfg_overrides:
+    action:
+      hand_moving_average: 1.0

@@ -1,0 +1,13 @@
+defaults:
+  - simtoolreal_full_nodr
+  - _self_
+
+# Single-variable control diagnostic against full_nodr seed0: same full STR
+# distribution, FF140 actor, critic162, rewards, reset, gamma and 100M budget.
+group_name: "str_control_ab"
+exp_name: "full_arm1_seed${seed}"
+
+env:
+  task_cfg_overrides:
+    action:
+      arm_moving_average: 1.0

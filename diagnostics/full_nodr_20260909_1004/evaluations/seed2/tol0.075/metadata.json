@@ -1,0 +1,22 @@
+{
+  "status": "failed",
+  "started_utc": "2026-09-09T04:23:39.928063+00:00",
+  "checkpoint": "/home/abao/flashsac-robotics/diagnostics/full_nodr_20260909_1004/models/seed2/step48830/actor.pt",
+  "actor_sha256": "2594f110b85b63f750b4d27fab57e541713e0c6272615b0013079565f04370bd",
+  "config_name": "simtoolreal_full_nodr",
+  "seed": 0,
+  "registered_task_config": "/home/abao/simtoolreal/isaacsimenvs/cfg/task/SimToolReal.yaml",
+  "requested_episodes": 1200,
+  "requested_num_envs": 1200,
+  "actual_num_envs": 1200,
+  "deterministic": true,
+  "learning": false,
+  "requested_tolerance": 0.075,
+  "frozen_tolerance": 0.075,
+  "original_config_initial_tolerance": 0.075,
+  "tolerance_note": "Explicit frozen criterion; training curriculum state is not restored.",
+  "protocol": "STR random reset, multi-object, 50-goal chains; NOT paper 24-task evaluation",
+  "error": "ValueError: [Config]: Incorrect type under namespace: /termination/eval_success_tolerance. Expected: <class 'NoneType'>, Received: <class 'float'>.",
+  "finished_utc": "2026-09-09T04:23:44.113761+00:00",
+  "completed_episodes": 0
+}

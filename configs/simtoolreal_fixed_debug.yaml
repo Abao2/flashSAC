@@ -1,0 +1,57 @@
+defaults:
+  - simtoolreal_flashsac
+  - _self_
+
+# Deterministic, short learning-chain diagnostic. This is intentionally easier
+# than the paper protocol and must not be reported as a reproduction result.
+group_name: "debug"
+exp_name: "str_fixed_eraser_traj0_seed0_paper_utd"
+
+num_env_steps: 1_048_576
+num_train_envs: 256
+num_eval_episodes: 0
+evaluation_per_interaction_step: null
+recording_per_interaction_step: null
+save_checkpoint_per_interaction_step: 1_024
+save_buffer_per_interaction_step: null
+
+# Preserve the paper's ratio of two gradient updates per 1,024 new transitions:
+# 256 transitions/interaction * 0.5 updates/interaction.
+updates_per_interaction_step: 0.5
+
+agent:
+  buffer_max_length: 1_000_000
+  buffer_min_length: 32_768
+  sample_batch_size: 1_024
+  use_compile: false
+  use_amp: true
+
+env:
+  task_cfg_overrides:
+    assets:
+      handle_head_types: ["eraser"]
+      num_assets_per_type: 1
+      shuffle_assets: false
+    reset:
+      fixed_start_pose: [0.0, 0.0, 0.63, 1.0, 0.0, 0.0, 0.0]
+      reset_dof_pos_random_interval_arm: 0.0
+      reset_dof_pos_random_interval_fingers: 0.0
+      reset_dof_vel_random_interval: 0.0
+      table_reset_z_range: 0.0
+      fixed_trajectory_file: "isaacsimenvs/tasks/simtoolreal/data/simtoolreal_trajectories_n1000_k10_seed0.json"
+      fixed_trajectory_count: 1
+    termination:
+      max_consecutive_successes: 10
+      success_tolerance: 0.075
+      target_success_tolerance: 0.075
+    domain_randomization:
+      use_obs_delay: false
+      use_action_delay: false
+      use_object_state_delay_noise: false
+      object_scale_noise_multiplier_range: [1.0, 1.0]
+      joint_velocity_obs_noise_std: 0.0
+      force_scale: 0.0
+      torque_scale: 0.0
+    action:
+      arm_moving_average: 1.0
+      hand_moving_average: 1.0

@@ -1,0 +1,45 @@
+{
+  "status": "passed_cpu_preflight_not_launched",
+  "all_two_configs_resolved": true,
+  "training_config_differences": [
+    "exp_name",
+    "output_root"
+  ],
+  "wrapper_difference_only": "critic_warmup_updates0 versus2000; identical selected checkpoint and snapshot schedule",
+  "shared_configuration_sha256": "b4ba5b745510be9f59871f843d2faa8138a85744cefdf3e2a614b1fc87de4930",
+  "num_env_steps_each": 10000384,
+  "num_envs_each": 1024,
+  "num_interaction_steps_each": 9766,
+  "replay_capacity_transitions": 10000000,
+  "replay_min_transitions": 100000,
+  "nominal_learning_rate_decay_updates": 19532,
+  "expected_network_calls_each": 19338,
+  "expected_actor_update_opportunities": {
+    "immediate": 9669,
+    "warmup2000": 8669
+  },
+  "actual_updates_must_be_read_from_audit": "AMP skip behavior can make optimizer counts differ from attempted opportunities. Per-network saved update_step is not the optimizer step counter.",
+  "initial_stochastic_baseline_success": "128/128",
+  "existing_outputs_preserved": true,
+  "output_roots_and_status_were_absent_at_preflight": true,
+  "job_counts": {
+    "training": 2,
+    "diagnostic": 24,
+    "cpu": 8,
+    "total": 34
+  },
+  "hard_deadline_utc": "2026-09-09T01:00:00Z",
+  "hard_deadline_local": "2026-09-09 09:00 Asia/Shanghai",
+  "total_transitions_planned": 20000768,
+  "remaining_limits": [
+    "Selected std head is a diagnostic expert-data initialization. Expert-state tanh conditional entropy H is approximately -142 nats versus native Gaussian target about -13.87; alpha=.01 implies a substantial negative soft-return term. Good task performance does not imply the native maximum-entropy objective prefers keeping this policy.",
+    "Critic-only warmup freezes both actor and temperature, including BN, optimizer and scheduler. Native critic/target BN, reward normalization and replay keep changing.",
+    "This is online policy-protection versus immediate SAC updating, not offline frozen-dataset Q calibration. Protecting the actor also changes future collected data.",
+    "At equal environment budget warmup2000 has approximately1000 fewer actor/temp update opportunities and different actor/temp LR schedule positions. Report actual attempted and optimizer updates from audits, not only vector steps.",
+    "Native first vector action is random and native training initial episode progress is spread across the horizon, even with a loaded actor. Frozen evaluation has its own reset protocol; early training mismatch remains part of the native workflow.",
+    "Snapshot evals are fixed single-task, seed0 paired diagnostics, not generalization or 24-task paper results. Native stochastic uses global cached/repeated zeta noise; independent noise validation is separate.",
+    "Critic reports are phase-balanced inference/gradient/target diagnostics. Expert/native rollout files are not training replay; no true-return ranking or exact Q calibration is established.",
+    "Continue native settings unchanged only for this bounded diagnostic; monitor retention, temperature, entropy and lower/upper categorical clipping. A decline alone cannot isolate bad Q versus entropy pressure versus distribution shift.",
+    "Hard stop 09:00 local is enforced by the existing queue. Only queue-owned child processes may be terminated; unrelated work must not be touched."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "source_sha256": {
+    "configs/simtoolreal_full_arm1_hand1.yaml": "899bdcbac877356a9cca1227cd7779472338569dba4af49dfcdda00ab21716bf",
+    "configs/simtoolreal_full_arm1.yaml": "e488d1f1aadd971f4b2ff36a8a77e67cbdce5bef9ecd8d119e775c6e4b467260",
+    "configs/simtoolreal_full_nodr.yaml": "3358be80d996a0abe28f78f9aed34470a4ad86804b2fd04a05845a3ad7f26ad1",
+    "configs/simtoolreal_flashsac.yaml": "0a1881e50c6e3bf3539c3fcf09e1435ab17f0b78c8e1024f341351232afb89ad",
+    "configs/agent/flashSAC.yaml": "4dabed9818df0a6529cfce40925d40e384c01d9f6287fb6d9170a0c5a50582a8",
+    "scripts/train_str_holding.py": "fef06615b7b063875711ab6947f4e556876c347deb5e91ae9123d3f1e60d0e1a",
+    "scripts/play_str_full_diagnostic.py": "ae07fadde81682b9bd5dc6862020009d6da36d5406640977e444437b822680e7",
+    "flash_rl/envs/isaaclab.py": "24f7e1c960def786489415a9631c5a850dc13d6f7c2582713c556e5257a404d8",
+    "flash_rl/buffers/torch_buffer.py": "1994d9770f2b1da2558c0167c69c341fd2db31154192935d82eb025c6669dc74",
+    "flash_rl/agents/flashSAC/agent.py": "9b415a3194d596706ced6a7895f01a4072712d50866bda6d8fffc61b2795249e",
+    "flash_rl/agents/flashSAC/update.py": "50c571fc466276aa6caac56c2c13d3e42029bb669cce58a6a73a98bf9e01d5ba",
+    "train.py": "a7697d6e5e84cae5bff49002d8cd99956b42576f9140ba8f65a93973e587be87"
+  },
+  "config_unit_tests": "34 passed",
+  "semantics": "CPU-resolved expected config, runtime config is also stored as TensorBoard text",
+  "task_change_only": {
+    "hand_moving_average": {
+      "baseline": 0.1,
+      "candidate": 1
+    }
+  },
+  "baseline_initialization": "fresh seed0 100M",
+  "candidate_initialization": "fresh seed0 100M",
+  "actor_dim": 140,
+  "critic_dim": 162,
+  "native_transition_count": 100003840
+}

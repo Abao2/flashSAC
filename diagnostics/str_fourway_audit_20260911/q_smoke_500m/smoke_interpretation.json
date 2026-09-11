@@ -1,0 +1,37 @@
+{
+  "source": "summary.json and control_0_*.npz",
+  "status": "protocol_smoke_only_not_Q_validation",
+  "num_initial_states": 8,
+  "branches": 7,
+  "prefix_steps": 0,
+  "horizon": 30,
+  "all_initial_state_rng_checks_pass": true,
+  "max_initial_state_abs_error": 2.9802322387695312e-08,
+  "all_branches_horizon_censored": true,
+  "both_branches_true_termination_pairs": 0,
+  "gamma_to_horizon": 0.7397003733882802,
+  "gamma_to_600": 0.0024050092913110673,
+  "repeat_soft_return_abs_difference_mean": 0.0002970534228552424,
+  "repeat_soft_return_abs_difference_max": 0.0006306742725428194,
+  "repeat_max_height_abs_difference_max_m": 0.0038785338401794434,
+  "repeat_first_step_action_targets_joint_position_exact": true,
+  "empirical_repeat_envelope_counts": {
+    "zero": {"above_envelope": 6, "same_direction_above_envelope": 6},
+    "arm_q_plus": {"above_envelope": 3, "same_direction_above_envelope": 2},
+    "arm_q_minus": {"above_envelope": 4, "same_direction_above_envelope": 2},
+    "hand_q_plus": {"above_envelope": 0, "same_direction_above_envelope": 0},
+    "hand_q_minus": {"above_envelope": 1, "same_direction_above_envelope": 1}
+  },
+  "control_perturbation_mean_L2_rad": {
+    "arm_q_plus": {"applied_targets": 0.004152908455580473, "first_step_joint_position": 0.0009133287239819765},
+    "hand_q_plus": {"applied_targets": 0.011523349210619926, "first_step_joint_position": 0.0018677692860364914}
+  },
+  "interpretation": "Useful as executable-protocol and control-transmission smoke only. No evidence here establishes Q correctness, Q failure, or grasp/transport capability.",
+  "cautions": [
+    "Observed repeat maximum is not a confidence interval, statistical significance threshold, or simulator error bound.",
+    "All 30-step returns omit large unknown tails; there are no fully terminated trajectory pairs.",
+    "zero changes hand absolute targets toward mid-range; it is not a hold-position action.",
+    "Coarse zero-action ranking does not establish useful transport-action ranking.",
+    "Formal interpretation must retain strict state gating and inspect per-prefix coverage, repeat noise, true terminal subsets, and tail weights."
+  ]
+}

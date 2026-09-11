@@ -1,0 +1,36 @@
+{
+  "jobs": {
+    "cuda_inductor_forward_parity": {
+      "status": "completed",
+      "gpu": {
+        "checked_utc": "2026-09-08T18:45:47.801090+00:00",
+        "gpu_index": 0,
+        "free_mb": 47552,
+        "compute_processes": []
+      },
+      "required_free_mb": 12288,
+      "started_utc": "2026-09-08T18:45:47.801376+00:00",
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/compiled_forward_probe/logs/probe.log",
+      "attempt": 1,
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/compiled_forward_probe/run_probe.py"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/compiled_forward_probe/summary.json",
+      "skipped_existing_completion": false,
+      "pid": 2201841,
+      "returncode": 0,
+      "finished_utc": "2026-09-08T18:45:56.810338+00:00",
+      "elapsed_seconds": 9.008907977025956
+    }
+  },
+  "started_utc": "2026-09-08T18:45:47.770458+00:00",
+  "deadline_utc": "2026-09-09T01:00:00+00:00",
+  "status": "completed",
+  "dependency": {
+    "status_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/confirmation/queue_status.json",
+    "status": "completed"
+  },
+  "finished_utc": "2026-09-08T18:45:56.810667+00:00"
+}

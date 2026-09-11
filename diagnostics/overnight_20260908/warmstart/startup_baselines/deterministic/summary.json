@@ -1,0 +1,100 @@
+{
+  "status": "complete",
+  "episodes_completed": 128,
+  "episodes_requested": 128,
+  "transitions": 8177,
+  "wallclock_seconds": 16.712047717999667,
+  "model_unchanged": true,
+  "model_digest_after": "47a8b0ef4b2fb3376b31fff3c72ea1b75ab242ab8e4e627f5badbf61e2e2bc37",
+  "dataset": "transitions.npz",
+  "limitations": [
+    "No network/optimizer updates; this is frozen-policy sampling, not training.",
+    "Fixed reset is one task; episode noise seeds are one reproducible vector RNG stream.",
+    "Proximity/clearance/sustained-lift proxies are NOT verified contacts or stable grasp.",
+    "Dataset next_obs substitutes pre-reset final_obs at every terminated/truncated step.",
+    "Raw entry bypasses wrapper.step but uses the same Isaac environment initialization.",
+    "Native stochastic Flash uses original global zeta repetition; fixed repeat is per-env.",
+    "No extra reset physics tick is inserted; both entries begin from identical reset API timing.",
+    "Training-startup gate: randomized initial horizons plus one random vector action before frozen policy takeover; only the initial batch has this startup shift, not subsequent auto-resets."
+  ],
+  "success": {
+    "mean": 0.96875,
+    "count": 128
+  },
+  "ever_task_lift": {
+    "mean": 0.9921875,
+    "count": 128
+  },
+  "ever_near_object_proxy": {
+    "mean": 1.0,
+    "count": 128
+  },
+  "ever_off_table_proxy": {
+    "mean": 1.0,
+    "count": 128
+  },
+  "ever_sustained_lift_near_palm_proxy": {
+    "mean": 0.9921875,
+    "count": 128
+  },
+  "dropped_below_reset_after_task_lift": {
+    "mean": 0.0,
+    "count": 128
+  },
+  "return": {
+    "mean": 1356.1619204923627,
+    "count": 128
+  },
+  "discounted_raw_return": {
+    "mean": 798.7670637451588,
+    "count": 128
+  },
+  "length": {
+    "mean": 63.8828125,
+    "count": 128
+  },
+  "position_error_m": {
+    "mean": 0.01249372497522927,
+    "count": 128
+  },
+  "angular_error_rad": {
+    "mean": 0.07570164642715077,
+    "count": 128
+  },
+  "keypoint_error_m": {
+    "mean": 0.017724632443833786,
+    "count": 128
+  },
+  "max_object_center_height_above_reset_m": {
+    "mean": 0.13827710840851065,
+    "count": 128
+  },
+  "actions": {
+    "arm_7": {
+      "mean_abs": 0.7850061010378445,
+      "mean_abs_delta": 0.09853369521902654,
+      "fraction_abs_ge_0.999": 0.00798406680759622
+    },
+    "hand_22": {
+      "mean_abs": 0.8374911634616168,
+      "mean_abs_delta": 0.05671635537750092,
+      "fraction_abs_ge_0.999": 0.012268335797747562
+    }
+  },
+  "startup_cohorts": {
+    "initial_batch": {
+      "episodes_completed": 32,
+      "success_count": 28,
+      "success_rate": 0.875,
+      "mean_return": 1260.5170621166471,
+      "mean_length": 69.53125
+    },
+    "subsequent_episodes": {
+      "episodes_completed": 96,
+      "success_count": 96,
+      "success_rate": 1.0,
+      "mean_return": 1388.0435399509345,
+      "mean_length": 62.0
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "local_date": "2026-09-11",
+  "task": "claw_hammer/swing_down",
+  "object_category": "hammer",
+  "num_episodes": 1,
+  "num_envs": 1,
+  "mode": "native Isaac Lab DexToolBench --play",
+  "python": "/home/abao/play2perfect/.venv_isaacsim/bin/python",
+  "rl_games": "/home/abao/simtoolreal/rl_games",
+  "display": ":1",
+  "checkpoint": "/home/abao/simtoolreal/pretrained_policy/model.pth",
+  "checkpoint_sha256": "4cb0d09833326de6878ee5681c2b14521823fa616e01b135214a51ffe41c63b9",
+  "reported_goals_completed": 37,
+  "reported_goals_total": 37,
+  "reported_avg_goal_pct": 100,
+  "reported_avg_time_sec": 10.6,
+  "process_exit_code": 0,
+  "source_exec_session": 7521,
+  "training_started": false,
+  "scope": "One finite native official-checkpoint GUI rollout after process-local dependency path fix; not a full benchmark, not same goal protocol as Flash, not a Flash best GUI test."
+}

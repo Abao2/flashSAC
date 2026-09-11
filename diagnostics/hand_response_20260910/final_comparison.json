@@ -1,0 +1,244 @@
+{
+  "window_note": "99 logged windows, unweighted means; training counts are not play success rates",
+  "baseline": {
+    "event_directory": "/home/abao/flashsac-robotics/diagnostics/control_ab_20260909_arm1/runs/str_control_ab/full_arm1_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_175613",
+    "last_transition": 100003840,
+    "last_10m": {
+      "start_exclusive": 90003840,
+      "end_inclusive": 100003840,
+      "metrics": {
+        "return": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": 529.0215336963383,
+          "last": 885.1788940429688
+        },
+        "lift_event_fraction": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": 0.9194729799212832,
+          "last": 0.9059040323893229
+        },
+        "goals_per_episode": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": 0.15133673714643175,
+          "last": 0.4944649636745453
+        },
+        "keypoint_reward": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": 21.192691822244665,
+          "last": 25.28777503967285
+        },
+        "tolerance": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": 0.07500000298023224,
+          "last": 0.07500000298023224
+        },
+        "alpha": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": 0.0000134263586960974,
+          "last": 0.00001836784758779686
+        },
+        "entropy": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": -14.087464400012085,
+          "last": -14.351186752319336
+        },
+        "done_fall": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": 0.8425635821891554,
+          "last": 0.8284133076667786
+        },
+        "done_hand_far": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": 0.14001442860774319,
+          "last": 0.14575645327568054
+        },
+        "bonus": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": 182.2771486995196,
+          "last": 539.2988891601562
+        },
+        "hand_velocity_penalty": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": -7.387328798120672,
+          "last": -8.111888885498047
+        },
+        "height_hold_1s": null
+      }
+    },
+    "play": {
+      "deterministic": {
+        "episodes": 64,
+        "completed": 64,
+        "any_goal": 11,
+        "total_goals": 32,
+        "height_hold_1s": 8,
+        "fall_or_hand_far": 62
+      },
+      "stochastic": {
+        "episodes": 64,
+        "completed": 64,
+        "any_goal": 10,
+        "total_goals": 28,
+        "height_hold_1s": 7,
+        "fall_or_hand_far": 62
+      }
+    }
+  },
+  "hand1": {
+    "event_directory": "/home/abao/flashsac-robotics/diagnostics/hand_response_20260910/candidate/runs/str_hand_response_ab/full_arm1_hand1_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0910_011254",
+    "last_transition": 100003840,
+    "last_10m": {
+      "start_exclusive": 90003840,
+      "end_inclusive": 100003840,
+      "metrics": {
+        "return": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": 329.0554347182765,
+          "last": 332.64459228515625
+        },
+        "lift_event_fraction": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": 0.9187338359588726,
+          "last": 0.924033203125
+        },
+        "goals_per_episode": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": 0.0003202117425671807,
+          "last": 0
+        },
+        "keypoint_reward": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": 6.712002325539637,
+          "last": 7.999228477478027
+        },
+        "tolerance": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": 0.07500000298023224,
+          "last": 0.07500000298023224
+        },
+        "alpha": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": 0.000013962419815828925,
+          "last": 0.000014321128219307866
+        },
+        "entropy": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": -13.920497980984775,
+          "last": -14.067634582519531
+        },
+        "done_fall": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": 0.5989437205622895,
+          "last": 0.6422652006149292
+        },
+        "done_hand_far": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": 0.40293792522314825,
+          "last": 0.3522099554538727
+        },
+        "bonus": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": 2.873841573493649,
+          "last": 1.933701753616333
+        },
+        "hand_velocity_penalty": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": -15.590179212165602,
+          "last": -15.198866844177246
+        },
+        "height_hold_1s": {
+          "status": "OBSERVED",
+          "windows": 99,
+          "first_step": 90009600,
+          "last_step": 100003840,
+          "mean": 0.0015245702522195348,
+          "last": 0
+        }
+      }
+    },
+    "play": {
+      "deterministic": {
+        "episodes": 64,
+        "completed": 64,
+        "any_goal": 0,
+        "total_goals": 0,
+        "height_hold_1s": 1,
+        "fall_or_hand_far": 63
+      },
+      "stochastic": {
+        "episodes": 64,
+        "completed": 64,
+        "any_goal": 0,
+        "total_goals": 0,
+        "height_hold_1s": 0,
+        "fall_or_hand_far": 63
+      }
+    }
+  }
+}

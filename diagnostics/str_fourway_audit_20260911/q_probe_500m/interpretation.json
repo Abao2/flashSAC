@@ -1,0 +1,28 @@
+{
+  "source": "summary.json",
+  "conclusion": "inconclusive_Q_ranking_due_to_large_repeat_variability_and_no_valid_later_prefix_pairs",
+  "prefix_pair_counts_per_branch": {"0": 32, "60": 0, "120": 0},
+  "later_prefix_Q_conclusions": {"60": null, "120": null},
+  "initial_max_abs_error": 5.960464477539063e-08,
+  "repeat_abs_soft_difference": {"mean": 0.16547433344002682, "median": 0.054416117392577235, "max": 0.7435777580141689},
+  "repeat_differing_terminal_status_count": 9,
+  "repeat_both_terminated": {"count": 18, "abs_soft_difference_mean": 0.09872848713534192, "abs_soft_difference_max": 0.6788847920852277},
+  "unknown_tail_discount": 0.0024050092913110673,
+  "empirical_repeat_envelope_counts": {
+    "zero": {"above_envelope": 3, "same_direction_above_envelope": 2, "both_terminated": 19, "both_terminated_above_envelope": 0},
+    "arm_q_plus": {"above_envelope": 0, "same_direction_above_envelope": 0, "both_terminated": 17, "both_terminated_above_envelope": 0},
+    "arm_q_minus": {"above_envelope": 0, "same_direction_above_envelope": 0, "both_terminated": 17, "both_terminated_above_envelope": 0},
+    "hand_q_plus": {"above_envelope": 1, "same_direction_above_envelope": 1, "both_terminated": 14, "both_terminated_above_envelope": 0},
+    "hand_q_minus": {"above_envelope": 0, "same_direction_above_envelope": 0, "both_terminated": 15, "both_terminated_above_envelope": 0}
+  },
+  "prefix0_asset_families": {"brush": 9, "hammer": 6, "screwdriver": 4, "spatula": 4, "eraser": 7, "marker": 2},
+  "hard_sim_reset": {"tested": true, "source_supported_candidate": true, "guarantees_determinism": false, "requires_verifying_material_mass_drive_parameters": true, "followup": "../q_hardreset_baseline/summary.json", "bounded_32env_120step_all_state_rng_paired": true, "all_physical_parameter_max_error": 0.0, "full_Q_probe_rerun": false},
+  "limitations": [
+    "No valid paired transport-state results at prefixes60/120. Null results must not be converted to zero success or wrong Q.",
+    "Observed repeat maximum is not a statistical confidence bound.",
+    "Both-terminated subset is outcome-conditioned and cannot establish an unbiased treatment effect.",
+    "A tail discount is not an upper bound on the omitted return.",
+    "Current trace does not locate the first divergence; cached PhysX state vs inherent GPU nondeterminism remains unproven.",
+    "No production changes, threshold relaxation, or resumed training. A separate final bounded hard-reset repeat check passed; no full Q probe rerun followed."
+  ]
+}

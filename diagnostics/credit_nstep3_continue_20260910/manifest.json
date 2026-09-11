@@ -1,0 +1,51 @@
+{
+  "experiment": "continue_full_STR_FlashSAC_nstep3",
+  "authorized_request": "没有收敛为什么不继续训练?（此前要求继续用FlashSAC把任务训起来）",
+  "source_checkpoint": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/candidate/models/seed0/step48830",
+  "initialization": "resume complete native learning state and replay, fresh simulator episodes",
+  "env_step_offset": 100003840,
+  "resume_tolerance": 0.03228504075,
+  "additional_transitions": 400015360,
+  "total_transitions_target": 500019200,
+  "deadline_utc": "2026-09-10T14:30:00+00:00",
+  "next_checkpoint_is_not_convergence": true,
+  "jobs": [
+    {
+      "id": "continue_nstep3_100m_to_500m",
+      "kind": "training",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/train_str_holding.py",
+        "--output-root",
+        "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_continue_20260910/candidate",
+        "--expected-final-checkpoint",
+        "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step195320",
+        "--config-name",
+        "simtoolreal_full_nstep3_continue",
+        "--resume-checkpoint",
+        "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/candidate/models/seed0/step48830",
+        "--resume-tolerance",
+        "0.03228504075",
+        "--env-step-offset",
+        "100003840",
+        "--overrides",
+        "seed=0",
+        "--overrides",
+        "save_path=models/seed0"
+      ],
+      "cwd": "/home/abao/simtoolreal",
+      "env": {
+        "PYTHONPATH": "/home/abao/flashsac-robotics:/home/abao/simtoolreal",
+        "CUDA_VISIBLE_DEVICES": "0",
+        "OMNI_KIT_ACCEPT_EULA": "YES",
+        "OMP_NUM_THREADS": "2",
+        "MKL_NUM_THREADS": "2",
+        "NUMEXPR_NUM_THREADS": "2",
+        "PYTHONUNBUFFERED": "1"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_continue_20260910/train.log",
+      "timeout_seconds": 27000,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_continue_20260910/candidate/training_complete.json"
+    }
+  ]
+}

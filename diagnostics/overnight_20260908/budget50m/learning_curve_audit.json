@@ -1,0 +1,1627 @@
+{
+  "created_utc": "2026-09-08T17:34:04.497210+00:00",
+  "summary_sha256": "00a22beef2cacde0a54e0d044082932c1cc4ef91e51a03ba50cd2463472ba3cd",
+  "conditions": {
+    "arm1_hand1": {
+      "hand_filter": 1.0,
+      "logged_windows": 976,
+      "goal_positive_windows": 0,
+      "positive_goal_runs": [],
+      "event_steps": {
+        "final": 50001920,
+        "peak_return": 50001920,
+        "peak_goal": 102400,
+        "peak_lift_bonus": 21862400,
+        "first_positive_goal": null,
+        "first_50pct_goal_window": null,
+        "first_80pct_goal_window": null,
+        "first_all_lift_window": null
+      },
+      "event_records": {
+        "final": {
+          "transitions": 50001920,
+          "values": {
+            "episode/return": 1159.8509521484375,
+            "episode/length": 600.0,
+            "episode/cumulative/fingertip_delta_rew": 26.19184684753418,
+            "episode/cumulative/lifting_rew": 1159.82177734375,
+            "episode/cumulative/lift_bonus_rew": 0.0,
+            "episode/cumulative/keypoint_rew": 0.0,
+            "episode/cumulative/kuka_actions_penalty": -10.59660530090332,
+            "episode/cumulative/hand_actions_penalty": -15.568135261535645,
+            "episode/cumulative/bonus_rew": 0.0,
+            "episode/cumulative/total_reward": 1159.8509521484375,
+            "episode/final/successes": 0.0,
+            "episode/final/all_goals_hit": 0.0,
+            "episode/final/done_fall": 0.0,
+            "episode/final/done_max_successes": 0.0,
+            "episode/final/done_hand_far": 0.0,
+            "episode/final/done_dropped": 0.0,
+            "episode/final/done_timeout": 1.0,
+            "actor/loss": -2.2679595947265625,
+            "actor/entropy": -7.524618148803711,
+            "actor/mean_action": 0.07670212537050247,
+            "critic/loss": 0.7793818712234497,
+            "critic/max_entropy_bonus": 0.0006292266771197319,
+            "temperature/value": 7.904782250989228e-06,
+            "temperature/loss": 5.0137077778344974e-05
+          }
+        },
+        "peak_return": {
+          "transitions": 50001920,
+          "values": {
+            "episode/return": 1159.8509521484375,
+            "episode/length": 600.0,
+            "episode/cumulative/fingertip_delta_rew": 26.19184684753418,
+            "episode/cumulative/lifting_rew": 1159.82177734375,
+            "episode/cumulative/lift_bonus_rew": 0.0,
+            "episode/cumulative/keypoint_rew": 0.0,
+            "episode/cumulative/kuka_actions_penalty": -10.59660530090332,
+            "episode/cumulative/hand_actions_penalty": -15.568135261535645,
+            "episode/cumulative/bonus_rew": 0.0,
+            "episode/cumulative/total_reward": 1159.8509521484375,
+            "episode/final/successes": 0.0,
+            "episode/final/all_goals_hit": 0.0,
+            "episode/final/done_fall": 0.0,
+            "episode/final/done_max_successes": 0.0,
+            "episode/final/done_hand_far": 0.0,
+            "episode/final/done_dropped": 0.0,
+            "episode/final/done_timeout": 1.0,
+            "actor/loss": -2.2679595947265625,
+            "actor/entropy": -7.524618148803711,
+            "actor/mean_action": 0.07670212537050247,
+            "critic/loss": 0.7793818712234497,
+            "critic/max_entropy_bonus": 0.0006292266771197319,
+            "temperature/value": 7.904782250989228e-06,
+            "temperature/loss": 5.0137077778344974e-05
+          }
+        },
+        "peak_goal": {
+          "transitions": 102400,
+          "values": {
+            "episode/return": 48.54996109008789,
+            "episode/length": 47.93888854980469,
+            "episode/cumulative/fingertip_delta_rew": 18.027053833007812,
+            "episode/cumulative/lifting_rew": 46.934539794921875,
+            "episode/cumulative/lift_bonus_rew": 0.0,
+            "episode/cumulative/keypoint_rew": 0.0,
+            "episode/cumulative/kuka_actions_penalty": -2.7284226417541504,
+            "episode/cumulative/hand_actions_penalty": -13.683194160461426,
+            "episode/cumulative/bonus_rew": 0.0,
+            "episode/cumulative/total_reward": 48.54996109008789,
+            "episode/final/successes": 0.0,
+            "episode/final/all_goals_hit": 0.0,
+            "episode/final/done_fall": 0.011111111380159855,
+            "episode/final/done_max_successes": 0.0,
+            "episode/final/done_hand_far": 0.0,
+            "episode/final/done_dropped": 0.0,
+            "episode/final/done_timeout": 0.9888888597488403,
+            "actor/loss": 1.2407643795013428,
+            "actor/entropy": -97.30103302001953,
+            "actor/mean_action": 0.015226435847580433,
+            "critic/loss": 4.910758018493652,
+            "critic/max_entropy_bonus": 1.6143760681152344,
+            "temperature/value": 0.01000299770385027,
+            "temperature/loss": -0.8345787525177002
+          }
+        },
+        "peak_lift_bonus": {
+          "transitions": 21862400,
+          "values": {
+            "episode/return": 722.9973754882812,
+            "episode/length": 542.8427124023438,
+            "episode/cumulative/fingertip_delta_rew": 22.228139877319336,
+            "episode/cumulative/lifting_rew": 740.0105590820312,
+            "episode/cumulative/lift_bonus_rew": 50.561798095703125,
+            "episode/cumulative/keypoint_rew": 0.0,
+            "episode/cumulative/kuka_actions_penalty": -32.77683639526367,
+            "episode/cumulative/hand_actions_penalty": -57.02765655517578,
+            "episode/cumulative/bonus_rew": 0.0,
+            "episode/cumulative/total_reward": 722.9973754882812,
+            "episode/final/successes": 0.0,
+            "episode/final/all_goals_hit": 0.0,
+            "episode/final/done_fall": 0.10112360119819641,
+            "episode/final/done_max_successes": 0.0,
+            "episode/final/done_hand_far": 0.01123595517128706,
+            "episode/final/done_dropped": 0.0,
+            "episode/final/done_timeout": 0.8876404762268066,
+            "actor/loss": -2.040395975112915,
+            "actor/entropy": 15.589567184448242,
+            "actor/mean_action": -0.004396234638988972,
+            "critic/loss": 2.1560895442962646,
+            "critic/max_entropy_bonus": 0.004147672560065985,
+            "temperature/value": 0.00022702186834067106,
+            "temperature/loss": 0.0066873496398329735
+          }
+        }
+      },
+      "reward_components_reconstruct_return_max_abs_error": 0.0044155120849609375,
+      "reward_components_reconstruct_return_max_relative_error": 1.110994737944992e-05,
+      "goal_matches_done_max_successes_each_window": true,
+      "final_checkpoint": {
+        "transitions": 50001920,
+        "network_calls": 97466,
+        "optimizer_applied_steps": {
+          "actor": [
+            48730
+          ],
+          "critic": [
+            97416
+          ],
+          "temperature": [
+            48733
+          ]
+        },
+        "schedulers": {
+          "actor": {
+            "last_epoch": 48733,
+            "actual_learning_rates": [
+              0.00015
+            ]
+          },
+          "critic": {
+            "last_epoch": 97466,
+            "actual_learning_rates": [
+              0.00015
+            ]
+          },
+          "temperature": {
+            "last_epoch": 48733,
+            "actual_learning_rates": [
+              0.00015
+            ]
+          }
+        },
+        "evaluations": {
+          "deterministic": {
+            "completed": 64,
+            "counts": {
+              "success": 0,
+              "ever_task_lift": 0,
+              "ever_sustained_lift_near_palm_proxy": 0,
+              "dropped_below_reset_after_task_lift": 0,
+              "terminated": 0,
+              "truncated": 64
+            },
+            "mean_return": 1169.6667296392843,
+            "mean_length": 600.0,
+            "reward_components": {
+              "fingertip_delta_rew": 26.611483258660883,
+              "lifting_rew": 1161.8881190568209,
+              "lift_bonus_rew": 0.0,
+              "keypoint_rew": 0.0,
+              "kuka_actions_penalty": -6.925984928609978,
+              "hand_actions_penalty": -11.906887677112536,
+              "bonus_rew": 0.0,
+              "total_reward": 1169.6667296392843
+            },
+            "discounted_raw_return": 206.09695407863921,
+            "position_error_m": 0.16177366161718965,
+            "keypoint_error_m": 0.24388976311314453,
+            "max_object_center_height_above_reset_m": 0.05121451078448447
+          },
+          "stochastic": {
+            "completed": 128,
+            "counts": {
+              "success": 0,
+              "ever_task_lift": 0,
+              "ever_sustained_lift_near_palm_proxy": 0,
+              "dropped_below_reset_after_task_lift": 0,
+              "terminated": 2,
+              "truncated": 126
+            },
+            "mean_return": 1085.2389026486198,
+            "mean_length": 592.671875,
+            "reward_components": {
+              "fingertip_delta_rew": 26.79653578903526,
+              "lifting_rew": 1086.9951091799885,
+              "lift_bonus_rew": 0.0,
+              "keypoint_rew": 0.0,
+              "kuka_actions_penalty": -12.052917837611858,
+              "hand_actions_penalty": -16.499824295780627,
+              "bonus_rew": 0.0,
+              "total_reward": 1085.2389026486198
+            },
+            "discounted_raw_return": 193.4319538924669,
+            "position_error_m": 0.17755995481275022,
+            "keypoint_error_m": 0.26008647910898663,
+            "max_object_center_height_above_reset_m": 0.04985553728183734
+          }
+        }
+      },
+      "checkpoints": {
+        "9766": {
+          "transitions": 10000384,
+          "network_calls": 19338,
+          "optimizer_applied_steps": {
+            "actor": [
+              9667
+            ],
+            "critic": [
+              19335
+            ],
+            "temperature": [
+              9669
+            ]
+          },
+          "schedulers": {
+            "actor": {
+              "last_epoch": 9669,
+              "actual_learning_rates": [
+                0.00022617008802729437
+              ]
+            },
+            "critic": {
+              "last_epoch": 19338,
+              "actual_learning_rates": [
+                0.0001500365094931098
+              ]
+            },
+            "temperature": {
+              "last_epoch": 9669,
+              "actual_learning_rates": [
+                0.00022617008802729437
+              ]
+            }
+          },
+          "evaluations": {
+            "deterministic": {
+              "completed": 64,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 0,
+                "ever_sustained_lift_near_palm_proxy": 0,
+                "dropped_below_reset_after_task_lift": 0,
+                "terminated": 0,
+                "truncated": 64
+              },
+              "mean_return": 596.4811493894085,
+              "mean_length": 600.0,
+              "reward_components": {
+                "fingertip_delta_rew": 29.529179880511947,
+                "lifting_rew": 586.1102161370218,
+                "lift_bonus_rew": 0.0,
+                "keypoint_rew": 0.0,
+                "kuka_actions_penalty": -4.866762188160465,
+                "hand_actions_penalty": -14.29148445521298,
+                "bonus_rew": 0.0,
+                "total_reward": 596.4811493894085
+              },
+              "discounted_raw_return": 118.7523335295127,
+              "position_error_m": 0.16223507258109748,
+              "keypoint_error_m": 0.16692992111626848,
+              "max_object_center_height_above_reset_m": 0.00015372578054666935
+            },
+            "stochastic": {
+              "completed": 128,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 0,
+                "ever_sustained_lift_near_palm_proxy": 0,
+                "dropped_below_reset_after_task_lift": 0,
+                "terminated": 5,
+                "truncated": 123
+              },
+              "mean_return": 451.9786607257556,
+              "mean_length": 590.5390625,
+              "reward_components": {
+                "fingertip_delta_rew": 27.9070516077918,
+                "lifting_rew": 583.6198468785733,
+                "lift_bonus_rew": 0.0,
+                "keypoint_rew": 0.0,
+                "kuka_actions_penalty": -46.34249433778314,
+                "hand_actions_penalty": -113.20574327518443,
+                "bonus_rew": 0.0,
+                "total_reward": 451.9786607257556
+              },
+              "discounted_raw_return": 96.3276604195222,
+              "position_error_m": 0.20740253594703972,
+              "keypoint_error_m": 0.246421324603046,
+              "max_object_center_height_above_reset_m": 0.010560209024697563
+            }
+          }
+        },
+        "19532": {
+          "transitions": 20000768,
+          "network_calls": 38870,
+          "optimizer_applied_steps": {
+            "actor": [
+              19432
+            ],
+            "critic": [
+              38858
+            ],
+            "temperature": [
+              19435
+            ]
+          },
+          "schedulers": {
+            "actor": {
+              "last_epoch": 19435,
+              "actual_learning_rates": [
+                0.000150009127928738
+              ]
+            },
+            "critic": {
+              "last_epoch": 38870,
+              "actual_learning_rates": [
+                0.00015
+              ]
+            },
+            "temperature": {
+              "last_epoch": 19435,
+              "actual_learning_rates": [
+                0.000150009127928738
+              ]
+            }
+          },
+          "evaluations": {
+            "deterministic": {
+              "completed": 64,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 0,
+                "ever_sustained_lift_near_palm_proxy": 0,
+                "dropped_below_reset_after_task_lift": 0,
+                "terminated": 0,
+                "truncated": 64
+              },
+              "mean_return": 800.7252195887268,
+              "mean_length": 600.0,
+              "reward_components": {
+                "fingertip_delta_rew": 26.361308834166266,
+                "lifting_rew": 802.7221944741905,
+                "lift_bonus_rew": 0.0,
+                "keypoint_rew": 0.0,
+                "kuka_actions_penalty": -10.266585120987656,
+                "hand_actions_penalty": -18.0916987781643,
+                "bonus_rew": 0.0,
+                "total_reward": 800.7252195887268
+              },
+              "discounted_raw_return": 143.2639349089194,
+              "position_error_m": 0.2088133313227445,
+              "keypoint_error_m": 0.3347791115407185,
+              "max_object_center_height_above_reset_m": 0.050854675564914964
+            },
+            "stochastic": {
+              "completed": 128,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 1,
+                "ever_sustained_lift_near_palm_proxy": 0,
+                "dropped_below_reset_after_task_lift": 0,
+                "terminated": 3,
+                "truncated": 125
+              },
+              "mean_return": 667.8877651126822,
+              "mean_length": 588.65625,
+              "reward_components": {
+                "fingertip_delta_rew": 26.75382166603231,
+                "lifting_rew": 741.1230262368917,
+                "lift_bonus_rew": 2.34375,
+                "keypoint_rew": 0.0,
+                "kuka_actions_penalty": -35.700285735947546,
+                "hand_actions_penalty": -66.63254685187712,
+                "bonus_rew": 0.0,
+                "total_reward": 667.8877651126822
+              },
+              "discounted_raw_return": 127.14844557528477,
+              "position_error_m": 0.20586184866260737,
+              "keypoint_error_m": 0.2938232337635116,
+              "max_object_center_height_above_reset_m": 0.039040868903975956
+            }
+          }
+        },
+        "29298": {
+          "transitions": 30001152,
+          "network_calls": 58402,
+          "optimizer_applied_steps": {
+            "actor": [
+              29198
+            ],
+            "critic": [
+              58376
+            ],
+            "temperature": [
+              29201
+            ]
+          },
+          "schedulers": {
+            "actor": {
+              "last_epoch": 29201,
+              "actual_learning_rates": [
+                0.00015
+              ]
+            },
+            "critic": {
+              "last_epoch": 58402,
+              "actual_learning_rates": [
+                0.00015
+              ]
+            },
+            "temperature": {
+              "last_epoch": 29201,
+              "actual_learning_rates": [
+                0.00015
+              ]
+            }
+          },
+          "evaluations": {
+            "deterministic": {
+              "completed": 64,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 0,
+                "ever_sustained_lift_near_palm_proxy": 0,
+                "dropped_below_reset_after_task_lift": 0,
+                "terminated": 0,
+                "truncated": 64
+              },
+              "mean_return": 1150.0957217980176,
+              "mean_length": 600.0,
+              "reward_components": {
+                "fingertip_delta_rew": 23.794588402030058,
+                "lifting_rew": 1156.7049867287278,
+                "lift_bonus_rew": 0.0,
+                "keypoint_rew": 0.0,
+                "kuka_actions_penalty": -11.711026767829026,
+                "hand_actions_penalty": -18.69282654169365,
+                "bonus_rew": 0.0,
+                "total_reward": 1150.0957217980176
+              },
+              "discounted_raw_return": 197.98267769012796,
+              "position_error_m": 0.1681281055789441,
+              "keypoint_error_m": 0.2577556523014061,
+              "max_object_center_height_above_reset_m": 0.05126216819044205
+            },
+            "stochastic": {
+              "completed": 128,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 0,
+                "ever_sustained_lift_near_palm_proxy": 0,
+                "dropped_below_reset_after_task_lift": 0,
+                "terminated": 0,
+                "truncated": 128
+              },
+              "mean_return": 1082.4008999872021,
+              "mean_length": 600.0,
+              "reward_components": {
+                "fingertip_delta_rew": 24.407350361114368,
+                "lifting_rew": 1134.5250915549695,
+                "lift_bonus_rew": 0.0,
+                "keypoint_rew": 0.0,
+                "kuka_actions_penalty": -24.31278832159478,
+                "hand_actions_penalty": -52.218753569814,
+                "bonus_rew": 0.0,
+                "total_reward": 1082.4008999872021
+              },
+              "discounted_raw_return": 187.6947933345183,
+              "position_error_m": 0.16222217120230198,
+              "keypoint_error_m": 0.25116472380976723,
+              "max_object_center_height_above_reset_m": 0.05172893326962369
+            }
+          }
+        },
+        "39064": {
+          "transitions": 40001536,
+          "network_calls": 77934,
+          "optimizer_applied_steps": {
+            "actor": [
+              38964
+            ],
+            "critic": [
+              77897
+            ],
+            "temperature": [
+              38967
+            ]
+          },
+          "schedulers": {
+            "actor": {
+              "last_epoch": 38967,
+              "actual_learning_rates": [
+                0.00015
+              ]
+            },
+            "critic": {
+              "last_epoch": 77934,
+              "actual_learning_rates": [
+                0.00015
+              ]
+            },
+            "temperature": {
+              "last_epoch": 38967,
+              "actual_learning_rates": [
+                0.00015
+              ]
+            }
+          },
+          "evaluations": {
+            "deterministic": {
+              "completed": 64,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 0,
+                "ever_sustained_lift_near_palm_proxy": 0,
+                "dropped_below_reset_after_task_lift": 0,
+                "terminated": 0,
+                "truncated": 64
+              },
+              "mean_return": 1159.1865894803777,
+              "mean_length": 600.0,
+              "reward_components": {
+                "fingertip_delta_rew": 25.68821193196345,
+                "lifting_rew": 1157.7422702684999,
+                "lift_bonus_rew": 0.0,
+                "keypoint_rew": 0.0,
+                "kuka_actions_penalty": -9.769770178590079,
+                "hand_actions_penalty": -14.474122879342758,
+                "bonus_rew": 0.0,
+                "total_reward": 1159.1865894803777
+              },
+              "discounted_raw_return": 202.07385022786337,
+              "position_error_m": 0.16590452753007412,
+              "keypoint_error_m": 0.25098849594966116,
+              "max_object_center_height_above_reset_m": 0.051815280318260215
+            },
+            "stochastic": {
+              "completed": 128,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 0,
+                "ever_sustained_lift_near_palm_proxy": 0,
+                "dropped_below_reset_after_task_lift": 0,
+                "terminated": 0,
+                "truncated": 128
+              },
+              "mean_return": 1141.6107685142197,
+              "mean_length": 600.0,
+              "reward_components": {
+                "fingertip_delta_rew": 25.666838019213174,
+                "lifting_rew": 1157.7385226543993,
+                "lift_bonus_rew": 0.0,
+                "keypoint_rew": 0.0,
+                "kuka_actions_penalty": -14.915318438265786,
+                "hand_actions_penalty": -26.879273915998056,
+                "bonus_rew": 0.0,
+                "total_reward": 1141.6107685142197
+              },
+              "discounted_raw_return": 199.09824343374197,
+              "position_error_m": 0.16214128106366843,
+              "keypoint_error_m": 0.24609496561482924,
+              "max_object_center_height_above_reset_m": 0.052003235707525186
+            }
+          }
+        },
+        "48830": {
+          "transitions": 50001920,
+          "network_calls": 97466,
+          "optimizer_applied_steps": {
+            "actor": [
+              48730
+            ],
+            "critic": [
+              97416
+            ],
+            "temperature": [
+              48733
+            ]
+          },
+          "schedulers": {
+            "actor": {
+              "last_epoch": 48733,
+              "actual_learning_rates": [
+                0.00015
+              ]
+            },
+            "critic": {
+              "last_epoch": 97466,
+              "actual_learning_rates": [
+                0.00015
+              ]
+            },
+            "temperature": {
+              "last_epoch": 48733,
+              "actual_learning_rates": [
+                0.00015
+              ]
+            }
+          },
+          "evaluations": {
+            "deterministic": {
+              "completed": 64,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 0,
+                "ever_sustained_lift_near_palm_proxy": 0,
+                "dropped_below_reset_after_task_lift": 0,
+                "terminated": 0,
+                "truncated": 64
+              },
+              "mean_return": 1169.6667296392843,
+              "mean_length": 600.0,
+              "reward_components": {
+                "fingertip_delta_rew": 26.611483258660883,
+                "lifting_rew": 1161.8881190568209,
+                "lift_bonus_rew": 0.0,
+                "keypoint_rew": 0.0,
+                "kuka_actions_penalty": -6.925984928609978,
+                "hand_actions_penalty": -11.906887677112536,
+                "bonus_rew": 0.0,
+                "total_reward": 1169.6667296392843
+              },
+              "discounted_raw_return": 206.09695407863921,
+              "position_error_m": 0.16177366161718965,
+              "keypoint_error_m": 0.24388976311314453,
+              "max_object_center_height_above_reset_m": 0.05121451078448447
+            },
+            "stochastic": {
+              "completed": 128,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 0,
+                "ever_sustained_lift_near_palm_proxy": 0,
+                "dropped_below_reset_after_task_lift": 0,
+                "terminated": 2,
+                "truncated": 126
+              },
+              "mean_return": 1085.2389026486198,
+              "mean_length": 592.671875,
+              "reward_components": {
+                "fingertip_delta_rew": 26.79653578903526,
+                "lifting_rew": 1086.9951091799885,
+                "lift_bonus_rew": 0.0,
+                "keypoint_rew": 0.0,
+                "kuka_actions_penalty": -12.052917837611858,
+                "hand_actions_penalty": -16.499824295780627,
+                "bonus_rew": 0.0,
+                "total_reward": 1085.2389026486198
+              },
+              "discounted_raw_return": 193.4319538924669,
+              "position_error_m": 0.17755995481275022,
+              "keypoint_error_m": 0.26008647910898663,
+              "max_object_center_height_above_reset_m": 0.04985553728183734
+            }
+          }
+        }
+      },
+      "alpha_curve": {
+        "first": {
+          "step": 102400,
+          "value": 0.01000299770385027
+        },
+        "last": {
+          "step": 50001920,
+          "value": 7.904782250989228e-06
+        },
+        "minimum": {
+          "step": 50001920,
+          "value": 7.904782250989228e-06
+        },
+        "peak": {
+          "step": 204800,
+          "value": 0.010113331489264965
+        }
+      },
+      "entropy_curve": {
+        "first": {
+          "step": 102400,
+          "value": -97.30103302001953
+        },
+        "last": {
+          "step": 50001920,
+          "value": -7.524618148803711
+        },
+        "minimum": {
+          "step": 102400,
+          "value": -97.30103302001953
+        },
+        "peak": {
+          "step": 6348800,
+          "value": 19.5181941986084
+        }
+      }
+    },
+    "arm1_hand01": {
+      "hand_filter": 0.1,
+      "logged_windows": 976,
+      "goal_positive_windows": 30,
+      "positive_goal_runs": [
+        {
+          "first_logged_transition": 42854400,
+          "last_logged_transition": 42854400,
+          "positive_windows": 1
+        },
+        {
+          "first_logged_transition": 42956800,
+          "last_logged_transition": 42956800,
+          "positive_windows": 1
+        },
+        {
+          "first_logged_transition": 46336000,
+          "last_logged_transition": 46336000,
+          "positive_windows": 1
+        },
+        {
+          "first_logged_transition": 46796800,
+          "last_logged_transition": 47001600,
+          "positive_windows": 5
+        },
+        {
+          "first_logged_transition": 47360000,
+          "last_logged_transition": 47360000,
+          "positive_windows": 1
+        },
+        {
+          "first_logged_transition": 47820800,
+          "last_logged_transition": 47820800,
+          "positive_windows": 1
+        },
+        {
+          "first_logged_transition": 48076800,
+          "last_logged_transition": 48076800,
+          "positive_windows": 1
+        },
+        {
+          "first_logged_transition": 48179200,
+          "last_logged_transition": 48332800,
+          "positive_windows": 4
+        },
+        {
+          "first_logged_transition": 48486400,
+          "last_logged_transition": 48537600,
+          "positive_windows": 2
+        },
+        {
+          "first_logged_transition": 49254400,
+          "last_logged_transition": 49356800,
+          "positive_windows": 3
+        },
+        {
+          "first_logged_transition": 49561600,
+          "last_logged_transition": 50001920,
+          "positive_windows": 10
+        }
+      ],
+      "event_steps": {
+        "final": 50001920,
+        "peak_return": 49868800,
+        "peak_goal": 49868800,
+        "peak_lift_bonus": 15206400,
+        "first_positive_goal": 42854400,
+        "first_50pct_goal_window": 49715200,
+        "first_80pct_goal_window": 49868800,
+        "first_all_lift_window": 15206400
+      },
+      "event_records": {
+        "final": {
+          "transitions": 50001920,
+          "values": {
+            "episode/return": 1199.8492431640625,
+            "episode/length": 254.4479217529297,
+            "episode/cumulative/fingertip_delta_rew": 29.191133499145508,
+            "episode/cumulative/lifting_rew": 27.106155395507812,
+            "episode/cumulative/lift_bonus_rew": 300.0,
+            "episode/cumulative/keypoint_rew": 11.225805282592773,
+            "episode/cumulative/kuka_actions_penalty": -14.583043098449707,
+            "episode/cumulative/hand_actions_penalty": -10.382540702819824,
+            "episode/cumulative/bonus_rew": 857.2916870117188,
+            "episode/cumulative/total_reward": 1199.8492431640625,
+            "episode/final/successes": 0.8020833134651184,
+            "episode/final/all_goals_hit": 0.8020833134651184,
+            "episode/final/done_fall": 0.0,
+            "episode/final/done_max_successes": 0.8020833134651184,
+            "episode/final/done_hand_far": 0.0,
+            "episode/final/done_dropped": 0.0,
+            "episode/final/done_timeout": 0.1979166716337204,
+            "actor/loss": -0.2934871017932892,
+            "actor/entropy": -16.670907974243164,
+            "actor/mean_action": -0.13345302641391754,
+            "critic/loss": 1.8807233572006226,
+            "critic/max_entropy_bonus": 0.002059065503999591,
+            "temperature/value": 2.0616911569959484e-05,
+            "temperature/loss": -5.7813093008007854e-05
+          }
+        },
+        "peak_return": {
+          "transitions": 49868800,
+          "values": {
+            "episode/return": 1251.242431640625,
+            "episode/length": 209.38031005859375,
+            "episode/cumulative/fingertip_delta_rew": 29.060428619384766,
+            "episode/cumulative/lifting_rew": 26.904197692871094,
+            "episode/cumulative/lift_bonus_rew": 300.0,
+            "episode/cumulative/keypoint_rew": 11.422874450683594,
+            "episode/cumulative/kuka_actions_penalty": -12.349039077758789,
+            "episode/cumulative/hand_actions_penalty": -7.657037258148193,
+            "episode/cumulative/bonus_rew": 903.8610229492188,
+            "episode/cumulative/total_reward": 1251.242431640625,
+            "episode/final/successes": 0.8494208455085754,
+            "episode/final/all_goals_hit": 0.8494208455085754,
+            "episode/final/done_fall": 0.0,
+            "episode/final/done_max_successes": 0.8494208455085754,
+            "episode/final/done_hand_far": 0.0,
+            "episode/final/done_dropped": 0.0,
+            "episode/final/done_timeout": 0.15057915449142456,
+            "actor/loss": -0.30312493443489075,
+            "actor/entropy": -17.338876724243164,
+            "actor/mean_action": -0.13258396089076996,
+            "critic/loss": 1.863266944885254,
+            "critic/max_entropy_bonus": 0.002068951725959778,
+            "temperature/value": 2.0244578990968876e-05,
+            "temperature/loss": -7.027886749710888e-05
+          }
+        },
+        "peak_goal": {
+          "transitions": 49868800,
+          "values": {
+            "episode/return": 1251.242431640625,
+            "episode/length": 209.38031005859375,
+            "episode/cumulative/fingertip_delta_rew": 29.060428619384766,
+            "episode/cumulative/lifting_rew": 26.904197692871094,
+            "episode/cumulative/lift_bonus_rew": 300.0,
+            "episode/cumulative/keypoint_rew": 11.422874450683594,
+            "episode/cumulative/kuka_actions_penalty": -12.349039077758789,
+            "episode/cumulative/hand_actions_penalty": -7.657037258148193,
+            "episode/cumulative/bonus_rew": 903.8610229492188,
+            "episode/cumulative/total_reward": 1251.242431640625,
+            "episode/final/successes": 0.8494208455085754,
+            "episode/final/all_goals_hit": 0.8494208455085754,
+            "episode/final/done_fall": 0.0,
+            "episode/final/done_max_successes": 0.8494208455085754,
+            "episode/final/done_hand_far": 0.0,
+            "episode/final/done_dropped": 0.0,
+            "episode/final/done_timeout": 0.15057915449142456,
+            "actor/loss": -0.30312493443489075,
+            "actor/entropy": -17.338876724243164,
+            "actor/mean_action": -0.13258396089076996,
+            "critic/loss": 1.863266944885254,
+            "critic/max_entropy_bonus": 0.002068951725959778,
+            "temperature/value": 2.0244578990968876e-05,
+            "temperature/loss": -7.027886749710888e-05
+          }
+        },
+        "peak_lift_bonus": {
+          "transitions": 15206400,
+          "values": {
+            "episode/return": 280.9237060546875,
+            "episode/length": 599.3382568359375,
+            "episode/cumulative/fingertip_delta_rew": 26.852994918823242,
+            "episode/cumulative/lifting_rew": 52.68174743652344,
+            "episode/cumulative/lift_bonus_rew": 300.0,
+            "episode/cumulative/keypoint_rew": 0.5732600688934326,
+            "episode/cumulative/kuka_actions_penalty": -61.35967254638672,
+            "episode/cumulative/hand_actions_penalty": -37.82460403442383,
+            "episode/cumulative/bonus_rew": 0.0,
+            "episode/cumulative/total_reward": 280.9237060546875,
+            "episode/final/successes": 0.0,
+            "episode/final/all_goals_hit": 0.0,
+            "episode/final/done_fall": 0.007352941203862429,
+            "episode/final/done_max_successes": 0.0,
+            "episode/final/done_hand_far": 0.0,
+            "episode/final/done_dropped": 0.0,
+            "episode/final/done_timeout": 0.9926470518112183,
+            "actor/loss": -3.11893367767334,
+            "actor/entropy": 17.26266098022461,
+            "actor/mean_action": -0.004416252952069044,
+            "critic/loss": 2.3332271575927734,
+            "critic/max_entropy_bonus": 0.01051599532365799,
+            "temperature/value": 0.0005278948228806257,
+            "temperature/loss": 0.016433337703347206
+          }
+        },
+        "first_positive_goal": {
+          "transitions": 42854400,
+          "values": {
+            "episode/return": 518.3746337890625,
+            "episode/length": 590.442626953125,
+            "episode/cumulative/fingertip_delta_rew": 28.072649002075195,
+            "episode/cumulative/lifting_rew": 445.6791076660156,
+            "episode/cumulative/lift_bonus_rew": 86.0655746459961,
+            "episode/cumulative/keypoint_rew": 2.5371408462524414,
+            "episode/cumulative/kuka_actions_penalty": -37.731990814208984,
+            "episode/cumulative/hand_actions_penalty": -22.642343521118164,
+            "episode/cumulative/bonus_rew": 16.393442153930664,
+            "episode/cumulative/total_reward": 518.3746337890625,
+            "episode/final/successes": 0.016393443569540977,
+            "episode/final/all_goals_hit": 0.016393443569540977,
+            "episode/final/done_fall": 0.008196721784770489,
+            "episode/final/done_max_successes": 0.016393443569540977,
+            "episode/final/done_hand_far": 0.0,
+            "episode/final/done_dropped": 0.0,
+            "episode/final/done_timeout": 0.9754098653793335,
+            "actor/loss": -0.3588140606880188,
+            "actor/entropy": -22.413036346435547,
+            "actor/mean_action": -0.16757206618785858,
+            "critic/loss": 1.6423107385635376,
+            "critic/max_entropy_bonus": 0.002033042022958398,
+            "temperature/value": 2.140503602277022e-05,
+            "temperature/loss": -0.00018292722234036773
+          }
+        },
+        "first_50pct_goal_window": {
+          "transitions": 49715200,
+          "values": {
+            "episode/return": 1063.8677978515625,
+            "episode/length": 258.33709716796875,
+            "episode/cumulative/fingertip_delta_rew": 29.14595603942871,
+            "episode/cumulative/lifting_rew": 27.993141174316406,
+            "episode/cumulative/lift_bonus_rew": 300.0,
+            "episode/cumulative/keypoint_rew": 10.60982894897461,
+            "episode/cumulative/kuka_actions_penalty": -14.56559944152832,
+            "episode/cumulative/hand_actions_penalty": -9.540247917175293,
+            "episode/cumulative/bonus_rew": 720.2247314453125,
+            "episode/cumulative/total_reward": 1063.8677978515625,
+            "episode/final/successes": 0.7153558135032654,
+            "episode/final/all_goals_hit": 0.7153558135032654,
+            "episode/final/done_fall": 0.0,
+            "episode/final/done_max_successes": 0.7153558135032654,
+            "episode/final/done_hand_far": 0.0,
+            "episode/final/done_dropped": 0.0,
+            "episode/final/done_timeout": 0.284644216299057,
+            "actor/loss": -0.32232993841171265,
+            "actor/entropy": -18.23196792602539,
+            "actor/mean_action": -0.11031420528888702,
+            "critic/loss": 1.8592652082443237,
+            "critic/max_entropy_bonus": 0.002153577981516719,
+            "temperature/value": 1.9793807950918563e-05,
+            "temperature/loss": -8.640532178105786e-05
+          }
+        },
+        "first_80pct_goal_window": {
+          "transitions": 49868800,
+          "values": {
+            "episode/return": 1251.242431640625,
+            "episode/length": 209.38031005859375,
+            "episode/cumulative/fingertip_delta_rew": 29.060428619384766,
+            "episode/cumulative/lifting_rew": 26.904197692871094,
+            "episode/cumulative/lift_bonus_rew": 300.0,
+            "episode/cumulative/keypoint_rew": 11.422874450683594,
+            "episode/cumulative/kuka_actions_penalty": -12.349039077758789,
+            "episode/cumulative/hand_actions_penalty": -7.657037258148193,
+            "episode/cumulative/bonus_rew": 903.8610229492188,
+            "episode/cumulative/total_reward": 1251.242431640625,
+            "episode/final/successes": 0.8494208455085754,
+            "episode/final/all_goals_hit": 0.8494208455085754,
+            "episode/final/done_fall": 0.0,
+            "episode/final/done_max_successes": 0.8494208455085754,
+            "episode/final/done_hand_far": 0.0,
+            "episode/final/done_dropped": 0.0,
+            "episode/final/done_timeout": 0.15057915449142456,
+            "actor/loss": -0.30312493443489075,
+            "actor/entropy": -17.338876724243164,
+            "actor/mean_action": -0.13258396089076996,
+            "critic/loss": 1.863266944885254,
+            "critic/max_entropy_bonus": 0.002068951725959778,
+            "temperature/value": 2.0244578990968876e-05,
+            "temperature/loss": -7.027886749710888e-05
+          }
+        },
+        "first_all_lift_window": {
+          "transitions": 15206400,
+          "values": {
+            "episode/return": 280.9237060546875,
+            "episode/length": 599.3382568359375,
+            "episode/cumulative/fingertip_delta_rew": 26.852994918823242,
+            "episode/cumulative/lifting_rew": 52.68174743652344,
+            "episode/cumulative/lift_bonus_rew": 300.0,
+            "episode/cumulative/keypoint_rew": 0.5732600688934326,
+            "episode/cumulative/kuka_actions_penalty": -61.35967254638672,
+            "episode/cumulative/hand_actions_penalty": -37.82460403442383,
+            "episode/cumulative/bonus_rew": 0.0,
+            "episode/cumulative/total_reward": 280.9237060546875,
+            "episode/final/successes": 0.0,
+            "episode/final/all_goals_hit": 0.0,
+            "episode/final/done_fall": 0.007352941203862429,
+            "episode/final/done_max_successes": 0.0,
+            "episode/final/done_hand_far": 0.0,
+            "episode/final/done_dropped": 0.0,
+            "episode/final/done_timeout": 0.9926470518112183,
+            "actor/loss": -3.11893367767334,
+            "actor/entropy": 17.26266098022461,
+            "actor/mean_action": -0.004416252952069044,
+            "critic/loss": 2.3332271575927734,
+            "critic/max_entropy_bonus": 0.01051599532365799,
+            "temperature/value": 0.0005278948228806257,
+            "temperature/loss": 0.016433337703347206
+          }
+        }
+      },
+      "reward_components_reconstruct_return_max_abs_error": 0.004689216613769531,
+      "reward_components_reconstruct_return_max_relative_error": 8.991935025845445e-06,
+      "goal_matches_done_max_successes_each_window": true,
+      "final_checkpoint": {
+        "transitions": 50001920,
+        "network_calls": 97466,
+        "optimizer_applied_steps": {
+          "actor": [
+            48726
+          ],
+          "critic": [
+            97415
+          ],
+          "temperature": [
+            48733
+          ]
+        },
+        "schedulers": {
+          "actor": {
+            "last_epoch": 48733,
+            "actual_learning_rates": [
+              0.00015
+            ]
+          },
+          "critic": {
+            "last_epoch": 97466,
+            "actual_learning_rates": [
+              0.00015
+            ]
+          },
+          "temperature": {
+            "last_epoch": 48733,
+            "actual_learning_rates": [
+              0.00015
+            ]
+          }
+        },
+        "evaluations": {
+          "deterministic": {
+            "completed": 64,
+            "counts": {
+              "success": 0,
+              "ever_task_lift": 64,
+              "ever_sustained_lift_near_palm_proxy": 64,
+              "dropped_below_reset_after_task_lift": 55,
+              "terminated": 0,
+              "truncated": 64
+            },
+            "mean_return": 333.13384704699274,
+            "mean_length": 600.0,
+            "reward_components": {
+              "fingertip_delta_rew": 27.470322905573994,
+              "lifting_rew": 26.794819924980402,
+              "lift_bonus_rew": 300.0,
+              "keypoint_rew": 8.944035866297781,
+              "kuka_actions_penalty": -17.433231834442267,
+              "hand_actions_penalty": -12.642098909200286,
+              "bonus_rew": 0.0,
+              "total_reward": 333.13384704699274
+            },
+            "discounted_raw_return": 292.3600565836655,
+            "position_error_m": 0.17219536611810327,
+            "keypoint_error_m": 0.2073148112912852,
+            "max_object_center_height_above_reset_m": 0.13104196786880495
+          },
+          "stochastic": {
+            "completed": 128,
+            "counts": {
+              "success": 0,
+              "ever_task_lift": 128,
+              "ever_sustained_lift_near_palm_proxy": 128,
+              "dropped_below_reset_after_task_lift": 127,
+              "terminated": 0,
+              "truncated": 128
+            },
+            "mean_return": 317.2093636946738,
+            "mean_length": 600.0,
+            "reward_components": {
+              "fingertip_delta_rew": 27.553312646050472,
+              "lifting_rew": 27.28737055324018,
+              "lift_bonus_rew": 300.0,
+              "keypoint_rew": 8.822878702543676,
+              "kuka_actions_penalty": -23.205763117131028,
+              "hand_actions_penalty": -23.248436427629713,
+              "bonus_rew": 0.0,
+              "total_reward": 317.2093636946738
+            },
+            "discounted_raw_return": 291.7289798330175,
+            "position_error_m": 0.1745911199832335,
+            "keypoint_error_m": 0.20931677715463476,
+            "max_object_center_height_above_reset_m": 0.13070965940132734
+          }
+        }
+      },
+      "checkpoints": {
+        "9766": {
+          "transitions": 10000384,
+          "network_calls": 19338,
+          "optimizer_applied_steps": {
+            "actor": [
+              9667
+            ],
+            "critic": [
+              19335
+            ],
+            "temperature": [
+              9669
+            ]
+          },
+          "schedulers": {
+            "actor": {
+              "last_epoch": 9669,
+              "actual_learning_rates": [
+                0.00022617008802729437
+              ]
+            },
+            "critic": {
+              "last_epoch": 19338,
+              "actual_learning_rates": [
+                0.0001500365094931098
+              ]
+            },
+            "temperature": {
+              "last_epoch": 9669,
+              "actual_learning_rates": [
+                0.00022617008802729437
+              ]
+            }
+          },
+          "evaluations": {
+            "deterministic": {
+              "completed": 64,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 0,
+                "ever_sustained_lift_near_palm_proxy": 0,
+                "dropped_below_reset_after_task_lift": 0,
+                "terminated": 0,
+                "truncated": 64
+              },
+              "mean_return": 611.8777818568051,
+              "mean_length": 600.0,
+              "reward_components": {
+                "fingertip_delta_rew": 26.72933206160087,
+                "lifting_rew": 591.8261396512389,
+                "lift_bonus_rew": 0.0,
+                "keypoint_rew": 0.0,
+                "kuka_actions_penalty": -4.098588660486712,
+                "hand_actions_penalty": -2.5791011436486997,
+                "bonus_rew": 0.0,
+                "total_reward": 611.8777818568051
+              },
+              "discounted_raw_return": 121.7437087452385,
+              "position_error_m": 0.1584153810981661,
+              "keypoint_error_m": 0.16400903315040938,
+              "max_object_center_height_above_reset_m": 0.014582851529121421
+            },
+            "stochastic": {
+              "completed": 128,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 5,
+                "ever_sustained_lift_near_palm_proxy": 4,
+                "dropped_below_reset_after_task_lift": 5,
+                "terminated": 6,
+                "truncated": 122
+              },
+              "mean_return": 519.9262552644359,
+              "mean_length": 579.3671875,
+              "reward_components": {
+                "fingertip_delta_rew": 27.082062999834307,
+                "lifting_rew": 570.7428839337081,
+                "lift_bonus_rew": 11.71875,
+                "keypoint_rew": 0.0,
+                "kuka_actions_penalty": -49.50952042514473,
+                "hand_actions_penalty": -40.107920914160786,
+                "bonus_rew": 0.0,
+                "total_reward": 519.9262552644359
+              },
+              "discounted_raw_return": 112.68953384379333,
+              "position_error_m": 0.21258776495233178,
+              "keypoint_error_m": 0.24058724535974185,
+              "max_object_center_height_above_reset_m": 0.027018264413345622
+            }
+          }
+        },
+        "19532": {
+          "transitions": 20000768,
+          "network_calls": 38870,
+          "optimizer_applied_steps": {
+            "actor": [
+              19429
+            ],
+            "critic": [
+              38859
+            ],
+            "temperature": [
+              19435
+            ]
+          },
+          "schedulers": {
+            "actor": {
+              "last_epoch": 19435,
+              "actual_learning_rates": [
+                0.000150009127928738
+              ]
+            },
+            "critic": {
+              "last_epoch": 38870,
+              "actual_learning_rates": [
+                0.00015
+              ]
+            },
+            "temperature": {
+              "last_epoch": 19435,
+              "actual_learning_rates": [
+                0.000150009127928738
+              ]
+            }
+          },
+          "evaluations": {
+            "deterministic": {
+              "completed": 64,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 64,
+                "ever_sustained_lift_near_palm_proxy": 64,
+                "dropped_below_reset_after_task_lift": 64,
+                "terminated": 0,
+                "truncated": 64
+              },
+              "mean_return": 341.39043314682567,
+              "mean_length": 600.0,
+              "reward_components": {
+                "fingertip_delta_rew": 29.361140478868037,
+                "lifting_rew": 22.282235212624073,
+                "lift_bonus_rew": 300.0,
+                "keypoint_rew": 3.4047888023778796,
+                "kuka_actions_penalty": -8.221177596940834,
+                "hand_actions_penalty": -5.436555223042433,
+                "bonus_rew": 0.0,
+                "total_reward": 341.39043314682567
+              },
+              "discounted_raw_return": 293.90976616288685,
+              "position_error_m": 0.21343119372613728,
+              "keypoint_error_m": 0.24712051805466878,
+              "max_object_center_height_above_reset_m": 0.2530421396717429
+            },
+            "stochastic": {
+              "completed": 128,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 128,
+                "ever_sustained_lift_near_palm_proxy": 127,
+                "dropped_below_reset_after_task_lift": 125,
+                "terminated": 1,
+                "truncated": 127
+              },
+              "mean_return": 275.30520692726714,
+              "mean_length": 595.7578125,
+              "reward_components": {
+                "fingertip_delta_rew": 29.305779966467526,
+                "lifting_rew": 22.796360375359654,
+                "lift_bonus_rew": 300.0,
+                "keypoint_rew": 3.083797386614606,
+                "kuka_actions_penalty": -42.01787845693616,
+                "hand_actions_penalty": -37.86285035774199,
+                "bonus_rew": 0.0,
+                "total_reward": 275.30520692726714
+              },
+              "discounted_raw_return": 285.671222716678,
+              "position_error_m": 0.20436988258734345,
+              "keypoint_error_m": 0.24704661571471914,
+              "max_object_center_height_above_reset_m": 0.2476544325239956
+            }
+          }
+        },
+        "29298": {
+          "transitions": 30001152,
+          "network_calls": 58402,
+          "optimizer_applied_steps": {
+            "actor": [
+              29194
+            ],
+            "critic": [
+              58378
+            ],
+            "temperature": [
+              29201
+            ]
+          },
+          "schedulers": {
+            "actor": {
+              "last_epoch": 29201,
+              "actual_learning_rates": [
+                0.00015
+              ]
+            },
+            "critic": {
+              "last_epoch": 58402,
+              "actual_learning_rates": [
+                0.00015
+              ]
+            },
+            "temperature": {
+              "last_epoch": 29201,
+              "actual_learning_rates": [
+                0.00015
+              ]
+            }
+          },
+          "evaluations": {
+            "deterministic": {
+              "completed": 64,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 64,
+                "ever_sustained_lift_near_palm_proxy": 64,
+                "dropped_below_reset_after_task_lift": 64,
+                "terminated": 0,
+                "truncated": 64
+              },
+              "mean_return": 338.59759218014915,
+              "mean_length": 600.0,
+              "reward_components": {
+                "fingertip_delta_rew": 29.909172637504525,
+                "lifting_rew": 21.56181776896119,
+                "lift_bonus_rew": 300.0,
+                "keypoint_rew": 6.573788480833173,
+                "kuka_actions_penalty": -12.613884609090746,
+                "hand_actions_penalty": -6.8333044154769595,
+                "bonus_rew": 0.0,
+                "total_reward": 338.59759218014915
+              },
+              "discounted_raw_return": 295.04365381999855,
+              "position_error_m": 0.18791424250230193,
+              "keypoint_error_m": 0.24558421760225324,
+              "max_object_center_height_above_reset_m": 0.2634809562936425
+            },
+            "stochastic": {
+              "completed": 128,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 128,
+                "ever_sustained_lift_near_palm_proxy": 128,
+                "dropped_below_reset_after_task_lift": 125,
+                "terminated": 0,
+                "truncated": 128
+              },
+              "mean_return": 292.2613387663296,
+              "mean_length": 600.0,
+              "reward_components": {
+                "fingertip_delta_rew": 29.58921607490629,
+                "lifting_rew": 22.855473179370165,
+                "lift_bonus_rew": 300.0,
+                "keypoint_rew": 4.059013040736318,
+                "kuka_actions_penalty": -29.809500149214728,
+                "hand_actions_penalty": -34.43286411545705,
+                "bonus_rew": 0.0,
+                "total_reward": 292.2613387663296
+              },
+              "discounted_raw_return": 287.521967911714,
+              "position_error_m": 0.1846251890528947,
+              "keypoint_error_m": 0.2431244838795968,
+              "max_object_center_height_above_reset_m": 0.26845506308600303
+            }
+          }
+        },
+        "39064": {
+          "transitions": 40001536,
+          "network_calls": 77934,
+          "optimizer_applied_steps": {
+            "actor": [
+              38960
+            ],
+            "critic": [
+              77897
+            ],
+            "temperature": [
+              38967
+            ]
+          },
+          "schedulers": {
+            "actor": {
+              "last_epoch": 38967,
+              "actual_learning_rates": [
+                0.00015
+              ]
+            },
+            "critic": {
+              "last_epoch": 77934,
+              "actual_learning_rates": [
+                0.00015
+              ]
+            },
+            "temperature": {
+              "last_epoch": 38967,
+              "actual_learning_rates": [
+                0.00015
+              ]
+            }
+          },
+          "evaluations": {
+            "deterministic": {
+              "completed": 64,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 0,
+                "ever_sustained_lift_near_palm_proxy": 0,
+                "dropped_below_reset_after_task_lift": 0,
+                "terminated": 0,
+                "truncated": 64
+              },
+              "mean_return": 571.0560704059899,
+              "mean_length": 600.0,
+              "reward_components": {
+                "fingertip_delta_rew": 3.424924535676837,
+                "lifting_rew": 587.9967176914215,
+                "lift_bonus_rew": 0.0,
+                "keypoint_rew": 0.0,
+                "kuka_actions_penalty": -17.340546108302078,
+                "hand_actions_penalty": -3.0250256631588854,
+                "bonus_rew": 0.0,
+                "total_reward": 571.0560704059899
+              },
+              "discounted_raw_return": 95.69494882513473,
+              "position_error_m": 0.15906308591365814,
+              "keypoint_error_m": 0.15906400427645243,
+              "max_object_center_height_above_reset_m": 0.0
+            },
+            "stochastic": {
+              "completed": 128,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 0,
+                "ever_sustained_lift_near_palm_proxy": 0,
+                "dropped_below_reset_after_task_lift": 0,
+                "terminated": 0,
+                "truncated": 128
+              },
+              "mean_return": 554.6419182964601,
+              "mean_length": 600.0,
+              "reward_components": {
+                "fingertip_delta_rew": 3.344987230375409,
+                "lifting_rew": 587.9967176914215,
+                "lift_bonus_rew": 0.0,
+                "keypoint_rew": 0.0,
+                "kuka_actions_penalty": -25.202613092315005,
+                "hand_actions_penalty": -11.497173766265405,
+                "bonus_rew": 0.0,
+                "total_reward": 554.6419182964601
+              },
+              "discounted_raw_return": 94.29897907500391,
+              "position_error_m": 0.15906308591365814,
+              "keypoint_error_m": 0.15906400427645243,
+              "max_object_center_height_above_reset_m": 0.0
+            }
+          }
+        },
+        "48830": {
+          "transitions": 50001920,
+          "network_calls": 97466,
+          "optimizer_applied_steps": {
+            "actor": [
+              48726
+            ],
+            "critic": [
+              97415
+            ],
+            "temperature": [
+              48733
+            ]
+          },
+          "schedulers": {
+            "actor": {
+              "last_epoch": 48733,
+              "actual_learning_rates": [
+                0.00015
+              ]
+            },
+            "critic": {
+              "last_epoch": 97466,
+              "actual_learning_rates": [
+                0.00015
+              ]
+            },
+            "temperature": {
+              "last_epoch": 48733,
+              "actual_learning_rates": [
+                0.00015
+              ]
+            }
+          },
+          "evaluations": {
+            "deterministic": {
+              "completed": 64,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 64,
+                "ever_sustained_lift_near_palm_proxy": 64,
+                "dropped_below_reset_after_task_lift": 55,
+                "terminated": 0,
+                "truncated": 64
+              },
+              "mean_return": 333.13384704699274,
+              "mean_length": 600.0,
+              "reward_components": {
+                "fingertip_delta_rew": 27.470322905573994,
+                "lifting_rew": 26.794819924980402,
+                "lift_bonus_rew": 300.0,
+                "keypoint_rew": 8.944035866297781,
+                "kuka_actions_penalty": -17.433231834442267,
+                "hand_actions_penalty": -12.642098909200286,
+                "bonus_rew": 0.0,
+                "total_reward": 333.13384704699274
+              },
+              "discounted_raw_return": 292.3600565836655,
+              "position_error_m": 0.17219536611810327,
+              "keypoint_error_m": 0.2073148112912852,
+              "max_object_center_height_above_reset_m": 0.13104196786880495
+            },
+            "stochastic": {
+              "completed": 128,
+              "counts": {
+                "success": 0,
+                "ever_task_lift": 128,
+                "ever_sustained_lift_near_palm_proxy": 128,
+                "dropped_below_reset_after_task_lift": 127,
+                "terminated": 0,
+                "truncated": 128
+              },
+              "mean_return": 317.2093636946738,
+              "mean_length": 600.0,
+              "reward_components": {
+                "fingertip_delta_rew": 27.553312646050472,
+                "lifting_rew": 27.28737055324018,
+                "lift_bonus_rew": 300.0,
+                "keypoint_rew": 8.822878702543676,
+                "kuka_actions_penalty": -23.205763117131028,
+                "hand_actions_penalty": -23.248436427629713,
+                "bonus_rew": 0.0,
+                "total_reward": 317.2093636946738
+              },
+              "discounted_raw_return": 291.7289798330175,
+              "position_error_m": 0.1745911199832335,
+              "keypoint_error_m": 0.20931677715463476,
+              "max_object_center_height_above_reset_m": 0.13070965940132734
+            }
+          }
+        }
+      },
+      "alpha_curve": {
+        "first": {
+          "step": 102400,
+          "value": 0.01000299770385027
+        },
+        "last": {
+          "step": 50001920,
+          "value": 2.0616911569959484e-05
+        },
+        "minimum": {
+          "step": 48844800,
+          "value": 1.8205560991191305e-05
+        },
+        "peak": {
+          "step": 204800,
+          "value": 0.010110026225447655
+        }
+      },
+      "entropy_curve": {
+        "first": {
+          "step": 102400,
+          "value": -95.68375396728516
+        },
+        "last": {
+          "step": 50001920,
+          "value": -16.670907974243164
+        },
+        "minimum": {
+          "step": 102400,
+          "value": -95.68375396728516
+        },
+        "peak": {
+          "step": 6758400,
+          "value": 19.602811813354492
+        }
+      }
+    }
+  },
+  "notes": [
+    "Online success is a logged episode-final task flag, not independent checkpoint success.",
+    "A positive-window count or unweighted mean is not an overall training episode success rate.",
+    "Reward shaping accumulation and true goal bonus are separate; undiscounted TB return is not the SAC objective.",
+    "Both50M conditions completed; comparisons remain one seed and one fixed task.",
+    "Training vs clean-reset evaluation goal mismatch remains unresolved. No simulator/GPU or model update was run for this audit."
+  ]
+}

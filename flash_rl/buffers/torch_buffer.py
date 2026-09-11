@@ -89,6 +89,7 @@ class TorchUniformBuffer(BaseBuffer):
         self._rewards = torch.empty((m,), dtype=torch.float32, device=self._device, pin_memory=pin)
         self._terminateds = torch.empty((m,), dtype=torch.float32, device=self._device, pin_memory=pin)
         self._truncateds = torch.empty((m,), dtype=torch.float32, device=self._device, pin_memory=pin)
+        self._discounts = torch.empty((m,), dtype=torch.float32, device=self._device, pin_memory=pin)
 
         self._n_step_transitions: deque[dict[str, Any]] = deque(maxlen=self._n_step)
         self._num_in_buffer = 0
@@ -113,6 +114,7 @@ class TorchUniformBuffer(BaseBuffer):
         n_step_terminated = curr_transition["terminated"].clone()
         n_step_truncated = curr_transition["truncated"].clone()
         n_step_next_observation = curr_transition["next_observation"].clone()
+        n_step_discount = torch.full_like(n_step_reward, self._gamma**self._n_step, dtype=torch.float32)
 
         for n_step_idx in reversed(range(self._n_step - 1)):
             transition = self._n_step_transitions[n_step_idx]
@@ -130,10 +132,12 @@ class TorchUniformBuffer(BaseBuffer):
             n_step_terminated[done_mask] = terminated[done_mask]
             n_step_truncated[done_mask] = truncated[done_mask]
             n_step_next_observation[done_mask] = next_observation[done_mask]
+            n_step_discount[done_mask] = self._gamma ** (n_step_idx + 1)
 
         n_step_prev_transition["reward"] = n_step_reward
         n_step_prev_transition["terminated"] = n_step_terminated
         n_step_prev_transition["truncated"] = n_step_truncated
+        n_step_prev_transition["discount"] = n_step_discount
         n_step_prev_transition["next_observation"] = n_step_next_observation
 
         return cast(Batch, n_step_prev_transition)
@@ -159,6 +163,7 @@ class TorchUniformBuffer(BaseBuffer):
             self._rewards[idxs] = n_step_prev_transition["reward"].to(self._rewards.dtype)
             self._terminateds[idxs] = n_step_prev_transition["terminated"].to(self._terminateds.dtype)
             self._truncateds[idxs] = n_step_prev_transition["truncated"].to(self._truncateds.dtype)
+            self._discounts[idxs] = n_step_prev_transition["discount"].to(self._discounts.dtype)
 
             self._num_in_buffer = min(self._num_in_buffer + add_batch_size, self._max_length)
             self._current_idx = (self._current_idx + add_batch_size) % self._max_length
@@ -178,6 +183,7 @@ class TorchUniformBuffer(BaseBuffer):
         batch["reward"] = self._rewards[idxs]
         batch["terminated"] = self._terminateds[idxs]
         batch["truncated"] = self._truncateds[idxs]
+        batch["discount"] = self._discounts[idxs]
         batch["next_observation"] = self._next_observations[idxs]
 
         return batch
@@ -196,6 +202,7 @@ class TorchUniformBuffer(BaseBuffer):
             "reward": self._rewards[:n],
             "terminated": self._terminateds[:n],
             "truncated": self._truncateds[:n],
+            "discount": self._discounts[:n],
             "next_observation": self._next_observations[:n],
             "num_in_buffer": self._num_in_buffer,
             "current_idx": self._current_idx,
@@ -208,7 +215,8 @@ class TorchUniformBuffer(BaseBuffer):
         args:
             path (str): The full file path (e.g. "checkpoints/replay_buffer.pt").
         """
-        dataset = torch.load(path, map_location=self._device)
+        # Stage on CPU, then copy into existing storage without a second GPU replay.
+        dataset = torch.load(path, map_location="cpu")
         n = dataset["num_in_buffer"]
 
         self._observations[:n] = dataset["observation"]
@@ -217,6 +225,7 @@ class TorchUniformBuffer(BaseBuffer):
         self._rewards[:n] = dataset["reward"]
         self._terminateds[:n] = dataset["terminated"]
         self._truncateds[:n] = dataset["truncated"]
+        self._discounts[:n] = dataset.get("discount", self._gamma**self._n_step)
 
         self._num_in_buffer = n
         self._current_idx = dataset["current_idx"]

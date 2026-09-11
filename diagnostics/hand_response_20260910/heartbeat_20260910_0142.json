@@ -1,0 +1,26 @@
+{
+  "checked_local": "2026-09-10 01:42 Asia/Shanghai",
+  "status": "training_running_no_intervention",
+  "service": "flashsac-str-hand1-seed0-20260910.service",
+  "service_active_state": "active",
+  "service_main_pid": 4114844,
+  "training_pid": 4114923,
+  "gpu_memory_mib": 30315,
+  "latest_tb_transitions": 73625600,
+  "nonfinite_scalar_count": 0,
+  "verified_checkpoints": ["step9766", "step19532", "step29298"],
+  "complete_model_files_each": 6,
+  "replay_and_final_play": "not due yet; not declared complete",
+  "window": "60M < transitions <= 70M; equal log-window mean",
+  "window_metrics": {
+    "return": 298.6323039774992,
+    "goals_per_episode": 0.0003684197222262773,
+    "fall_fraction": 0.763977416924068,
+    "longest_above_10cm_seconds": 0.31611121643562706,
+    "above_10cm_at_least_1s_fraction": 0.007652619317273742,
+    "ever_above_10cm_fraction": 0.8405283725991541,
+    "tolerance": 0.07500000298023224
+  },
+  "interpretation": "Lift events increased but goals and sustained elevation remain low. No basis to claim trained grasping. Finish the authorized 100M and scheduled paired play before selecting another experiment.",
+  "actions": "Read-only service/GPU/TB checks plus this audit record. No new GPU process, stop, restart, training mutation or notification."
+}

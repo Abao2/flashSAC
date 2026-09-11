@@ -1,0 +1,847 @@
+{
+  "dataset": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/official_filter01_smoke/transitions.npz",
+  "sha256": "001f2690165219a8f47f5c4459edd2458890f03ed6ff8e0e57d0f5c381207081",
+  "metadata": {
+    "started_utc": "2026-09-08T12:33:59.420736+00:00",
+    "arguments": {
+      "policy": "official",
+      "checkpoint": "/home/abao/simtoolreal/pretrained_policy/model.pth",
+      "official_config": "/home/abao/simtoolreal/pretrained_policy/config.yaml",
+      "sampling": "deterministic",
+      "noise_multiplier": 1.0,
+      "noise_repeat": 0,
+      "entry": "wrapper",
+      "episodes": 16,
+      "num_envs": 16,
+      "seed": 0,
+      "max_steps": 0,
+      "config_name": "simtoolreal_state_teacher",
+      "override": [
+        "env.task_cfg_overrides.action.arm_moving_average=0.1",
+        "env.task_cfg_overrides.action.hand_moving_average=0.1"
+      ],
+      "output_dir": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/official_filter01_smoke",
+      "no_dataset": false,
+      "self_test": false
+    },
+    "resolved_config": {
+      "project_name": "FlashRL",
+      "entity_name": "draftrec",
+      "group_name": "simtoolreal_diagnostics",
+      "exp_name": "state162_eraser_onegoal_seed0",
+      "seed": 0,
+      "logger_type": "tensorboard",
+      "output_root": ".",
+      "save_path": "models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-TIMESTAMP",
+      "agent_load_path": null,
+      "buffer_load_path": null,
+      "require_agent_load": false,
+      "num_env_steps": 10000384,
+      "num_train_envs": 16,
+      "num_eval_envs": null,
+      "num_record_envs": null,
+      "num_eval_episodes": 0,
+      "num_record_episodes": 0,
+      "gamma": 0.99,
+      "n_step": 1,
+      "num_interaction_steps": 625024.0,
+      "updates_per_interaction_step": 2,
+      "num_update_steps": 1250048.0,
+      "evaluation_per_interaction_step": null,
+      "metrics_per_interaction_step": 250,
+      "recording_per_interaction_step": 625024,
+      "logging_per_interaction_step": 50,
+      "save_checkpoint_per_interaction_step": 976,
+      "save_buffer_per_interaction_step": null,
+      "agent": {
+        "agent_type": "flashSAC",
+        "seed": 0,
+        "device_type": "cuda",
+        "buffer_max_length": 1,
+        "buffer_min_length": 1,
+        "buffer_device_type": "cuda",
+        "sample_batch_size": 1,
+        "normalize_reward": true,
+        "normalized_G_max": 5.0,
+        "asymmetric_observation": true,
+        "learning_rate_init": 0.0003,
+        "learning_rate_peak": 0.0003,
+        "learning_rate_end": 0.00015,
+        "learning_rate_warmup_rate": 1e-06,
+        "learning_rate_warmup_step": 1,
+        "learning_rate_decay_rate": 1.0,
+        "learning_rate_decay_step": 1250048,
+        "actor_num_blocks": 2,
+        "actor_hidden_dim": 128,
+        "actor_bc_alpha": 0.0,
+        "actor_noise_zeta_mu": 2.0,
+        "actor_noise_zeta_max": 16,
+        "actor_update_period": 2,
+        "critic_num_blocks": 2,
+        "critic_hidden_dim": 256,
+        "critic_num_bins": 101,
+        "critic_min_v": -5.0,
+        "critic_max_v": 5.0,
+        "critic_target_update_tau": 0.01,
+        "temp_initial_value": 0.01,
+        "temp_target_sigma": 0.15,
+        "temp_target_entropy": null,
+        "gamma": 0.99,
+        "n_step": 1,
+        "use_compile": false,
+        "compile_mode": "auto",
+        "use_amp": true,
+        "load_optimizer": false,
+        "load_reward_normalizer": false
+      },
+      "env": {
+        "env_type": "isaaclab",
+        "env_name": "Isaacsimenvs-SimToolReal-Direct-v0",
+        "num_env_steps": 10000384,
+        "seed": 0,
+        "num_train_envs": 16,
+        "num_eval_envs": null,
+        "num_record_envs": null,
+        "rescale_action": null,
+        "max_episode_steps": null,
+        "registration_modules": [
+          "isaacsimenvs"
+        ],
+        "env_cfg_yaml_entry_point": "env_cfg_yaml_entry_point",
+        "task_cfg_overrides": {
+          "assets": {
+            "handle_head_types": [
+              "eraser"
+            ],
+            "num_assets_per_type": 1,
+            "shuffle_assets": false
+          },
+          "obs": {
+            "state_list": [
+              "joint_pos",
+              "joint_vel",
+              "prev_action_targets",
+              "palm_pos",
+              "palm_rot",
+              "palm_vel",
+              "object_rot",
+              "object_vel",
+              "fingertip_pos_rel_palm",
+              "keypoints_rel_palm",
+              "keypoints_rel_goal",
+              "object_scales",
+              "closest_keypoint_max_dist",
+              "closest_fingertip_dist",
+              "lifted_object",
+              "progress",
+              "successes",
+              "reward"
+            ],
+            "obs_list": [
+              "joint_pos",
+              "joint_vel",
+              "prev_action_targets",
+              "palm_pos",
+              "palm_rot",
+              "palm_vel",
+              "object_rot",
+              "object_vel",
+              "fingertip_pos_rel_palm",
+              "keypoints_rel_palm",
+              "keypoints_rel_goal",
+              "object_scales",
+              "closest_keypoint_max_dist",
+              "closest_fingertip_dist",
+              "lifted_object",
+              "progress",
+              "successes",
+              "reward"
+            ]
+          },
+          "reset": {
+            "fixed_start_pose": [
+              0.0,
+              0.0,
+              0.555966462104926,
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fixed_goal_pose": [
+              0.05,
+              0.0,
+              0.705966462104926,
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fixed_trajectory_file": "",
+            "fixed_trajectory_count": 0,
+            "reset_dof_pos_random_interval_arm": 0.0,
+            "reset_dof_pos_random_interval_fingers": 0.0,
+            "reset_dof_vel_random_interval": 0.0,
+            "table_reset_z_range": 0.0
+          },
+          "termination": {
+            "max_consecutive_successes": 1,
+            "success_tolerance": 0.02,
+            "target_success_tolerance": 0.02
+          },
+          "domain_randomization": {
+            "use_obs_delay": false,
+            "use_action_delay": false,
+            "use_object_state_delay_noise": false,
+            "object_state_xyz_noise_std": 0.0,
+            "object_state_rotation_noise_degrees": 0.0,
+            "object_scale_noise_multiplier_range": [
+              1.0,
+              1.0
+            ],
+            "joint_velocity_obs_noise_std": 0.0,
+            "force_scale": 0.0,
+            "torque_scale": 0.0,
+            "object_friction_scale_range": [
+              1.0,
+              1.0
+            ],
+            "fingertip_friction_scale_range": [
+              1.0,
+              1.0
+            ]
+          },
+          "action": {
+            "arm_moving_average": 0.1,
+            "hand_moving_average": 0.1
+          }
+        },
+        "device": "cuda:0",
+        "headless": true,
+        "action_bounds": 1.0,
+        "bootstrap_timeouts": true,
+        "success_path": "episode_final.all_goals_hit"
+      }
+    },
+    "state_fields": [
+      "joint_pos",
+      "joint_vel",
+      "prev_action_targets",
+      "palm_pos",
+      "palm_rot",
+      "palm_vel",
+      "object_rot",
+      "object_vel",
+      "fingertip_pos_rel_palm",
+      "keypoints_rel_palm",
+      "keypoints_rel_goal",
+      "object_scales",
+      "closest_keypoint_max_dist",
+      "closest_fingertip_dist",
+      "lifted_object",
+      "progress",
+      "successes",
+      "reward"
+    ],
+    "state_field_slices": {
+      "joint_pos": [
+        0,
+        29
+      ],
+      "joint_vel": [
+        29,
+        58
+      ],
+      "prev_action_targets": [
+        58,
+        87
+      ],
+      "palm_pos": [
+        87,
+        90
+      ],
+      "palm_rot": [
+        90,
+        94
+      ],
+      "palm_vel": [
+        94,
+        100
+      ],
+      "object_rot": [
+        100,
+        104
+      ],
+      "object_vel": [
+        104,
+        110
+      ],
+      "fingertip_pos_rel_palm": [
+        110,
+        125
+      ],
+      "keypoints_rel_palm": [
+        125,
+        137
+      ],
+      "keypoints_rel_goal": [
+        137,
+        149
+      ],
+      "object_scales": [
+        149,
+        152
+      ],
+      "closest_keypoint_max_dist": [
+        152,
+        153
+      ],
+      "closest_fingertip_dist": [
+        153,
+        158
+      ],
+      "lifted_object": [
+        158,
+        159
+      ],
+      "progress": [
+        159,
+        160
+      ],
+      "successes": [
+        160,
+        161
+      ],
+      "reward": [
+        161,
+        162
+      ]
+    },
+    "next_obs_is_pre_reset": true,
+    "successful_episode_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "official_actor_fields": [
+      "joint_pos",
+      "joint_vel",
+      "prev_action_targets",
+      "palm_pos",
+      "palm_rot",
+      "object_rot",
+      "fingertip_pos_rel_palm",
+      "keypoints_rel_palm",
+      "keypoints_rel_goal",
+      "object_scales"
+    ],
+    "state_dim": 162,
+    "action_dim": 29,
+    "dt_seconds": 0.01666666666,
+    "table_top_m": 0.53,
+    "object_base_size_m": 0.04,
+    "initial_object_z_m": 0.555966462104926,
+    "initial_actor_critic_max_abs_difference": 0.0,
+    "fixed_goal_pose_wxyz": [
+      0.05,
+      0.0,
+      0.705966462104926,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "model_digest_before": "3342302fd955085e41d91b9b50a45921694804342ac509b9d7294a2f2099db94",
+    "thresholds": {
+      "near_object_proxy_m": 0.02,
+      "off_table_box_clearance_m": 0.005,
+      "sustained_lift_near_palm_proxy": {
+        "height_above_reset_m": 0.02,
+        "palm_center_distance_m": 0.2,
+        "relative_world_displacement_per_step_m": 0.005,
+        "consecutive_steps": 13
+      },
+      "task_lift_flag": "sticky object-center lift >0.10 m above reset",
+      "success_keypoint_m": 0.03
+    },
+    "notes": [
+      "No network/optimizer updates; this is frozen-policy sampling, not training.",
+      "Fixed reset is one task; episode noise seeds are one reproducible vector RNG stream.",
+      "Proximity/clearance/sustained-lift proxies are NOT verified contacts or stable grasp.",
+      "Dataset next_obs substitutes pre-reset final_obs at every terminated/truncated step.",
+      "Raw entry bypasses wrapper.step but uses the same Isaac environment initialization.",
+      "Native stochastic Flash uses original global zeta repetition; fixed repeat is per-env.",
+      "No extra reset physics tick is inserted; both entries begin from identical reset API timing."
+    ],
+    "completed_episode_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
+  },
+  "rows": 944,
+  "episodes": 16,
+  "history_padding": "repeat earliest available state within same contiguous episode segment",
+  "split": "whole episode IDs, seeded random split; not a generalization test on fixed starts",
+  "warnings": [
+    "Prediction targets assume the declared STR state162 field order.",
+    "History-vs-repeat matches parameter count; current baseline has fewer input weights.",
+    "BC std head is untrained; evaluate deterministic actions only.",
+    "History can help dynamics prediction without being necessary for control.",
+    "Offline loss does not prove a grasp/lift skill; requires closed-loop evaluation."
+  ],
+  "probes": [
+    {
+      "task": "bc",
+      "mode": "current",
+      "status": "complete",
+      "config": {
+        "task": "bc",
+        "mode": "current",
+        "window": 8,
+        "width": 128,
+        "num_blocks": 2,
+        "input_dim": 162,
+        "obs_dim": 162,
+        "action_dim": 29,
+        "target_columns": [
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148
+        ],
+        "target_names": [
+          "executed_normalized_action[29]"
+        ],
+        "normalization": "identity_input_native_UnitBatchNorm",
+        "deterministic_only": true,
+        "seed": 0
+      },
+      "parameters": 293374,
+      "updates": 1500,
+      "train_rows": 708,
+      "validation_rows": 236,
+      "train_episodes": [
+        0,
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        12,
+        13,
+        14,
+        15
+      ],
+      "validation_episodes": [
+        2,
+        3,
+        10,
+        11
+      ],
+      "excluded_terminal_prediction_rows": 0,
+      "successful_episodes_in_dataset": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "bc_success_only": true,
+      "claim": "Offline behavior imitation only; closed-loop success NOT measured",
+      "train": {
+        "rows": 708,
+        "normalized_mse": 0.0007152062025852501,
+        "train_mean_baseline_normalized_mse": 0.4347938001155853,
+        "raw_rmse": 0.026743339374661446,
+        "arm_action_rmse": 0.03671015426516533,
+        "hand_action_rmse": 0.02267109788954258,
+        "by_phase": {
+          "lifted_flag": {
+            "rows": 168,
+            "normalized_mse": 0.0016374002443626523
+          },
+          "not_lifted_flag": {
+            "rows": 540,
+            "normalized_mse": 0.00042830134043470025
+          }
+        }
+      },
+      "validation": {
+        "rows": 236,
+        "normalized_mse": 0.0010905362432822585,
+        "train_mean_baseline_normalized_mse": 0.4350520074367523,
+        "raw_rmse": 0.03302326798439026,
+        "arm_action_rmse": 0.050689615309238434,
+        "hand_action_rmse": 0.024899335578083992,
+        "by_phase": {
+          "lifted_flag": {
+            "rows": 56,
+            "normalized_mse": 0.003217177465558052
+          },
+          "not_lifted_flag": {
+            "rows": 180,
+            "normalized_mse": 0.0004289145290385932
+          }
+        }
+      },
+      "curve": [
+        {
+          "update": 1,
+          "batch_loss": 1.1618001461029053
+        },
+        {
+          "update": 500,
+          "batch_loss": 0.0020355158485472202
+        },
+        {
+          "update": 1000,
+          "batch_loss": 0.0009051140514202416
+        },
+        {
+          "update": 1500,
+          "batch_loss": 0.0010455565061420202
+        }
+      ],
+      "seconds": 7.086165651213378,
+      "checkpoint": "diagnostics/overnight_20260908/memory_official_filter01_bc_smoke/bc_current.pt"
+    },
+    {
+      "task": "bc",
+      "mode": "repeat",
+      "status": "complete",
+      "config": {
+        "task": "bc",
+        "mode": "repeat",
+        "window": 8,
+        "width": 128,
+        "num_blocks": 2,
+        "input_dim": 1296,
+        "obs_dim": 162,
+        "action_dim": 29,
+        "target_columns": [
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148
+        ],
+        "target_names": [
+          "executed_normalized_action[29]"
+        ],
+        "normalization": "identity_input_native_UnitBatchNorm",
+        "deterministic_only": true,
+        "seed": 0
+      },
+      "parameters": 440794,
+      "updates": 1500,
+      "train_rows": 708,
+      "validation_rows": 236,
+      "train_episodes": [
+        0,
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        12,
+        13,
+        14,
+        15
+      ],
+      "validation_episodes": [
+        2,
+        3,
+        10,
+        11
+      ],
+      "excluded_terminal_prediction_rows": 0,
+      "successful_episodes_in_dataset": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "bc_success_only": true,
+      "claim": "Offline behavior imitation only; closed-loop success NOT measured",
+      "train": {
+        "rows": 708,
+        "normalized_mse": 0.001769184716977179,
+        "train_mean_baseline_normalized_mse": 0.4347938001155853,
+        "raw_rmse": 0.04206167906522751,
+        "arm_action_rmse": 0.07010139524936676,
+        "hand_action_rmse": 0.027721764519810677,
+        "by_phase": {
+          "lifted_flag": {
+            "rows": 168,
+            "normalized_mse": 0.005034590605646372
+          },
+          "not_lifted_flag": {
+            "rows": 540,
+            "normalized_mse": 0.000753280648496002
+          }
+        }
+      },
+      "validation": {
+        "rows": 236,
+        "normalized_mse": 0.0018039201386272907,
+        "train_mean_baseline_normalized_mse": 0.4350520074367523,
+        "raw_rmse": 0.042472582310438156,
+        "arm_action_rmse": 0.06843546032905579,
+        "hand_action_rmse": 0.029794596135616302,
+        "by_phase": {
+          "lifted_flag": {
+            "rows": 56,
+            "normalized_mse": 0.005145075265318155
+          },
+          "not_lifted_flag": {
+            "rows": 180,
+            "normalized_mse": 0.0007644494762644172
+          }
+        }
+      },
+      "curve": [
+        {
+          "update": 1,
+          "batch_loss": 1.2534563541412354
+        },
+        {
+          "update": 500,
+          "batch_loss": 0.003348285797983408
+        },
+        {
+          "update": 1000,
+          "batch_loss": 0.0011384888784959912
+        },
+        {
+          "update": 1500,
+          "batch_loss": 0.001046329503878951
+        }
+      ],
+      "seconds": 10.161034401971847,
+      "checkpoint": "diagnostics/overnight_20260908/memory_official_filter01_bc_smoke/bc_repeat.pt"
+    },
+    {
+      "task": "bc",
+      "mode": "history",
+      "status": "complete",
+      "config": {
+        "task": "bc",
+        "mode": "history",
+        "window": 8,
+        "width": 128,
+        "num_blocks": 2,
+        "input_dim": 1296,
+        "obs_dim": 162,
+        "action_dim": 29,
+        "target_columns": [
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148
+        ],
+        "target_names": [
+          "executed_normalized_action[29]"
+        ],
+        "normalization": "identity_input_native_UnitBatchNorm",
+        "deterministic_only": true,
+        "seed": 0
+      },
+      "parameters": 440794,
+      "updates": 1500,
+      "train_rows": 708,
+      "validation_rows": 236,
+      "train_episodes": [
+        0,
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        12,
+        13,
+        14,
+        15
+      ],
+      "validation_episodes": [
+        2,
+        3,
+        10,
+        11
+      ],
+      "excluded_terminal_prediction_rows": 0,
+      "successful_episodes_in_dataset": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "bc_success_only": true,
+      "claim": "Offline behavior imitation only; closed-loop success NOT measured",
+      "train": {
+        "rows": 708,
+        "normalized_mse": 0.0006030017393641174,
+        "train_mean_baseline_normalized_mse": 0.4347938001155853,
+        "raw_rmse": 0.02455609291791916,
+        "arm_action_rmse": 0.03374267369508743,
+        "hand_action_rmse": 0.020798899233341217,
+        "by_phase": {
+          "lifted_flag": {
+            "rows": 168,
+            "normalized_mse": 0.0011463763657957315
+          },
+          "not_lifted_flag": {
+            "rows": 540,
+            "normalized_mse": 0.0004339518491178751
+          }
+        }
+      },
+      "validation": {
+        "rows": 236,
+        "normalized_mse": 0.0008611862431280315,
+        "train_mean_baseline_normalized_mse": 0.4350520074367523,
+        "raw_rmse": 0.029345974326133728,
+        "arm_action_rmse": 0.0423361212015152,
+        "hand_action_rmse": 0.023767786100506783,
+        "by_phase": {
+          "lifted_flag": {
+            "rows": 56,
+            "normalized_mse": 0.002181760035455227
+          },
+          "not_lifted_flag": {
+            "rows": 180,
+            "normalized_mse": 0.0004503410018514842
+          }
+        }
+      },
+      "curve": [
+        {
+          "update": 1,
+          "batch_loss": 1.2473869323730469
+        },
+        {
+          "update": 500,
+          "batch_loss": 0.0015498290304094553
+        },
+        {
+          "update": 1000,
+          "batch_loss": 0.0012240365613251925
+        },
+        {
+          "update": 1500,
+          "batch_loss": 0.0007536878110840917
+        }
+      ],
+      "seconds": 10.462150229606777,
+      "checkpoint": "diagnostics/overnight_20260908/memory_official_filter01_bc_smoke/bc_history.pt"
+    }
+  ]
+}

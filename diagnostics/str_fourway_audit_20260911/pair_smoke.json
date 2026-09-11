@@ -1,0 +1,22 @@
+{
+  "initial_max_abs_errors": {
+    "policy": 0.0,
+    "critic": 0.0,
+    "joint_pos": 0.0,
+    "joint_vel": 0.0,
+    "object_pos": 0.0,
+    "object_quat": 0.0,
+    "goal_pos": 0.0,
+    "goal_quat": 0.0,
+    "targets": 0.0
+  },
+  "flash_checkpoint": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/candidate/models/seed0/step48830",
+  "task": "claw_hammer/swing_down",
+  "goals": 37,
+  "arm_ema": 1.0,
+  "hand_ema": 0.1,
+  "tolerance": 0.01,
+  "episodes": [],
+  "steps": 5,
+  "status": "complete"
+}

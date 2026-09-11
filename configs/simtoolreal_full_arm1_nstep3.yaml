@@ -1,0 +1,9 @@
+defaults:
+  - simtoolreal_full_arm1
+  - _self_
+
+# Fresh full-STR credit-assignment A/B: only n_step changes versus arm1/hand0.1.
+group_name: "str_credit_ab"
+exp_name: "full_arm1_nstep3_seed${seed}"
+n_step: 3
+save_buffer_per_interaction_step: 48830

@@ -1,0 +1,6 @@
+*.log
+*.lock
+candidate/models/
+candidate/runs/
+play/*.mp4
+play/*.npz

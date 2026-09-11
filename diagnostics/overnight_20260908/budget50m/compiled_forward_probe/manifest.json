@@ -1,0 +1,60 @@
+{
+  "phase": "actual_cuda_inductor_frozen_forward_parity",
+  "prepared_only": true,
+  "launch_authority": "Parent only; --prepare runs CPU selection/assertions only and never launches GPU.",
+  "hard_deadline_utc": "2026-09-09T01:00:00Z",
+  "required_prior_status": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/queue_status.json",
+  "launch_guard": "Parent must pass required_prior_status to queue --after-status; metadata alone is not enforced.",
+  "checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830",
+  "requested_compile_mode": "auto",
+  "expected_source_sha256": {
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/compiled_forward_probe/run_probe.py": "76b84ef5c5d9a2660496edd5037f407f3eae352e127ff00d41e6499e4a7d7201",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/configs/arm1_hand01_seed0.json": "bf037d1d9fee0f2293d2f3442daf3a4d63e2474e7b5c8ce5b34cbe1d8f6871d4",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/official_filter01_labeled128/transitions.npz": "568fc8d518ab314da8372c0df829e056a820ceec30d06bc402d38c6654d35a6a",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/evaluations/arm1_hand01_seed0/step48830/deterministic/transitions.npz": "139da2cfd4683332fc81e20a09f9fe9cb2ef07cae8adc8eb85a706c0598e66a9",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/compiled_forward_probe/state_selection.json": "0abbee889679e2bdc688cf01b340371b584477eb75c0bf3597fb41c1947820ef",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/agent.py": "079962c5307f0118338329ba8ebbf89055356f9f1446e9d533462aa57d936c9a",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/network.py": "4068098466f195fac2c7d91e3cb1abe0c4daf42c4d1cd85f3940dca9edfd4c98",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/layer.py": "7af7b2954c22a5ae56595b8d3139017e2a44b17dbd63c2f54c4e65dbd17ef7cc",
+    "/home/abao/flashsac-robotics/flash_rl/agents/utils/network.py": "02b1e8c27ae2d75ba39969a5ea6b21e1bc596dbab71fdd6c5dc9cd5d7aab1d69",
+    "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py": "a6e1914a6fffabcd7f38cd842cdc87013d4112a7a0bcab3caeaeb2d13939fcdf",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830/actor.pt": "b5c9ac919b74ad78620e7f8a0ee2b41296aac72e4fdf736a85fd11b97f47f438",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830/agent_state.pt": "2fe7bd25a6706ad36bbab6bce3a3e8527870c8601fbc8959ce7c1b3d93db49d5",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830/critic.pt": "9bc785d5ce0a1ac62543dfe107dd11d9fd400f2de8882a9c367fea2b12ae12a1",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830/reward_normalizer.pt": "a569ecb15900bef0a167a6b65c85188a391a6c11489f44c436e2f33915c4e60e",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830/target_critic.pt": "801ae7569698d9e8b6b5978665f3398d686d498f3a86ec2ed23fe5191c05acad",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830/temperature.pt": "f5d85d570622d10b30f6ae9790a191377865db0fd124ee02e34757e9194585f5"
+  },
+  "limits": [
+    "No simulator, optimizer update, replay insertion, BN update or normalization after checkpoint load.",
+    "Native original use_compile=true and original auto mode; real default Inductor backend including manually compiled get_mean_and_std.",
+    "Full checkpoint loaded by native agent.load; actual FrozenPolicy class actor-only eager loading on comparison side.",
+    "Small replay capacity1/batch1 to avoid original10M allocation; not a training test.",
+    "Three recorded phases,32 and1024 batches, contiguous162 and strided324 row storage; low-cardinality state repetition disclosed.",
+    "12 native cached-noise calls per batch using actual NumPy324 collector inputs, paired CPU/CUDA RNG and cache states.",
+    "Finite/digest invariants are hard checks; numerical differences are measured, not arbitrarily required to be exactly0.",
+    "Expected small floating-point differences can still amplify in contact dynamics; no rollout-success inference."
+  ],
+  "jobs": [
+    {
+      "id": "cuda_inductor_forward_parity",
+      "kind": "diagnostic",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/compiled_forward_probe/run_probe.py"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "CUDA_VISIBLE_DEVICES": "0",
+        "PYTHONPATH": "/home/abao/flashsac-robotics:/home/abao/simtoolreal",
+        "OMP_NUM_THREADS": "2",
+        "MKL_NUM_THREADS": "2",
+        "TORCHINDUCTOR_COMPILE_THREADS": "2"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/compiled_forward_probe/logs/probe.log",
+      "timeout_seconds": 900,
+      "gpu_index": 0,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/compiled_forward_probe/summary.json"
+    }
+  ]
+}

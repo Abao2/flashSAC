@@ -1,0 +1,232 @@
+{
+  "protocol": "Same 64 initial states, seed0, 1200-step (20s) first-episode cap, fixed tolerance .02905653603374958; not paper success benchmark",
+  "checkpoint_candidates": [
+    "100M",
+    "500M"
+  ],
+  "initial_max_abs": {
+    "deterministic": {
+      "obs": 0,
+      "joint_pos": 0,
+      "joint_vel": 0,
+      "object": 0,
+      "goal": 0,
+      "prev_targets": 0,
+      "cur_targets": 0
+    },
+    "stochastic": {
+      "obs": 0,
+      "joint_pos": 0,
+      "joint_vel": 0,
+      "object": 0,
+      "goal": 0,
+      "prev_targets": 0,
+      "cur_targets": 0
+    }
+  },
+  "modes": {
+    "deterministic": {
+      "summary": {
+        "100M": {
+          "episodes": 64,
+          "completed": 63,
+          "goal_positive": 16,
+          "total_goals": 67,
+          "at_least_1s_above10cm": 25,
+          "fall": 31,
+          "timeout": 32,
+          "per_family": {
+            "brush": {
+              "n": 24,
+              "total_goals": 40,
+              "goal_positive": 8
+            },
+            "eraser": {
+              "n": 12,
+              "total_goals": 3,
+              "goal_positive": 3
+            },
+            "hammer": {
+              "n": 10,
+              "total_goals": 0,
+              "goal_positive": 0
+            },
+            "marker": {
+              "n": 2,
+              "total_goals": 6,
+              "goal_positive": 1
+            },
+            "screwdriver": {
+              "n": 12,
+              "total_goals": 15,
+              "goal_positive": 3
+            },
+            "spatula": {
+              "n": 4,
+              "total_goals": 3,
+              "goal_positive": 1
+            }
+          }
+        },
+        "500M": {
+          "episodes": 64,
+          "completed": 64,
+          "goal_positive": 22,
+          "total_goals": 89,
+          "at_least_1s_above10cm": 25,
+          "fall": 38,
+          "timeout": 25,
+          "per_family": {
+            "brush": {
+              "n": 24,
+              "total_goals": 37,
+              "goal_positive": 10
+            },
+            "eraser": {
+              "n": 12,
+              "total_goals": 12,
+              "goal_positive": 3
+            },
+            "hammer": {
+              "n": 10,
+              "total_goals": 10,
+              "goal_positive": 2
+            },
+            "marker": {
+              "n": 2,
+              "total_goals": 0,
+              "goal_positive": 0
+            },
+            "screwdriver": {
+              "n": 12,
+              "total_goals": 25,
+              "goal_positive": 6
+            },
+            "spatula": {
+              "n": 4,
+              "total_goals": 5,
+              "goal_positive": 1
+            }
+          }
+        }
+      },
+      "paired_goal_difference_500M_minus_100M": {
+        "mean": 0.34375,
+        "bootstrap95ci": [
+          -0.625,
+          1.1875
+        ],
+        "wins": 19,
+        "losses": 11,
+        "ties": 34
+      }
+    },
+    "stochastic": {
+      "summary": {
+        "100M": {
+          "episodes": 64,
+          "completed": 64,
+          "goal_positive": 14,
+          "total_goals": 45,
+          "at_least_1s_above10cm": 22,
+          "fall": 49,
+          "timeout": 15,
+          "per_family": {
+            "brush": {
+              "n": 24,
+              "total_goals": 30,
+              "goal_positive": 7
+            },
+            "eraser": {
+              "n": 12,
+              "total_goals": 1,
+              "goal_positive": 1
+            },
+            "hammer": {
+              "n": 10,
+              "total_goals": 6,
+              "goal_positive": 2
+            },
+            "marker": {
+              "n": 2,
+              "total_goals": 0,
+              "goal_positive": 0
+            },
+            "screwdriver": {
+              "n": 12,
+              "total_goals": 7,
+              "goal_positive": 3
+            },
+            "spatula": {
+              "n": 4,
+              "total_goals": 1,
+              "goal_positive": 1
+            }
+          }
+        },
+        "500M": {
+          "episodes": 64,
+          "completed": 64,
+          "goal_positive": 17,
+          "total_goals": 79,
+          "at_least_1s_above10cm": 22,
+          "fall": 42,
+          "timeout": 19,
+          "per_family": {
+            "brush": {
+              "n": 24,
+              "total_goals": 24,
+              "goal_positive": 7
+            },
+            "eraser": {
+              "n": 12,
+              "total_goals": 20,
+              "goal_positive": 3
+            },
+            "hammer": {
+              "n": 10,
+              "total_goals": 14,
+              "goal_positive": 3
+            },
+            "marker": {
+              "n": 2,
+              "total_goals": 0,
+              "goal_positive": 0
+            },
+            "screwdriver": {
+              "n": 12,
+              "total_goals": 12,
+              "goal_positive": 2
+            },
+            "spatula": {
+              "n": 4,
+              "total_goals": 9,
+              "goal_positive": 2
+            }
+          }
+        }
+      },
+      "paired_goal_difference_500M_minus_100M": {
+        "mean": 0.53125,
+        "bootstrap95ci": [
+          -0.125,
+          1.296875
+        ],
+        "wins": 14,
+        "losses": 11,
+        "ties": 39
+      }
+    }
+  },
+  "asset_ids_families_filenames_equal": true,
+  "all_64_asset_urdf_sha256_equal": true,
+  "selected_for_play": "500M",
+  "selection_scope": "Provisional best of these TWO candidates under this capped protocol, not all checkpoints and not statistically established superiority.",
+  "limitations": [
+    "One seed and small batch; no whole-distribution generalization.",
+    "Bootstrap interval resamples these paired initial states only, not across seeds.",
+    "One 100M deterministic episode is censored; totals are goals reached within the cap, not complete-episode performance.",
+    "Height duration is not contact-confirmed grasp.",
+    "Later randomly sampled goals may differ following differing event/reset timing."
+  ]
+}

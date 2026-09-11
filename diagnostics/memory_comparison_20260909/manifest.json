@@ -1,0 +1,265 @@
+{
+  "request": "2026-09-09 用户授权比较140FF、162FF和140+LSTM，保持完整STR任务；不跑独立eval",
+  "scope": "Local simulation only. No robot, no remote jobs, no policy evaluation, no BC or replay reload.",
+  "status": "stopped_by_user_after_seed0",
+  "stop_note": "User requested one seed only. Queue stopped and verified on 2026-09-09 at 17:13 Asia/Shanghai. Do not relaunch without a new explicit request. Original planned jobs below are preserved as provenance, not active authorization to continue.",
+  "systemd_unit": "flashsac-str-memory-compare-20260909.service",
+  "first_job_started_utc": "2026-09-09T07:09:24.385621+00:00",
+  "baseline_root": "/home/abao/flashsac-robotics/diagnostics/full_nodr_20260909_1004",
+  "baseline_completion_files": [
+    "/home/abao/flashsac-robotics/diagnostics/full_nodr_20260909_1004/models/seed0/step48830/agent_state.pt",
+    "/home/abao/flashsac-robotics/diagnostics/full_nodr_20260909_1004/models/seed1/step48830/agent_state.pt",
+    "/home/abao/flashsac-robotics/diagnostics/full_nodr_20260909_1004/models/seed2/step48830/agent_state.pt"
+  ],
+  "gpu_preflight": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/preflight_synthetic_gpu.json",
+  "cpu_validation": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/cpu_validation.json",
+  "transitions_per_seed": 100003840,
+  "num_envs": 2048,
+  "updates_per_interaction_step": 4,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "new_training_jobs": 6,
+  "baseline_reused_jobs": 3,
+  "deadline_utc": "2026-09-10T07:30:00+00:00",
+  "source_sha256": {
+    "/home/abao/flashsac-robotics/train.py": "a7697d6e5e84cae5bff49002d8cd99956b42576f9140ba8f65a93973e587be87",
+    "/home/abao/flashsac-robotics/scripts/run_simtoolreal.sh": "82d52305a83dd11c3cb0ac8ec3cd769bd220a2e3bbd672de2b3d3b4bf66d35fa",
+    "/home/abao/flashsac-robotics/scripts/run_str_memory_comparison.py": "7eb3319c239b95beaea73d2cb97bc5d384ce19e98b6f9018f67139d4c83b13f5",
+    "/home/abao/flashsac-robotics/scripts/check_str_history_training.py": "e52ad5315413f866b0f5e441daa9e3944f316a59f88a8bf2864c4e14f2367ebb",
+    "/home/abao/flashsac-robotics/configs/simtoolreal_full_nodr.yaml": "3358be80d996a0abe28f78f9aed34470a4ad86804b2fd04a05845a3ad7f26ad1",
+    "/home/abao/flashsac-robotics/configs/simtoolreal_full_state162.yaml": "267db318763e3e4a53e46ab6379ec28d8ad10e13b2348e994ba60e5609cce64b",
+    "/home/abao/flashsac-robotics/configs/simtoolreal_full_lstm32.yaml": "5dc75e454c00a9ab263436f97baf3e85896498ebbecc2ad5ccd26eedb71ca6c0",
+    "/home/abao/flashsac-robotics/configs/simtoolreal_flashsac.yaml": "0a1881e50c6e3bf3539c3fcf09e1435ab17f0b78c8e1024f341351232afb89ad",
+    "/home/abao/flashsac-robotics/configs/env/simtoolreal.yaml": "520402418b76501e2f8d7137170ccae2edc24e8cb01c04c10433d7a550b2efec",
+    "/home/abao/flashsac-robotics/configs/agent/flashSAC.yaml": "4dabed9818df0a6529cfce40925d40e384c01d9f6287fb6d9170a0c5a50582a8",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/agent.py": "9b415a3194d596706ced6a7895f01a4072712d50866bda6d8fffc61b2795249e",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/update.py": "50c571fc466276aa6caac56c2c13d3e42029bb669cce58a6a73a98bf9e01d5ba",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/network.py": "4068098466f195fac2c7d91e3cb1abe0c4daf42c4d1cd85f3940dca9edfd4c98",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/layer.py": "7af7b2954c22a5ae56595b8d3139017e2a44b17dbd63c2f54c4e65dbd17ef7cc",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/history_network.py": "27933aaa2a124eb848bec133a2389a2b27acfb8bc1ce969b8e608d39c1532104",
+    "/home/abao/flashsac-robotics/flash_rl/buffers/torch_buffer.py": "451fdb9bd0fe5dce93bcf3a1da48a9215351841b738faa971ebc6a09aa025bf1",
+    "/home/abao/flashsac-robotics/flash_rl/buffers/history_buffer.py": "bb79da24362c60afa58e9345f9ab03a7aa588cb309f9f42e892bba1f3fd2e1bd",
+    "/home/abao/flashsac-robotics/flash_rl/agents/utils/reward_normalization.py": "b673f5fba40468f6bb183d3cc82daa05111e95407ccb6b73de854f338c7b70b8",
+    "/home/abao/flashsac-robotics/flash_rl/envs/isaaclab.py": "fbf0aac07d527f589064ebb6fde009ff1b4d79e2513451121d5a3309907dc7a4",
+    "/home/abao/simtoolreal/isaacsimenvs/cfg/task/SimToolReal.yaml": "3f7b10d06a9312e31c808dcb69cbe9866493e29045452873d4359fb012871709",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/simtoolreal_env.py": "1701cbae43b243198fb84803dbb19829ff6f5a8a2e41c019eb8e87682367f17d",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/simtoolreal_env_cfg.py": "aff33b7f7650e0d4ff20f38444c1182776ad32842f27562f891e7c623f9a7ca4",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/obs_utils.py": "2f36d5c5f50eb59e0debff98fc08d447d8c40b5cdb82d8aad54527c704437cc0",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/reset_utils.py": "3f053396b43e56782b6daa72849811d8a9ad5cca956f824c9cd772691ea9bd6e",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/termination_utils.py": "42a29203129abe5d9fe0fb147aaff5a0064117403f05cc91c1e06c1a93146b1b",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/action_utils.py": "2e38294d4555062c6a022c46d1d9cd48b4074df4c80c0adc0b2006b7bed723d6",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/reward_utils.py": "ec2cb758f5ebd2791aee7356111a0c2e28abbeca801e942b3cbee29848c78205",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/scene_utils.py": "e18cdbae5d4ce9df147832777915258bcd5934eeb8e7bf57f51891576eb85895",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/generate_objects.py": "f176869ed6c4cd36a93019643ea448ce238dcd931df6b80243c1678f22c46b4c"
+  },
+  "notes": [
+    "A=existing140FF baseline, three completed100M runs; references only, no original logs or weights overwritten.",
+    "B=state162FF, sole task override actor receives originalcritic162 current-state fields.",
+    "C=140_LSTM32_historyQ; bounded32-frame history; critic also gets current162 plus32*(140+validmask)=4674 observationdims. This is not pure actor-only causality or official full-episodeLSTM.",
+    "A/B/C share task, control(.1/.1), rewards, DRoff, totaltransitionbudget, replay10M, batch2048, gamma.99,nstep1, pinnedLRschedule and update ratio. C actor eager with cuDNN; critics retain compile/AMP. Extra information/capacity and tiny replay edge exclusion are disclosed confounds.",
+    "C rebuilds history at sampling, not stored H times. Both terminal/truncated boundaries isolate episodes. Timeout next-history ends at pre-resetfinalobs. Generic eval is explicitly unsupported for history mode.",
+    "Native warmup action_space RNG was not explicitly seeded in baseline; equal seed labels are not bitwise paired trajectories.",
+    "One GPU child at a time. Free-memory guard36GiB. Per training job timeout4hours; global deadline24hours. Preserve intermediate20M checkpoints on early stop.",
+    "No recurring automation or additional training beyond these six jobs."
+  ],
+  "jobs": [
+    {
+      "id": "state162_ff_seed0",
+      "kind": "training",
+      "argv": [
+        "/home/abao/flashsac-robotics/scripts/run_simtoolreal.sh",
+        "--overrides",
+        "seed=0",
+        "--overrides",
+        "output_root=/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909",
+        "--overrides",
+        "save_path=models/state162_ff/seed0"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "PYTHON_BIN": "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "SIMTOOLREAL_CONFIG_NAME": "simtoolreal_full_state162",
+        "SIMTOOLREAL_ROOT": "/home/abao/simtoolreal",
+        "PYTHONPATH": "/home/abao/flashsac-robotics:/home/abao/simtoolreal",
+        "CUDA_VISIBLE_DEVICES": "0",
+        "OMNI_KIT_ACCEPT_EULA": "YES",
+        "OMP_NUM_THREADS": "2",
+        "MKL_NUM_THREADS": "2",
+        "PYTHONUNBUFFERED": "1"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/logs/state162_ff_seed0.log",
+      "timeout_seconds": 14400,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/models/state162_ff/seed0/step48830/agent_state.pt",
+      "gpu_index": 0
+    },
+    {
+      "id": "obs140_lstm32_historyq_seed0",
+      "kind": "training",
+      "argv": [
+        "/home/abao/flashsac-robotics/scripts/run_simtoolreal.sh",
+        "--overrides",
+        "seed=0",
+        "--overrides",
+        "output_root=/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909",
+        "--overrides",
+        "save_path=models/obs140_lstm32_historyq/seed0"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "PYTHON_BIN": "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "SIMTOOLREAL_CONFIG_NAME": "simtoolreal_full_lstm32",
+        "SIMTOOLREAL_ROOT": "/home/abao/simtoolreal",
+        "PYTHONPATH": "/home/abao/flashsac-robotics:/home/abao/simtoolreal",
+        "CUDA_VISIBLE_DEVICES": "0",
+        "OMNI_KIT_ACCEPT_EULA": "YES",
+        "OMP_NUM_THREADS": "2",
+        "MKL_NUM_THREADS": "2",
+        "PYTHONUNBUFFERED": "1"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/logs/obs140_lstm32_historyq_seed0.log",
+      "timeout_seconds": 14400,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/models/obs140_lstm32_historyq/seed0/step48830/agent_state.pt",
+      "gpu_index": 0
+    },
+    {
+      "id": "state162_ff_seed1",
+      "kind": "training",
+      "argv": [
+        "/home/abao/flashsac-robotics/scripts/run_simtoolreal.sh",
+        "--overrides",
+        "seed=1",
+        "--overrides",
+        "output_root=/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909",
+        "--overrides",
+        "save_path=models/state162_ff/seed1"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "PYTHON_BIN": "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "SIMTOOLREAL_CONFIG_NAME": "simtoolreal_full_state162",
+        "SIMTOOLREAL_ROOT": "/home/abao/simtoolreal",
+        "PYTHONPATH": "/home/abao/flashsac-robotics:/home/abao/simtoolreal",
+        "CUDA_VISIBLE_DEVICES": "0",
+        "OMNI_KIT_ACCEPT_EULA": "YES",
+        "OMP_NUM_THREADS": "2",
+        "MKL_NUM_THREADS": "2",
+        "PYTHONUNBUFFERED": "1"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/logs/state162_ff_seed1.log",
+      "timeout_seconds": 14400,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/models/state162_ff/seed1/step48830/agent_state.pt",
+      "gpu_index": 0
+    },
+    {
+      "id": "obs140_lstm32_historyq_seed1",
+      "kind": "training",
+      "argv": [
+        "/home/abao/flashsac-robotics/scripts/run_simtoolreal.sh",
+        "--overrides",
+        "seed=1",
+        "--overrides",
+        "output_root=/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909",
+        "--overrides",
+        "save_path=models/obs140_lstm32_historyq/seed1"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "PYTHON_BIN": "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "SIMTOOLREAL_CONFIG_NAME": "simtoolreal_full_lstm32",
+        "SIMTOOLREAL_ROOT": "/home/abao/simtoolreal",
+        "PYTHONPATH": "/home/abao/flashsac-robotics:/home/abao/simtoolreal",
+        "CUDA_VISIBLE_DEVICES": "0",
+        "OMNI_KIT_ACCEPT_EULA": "YES",
+        "OMP_NUM_THREADS": "2",
+        "MKL_NUM_THREADS": "2",
+        "PYTHONUNBUFFERED": "1"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/logs/obs140_lstm32_historyq_seed1.log",
+      "timeout_seconds": 14400,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/models/obs140_lstm32_historyq/seed1/step48830/agent_state.pt",
+      "gpu_index": 0
+    },
+    {
+      "id": "state162_ff_seed2",
+      "kind": "training",
+      "argv": [
+        "/home/abao/flashsac-robotics/scripts/run_simtoolreal.sh",
+        "--overrides",
+        "seed=2",
+        "--overrides",
+        "output_root=/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909",
+        "--overrides",
+        "save_path=models/state162_ff/seed2"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "PYTHON_BIN": "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "SIMTOOLREAL_CONFIG_NAME": "simtoolreal_full_state162",
+        "SIMTOOLREAL_ROOT": "/home/abao/simtoolreal",
+        "PYTHONPATH": "/home/abao/flashsac-robotics:/home/abao/simtoolreal",
+        "CUDA_VISIBLE_DEVICES": "0",
+        "OMNI_KIT_ACCEPT_EULA": "YES",
+        "OMP_NUM_THREADS": "2",
+        "MKL_NUM_THREADS": "2",
+        "PYTHONUNBUFFERED": "1"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/logs/state162_ff_seed2.log",
+      "timeout_seconds": 14400,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/models/state162_ff/seed2/step48830/agent_state.pt",
+      "gpu_index": 0
+    },
+    {
+      "id": "obs140_lstm32_historyq_seed2",
+      "kind": "training",
+      "argv": [
+        "/home/abao/flashsac-robotics/scripts/run_simtoolreal.sh",
+        "--overrides",
+        "seed=2",
+        "--overrides",
+        "output_root=/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909",
+        "--overrides",
+        "save_path=models/obs140_lstm32_historyq/seed2"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "PYTHON_BIN": "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "SIMTOOLREAL_CONFIG_NAME": "simtoolreal_full_lstm32",
+        "SIMTOOLREAL_ROOT": "/home/abao/simtoolreal",
+        "PYTHONPATH": "/home/abao/flashsac-robotics:/home/abao/simtoolreal",
+        "CUDA_VISIBLE_DEVICES": "0",
+        "OMNI_KIT_ACCEPT_EULA": "YES",
+        "OMP_NUM_THREADS": "2",
+        "MKL_NUM_THREADS": "2",
+        "PYTHONUNBUFFERED": "1"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/logs/obs140_lstm32_historyq_seed2.log",
+      "timeout_seconds": 14400,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/models/obs140_lstm32_historyq/seed2/step48830/agent_state.pt",
+      "gpu_index": 0
+    },
+    {
+      "id": "final_cpu_comparison",
+      "kind": "cpu",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/summarize_str_memory_comparison.py",
+        "--root",
+        "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909",
+        "--completion-marker",
+        "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/final_cpu_complete.json"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "2",
+        "MKL_NUM_THREADS": "2",
+        "PYTHONPATH": "/home/abao/flashsac-robotics"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/logs/final_cpu_comparison.log",
+      "timeout_seconds": 300,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/final_cpu_complete.json"
+    }
+  ]
+}

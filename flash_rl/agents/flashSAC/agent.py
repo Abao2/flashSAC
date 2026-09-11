@@ -77,6 +77,10 @@ class FlashSACConfig:
     load_optimizer: bool
     load_reward_normalizer: bool
 
+    # Opt-in finite-history diagnostic. Default preserves the native FF path.
+    actor_history_length: int = 1
+    actor_lstm_hidden_dim: int = 128
+
 
 def _init_flashsac_networks(
     actor_observation_dim: int,
@@ -95,11 +99,18 @@ def _init_flashsac_networks(
     )
 
     # Initialize actor
-    actor_net = FlashSACActor(
+    actor_class = FlashSACActor
+    actor_kwargs: dict[str, Any] = {}
+    if cfg.actor_history_length > 1:
+        from flash_rl.agents.flashSAC.history_network import FlashSACHistoryActor
+        actor_class = FlashSACHistoryActor
+        actor_kwargs = dict(history_length=cfg.actor_history_length, lstm_hidden_dim=cfg.actor_lstm_hidden_dim)
+    actor_net = actor_class(
         num_blocks=cfg.actor_num_blocks,
         input_dim=actor_observation_dim,
         hidden_dim=cfg.actor_hidden_dim,
         action_dim=action_dim,
+        **actor_kwargs,
     ).to(device)
 
     use_fused = device.type == "cuda" and torch.cuda.is_available()
@@ -112,12 +123,13 @@ def _init_flashsac_networks(
         network=actor_net,
         optimizer=actor_optimizer,
         scheduler=actor_scheduler,
-        compile_network=cfg.use_compile,
+        # cuDNN LSTM runs eagerly; leave the unchanged categorical critics compiled.
+        compile_network=cfg.use_compile and cfg.actor_history_length == 1,
         compile_mode=cfg.compile_mode,
         use_weight_normalization=True,
     )
     # Manually compile `get_mean_and_std` function
-    if cfg.use_compile:
+    if cfg.use_compile and cfg.actor_history_length == 1:
         actor.network.get_mean_and_std = torch.compile(actor.network.get_mean_and_std, mode=cfg.compile_mode)  # type: ignore
 
     # Initialize critic
@@ -333,6 +345,36 @@ def _resolve_compile_mode(mode: str) -> str:
     return "reduce-overhead"
 
 
+def _resolve_observation_layout(
+    observation_dim: int,
+    env_info: dict[str, Any],
+    asymmetric: bool,
+) -> tuple[int, int, int]:
+    """Return actor width, critic width, and critic offset in replay observations."""
+    if not asymmetric:
+        return observation_dim, observation_dim, 0
+
+    actor_dim = int(env_info["actor_observation_size"][-1])
+    critic_size = env_info.get("critic_observation_size")
+    if critic_size is None:
+        # Backward-compatible convention used by Genesis/MJX: the privileged
+        # tensor is the complete critic input and begins with the actor input.
+        critic_dim = observation_dim
+        critic_offset = 0
+    else:
+        critic_dim = int(critic_size[-1] if hasattr(critic_size, "__len__") else critic_size)
+        critic_offset = int(env_info.get("critic_observation_offset", 0))
+
+    if actor_dim > observation_dim:
+        raise ValueError(f"actor observation width {actor_dim} exceeds replay width {observation_dim}")
+    if critic_offset < 0 or critic_offset + critic_dim > observation_dim:
+        raise ValueError(
+            f"critic observation slice [{critic_offset}:{critic_offset + critic_dim}] "
+            f"exceeds replay width {observation_dim}"
+        )
+    return actor_dim, critic_dim, critic_offset
+
+
 class FlashSACAgent(BaseAgent[FlashSACConfig]):
     def __init__(
         self,
@@ -345,12 +387,17 @@ class FlashSACAgent(BaseAgent[FlashSACConfig]):
         FlashSAC agent implementation in PyTorch.
         """
 
-        self._critic_observation_dim: int = observation_space.shape[-1]  # type: ignore
+        observation_dim: int = observation_space.shape[-1]  # type: ignore
         self._action_dim: int = action_space.shape[-1]  # type: ignore
-        if cfg.asymmetric_observation:
-            self._actor_observation_dim = env_info["actor_observation_size"][-1]
-        else:
-            self._actor_observation_dim = self._critic_observation_dim
+        (
+            self._actor_observation_dim,
+            self._critic_observation_dim,
+            self._critic_observation_offset,
+        ) = _resolve_observation_layout(
+            observation_dim,
+            env_info,
+            cfg.asymmetric_observation,
+        )
 
         temp_target_entropy = 0.5 * self._action_dim * math.log(2 * math.pi * math.e * cfg.temp_target_sigma**2)
         compile_mode = _resolve_compile_mode(cfg.compile_mode)
@@ -363,6 +410,16 @@ class FlashSACAgent(BaseAgent[FlashSACConfig]):
             cfg,
         )
         self._cfg = cfg
+
+        if cfg.actor_history_length < 1 or cfg.actor_lstm_hidden_dim < 1:
+            raise ValueError("History length and LSTM hidden size must be positive")
+        if cfg.actor_history_length > 1 and cfg.n_step != 1:
+            raise ValueError("Finite-history FlashSAC currently requires n_step=1")
+        self._online_actor_history: torch.Tensor | None = None
+        self._critic_network_observation_dim = self._critic_observation_dim
+        if cfg.actor_history_length > 1:
+            # Q must condition on the policy's history, not just current state.
+            self._critic_network_observation_dim += cfg.actor_history_length * (self._actor_observation_dim + 1)
 
         device_type = cfg.device_type
         device_type = (
@@ -380,7 +437,7 @@ class FlashSACAgent(BaseAgent[FlashSACConfig]):
             self._temperature,
         ) = _init_flashsac_networks(
             actor_observation_dim=self._actor_observation_dim,
-            critic_observation_dim=self._critic_observation_dim,
+            critic_observation_dim=self._critic_network_observation_dim,
             action_dim=self._action_dim,
             cfg=self._cfg,
             device=self._device,
@@ -410,7 +467,14 @@ class FlashSACAgent(BaseAgent[FlashSACConfig]):
             )
 
         # Replay buffer
-        self._replay_buffer = TorchUniformBuffer(
+        buffer_class = TorchUniformBuffer
+        buffer_kwargs: dict[str, Any] = {}
+        if cfg.actor_history_length > 1:
+            from flash_rl.buffers.history_buffer import TorchHistoryBuffer
+            buffer_class = TorchHistoryBuffer
+            buffer_kwargs = dict(actor_observation_dim=self._actor_observation_dim,
+                                 history_length=cfg.actor_history_length)
+        self._replay_buffer = buffer_class(
             observation_space=observation_space,
             action_space=action_space,
             n_step=self._cfg.n_step,
@@ -419,7 +483,18 @@ class FlashSACAgent(BaseAgent[FlashSACConfig]):
             min_length=self._cfg.buffer_min_length,
             sample_batch_size=self._cfg.sample_batch_size,
             device_type=self._cfg.buffer_device_type,
+            **buffer_kwargs,
         )
+
+    def _actor_history_context(self, observations: torch.Tensor) -> torch.Tensor:
+        """History before the current action; also populated during random warmup."""
+        frame = torch.cat((observations, torch.ones_like(observations[:, :1])), dim=-1).unsqueeze(1)
+        if self._online_actor_history is None:
+            self._online_actor_history = observations.new_zeros(
+                observations.shape[0], self._cfg.actor_history_length - 1, observations.shape[-1] + 1)
+        if self._online_actor_history.shape[0] != observations.shape[0]:
+            raise ValueError("Online history requires a fixed vector-environment batch")
+        return torch.cat((self._online_actor_history, frame), dim=1)
 
     def sample_actions(
         self,
@@ -437,6 +512,12 @@ class FlashSACAgent(BaseAgent[FlashSACConfig]):
             observations = observations[:, : self._actor_observation_dim]
 
         observations = torch.as_tensor(observations, dtype=torch.float32).to(self._device)
+        if self._cfg.actor_history_length > 1:
+            # Generic evaluate/record does not provide per-env episode boundaries.
+            # Fail explicitly rather than silently leaking history across resets.
+            if not training:
+                raise RuntimeError("History-policy playback requires an explicit sequential rollout; generic eval is unsupported")
+            observations = self._actor_history_context(observations)
 
         with torch.no_grad():
             (
@@ -460,6 +541,15 @@ class FlashSACAgent(BaseAgent[FlashSACConfig]):
         # add to replay buffer
         self._replay_buffer.add(transition)
 
+        if self._cfg.actor_history_length > 1:
+            current = torch.as_tensor(transition["observation"], dtype=torch.float32,
+                                      device=self._device)[:, :self._actor_observation_dim]
+            context = self._actor_history_context(current)
+            self._online_actor_history = context[:, 1:].clone()
+            done = (torch.as_tensor(transition["terminated"], device=self._device).bool()
+                    | torch.as_tensor(transition["truncated"], device=self._device).bool())
+            self._online_actor_history[done] = 0
+
         # update reward normalizer
         if self._cfg.normalize_reward:
             assert "reward" in transition and self.reward_normalizer is not None
@@ -481,9 +571,20 @@ class FlashSACAgent(BaseAgent[FlashSACConfig]):
         if self._cfg.asymmetric_observation:
             batch["actor_observation"] = batch["observation"][:, : self._actor_observation_dim]
             batch["actor_next_observation"] = batch["next_observation"][:, : self._actor_observation_dim]
+            critic_start = self._critic_observation_offset
+            critic_end = critic_start + self._critic_observation_dim
+            batch["observation"] = batch["observation"][:, critic_start:critic_end]
+            batch["next_observation"] = batch["next_observation"][:, critic_start:critic_end]
         else:
             batch["actor_observation"] = batch["observation"]
             batch["actor_next_observation"] = batch["next_observation"]
+
+        if self._cfg.actor_history_length > 1:
+            history = batch.pop("actor_history")
+            next_history = batch.pop("actor_next_history")
+            batch["actor_observation"], batch["actor_next_observation"] = history, next_history
+            batch["observation"] = torch.cat((batch["observation"], history.flatten(1)), dim=-1)
+            batch["next_observation"] = torch.cat((batch["next_observation"], next_history.flatten(1)), dim=-1)
 
         if self._cfg.normalize_reward:
             assert self.reward_normalizer is not None
@@ -527,6 +628,14 @@ class FlashSACAgent(BaseAgent[FlashSACConfig]):
             "update_step": self._update_step,
             "grad_scaler_state_dict": self._grad_scaler.state_dict(),
         }
+        if self._cfg.actor_history_length > 1:
+            agent_state["history_policy"] = {
+                "history_length": self._cfg.actor_history_length,
+                "lstm_hidden_dim": self._cfg.actor_lstm_hidden_dim,
+                "actor_observation_dim": self._actor_observation_dim,
+                "critic_current_observation_dim": self._critic_observation_dim,
+                "critic_network_observation_dim": self._critic_network_observation_dim,
+            }
         torch.save(agent_state, os.path.join(path, "agent_state.pt"))
         print(f"\033[32m[FlashSAC]\033[0m Successfully saved checkpoint {self._update_step} at {path}.")
 
@@ -535,6 +644,7 @@ class FlashSACAgent(BaseAgent[FlashSACConfig]):
         print(f"\033[32m[FlashSAC]\033[0m Successfully saved replay buffer at {path}.")
 
     def load(self, path: str) -> None:
+        self._online_actor_history = None  # Environment state is not restored by a model checkpoint.
         load_optimizer = self._cfg.load_optimizer
         self._actor.load(os.path.join(path, "actor.pt"), load_optimizer=load_optimizer)
         self._critic.load(os.path.join(path, "critic.pt"), load_optimizer=load_optimizer)

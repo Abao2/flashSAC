@@ -1,0 +1,58 @@
+{
+  "experiment": "matched_100m_500m_full_STR_nstep3",
+  "deadline_utc": "2026-09-10T14:30:00+00:00",
+  "tolerance": 0.02905653603374958,
+  "training_changes": false,
+  "jobs": [
+    {
+      "id": "old_100m",
+      "kind": "diagnostic",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/play_str_full_diagnostic.py",
+        "--config-name", "simtoolreal_full_arm1_nstep3",
+        "--checkpoint", "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/candidate/models/seed0/step48830",
+        "--output-dir", "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_continue_20260910/matched_eval/old_100m",
+        "--num-envs", "64", "--steps", "1200", "--seed", "0",
+        "--tolerance", "0.02905653603374958"
+      ],
+      "cwd": "/home/abao/simtoolreal",
+      "env": {
+        "PYTHONPATH": "/home/abao/flashsac-robotics:/home/abao/simtoolreal",
+        "CUDA_VISIBLE_DEVICES": "0",
+        "OMNI_KIT_ACCEPT_EULA": "YES",
+        "OMP_NUM_THREADS": "2", "MKL_NUM_THREADS": "2", "NUMEXPR_NUM_THREADS": "2",
+        "PYTHONUNBUFFERED": "1",
+        "STR_PLAY_NUMPY_SITE": "/home/abao/play2perfect/.venv_isaacsim/lib/python3.11/site-packages"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_continue_20260910/matched_eval/old_100m.log",
+      "timeout_seconds": 1200,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_continue_20260910/matched_eval/old_100m/play_complete.json"
+    },
+    {
+      "id": "new_500m",
+      "kind": "diagnostic",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/play_str_full_diagnostic.py",
+        "--config-name", "simtoolreal_full_arm1_nstep3",
+        "--checkpoint", "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step195320",
+        "--output-dir", "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_continue_20260910/matched_eval/new_500m",
+        "--num-envs", "64", "--steps", "1200", "--seed", "0",
+        "--tolerance", "0.02905653603374958"
+      ],
+      "cwd": "/home/abao/simtoolreal",
+      "env": {
+        "PYTHONPATH": "/home/abao/flashsac-robotics:/home/abao/simtoolreal",
+        "CUDA_VISIBLE_DEVICES": "0",
+        "OMNI_KIT_ACCEPT_EULA": "YES",
+        "OMP_NUM_THREADS": "2", "MKL_NUM_THREADS": "2", "NUMEXPR_NUM_THREADS": "2",
+        "PYTHONUNBUFFERED": "1",
+        "STR_PLAY_NUMPY_SITE": "/home/abao/play2perfect/.venv_isaacsim/lib/python3.11/site-packages"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_continue_20260910/matched_eval/new_500m.log",
+      "timeout_seconds": 1200,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_continue_20260910/matched_eval/new_500m/play_complete.json"
+    }
+  ]
+}

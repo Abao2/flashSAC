@@ -1,0 +1,703 @@
+{
+  "created_utc": "2026-09-08T17:35:35.615470+00:00",
+  "queue": "completed",
+  "jobs": 66,
+  "all_train_budgets_verified": true,
+  "all_six_final_checkpoints_finite": true,
+  "all_final_optimizer_counters_match_audits": true,
+  "rows": [
+    {
+      "name": "alpha_1e-2_gate0",
+      "initial_alpha": 0.01,
+      "gate": 0,
+      "final_alpha": 0.005904308520257473,
+      "final_optimizer_steps": {
+        "actor": [
+          1857
+        ],
+        "critic": [
+          3714
+        ],
+        "temperature": [
+          1857
+        ]
+      },
+      "snapshot_results": {
+        "update10": {
+          "deterministic": {
+            "goals": 64,
+            "episodes": 64,
+            "lifts": 64
+          },
+          "stochastic": {
+            "goals": 95,
+            "episodes": 128,
+            "lifts": 103
+          },
+          "actor_applied_steps": [
+            5
+          ]
+        },
+        "update100": {
+          "deterministic": {
+            "goals": 0,
+            "episodes": 64,
+            "lifts": 0
+          },
+          "stochastic": {
+            "goals": 0,
+            "episodes": 128,
+            "lifts": 0
+          },
+          "actor_applied_steps": [
+            50
+          ]
+        },
+        "final": {
+          "deterministic": {
+            "goals": 0,
+            "episodes": 64,
+            "lifts": 0
+          },
+          "stochastic": {
+            "goals": 0,
+            "episodes": 128,
+            "lifts": 0
+          },
+          "actor_applied_steps": [
+            1857
+          ]
+        }
+      },
+      "warmup_critic": null,
+      "final_critic": {
+        "far_from_object": {
+          "q_recorded": 2.517431151121855,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0.15579501393949613
+        },
+        "lifted_proxy": {
+          "q_recorded": 3.997897783697468,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0.24580775072721586
+        },
+        "near_goal_center_proxy": {
+          "q_recorded": 3.0415529534220695,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0.1723826142551843
+        },
+        "near_object_proxy": {
+          "q_recorded": 3.075963725335896,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0.2090858120645862
+        },
+        "off_table_proxy": {
+          "q_recorded": 3.462530463002622,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0.17124420951586217
+        },
+        "reset": {
+          "q_recorded": 2.479182440787554,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0.1325315682333894
+        }
+      }
+    },
+    {
+      "name": "alpha_1e-2_gate2000",
+      "initial_alpha": 0.01,
+      "gate": 2000,
+      "final_alpha": 0.008395236916840076,
+      "final_optimizer_steps": {
+        "actor": [
+          856
+        ],
+        "critic": [
+          3714
+        ],
+        "temperature": [
+          857
+        ]
+      },
+      "snapshot_results": {
+        "update2010": {
+          "deterministic": {
+            "goals": 64,
+            "episodes": 64,
+            "lifts": 64
+          },
+          "stochastic": {
+            "goals": 128,
+            "episodes": 128,
+            "lifts": 128
+          },
+          "actor_applied_steps": [
+            5
+          ]
+        },
+        "update2100": {
+          "deterministic": {
+            "goals": 0,
+            "episodes": 64,
+            "lifts": 0
+          },
+          "stochastic": {
+            "goals": 0,
+            "episodes": 128,
+            "lifts": 0
+          },
+          "actor_applied_steps": [
+            49
+          ]
+        },
+        "final": {
+          "deterministic": {
+            "goals": 0,
+            "episodes": 64,
+            "lifts": 0
+          },
+          "stochastic": {
+            "goals": 0,
+            "episodes": 128,
+            "lifts": 0
+          },
+          "actor_applied_steps": [
+            856
+          ]
+        }
+      },
+      "warmup_critic": {
+        "far_from_object": {
+          "samples": 256,
+          "q_recorded": -4.982513776049018,
+          "target_mass_below_support": 0.9890337637625635,
+          "target_mass_above_support": 0
+        },
+        "lifted_proxy": {
+          "samples": 365,
+          "q_recorded": -4.982754823606308,
+          "target_mass_below_support": 0.7965172560655908,
+          "target_mass_above_support": 0.0000032403231877545806
+        },
+        "near_goal_center_proxy": {
+          "samples": 256,
+          "q_recorded": -4.9743263348937035,
+          "target_mass_below_support": 0.25300181523505216,
+          "target_mass_above_support": 0
+        },
+        "near_object_proxy": {
+          "samples": 256,
+          "q_recorded": -4.98484000749886,
+          "target_mass_below_support": 0.9876280319876969,
+          "target_mass_above_support": 0
+        },
+        "off_table_proxy": {
+          "samples": 256,
+          "q_recorded": -4.986178295686841,
+          "target_mass_below_support": 0.9817319980356842,
+          "target_mass_above_support": 0
+        },
+        "reset": {
+          "samples": 128,
+          "q_recorded": -4.991203065961599,
+          "target_mass_below_support": 0.9914202988147736,
+          "target_mass_above_support": 0
+        }
+      },
+      "final_critic": {
+        "far_from_object": {
+          "q_recorded": -4.181290338747203,
+          "target_mass_below_support": 0.001783097446811155,
+          "target_mass_above_support": 0.0000013870527400539068
+        },
+        "lifted_proxy": {
+          "q_recorded": -1.1289365292922275,
+          "target_mass_below_support": 0.014090572674866377,
+          "target_mass_above_support": 0.0030550019506161534
+        },
+        "near_goal_center_proxy": {
+          "q_recorded": -0.5298572897736449,
+          "target_mass_below_support": 0.007420956620762809,
+          "target_mass_above_support": 0.003389627664198258
+        },
+        "near_object_proxy": {
+          "q_recorded": -3.5966533655300736,
+          "target_mass_below_support": 0.003744278825806191,
+          "target_mass_above_support": 0.000006887611323946885
+        },
+        "off_table_proxy": {
+          "q_recorded": -3.0981483245268464,
+          "target_mass_below_support": 0.01638335848394945,
+          "target_mass_above_support": 0.000001411800003126018
+        },
+        "reset": {
+          "q_recorded": -3.3286591060459614,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0.000023533825405763764
+        }
+      }
+    },
+    {
+      "name": "alpha_1e-4_gate0",
+      "initial_alpha": 0.0001,
+      "gate": 0,
+      "final_alpha": 0.00016541687364224344,
+      "final_optimizer_steps": {
+        "actor": [
+          1857
+        ],
+        "critic": [
+          3714
+        ],
+        "temperature": [
+          1857
+        ]
+      },
+      "snapshot_results": {
+        "update10": {
+          "deterministic": {
+            "goals": 0,
+            "episodes": 64,
+            "lifts": 64
+          },
+          "stochastic": {
+            "goals": 53,
+            "episodes": 128,
+            "lifts": 128
+          },
+          "actor_applied_steps": [
+            5
+          ]
+        },
+        "update100": {
+          "deterministic": {
+            "goals": 0,
+            "episodes": 64,
+            "lifts": 0
+          },
+          "stochastic": {
+            "goals": 0,
+            "episodes": 128,
+            "lifts": 0
+          },
+          "actor_applied_steps": [
+            50
+          ]
+        },
+        "final": {
+          "deterministic": {
+            "goals": 0,
+            "episodes": 64,
+            "lifts": 0
+          },
+          "stochastic": {
+            "goals": 0,
+            "episodes": 128,
+            "lifts": 0
+          },
+          "actor_applied_steps": [
+            1857
+          ]
+        }
+      },
+      "warmup_critic": null,
+      "final_critic": {
+        "far_from_object": {
+          "q_recorded": 3.308490610681474,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        },
+        "lifted_proxy": {
+          "q_recorded": 2.9207557959099337,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0.03031267345666069
+        },
+        "near_goal_center_proxy": {
+          "q_recorded": 1.8940376890823245,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0.0025920641435277503
+        },
+        "near_object_proxy": {
+          "q_recorded": 3.3921898985281587,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        },
+        "off_table_proxy": {
+          "q_recorded": 3.282971741631627,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        },
+        "reset": {
+          "q_recorded": 3.3452268578112125,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        }
+      }
+    },
+    {
+      "name": "alpha_1e-4_gate2000",
+      "initial_alpha": 0.0001,
+      "gate": 2000,
+      "final_alpha": 0.00012462206359487027,
+      "final_optimizer_steps": {
+        "actor": [
+          857
+        ],
+        "critic": [
+          3714
+        ],
+        "temperature": [
+          857
+        ]
+      },
+      "snapshot_results": {
+        "update2010": {
+          "deterministic": {
+            "goals": 64,
+            "episodes": 64,
+            "lifts": 64
+          },
+          "stochastic": {
+            "goals": 127,
+            "episodes": 128,
+            "lifts": 128
+          },
+          "actor_applied_steps": [
+            5
+          ]
+        },
+        "update2100": {
+          "deterministic": {
+            "goals": 0,
+            "episodes": 64,
+            "lifts": 0
+          },
+          "stochastic": {
+            "goals": 0,
+            "episodes": 128,
+            "lifts": 0
+          },
+          "actor_applied_steps": [
+            50
+          ]
+        },
+        "final": {
+          "deterministic": {
+            "goals": 0,
+            "episodes": 64,
+            "lifts": 0
+          },
+          "stochastic": {
+            "goals": 0,
+            "episodes": 128,
+            "lifts": 0
+          },
+          "actor_applied_steps": [
+            857
+          ]
+        }
+      },
+      "warmup_critic": {
+        "far_from_object": {
+          "samples": 256,
+          "q_recorded": -0.749705423368141,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        },
+        "lifted_proxy": {
+          "samples": 365,
+          "q_recorded": -0.559844269981123,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0.01669711138900012
+        },
+        "near_goal_center_proxy": {
+          "samples": 256,
+          "q_recorded": -0.6121395193040371,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0.0023111063913212604
+        },
+        "near_object_proxy": {
+          "samples": 256,
+          "q_recorded": -0.6700688834534958,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        },
+        "off_table_proxy": {
+          "samples": 256,
+          "q_recorded": -0.6487733079120517,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        },
+        "reset": {
+          "samples": 128,
+          "q_recorded": -0.6711080914828926,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        }
+      },
+      "final_critic": {
+        "far_from_object": {
+          "q_recorded": 0.9269802485359833,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        },
+        "lifted_proxy": {
+          "q_recorded": 0.6725689626158509,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0.2546266192034499
+        },
+        "near_goal_center_proxy": {
+          "q_recorded": 0.46152633751626126,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0.07616001812871787
+        },
+        "near_object_proxy": {
+          "q_recorded": 0.9477366374339908,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        },
+        "off_table_proxy": {
+          "q_recorded": 0.9512444187421352,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        },
+        "reset": {
+          "q_recorded": 1.3118072608485818,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        }
+      }
+    },
+    {
+      "name": "alpha_1e-6_gate0",
+      "initial_alpha": 0.000001,
+      "gate": 0,
+      "final_alpha": 0.0000019434019122854806,
+      "final_optimizer_steps": {
+        "actor": [
+          1857
+        ],
+        "critic": [
+          3714
+        ],
+        "temperature": [
+          1857
+        ]
+      },
+      "snapshot_results": {
+        "update10": {
+          "deterministic": {
+            "goals": 0,
+            "episodes": 64,
+            "lifts": 64
+          },
+          "stochastic": {
+            "goals": 48,
+            "episodes": 128,
+            "lifts": 124
+          },
+          "actor_applied_steps": [
+            5
+          ]
+        },
+        "update100": {
+          "deterministic": {
+            "goals": 0,
+            "episodes": 64,
+            "lifts": 0
+          },
+          "stochastic": {
+            "goals": 0,
+            "episodes": 128,
+            "lifts": 0
+          },
+          "actor_applied_steps": [
+            50
+          ]
+        },
+        "final": {
+          "deterministic": {
+            "goals": 0,
+            "episodes": 64,
+            "lifts": 0
+          },
+          "stochastic": {
+            "goals": 0,
+            "episodes": 128,
+            "lifts": 0
+          },
+          "actor_applied_steps": [
+            1857
+          ]
+        }
+      },
+      "warmup_critic": null,
+      "final_critic": {
+        "far_from_object": {
+          "q_recorded": 3.242497661150992,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        },
+        "lifted_proxy": {
+          "q_recorded": 2.5959494629951374,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0.03003464191131396
+        },
+        "near_goal_center_proxy": {
+          "q_recorded": 1.582542758435011,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0.004193370674329344
+        },
+        "near_object_proxy": {
+          "q_recorded": 3.4876280259341,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        },
+        "off_table_proxy": {
+          "q_recorded": 3.4665895495563745,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        },
+        "reset": {
+          "q_recorded": 3.1467497181147337,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        }
+      }
+    },
+    {
+      "name": "alpha_1e-6_gate2000",
+      "initial_alpha": 0.000001,
+      "gate": 2000,
+      "final_alpha": 0.0000013303349533089204,
+      "final_optimizer_steps": {
+        "actor": [
+          857
+        ],
+        "critic": [
+          3714
+        ],
+        "temperature": [
+          857
+        ]
+      },
+      "snapshot_results": {
+        "update2010": {
+          "deterministic": {
+            "goals": 64,
+            "episodes": 64,
+            "lifts": 64
+          },
+          "stochastic": {
+            "goals": 113,
+            "episodes": 128,
+            "lifts": 128
+          },
+          "actor_applied_steps": [
+            5
+          ]
+        },
+        "update2100": {
+          "deterministic": {
+            "goals": 0,
+            "episodes": 64,
+            "lifts": 0
+          },
+          "stochastic": {
+            "goals": 0,
+            "episodes": 128,
+            "lifts": 0
+          },
+          "actor_applied_steps": [
+            50
+          ]
+        },
+        "final": {
+          "deterministic": {
+            "goals": 0,
+            "episodes": 64,
+            "lifts": 0
+          },
+          "stochastic": {
+            "goals": 0,
+            "episodes": 128,
+            "lifts": 0
+          },
+          "actor_applied_steps": [
+            857
+          ]
+        }
+      },
+      "warmup_critic": {
+        "far_from_object": {
+          "samples": 256,
+          "q_recorded": -0.38104584738903213,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        },
+        "lifted_proxy": {
+          "samples": 365,
+          "q_recorded": -0.2044397199551945,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0.019327954884159237
+        },
+        "near_goal_center_proxy": {
+          "samples": 256,
+          "q_recorded": -0.2734639325462922,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0.0027821711792768156
+        },
+        "near_object_proxy": {
+          "samples": 256,
+          "q_recorded": -0.30609737519262126,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        },
+        "off_table_proxy": {
+          "samples": 256,
+          "q_recorded": -0.28602957038674504,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        },
+        "reset": {
+          "samples": 128,
+          "q_recorded": -0.3113571784342639,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        }
+      },
+      "final_critic": {
+        "far_from_object": {
+          "q_recorded": 0.979437367990613,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        },
+        "lifted_proxy": {
+          "q_recorded": 0.6557848362890009,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0.2318129059794831
+        },
+        "near_goal_center_proxy": {
+          "q_recorded": 0.6089700537268072,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0.06077672845086113
+        },
+        "near_object_proxy": {
+          "q_recorded": 0.8682229979895055,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        },
+        "off_table_proxy": {
+          "q_recorded": 0.811581916292198,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        },
+        "reset": {
+          "q_recorded": 1.963874219916761,
+          "target_mass_below_support": 0,
+          "target_mass_above_support": 0
+        }
+      }
+    }
+  ]
+}

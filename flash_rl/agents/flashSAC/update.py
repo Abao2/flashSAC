@@ -35,7 +35,7 @@ def _compute_categorical_td_target(
     reward: torch.Tensor,  # (B,)
     done: torch.Tensor,  # (B,)
     actor_entropy: torch.Tensor,  # (B,)
-    gamma: float,
+    gamma: float | torch.Tensor,
     num_bins: int,
     min_v: float,
     max_v: float,
@@ -45,6 +45,8 @@ def _compute_categorical_td_target(
     reward = reward.reshape(-1, 1)
     done = done.reshape(-1, 1)
     actor_entropy = actor_entropy.reshape(-1, 1)
+    if isinstance(gamma, torch.Tensor):
+        gamma = gamma.reshape(-1, 1)
 
     # Compute target value buckets
     bin_width = (max_v - min_v) / (num_bins - 1)
@@ -231,7 +233,7 @@ def update_critic(
                 reward=batch["reward"],  # type: ignore
                 done=batch["terminated"],  # type: ignore
                 actor_entropy=next_actor_entropy,
-                gamma=gamma**n_step,
+                gamma=batch.get("discount", gamma**n_step),
                 num_bins=num_bins,
                 min_v=min_v,
                 max_v=max_v,

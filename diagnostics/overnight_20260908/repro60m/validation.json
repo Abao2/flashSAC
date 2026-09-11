@@ -1,0 +1,269 @@
+{
+  "status": "validated_cpu_only",
+  "no_gpu_launched": true,
+  "job_count": 15,
+  "source_config_comparison_differences": {
+    "seed0_train60m": [
+      {
+        "field": "num_interaction_steps",
+        "source": 48830,
+        "new": 58596
+      },
+      {
+        "field": "output_root",
+        "source": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m",
+        "new": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m"
+      },
+      {
+        "field": "num_env_steps",
+        "source": 50001920,
+        "new": 60002304
+      },
+      {
+        "field": "num_update_steps",
+        "source": 97660,
+        "new": 117192
+      },
+      {
+        "field": "env.num_env_steps",
+        "source": 50001920,
+        "new": 60002304
+      },
+      {
+        "field": "exp_name",
+        "source": "arm1_hand01",
+        "new": "arm1_hand01_seed0"
+      },
+      {
+        "field": "save_path",
+        "source": "models/arm1_hand01/seed0",
+        "new": "models/seed0"
+      },
+      {
+        "field": "group_name",
+        "source": "budget50m",
+        "new": "repro60m"
+      }
+    ],
+    "seed1_train60m": [
+      {
+        "field": "num_interaction_steps",
+        "source": 48830,
+        "new": 58596
+      },
+      {
+        "field": "output_root",
+        "source": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m",
+        "new": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m"
+      },
+      {
+        "field": "num_env_steps",
+        "source": 50001920,
+        "new": 60002304
+      },
+      {
+        "field": "num_update_steps",
+        "source": 97660,
+        "new": 117192
+      },
+      {
+        "field": "env.num_env_steps",
+        "source": 50001920,
+        "new": 60002304
+      },
+      {
+        "field": "env.seed",
+        "source": 0,
+        "new": 1
+      },
+      {
+        "field": "exp_name",
+        "source": "arm1_hand01",
+        "new": "arm1_hand01_seed1"
+      },
+      {
+        "field": "save_path",
+        "source": "models/arm1_hand01/seed0",
+        "new": "models/seed1"
+      },
+      {
+        "field": "group_name",
+        "source": "budget50m",
+        "new": "repro60m"
+      },
+      {
+        "field": "seed",
+        "source": 0,
+        "new": 1
+      },
+      {
+        "field": "agent.seed",
+        "source": 0,
+        "new": 1
+      }
+    ],
+    "seed2_train60m": [
+      {
+        "field": "num_interaction_steps",
+        "source": 48830,
+        "new": 58596
+      },
+      {
+        "field": "output_root",
+        "source": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m",
+        "new": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m"
+      },
+      {
+        "field": "num_env_steps",
+        "source": 50001920,
+        "new": 60002304
+      },
+      {
+        "field": "num_update_steps",
+        "source": 97660,
+        "new": 117192
+      },
+      {
+        "field": "env.num_env_steps",
+        "source": 50001920,
+        "new": 60002304
+      },
+      {
+        "field": "env.seed",
+        "source": 0,
+        "new": 2
+      },
+      {
+        "field": "exp_name",
+        "source": "arm1_hand01",
+        "new": "arm1_hand01_seed2"
+      },
+      {
+        "field": "save_path",
+        "source": "models/arm1_hand01/seed0",
+        "new": "models/seed2"
+      },
+      {
+        "field": "group_name",
+        "source": "budget50m",
+        "new": "repro60m"
+      },
+      {
+        "field": "seed",
+        "source": 0,
+        "new": 2
+      },
+      {
+        "field": "agent.seed",
+        "source": 0,
+        "new": 2
+      }
+    ]
+  },
+  "all_other_resolved_fields_identical_to_source": true,
+  "num_env_steps_per_train": 60002304,
+  "num_interaction_steps": 58596,
+  "nominal_budget_update_steps": 117192,
+  "expected_actual_calls_after_replay_warmup": 116998,
+  "expected_actor_opportunities": 58499,
+  "evaluation_seed": 0,
+  "prior_status_path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/compiled_forward_probe/queue_status.json",
+  "prior_status_currently_exists": false,
+  "prior_status_note": "Parent verifies completed queue before launch via --after-status; preparation never creates its status.",
+  "checks": [
+    {
+      "id": "seed0_train60m",
+      "valid": true,
+      "kind": "training"
+    },
+    {
+      "id": "seed0_step48830_deterministic",
+      "valid": true,
+      "kind": "diagnostic"
+    },
+    {
+      "id": "seed0_step48830_stochastic",
+      "valid": true,
+      "kind": "diagnostic"
+    },
+    {
+      "id": "seed0_step58596_deterministic",
+      "valid": true,
+      "kind": "diagnostic"
+    },
+    {
+      "id": "seed0_step58596_stochastic",
+      "valid": true,
+      "kind": "diagnostic"
+    },
+    {
+      "id": "seed1_train60m",
+      "valid": true,
+      "kind": "training"
+    },
+    {
+      "id": "seed1_step48830_deterministic",
+      "valid": true,
+      "kind": "diagnostic"
+    },
+    {
+      "id": "seed1_step48830_stochastic",
+      "valid": true,
+      "kind": "diagnostic"
+    },
+    {
+      "id": "seed1_step58596_deterministic",
+      "valid": true,
+      "kind": "diagnostic"
+    },
+    {
+      "id": "seed1_step58596_stochastic",
+      "valid": true,
+      "kind": "diagnostic"
+    },
+    {
+      "id": "seed2_train60m",
+      "valid": true,
+      "kind": "training"
+    },
+    {
+      "id": "seed2_step48830_deterministic",
+      "valid": true,
+      "kind": "diagnostic"
+    },
+    {
+      "id": "seed2_step48830_stochastic",
+      "valid": true,
+      "kind": "diagnostic"
+    },
+    {
+      "id": "seed2_step58596_deterministic",
+      "valid": true,
+      "kind": "diagnostic"
+    },
+    {
+      "id": "seed2_step58596_stochastic",
+      "valid": true,
+      "kind": "diagnostic"
+    }
+  ],
+  "sha256": {
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/configs/arm1_hand01_seed0.json": "bf037d1d9fee0f2293d2f3442daf3a4d63e2474e7b5c8ce5b34cbe1d8f6871d4",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/manifest.json": "1a2bebe03c0376e5ec17e5ee360d271ba96a12cf4eb441c47c36cd1ca17918f3",
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/repro60m/manifest.json": "6a8ac26ef3292bfb5afe7f5a152b8245a7385b4323618f97a54abc8745a63db8",
+    "/home/abao/flashsac-robotics/train.py": "a7697d6e5e84cae5bff49002d8cd99956b42576f9140ba8f65a93973e587be87",
+    "/home/abao/flashsac-robotics/scripts/run_str_state_teacher.sh": "c5c6b25884c57a0e4083d3f3826cd598dc76f79062d9bd3bd0efe424178d5697",
+    "/home/abao/flashsac-robotics/scripts/run_simtoolreal.sh": "82d52305a83dd11c3cb0ac8ec3cd769bd220a2e3bbd672de2b3d3b4bf66d35fa",
+    "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py": "a6e1914a6fffabcd7f38cd842cdc87013d4112a7a0bcab3caeaeb2d13939fcdf",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/agent.py": "079962c5307f0118338329ba8ebbf89055356f9f1446e9d533462aa57d936c9a",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/network.py": "4068098466f195fac2c7d91e3cb1abe0c4daf42c4d1cd85f3940dca9edfd4c98",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/update.py": "50c571fc466276aa6caac56c2c13d3e42029bb669cce58a6a73a98bf9e01d5ba",
+    "/home/abao/flashsac-robotics/flash_rl/agents/utils/network.py": "02b1e8c27ae2d75ba39969a5ea6b21e1bc596dbab71fdd6c5dc9cd5d7aab1d69",
+    "/home/abao/flashsac-robotics/flash_rl/envs/isaaclab.py": "fbf0aac07d527f589064ebb6fde009ff1b4d79e2513451121d5a3309907dc7a4",
+    "/home/abao/flashsac-robotics/configs/simtoolreal_state_teacher.yaml": "deee7d27a5395155e5d21ba6c778a6e66853f71fbd720898d938e1673e88f30c",
+    "/home/abao/flashsac-robotics/configs/simtoolreal_flashsac.yaml": "0a1881e50c6e3bf3539c3fcf09e1435ab17f0b78c8e1024f341351232afb89ad",
+    "/home/abao/flashsac-robotics/configs/flashSAC_base.yaml": "d07194a552f364ca1c32ea41cd2ad29dcb8c0363dd2b73a890e97459ff3ec383",
+    "/home/abao/flashsac-robotics/configs/agent/flashSAC.yaml": "4dabed9818df0a6529cfce40925d40e384c01d9f6287fb6d9170a0c5a50582a8",
+    "/home/abao/flashsac-robotics/configs/env/simtoolreal.yaml": "520402418b76501e2f8d7137170ccae2edc24e8cb01c04c10433d7a550b2efec"
+  }
+}

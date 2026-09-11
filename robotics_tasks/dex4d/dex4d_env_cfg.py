@@ -205,7 +205,7 @@ class Dex4DM6WujiEnvCfg(Dex4DEnvCfg):
     observation_space: int = 1083
     assets: Dex4DM6WujiAssetsCfg = Dex4DM6WujiAssetsCfg()
     robot_default_dof_pos: tuple[float, ...] = _M6_WUJI_DEFAULT_Q
-    # At 5 Hz, 6.0 * (1/60) target increments cap the arm at 0.5 rad/s.
+    # Stage 3 runs at 5 Hz; a full-scale action changes the target by 0.1 rad.
     dof_speed_scale: float = 6.0
     # Wuji actions are absolute targets; smooth them to respect joint velocity limits.
     hand_actions_moving_average: float = 0.07
@@ -221,6 +221,7 @@ class Dex4DM6WujiStage12EnvCfg(Dex4DStage12EnvCfg):
         object_include_classes=("bottle",)
     )
     robot_default_dof_pos: tuple[float, ...] = _M6_WUJI_DEFAULT_Q
+    # Stage 1/2 runs at 30 Hz; a full-scale action changes the target by 0.1 rad.
     dof_speed_scale: float = 6.0
     hand_actions_moving_average: float = 0.07
 

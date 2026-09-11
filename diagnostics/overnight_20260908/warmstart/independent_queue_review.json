@@ -1,0 +1,506 @@
+{
+  "checked_utc": "2026-09-08T15:49:44.111091+00:00",
+  "reviewer_did_not_change_manifests": true,
+  "gpu_or_queue_launched": false,
+  "manifests": {
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/retention_manifest.json": {
+      "sha256": "168abfbb3dac1e485f4c4ed9ec6143ac893058e90df56c85aa2fced04e844f21",
+      "jobs": 34,
+      "configs": {
+        "immediate_train": {
+          "recomposed_config_exactly_matches": true,
+          "config_sha256": "98faee8abf6252c8261b9a8d05d5d849d6f09c98a748c08ba357e1168236fed4",
+          "transitions": 10000384,
+          "controls": {
+            "arm_moving_average": 0.1,
+            "hand_moving_average": 0.1
+          },
+          "fresh_training": false
+        },
+        "warmup2000_train": {
+          "recomposed_config_exactly_matches": true,
+          "config_sha256": "d63ac284118ac1b736c8d72188d9bcda84e97cdfadf41654e6e40ddf96f32cec",
+          "transitions": 10000384,
+          "controls": {
+            "arm_moving_average": 0.1,
+            "hand_moving_average": 0.1
+          },
+          "fresh_training": false
+        }
+      },
+      "unique_outputs_and_dependency_order_valid": true,
+      "partial_episode_cap_risks": []
+    },
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/manifest.json": {
+      "sha256": "1a2bebe03c0376e5ec17e5ee360d271ba96a12cf4eb441c47c36cd1ca17918f3",
+      "jobs": 26,
+      "configs": {
+        "arm1_hand1_seed0_train50m": {
+          "recomposed_config_exactly_matches": true,
+          "config_sha256": "f98658b2eaad205e62feb99d874c75d43ee47fbc654ab6848274ae11923b5f05",
+          "transitions": 50001920,
+          "controls": {
+            "arm_moving_average": 1.0,
+            "hand_moving_average": 1.0
+          },
+          "fresh_training": true
+        },
+        "arm1_hand01_seed0_train50m": {
+          "recomposed_config_exactly_matches": true,
+          "config_sha256": "bf037d1d9fee0f2293d2f3442daf3a4d63e2474e7b5c8ce5b34cbe1d8f6871d4",
+          "transitions": 50001920,
+          "controls": {
+            "arm_moving_average": 1.0,
+            "hand_moving_average": 0.1
+          },
+          "fresh_training": true
+        }
+      },
+      "unique_outputs_and_dependency_order_valid": true,
+      "partial_episode_cap_risks": []
+    }
+  },
+  "source_captures": {
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/source_hashes.json": {
+      "matching": 40,
+      "captured": 41,
+      "changed": [
+        {
+          "path": "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+          "old_sha256": "88260cab2138d14103771591994abd3c8f55ce76d99f05a777cd1cd3a8d193eb",
+          "current_sha256": "69ddb88c40555d7e809b1f3dadf7f8a1d6931943c5fa3c4554db5a4283cb08be"
+        }
+      ],
+      "current_fingerprint": [
+        {
+          "path": "/home/abao/flashsac-robotics/train.py",
+          "old_sha256": "a7697d6e5e84cae5bff49002d8cd99956b42576f9140ba8f65a93973e587be87",
+          "current_sha256": "a7697d6e5e84cae5bff49002d8cd99956b42576f9140ba8f65a93973e587be87"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/scripts/run_str_state_teacher.sh",
+          "old_sha256": "c5c6b25884c57a0e4083d3f3826cd598dc76f79062d9bd3bd0efe424178d5697",
+          "current_sha256": "c5c6b25884c57a0e4083d3f3826cd598dc76f79062d9bd3bd0efe424178d5697"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/scripts/run_simtoolreal.sh",
+          "old_sha256": "82d52305a83dd11c3cb0ac8ec3cd769bd220a2e3bbd672de2b3d3b4bf66d35fa",
+          "current_sha256": "82d52305a83dd11c3cb0ac8ec3cd769bd220a2e3bbd672de2b3d3b4bf66d35fa"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/agent.py",
+          "old_sha256": "079962c5307f0118338329ba8ebbf89055356f9f1446e9d533462aa57d936c9a",
+          "current_sha256": "079962c5307f0118338329ba8ebbf89055356f9f1446e9d533462aa57d936c9a"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/network.py",
+          "old_sha256": "4068098466f195fac2c7d91e3cb1abe0c4daf42c4d1cd85f3940dca9edfd4c98",
+          "current_sha256": "4068098466f195fac2c7d91e3cb1abe0c4daf42c4d1cd85f3940dca9edfd4c98"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/layer.py",
+          "old_sha256": "7af7b2954c22a5ae56595b8d3139017e2a44b17dbd63c2f54c4e65dbd17ef7cc",
+          "current_sha256": "7af7b2954c22a5ae56595b8d3139017e2a44b17dbd63c2f54c4e65dbd17ef7cc"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/update.py",
+          "old_sha256": "50c571fc466276aa6caac56c2c13d3e42029bb669cce58a6a73a98bf9e01d5ba",
+          "current_sha256": "50c571fc466276aa6caac56c2c13d3e42029bb669cce58a6a73a98bf9e01d5ba"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/agents/base_agent.py",
+          "old_sha256": "d58f98e02eed8887c16f5f7d83d97f16e4a7ac0d104dc40d1809bf3832a72dfc",
+          "current_sha256": "d58f98e02eed8887c16f5f7d83d97f16e4a7ac0d104dc40d1809bf3832a72dfc"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/agents/utils/network.py",
+          "old_sha256": "02b1e8c27ae2d75ba39969a5ea6b21e1bc596dbab71fdd6c5dc9cd5d7aab1d69",
+          "current_sha256": "02b1e8c27ae2d75ba39969a5ea6b21e1bc596dbab71fdd6c5dc9cd5d7aab1d69"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/agents/utils/reward_normalization.py",
+          "old_sha256": "b673f5fba40468f6bb183d3cc82daa05111e95407ccb6b73de854f338c7b70b8",
+          "current_sha256": "b673f5fba40468f6bb183d3cc82daa05111e95407ccb6b73de854f338c7b70b8"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/buffers/torch_buffer.py",
+          "old_sha256": "451fdb9bd0fe5dce93bcf3a1da48a9215351841b738faa971ebc6a09aa025bf1",
+          "current_sha256": "451fdb9bd0fe5dce93bcf3a1da48a9215351841b738faa971ebc6a09aa025bf1"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/buffers/base_buffer.py",
+          "old_sha256": "75a067a6d8a3d4d6098961a557d78bbb42e73bfd5e6e1e37b41c9d70fb263699",
+          "current_sha256": "75a067a6d8a3d4d6098961a557d78bbb42e73bfd5e6e1e37b41c9d70fb263699"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/envs/isaaclab.py",
+          "old_sha256": "fbf0aac07d527f589064ebb6fde009ff1b4d79e2513451121d5a3309907dc7a4",
+          "current_sha256": "fbf0aac07d527f589064ebb6fde009ff1b4d79e2513451121d5a3309907dc7a4"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/envs/__init__.py",
+          "old_sha256": "ec3898cf18052e0277d79bae77f7b3363e441574a7e261b89b4d60b2d6e6d838",
+          "current_sha256": "ec3898cf18052e0277d79bae77f7b3363e441574a7e261b89b4d60b2d6e6d838"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/common/logger.py",
+          "old_sha256": "299fcf3bcf2c0b629310c29ed9a47c7fdf28d4a77a49ad265606e00496f4acf5",
+          "current_sha256": "299fcf3bcf2c0b629310c29ed9a47c7fdf28d4a77a49ad265606e00496f4acf5"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/configs/flashSAC_base.yaml",
+          "old_sha256": "d07194a552f364ca1c32ea41cd2ad29dcb8c0363dd2b73a890e97459ff3ec383",
+          "current_sha256": "d07194a552f364ca1c32ea41cd2ad29dcb8c0363dd2b73a890e97459ff3ec383"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/configs/simtoolreal_flashsac.yaml",
+          "old_sha256": "0a1881e50c6e3bf3539c3fcf09e1435ab17f0b78c8e1024f341351232afb89ad",
+          "current_sha256": "0a1881e50c6e3bf3539c3fcf09e1435ab17f0b78c8e1024f341351232afb89ad"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/configs/simtoolreal_state_teacher.yaml",
+          "old_sha256": "deee7d27a5395155e5d21ba6c778a6e66853f71fbd720898d938e1673e88f30c",
+          "current_sha256": "deee7d27a5395155e5d21ba6c778a6e66853f71fbd720898d938e1673e88f30c"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/configs/agent/flashSAC.yaml",
+          "old_sha256": "4dabed9818df0a6529cfce40925d40e384c01d9f6287fb6d9170a0c5a50582a8",
+          "current_sha256": "4dabed9818df0a6529cfce40925d40e384c01d9f6287fb6d9170a0c5a50582a8"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/configs/env/simtoolreal.yaml",
+          "old_sha256": "520402418b76501e2f8d7137170ccae2edc24e8cb01c04c10433d7a550b2efec",
+          "current_sha256": "520402418b76501e2f8d7137170ccae2edc24e8cb01c04c10433d7a550b2efec"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+          "old_sha256": "88260cab2138d14103771591994abd3c8f55ce76d99f05a777cd1cd3a8d193eb",
+          "current_sha256": "69ddb88c40555d7e809b1f3dadf7f8a1d6931943c5fa3c4554db5a4283cb08be"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/scripts/diagnose_str_critic.py",
+          "old_sha256": "e427e6ce297403cd8de0b81188fb4a7584c9174d8ec34ab7382121a4dd384a0d",
+          "current_sha256": "e427e6ce297403cd8de0b81188fb4a7584c9174d8ec34ab7382121a4dd384a0d"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/simtoolreal_env.py",
+          "old_sha256": "1701cbae43b243198fb84803dbb19829ff6f5a8a2e41c019eb8e87682367f17d",
+          "current_sha256": "1701cbae43b243198fb84803dbb19829ff6f5a8a2e41c019eb8e87682367f17d"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/simtoolreal_env_cfg.py",
+          "old_sha256": "aff33b7f7650e0d4ff20f38444c1182776ad32842f27562f891e7c623f9a7ca4",
+          "current_sha256": "aff33b7f7650e0d4ff20f38444c1182776ad32842f27562f891e7c623f9a7ca4"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/__init__.py",
+          "old_sha256": "541cc33366262372b81980cf2cb06ec401e72e2ac0518b81f9aff97bd49fd35e",
+          "current_sha256": "541cc33366262372b81980cf2cb06ec401e72e2ac0518b81f9aff97bd49fd35e"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/cfg/task/SimToolReal.yaml",
+          "old_sha256": "3f7b10d06a9312e31c808dcb69cbe9866493e29045452873d4359fb012871709",
+          "current_sha256": "3f7b10d06a9312e31c808dcb69cbe9866493e29045452873d4359fb012871709"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/action_utils.py",
+          "old_sha256": "2e38294d4555062c6a022c46d1d9cd48b4074df4c80c0adc0b2006b7bed723d6",
+          "current_sha256": "2e38294d4555062c6a022c46d1d9cd48b4074df4c80c0adc0b2006b7bed723d6"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/reward_utils.py",
+          "old_sha256": "ec2cb758f5ebd2791aee7356111a0c2e28abbeca801e942b3cbee29848c78205",
+          "current_sha256": "ec2cb758f5ebd2791aee7356111a0c2e28abbeca801e942b3cbee29848c78205"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/reset_utils.py",
+          "old_sha256": "3f053396b43e56782b6daa72849811d8a9ad5cca956f824c9cd772691ea9bd6e",
+          "current_sha256": "3f053396b43e56782b6daa72849811d8a9ad5cca956f824c9cd772691ea9bd6e"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/obs_utils.py",
+          "old_sha256": "2f36d5c5f50eb59e0debff98fc08d447d8c40b5cdb82d8aad54527c704437cc0",
+          "current_sha256": "2f36d5c5f50eb59e0debff98fc08d447d8c40b5cdb82d8aad54527c704437cc0"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/termination_utils.py",
+          "old_sha256": "42a29203129abe5d9fe0fb147aaff5a0064117403f05cc91c1e06c1a93146b1b",
+          "current_sha256": "42a29203129abe5d9fe0fb147aaff5a0064117403f05cc91c1e06c1a93146b1b"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/logging_utils.py",
+          "old_sha256": "31a1c425d83669fc48bc12b41ccc00ce0190fbae3056a452cd4f55645975abc4",
+          "current_sha256": "31a1c425d83669fc48bc12b41ccc00ce0190fbae3056a452cd4f55645975abc4"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/scene_utils.py",
+          "old_sha256": "e18cdbae5d4ce9df147832777915258bcd5934eeb8e7bf57f51891576eb85895",
+          "current_sha256": "e18cdbae5d4ce9df147832777915258bcd5934eeb8e7bf57f51891576eb85895"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/manifest.json",
+          "old_sha256": "107bb33e3bfdc0137c19d1d6eb5f066b3ea4d4dc420a200931e2f89085dc501d",
+          "current_sha256": "107bb33e3bfdc0137c19d1d6eb5f066b3ea4d4dc420a200931e2f89085dc501d"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/config_assertions.json",
+          "old_sha256": "a65a9529144eb61e490cdae6f354722640ba5085d2776f1959327bcdc06095dd",
+          "current_sha256": "a65a9529144eb61e490cdae6f354722640ba5085d2776f1959327bcdc06095dd"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/configs/arm1_hand1_seed0.json",
+          "old_sha256": "900c0b01e7744dae22bc84cd805fad367f4933ab4418418425add5281220f24a",
+          "current_sha256": "900c0b01e7744dae22bc84cd805fad367f4933ab4418418425add5281220f24a"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/configs/arm1_hand1_seed1.json",
+          "old_sha256": "9b884dacb1fcebd17efdfbb831bcabd462e7b1bc234e2fcf004759d490fdb048",
+          "current_sha256": "9b884dacb1fcebd17efdfbb831bcabd462e7b1bc234e2fcf004759d490fdb048"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/configs/arm1_hand1_seed2.json",
+          "old_sha256": "bd718c0b26ec626a68d60abca760b799d02dd3015b5405c71b2f2a0e25b42195",
+          "current_sha256": "bd718c0b26ec626a68d60abca760b799d02dd3015b5405c71b2f2a0e25b42195"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/configs/arm1_hand01_seed0.json",
+          "old_sha256": "c81498296a344fb6de12a7f2294c0a0ade0ba9378b0d8cd1e36044ca397d61a9",
+          "current_sha256": "c81498296a344fb6de12a7f2294c0a0ade0ba9378b0d8cd1e36044ca397d61a9"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/configs/arm1_hand01_seed1.json",
+          "old_sha256": "074184ce94825af1616d7727f11c68a3f1e446c426e0b0a85e8d32371521745c",
+          "current_sha256": "074184ce94825af1616d7727f11c68a3f1e446c426e0b0a85e8d32371521745c"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/configs/arm1_hand01_seed2.json",
+          "old_sha256": "0fa4e42beb2b6c3228efb9292495e216670bddd2da62e1736924b7841650345c",
+          "current_sha256": "0fa4e42beb2b6c3228efb9292495e216670bddd2da62e1736924b7841650345c"
+        }
+      ],
+      "delta_note": "Parent confirms intentional default-off --training-startup diagnostic flag in diagnose_str_rollouts.py; reproduces randomized progress/first random action. Existing manifests do not enable it. No training core change. Original capture preserved."
+    },
+    "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/source_hashes.json": {
+      "matching": 38,
+      "captured": 39,
+      "changed": [
+        {
+          "path": "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+          "old_sha256": "88260cab2138d14103771591994abd3c8f55ce76d99f05a777cd1cd3a8d193eb",
+          "current_sha256": "69ddb88c40555d7e809b1f3dadf7f8a1d6931943c5fa3c4554db5a4283cb08be"
+        }
+      ],
+      "current_fingerprint": [
+        {
+          "path": "/home/abao/flashsac-robotics/configs/agent/flashSAC.yaml",
+          "old_sha256": "4dabed9818df0a6529cfce40925d40e384c01d9f6287fb6d9170a0c5a50582a8",
+          "current_sha256": "4dabed9818df0a6529cfce40925d40e384c01d9f6287fb6d9170a0c5a50582a8"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/configs/env/simtoolreal.yaml",
+          "old_sha256": "520402418b76501e2f8d7137170ccae2edc24e8cb01c04c10433d7a550b2efec",
+          "current_sha256": "520402418b76501e2f8d7137170ccae2edc24e8cb01c04c10433d7a550b2efec"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/configs/flashSAC_base.yaml",
+          "old_sha256": "d07194a552f364ca1c32ea41cd2ad29dcb8c0363dd2b73a890e97459ff3ec383",
+          "current_sha256": "d07194a552f364ca1c32ea41cd2ad29dcb8c0363dd2b73a890e97459ff3ec383"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/configs/simtoolreal_flashsac.yaml",
+          "old_sha256": "0a1881e50c6e3bf3539c3fcf09e1435ab17f0b78c8e1024f341351232afb89ad",
+          "current_sha256": "0a1881e50c6e3bf3539c3fcf09e1435ab17f0b78c8e1024f341351232afb89ad"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/configs/simtoolreal_state_teacher.yaml",
+          "old_sha256": "deee7d27a5395155e5d21ba6c778a6e66853f71fbd720898d938e1673e88f30c",
+          "current_sha256": "deee7d27a5395155e5d21ba6c778a6e66853f71fbd720898d938e1673e88f30c"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/config_assertions.json",
+          "old_sha256": "dacefced19814b71447e838e8bd5f20154f9efa39ec7376401ee93b211b85083",
+          "current_sha256": "dacefced19814b71447e838e8bd5f20154f9efa39ec7376401ee93b211b85083"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/configs/arm1_hand01_seed0.json",
+          "old_sha256": "bf037d1d9fee0f2293d2f3442daf3a4d63e2474e7b5c8ce5b34cbe1d8f6871d4",
+          "current_sha256": "bf037d1d9fee0f2293d2f3442daf3a4d63e2474e7b5c8ce5b34cbe1d8f6871d4"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/configs/arm1_hand1_seed0.json",
+          "old_sha256": "f98658b2eaad205e62feb99d874c75d43ee47fbc654ab6848274ae11923b5f05",
+          "current_sha256": "f98658b2eaad205e62feb99d874c75d43ee47fbc654ab6848274ae11923b5f05"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/manifest.json",
+          "old_sha256": "1a2bebe03c0376e5ec17e5ee360d271ba96a12cf4eb441c47c36cd1ca17918f3",
+          "current_sha256": "1a2bebe03c0376e5ec17e5ee360d271ba96a12cf4eb441c47c36cd1ca17918f3"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/prepare_manifest.py",
+          "old_sha256": "f3743cbbff2f45232ce222ede6c9e7290cda049d7afc799b1658adf09a4257f4",
+          "current_sha256": "f3743cbbff2f45232ce222ede6c9e7290cda049d7afc799b1658adf09a4257f4"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/agents/base_agent.py",
+          "old_sha256": "d58f98e02eed8887c16f5f7d83d97f16e4a7ac0d104dc40d1809bf3832a72dfc",
+          "current_sha256": "d58f98e02eed8887c16f5f7d83d97f16e4a7ac0d104dc40d1809bf3832a72dfc"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/agent.py",
+          "old_sha256": "079962c5307f0118338329ba8ebbf89055356f9f1446e9d533462aa57d936c9a",
+          "current_sha256": "079962c5307f0118338329ba8ebbf89055356f9f1446e9d533462aa57d936c9a"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/layer.py",
+          "old_sha256": "7af7b2954c22a5ae56595b8d3139017e2a44b17dbd63c2f54c4e65dbd17ef7cc",
+          "current_sha256": "7af7b2954c22a5ae56595b8d3139017e2a44b17dbd63c2f54c4e65dbd17ef7cc"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/network.py",
+          "old_sha256": "4068098466f195fac2c7d91e3cb1abe0c4daf42c4d1cd85f3940dca9edfd4c98",
+          "current_sha256": "4068098466f195fac2c7d91e3cb1abe0c4daf42c4d1cd85f3940dca9edfd4c98"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/update.py",
+          "old_sha256": "50c571fc466276aa6caac56c2c13d3e42029bb669cce58a6a73a98bf9e01d5ba",
+          "current_sha256": "50c571fc466276aa6caac56c2c13d3e42029bb669cce58a6a73a98bf9e01d5ba"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/agents/utils/network.py",
+          "old_sha256": "02b1e8c27ae2d75ba39969a5ea6b21e1bc596dbab71fdd6c5dc9cd5d7aab1d69",
+          "current_sha256": "02b1e8c27ae2d75ba39969a5ea6b21e1bc596dbab71fdd6c5dc9cd5d7aab1d69"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/agents/utils/reward_normalization.py",
+          "old_sha256": "b673f5fba40468f6bb183d3cc82daa05111e95407ccb6b73de854f338c7b70b8",
+          "current_sha256": "b673f5fba40468f6bb183d3cc82daa05111e95407ccb6b73de854f338c7b70b8"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/agents/utils/scheduler.py",
+          "old_sha256": "b3732509dbe01a01d76b3018d062386287bf7cb669973e2a465192c584030811",
+          "current_sha256": "b3732509dbe01a01d76b3018d062386287bf7cb669973e2a465192c584030811"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/buffers/base_buffer.py",
+          "old_sha256": "75a067a6d8a3d4d6098961a557d78bbb42e73bfd5e6e1e37b41c9d70fb263699",
+          "current_sha256": "75a067a6d8a3d4d6098961a557d78bbb42e73bfd5e6e1e37b41c9d70fb263699"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/buffers/torch_buffer.py",
+          "old_sha256": "451fdb9bd0fe5dce93bcf3a1da48a9215351841b738faa971ebc6a09aa025bf1",
+          "current_sha256": "451fdb9bd0fe5dce93bcf3a1da48a9215351841b738faa971ebc6a09aa025bf1"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/common/logger.py",
+          "old_sha256": "299fcf3bcf2c0b629310c29ed9a47c7fdf28d4a77a49ad265606e00496f4acf5",
+          "current_sha256": "299fcf3bcf2c0b629310c29ed9a47c7fdf28d4a77a49ad265606e00496f4acf5"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/envs/__init__.py",
+          "old_sha256": "ec3898cf18052e0277d79bae77f7b3363e441574a7e261b89b4d60b2d6e6d838",
+          "current_sha256": "ec3898cf18052e0277d79bae77f7b3363e441574a7e261b89b4d60b2d6e6d838"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/flash_rl/envs/isaaclab.py",
+          "old_sha256": "fbf0aac07d527f589064ebb6fde009ff1b4d79e2513451121d5a3309907dc7a4",
+          "current_sha256": "fbf0aac07d527f589064ebb6fde009ff1b4d79e2513451121d5a3309907dc7a4"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/scripts/diagnose_str_critic.py",
+          "old_sha256": "e427e6ce297403cd8de0b81188fb4a7584c9174d8ec34ab7382121a4dd384a0d",
+          "current_sha256": "e427e6ce297403cd8de0b81188fb4a7584c9174d8ec34ab7382121a4dd384a0d"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+          "old_sha256": "88260cab2138d14103771591994abd3c8f55ce76d99f05a777cd1cd3a8d193eb",
+          "current_sha256": "69ddb88c40555d7e809b1f3dadf7f8a1d6931943c5fa3c4554db5a4283cb08be"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/scripts/run_simtoolreal.sh",
+          "old_sha256": "82d52305a83dd11c3cb0ac8ec3cd769bd220a2e3bbd672de2b3d3b4bf66d35fa",
+          "current_sha256": "82d52305a83dd11c3cb0ac8ec3cd769bd220a2e3bbd672de2b3d3b4bf66d35fa"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/scripts/run_str_state_teacher.sh",
+          "old_sha256": "c5c6b25884c57a0e4083d3f3826cd598dc76f79062d9bd3bd0efe424178d5697",
+          "current_sha256": "c5c6b25884c57a0e4083d3f3826cd598dc76f79062d9bd3bd0efe424178d5697"
+        },
+        {
+          "path": "/home/abao/flashsac-robotics/train.py",
+          "old_sha256": "a7697d6e5e84cae5bff49002d8cd99956b42576f9140ba8f65a93973e587be87",
+          "current_sha256": "a7697d6e5e84cae5bff49002d8cd99956b42576f9140ba8f65a93973e587be87"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/cfg/task/SimToolReal.yaml",
+          "old_sha256": "3f7b10d06a9312e31c808dcb69cbe9866493e29045452873d4359fb012871709",
+          "current_sha256": "3f7b10d06a9312e31c808dcb69cbe9866493e29045452873d4359fb012871709"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/__init__.py",
+          "old_sha256": "541cc33366262372b81980cf2cb06ec401e72e2ac0518b81f9aff97bd49fd35e",
+          "current_sha256": "541cc33366262372b81980cf2cb06ec401e72e2ac0518b81f9aff97bd49fd35e"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/simtoolreal_env.py",
+          "old_sha256": "1701cbae43b243198fb84803dbb19829ff6f5a8a2e41c019eb8e87682367f17d",
+          "current_sha256": "1701cbae43b243198fb84803dbb19829ff6f5a8a2e41c019eb8e87682367f17d"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/simtoolreal_env_cfg.py",
+          "old_sha256": "aff33b7f7650e0d4ff20f38444c1182776ad32842f27562f891e7c623f9a7ca4",
+          "current_sha256": "aff33b7f7650e0d4ff20f38444c1182776ad32842f27562f891e7c623f9a7ca4"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/action_utils.py",
+          "old_sha256": "2e38294d4555062c6a022c46d1d9cd48b4074df4c80c0adc0b2006b7bed723d6",
+          "current_sha256": "2e38294d4555062c6a022c46d1d9cd48b4074df4c80c0adc0b2006b7bed723d6"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/logging_utils.py",
+          "old_sha256": "31a1c425d83669fc48bc12b41ccc00ce0190fbae3056a452cd4f55645975abc4",
+          "current_sha256": "31a1c425d83669fc48bc12b41ccc00ce0190fbae3056a452cd4f55645975abc4"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/obs_utils.py",
+          "old_sha256": "2f36d5c5f50eb59e0debff98fc08d447d8c40b5cdb82d8aad54527c704437cc0",
+          "current_sha256": "2f36d5c5f50eb59e0debff98fc08d447d8c40b5cdb82d8aad54527c704437cc0"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/reset_utils.py",
+          "old_sha256": "3f053396b43e56782b6daa72849811d8a9ad5cca956f824c9cd772691ea9bd6e",
+          "current_sha256": "3f053396b43e56782b6daa72849811d8a9ad5cca956f824c9cd772691ea9bd6e"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/reward_utils.py",
+          "old_sha256": "ec2cb758f5ebd2791aee7356111a0c2e28abbeca801e942b3cbee29848c78205",
+          "current_sha256": "ec2cb758f5ebd2791aee7356111a0c2e28abbeca801e942b3cbee29848c78205"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/scene_utils.py",
+          "old_sha256": "e18cdbae5d4ce9df147832777915258bcd5934eeb8e7bf57f51891576eb85895",
+          "current_sha256": "e18cdbae5d4ce9df147832777915258bcd5934eeb8e7bf57f51891576eb85895"
+        },
+        {
+          "path": "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/termination_utils.py",
+          "old_sha256": "42a29203129abe5d9fe0fb147aaff5a0064117403f05cc91c1e06c1a93146b1b",
+          "current_sha256": "42a29203129abe5d9fe0fb147aaff5a0064117403f05cc91c1e06c1a93146b1b"
+        }
+      ],
+      "delta_note": "Parent confirms intentional default-off --training-startup diagnostic flag in diagnose_str_rollouts.py; reproduces randomized progress/first random action. Existing manifests do not enable it. No training core change. Original capture preserved."
+    }
+  },
+  "warnings": [
+    "Existing runner regards summary-file existence as completion; a partial rollout still needs its actual denominator checked.",
+    "A1300-step cap cannot guarantee128 episodes with32env and600-step timeouts. Current disk manifest has2500 stochastic and1300 deterministic, both sufficient; earlier read showed1300 stochastic. Reviewer did not modify it. Check per-job recorded argv for actual execution.",
+    "Job depends_on is documentation; serial runner may continue after a failed job. Missing inputs must remain failures, not zero metrics.",
+    "Queue-level --after-status accepts finished_with_failures; budget is intentionally independent of retention success, not gated by scientific outcome.",
+    "Update snapshots are network calls, not actor optimizer steps or environment transitions; warmup comparisons have unequal actor update counts.",
+    "Initial BC std was expert-calibrated, not SAC trained. Per-step alphaH is not discounted total return or an optimum proof."
+  ],
+  "new_diagnostic_wrapper_read_time_sha256": {
+    "/home/abao/flashsac-robotics/scripts/train_str_warmstart.py": "7bd77a786a8463451c33971b503a2dd8a9b823db48aaf9c5980948ec44ff576a",
+    "/home/abao/flashsac-robotics/scripts/run_str_diagnostic_queue.py": "9c8e8652a3c1353ce7caa911ef3d09554b7bb531220d71c244cdf7ee8f97d1be",
+    "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py": "69ddb88c40555d7e809b1f3dadf7f8a1d6931943c5fa3c4554db5a4283cb08be"
+  }
+}

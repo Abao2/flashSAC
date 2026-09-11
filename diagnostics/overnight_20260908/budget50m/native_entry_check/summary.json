@@ -1,0 +1,2237 @@
+{
+  "created_utc": "2026-09-08T18:41:33.226694+00:00",
+  "status": "complete",
+  "device": "cpu",
+  "source50m_curves": [
+    {
+      "directory": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/runs/budget50m/arm1_hand01/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_003302",
+      "curves": {
+        "episode/return": {
+          "points": 976,
+          "first": {
+            "step": 102400,
+            "value": 56.73177719116211
+          },
+          "last": {
+            "step": 50001920,
+            "value": 1199.8492431640625
+          },
+          "peak": {
+            "step": 49868800,
+            "value": 1251.242431640625
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 56.73177719116211
+          },
+          "last_10_windows_unweighted_mean": 945.3697326660156,
+          "positive_windows": 976,
+          "last10_samples": [
+            {
+              "step": 49561600,
+              "value": 413.1540222167969
+            },
+            {
+              "step": 49612800,
+              "value": 470.4280700683594
+            },
+            {
+              "step": 49664000,
+              "value": 558.30615234375
+            },
+            {
+              "step": 49715200,
+              "value": 1063.8677978515625
+            },
+            {
+              "step": 49766400,
+              "value": 1051.578369140625
+            },
+            {
+              "step": 49817600,
+              "value": 1190.51123046875
+            },
+            {
+              "step": 49868800,
+              "value": 1251.242431640625
+            },
+            {
+              "step": 49920000,
+              "value": 1212.6468505859375
+            },
+            {
+              "step": 49971200,
+              "value": 1042.1131591796875
+            },
+            {
+              "step": 50001920,
+              "value": 1199.8492431640625
+            }
+          ],
+          "first_positive": {
+            "step": 102400,
+            "value": 56.73177719116211
+          }
+        },
+        "episode/length": {
+          "points": 976,
+          "first": {
+            "step": 102400,
+            "value": 47.67977523803711
+          },
+          "last": {
+            "step": 50001920,
+            "value": 254.4479217529297
+          },
+          "peak": {
+            "step": 1945600,
+            "value": 600
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 47.67977523803711
+          },
+          "last_10_windows_unweighted_mean": 373.2734634399414,
+          "positive_windows": 976,
+          "last10_samples": [
+            {
+              "step": 49561600,
+              "value": 575.6428833007812
+            },
+            {
+              "step": 49612800,
+              "value": 592.11865234375
+            },
+            {
+              "step": 49664000,
+              "value": 494.3461608886719
+            },
+            {
+              "step": 49715200,
+              "value": 258.33709716796875
+            },
+            {
+              "step": 49766400,
+              "value": 292.8324279785156
+            },
+            {
+              "step": 49817600,
+              "value": 239
+            },
+            {
+              "step": 49868800,
+              "value": 209.38031005859375
+            },
+            {
+              "step": 49920000,
+              "value": 320.2773132324219
+            },
+            {
+              "step": 49971200,
+              "value": 496.35186767578125
+            },
+            {
+              "step": 50001920,
+              "value": 254.4479217529297
+            }
+          ],
+          "first_positive": {
+            "step": 102400,
+            "value": 47.67977523803711
+          }
+        },
+        "episode/cumulative/lifting_rew": {
+          "points": 976,
+          "first": {
+            "step": 102400,
+            "value": 46.877376556396484
+          },
+          "last": {
+            "step": 50001920,
+            "value": 27.106155395507812
+          },
+          "peak": {
+            "step": 2355200,
+            "value": 607.9720458984375
+          },
+          "minimum": {
+            "step": 35584000,
+            "value": 21.659507751464844
+          },
+          "last_10_windows_unweighted_mean": 31.375637435913085,
+          "positive_windows": 976,
+          "last10_samples": [
+            {
+              "step": 49561600,
+              "value": 42.13920593261719
+            },
+            {
+              "step": 49612800,
+              "value": 45.50113296508789
+            },
+            {
+              "step": 49664000,
+              "value": 37.99553298950195
+            },
+            {
+              "step": 49715200,
+              "value": 27.993141174316406
+            },
+            {
+              "step": 49766400,
+              "value": 27.56760025024414
+            },
+            {
+              "step": 49817600,
+              "value": 26.641294479370117
+            },
+            {
+              "step": 49868800,
+              "value": 26.904197692871094
+            },
+            {
+              "step": 49920000,
+              "value": 26.398622512817383
+            },
+            {
+              "step": 49971200,
+              "value": 25.509490966796875
+            },
+            {
+              "step": 50001920,
+              "value": 27.106155395507812
+            }
+          ],
+          "first_positive": {
+            "step": 102400,
+            "value": 46.877376556396484
+          }
+        },
+        "episode/cumulative/lift_bonus_rew": {
+          "points": 976,
+          "first": {
+            "step": 102400,
+            "value": 0
+          },
+          "last": {
+            "step": 50001920,
+            "value": 300
+          },
+          "peak": {
+            "step": 15206400,
+            "value": 300
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0
+          },
+          "last_10_windows_unweighted_mean": 300,
+          "positive_windows": 808,
+          "last10_samples": [
+            {
+              "step": 49561600,
+              "value": 300
+            },
+            {
+              "step": 49612800,
+              "value": 300
+            },
+            {
+              "step": 49664000,
+              "value": 300
+            },
+            {
+              "step": 49715200,
+              "value": 300
+            },
+            {
+              "step": 49766400,
+              "value": 300
+            },
+            {
+              "step": 49817600,
+              "value": 300
+            },
+            {
+              "step": 49868800,
+              "value": 300
+            },
+            {
+              "step": 49920000,
+              "value": 300
+            },
+            {
+              "step": 49971200,
+              "value": 300
+            },
+            {
+              "step": 50001920,
+              "value": 300
+            }
+          ],
+          "first_positive": {
+            "step": 204800,
+            "value": 3.7037036418914795
+          }
+        },
+        "episode/final/all_goals_hit": {
+          "points": 976,
+          "first": {
+            "step": 102400,
+            "value": 0
+          },
+          "last": {
+            "step": 50001920,
+            "value": 0.8020833134651184
+          },
+          "peak": {
+            "step": 49868800,
+            "value": 0.8494208455085754
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0
+          },
+          "last_10_windows_unweighted_mean": 0.526610753685236,
+          "positive_windows": 30,
+          "last10_samples": [
+            {
+              "step": 49561600,
+              "value": 0.0714285746216774
+            },
+            {
+              "step": 49612800,
+              "value": 0.04237288236618042
+            },
+            {
+              "step": 49664000,
+              "value": 0.21153846383094788
+            },
+            {
+              "step": 49715200,
+              "value": 0.7153558135032654
+            },
+            {
+              "step": 49766400,
+              "value": 0.6540540456771851
+            },
+            {
+              "step": 49817600,
+              "value": 0.7947368621826172
+            },
+            {
+              "step": 49868800,
+              "value": 0.8494208455085754
+            },
+            {
+              "step": 49920000,
+              "value": 0.680672287940979
+            },
+            {
+              "step": 49971200,
+              "value": 0.4444444477558136
+            },
+            {
+              "step": 50001920,
+              "value": 0.8020833134651184
+            }
+          ],
+          "first_positive": {
+            "step": 42854400,
+            "value": 0.016393443569540977
+          }
+        },
+        "actor/entropy": {
+          "points": 976,
+          "first": {
+            "step": 102400,
+            "value": -95.68375396728516
+          },
+          "last": {
+            "step": 50001920,
+            "value": -16.670907974243164
+          },
+          "peak": {
+            "step": 6758400,
+            "value": 19.602811813354492
+          },
+          "minimum": {
+            "step": 102400,
+            "value": -95.68375396728516
+          },
+          "last_10_windows_unweighted_mean": -17.699590110778807,
+          "positive_windows": 787,
+          "last10_samples": [
+            {
+              "step": 49561600,
+              "value": -18.60454750061035
+            },
+            {
+              "step": 49612800,
+              "value": -18.864408493041992
+            },
+            {
+              "step": 49664000,
+              "value": -17.707670211791992
+            },
+            {
+              "step": 49715200,
+              "value": -18.23196792602539
+            },
+            {
+              "step": 49766400,
+              "value": -17.512842178344727
+            },
+            {
+              "step": 49817600,
+              "value": -17.75941276550293
+            },
+            {
+              "step": 49868800,
+              "value": -17.338876724243164
+            },
+            {
+              "step": 49920000,
+              "value": -17.2579402923584
+            },
+            {
+              "step": 49971200,
+              "value": -17.047327041625977
+            },
+            {
+              "step": 50001920,
+              "value": -16.670907974243164
+            }
+          ],
+          "first_positive": {
+            "step": 358400,
+            "value": 8.36071491241455
+          }
+        },
+        "temperature/value": {
+          "points": 976,
+          "first": {
+            "step": 102400,
+            "value": 0.01000299770385027
+          },
+          "last": {
+            "step": 50001920,
+            "value": 0.000020616911569959484
+          },
+          "peak": {
+            "step": 204800,
+            "value": 0.010110026225447655
+          },
+          "minimum": {
+            "step": 48844800,
+            "value": 0.000018205560991191305
+          },
+          "last_10_windows_unweighted_mean": 0.00002000258755288087,
+          "positive_windows": 976,
+          "last10_samples": [
+            {
+              "step": 49561600,
+              "value": 0.000019298327970318496
+            },
+            {
+              "step": 49612800,
+              "value": 0.000019474802684271708
+            },
+            {
+              "step": 49664000,
+              "value": 0.000019644388885353692
+            },
+            {
+              "step": 49715200,
+              "value": 0.000019793807950918563
+            },
+            {
+              "step": 49766400,
+              "value": 0.000019954806703026406
+            },
+            {
+              "step": 49817600,
+              "value": 0.00002009788659051992
+            },
+            {
+              "step": 49868800,
+              "value": 0.000020244578990968876
+            },
+            {
+              "step": 49920000,
+              "value": 0.00002038329876086209
+            },
+            {
+              "step": 49971200,
+              "value": 0.00002051706542260945
+            },
+            {
+              "step": 50001920,
+              "value": 0.000020616911569959484
+            }
+          ],
+          "first_positive": {
+            "step": 102400,
+            "value": 0.01000299770385027
+          }
+        }
+      }
+    }
+  ],
+  "branches": {
+    "frozen_actor": {
+      "training_status": "complete",
+      "audit_path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/training/frozen_actor/warmup_audit.json",
+      "audit_sha256": "b309c78c4e03af8991211abc52b91676432eb66b9829ffbe9ec95222b1f1c134",
+      "audit": {
+        "baseline_native_agent_update_step": 97466,
+        "completed_network_calls": 9572,
+        "attempted_updates": {
+          "critic": 9572,
+          "actor": 0,
+          "temperature": 0
+        },
+        "final_native_agent_update_step": 107038,
+        "actor_and_temperature_frozen_through_final": true
+      },
+      "curves": [
+        {
+          "directory": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/training/frozen_actor/runs/native_entry_check/frozen_actor_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_021105",
+          "curves": {
+            "episode/return": {
+              "points": 97,
+              "first": {
+                "step": 102400,
+                "value": 42.82793045043945
+              },
+              "last": {
+                "step": 5000192,
+                "value": 318.3314514160156
+              },
+              "peak": {
+                "step": 512000,
+                "value": 436.52191162109375
+              },
+              "minimum": {
+                "step": 102400,
+                "value": 42.82793045043945
+              },
+              "last_10_windows_unweighted_mean": 317.7935455322266,
+              "positive_windows": 97,
+              "last10_samples": [
+                {
+                  "step": 4556800,
+                  "value": 317.17071533203125
+                },
+                {
+                  "step": 4608000,
+                  "value": 317.7491760253906
+                },
+                {
+                  "step": 4659200,
+                  "value": 316.82415771484375
+                },
+                {
+                  "step": 4710400,
+                  "value": 317.2187805175781
+                },
+                {
+                  "step": 4761600,
+                  "value": 318.3616943359375
+                },
+                {
+                  "step": 4812800,
+                  "value": 319.0232849121094
+                },
+                {
+                  "step": 4864000,
+                  "value": 317.0715026855469
+                },
+                {
+                  "step": 4915200,
+                  "value": 319.21771240234375
+                },
+                {
+                  "step": 4966400,
+                  "value": 316.96697998046875
+                },
+                {
+                  "step": 5000192,
+                  "value": 318.3314514160156
+                }
+              ],
+              "first_positive": {
+                "step": 102400,
+                "value": 42.82793045043945
+              }
+            },
+            "episode/length": {
+              "points": 97,
+              "first": {
+                "step": 102400,
+                "value": 47.67977523803711
+              },
+              "last": {
+                "step": 5000192,
+                "value": 600
+              },
+              "peak": {
+                "step": 665600,
+                "value": 600
+              },
+              "minimum": {
+                "step": 102400,
+                "value": 47.67977523803711
+              },
+              "last_10_windows_unweighted_mean": 600,
+              "positive_windows": 97,
+              "last10_samples": [
+                {
+                  "step": 4556800,
+                  "value": 600
+                },
+                {
+                  "step": 4608000,
+                  "value": 600
+                },
+                {
+                  "step": 4659200,
+                  "value": 600
+                },
+                {
+                  "step": 4710400,
+                  "value": 600
+                },
+                {
+                  "step": 4761600,
+                  "value": 600
+                },
+                {
+                  "step": 4812800,
+                  "value": 600
+                },
+                {
+                  "step": 4864000,
+                  "value": 600
+                },
+                {
+                  "step": 4915200,
+                  "value": 600
+                },
+                {
+                  "step": 4966400,
+                  "value": 600
+                },
+                {
+                  "step": 5000192,
+                  "value": 600
+                }
+              ],
+              "first_positive": {
+                "step": 102400,
+                "value": 47.67977523803711
+              }
+            },
+            "episode/cumulative/lifting_rew": {
+              "points": 97,
+              "first": {
+                "step": 102400,
+                "value": 46.72593307495117
+              },
+              "last": {
+                "step": 5000192,
+                "value": 27.353647232055664
+              },
+              "peak": {
+                "step": 512000,
+                "value": 455.6015625
+              },
+              "minimum": {
+                "step": 2918400,
+                "value": 27.07232093811035
+              },
+              "last_10_windows_unweighted_mean": 27.351557159423827,
+              "positive_windows": 97,
+              "last10_samples": [
+                {
+                  "step": 4556800,
+                  "value": 27.407644271850586
+                },
+                {
+                  "step": 4608000,
+                  "value": 27.357912063598633
+                },
+                {
+                  "step": 4659200,
+                  "value": 27.28947639465332
+                },
+                {
+                  "step": 4710400,
+                  "value": 27.38612174987793
+                },
+                {
+                  "step": 4761600,
+                  "value": 27.375267028808594
+                },
+                {
+                  "step": 4812800,
+                  "value": 27.24599838256836
+                },
+                {
+                  "step": 4864000,
+                  "value": 27.375028610229492
+                },
+                {
+                  "step": 4915200,
+                  "value": 27.40591812133789
+                },
+                {
+                  "step": 4966400,
+                  "value": 27.318557739257812
+                },
+                {
+                  "step": 5000192,
+                  "value": 27.353647232055664
+                }
+              ],
+              "first_positive": {
+                "step": 102400,
+                "value": 46.72593307495117
+              }
+            },
+            "episode/cumulative/lift_bonus_rew": {
+              "points": 97,
+              "first": {
+                "step": 102400,
+                "value": 0
+              },
+              "last": {
+                "step": 5000192,
+                "value": 300
+              },
+              "peak": {
+                "step": 665600,
+                "value": 300
+              },
+              "minimum": {
+                "step": 102400,
+                "value": 0
+              },
+              "last_10_windows_unweighted_mean": 300,
+              "positive_windows": 89,
+              "last10_samples": [
+                {
+                  "step": 4556800,
+                  "value": 300
+                },
+                {
+                  "step": 4608000,
+                  "value": 300
+                },
+                {
+                  "step": 4659200,
+                  "value": 300
+                },
+                {
+                  "step": 4710400,
+                  "value": 300
+                },
+                {
+                  "step": 4761600,
+                  "value": 300
+                },
+                {
+                  "step": 4812800,
+                  "value": 300
+                },
+                {
+                  "step": 4864000,
+                  "value": 300
+                },
+                {
+                  "step": 4915200,
+                  "value": 300
+                },
+                {
+                  "step": 4966400,
+                  "value": 300
+                },
+                {
+                  "step": 5000192,
+                  "value": 300
+                }
+              ],
+              "first_positive": {
+                "step": 512000,
+                "value": 6.976744174957275
+              }
+            },
+            "episode/final/all_goals_hit": {
+              "points": 97,
+              "first": {
+                "step": 102400,
+                "value": 0
+              },
+              "last": {
+                "step": 5000192,
+                "value": 0
+              },
+              "peak": {
+                "step": 102400,
+                "value": 0
+              },
+              "minimum": {
+                "step": 102400,
+                "value": 0
+              },
+              "last_10_windows_unweighted_mean": 0,
+              "positive_windows": 0,
+              "last10_samples": [
+                {
+                  "step": 4556800,
+                  "value": 0
+                },
+                {
+                  "step": 4608000,
+                  "value": 0
+                },
+                {
+                  "step": 4659200,
+                  "value": 0
+                },
+                {
+                  "step": 4710400,
+                  "value": 0
+                },
+                {
+                  "step": 4761600,
+                  "value": 0
+                },
+                {
+                  "step": 4812800,
+                  "value": 0
+                },
+                {
+                  "step": 4864000,
+                  "value": 0
+                },
+                {
+                  "step": 4915200,
+                  "value": 0
+                },
+                {
+                  "step": 4966400,
+                  "value": 0
+                },
+                {
+                  "step": 5000192,
+                  "value": 0
+                }
+              ],
+              "first_positive": null
+            }
+          }
+        }
+      ],
+      "evaluations": {
+        "100": {
+          "deterministic": {
+            "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/frozen_actor/relative100/deterministic/summary.json",
+            "sha256": "26aa89d07a7aa379473948020ea388415ebce358a745e53412d4a6de5a1f6321",
+            "status": "complete",
+            "episodes": 64,
+            "requested": 64,
+            "complete_budget": true,
+            "counts": {
+              "success": 0,
+              "ever_task_lift": 64,
+              "ever_sustained_lift_near_palm_proxy": 64,
+              "dropped_below_reset_after_task_lift": 55,
+              "terminated": 0,
+              "truncated": 64
+            },
+            "mean_return": 333.13384704699274,
+            "mean_length": 600,
+            "reward_components": {
+              "fingertip_delta_rew": 27.470322905573994,
+              "lifting_rew": 26.794819924980402,
+              "lift_bonus_rew": 300,
+              "keypoint_rew": 8.944035866297781,
+              "kuka_actions_penalty": -17.433231834442267,
+              "hand_actions_penalty": -12.642098909200286,
+              "bonus_rew": 0,
+              "total_reward": 333.13384704699274
+            },
+            "model_unchanged": true
+          },
+          "stochastic": {
+            "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/frozen_actor/relative100/stochastic/summary.json",
+            "sha256": "89e5b845f059326543dccffe1ecbfc77e79fa1831c77afaa638dd22a91c21398",
+            "status": "complete",
+            "episodes": 128,
+            "requested": 128,
+            "complete_budget": true,
+            "counts": {
+              "success": 0,
+              "ever_task_lift": 128,
+              "ever_sustained_lift_near_palm_proxy": 128,
+              "dropped_below_reset_after_task_lift": 127,
+              "terminated": 0,
+              "truncated": 128
+            },
+            "mean_return": 317.2093636946738,
+            "mean_length": 600,
+            "reward_components": {
+              "fingertip_delta_rew": 27.553312646050472,
+              "lifting_rew": 27.28737055324018,
+              "lift_bonus_rew": 300,
+              "keypoint_rew": 8.822878702543676,
+              "kuka_actions_penalty": -23.205763117131028,
+              "hand_actions_penalty": -23.248436427629713,
+              "bonus_rew": 0,
+              "total_reward": 317.2093636946738
+            },
+            "model_unchanged": true
+          }
+        },
+        "1000": {
+          "deterministic": {
+            "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/frozen_actor/relative1000/deterministic/summary.json",
+            "sha256": "186209305974cd80092e21054898c4f8edfdca10bd3c1c27cd7eeabcec76b8ae",
+            "status": "complete",
+            "episodes": 64,
+            "requested": 64,
+            "complete_budget": true,
+            "counts": {
+              "success": 0,
+              "ever_task_lift": 64,
+              "ever_sustained_lift_near_palm_proxy": 64,
+              "dropped_below_reset_after_task_lift": 55,
+              "terminated": 0,
+              "truncated": 64
+            },
+            "mean_return": 333.13384704699274,
+            "mean_length": 600,
+            "reward_components": {
+              "fingertip_delta_rew": 27.470322905573994,
+              "lifting_rew": 26.794819924980402,
+              "lift_bonus_rew": 300,
+              "keypoint_rew": 8.944035866297781,
+              "kuka_actions_penalty": -17.433231834442267,
+              "hand_actions_penalty": -12.642098909200286,
+              "bonus_rew": 0,
+              "total_reward": 333.13384704699274
+            },
+            "model_unchanged": true
+          },
+          "stochastic": {
+            "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/frozen_actor/relative1000/stochastic/summary.json",
+            "sha256": "2b031c84e9b6a92e269784e67a6a780f45872c421e9bd835378e88b05785c0ca",
+            "status": "complete",
+            "episodes": 128,
+            "requested": 128,
+            "complete_budget": true,
+            "counts": {
+              "success": 0,
+              "ever_task_lift": 128,
+              "ever_sustained_lift_near_palm_proxy": 128,
+              "dropped_below_reset_after_task_lift": 127,
+              "terminated": 0,
+              "truncated": 128
+            },
+            "mean_return": 317.2093636946738,
+            "mean_length": 600,
+            "reward_components": {
+              "fingertip_delta_rew": 27.553312646050472,
+              "lifting_rew": 27.28737055324018,
+              "lift_bonus_rew": 300,
+              "keypoint_rew": 8.822878702543676,
+              "kuka_actions_penalty": -23.205763117131028,
+              "hand_actions_penalty": -23.248436427629713,
+              "bonus_rew": 0,
+              "total_reward": 317.2093636946738
+            },
+            "model_unchanged": true
+          }
+        },
+        "final": {
+          "deterministic": {
+            "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/frozen_actor/relativefinal/deterministic/summary.json",
+            "sha256": "e25b424957a3b1c2545d35e139e62aebb255e927604348ba591fed935ac4c466",
+            "status": "complete",
+            "episodes": 64,
+            "requested": 64,
+            "complete_budget": true,
+            "counts": {
+              "success": 0,
+              "ever_task_lift": 64,
+              "ever_sustained_lift_near_palm_proxy": 64,
+              "dropped_below_reset_after_task_lift": 55,
+              "terminated": 0,
+              "truncated": 64
+            },
+            "mean_return": 333.13384704699274,
+            "mean_length": 600,
+            "reward_components": {
+              "fingertip_delta_rew": 27.470322905573994,
+              "lifting_rew": 26.794819924980402,
+              "lift_bonus_rew": 300,
+              "keypoint_rew": 8.944035866297781,
+              "kuka_actions_penalty": -17.433231834442267,
+              "hand_actions_penalty": -12.642098909200286,
+              "bonus_rew": 0,
+              "total_reward": 333.13384704699274
+            },
+            "model_unchanged": true
+          },
+          "stochastic": {
+            "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/frozen_actor/relativefinal/stochastic/summary.json",
+            "sha256": "2827791164cea56522aac7dcb1a96713311538e70c1da32d27f1f27b79a443f1",
+            "status": "complete",
+            "episodes": 128,
+            "requested": 128,
+            "complete_budget": true,
+            "counts": {
+              "success": 0,
+              "ever_task_lift": 128,
+              "ever_sustained_lift_near_palm_proxy": 128,
+              "dropped_below_reset_after_task_lift": 127,
+              "terminated": 0,
+              "truncated": 128
+            },
+            "mean_return": 317.2093636946738,
+            "mean_length": 600,
+            "reward_components": {
+              "fingertip_delta_rew": 27.553312646050472,
+              "lifting_rew": 27.28737055324018,
+              "lift_bonus_rew": 300,
+              "keypoint_rew": 8.822878702543676,
+              "kuka_actions_penalty": -23.205763117131028,
+              "hand_actions_penalty": -23.248436427629713,
+              "bonus_rew": 0,
+              "total_reward": 317.2093636946738
+            },
+            "model_unchanged": true
+          }
+        }
+      },
+      "final_checkpoint": {
+        "status": "saved_complete",
+        "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/training/frozen_actor/models/final/step4883",
+        "all_finite": true,
+        "files": {
+          "actor.pt": {
+            "all_finite": true,
+            "sha256": "b5c9ac919b74ad78620e7f8a0ee2b41296aac72e4fdf736a85fd11b97f47f438",
+            "optimizer_applied_steps": [
+              48726
+            ],
+            "scheduler_last_epoch": 48733,
+            "stored_update_step": 0
+          },
+          "critic.pt": {
+            "all_finite": true,
+            "sha256": "9dfdf7f8394648528658c53f29a4d861b17ebda52ea3e05612063a3ee31a79d8",
+            "optimizer_applied_steps": [
+              106985
+            ],
+            "scheduler_last_epoch": 107038,
+            "stored_update_step": 0
+          },
+          "target_critic.pt": {
+            "all_finite": true,
+            "sha256": "c49b01d2744f2891cf2efdbb11c9ae4ecb78d4d328e43711b8071a7c735c85f1",
+            "optimizer_applied_steps": [],
+            "scheduler_last_epoch": null,
+            "stored_update_step": 0
+          },
+          "temperature.pt": {
+            "all_finite": true,
+            "sha256": "f5d85d570622d10b30f6ae9790a191377865db0fd124ee02e34757e9194585f5",
+            "optimizer_applied_steps": [
+              48733
+            ],
+            "scheduler_last_epoch": 48733,
+            "stored_update_step": 0
+          },
+          "reward_normalizer.pt": {
+            "all_finite": true,
+            "sha256": "e312e6edaebb873520c2d5f7bbfb68274000da0caa65d58e45f7465fa52dfc26",
+            "optimizer_applied_steps": [],
+            "scheduler_last_epoch": null,
+            "stored_update_step": null
+          },
+          "agent_state.pt": {
+            "all_finite": true,
+            "sha256": "5196efecb3efbb547e3d002ada1a99ff38d0b1701ed8235b5b0babec22bbba83",
+            "optimizer_applied_steps": [],
+            "scheduler_last_epoch": null,
+            "stored_update_step": 107038,
+            "grad_scaler": {
+              "scale": 8388608,
+              "growth_factor": 2,
+              "backoff_factor": 0.5,
+              "growth_interval": 2000,
+              "_growth_tracker": 1569
+            }
+          }
+        },
+        "alpha": 0.000020653529645642266,
+        "reward_normalizer_count": 55002112,
+        "new_normalizer_samples": 5000192,
+        "reward_divisor": 251.5973388671875
+      },
+      "actual_optimizer_step_deltas": {
+        "actor": 0,
+        "critic": 9570,
+        "temperature": 0
+      },
+      "checkpoint_training_brackets": {
+        "100": {
+          "new_transitions_at_snapshot": 150528,
+          "tb_brackets": [
+            {
+              "directory": "diagnostics/overnight_20260908/budget50m/native_entry_check/training/frozen_actor/runs/native_entry_check/frozen_actor_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_021105",
+              "brackets": {
+                "actor/entropy": {
+                  "at_or_before": null,
+                  "at_or_after": null
+                },
+                "temperature/value": {
+                  "at_or_before": null,
+                  "at_or_after": null
+                },
+                "episode/return": {
+                  "at_or_before": {
+                    "step": 102400,
+                    "value": 42.82793045043945
+                  },
+                  "at_or_after": {
+                    "step": 153600,
+                    "value": 110.08301544189453
+                  }
+                },
+                "episode/final/all_goals_hit": {
+                  "at_or_before": {
+                    "step": 102400,
+                    "value": 0
+                  },
+                  "at_or_after": {
+                    "step": 153600,
+                    "value": 0
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "1000": {
+          "new_transitions_at_snapshot": 611328,
+          "tb_brackets": [
+            {
+              "directory": "diagnostics/overnight_20260908/budget50m/native_entry_check/training/frozen_actor/runs/native_entry_check/frozen_actor_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_021105",
+              "brackets": {
+                "actor/entropy": {
+                  "at_or_before": null,
+                  "at_or_after": null
+                },
+                "temperature/value": {
+                  "at_or_before": null,
+                  "at_or_after": null
+                },
+                "episode/return": {
+                  "at_or_before": {
+                    "step": 563200,
+                    "value": 346.37322998046875
+                  },
+                  "at_or_after": {
+                    "step": 614400,
+                    "value": 340.6940612792969
+                  }
+                },
+                "episode/final/all_goals_hit": {
+                  "at_or_before": {
+                    "step": 563200,
+                    "value": 0
+                  },
+                  "at_or_after": {
+                    "step": 614400,
+                    "value": 0
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "final": {
+          "new_transitions_at_snapshot": 5000192,
+          "tb_brackets": [
+            {
+              "directory": "diagnostics/overnight_20260908/budget50m/native_entry_check/training/frozen_actor/runs/native_entry_check/frozen_actor_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_021105",
+              "brackets": {
+                "actor/entropy": {
+                  "at_or_before": null,
+                  "at_or_after": null
+                },
+                "temperature/value": {
+                  "at_or_before": null,
+                  "at_or_after": null
+                },
+                "episode/return": {
+                  "at_or_before": {
+                    "step": 5000192,
+                    "value": 318.3314514160156
+                  },
+                  "at_or_after": {
+                    "step": 5000192,
+                    "value": 318.3314514160156
+                  }
+                },
+                "episode/final/all_goals_hit": {
+                  "at_or_before": {
+                    "step": 5000192,
+                    "value": 0
+                  },
+                  "at_or_after": {
+                    "step": 5000192,
+                    "value": 0
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "normal": {
+      "training_status": "complete",
+      "audit_path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/warmup_audit.json",
+      "audit_sha256": "bbf56ef879d9432ff2aad20eabfc6cf24a5446d59770465f53fbe775e8f5ae38",
+      "audit": {
+        "baseline_native_agent_update_step": 97466,
+        "completed_network_calls": 9572,
+        "attempted_updates": {
+          "critic": 9572,
+          "actor": 4786,
+          "temperature": 4786
+        },
+        "final_native_agent_update_step": 107038,
+        "actor_and_temperature_frozen_through_final": null
+      },
+      "curves": [
+        {
+          "directory": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/runs/native_entry_check/normal_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_021741",
+          "curves": {
+            "episode/return": {
+              "points": 97,
+              "first": {
+                "step": 102400,
+                "value": 42.78908157348633
+              },
+              "last": {
+                "step": 5000192,
+                "value": 1350.7275390625
+              },
+              "peak": {
+                "step": 3635200,
+                "value": 1359.7799072265625
+              },
+              "minimum": {
+                "step": 102400,
+                "value": 42.78908157348633
+              },
+              "last_10_windows_unweighted_mean": 1323.8126953125,
+              "positive_windows": 97,
+              "last10_samples": [
+                {
+                  "step": 4556800,
+                  "value": 1332.60986328125
+                },
+                {
+                  "step": 4608000,
+                  "value": 1318.54638671875
+                },
+                {
+                  "step": 4659200,
+                  "value": 1196.359130859375
+                },
+                {
+                  "step": 4710400,
+                  "value": 1301.8455810546875
+                },
+                {
+                  "step": 4761600,
+                  "value": 1336.9561767578125
+                },
+                {
+                  "step": 4812800,
+                  "value": 1352.4771728515625
+                },
+                {
+                  "step": 4864000,
+                  "value": 1351.0623779296875
+                },
+                {
+                  "step": 4915200,
+                  "value": 1342.9095458984375
+                },
+                {
+                  "step": 4966400,
+                  "value": 1354.6331787109375
+                },
+                {
+                  "step": 5000192,
+                  "value": 1350.7275390625
+                }
+              ],
+              "first_positive": {
+                "step": 102400,
+                "value": 42.78908157348633
+              }
+            },
+            "episode/length": {
+              "points": 97,
+              "first": {
+                "step": 102400,
+                "value": 47.67977523803711
+              },
+              "last": {
+                "step": 5000192,
+                "value": 58.16503143310547
+              },
+              "peak": {
+                "step": 1280000,
+                "value": 600
+              },
+              "minimum": {
+                "step": 4454400,
+                "value": 32.62441635131836
+              },
+              "last_10_windows_unweighted_mean": 79.45318756103515,
+              "positive_windows": 97,
+              "last10_samples": [
+                {
+                  "step": 4556800,
+                  "value": 65.32657623291016
+                },
+                {
+                  "step": 4608000,
+                  "value": 91.64319610595703
+                },
+                {
+                  "step": 4659200,
+                  "value": 148.61505126953125
+                },
+                {
+                  "step": 4710400,
+                  "value": 86.97411346435547
+                },
+                {
+                  "step": 4761600,
+                  "value": 72.97821807861328
+                },
+                {
+                  "step": 4812800,
+                  "value": 81.20490264892578
+                },
+                {
+                  "step": 4864000,
+                  "value": 76.85543823242188
+                },
+                {
+                  "step": 4915200,
+                  "value": 64.4937973022461
+                },
+                {
+                  "step": 4966400,
+                  "value": 48.275550842285156
+                },
+                {
+                  "step": 5000192,
+                  "value": 58.16503143310547
+                }
+              ],
+              "first_positive": {
+                "step": 102400,
+                "value": 47.67977523803711
+              }
+            },
+            "episode/cumulative/lifting_rew": {
+              "points": 97,
+              "first": {
+                "step": 102400,
+                "value": 46.72593307495117
+              },
+              "last": {
+                "step": 5000192,
+                "value": 23.856285095214844
+              },
+              "peak": {
+                "step": 870400,
+                "value": 523.6689453125
+              },
+              "minimum": {
+                "step": 1894400,
+                "value": 23.773590087890625
+              },
+              "last_10_windows_unweighted_mean": 29.65281276702881,
+              "positive_windows": 97,
+              "last10_samples": [
+                {
+                  "step": 4556800,
+                  "value": 39.18607711791992
+                },
+                {
+                  "step": 4608000,
+                  "value": 36.87200927734375
+                },
+                {
+                  "step": 4659200,
+                  "value": 41.494834899902344
+                },
+                {
+                  "step": 4710400,
+                  "value": 29.730831146240234
+                },
+                {
+                  "step": 4761600,
+                  "value": 25.30925178527832
+                },
+                {
+                  "step": 4812800,
+                  "value": 25.287277221679688
+                },
+                {
+                  "step": 4864000,
+                  "value": 25.29572868347168
+                },
+                {
+                  "step": 4915200,
+                  "value": 24.83266258239746
+                },
+                {
+                  "step": 4966400,
+                  "value": 24.663169860839844
+                },
+                {
+                  "step": 5000192,
+                  "value": 23.856285095214844
+                }
+              ],
+              "first_positive": {
+                "step": 102400,
+                "value": 46.72593307495117
+              }
+            },
+            "episode/cumulative/lift_bonus_rew": {
+              "points": 97,
+              "first": {
+                "step": 102400,
+                "value": 0
+              },
+              "last": {
+                "step": 5000192,
+                "value": 300
+              },
+              "peak": {
+                "step": 1484800,
+                "value": 300
+              },
+              "minimum": {
+                "step": 102400,
+                "value": 0
+              },
+              "last_10_windows_unweighted_mean": 297.8283935546875,
+              "positive_windows": 94,
+              "last10_samples": [
+                {
+                  "step": 4556800,
+                  "value": 292.95623779296875
+                },
+                {
+                  "step": 4608000,
+                  "value": 294.3662109375
+                },
+                {
+                  "step": 4659200,
+                  "value": 292.9032287597656
+                },
+                {
+                  "step": 4710400,
+                  "value": 298.0582580566406
+                },
+                {
+                  "step": 4761600,
+                  "value": 300
+                },
+                {
+                  "step": 4812800,
+                  "value": 300
+                },
+                {
+                  "step": 4864000,
+                  "value": 300
+                },
+                {
+                  "step": 4915200,
+                  "value": 300
+                },
+                {
+                  "step": 4966400,
+                  "value": 300
+                },
+                {
+                  "step": 5000192,
+                  "value": 300
+                }
+              ],
+              "first_positive": {
+                "step": 204800,
+                "value": 4.285714149475098
+              }
+            },
+            "episode/final/all_goals_hit": {
+              "points": 97,
+              "first": {
+                "step": 102400,
+                "value": 0
+              },
+              "last": {
+                "step": 5000192,
+                "value": 0.9803536534309387
+              },
+              "peak": {
+                "step": 3276800,
+                "value": 1
+              },
+              "minimum": {
+                "step": 102400,
+                "value": 0
+              },
+              "last_10_windows_unweighted_mean": 0.9628619074821472,
+              "positive_windows": 60,
+              "last10_samples": [
+                {
+                  "step": 4556800,
+                  "value": 0.9647812247276306
+                },
+                {
+                  "step": 4608000,
+                  "value": 0.9600939154624939
+                },
+                {
+                  "step": 4659200,
+                  "value": 0.8408602476119995
+                },
+                {
+                  "step": 4710400,
+                  "value": 0.9449838399887085
+                },
+                {
+                  "step": 4761600,
+                  "value": 0.984749436378479
+                },
+                {
+                  "step": 4812800,
+                  "value": 0.998711347579956
+                },
+                {
+                  "step": 4864000,
+                  "value": 0.9964157938957214
+                },
+                {
+                  "step": 4915200,
+                  "value": 0.9641379117965698
+                },
+                {
+                  "step": 4966400,
+                  "value": 0.9935317039489746
+                },
+                {
+                  "step": 5000192,
+                  "value": 0.9803536534309387
+                }
+              ],
+              "first_positive": {
+                "step": 204800,
+                "value": 0.014285714365541935
+              }
+            },
+            "actor/entropy": {
+              "points": 97,
+              "first": {
+                "step": 102400,
+                "value": -12.682761192321777
+              },
+              "last": {
+                "step": 5000192,
+                "value": -45.462127685546875
+              },
+              "peak": {
+                "step": 102400,
+                "value": -12.682761192321777
+              },
+              "minimum": {
+                "step": 3942400,
+                "value": -52.05482864379883
+              },
+              "last_10_windows_unweighted_mean": -46.41105613708496,
+              "positive_windows": 0,
+              "last10_samples": [
+                {
+                  "step": 4556800,
+                  "value": -48.28959274291992
+                },
+                {
+                  "step": 4608000,
+                  "value": -47.53986358642578
+                },
+                {
+                  "step": 4659200,
+                  "value": -47.10968017578125
+                },
+                {
+                  "step": 4710400,
+                  "value": -47.39464569091797
+                },
+                {
+                  "step": 4761600,
+                  "value": -46.427528381347656
+                },
+                {
+                  "step": 4812800,
+                  "value": -45.95989227294922
+                },
+                {
+                  "step": 4864000,
+                  "value": -45.30780029296875
+                },
+                {
+                  "step": 4915200,
+                  "value": -45.52184295654297
+                },
+                {
+                  "step": 4966400,
+                  "value": -45.09758758544922
+                },
+                {
+                  "step": 5000192,
+                  "value": -45.462127685546875
+                }
+              ],
+              "first_positive": null
+            },
+            "temperature/value": {
+              "points": 97,
+              "first": {
+                "step": 102400,
+                "value": 0.00002065576336462982
+              },
+              "last": {
+                "step": 5000192,
+                "value": 0.00005601250450126827
+              },
+              "peak": {
+                "step": 5000192,
+                "value": 0.00005601250450126827
+              },
+              "minimum": {
+                "step": 102400,
+                "value": 0.00002065576336462982
+              },
+              "last_10_windows_unweighted_mean": 0.0000539557160664117,
+              "positive_windows": 97,
+              "last10_samples": [
+                {
+                  "step": 4556800,
+                  "value": 0.00005181325468583964
+                },
+                {
+                  "step": 4608000,
+                  "value": 0.00005229824819252826
+                },
+                {
+                  "step": 4659200,
+                  "value": 0.00005277887612464838
+                },
+                {
+                  "step": 4710400,
+                  "value": 0.000053258532716427
+                },
+                {
+                  "step": 4761600,
+                  "value": 0.000053737294365419075
+                },
+                {
+                  "step": 4812800,
+                  "value": 0.00005420907473308034
+                },
+                {
+                  "step": 4864000,
+                  "value": 0.00005468005474540405
+                },
+                {
+                  "step": 4915200,
+                  "value": 0.000055149561376310885
+                },
+                {
+                  "step": 4966400,
+                  "value": 0.00005561975922319107
+                },
+                {
+                  "step": 5000192,
+                  "value": 0.00005601250450126827
+                }
+              ],
+              "first_positive": {
+                "step": 102400,
+                "value": 0.00002065576336462982
+              }
+            }
+          }
+        }
+      ],
+      "evaluations": {
+        "100": {
+          "deterministic": {
+            "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/normal/relative100/deterministic/summary.json",
+            "sha256": "e23939e84e4560fdd772e2ce6eb19fe00f131e056667989f4028598158afa7b7",
+            "status": "complete",
+            "episodes": 64,
+            "requested": 64,
+            "complete_budget": true,
+            "counts": {
+              "success": 0,
+              "ever_task_lift": 2,
+              "ever_sustained_lift_near_palm_proxy": 44,
+              "dropped_below_reset_after_task_lift": 2,
+              "terminated": 7,
+              "truncated": 57
+            },
+            "mean_return": 588.317528899468,
+            "mean_length": 568.609375,
+            "reward_components": {
+              "fingertip_delta_rew": 25.15755376999732,
+              "lifting_rew": 604.0377177856863,
+              "lift_bonus_rew": 9.375,
+              "keypoint_rew": 0,
+              "kuka_actions_penalty": -38.2827300169738,
+              "hand_actions_penalty": -11.97001186249463,
+              "bonus_rew": 0,
+              "total_reward": 588.317528899468
+            },
+            "model_unchanged": true
+          },
+          "stochastic": {
+            "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/normal/relative100/stochastic/summary.json",
+            "sha256": "f3e9f9974a8e19053b263ab3170a65f4ed89a24893b42348b3244e5d70a98788",
+            "status": "complete",
+            "episodes": 128,
+            "requested": 128,
+            "complete_budget": true,
+            "counts": {
+              "success": 0,
+              "ever_task_lift": 39,
+              "ever_sustained_lift_near_palm_proxy": 78,
+              "dropped_below_reset_after_task_lift": 37,
+              "terminated": 25,
+              "truncated": 103
+            },
+            "mean_return": 468.7916351806198,
+            "mean_length": 536.65625,
+            "reward_components": {
+              "fingertip_delta_rew": 24.73861169849988,
+              "lifting_rew": 425.6830948125571,
+              "lift_bonus_rew": 91.40625,
+              "keypoint_rew": 2.2390124672092497,
+              "kuka_actions_penalty": -46.95868310487094,
+              "hand_actions_penalty": -28.31665171394343,
+              "bonus_rew": 0,
+              "total_reward": 468.7916351806198
+            },
+            "model_unchanged": true
+          }
+        },
+        "1000": {
+          "deterministic": {
+            "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/normal/relative1000/deterministic/summary.json",
+            "sha256": "d89946a3f9f1097cf2871758c0cc23fdf9bbe8911af181503fc7c6b633ee0eb8",
+            "status": "complete",
+            "episodes": 64,
+            "requested": 64,
+            "complete_budget": true,
+            "counts": {
+              "success": 0,
+              "ever_task_lift": 64,
+              "ever_sustained_lift_near_palm_proxy": 64,
+              "dropped_below_reset_after_task_lift": 25,
+              "terminated": 2,
+              "truncated": 62
+            },
+            "mean_return": 447.0605207839253,
+            "mean_length": 596.265625,
+            "reward_components": {
+              "fingertip_delta_rew": 28.411501414026134,
+              "lifting_rew": 148.13893543556333,
+              "lift_bonus_rew": 300,
+              "keypoint_rew": 5.260357867926359,
+              "kuka_actions_penalty": -19.599778436373526,
+              "hand_actions_penalty": -15.150495126018086,
+              "bonus_rew": 0,
+              "total_reward": 447.0605207839253
+            },
+            "model_unchanged": true
+          },
+          "stochastic": {
+            "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/normal/relative1000/stochastic/summary.json",
+            "sha256": "094933254636f81890fb0571ff700b9862a14b07dbbace01deaf35d44684cfa0",
+            "status": "complete",
+            "episodes": 128,
+            "requested": 128,
+            "complete_budget": true,
+            "counts": {
+              "success": 0,
+              "ever_task_lift": 124,
+              "ever_sustained_lift_near_palm_proxy": 125,
+              "dropped_below_reset_after_task_lift": 80,
+              "terminated": 9,
+              "truncated": 119
+            },
+            "mean_return": 415.3430397955817,
+            "mean_length": 589.109375,
+            "reward_components": {
+              "fingertip_delta_rew": 28.537185375927947,
+              "lifting_rew": 156.58110918477178,
+              "lift_bonus_rew": 290.625,
+              "keypoint_rew": 4.497683749068528,
+              "kuka_actions_penalty": -34.972235428587055,
+              "hand_actions_penalty": -29.925700917963695,
+              "bonus_rew": 0,
+              "total_reward": 415.3430397955817
+            },
+            "model_unchanged": true
+          }
+        },
+        "final": {
+          "deterministic": {
+            "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/normal/relativefinal/deterministic/summary.json",
+            "sha256": "9f0aa689e55d8c4ad9cc08d54c24eb83a1a81e1a83c336b3e8fd46750564081d",
+            "status": "complete",
+            "episodes": 64,
+            "requested": 64,
+            "complete_budget": true,
+            "counts": {
+              "success": 64,
+              "ever_task_lift": 64,
+              "ever_sustained_lift_near_palm_proxy": 62,
+              "dropped_below_reset_after_task_lift": 0,
+              "terminated": 64,
+              "truncated": 0
+            },
+            "mean_return": 1356.0147265421692,
+            "mean_length": 32.109375,
+            "reward_components": {
+              "fingertip_delta_rew": 28.904257994610816,
+              "lifting_rew": 23.602928444743156,
+              "lift_bonus_rew": 300,
+              "keypoint_rew": 11.423401579260826,
+              "kuka_actions_penalty": -4.44924810732482,
+              "hand_actions_penalty": -3.4666143196518533,
+              "bonus_rew": 1000,
+              "total_reward": 1356.0147265421692
+            },
+            "model_unchanged": true
+          },
+          "stochastic": {
+            "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/normal/relativefinal/stochastic/summary.json",
+            "sha256": "3fc07763d6bed46f45b186b40302fe7883caf1b2636f78fb5d2c78d6b8b26c3f",
+            "status": "complete",
+            "episodes": 128,
+            "requested": 128,
+            "complete_budget": true,
+            "counts": {
+              "success": 110,
+              "ever_task_lift": 128,
+              "ever_sustained_lift_near_palm_proxy": 111,
+              "dropped_below_reset_after_task_lift": 11,
+              "terminated": 110,
+              "truncated": 18
+            },
+            "mean_return": 1311.33103106013,
+            "mean_length": 154.0546875,
+            "reward_components": {
+              "fingertip_delta_rew": 29.072746237390675,
+              "lifting_rew": 23.452774239704013,
+              "lift_bonus_rew": 300,
+              "keypoint_rew": 12.543800423969515,
+              "kuka_actions_penalty": -10.482687727324446,
+              "hand_actions_penalty": -8.099351927616226,
+              "bonus_rew": 964.84375,
+              "total_reward": 1311.33103106013
+            },
+            "model_unchanged": true
+          }
+        }
+      },
+      "final_checkpoint": {
+        "status": "saved_complete",
+        "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/models/final/step4883",
+        "all_finite": true,
+        "files": {
+          "actor.pt": {
+            "all_finite": true,
+            "sha256": "2f0c007c62b1d5e69791541266b08273b1c801760c8ab37362f8bb969a3f6cb2",
+            "optimizer_applied_steps": [
+              53512
+            ],
+            "scheduler_last_epoch": 53519,
+            "stored_update_step": 0
+          },
+          "critic.pt": {
+            "all_finite": true,
+            "sha256": "422a737150b27ad5e665cda76d7c1b29e4787f3c24aa7b4d125b757e8ce9c3a6",
+            "optimizer_applied_steps": [
+              106982
+            ],
+            "scheduler_last_epoch": 107038,
+            "stored_update_step": 0
+          },
+          "target_critic.pt": {
+            "all_finite": true,
+            "sha256": "016e0fcf43c77bd5635adab40390462f842f9c8edcb5306e4ed8101e9bf65621",
+            "optimizer_applied_steps": [],
+            "scheduler_last_epoch": null,
+            "stored_update_step": 0
+          },
+          "temperature.pt": {
+            "all_finite": true,
+            "sha256": "62b75a7c87607941ece703655577ddd9886ac2427550a8eec70f571367491e87",
+            "optimizer_applied_steps": [
+              53519
+            ],
+            "scheduler_last_epoch": 53519,
+            "stored_update_step": 0
+          },
+          "reward_normalizer.pt": {
+            "all_finite": true,
+            "sha256": "e8a9c7f757cd748b417c0156314689ee64394dc3c8d67a208ea6d685422ae358",
+            "optimizer_applied_steps": [],
+            "scheduler_last_epoch": null,
+            "stored_update_step": null
+          },
+          "agent_state.pt": {
+            "all_finite": true,
+            "sha256": "28320f43e07566865674283e86096a651b0e20d684a0efdcc739b95ea364830d",
+            "optimizer_applied_steps": [],
+            "scheduler_last_epoch": null,
+            "stored_update_step": 107038,
+            "grad_scaler": {
+              "scale": 4194304,
+              "growth_factor": 2,
+              "backoff_factor": 0.5,
+              "growth_interval": 2000,
+              "_growth_tracker": 6
+            }
+          }
+        },
+        "alpha": 0.00005617617352982052,
+        "reward_normalizer_count": 55002112,
+        "new_normalizer_samples": 5000192,
+        "reward_divisor": 253.1660888671875
+      },
+      "actual_optimizer_step_deltas": {
+        "actor": 4786,
+        "critic": 9567,
+        "temperature": 4786
+      },
+      "checkpoint_training_brackets": {
+        "100": {
+          "new_transitions_at_snapshot": 150528,
+          "tb_brackets": [
+            {
+              "directory": "diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/runs/native_entry_check/normal_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_021741",
+              "brackets": {
+                "actor/entropy": {
+                  "at_or_before": {
+                    "step": 102400,
+                    "value": -12.682761192321777
+                  },
+                  "at_or_after": {
+                    "step": 153600,
+                    "value": -29.14788246154785
+                  }
+                },
+                "temperature/value": {
+                  "at_or_before": {
+                    "step": 102400,
+                    "value": 0.00002065576336462982
+                  },
+                  "at_or_after": {
+                    "step": 153600,
+                    "value": 0.00002082595892716199
+                  }
+                },
+                "episode/return": {
+                  "at_or_before": {
+                    "step": 102400,
+                    "value": 42.78908157348633
+                  },
+                  "at_or_after": {
+                    "step": 153600,
+                    "value": 108.66820526123047
+                  }
+                },
+                "episode/final/all_goals_hit": {
+                  "at_or_before": {
+                    "step": 102400,
+                    "value": 0
+                  },
+                  "at_or_after": {
+                    "step": 153600,
+                    "value": 0
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "1000": {
+          "new_transitions_at_snapshot": 611328,
+          "tb_brackets": [
+            {
+              "directory": "diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/runs/native_entry_check/normal_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_021741",
+              "brackets": {
+                "actor/entropy": {
+                  "at_or_before": {
+                    "step": 563200,
+                    "value": -33.417198181152344
+                  },
+                  "at_or_after": {
+                    "step": 614400,
+                    "value": -31.223918914794922
+                  }
+                },
+                "temperature/value": {
+                  "at_or_before": {
+                    "step": 563200,
+                    "value": 0.000024213086362578906
+                  },
+                  "at_or_after": {
+                    "step": 614400,
+                    "value": 0.00002449306339258328
+                  }
+                },
+                "episode/return": {
+                  "at_or_before": {
+                    "step": 563200,
+                    "value": 335.73516845703125
+                  },
+                  "at_or_after": {
+                    "step": 614400,
+                    "value": 323.678466796875
+                  }
+                },
+                "episode/final/all_goals_hit": {
+                  "at_or_before": {
+                    "step": 563200,
+                    "value": 0
+                  },
+                  "at_or_after": {
+                    "step": 614400,
+                    "value": 0
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "final": {
+          "new_transitions_at_snapshot": 5000192,
+          "tb_brackets": [
+            {
+              "directory": "diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/runs/native_entry_check/normal_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_021741",
+              "brackets": {
+                "actor/entropy": {
+                  "at_or_before": {
+                    "step": 5000192,
+                    "value": -45.462127685546875
+                  },
+                  "at_or_after": {
+                    "step": 5000192,
+                    "value": -45.462127685546875
+                  }
+                },
+                "temperature/value": {
+                  "at_or_before": {
+                    "step": 5000192,
+                    "value": 0.00005601250450126827
+                  },
+                  "at_or_after": {
+                    "step": 5000192,
+                    "value": 0.00005601250450126827
+                  }
+                },
+                "episode/return": {
+                  "at_or_before": {
+                    "step": 5000192,
+                    "value": 1350.7275390625
+                  },
+                  "at_or_after": {
+                    "step": 5000192,
+                    "value": 1350.7275390625
+                  }
+                },
+                "episode/final/all_goals_hit": {
+                  "at_or_before": {
+                    "step": 5000192,
+                    "value": 0.9803536534309387
+                  },
+                  "at_or_after": {
+                    "step": 5000192,
+                    "value": 0.9803536534309387
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "limitations": [
+    "TB values are logging-window means; unweighted window averages are not episode-weighted success rates.",
+    "Fresh simulator and fresh10M/min100k replay: not uninterrupted continuation.",
+    "Full load restores per-env G_r histories from old simulator, equally in both branches but unmatched to fresh physical states.",
+    "Frozen branch still updates Critic/target/replay/normalizer/scaler, not a pure standalone rollout.",
+    "agent.py explicitly torch.compiles actor.network.get_mean_and_std; bound-method inspection does not rule out compiled-path differences.",
+    "Pending files remain pending, not zero.",
+    "Single eraser goal/seed; proxy lift/drop is not verified grasp/generalization.",
+    "Continuous50M then cold-replay5M establishes a successful saved feed-forward SAC policy on this task; extra budget vs replay reset/full reload is not causally isolated."
+  ],
+  "chain_of_custody": {
+    "source50m_config": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/configs/arm1_hand01_seed0.json",
+    "source50m_config_sha256": "bf037d1d9fee0f2293d2f3442daf3a4d63e2474e7b5c8ce5b34cbe1d8f6871d4",
+    "source_training_agent_load_path": null,
+    "source_training_buffer_load_path": null,
+    "source_actor_bc_alpha": 0,
+    "source_architecture": "native feed-forward FlashSAC state162 actor/critic, no BC or LSTM initialization",
+    "source_checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830",
+    "new_normal_training_initial_checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830",
+    "source_native_update_step": 97466,
+    "initial_network_audits_match_frozen_control": true,
+    "source_controls": {
+      "arm_moving_average": 1,
+      "hand_moving_average": 0.1
+    },
+    "training_path": "random initialization -> native continuous50,001,920 transitions -> full6-file checkpoint -> fresh simulator/fresh replay native5,000,192 transitions",
+    "total_collected_transitions": 55002112,
+    "not_identified": "Additional budget vs fresh replay/full reload/changed live history cannot be isolated by this single continuation."
+  },
+  "rollout_seed_confirmation": {
+    "runs": {
+      "stochastic_seed1": {
+        "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/confirmation/stochastic_seed1/summary.json",
+        "sha256": "b535df7db25151fca66809d1fced7d59319d1f4a9a43738f519774f6865b6e14",
+        "status": "complete",
+        "episodes": 256,
+        "requested": 256,
+        "complete_budget": true,
+        "counts": {
+          "success": 218,
+          "ever_task_lift": 256,
+          "ever_sustained_lift_near_palm_proxy": 217,
+          "dropped_below_reset_after_task_lift": 23,
+          "terminated": 218,
+          "truncated": 38
+        },
+        "mean_return": 1306.3432018415333,
+        "mean_length": 165.03125,
+        "reward_components": {
+          "fingertip_delta_rew": 29.13966362082283,
+          "lifting_rew": 23.508795178495347,
+          "lift_bonus_rew": 300,
+          "keypoint_rew": 12.574901862826664,
+          "kuka_actions_penalty": -11.23319426069338,
+          "hand_actions_penalty": -8.584464667054363,
+          "bonus_rew": 960.9375,
+          "total_reward": 1306.3432018415333
+        },
+        "model_unchanged": true,
+        "sampling": "stochastic",
+        "rollout_seed": 1,
+        "checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/models/final/step4883"
+      },
+      "stochastic_seed2": {
+        "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/confirmation/stochastic_seed2/summary.json",
+        "sha256": "a338234a115177c21feecbff8f11bb97b6e4443f7c9634c9a96f3bf870ef24b3",
+        "status": "complete",
+        "episodes": 256,
+        "requested": 256,
+        "complete_budget": true,
+        "counts": {
+          "success": 229,
+          "ever_task_lift": 256,
+          "ever_sustained_lift_near_palm_proxy": 226,
+          "dropped_below_reset_after_task_lift": 14,
+          "terminated": 231,
+          "truncated": 25
+        },
+        "mean_return": 1314.216464681409,
+        "mean_length": 140.83984375,
+        "reward_components": {
+          "fingertip_delta_rew": 29.11783437032136,
+          "lifting_rew": 23.590005948208272,
+          "lift_bonus_rew": 300,
+          "keypoint_rew": 12.323985145369079,
+          "kuka_actions_penalty": -9.749672378801733,
+          "hand_actions_penalty": -7.47193826795592,
+          "bonus_rew": 966.40625,
+          "total_reward": 1314.216464681409
+        },
+        "model_unchanged": true,
+        "sampling": "stochastic",
+        "rollout_seed": 2,
+        "checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/models/final/step4883"
+      },
+      "deterministic_seed1": {
+        "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/confirmation/deterministic_seed1/summary.json",
+        "sha256": "76a9c70aa3c68df07b51085de66435e88ca7cc1122e0f7f01d34cbf00237c0e7",
+        "status": "complete",
+        "episodes": 64,
+        "requested": 64,
+        "complete_budget": true,
+        "counts": {
+          "success": 64,
+          "ever_task_lift": 64,
+          "ever_sustained_lift_near_palm_proxy": 62,
+          "dropped_below_reset_after_task_lift": 0,
+          "terminated": 64,
+          "truncated": 0
+        },
+        "mean_return": 1356.0147265421692,
+        "mean_length": 32.109375,
+        "reward_components": {
+          "fingertip_delta_rew": 28.904257994610816,
+          "lifting_rew": 23.602928444743156,
+          "lift_bonus_rew": 300,
+          "keypoint_rew": 11.423401579260826,
+          "kuka_actions_penalty": -4.44924810732482,
+          "hand_actions_penalty": -3.4666143196518533,
+          "bonus_rew": 1000,
+          "total_reward": 1356.0147265421692
+        },
+        "model_unchanged": true,
+        "sampling": "deterministic",
+        "rollout_seed": 1,
+        "checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/training/normal/models/final/step4883"
+      }
+    },
+    "stochastic_combined_including_initial_rollout_seed0": {
+      "success": 557,
+      "episodes": 640,
+      "rate": 0.8703125,
+      "source_seed0": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/native_entry_check/evaluations/normal/relativefinal/stochastic/summary.json"
+    },
+    "interpretation": "Three rollout/noise seeds for the SAME trained checkpoint. Not independent training seeds; vector episodes are correlated, so no independent-IID CI is claimed."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "comparison": "official frozen deterministic checkpoint, state-teacher fixed eraser task, filter=1.0",
+  "left": "official_wrapper_smoke/transitions.npz",
+  "right": "official_raw_smoke/transitions.npz",
+  "episodes_per_run": 16,
+  "transitions_per_run": 3135,
+  "keys_equal": true,
+  "all_transition_arrays_exact_equal": true,
+  "maximum_numeric_absolute_difference": 0.0,
+  "equal_arrays": [
+    "obs", "next_obs", "actions", "action_targets", "rewards", "terminated", "truncated",
+    "episode_id", "step_in_episode", "near_object_proxy", "off_table_proxy",
+    "sustained_lift_near_palm_proxy", "task_lift_flag", "object_pos", "palm_pos", "object_z",
+    "object_bottom_clearance_m", "palm_object_distance_m", "tip_box_distance_m", "success"
+  ],
+  "expected_metadata_differences": ["started_utc", "arguments"],
+  "method": "numpy.array_equal on every non-metadata NPZ array; numeric arrays also compared in float64 for maximum absolute difference",
+  "conclusion": "For this deterministic checkpoint/task/seed/batch test, bypassing Flash wrapper.step produces exactly the same observation, executed action targets, reward and reset/termination trajectories. No step-path discrepancy was observed.",
+  "limits": [
+    "Both paths use the same Isaac Lab environment and initializer; this is not independent Gym-versus-Lab parity.",
+    "This one fixed task and seed does not prove every task and DR setting is correct.",
+    "Equality does not prove task solvability or reward suitability. Both paths had zero task successes."
+  ]
+}

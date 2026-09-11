@@ -18,6 +18,10 @@ num_record_envs: null
 num_eval_episodes: 0
 num_record_episodes: 0
 evaluation_per_interaction_step: null
+# Save ten intermediate checkpoints plus the final checkpoint. Replay stays
+# unsaved because a 10M-entry buffer is about 25.5 GB on disk/device.
+save_checkpoint_per_interaction_step: 4_439
+save_buffer_per_interaction_step: null
 
 updates_per_interaction_step: 2
 gamma: 0.99

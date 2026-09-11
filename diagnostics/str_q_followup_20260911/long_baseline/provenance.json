@@ -1,0 +1,17 @@
+{
+  "schema_version": 2,
+  "checkpoint": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step195320",
+  "source_sha256": {
+    "/home/abao/flashsac-robotics/scripts/check_str_q_action_ranking.py": "524efd1422ab1a7294eae94ae3468b3f8dfb694a4c1b0feb37b8c0fe81f93f8d",
+    "/home/abao/flashsac-robotics/scripts/check_str_hardreset_replay.py": "2454494302e07e4d3fee521a2a2c344941da463e15a36bfa8855e4e956e75040",
+    "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py": "a6e1914a6fffabcd7f38cd842cdc87013d4112a7a0bcab3caeaeb2d13939fcdf",
+    "/home/abao/flashsac-robotics/scripts/diagnose_str_critic.py": "e427e6ce297403cd8de0b81188fb4a7584c9174d8ec34ab7382121a4dd384a0d",
+    "/home/abao/flashsac-robotics/scripts/diagnose_str_first_action.py": "97e0beea6b9d3f88c4deef90488f043ddf72db6fd46bb67eed6c5c889bda1a6b"
+  },
+  "checkpoint_file_sha256": {
+    "actor.pt": "34594576df6c06248ec3d5a92e67d0eee1f7f0dbae15d19064a6e3f0fc1193ab",
+    "critic.pt": "ea5c37449d40e548def550e55c2ac0911be9750dbba9ed68e0751f602ab848a8",
+    "temperature.pt": "593289f104e9c349517f46e944316c307b1689ce879d848ac36984b176cc9688",
+    "reward_normalizer.pt": "68948fdb0dc3f45bbf18e87b106313de7acada9fa09d9377407c04aeed58005f"
+  }
+}

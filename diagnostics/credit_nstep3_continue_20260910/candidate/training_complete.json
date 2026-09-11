@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "missing": [],
+  "checkpoint": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step195320",
+  "replay_saved": true,
+  "evidence": "Native loop reached train_env.close after final checkpoint/replay saves.",
+  "metric_note": "Height above per-reset initial height; geometric proxy, not grasp success."
+}

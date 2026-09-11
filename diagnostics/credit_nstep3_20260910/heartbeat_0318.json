@@ -1,0 +1,181 @@
+{
+  "nstep1": {
+    "event_directory": "/home/abao/flashsac-robotics/diagnostics/control_ab_20260909_arm1/runs/str_control_ab/full_arm1_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_175613",
+    "latest_transitions": 100003840,
+    "nonfinite_count": 0,
+    "matched_50m_60m": {
+      "episode/return": {
+        "mean": 242.86988279991544,
+        "samples": 97
+      },
+      "episode/final/successes": {
+        "mean": 0.000466549892660192,
+        "samples": 97
+      },
+      "episode/cumulative/lift_bonus_rew": {
+        "mean": 191.79164390957231,
+        "samples": 97
+      },
+      "episode/cumulative/keypoint_rew": {
+        "mean": 6.4355747871792195,
+        "samples": 97
+      },
+      "episode/final/done_fall": {
+        "mean": 0.837355287419152,
+        "samples": 97
+      },
+      "episode/final/done_hand_far": {
+        "mean": 0.04942145395889571,
+        "samples": 97
+      },
+      "task/current_success_tolerance": {
+        "mean": 0.07500000298023224,
+        "samples": 97
+      }
+    },
+    "latest": {
+      "episode/return": {
+        "step": 100003840,
+        "value": 885.1788940429688
+      },
+      "episode/final/successes": {
+        "step": 100003840,
+        "value": 0.4944649636745453
+      },
+      "episode/cumulative/lift_bonus_rew": {
+        "step": 100003840,
+        "value": 271.7712097167969
+      },
+      "episode/cumulative/keypoint_rew": {
+        "step": 100003840,
+        "value": 25.28777503967285
+      },
+      "episode/final/done_fall": {
+        "step": 100003840,
+        "value": 0.8284133076667786
+      },
+      "episode/final/done_hand_far": {
+        "step": 100003840,
+        "value": 0.14575645327568054
+      },
+      "task/current_success_tolerance": {
+        "step": 100003840,
+        "value": 0.07500000298023224
+      }
+    }
+  },
+  "nstep3": {
+    "event_directory": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/candidate/runs/str_credit_ab/full_arm1_nstep3_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0910_025120",
+    "latest_transitions": 67686400,
+    "nonfinite_count": 0,
+    "matched_50m_60m": {
+      "episode/return": {
+        "mean": 4293.6988386960375,
+        "samples": 97
+      },
+      "episode/final/successes": {
+        "mean": 3.8496872911748197,
+        "samples": 97
+      },
+      "episode/cumulative/lift_bonus_rew": {
+        "mean": 251.6385878730066,
+        "samples": 97
+      },
+      "episode/cumulative/keypoint_rew": {
+        "mean": 87.94521555949733,
+        "samples": 97
+      },
+      "episode/final/done_fall": {
+        "mean": 0.7002271045114576,
+        "samples": 97
+      },
+      "episode/final/done_hand_far": {
+        "mean": 0.010756844433850235,
+        "samples": 97
+      },
+      "episode/final/height_proxy_above_10cm_1s": {
+        "mean": 0.4197170107635026,
+        "samples": 97
+      },
+      "episode/final/height_proxy_longest_above_10cm_s": {
+        "mean": 2.712990615785736,
+        "samples": 97
+      },
+      "task/current_success_tolerance": {
+        "mean": 0.06826593020220392,
+        "samples": 97
+      }
+    },
+    "latest": {
+      "episode/return": {
+        "step": 67686400,
+        "value": 5317.71337890625
+      },
+      "episode/final/successes": {
+        "step": 67686400,
+        "value": 4.8743720054626465
+      },
+      "episode/cumulative/lift_bonus_rew": {
+        "step": 67686400,
+        "value": 226.1306610107422
+      },
+      "episode/cumulative/keypoint_rew": {
+        "step": 67686400,
+        "value": 110.98921966552734
+      },
+      "episode/final/done_fall": {
+        "step": 67686400,
+        "value": 0.6984924674034119
+      },
+      "episode/final/done_hand_far": {
+        "step": 67686400,
+        "value": 0.010050252079963684
+      },
+      "episode/final/height_proxy_above_10cm_1s": {
+        "step": 67686400,
+        "value": 0.43718594312667847
+      },
+      "episode/final/height_proxy_longest_above_10cm_s": {
+        "step": 67686400,
+        "value": 2.5940537452697754
+      },
+      "task/current_success_tolerance": {
+        "step": 67686400,
+        "value": 0.05467500165104866
+      }
+    }
+  },
+  "completion_markers": {
+    "candidate/training_complete.json": "not_due_yet",
+    "play/play_complete.json": "not_due_yet"
+  },
+  "saved_checkpoints": {
+    "step9766": [
+      "actor.pt",
+      "agent_state.pt",
+      "critic.pt",
+      "reward_normalizer.pt",
+      "target_critic.pt",
+      "temperature.pt"
+    ],
+    "step29298": [
+      "actor.pt",
+      "agent_state.pt",
+      "critic.pt",
+      "reward_normalizer.pt",
+      "target_critic.pt",
+      "temperature.pt"
+    ],
+    "step19532": [
+      "actor.pt",
+      "agent_state.pt",
+      "critic.pt",
+      "reward_normalizer.pt",
+      "target_critic.pt",
+      "temperature.pt"
+    ]
+  },
+  "checked_utc": "2026-09-09 19:19:32 UTC",
+  "interpretation": "Meaningful early learning signal: multi-step candidate reaches several goals/episode and curriculum tightens. Training-window statistics, not evaluation success rate. Do not declare stable grasp or 50-goal completion before final paired play.",
+  "actions": "Read-only GPU/service/TB/checkpoint inventory, persisted progress. No extra GPU launch, stop, restart, task/reward change, or added budget."
+}

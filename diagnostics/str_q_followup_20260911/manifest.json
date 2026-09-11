@@ -1,0 +1,105 @@
+{
+  "created_utc": "2026-09-11 06:39:42 UTC",
+  "completed_utc": "2026-09-11 07:23:50 UTC",
+  "objective": "补齐当前500M FlashSAC/STR同状态Q动作收益证据；不训练",
+  "checkpoint": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step195320",
+  "status": "COMPLETE_DIAGNOSTICS_ROOT_CAUSE_UNRESOLVED",
+  "training_started": false,
+  "config": {
+    "envs": 32,
+    "prefix_steps": [
+      0,
+      60,
+      120
+    ],
+    "horizon": 600,
+    "tolerance": 0.02905653603374958,
+    "hard_reset": true,
+    "state_atol": 0.00001,
+    "physics_property_atol": 0.000001,
+    "policy": "fixed checkpoint Gaussian continuation; diagnostic, not temporal-Zeta replay behavior",
+    "continuation_seeds": [
+      30000,
+      30060,
+      30120
+    ],
+    "branches": [
+      "mean",
+      "mean_repeat",
+      "zero",
+      "arm_q_plus",
+      "arm_q_minus",
+      "hand_q_plus",
+      "hand_q_minus"
+    ]
+  },
+  "reference_coverage": [
+    {
+      "step": 0,
+      "alive": 32,
+      "lifted_alive": 0,
+      "above10cm_alive": 0,
+      "goal_positive_alive": 0
+    },
+    {
+      "step": 60,
+      "alive": 28,
+      "lifted_alive": 26,
+      "above10cm_alive": 16,
+      "goal_positive_alive": 3
+    },
+    {
+      "step": 120,
+      "alive": 21,
+      "lifted_alive": 19,
+      "above10cm_alive": 12,
+      "goal_positive_alive": 10
+    }
+  ],
+  "stages": [
+    "CPU actor-gradient and target-definition audit",
+    "600-step mean vs mean_repeat under hard resets, before Q causal claims",
+    "If informative, legal single-action contrasts with common continuation noises",
+    "Quantify repeat variability, paired samples, actual raw return/goals, n-step entropy reference and omitted tails; report limits"
+  ],
+  "completed_artifacts": [
+    "actor_gradient/result.json",
+    "actor_gradient/replay_batchnorm_result.json",
+    "long_baseline/summary.json",
+    "action_contrasts/summary.json",
+    "action_contrasts/analysis.json",
+    "README.md",
+    "INTERPRETATION_LIMITS.md"
+  ],
+  "integrity": {
+    "physical_checks_passed": 64,
+    "physical_checks_total": 64,
+    "physics_max_abs": 0,
+    "joint_body_order_equal": true,
+    "branches": 63,
+    "pre_intervention_rng_equal": true,
+    "state_max_abs": 6.705522537231445e-8,
+    "rows": 2016,
+    "valid_first_episode_rows": 1701,
+    "model_unchanged": true,
+    "checkpoint_hashes_verified": 4,
+    "source_hashes_verified": 5
+  },
+  "formal_wallclock_seconds": 1086.5855634199997,
+  "conclusions": [
+    "All 15 non-repeat contrasts have descriptive raw/n3 return intervals spanning zero; local Q direction benefit not established",
+    "Prefix60 arm-Q-minus is an exploratory mismatch candidate, not established root cause",
+    "Local entropy gradients do not overwhelm Q gradients",
+    "Real replay train/inference BN action difference measured; behavioral causality untested"
+  ],
+  "no_changes": [
+    "production training code",
+    "checkpoint",
+    "reward",
+    "curriculum",
+    "robot/controller configuration",
+    "network/learning rate"
+  ],
+  "next_candidate_not_executed": "Frozen-weight matched-state behavior comparison using original vs pre-fixed replay-calibrated BN statistics; do not enable train-mode BN in a single env or change production training",
+  "note": "Existing str_fourway_audit_20260911 results retained. Diagnostic scripts and analysis only; simulation exited; no training started."
+}

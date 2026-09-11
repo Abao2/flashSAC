@@ -6,6 +6,7 @@ import gymnasium as gym
 import numpy as np
 import torch
 
+from flash_rl.agents.flashSAC.agent import _resolve_observation_layout
 from flash_rl.common.logger import AverageMeterDict, TensorboardTrainerLogger
 from flash_rl.envs.isaaclab import (
     IsaacLabVectorEnv,
@@ -14,6 +15,30 @@ from flash_rl.envs.isaaclab import (
     observation_subspaces,
 )
 from flash_rl.evaluation import evaluate
+
+
+class AsymmetricObservationLayoutTest(unittest.TestCase):
+    def test_separate_isaaclab_critic_uses_only_critic_state(self) -> None:
+        layout = _resolve_observation_layout(
+            302,
+            {
+                "actor_observation_size": (140,),
+                "critic_observation_size": (162,),
+                "critic_observation_offset": 140,
+            },
+            True,
+        )
+        self.assertEqual(layout, (140, 162, 140))
+
+    def test_legacy_privileged_prefix_convention_remains_supported(self) -> None:
+        self.assertEqual(
+            _resolve_observation_layout(
+                100,
+                {"actor_observation_size": (50,)},
+                True,
+            ),
+            (50, 100, 0),
+        )
 
 
 class _Config:
@@ -42,6 +67,16 @@ class _FakeIsaacEnv:
                 "all_goals_hit": torch.tensor([1.0, 0.0]),
             },
             "current_success_tolerance": 0.05,
+        }
+        return observations, rewards, terminated, truncated, infos
+
+
+class _FinalObsIsaacEnv(_FakeIsaacEnv):
+    def step(self, actions: torch.Tensor):
+        observations, rewards, terminated, truncated, infos = super().step(actions)
+        infos["final_obs"] = {
+            "policy": torch.tensor([[9.0, 8.0], [7.0, 6.0]]),
+            "critic": torch.tensor([[5.0], [4.0]]),
         }
         return observations, rewards, terminated, truncated, infos
 
@@ -104,13 +139,78 @@ class ExternalIsaacLabAdapterTest(unittest.TestCase):
         self.assertEqual(observations.shape, (2, 3))
         np.testing.assert_allclose(rewards, [1.0, 2.0])
         np.testing.assert_array_equal(terminated, [True, True])
-        np.testing.assert_array_equal(truncated, [True, False])
+        np.testing.assert_array_equal(truncated, [False, False])
+        np.testing.assert_array_equal(infos["time_outs"], [True, False])
         self.assertNotIn("final_obs", infos)
         self.assertIn("kept_by_adapter", infos)
         np.testing.assert_array_equal(infos["success"], [1.0, 0.0])
         self.assertEqual(infos["episode_info"]["episode/return"], (1.5, 2))
         self.assertEqual(infos["episode_info"]["episode/cumulative/bonus"], (0.75, 2))
         self.assertEqual(infos["episode_info"]["episode/final/successes"], (3.5, 2))
+
+    def test_timeout_bootstrap_preserves_masks_and_combines_final_obs(self) -> None:
+        env = object.__new__(IsaacLabVectorEnv)
+        env.envs = _FinalObsIsaacEnv()
+        env.device = "cpu"
+        env.action_bounds = 1.0
+        env.asymmetric_obs = True
+        env.to_numpy = True
+        env.bootstrap_timeouts = True
+        env.success_path = None
+        env.num_envs = 2
+        env._episode_returns = torch.zeros(2)
+        env._episode_lengths = torch.zeros(2)
+        env._episode_cumulative = {}
+
+        _, _, terminated, truncated, infos = env.step(np.zeros((2, 2), dtype=np.float32))
+
+        np.testing.assert_array_equal(terminated, [False, True])
+        np.testing.assert_array_equal(truncated, [True, False])
+        np.testing.assert_allclose(infos["final_obs"], [[9.0, 8.0, 5.0], [7.0, 6.0, 4.0]])
+
+    def test_timeout_bootstrap_rejects_missing_final_obs(self) -> None:
+        env = object.__new__(IsaacLabVectorEnv)
+        env.envs = _FakeIsaacEnv()
+        env.device = "cpu"
+        env.action_bounds = 1.0
+        env.asymmetric_obs = True
+        env.to_numpy = True
+        env.bootstrap_timeouts = True
+        env.success_path = None
+        env.num_envs = 2
+        env._episode_returns = torch.zeros(2)
+        env._episode_lengths = torch.zeros(2)
+        env._episode_cumulative = {}
+
+        with self.assertRaisesRegex(RuntimeError, "requires final_obs"):
+            env.step(np.zeros((2, 2), dtype=np.float32))
+
+    def test_timeout_bootstrap_allows_missing_final_obs_without_timeout(self) -> None:
+        env = object.__new__(IsaacLabVectorEnv)
+        env.envs = _FakeIsaacEnv()
+        env.envs.step = lambda actions: (
+            {"policy": torch.zeros((2, 2)), "critic": torch.zeros((2, 1))},
+            torch.zeros(2),
+            torch.zeros(2, dtype=torch.bool),
+            torch.zeros(2, dtype=torch.bool),
+            {},
+        )
+        env.device = "cpu"
+        env.action_bounds = 1.0
+        env.asymmetric_obs = True
+        env.to_numpy = True
+        env.bootstrap_timeouts = True
+        env.success_path = None
+        env.num_envs = 2
+        env._episode_returns = torch.zeros(2)
+        env._episode_lengths = torch.zeros(2)
+        env._episode_cumulative = {}
+
+        _, _, terminated, truncated, infos = env.step(np.zeros((2, 2), dtype=np.float32))
+
+        np.testing.assert_array_equal(terminated, [False, False])
+        np.testing.assert_array_equal(truncated, [False, False])
+        self.assertNotIn("final_obs", infos)
 
 
 class _Agent:

@@ -1,0 +1,30 @@
+{
+  "snapshot_date": "2026-09-11",
+  "destination": "https://github.com/Abao2/flashSAC",
+  "layout": "single repository; STR included as a Git subtree, not a submodule",
+  "flashsac": {
+    "upstream": "https://github.com/Holiday-Robot/FlashSAC.git",
+    "base_revision": "87edc9061150ae9e962dd84e6544e27a1554b3ab",
+    "first_local_adapter_commit": "d83b714"
+  },
+  "simtoolreal": {
+    "path": "third_party/simtoolreal",
+    "upstream": "https://github.com/tylerlum/simtoolreal.git",
+    "local_snapshot_revision": "6d49750e0a8170cfeeb1d0b5e7e8c9afead7c244",
+    "source_checkout": "/home/abao/simtoolreal",
+    "note": "The subtree preserves this source history and local modifications. Later edits must be committed in the monorepo or imported explicitly."
+  },
+  "dex4d": {
+    "task_port_path": "robotics_tasks/dex4d",
+    "declared_port_source_revision": "0dfccd82797e929cda6ab665003bc27a6b8cd31a",
+    "upstream": "https://github.com/Dex4D/Dex4D-Simulation",
+    "assets": "external; set DEX4D_ROOT; see docs/dex4d_isaaclab_port.md"
+  },
+  "local_runtime": {
+    "python": "/home/abao/play2perfect/.venv_isaacsim/bin/python",
+    "python_series": "3.11",
+    "isaac_sim": "5.1",
+    "note": "Not a complete environment lockfile. Restore simulator/dependencies separately; adapt local convenience launcher Python paths on a new machine."
+  },
+  "model_replay_assets_uploaded": false
+}

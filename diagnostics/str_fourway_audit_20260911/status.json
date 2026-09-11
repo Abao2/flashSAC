@@ -1,0 +1,46 @@
+{
+  "status": "BOUNDED_DIAGNOSTICS_COMPLETE_Q_CAUSE_UNRESOLVED",
+  "updated_utc": "2026-09-11 04:05:58 UTC",
+  "training_started": false,
+  "gpu_tests_running": false,
+  "interface": {
+    "status": "pass_in_tested_scope",
+    "envs": 32,
+    "steps": 600,
+    "fields": 59,
+    "max_abs_error": 0,
+    "term": 30,
+    "trunc": 11,
+    "goal_hits": 33,
+    "final_obs": 41
+  },
+  "replay": {
+    "rows_per_checkpoint": 10000000,
+    "checkpoints": [
+      "100M",
+      "500M"
+    ],
+    "status": "audited_with_episode_reconstruction_limits"
+  },
+  "behavior": {
+    "tolerance": 0.02905653603374958,
+    "deterministic_goal_positive_100M": "16/64",
+    "deterministic_goal_positive_500M": "22/64",
+    "selected": "500M provisional among two; not converged"
+  },
+  "q": {
+    "status": "inconclusive",
+    "reason": "ordinary-reset long probe failed intermediate pairing and repeat baseline diverged; hard-reset120-step reproducibility passed, full Q probe not rerun"
+  },
+  "official_gui": {
+    "status": "passed_one_episode",
+    "task": "claw_hammer/swing_down",
+    "goals": "37/37",
+    "reported_seconds": 10.6
+  },
+  "remaining": [
+    "Reliable long stochastic counterfactual before Q causal claims",
+    "Flash best GUI command and manual-window-close not independently smoke-tested"
+  ],
+  "report": "/home/abao/flashsac-robotics/diagnostics/str_fourway_audit_20260911/README.md"
+}

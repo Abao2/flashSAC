@@ -16,7 +16,8 @@ train.py
   -> registered task YAML overlay
   -> IsaacLabVectorEnv
        actor:  policy observation, 140 dimensions
-       critic: policy + privileged critic state, 302 dimensions
+       critic: privileged critic state, 162 dimensions
+       replay: policy + critic state, 302 dimensions
        action: normalized [-1, 1], 29 dimensions
   -> FlashSAC replay and updates
 ```
@@ -25,8 +26,8 @@ The adapter also:
 
 - preserves task extras and writes reward terms, goal count, full-task success,
   termination causes, actor loss, and critic loss to TensorBoard;
-- treats Isaac Lab timeouts as terminal for the critic because DirectRLEnv
-  returns reset observations instead of genuine terminal observations;
+- bootstraps Isaac Lab timeouts from the task-provided pre-reset final
+  observation, while true failure terminations do not bootstrap;
 - allows task packages and task YAML overlays to be selected from config, so a
   second Isaac Lab task does not require another algorithm fork;
 - runs from the task repository so its relative assets resolve, while all
@@ -56,6 +57,17 @@ CUDA_VISIBLE_DEVICES=0 PYTHON_BIN=/home/lixiaocong/venvs/simtoolreal-isaacsim-py
 The smoke test uses 64 envs and only one procedural asset per type to validate
 the adapter, replay, gradients, and logging quickly. It is not a result run.
 
+Run the deterministic 1.05M-transition learning diagnostic:
+
+```bash
+cd /home/lixiyuan/flashsac-robotics
+SIMTOOLREAL_CONFIG_NAME=simtoolreal_fixed_debug CUDA_VISIBLE_DEVICES=0 PYTHON_BIN=/home/lixiaocong/venvs/simtoolreal-isaacsim-py311/bin/python ./scripts/run_simtoolreal.sh
+```
+
+This fixes the robot, one seed-42 eraser asset, initial state, and trajectory 0,
+disables DR/delays, and keeps the paper's ratio of two updates per 1,024 new
+transitions. It is a learning-chain diagnostic, not a paper reproduction.
+
 Run the paper-scale FlashSAC configuration:
 
 ```bash
@@ -72,8 +84,9 @@ shell script instead uses `n_step=3`; select it explicitly with:
 ./scripts/run_simtoolreal.sh --overrides n_step=3
 ```
 
-The 10M replay is expected to consume about 24 GB for SimToolReal's 302D critic
-input. Check GPU availability before a full run. In-process periodic evaluation
+The 10M replay is expected to consume about 24 GB because each replay
+observation stores the 140D policy input plus the 162D critic state. The critic
+network itself consumes only the 162D state. Check GPU availability before a full run. In-process periodic evaluation
 is disabled because Isaac Lab would reuse and reset the stateful training env;
 evaluate saved checkpoints in a separate process.
 

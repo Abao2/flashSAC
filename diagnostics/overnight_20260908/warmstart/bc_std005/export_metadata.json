@@ -1,0 +1,556 @@
+{
+  "status": "complete",
+  "created_utc": "2026-09-08T15:01:14.894939+00:00",
+  "kind": "BC Actor warm-start with fresh SAC components; NOT SAC-trained",
+  "source_bc_checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/bc_std005_bc.pt",
+  "source_bc_sha256": "8ac00d284a1d5f05b80c807c45066f11c186bc12e6270b5cdea3620acbb6b01c",
+  "output": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/bc_std005",
+  "seed": 0,
+  "source_bc_config": {
+    "task": "bc",
+    "mode": "current",
+    "window": 8,
+    "width": 128,
+    "num_blocks": 2,
+    "input_dim": 162,
+    "obs_dim": 162,
+    "action_dim": 29,
+    "target_columns": [
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148
+    ],
+    "target_names": [
+      "teacher_actions[29]"
+    ],
+    "bc_action_key": "teacher_actions",
+    "prediction_action_key": null,
+    "normalization": "identity_input_native_UnitBatchNorm",
+    "deterministic_only": true,
+    "seed": 0,
+    "std_head_calibrated": true
+  },
+  "std_calibration": {
+    "status": "complete",
+    "created_utc": "2026-09-08T15:00:02.607799+00:00",
+    "source_bc_checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/memory_official_filter01_labeled_full/bc_current.pt",
+    "source_bc_sha256": "e0f9399318bce46201fd3a7141748ddd70bd5d070a19fdcf19de699b3b2050f4",
+    "dataset": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/official_filter01_labeled128/transitions.npz",
+    "target_pre_tanh_std": 0.05,
+    "updates": 1500,
+    "batch_size": 512,
+    "learning_rate": 0.003,
+    "seed": 0,
+    "split_source": "original_BC_whole_episode_split",
+    "train_episode_ids": [
+      0,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      14,
+      15,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      35,
+      38,
+      40,
+      41,
+      42,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      51,
+      52,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      65,
+      67,
+      68,
+      69,
+      70,
+      72,
+      73,
+      75,
+      76,
+      77,
+      78,
+      79,
+      81,
+      82,
+      83,
+      85,
+      86,
+      87,
+      89,
+      90,
+      91,
+      92,
+      95,
+      96,
+      98,
+      99,
+      100,
+      103,
+      104,
+      106,
+      108,
+      109,
+      110,
+      111,
+      113,
+      114,
+      115,
+      116,
+      118,
+      119,
+      120,
+      122,
+      123,
+      126,
+      127
+    ],
+    "validation_episode_ids": [
+      1,
+      5,
+      11,
+      13,
+      16,
+      23,
+      34,
+      36,
+      37,
+      39,
+      43,
+      50,
+      53,
+      64,
+      66,
+      71,
+      74,
+      80,
+      84,
+      88,
+      93,
+      94,
+      97,
+      101,
+      102,
+      105,
+      107,
+      112,
+      117,
+      121,
+      124,
+      125
+    ],
+    "before": {
+      "train": {
+        "rows": 6139,
+        "episodes": 96,
+        "std_min": 4.567630821838975e-05,
+        "std_mean": 0.9977583885192871,
+        "std_max": 7.370546340942383,
+        "std_mse": 3.9484028816223145,
+        "log_std_mse": 15.900443077087402
+      },
+      "validation": {
+        "rows": 2000,
+        "episodes": 32,
+        "std_min": 4.549055302049965e-05,
+        "std_mean": 0.9940055012702942,
+        "std_max": 7.382843494415283,
+        "std_mse": 3.9108662605285645,
+        "log_std_mse": 15.922504425048828
+      }
+    },
+    "after": {
+      "train": {
+        "rows": 6139,
+        "episodes": 96,
+        "std_min": 0.0006538699963130057,
+        "std_mean": 0.0826415941119194,
+        "std_max": 2.1526646614074707,
+        "std_mse": 0.008955802768468857,
+        "log_std_mse": 0.8757420778274536
+      },
+      "validation": {
+        "rows": 2000,
+        "episodes": 32,
+        "std_min": 0.0004677264951169491,
+        "std_mean": 0.09471445530653,
+        "std_max": 1.8789578676223755,
+        "std_mse": 0.015765907242894173,
+        "log_std_mse": 1.1535993814468384
+      }
+    },
+    "validation": {
+      "deterministic_means_exact": true,
+      "deterministic_actions_exact": true,
+      "all_non_std_parameters_and_BN_exact": true,
+      "std_weight_row_norm_min_max": [
+        0.9999998807907104,
+        1.0
+      ],
+      "cuda_initialized": false
+    },
+    "changed_keys": [
+      "predictor.std_bias",
+      "predictor.std_w.w.weight"
+    ],
+    "curve": [
+      {
+        "step": 1,
+        "sampled_train_log_std_mse": 15.769715309143066
+      },
+      {
+        "step": 250,
+        "sampled_train_log_std_mse": 1.704079508781433
+      },
+      {
+        "step": 500,
+        "sampled_train_log_std_mse": 1.1425670385360718
+      },
+      {
+        "step": 750,
+        "sampled_train_log_std_mse": 0.9867096543312073
+      },
+      {
+        "step": 1000,
+        "sampled_train_log_std_mse": 0.852315366268158
+      },
+      {
+        "step": 1250,
+        "sampled_train_log_std_mse": 0.9057852029800415
+      },
+      {
+        "step": 1500,
+        "sampled_train_log_std_mse": 0.8275504112243652
+      }
+    ],
+    "wallclock_seconds": 2.0730403130874038,
+    "notes": [
+      "Only predictor.std_w.w.weight and predictor.std_bias were fitted. All means/torso/BN remain bitwise unchanged.",
+      "Objective: mean squared error in log pre-tanh std; unit-row projection after every Adam step.",
+      "Target is a fitted std on expert observations, NOT an enforced global constant or SAC entropy coefficient.",
+      "No SAC, Q, temperature or reward-normalizer training. Native stochastic rollout is still required."
+    ]
+  },
+  "training_config_reference": {
+    "project_name": "FlashRL",
+    "entity_name": "draftrec",
+    "group_name": "simtoolreal_diagnostics",
+    "exp_name": "state162_eraser_onegoal_seed0",
+    "seed": 0,
+    "logger_type": "tensorboard",
+    "output_root": ".",
+    "save_path": "models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-TIMESTAMP",
+    "agent_load_path": null,
+    "buffer_load_path": null,
+    "require_agent_load": false,
+    "num_env_steps": 10000384,
+    "num_train_envs": 1024,
+    "num_eval_envs": null,
+    "num_record_envs": null,
+    "num_eval_episodes": 0,
+    "num_record_episodes": 0,
+    "gamma": 0.99,
+    "n_step": 1,
+    "num_interaction_steps": 9766.0,
+    "updates_per_interaction_step": 2,
+    "num_update_steps": 19532.0,
+    "evaluation_per_interaction_step": null,
+    "metrics_per_interaction_step": 250,
+    "recording_per_interaction_step": 9766,
+    "logging_per_interaction_step": 50,
+    "save_checkpoint_per_interaction_step": 976,
+    "save_buffer_per_interaction_step": null,
+    "agent": {
+      "agent_type": "flashSAC",
+      "seed": 0,
+      "device_type": "cuda",
+      "buffer_max_length": 10000000,
+      "buffer_min_length": 100000,
+      "buffer_device_type": "cuda",
+      "sample_batch_size": 2048,
+      "normalize_reward": true,
+      "normalized_G_max": 5.0,
+      "asymmetric_observation": true,
+      "learning_rate_init": 0.0003,
+      "learning_rate_peak": 0.0003,
+      "learning_rate_end": 0.00015,
+      "learning_rate_warmup_rate": 1e-06,
+      "learning_rate_warmup_step": 0,
+      "learning_rate_decay_rate": 1.0,
+      "learning_rate_decay_step": 19532,
+      "actor_num_blocks": 2,
+      "actor_hidden_dim": 128,
+      "actor_bc_alpha": 0.0,
+      "actor_noise_zeta_mu": 2.0,
+      "actor_noise_zeta_max": 16,
+      "actor_update_period": 2,
+      "critic_num_blocks": 2,
+      "critic_hidden_dim": 256,
+      "critic_num_bins": 101,
+      "critic_min_v": -5.0,
+      "critic_max_v": 5.0,
+      "critic_target_update_tau": 0.01,
+      "temp_initial_value": 0.01,
+      "temp_target_sigma": 0.15,
+      "temp_target_entropy": null,
+      "gamma": 0.99,
+      "n_step": 1,
+      "use_compile": true,
+      "compile_mode": "auto",
+      "use_amp": true,
+      "load_optimizer": true,
+      "load_reward_normalizer": true
+    },
+    "env": {
+      "env_type": "isaaclab",
+      "env_name": "Isaacsimenvs-SimToolReal-Direct-v0",
+      "num_env_steps": 10000384,
+      "seed": 0,
+      "num_train_envs": 1024,
+      "num_eval_envs": null,
+      "num_record_envs": null,
+      "rescale_action": null,
+      "max_episode_steps": null,
+      "registration_modules": [
+        "isaacsimenvs"
+      ],
+      "env_cfg_yaml_entry_point": "env_cfg_yaml_entry_point",
+      "task_cfg_overrides": {
+        "assets": {
+          "handle_head_types": [
+            "eraser"
+          ],
+          "num_assets_per_type": 1,
+          "shuffle_assets": false
+        },
+        "obs": {
+          "state_list": [
+            "joint_pos",
+            "joint_vel",
+            "prev_action_targets",
+            "palm_pos",
+            "palm_rot",
+            "palm_vel",
+            "object_rot",
+            "object_vel",
+            "fingertip_pos_rel_palm",
+            "keypoints_rel_palm",
+            "keypoints_rel_goal",
+            "object_scales",
+            "closest_keypoint_max_dist",
+            "closest_fingertip_dist",
+            "lifted_object",
+            "progress",
+            "successes",
+            "reward"
+          ],
+          "obs_list": [
+            "joint_pos",
+            "joint_vel",
+            "prev_action_targets",
+            "palm_pos",
+            "palm_rot",
+            "palm_vel",
+            "object_rot",
+            "object_vel",
+            "fingertip_pos_rel_palm",
+            "keypoints_rel_palm",
+            "keypoints_rel_goal",
+            "object_scales",
+            "closest_keypoint_max_dist",
+            "closest_fingertip_dist",
+            "lifted_object",
+            "progress",
+            "successes",
+            "reward"
+          ]
+        },
+        "reset": {
+          "fixed_start_pose": [
+            0.0,
+            0.0,
+            0.555966462104926,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "fixed_goal_pose": [
+            0.05,
+            0.0,
+            0.705966462104926,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "fixed_trajectory_file": "",
+          "fixed_trajectory_count": 0,
+          "reset_dof_pos_random_interval_arm": 0.0,
+          "reset_dof_pos_random_interval_fingers": 0.0,
+          "reset_dof_vel_random_interval": 0.0,
+          "table_reset_z_range": 0.0
+        },
+        "termination": {
+          "max_consecutive_successes": 1,
+          "success_tolerance": 0.02,
+          "target_success_tolerance": 0.02
+        },
+        "domain_randomization": {
+          "use_obs_delay": false,
+          "use_action_delay": false,
+          "use_object_state_delay_noise": false,
+          "object_state_xyz_noise_std": 0.0,
+          "object_state_rotation_noise_degrees": 0.0,
+          "object_scale_noise_multiplier_range": [
+            1.0,
+            1.0
+          ],
+          "joint_velocity_obs_noise_std": 0.0,
+          "force_scale": 0.0,
+          "torque_scale": 0.0,
+          "object_friction_scale_range": [
+            1.0,
+            1.0
+          ],
+          "fingertip_friction_scale_range": [
+            1.0,
+            1.0
+          ]
+        },
+        "action": {
+          "arm_moving_average": 0.1,
+          "hand_moving_average": 0.1
+        }
+      },
+      "device": "cuda:0",
+      "headless": true,
+      "action_bounds": 1.0,
+      "bootstrap_timeouts": true,
+      "success_path": "episode_final.all_goals_hit"
+    }
+  },
+  "cpu_export_only_overrides": {
+    "device": "cpu",
+    "replay_capacity": 1,
+    "batch": 1,
+    "initialization_compile": false,
+    "serialization_wrapper": "torch.compile backend=eager"
+  },
+  "training_replay_capacity_unchanged": 10000000,
+  "observation_layout": {
+    "replay": 324,
+    "actor": 162,
+    "critic": 162,
+    "critic_offset": 162,
+    "actions": 29
+  },
+  "controls": {
+    "arm_moving_average": 0.1,
+    "hand_moving_average": 0.1
+  },
+  "validation": {
+    "actor_weights_and_BN_exact": true,
+    "deterministic_actions_exact": true,
+    "probe_rows": 648,
+    "max_action_abs_difference": 0,
+    "contiguous_vs_adapter_strided_input_max_difference": 3.3408403396606445e-05,
+    "contiguous_vs_strided_absolute_tolerance": 0.0001,
+    "fresh_optimizer_moments_empty": true,
+    "fresh_critic_target_equal": true,
+    "native_six_file_load_passed": true,
+    "cuda_initialized": false,
+    "fresh_normalizer_count": 0,
+    "native_update_step": 0,
+    "pre_tanh_std_min_mean_max": [
+      0.00023782168864272535,
+      0.1403367519378662,
+      4.250524997711182
+    ]
+  },
+  "files": {
+    "actor.pt": {
+      "size_bytes": 1194945,
+      "sha256": "1a9fa55929b71b5a17e4e2447794efc267e6efad30ea60bce74f336612a4bcec"
+    },
+    "critic.pt": {
+      "size_bytes": 9087273,
+      "sha256": "73e5c10fb941af0bf29f1ad7a7c5e5dbe64e81b07def7b006a0d3a5b810b6a5e"
+    },
+    "target_critic.pt": {
+      "size_bytes": 9088350,
+      "sha256": "2aab6e97a8f3ce195ac1800fddc35d7dcff7573e290e6a0f11899b3f8b297e81"
+    },
+    "temperature.pt": {
+      "size_bytes": 2309,
+      "sha256": "93f7976a82b7a9f8a8252465fe1e5391e43c2c4a44db5205f8f89164d8bfe336"
+    },
+    "reward_normalizer.pt": {
+      "size_bytes": 2695,
+      "sha256": "00b14f3fcd476db1d4203fcbff748e450835acb5ce3cac6165308cac3c793943"
+    },
+    "agent_state.pt": {
+      "size_bytes": 1477,
+      "sha256": "2b7da87f3a272df9d9892a13e9fdf5fe74c32f0abece8269fac29bb6dfee8be5"
+    }
+  },
+  "notes": [
+    "Only the BC Actor weights and BN buffers were transferred. No old Critic, entropy temperature, reward statistics or optimizer moments were copied.",
+    "The source std head was separately calibrated on expert observations; calibration metadata is copied above. Its fitted weights are preserved exactly, not SAC-trained; stochastic rollouts remain required.",
+    "actor.pt already provides the small actor-only artifact consumed by diagnose_str_rollouts.py; no duplicate copy is needed.",
+    "Complete checkpoint uses native compiled _orig_mod.* names. Training must use agent.use_compile=true unless keys are explicitly converted.",
+    "Recommended training agent.load_optimizer=false retains freshly-created CUDA optimizer and AMP settings instead of the serialized CPU optimizer param groups (fused=false). All serialized moments are empty regardless.",
+    "The native trainer sets agent_loaded=true when agent_load_path is supplied, so after its first random step it acts with this Actor during replay collection instead of 100k random-action warmup.",
+    "This export does NOT add a Critic-only warmup or otherwise change when Actor/Critic updates begin. That design is separate."
+  ]
+}

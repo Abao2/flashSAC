@@ -1,0 +1,159 @@
+{
+  "status": "validated_cpu_only",
+  "config_count": 6,
+  "job_count": 66,
+  "config_allowed_differences": [
+    "agent.temp_initial_value",
+    "agent_load_path",
+    "exp_name",
+    "output_root"
+  ],
+  "config_actual_differences": {
+    "alpha_1e-2_gate0": [],
+    "alpha_1e-2_gate2000": [
+      "exp_name",
+      "output_root"
+    ],
+    "alpha_1e-4_gate0": [
+      "agent.temp_initial_value",
+      "agent_load_path",
+      "exp_name",
+      "output_root"
+    ],
+    "alpha_1e-4_gate2000": [
+      "agent.temp_initial_value",
+      "agent_load_path",
+      "exp_name",
+      "output_root"
+    ],
+    "alpha_1e-6_gate0": [
+      "agent.temp_initial_value",
+      "agent_load_path",
+      "exp_name",
+      "output_root"
+    ],
+    "alpha_1e-6_gate2000": [
+      "agent.temp_initial_value",
+      "agent_load_path",
+      "exp_name",
+      "output_root"
+    ]
+  },
+  "wrapper_only_difference": "critic_warmup_updates=0 versus2000; not a Hydra core change",
+  "initial_checkpoints": {
+    "alpha_1e-2_gate0": {
+      "loaded_alpha": 0.009999999776482582,
+      "component_sha256": {
+        "actor.pt": "f20e3dbea5620c0ea18fb30bd8b03ccdc9eef1b8155c4c83333e3b82251b0f1b",
+        "critic.pt": "73e5c10fb941af0bf29f1ad7a7c5e5dbe64e81b07def7b006a0d3a5b810b6a5e",
+        "target_critic.pt": "2aab6e97a8f3ce195ac1800fddc35d7dcff7573e290e6a0f11899b3f8b297e81",
+        "temperature.pt": "93f7976a82b7a9f8a8252465fe1e5391e43c2c4a44db5205f8f89164d8bfe336",
+        "reward_normalizer.pt": "00b14f3fcd476db1d4203fcbff748e450835acb5ce3cac6165308cac3c793943",
+        "agent_state.pt": "2b7da87f3a272df9d9892a13e9fdf5fe74c32f0abece8269fac29bb6dfee8be5"
+      },
+      "critic_gate": 0
+    },
+    "alpha_1e-2_gate2000": {
+      "loaded_alpha": 0.009999999776482582,
+      "component_sha256": {
+        "actor.pt": "f20e3dbea5620c0ea18fb30bd8b03ccdc9eef1b8155c4c83333e3b82251b0f1b",
+        "critic.pt": "73e5c10fb941af0bf29f1ad7a7c5e5dbe64e81b07def7b006a0d3a5b810b6a5e",
+        "target_critic.pt": "2aab6e97a8f3ce195ac1800fddc35d7dcff7573e290e6a0f11899b3f8b297e81",
+        "temperature.pt": "93f7976a82b7a9f8a8252465fe1e5391e43c2c4a44db5205f8f89164d8bfe336",
+        "reward_normalizer.pt": "00b14f3fcd476db1d4203fcbff748e450835acb5ce3cac6165308cac3c793943",
+        "agent_state.pt": "2b7da87f3a272df9d9892a13e9fdf5fe74c32f0abece8269fac29bb6dfee8be5"
+      },
+      "critic_gate": 2000
+    },
+    "alpha_1e-4_gate0": {
+      "loaded_alpha": 0.0000999999901978299,
+      "component_sha256": {
+        "actor.pt": "f20e3dbea5620c0ea18fb30bd8b03ccdc9eef1b8155c4c83333e3b82251b0f1b",
+        "critic.pt": "73e5c10fb941af0bf29f1ad7a7c5e5dbe64e81b07def7b006a0d3a5b810b6a5e",
+        "target_critic.pt": "2aab6e97a8f3ce195ac1800fddc35d7dcff7573e290e6a0f11899b3f8b297e81",
+        "temperature.pt": "1f743c2f09cfd2e187da4c916bcaa7162ae64756215f7b6d65f43a476e880d38",
+        "reward_normalizer.pt": "00b14f3fcd476db1d4203fcbff748e450835acb5ce3cac6165308cac3c793943",
+        "agent_state.pt": "2b7da87f3a272df9d9892a13e9fdf5fe74c32f0abece8269fac29bb6dfee8be5"
+      },
+      "critic_gate": 0
+    },
+    "alpha_1e-4_gate2000": {
+      "loaded_alpha": 0.0000999999901978299,
+      "component_sha256": {
+        "actor.pt": "f20e3dbea5620c0ea18fb30bd8b03ccdc9eef1b8155c4c83333e3b82251b0f1b",
+        "critic.pt": "73e5c10fb941af0bf29f1ad7a7c5e5dbe64e81b07def7b006a0d3a5b810b6a5e",
+        "target_critic.pt": "2aab6e97a8f3ce195ac1800fddc35d7dcff7573e290e6a0f11899b3f8b297e81",
+        "temperature.pt": "1f743c2f09cfd2e187da4c916bcaa7162ae64756215f7b6d65f43a476e880d38",
+        "reward_normalizer.pt": "00b14f3fcd476db1d4203fcbff748e450835acb5ce3cac6165308cac3c793943",
+        "agent_state.pt": "2b7da87f3a272df9d9892a13e9fdf5fe74c32f0abece8269fac29bb6dfee8be5"
+      },
+      "critic_gate": 2000
+    },
+    "alpha_1e-6_gate0": {
+      "loaded_alpha": 9.999997701015673e-7,
+      "component_sha256": {
+        "actor.pt": "f20e3dbea5620c0ea18fb30bd8b03ccdc9eef1b8155c4c83333e3b82251b0f1b",
+        "critic.pt": "73e5c10fb941af0bf29f1ad7a7c5e5dbe64e81b07def7b006a0d3a5b810b6a5e",
+        "target_critic.pt": "2aab6e97a8f3ce195ac1800fddc35d7dcff7573e290e6a0f11899b3f8b297e81",
+        "temperature.pt": "c041eca76c7e5994d125400ebff4ac953c2261e5608a8bc892be2acb3f88c983",
+        "reward_normalizer.pt": "00b14f3fcd476db1d4203fcbff748e450835acb5ce3cac6165308cac3c793943",
+        "agent_state.pt": "2b7da87f3a272df9d9892a13e9fdf5fe74c32f0abece8269fac29bb6dfee8be5"
+      },
+      "critic_gate": 0
+    },
+    "alpha_1e-6_gate2000": {
+      "loaded_alpha": 9.999997701015673e-7,
+      "component_sha256": {
+        "actor.pt": "f20e3dbea5620c0ea18fb30bd8b03ccdc9eef1b8155c4c83333e3b82251b0f1b",
+        "critic.pt": "73e5c10fb941af0bf29f1ad7a7c5e5dbe64e81b07def7b006a0d3a5b810b6a5e",
+        "target_critic.pt": "2aab6e97a8f3ce195ac1800fddc35d7dcff7573e290e6a0f11899b3f8b297e81",
+        "temperature.pt": "c041eca76c7e5994d125400ebff4ac953c2261e5608a8bc892be2acb3f88c983",
+        "reward_normalizer.pt": "00b14f3fcd476db1d4203fcbff748e450835acb5ce3cac6165308cac3c793943",
+        "agent_state.pt": "2b7da87f3a272df9d9892a13e9fdf5fe74c32f0abece8269fac29bb6dfee8be5"
+      },
+      "critic_gate": 2000
+    }
+  },
+  "initial_source_sha256": {
+    "actor.pt": "f20e3dbea5620c0ea18fb30bd8b03ccdc9eef1b8155c4c83333e3b82251b0f1b",
+    "critic.pt": "73e5c10fb941af0bf29f1ad7a7c5e5dbe64e81b07def7b006a0d3a5b810b6a5e",
+    "target_critic.pt": "2aab6e97a8f3ce195ac1800fddc35d7dcff7573e290e6a0f11899b3f8b297e81",
+    "temperature.pt": "93f7976a82b7a9f8a8252465fe1e5391e43c2c4a44db5205f8f89164d8bfe336",
+    "reward_normalizer.pt": "00b14f3fcd476db1d4203fcbff748e450835acb5ce3cac6165308cac3c793943",
+    "agent_state.pt": "2b7da87f3a272df9d9892a13e9fdf5fe74c32f0abece8269fac29bb6dfee8be5"
+  },
+  "initial_001_all_six_files_bitwise_same": true,
+  "expected_updates": {
+    "vector_steps": 1954,
+    "transitions": 2000896,
+    "first_update_vector_step": 98,
+    "native_network_updates": 3714,
+    "gate0_actor_temperature_updates": 1857,
+    "gate2000_actor_temperature_updates": 857,
+    "lr_decay_updates": 19532
+  },
+  "job_paths_and_checkpoint_sources_verified": true,
+  "no_output_overwrite": true,
+  "cuda_initialized": false,
+  "source_sha256": {
+    "/home/abao/flashsac-robotics/scripts/train_str_warmstart.py": "7bd77a786a8463451c33971b503a2dd8a9b823db48aaf9c5980948ec44ff576a",
+    "/home/abao/flashsac-robotics/scripts/clone_str_initial_alpha.py": "017b2502d5f987d40a3f2b3ae7348219c5f189be113615c4f70979526727878f",
+    "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py": "69ddb88c40555d7e809b1f3dadf7f8a1d6931943c5fa3c4554db5a4283cb08be",
+    "/home/abao/flashsac-robotics/scripts/diagnose_str_critic.py": "e427e6ce297403cd8de0b81188fb4a7584c9174d8ec34ab7382121a4dd384a0d",
+    "/home/abao/flashsac-robotics/scripts/run_str_diagnostic_queue.py": "9c8e8652a3c1353ce7caa911ef3d09554b7bb531220d71c244cdf7ee8f97d1be",
+    "/home/abao/flashsac-robotics/train.py": "a7697d6e5e84cae5bff49002d8cd99956b42576f9140ba8f65a93973e587be87",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/agent.py": "079962c5307f0118338329ba8ebbf89055356f9f1446e9d533462aa57d936c9a",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/update.py": "50c571fc466276aa6caac56c2c13d3e42029bb669cce58a6a73a98bf9e01d5ba",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/network.py": "4068098466f195fac2c7d91e3cb1abe0c4daf42c4d1cd85f3940dca9edfd4c98",
+    "/home/abao/flashsac-robotics/flash_rl/agents/flashSAC/layer.py": "7af7b2954c22a5ae56595b8d3139017e2a44b17dbd63c2f54c4e65dbd17ef7cc",
+    "/home/abao/flashsac-robotics/flash_rl/envs/isaaclab.py": "fbf0aac07d527f589064ebb6fde009ff1b4d79e2513451121d5a3309907dc7a4",
+    "/home/abao/flashsac-robotics/configs/simtoolreal_state_teacher.yaml": "deee7d27a5395155e5d21ba6c778a6e66853f71fbd720898d938e1673e88f30c",
+    "/home/abao/flashsac-robotics/configs/simtoolreal_flashsac.yaml": "0a1881e50c6e3bf3539c3fcf09e1435ab17f0b78c8e1024f341351232afb89ad",
+    "/home/abao/flashsac-robotics/configs/flashSAC_base.yaml": "d07194a552f364ca1c32ea41cd2ad29dcb8c0363dd2b73a890e97459ff3ec383",
+    "/home/abao/flashsac-robotics/configs/agent/flashSAC.yaml": "4dabed9818df0a6529cfce40925d40e384c01d9f6287fb6d9170a0c5a50582a8"
+  },
+  "test_commands": [
+    "python -m unittest discover -s tests -p test_str_initial_alpha.py -q"
+  ],
+  "note": "Hashes are a preparation snapshot. Recheck them if sources change before launch; planned status barrier exists but is not asserted completed."
+}

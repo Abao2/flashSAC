@@ -1,0 +1,618 @@
+{
+  "status": "complete",
+  "critic_only_network_calls": 0,
+  "requested_update_snapshots": [
+    0,
+    10,
+    100,
+    1000,
+    2000,
+    2001,
+    2002,
+    2010,
+    2100,
+    3000
+  ],
+  "snapshots": [
+    {
+      "agent_update_step": 0,
+      "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/update_snapshots/update0",
+      "attempted_updates": {
+        "critic": 0,
+        "actor": 0,
+        "temperature": 0
+      },
+      "network_audit": {
+        "actor": {
+          "parameter_digest": "07c90291520f34274e64616835d9e0397bac1afeea376dd06edfbf55a2507eca",
+          "buffer_digest": "eda7f1d2a4afe5e431b8acc084a966f7799c8f70faba04ecd6f636b8bf913fd6",
+          "optimizer_step_min": 0,
+          "optimizer_step_max": 0,
+          "learning_rates": [
+            0.0003
+          ],
+          "scheduler_last_epoch": 0
+        },
+        "critic": {
+          "parameter_digest": "d601589e462d187e3f19616c5a9de3b3aee5b6c336aa756ff3f360e0e6e4df49",
+          "buffer_digest": "85803d6344eff8973d03f6e4233d181f2400378624a6fef24ba2d20c1237b8f0",
+          "optimizer_step_min": 0,
+          "optimizer_step_max": 0,
+          "learning_rates": [
+            0.0003
+          ],
+          "scheduler_last_epoch": 0
+        },
+        "temperature": {
+          "parameter_digest": "64a204f4ceea62bf169aaac2b17ec44a2c3d8b06e960061af159205f7d36fb8e",
+          "buffer_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "optimizer_step_min": 0,
+          "optimizer_step_max": 0,
+          "learning_rates": [
+            0.0003
+          ],
+          "scheduler_last_epoch": 0
+        }
+      }
+    },
+    {
+      "agent_update_step": 10,
+      "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/update_snapshots/update10",
+      "attempted_updates": {
+        "critic": 10,
+        "actor": 5,
+        "temperature": 5
+      },
+      "network_audit": {
+        "actor": {
+          "parameter_digest": "0b9de9c1a6dcf2e5cbc55b6b91eba718205e5d92e6a9c83e6279a83f278337df",
+          "buffer_digest": "9c5a90c6f8dc56289e8a3e205b43f8834fccb92310d460caf036470070566e68",
+          "optimizer_step_min": 5,
+          "optimizer_step_max": 5,
+          "learning_rates": [
+            0.00029999997574632425
+          ],
+          "scheduler_last_epoch": 5
+        },
+        "critic": {
+          "parameter_digest": "40eba136d0af5dcc8a6e3bdae6743794035474b787f034fcb5f5980008964816",
+          "buffer_digest": "108fdc3f1b426b0650d30fb6db90486e6bcd9aa473d2dfb52a8cb6a8ab193fce",
+          "optimizer_step_min": 10,
+          "optimizer_step_max": 10,
+          "learning_rates": [
+            0.0002999999029853126
+          ],
+          "scheduler_last_epoch": 10
+        },
+        "temperature": {
+          "parameter_digest": "925cdf8eb87ab73a8cb1f50b99dd80f2e2e792332443a782c720f2d764fd7ba0",
+          "buffer_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "optimizer_step_min": 5,
+          "optimizer_step_max": 5,
+          "learning_rates": [
+            0.00029999997574632425
+          ],
+          "scheduler_last_epoch": 5
+        }
+      }
+    },
+    {
+      "agent_update_step": 100,
+      "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/update_snapshots/update100",
+      "attempted_updates": {
+        "critic": 100,
+        "actor": 50,
+        "temperature": 50
+      },
+      "network_audit": {
+        "actor": {
+          "parameter_digest": "cddec857c70174e5b946961cbb74c078bb980d1dddac65babd097bf109373ad6",
+          "buffer_digest": "84edda3f0b84082b091e3ea502881680ad2f5db0059e338757703037f1c416e6",
+          "optimizer_step_min": 50,
+          "optimizer_step_max": 50,
+          "learning_rates": [
+            0.0002999975746453662
+          ],
+          "scheduler_last_epoch": 50
+        },
+        "critic": {
+          "parameter_digest": "e71c7a15b128a369c97442078d4b912a1e0edc40ae1bbb9ea551f974fe4be115",
+          "buffer_digest": "e3bfd3bf3a96e92799829368e96c2bae56cd74f4ee2a025f2f9c203c5e9d723f",
+          "optimizer_step_min": 100,
+          "optimizer_step_max": 100,
+          "learning_rates": [
+            0.0002999902987383273
+          ],
+          "scheduler_last_epoch": 100
+        },
+        "temperature": {
+          "parameter_digest": "306cf57d058a414113693b7222fa1224c1d574e3181a6e8e999d5a652791aba5",
+          "buffer_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "optimizer_step_min": 50,
+          "optimizer_step_max": 50,
+          "learning_rates": [
+            0.0002999975746453662
+          ],
+          "scheduler_last_epoch": 50
+        }
+      }
+    },
+    {
+      "agent_update_step": 1000,
+      "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/update_snapshots/update1000",
+      "attempted_updates": {
+        "critic": 1000,
+        "actor": 500,
+        "temperature": 500
+      },
+      "network_audit": {
+        "actor": {
+          "parameter_digest": "68bf0439046ef2c6e422705f08a96dcccd085c6458c7ac5aa6782215790c9831",
+          "buffer_digest": "f0c5de91339fb4934ee036c789087a99e8d58cbf11583fa24b4be5eb63049ea2",
+          "optimizer_step_min": 500,
+          "optimizer_step_max": 500,
+          "learning_rates": [
+            0.000299757593921431
+          ],
+          "scheduler_last_epoch": 500
+        },
+        "critic": {
+          "parameter_digest": "e4fa654387b677f0c4571f61b5b2d9f1e0fca98d6925df15f3f41babf3d93021",
+          "buffer_digest": "59eb1f7c76cdf694f16bd89023ad34216e13ccf5d22030b0566cab808c2ea89b",
+          "optimizer_step_min": 1000,
+          "optimizer_step_max": 1000,
+          "learning_rates": [
+            0.00029903194263790887
+          ],
+          "scheduler_last_epoch": 1000
+        },
+        "temperature": {
+          "parameter_digest": "2deb092f936f7b77021d163d283af55f78c003d81c59128d5cde0cfd744e9fac",
+          "buffer_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "optimizer_step_min": 500,
+          "optimizer_step_max": 500,
+          "learning_rates": [
+            0.000299757593921431
+          ],
+          "scheduler_last_epoch": 500
+        }
+      }
+    },
+    {
+      "agent_update_step": 2000,
+      "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/update_snapshots/update2000",
+      "attempted_updates": {
+        "critic": 2000,
+        "actor": 1000,
+        "temperature": 1000
+      },
+      "network_audit": {
+        "actor": {
+          "parameter_digest": "da3b05065297553d26414a0d79b9300028a6af126560eb57417f9321c8664d37",
+          "buffer_digest": "b8c889f5de973b4674e7bbde1669cfa9921948b9771c65a29db18d38fb727e70",
+          "optimizer_step_min": 1000,
+          "optimizer_step_max": 1000,
+          "learning_rates": [
+            0.00029903194263790887
+          ],
+          "scheduler_last_epoch": 1000
+        },
+        "critic": {
+          "parameter_digest": "4d3395a76549aabc256d54798062a543b2cc6b863c00592ce57443ca0e825ab9",
+          "buffer_digest": "7d41d1033f2cbcf7f18b1d03dc75d86445f686abcc60e2076c085d591bbb1b4a",
+          "optimizer_step_min": 2000,
+          "optimizer_step_max": 2000,
+          "learning_rates": [
+            0.0002961527608198034
+          ],
+          "scheduler_last_epoch": 2000
+        },
+        "temperature": {
+          "parameter_digest": "748ffa6612f34302a7cb6f68d767b70c6d56d2ee5dc56360931113556aaf20f7",
+          "buffer_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "optimizer_step_min": 1000,
+          "optimizer_step_max": 1000,
+          "learning_rates": [
+            0.00029903194263790887
+          ],
+          "scheduler_last_epoch": 1000
+        }
+      }
+    },
+    {
+      "agent_update_step": 2001,
+      "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/update_snapshots/update2001",
+      "attempted_updates": {
+        "critic": 2001,
+        "actor": 1001,
+        "temperature": 1001
+      },
+      "network_audit": {
+        "actor": {
+          "parameter_digest": "af9e8d61c58f70439c64b67c96f027f9b7d2ec54d48874352d5ea936f75852c6",
+          "buffer_digest": "ec1c44c062af145b668d47f38093268d58c828536da110c67a3c425fb5c4f3b0",
+          "optimizer_step_min": 1001,
+          "optimizer_step_max": 1001,
+          "learning_rates": [
+            0.00029903000974140456
+          ],
+          "scheduler_last_epoch": 1001
+        },
+        "critic": {
+          "parameter_digest": "26abb3547f4fb0b7e9862acefa63b13daa4c2353e9e9fb2300df2d9fac7b5c1c",
+          "buffer_digest": "afdca9d78414805e02612229308a1240d2b5235f68e95d3e2f338fd80a2f15d0",
+          "optimizer_step_min": 2001,
+          "optimizer_step_max": 2001,
+          "learning_rates": [
+            0.00029614894589440033
+          ],
+          "scheduler_last_epoch": 2001
+        },
+        "temperature": {
+          "parameter_digest": "64064a7c721582486ed8fe8f10d776c836498ac7e6c3eb1426f505be9dbb7914",
+          "buffer_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "optimizer_step_min": 1001,
+          "optimizer_step_max": 1001,
+          "learning_rates": [
+            0.00029903000974140456
+          ],
+          "scheduler_last_epoch": 1001
+        }
+      }
+    },
+    {
+      "agent_update_step": 2002,
+      "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/update_snapshots/update2002",
+      "attempted_updates": {
+        "critic": 2002,
+        "actor": 1001,
+        "temperature": 1001
+      },
+      "network_audit": {
+        "actor": {
+          "parameter_digest": "af9e8d61c58f70439c64b67c96f027f9b7d2ec54d48874352d5ea936f75852c6",
+          "buffer_digest": "ec1c44c062af145b668d47f38093268d58c828536da110c67a3c425fb5c4f3b0",
+          "optimizer_step_min": 1001,
+          "optimizer_step_max": 1001,
+          "learning_rates": [
+            0.00029903000974140456
+          ],
+          "scheduler_last_epoch": 1001
+        },
+        "critic": {
+          "parameter_digest": "5897dbaadf846afa4b962cc942fba2a8be65a67e2de0dcd09b3d0f02bc95e5b7",
+          "buffer_digest": "3d0de34058c09007a19fc1d26b8de57ef3d3fc1b5479130d242346d179888cce",
+          "optimizer_step_min": 2002,
+          "optimizer_step_max": 2002,
+          "learning_rates": [
+            0.0002961451291283321
+          ],
+          "scheduler_last_epoch": 2002
+        },
+        "temperature": {
+          "parameter_digest": "64064a7c721582486ed8fe8f10d776c836498ac7e6c3eb1426f505be9dbb7914",
+          "buffer_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "optimizer_step_min": 1001,
+          "optimizer_step_max": 1001,
+          "learning_rates": [
+            0.00029903000974140456
+          ],
+          "scheduler_last_epoch": 1001
+        }
+      }
+    },
+    {
+      "agent_update_step": 2010,
+      "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/update_snapshots/update2010",
+      "attempted_updates": {
+        "critic": 2010,
+        "actor": 1005,
+        "temperature": 1005
+      },
+      "network_audit": {
+        "actor": {
+          "parameter_digest": "12f586b6bdfa8b8bc5d1deb22567fdc2a36e5ba7ffe6c9acd7aabb3908c81dc8",
+          "buffer_digest": "c38582d89deac676b89231764cd88efc00039c4a279fcda56fcc67d514e7bc2a",
+          "optimizer_step_min": 1005,
+          "optimizer_step_max": 1005,
+          "learning_rates": [
+            0.00029902225900388873
+          ],
+          "scheduler_last_epoch": 1005
+        },
+        "critic": {
+          "parameter_digest": "58054485dec1dff1233c06d91de3f9b73a456d6d8f41361da4106ebe5263591f",
+          "buffer_digest": "bdbc1cbb577ea722cfae8616276d40490fb633525de78e81751a9dff3cec7979",
+          "optimizer_step_min": 2010,
+          "optimizer_step_max": 2010,
+          "learning_rates": [
+            0.000296114528747701
+          ],
+          "scheduler_last_epoch": 2010
+        },
+        "temperature": {
+          "parameter_digest": "d94a9b9c24461a3d0f366b64a0ece4984b5c20876deb9cc33e33cf103bf1bb32",
+          "buffer_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "optimizer_step_min": 1005,
+          "optimizer_step_max": 1005,
+          "learning_rates": [
+            0.00029902225900388873
+          ],
+          "scheduler_last_epoch": 1005
+        }
+      }
+    },
+    {
+      "agent_update_step": 2100,
+      "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/update_snapshots/update2100",
+      "attempted_updates": {
+        "critic": 2100,
+        "actor": 1050,
+        "temperature": 1050
+      },
+      "network_audit": {
+        "actor": {
+          "parameter_digest": "1cccdf1cc3062f8b5c859860fe713ccdb10019e75645b2eda599787683d885e9",
+          "buffer_digest": "2aedc8443a397dae6fd22cb4ce8edea810a95b3097934085f99cb59762b48262",
+          "optimizer_step_min": 1050,
+          "optimizer_step_max": 1050,
+          "learning_rates": [
+            0.0002989329526852458
+          ],
+          "scheduler_last_epoch": 1050
+        },
+        "critic": {
+          "parameter_digest": "2ab0a8261628e22b6396dbf393daee4b9dbaca508b199667e09a90fba81a6aef",
+          "buffer_digest": "18a55583efd4a1f73fd32ad1bbd0fb778f5334c26586704755fabd1ef3c34dfd",
+          "optimizer_step_min": 2100,
+          "optimizer_step_max": 2100,
+          "learning_rates": [
+            0.00029576217314023455
+          ],
+          "scheduler_last_epoch": 2100
+        },
+        "temperature": {
+          "parameter_digest": "dbcdad6ca08aa8888502c131c7e830242e6b3af01184fcb860d0ea528a5429d4",
+          "buffer_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "optimizer_step_min": 1050,
+          "optimizer_step_max": 1050,
+          "learning_rates": [
+            0.0002989329526852458
+          ],
+          "scheduler_last_epoch": 1050
+        }
+      }
+    },
+    {
+      "agent_update_step": 3000,
+      "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0/update_snapshots/update3000",
+      "attempted_updates": {
+        "critic": 3000,
+        "actor": 1500,
+        "temperature": 1500
+      },
+      "network_audit": {
+        "actor": {
+          "parameter_digest": "e68cbf66881320b1c5abee76522c40ff411517ac18b1508fc810cf6190d7c510",
+          "buffer_digest": "c419618393eb42db3a0e8dca26b356d96edfa756ea7e3e1082643f3f5a79c235",
+          "optimizer_step_min": 1500,
+          "optimizer_step_max": 1500,
+          "learning_rates": [
+            0.0002978277368769547
+          ],
+          "scheduler_last_epoch": 1500
+        },
+        "critic": {
+          "parameter_digest": "76d9dc99bc862bbe947ba96f02a81f79f7f0b3a0c0d073fcb01698a69999cf0b",
+          "buffer_digest": "811125193776f0c4c221331faa64da9a50c5a1a0325cb19d7df276db970ad301",
+          "optimizer_step_min": 3000,
+          "optimizer_step_max": 3000,
+          "learning_rates": [
+            0.0002914367802298388
+          ],
+          "scheduler_last_epoch": 3000
+        },
+        "temperature": {
+          "parameter_digest": "4c10265e711e1ace59539256f23d65ad4ac2c65844da1a2452bb382f2ff91dac",
+          "buffer_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "optimizer_step_min": 1500,
+          "optimizer_step_max": 1500,
+          "learning_rates": [
+            0.0002978277368769547
+          ],
+          "scheduler_last_epoch": 1500
+        }
+      }
+    }
+  ],
+  "notes": [
+    "Online warmstart protection test, NOT offline fixed-dataset Q calibration.",
+    "Native trainer still uses a random first vector action and random initial episode progress.",
+    "Native actor scheduling resumes after the gate; actor/temp have fewer optimizer steps and a different scheduler position at equal environment budget.",
+    "Actor inference BN and temperature remain unchanged during critic-only warmup; target/critic BN and EMA update natively.",
+    "Snapshot update numbers are agent._update_step AFTER successful agent.update returns, not environment transitions."
+  ],
+  "arguments": {
+    "initial_checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/entropy_ab/initial/alpha_1e-6",
+    "output_root": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0",
+    "critic_warmup_updates": 0,
+    "snapshot_updates": "0,10,100,1000,2000,2001,2002,2010,2100,3000",
+    "config_name": "simtoolreal_state_teacher",
+    "overrides": [
+      "seed=0",
+      "num_env_steps=2000896",
+      "num_train_envs=1024",
+      "group_name=entropy_ab",
+      "exp_name=alpha_1e-6_gate0",
+      "agent.buffer_max_length=10000000",
+      "agent.buffer_min_length=100000",
+      "agent.load_optimizer=false",
+      "buffer_load_path=null",
+      "save_path=models/final",
+      "agent.learning_rate_decay_step=19532",
+      "agent.temp_initial_value=0.000001",
+      "env.task_cfg_overrides.action.arm_moving_average=0.1",
+      "env.task_cfg_overrides.action.hand_moving_average=0.1"
+    ]
+  },
+  "effective_overrides": [
+    "seed=0",
+    "num_env_steps=2000896",
+    "num_train_envs=1024",
+    "group_name=entropy_ab",
+    "exp_name=alpha_1e-6_gate0",
+    "agent.buffer_max_length=10000000",
+    "agent.buffer_min_length=100000",
+    "agent.load_optimizer=false",
+    "buffer_load_path=null",
+    "save_path=models/final",
+    "agent.learning_rate_decay_step=19532",
+    "agent.temp_initial_value=0.000001",
+    "env.task_cfg_overrides.action.arm_moving_average=0.1",
+    "env.task_cfg_overrides.action.hand_moving_average=0.1",
+    "output_root=/home/abao/flashsac-robotics/diagnostics/overnight_20260908/entropy_ab/runs/alpha_1e-6_gate0",
+    "agent_load_path=/home/abao/flashsac-robotics/diagnostics/overnight_20260908/entropy_ab/initial/alpha_1e-6",
+    "require_agent_load=true",
+    "save_checkpoint_per_interaction_step=${num_interaction_steps}"
+  ],
+  "completed_network_calls": 3714,
+  "attempted_updates": {
+    "critic": 3714,
+    "actor": 1857,
+    "temperature": 1857
+  },
+  "updated_utc": "2026-09-08T17:25:02.004385+00:00",
+  "initial": {
+    "actor": {
+      "parameter_digest": "07c90291520f34274e64616835d9e0397bac1afeea376dd06edfbf55a2507eca",
+      "buffer_digest": "eda7f1d2a4afe5e431b8acc084a966f7799c8f70faba04ecd6f636b8bf913fd6",
+      "optimizer_step_min": 0,
+      "optimizer_step_max": 0,
+      "learning_rates": [
+        0.0003
+      ],
+      "scheduler_last_epoch": 0
+    },
+    "critic": {
+      "parameter_digest": "d601589e462d187e3f19616c5a9de3b3aee5b6c336aa756ff3f360e0e6e4df49",
+      "buffer_digest": "85803d6344eff8973d03f6e4233d181f2400378624a6fef24ba2d20c1237b8f0",
+      "optimizer_step_min": 0,
+      "optimizer_step_max": 0,
+      "learning_rates": [
+        0.0003
+      ],
+      "scheduler_last_epoch": 0
+    },
+    "temperature": {
+      "parameter_digest": "64a204f4ceea62bf169aaac2b17ec44a2c3d8b06e960061af159205f7d36fb8e",
+      "buffer_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "optimizer_step_min": 0,
+      "optimizer_step_max": 0,
+      "learning_rates": [
+        0.0003
+      ],
+      "scheduler_last_epoch": 0
+    }
+  },
+  "warmup_end": {
+    "actor": {
+      "parameter_digest": "07c90291520f34274e64616835d9e0397bac1afeea376dd06edfbf55a2507eca",
+      "buffer_digest": "eda7f1d2a4afe5e431b8acc084a966f7799c8f70faba04ecd6f636b8bf913fd6",
+      "optimizer_step_min": 0,
+      "optimizer_step_max": 0,
+      "learning_rates": [
+        0.0003
+      ],
+      "scheduler_last_epoch": 0
+    },
+    "critic": {
+      "parameter_digest": "d601589e462d187e3f19616c5a9de3b3aee5b6c336aa756ff3f360e0e6e4df49",
+      "buffer_digest": "85803d6344eff8973d03f6e4233d181f2400378624a6fef24ba2d20c1237b8f0",
+      "optimizer_step_min": 0,
+      "optimizer_step_max": 0,
+      "learning_rates": [
+        0.0003
+      ],
+      "scheduler_last_epoch": 0
+    },
+    "temperature": {
+      "parameter_digest": "64a204f4ceea62bf169aaac2b17ec44a2c3d8b06e960061af159205f7d36fb8e",
+      "buffer_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "optimizer_step_min": 0,
+      "optimizer_step_max": 0,
+      "learning_rates": [
+        0.0003
+      ],
+      "scheduler_last_epoch": 0
+    }
+  },
+  "warmup_end_network_call": 0,
+  "actor_and_temperature_frozen_during_warmup": true,
+  "latest_native_agent_update_step": 3000,
+  "latest_network_audit": {
+    "actor": {
+      "parameter_digest": "e68cbf66881320b1c5abee76522c40ff411517ac18b1508fc810cf6190d7c510",
+      "buffer_digest": "c419618393eb42db3a0e8dca26b356d96edfa756ea7e3e1082643f3f5a79c235",
+      "optimizer_step_min": 1500,
+      "optimizer_step_max": 1500,
+      "learning_rates": [
+        0.0002978277368769547
+      ],
+      "scheduler_last_epoch": 1500
+    },
+    "critic": {
+      "parameter_digest": "76d9dc99bc862bbe947ba96f02a81f79f7f0b3a0c0d073fcb01698a69999cf0b",
+      "buffer_digest": "811125193776f0c4c221331faa64da9a50c5a1a0325cb19d7df276db970ad301",
+      "optimizer_step_min": 3000,
+      "optimizer_step_max": 3000,
+      "learning_rates": [
+        0.0002914367802298388
+      ],
+      "scheduler_last_epoch": 3000
+    },
+    "temperature": {
+      "parameter_digest": "4c10265e711e1ace59539256f23d65ad4ac2c65844da1a2452bb382f2ff91dac",
+      "buffer_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "optimizer_step_min": 1500,
+      "optimizer_step_max": 1500,
+      "learning_rates": [
+        0.0002978277368769547
+      ],
+      "scheduler_last_epoch": 1500
+    }
+  },
+  "completion_marker": "native_training_env_close_entered_after_final_save",
+  "final_native_agent_update_step": 3714,
+  "final_network_audit": {
+    "actor": {
+      "parameter_digest": "f8d4a1512ca2d5163570bbaec25b86fb6448395621aa0c3af2e95bb7610ebe3e",
+      "buffer_digest": "2b5e52cdcc33fef70625de62c7e26591c588f0c9b77b2e42b70edc95bc25d5e1",
+      "optimizer_step_min": 1857,
+      "optimizer_step_max": 1857,
+      "learning_rates": [
+        0.0002966792953926241
+      ],
+      "scheduler_last_epoch": 1857
+    },
+    "critic": {
+      "parameter_digest": "3fd89af245725ea5958e83478f242fe14b4f0bfed4fdb076d257e7c15397360f",
+      "buffer_digest": "725f130b71cb85bb1e68952d5c4e50728ad914871293bcfd5b2ae3c41439a2cb",
+      "optimizer_step_min": 3714,
+      "optimizer_step_max": 3714,
+      "learning_rates": [
+        0.00028701123701288154
+      ],
+      "scheduler_last_epoch": 3714
+    },
+    "temperature": {
+      "parameter_digest": "77d38f7c23adc54c40a211fadbe317f018162cbdd76d81cb07f4402ba19dc507",
+      "buffer_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "optimizer_step_min": 1857,
+      "optimizer_step_max": 1857,
+      "learning_rates": [
+        0.0002966792953926241
+      ],
+      "scheduler_last_epoch": 1857
+    }
+  }
+}

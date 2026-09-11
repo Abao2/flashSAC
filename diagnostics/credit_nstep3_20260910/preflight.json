@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "config_name": "simtoolreal_full_arm1_nstep3",
+  "planned_transitions": 100003840,
+  "source_sha256": {
+    "configs/simtoolreal_full_arm1_nstep3.yaml": "348d395c8554d673c2e26e0cdcdd43b9eeac5d2bf75ecf334a3df21892d6308d",
+    "scripts/train_str_holding.py": "fef06615b7b063875711ab6947f4e556876c347deb5e91ae9123d3f1e60d0e1a",
+    "scripts/play_str_full_diagnostic.py": "ae07fadde81682b9bd5dc6862020009d6da36d5406640977e444437b822680e7",
+    "flash_rl/buffers/torch_buffer.py": "1994d9770f2b1da2558c0167c69c341fd2db31154192935d82eb025c6669dc74",
+    "flash_rl/agents/flashSAC/update.py": "50c571fc466276aa6caac56c2c13d3e42029bb669cce58a6a73a98bf9e01d5ba",
+    "tests/test_str_nstep3_config.py": "ea664b70a88f7f82a717a39bb9f4c1030f69c0f3fdd26a07c4efeedfb597f815",
+    "diagnostics/credit_nstep3_20260910/manifest.json": "bcfc81c95a12ef3d52fc5913deb7a70ba644b4311137d4fb6ca6728783d6a6af",
+    "diagnostics/credit_nstep3_20260910/run_queue.py": "bbdeb0e4584dc77a646bba2c66148bafbaf9c511523699010cb2788beebe5ac3"
+  },
+  "note": "CPU resolved expected config; runtime TB configuration remains the authoritative run record. Baseline task identical; learner change n_step1 to3. No checkpoint/replay loaded.",
+  "tests": {
+    "passed": 36,
+    "failed": 0,
+    "warning": "Sandbox NVML initialization warning; actual GPU checked separately."
+  }
+}

@@ -1,0 +1,1898 @@
+{
+  "created_utc": "2026-09-08T14:49:50.488789+00:00",
+  "detailed_report": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/report.json",
+  "source_files_match": "41/41",
+  "all_checkpoint_states_finite": true,
+  "checkpoint_tensor_count": 1266,
+  "checkpoint_tensor_elements": 59638692,
+  "groups": [
+    {
+      "hand_filter": 1.0,
+      "training_seeds": [
+        0,
+        1,
+        2
+      ],
+      "evaluations": {
+        "deterministic": {
+          "episodes": 384,
+          "counts": {
+            "success": 0,
+            "ever_task_lift": 0,
+            "ever_sustained_lift_near_palm_proxy": 0,
+            "ever_near_object_proxy": 384,
+            "ever_off_table_proxy": 9,
+            "dropped_below_reset_after_task_lift": 0
+          }
+        },
+        "stochastic": {
+          "episodes": 384,
+          "counts": {
+            "success": 0,
+            "ever_task_lift": 3,
+            "ever_sustained_lift_near_palm_proxy": 1,
+            "ever_near_object_proxy": 382,
+            "ever_off_table_proxy": 17,
+            "dropped_below_reset_after_task_lift": 2
+          }
+        }
+      }
+    },
+    {
+      "hand_filter": 0.1,
+      "training_seeds": [
+        0,
+        1,
+        2
+      ],
+      "evaluations": {
+        "deterministic": {
+          "episodes": 384,
+          "counts": {
+            "success": 0,
+            "ever_task_lift": 0,
+            "ever_sustained_lift_near_palm_proxy": 0,
+            "ever_near_object_proxy": 384,
+            "ever_off_table_proxy": 0,
+            "dropped_below_reset_after_task_lift": 0
+          }
+        },
+        "stochastic": {
+          "episodes": 384,
+          "counts": {
+            "success": 0,
+            "ever_task_lift": 8,
+            "ever_sustained_lift_near_palm_proxy": 6,
+            "ever_near_object_proxy": 382,
+            "ever_off_table_proxy": 14,
+            "dropped_below_reset_after_task_lift": 6
+          }
+        }
+      }
+    }
+  ],
+  "runs": [
+    {
+      "name": "arm1_hand1_seed0",
+      "hand_filter": 1.0,
+      "seed": 0,
+      "training_seconds": 404.0316749108024,
+      "tb_path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/runs/control_ab/arm1_hand1/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0908_212611",
+      "curves": {
+        "episode/return": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 48.268455505371094
+          },
+          "last": {
+            "step": 10000384,
+            "value": 431.264892578125
+          },
+          "peak": {
+            "step": 9932800,
+            "value": 442.19500732421875
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 48.268455505371094
+          },
+          "last_10_windows_unweighted_mean": 432.1115661621094,
+          "positive_windows": 195
+        },
+        "episode/cumulative/lift_bonus_rew": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0
+          },
+          "peak": {
+            "step": 2201600,
+            "value": 9.090909004211426
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 1.7679243087768555,
+          "positive_windows": 53
+        },
+        "episode/cumulative/bonus_rew": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0
+          },
+          "peak": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 0.0,
+          "positive_windows": 0
+        },
+        "episode/cumulative/keypoint_rew": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0
+          },
+          "peak": {
+            "step": 1945600,
+            "value": 0.11003480851650238
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 0.006386789679527283,
+          "positive_windows": 6
+        },
+        "episode/final/all_goals_hit": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0
+          },
+          "peak": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 0.0,
+          "positive_windows": 0
+        },
+        "actor/entropy": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": -97.4234390258789
+          },
+          "last": {
+            "step": 10000384,
+            "value": 19.279056549072266
+          },
+          "peak": {
+            "step": 5222400,
+            "value": 19.53944969177246
+          },
+          "minimum": {
+            "step": 102400,
+            "value": -97.4234390258789
+          },
+          "last_10_windows_unweighted_mean": 19.302912139892577,
+          "positive_windows": 191
+        },
+        "temperature/value": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.01000299770385027
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0011913735652342439
+          },
+          "peak": {
+            "step": 204800,
+            "value": 0.010114428587257862
+          },
+          "minimum": {
+            "step": 10000384,
+            "value": 0.0011913735652342439
+          },
+          "last_10_windows_unweighted_mean": 0.0012374315992929041,
+          "positive_windows": 195
+        },
+        "critic/loss": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 4.909214496612549
+          },
+          "last": {
+            "step": 10000384,
+            "value": 2.194117307662964
+          },
+          "peak": {
+            "step": 102400,
+            "value": 4.909214496612549
+          },
+          "minimum": {
+            "step": 6400000,
+            "value": 0.69463050365448
+          },
+          "last_10_windows_unweighted_mean": 2.1686068058013914,
+          "positive_windows": 195
+        }
+      },
+      "final_reward_terms": {
+        "fingertip_delta_rew": 26.670812606811523,
+        "lifting_rew": 596.5061645507812,
+        "lift_bonus_rew": 0.0,
+        "keypoint_rew": 0.0,
+        "kuka_actions_penalty": -49.20099639892578,
+        "hand_actions_penalty": -142.7147216796875,
+        "bonus_rew": 0.0,
+        "total_reward": 431.264892578125
+      },
+      "approx_q_from_window_means": {
+        "points": 195,
+        "first": {
+          "step": 102400,
+          "value": -0.2736385745288814
+        },
+        "last": {
+          "step": 10000384,
+          "value": 4.333739014601791
+        },
+        "peak": {
+          "step": 6707200,
+          "value": 4.920558579615284
+        },
+        "minimum": {
+          "step": 307200,
+          "value": -0.37099043631064266
+        },
+        "last_10_windows_unweighted_mean": 4.391881198745764,
+        "positive_windows": 187
+      },
+      "final_reset_critic_means": {
+        "q_recorded": 4.561560932546854,
+        "q_deterministic": 4.562391646206379,
+        "uniform_action_q_range": 0.0035980939865112305,
+        "minq_top_atom_mass": 0.03201859683031216,
+        "minq_top5_atoms_mass": 0.6212184643372893,
+        "deterministic_dq_da_l2": 0.0016540398592042038,
+        "target_mass_above_support": 0.0,
+        "target_mass_below_support": 0.0,
+        "target_unprojected_max": 4.976437281817198,
+        "target_expected_clipping_shift": 0.0,
+        "actor_pretanh_std_mean": 0.8547996133565903,
+        "next_entropy_bonus": 0.020336162750027142
+      },
+      "final_reset_q_to_entropy_gradient_norm_ratio": 0.036636706441640854,
+      "evaluations": {
+        "deterministic": {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/evaluations/arm1_hand1_seed0/deterministic",
+          "summary_sha256": "cab2455b9ae5097c4f85b8256aea475af4bdfa3c23cb565210e32892bc98846d",
+          "episodes": 128,
+          "counts": {
+            "success": 0,
+            "ever_task_lift": 0,
+            "ever_sustained_lift_near_palm_proxy": 0,
+            "ever_near_object_proxy": 128,
+            "ever_off_table_proxy": 0,
+            "dropped_below_reset_after_task_lift": 0
+          },
+          "mean_return": 617.6642938693985,
+          "mean_length": 600.0,
+          "mean_position_error_m": 0.16323919012211263,
+          "actions": {
+            "arm_7": {
+              "mean_abs": 0.029229940994021795,
+              "mean_abs_delta": 0.00564292806544169,
+              "fraction_abs_ge_0.999": 0.0
+            },
+            "hand_22": {
+              "mean_abs": 0.044706020255883536,
+              "mean_abs_delta": 0.0031141277434229174,
+              "fraction_abs_ge_0.999": 0.0
+            }
+          },
+          "model_unchanged": true,
+          "termination_counts": {
+            "terminated": 0,
+            "truncated": 128
+          }
+        },
+        "stochastic": {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/evaluations/arm1_hand1_seed0/stochastic",
+          "summary_sha256": "63c0bc3e0177ef515fcb6dd1b5bb3b400b73ce278bffffa433427a9eeff83769",
+          "episodes": 128,
+          "counts": {
+            "success": 0,
+            "ever_task_lift": 2,
+            "ever_sustained_lift_near_palm_proxy": 0,
+            "ever_near_object_proxy": 128,
+            "ever_off_table_proxy": 10,
+            "dropped_below_reset_after_task_lift": 1
+          },
+          "mean_return": 434.8681537581724,
+          "mean_length": 596.6796875,
+          "mean_position_error_m": 0.1916937914211303,
+          "actions": {
+            "arm_7": {
+              "mean_abs": 0.4915841932406012,
+              "mean_abs_delta": 0.3290551987765464,
+              "fraction_abs_ge_0.999": 1.1222819733458029e-05
+            },
+            "hand_22": {
+              "mean_abs": 0.5066220474492898,
+              "mean_abs_delta": 0.32343049995588985,
+              "fraction_abs_ge_0.999": 2.2615682190150265e-05
+            }
+          },
+          "model_unchanged": true,
+          "termination_counts": {
+            "terminated": 2,
+            "truncated": 126
+          }
+        }
+      },
+      "optimizer_applied_steps": {
+        "actor.pt": [
+          9667
+        ],
+        "critic.pt": [
+          19335
+        ],
+        "temperature.pt": [
+          9669
+        ]
+      }
+    },
+    {
+      "name": "arm1_hand1_seed1",
+      "hand_filter": 1.0,
+      "seed": 1,
+      "training_seconds": 340.0293571217917,
+      "tb_path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/runs/control_ab/arm1_hand1/Isaacsimenvs-SimToolReal-Direct-v0_seed1_0908_214232",
+      "curves": {
+        "episode/return": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 52.083152770996094
+          },
+          "last": {
+            "step": 10000384,
+            "value": 442.455810546875
+          },
+          "peak": {
+            "step": 10000384,
+            "value": 442.455810546875
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 52.083152770996094
+          },
+          "last_10_windows_unweighted_mean": 422.54632263183595,
+          "positive_windows": 195
+        },
+        "episode/cumulative/lift_bonus_rew": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0
+          },
+          "peak": {
+            "step": 256000,
+            "value": 29.752065658569336
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 0.46875,
+          "positive_windows": 55
+        },
+        "episode/cumulative/bonus_rew": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0
+          },
+          "peak": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 0.0,
+          "positive_windows": 0
+        },
+        "episode/cumulative/keypoint_rew": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0
+          },
+          "peak": {
+            "step": 7270400,
+            "value": 0.12141231447458267
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 0.0,
+          "positive_windows": 2
+        },
+        "episode/final/all_goals_hit": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0
+          },
+          "peak": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 0.0,
+          "positive_windows": 0
+        },
+        "actor/entropy": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": -115.8138198852539
+          },
+          "last": {
+            "step": 10000384,
+            "value": 19.306129455566406
+          },
+          "peak": {
+            "step": 5888000,
+            "value": 19.571529388427734
+          },
+          "minimum": {
+            "step": 102400,
+            "value": -115.8138198852539
+          },
+          "last_10_windows_unweighted_mean": 19.326227760314943,
+          "positive_windows": 190
+        },
+        "temperature/value": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.01000299770385027
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0012461650185286999
+          },
+          "peak": {
+            "step": 307200,
+            "value": 0.010228700004518032
+          },
+          "minimum": {
+            "step": 10000384,
+            "value": 0.0012461650185286999
+          },
+          "last_10_windows_unweighted_mean": 0.0012943342560902237,
+          "positive_windows": 195
+        },
+        "critic/loss": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 4.922991752624512
+          },
+          "last": {
+            "step": 10000384,
+            "value": 2.083444833755493
+          },
+          "peak": {
+            "step": 102400,
+            "value": 4.922991752624512
+          },
+          "minimum": {
+            "step": 6553600,
+            "value": 0.46780601143836975
+          },
+          "last_10_windows_unweighted_mean": 2.047888493537903,
+          "positive_windows": 195
+        }
+      },
+      "final_reward_terms": {
+        "fingertip_delta_rew": 27.244491577148438,
+        "lifting_rew": 614.2669677734375,
+        "lift_bonus_rew": 0.0,
+        "keypoint_rew": 0.0,
+        "kuka_actions_penalty": -57.08759689331055,
+        "hand_actions_penalty": -141.97222900390625,
+        "bonus_rew": 0.0,
+        "total_reward": 442.455810546875
+      },
+      "approx_q_from_window_means": {
+        "points": 195,
+        "first": {
+          "step": 102400,
+          "value": 0.04028066151858667
+        },
+        "last": {
+          "step": 10000384,
+          "value": 4.457383351469179
+        },
+        "peak": {
+          "step": 6553600,
+          "value": 4.949974996689171
+        },
+        "minimum": {
+          "step": 358400,
+          "value": -0.10140444379423341
+        },
+        "last_10_windows_unweighted_mean": 4.510295267213094,
+        "positive_windows": 191
+      },
+      "final_reset_critic_means": {
+        "q_recorded": 4.723908685147762,
+        "q_deterministic": 4.724208828061819,
+        "uniform_action_q_range": 0.0031848885118961334,
+        "minq_top_atom_mass": 0.14864969812333584,
+        "minq_top5_atoms_mass": 0.8480603746138513,
+        "deterministic_dq_da_l2": 0.0015837481014386867,
+        "target_mass_above_support": 0.0,
+        "target_mass_below_support": 0.0,
+        "target_unprojected_max": 4.979125317186117,
+        "target_expected_clipping_shift": 0.0,
+        "actor_pretanh_std_mean": 0.8498756447806954,
+        "next_entropy_bonus": 0.022123504895716906
+      },
+      "final_reset_q_to_entropy_gradient_norm_ratio": 0.015247536823153496,
+      "evaluations": {
+        "deterministic": {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/evaluations/arm1_hand1_seed1/deterministic",
+          "summary_sha256": "1c16662187b7348881bda470aa60b416965d8833aa553c2026760f37a31f998f",
+          "episodes": 128,
+          "counts": {
+            "success": 0,
+            "ever_task_lift": 0,
+            "ever_sustained_lift_near_palm_proxy": 0,
+            "ever_near_object_proxy": 128,
+            "ever_off_table_proxy": 0,
+            "dropped_below_reset_after_task_lift": 0
+          },
+          "mean_return": 605.824991999194,
+          "mean_length": 600.0,
+          "mean_position_error_m": 0.1620110945077613,
+          "actions": {
+            "arm_7": {
+              "mean_abs": 0.03413687892180557,
+              "mean_abs_delta": 0.0028447406078006073,
+              "fraction_abs_ge_0.999": 0.0
+            },
+            "hand_22": {
+              "mean_abs": 0.030853264743927866,
+              "mean_abs_delta": 0.0015158547685132362,
+              "fraction_abs_ge_0.999": 0.0
+            }
+          },
+          "model_unchanged": true,
+          "termination_counts": {
+            "terminated": 0,
+            "truncated": 128
+          }
+        },
+        "stochastic": {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/evaluations/arm1_hand1_seed1/stochastic",
+          "summary_sha256": "f974f341aa29aeabce7527ef1870e966eba6aa8f543ab287b32fa299d2aef41a",
+          "episodes": 128,
+          "counts": {
+            "success": 0,
+            "ever_task_lift": 0,
+            "ever_sustained_lift_near_palm_proxy": 0,
+            "ever_near_object_proxy": 128,
+            "ever_off_table_proxy": 2,
+            "dropped_below_reset_after_task_lift": 0
+          },
+          "mean_return": 430.10660637228284,
+          "mean_length": 592.6484375,
+          "mean_position_error_m": 0.17927801457699388,
+          "actions": {
+            "arm_7": {
+              "mean_abs": 0.5073564703511432,
+              "mean_abs_delta": 0.32237783069605663,
+              "fraction_abs_ge_0.999": 1.694873760152764e-05
+            },
+            "hand_22": {
+              "mean_abs": 0.5121660738176513,
+              "mean_abs_delta": 0.3134584615741233,
+              "fraction_abs_ge_0.999": 1.857513161379544e-05
+            }
+          },
+          "model_unchanged": true,
+          "termination_counts": {
+            "terminated": 2,
+            "truncated": 126
+          }
+        }
+      },
+      "optimizer_applied_steps": {
+        "actor.pt": [
+          9667
+        ],
+        "critic.pt": [
+          19335
+        ],
+        "temperature.pt": [
+          9669
+        ]
+      }
+    },
+    {
+      "name": "arm1_hand1_seed2",
+      "hand_filter": 1.0,
+      "seed": 2,
+      "training_seconds": 320.02792134089395,
+      "tb_path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/runs/control_ab/arm1_hand1/Isaacsimenvs-SimToolReal-Direct-v0_seed2_0908_215616",
+      "curves": {
+        "episode/return": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 48.41807174682617
+          },
+          "last": {
+            "step": 10000384,
+            "value": 446.9090576171875
+          },
+          "peak": {
+            "step": 9984000,
+            "value": 455.8838195800781
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 48.41807174682617
+          },
+          "last_10_windows_unweighted_mean": 444.6436065673828,
+          "positive_windows": 195
+        },
+        "episode/cumulative/lift_bonus_rew": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0
+          },
+          "peak": {
+            "step": 256000,
+            "value": 142.22222900390625
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 1.1732128620147706,
+          "positive_windows": 59
+        },
+        "episode/cumulative/bonus_rew": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0
+          },
+          "peak": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 0.0,
+          "positive_windows": 0
+        },
+        "episode/cumulative/keypoint_rew": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0
+          },
+          "peak": {
+            "step": 2508800,
+            "value": 0.17768482863903046
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 0.0015701519325375557,
+          "positive_windows": 4
+        },
+        "episode/final/all_goals_hit": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0
+          },
+          "peak": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 0.0,
+          "positive_windows": 0
+        },
+        "actor/entropy": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": -125.12328338623047
+          },
+          "last": {
+            "step": 10000384,
+            "value": 19.267744064331055
+          },
+          "peak": {
+            "step": 6809600,
+            "value": 19.477092742919922
+          },
+          "minimum": {
+            "step": 102400,
+            "value": -125.12328338623047
+          },
+          "last_10_windows_unweighted_mean": 19.276456451416017,
+          "positive_windows": 191
+        },
+        "temperature/value": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.01000299770385027
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0012500123120844364
+          },
+          "peak": {
+            "step": 256000,
+            "value": 0.010179483331739902
+          },
+          "minimum": {
+            "step": 10000384,
+            "value": 0.0012500123120844364
+          },
+          "last_10_windows_unweighted_mean": 0.0012983651366084814,
+          "positive_windows": 195
+        },
+        "critic/loss": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 4.93997859954834
+          },
+          "last": {
+            "step": 10000384,
+            "value": 2.1355080604553223
+          },
+          "peak": {
+            "step": 102400,
+            "value": 4.93997859954834
+          },
+          "minimum": {
+            "step": 6348800,
+            "value": 0.5012683868408203
+          },
+          "last_10_windows_unweighted_mean": 2.1036250591278076,
+          "positive_windows": 195
+        }
+      },
+      "final_reward_terms": {
+        "fingertip_delta_rew": 27.51373291015625,
+        "lifting_rew": 596.2858276367188,
+        "lift_bonus_rew": 0.0,
+        "keypoint_rew": 0.0,
+        "kuka_actions_penalty": -47.362369537353516,
+        "hand_actions_penalty": -129.5314178466797,
+        "bonus_rew": 0.0,
+        "total_reward": 446.9090576171875
+      },
+      "approx_q_from_window_means": {
+        "points": 195,
+        "first": {
+          "step": 102400,
+          "value": -0.5021991514604238
+        },
+        "last": {
+          "step": 10000384,
+          "value": 4.395345815420545
+        },
+        "peak": {
+          "step": 6502400,
+          "value": 4.938624008966995
+        },
+        "minimum": {
+          "step": 153600,
+          "value": -0.5425578428287636
+        },
+        "last_10_windows_unweighted_mean": 4.452565967717525,
+        "positive_windows": 185
+      },
+      "final_reset_critic_means": {
+        "q_recorded": 4.6471944488584995,
+        "q_deterministic": 4.647814441472292,
+        "uniform_action_q_range": 0.0038224346935749054,
+        "minq_top_atom_mass": 0.06077872158493847,
+        "minq_top5_atoms_mass": 0.7464139717631042,
+        "deterministic_dq_da_l2": 0.0019528532548065414,
+        "target_mass_above_support": 0.0,
+        "target_mass_below_support": 0.0,
+        "target_unprojected_max": 4.977403122931719,
+        "target_expected_clipping_shift": 0.0,
+        "actor_pretanh_std_mean": 0.8566809147596359,
+        "next_entropy_bonus": 0.021358448764658533
+      },
+      "final_reset_q_to_entropy_gradient_norm_ratio": 0.09997543195883433,
+      "evaluations": {
+        "deterministic": {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/evaluations/arm1_hand1_seed2/deterministic",
+          "summary_sha256": "4d4a48393ee3c24871dbf0f1d545f198c189cad5c5203cbfcdcf3bbbdec35307",
+          "episodes": 128,
+          "counts": {
+            "success": 0,
+            "ever_task_lift": 0,
+            "ever_sustained_lift_near_palm_proxy": 0,
+            "ever_near_object_proxy": 128,
+            "ever_off_table_proxy": 9,
+            "dropped_below_reset_after_task_lift": 0
+          },
+          "mean_return": 595.2022592399735,
+          "mean_length": 600.0,
+          "mean_position_error_m": 0.1770824653794989,
+          "actions": {
+            "arm_7": {
+              "mean_abs": 0.060740979472175244,
+              "mean_abs_delta": 0.014626100147434045,
+              "fraction_abs_ge_0.999": 0.0
+            },
+            "hand_22": {
+              "mean_abs": 0.05872928329588224,
+              "mean_abs_delta": 0.008596430027585786,
+              "fraction_abs_ge_0.999": 0.0
+            }
+          },
+          "model_unchanged": true,
+          "termination_counts": {
+            "terminated": 0,
+            "truncated": 128
+          }
+        },
+        "stochastic": {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/evaluations/arm1_hand1_seed2/stochastic",
+          "summary_sha256": "2a79a33baf02ceccbbc3072bd52a59f504fe74282c246b31fa0ec3121c857a83",
+          "episodes": 128,
+          "counts": {
+            "success": 0,
+            "ever_task_lift": 1,
+            "ever_sustained_lift_near_palm_proxy": 1,
+            "ever_near_object_proxy": 126,
+            "ever_off_table_proxy": 5,
+            "dropped_below_reset_after_task_lift": 1
+          },
+          "mean_return": 459.1847577524022,
+          "mean_length": 595.1171875,
+          "mean_position_error_m": 0.1943530710414052,
+          "actions": {
+            "arm_7": {
+              "mean_abs": 0.4967112814938001,
+              "mean_abs_delta": 0.3346083295787402,
+              "fraction_abs_ge_0.999": 1.500304749402222e-05
+            },
+            "hand_22": {
+              "mean_abs": 0.5023180484803027,
+              "mean_abs_delta": 0.32986074951161,
+              "fraction_abs_ge_0.999": 1.312766655726944e-05
+            }
+          },
+          "model_unchanged": true,
+          "termination_counts": {
+            "terminated": 2,
+            "truncated": 126
+          }
+        }
+      },
+      "optimizer_applied_steps": {
+        "actor.pt": [
+          9666
+        ],
+        "critic.pt": [
+          19336
+        ],
+        "temperature.pt": [
+          9669
+        ]
+      }
+    },
+    {
+      "name": "arm1_hand01_seed0",
+      "hand_filter": 0.1,
+      "seed": 0,
+      "training_seconds": 358.02826737286523,
+      "tb_path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/runs/control_ab/arm1_hand01/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0908_213503",
+      "curves": {
+        "episode/return": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 57.41392135620117
+          },
+          "last": {
+            "step": 10000384,
+            "value": 528.3541259765625
+          },
+          "peak": {
+            "step": 9676800,
+            "value": 533.9083251953125
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 57.41392135620117
+          },
+          "last_10_windows_unweighted_mean": 525.7057556152344,
+          "positive_windows": 195
+        },
+        "episode/cumulative/lift_bonus_rew": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0
+          },
+          "peak": {
+            "step": 9420800,
+            "value": 30.68181800842285
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 8.764830493927002,
+          "positive_windows": 81
+        },
+        "episode/cumulative/bonus_rew": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0
+          },
+          "peak": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 0.0,
+          "positive_windows": 0
+        },
+        "episode/cumulative/keypoint_rew": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0
+          },
+          "peak": {
+            "step": 9932800,
+            "value": 0.23672837018966675
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 0.055899380892515185,
+          "positive_windows": 39
+        },
+        "episode/final/all_goals_hit": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0
+          },
+          "peak": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 0.0,
+          "positive_windows": 0
+        },
+        "actor/entropy": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": -95.56977081298828
+          },
+          "last": {
+            "step": 10000384,
+            "value": 19.269485473632812
+          },
+          "peak": {
+            "step": 6707200,
+            "value": 19.606897354125977
+          },
+          "minimum": {
+            "step": 102400,
+            "value": -95.56977081298828
+          },
+          "last_10_windows_unweighted_mean": 19.30375862121582,
+          "positive_windows": 191
+        },
+        "temperature/value": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.01000299770385027
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0011815940961241722
+          },
+          "peak": {
+            "step": 204800,
+            "value": 0.010115307755768299
+          },
+          "minimum": {
+            "step": 10000384,
+            "value": 0.0011815940961241722
+          },
+          "last_10_windows_unweighted_mean": 0.0012271790648810566,
+          "positive_windows": 195
+        },
+        "critic/loss": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 4.886318683624268
+          },
+          "last": {
+            "step": 10000384,
+            "value": 2.018958806991577
+          },
+          "peak": {
+            "step": 102400,
+            "value": 4.886318683624268
+          },
+          "minimum": {
+            "step": 6656000,
+            "value": 0.44781115651130676
+          },
+          "last_10_windows_unweighted_mean": 1.9810933351516724,
+          "positive_windows": 195
+        }
+      },
+      "final_reward_terms": {
+        "fingertip_delta_rew": 27.543012619018555,
+        "lifting_rew": 592.6890258789062,
+        "lift_bonus_rew": 0.0,
+        "keypoint_rew": 0.0,
+        "kuka_actions_penalty": -50.95368957519531,
+        "hand_actions_penalty": -40.92789077758789,
+        "bonus_rew": 0.0,
+        "total_reward": 528.3541259765625
+      },
+      "approx_q_from_window_means": {
+        "points": 195,
+        "first": {
+          "step": 102400,
+          "value": -0.3396301637631822
+        },
+        "last": {
+          "step": 10000384,
+          "value": 4.50464275060547
+        },
+        "peak": {
+          "step": 6809600,
+          "value": 4.957260607658001
+        },
+        "minimum": {
+          "step": 307200,
+          "value": -0.4837137090801208
+        },
+        "last_10_windows_unweighted_mean": 4.555863024809107,
+        "positive_windows": 186
+      },
+      "final_reset_critic_means": {
+        "q_recorded": 4.76875514164567,
+        "q_deterministic": 4.768851425498724,
+        "uniform_action_q_range": 0.0029959827661514282,
+        "minq_top_atom_mass": 0.1464422633871436,
+        "minq_top5_atoms_mass": 0.9090663348324597,
+        "deterministic_dq_da_l2": 0.0015581162479065824,
+        "target_mass_above_support": 0.0,
+        "target_mass_below_support": 0.0,
+        "target_unprojected_max": 4.9825275875627995,
+        "target_expected_clipping_shift": 0.0,
+        "actor_pretanh_std_mean": 0.8444065200164914,
+        "next_entropy_bonus": 0.022073652246035635
+      },
+      "final_reset_q_to_entropy_gradient_norm_ratio": 0.031826429069042206,
+      "evaluations": {
+        "deterministic": {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/evaluations/arm1_hand01_seed0/deterministic",
+          "summary_sha256": "2fd7a348d14cd68ceda9b13a1737f977c5e8e100365669fda4da2323f0dbcfac",
+          "episodes": 128,
+          "counts": {
+            "success": 0,
+            "ever_task_lift": 0,
+            "ever_sustained_lift_near_palm_proxy": 0,
+            "ever_near_object_proxy": 128,
+            "ever_off_table_proxy": 0,
+            "dropped_below_reset_after_task_lift": 0
+          },
+          "mean_return": 608.3865498951636,
+          "mean_length": 600.0,
+          "mean_position_error_m": 0.1611183068016544,
+          "actions": {
+            "arm_7": {
+              "mean_abs": 0.027343751668231563,
+              "mean_abs_delta": 0.0028636144592178426,
+              "fraction_abs_ge_0.999": 0.0
+            },
+            "hand_22": {
+              "mean_abs": 0.03398439818372329,
+              "mean_abs_delta": 0.0011950109777588598,
+              "fraction_abs_ge_0.999": 0.0
+            }
+          },
+          "model_unchanged": true,
+          "termination_counts": {
+            "terminated": 0,
+            "truncated": 128
+          }
+        },
+        "stochastic": {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/evaluations/arm1_hand01_seed0/stochastic",
+          "summary_sha256": "902cc0aa2c95113922a368df0c298300225966bb30518586fcdc47ccb77e63b2",
+          "episodes": 128,
+          "counts": {
+            "success": 0,
+            "ever_task_lift": 3,
+            "ever_sustained_lift_near_palm_proxy": 1,
+            "ever_near_object_proxy": 128,
+            "ever_off_table_proxy": 6,
+            "dropped_below_reset_after_task_lift": 2
+          },
+          "mean_return": 526.1155913943076,
+          "mean_length": 592.6015625,
+          "mean_position_error_m": 0.1883703974308446,
+          "actions": {
+            "arm_7": {
+              "mean_abs": 0.48426657735247675,
+              "mean_abs_delta": 0.3209233571824161,
+              "fraction_abs_ge_0.999": 5.6500260842870886e-06
+            },
+            "hand_22": {
+              "mean_abs": 0.5036530516629241,
+              "mean_abs_delta": 0.31180630509627655,
+              "fraction_abs_ge_0.999": 1.3782639387427592e-05
+            }
+          },
+          "model_unchanged": true,
+          "termination_counts": {
+            "terminated": 2,
+            "truncated": 126
+          }
+        }
+      },
+      "optimizer_applied_steps": {
+        "actor.pt": [
+          9666
+        ],
+        "critic.pt": [
+          19336
+        ],
+        "temperature.pt": [
+          9669
+        ]
+      }
+    },
+    {
+      "name": "arm1_hand01_seed1",
+      "hand_filter": 0.1,
+      "seed": 1,
+      "training_seconds": 301.0242324601859,
+      "tb_path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/runs/control_ab/arm1_hand01/Isaacsimenvs-SimToolReal-Direct-v0_seed1_0908_214940",
+      "curves": {
+        "episode/return": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 60.97615432739258
+          },
+          "last": {
+            "step": 10000384,
+            "value": 519.2305908203125
+          },
+          "peak": {
+            "step": 9420800,
+            "value": 528.544189453125
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 60.97615432739258
+          },
+          "last_10_windows_unweighted_mean": 519.0019653320312,
+          "positive_windows": 195
+        },
+        "episode/cumulative/lift_bonus_rew": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 28.571428298950195
+          },
+          "peak": {
+            "step": 358400,
+            "value": 34.482757568359375
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 11.346533465385438,
+          "positive_windows": 64
+        },
+        "episode/cumulative/bonus_rew": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 4.761904716491699
+          },
+          "peak": {
+            "step": 10000384,
+            "value": 4.761904716491699
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 0.47619047164916994,
+          "positive_windows": 1
+        },
+        "episode/cumulative/keypoint_rew": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.9633440375328064
+          },
+          "peak": {
+            "step": 10000384,
+            "value": 0.9633440375328064
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 0.1990676622837782,
+          "positive_windows": 31
+        },
+        "episode/final/all_goals_hit": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0
+          },
+          "peak": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 0.0,
+          "positive_windows": 0
+        },
+        "actor/entropy": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": -115.1570816040039
+          },
+          "last": {
+            "step": 10000384,
+            "value": 19.35208511352539
+          },
+          "peak": {
+            "step": 7065600,
+            "value": 19.61176872253418
+          },
+          "minimum": {
+            "step": 102400,
+            "value": -115.1570816040039
+          },
+          "last_10_windows_unweighted_mean": 19.37596435546875,
+          "positive_windows": 190
+        },
+        "temperature/value": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.01000299770385027
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0012344319839030504
+          },
+          "peak": {
+            "step": 307200,
+            "value": 0.01021145936101675
+          },
+          "minimum": {
+            "step": 10000384,
+            "value": 0.0012344319839030504
+          },
+          "last_10_windows_unweighted_mean": 0.0012821079697459936,
+          "positive_windows": 195
+        },
+        "critic/loss": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 4.872902870178223
+          },
+          "last": {
+            "step": 10000384,
+            "value": 1.967791199684143
+          },
+          "peak": {
+            "step": 102400,
+            "value": 4.872902870178223
+          },
+          "minimum": {
+            "step": 6758400,
+            "value": 0.29056960344314575
+          },
+          "last_10_windows_unweighted_mean": 1.9205259203910827,
+          "positive_windows": 195
+        }
+      },
+      "final_reward_terms": {
+        "fingertip_delta_rew": 24.999914169311523,
+        "lifting_rew": 549.5699462890625,
+        "lift_bonus_rew": 28.571428298950195,
+        "keypoint_rew": 0.9633440375328064,
+        "kuka_actions_penalty": -50.64463806152344,
+        "hand_actions_penalty": -38.9945182800293,
+        "bonus_rew": 4.761904716491699,
+        "total_reward": 519.2305908203125
+      },
+      "approx_q_from_window_means": {
+        "points": 195,
+        "first": {
+          "step": 102400,
+          "value": 0.20564871606229218
+        },
+        "last": {
+          "step": 10000384,
+          "value": 4.548567050206773
+        },
+        "peak": {
+          "step": 6963200,
+          "value": 4.9662223421634595
+        },
+        "minimum": {
+          "step": 358400,
+          "value": -0.13842923046888345
+        },
+        "last_10_windows_unweighted_mean": 4.600933824888896,
+        "positive_windows": 191
+      },
+      "final_reset_critic_means": {
+        "q_recorded": 4.794276665896177,
+        "q_deterministic": 4.794274099171162,
+        "uniform_action_q_range": 0.0027557164430618286,
+        "minq_top_atom_mass": 0.18921751144807786,
+        "minq_top5_atoms_mass": 0.934430590365082,
+        "deterministic_dq_da_l2": 0.001370485720144643,
+        "target_mass_above_support": 0.0,
+        "target_mass_below_support": 0.0,
+        "target_unprojected_max": 4.983261905610561,
+        "target_expected_clipping_shift": 0.0,
+        "actor_pretanh_std_mean": 0.8778015528805554,
+        "next_entropy_bonus": 0.02308450201235246
+      },
+      "final_reset_q_to_entropy_gradient_norm_ratio": 0.08504040539264679,
+      "evaluations": {
+        "deterministic": {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/evaluations/arm1_hand01_seed1/deterministic",
+          "summary_sha256": "9bdcd4e6daa7c487942b29a6cdcd74826cf28744ad39cef54608cb867ed82ff0",
+          "episodes": 128,
+          "counts": {
+            "success": 0,
+            "ever_task_lift": 0,
+            "ever_sustained_lift_near_palm_proxy": 0,
+            "ever_near_object_proxy": 128,
+            "ever_off_table_proxy": 0,
+            "dropped_below_reset_after_task_lift": 0
+          },
+          "mean_return": 605.8286248855293,
+          "mean_length": 600.0,
+          "mean_position_error_m": 0.1596273616887629,
+          "actions": {
+            "arm_7": {
+              "mean_abs": 0.03762000384818142,
+              "mean_abs_delta": 0.0028015531893500643,
+              "fraction_abs_ge_0.999": 0.0
+            },
+            "hand_22": {
+              "mean_abs": 0.03777356350173553,
+              "mean_abs_delta": 0.0011857454263630037,
+              "fraction_abs_ge_0.999": 0.0
+            }
+          },
+          "model_unchanged": true,
+          "termination_counts": {
+            "terminated": 0,
+            "truncated": 128
+          }
+        },
+        "stochastic": {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/evaluations/arm1_hand01_seed1/stochastic",
+          "summary_sha256": "6ce61ecca2549ce41ca190e51405cd82186c8351ac304e188cca46ffcea781d7",
+          "episodes": 128,
+          "counts": {
+            "success": 0,
+            "ever_task_lift": 2,
+            "ever_sustained_lift_near_palm_proxy": 2,
+            "ever_near_object_proxy": 128,
+            "ever_off_table_proxy": 4,
+            "dropped_below_reset_after_task_lift": 2
+          },
+          "mean_return": 518.8833566115063,
+          "mean_length": 594.703125,
+          "mean_position_error_m": 0.17481083411257714,
+          "actions": {
+            "arm_7": {
+              "mean_abs": 0.49265450037633535,
+              "mean_abs_delta": 0.3398832455559328,
+              "fraction_abs_ge_0.999": 1.1260120032879548e-05
+            },
+            "hand_22": {
+              "mean_abs": 0.5135615644657663,
+              "mean_abs_delta": 0.33564904401859047,
+              "fraction_abs_ge_0.999": 1.4331061860028515e-05
+            }
+          },
+          "model_unchanged": true,
+          "termination_counts": {
+            "terminated": 2,
+            "truncated": 126
+          }
+        }
+      },
+      "optimizer_applied_steps": {
+        "actor.pt": [
+          9667
+        ],
+        "critic.pt": [
+          19336
+        ],
+        "temperature.pt": [
+          9669
+        ]
+      }
+    },
+    {
+      "name": "arm1_hand01_seed2",
+      "hand_filter": 0.1,
+      "seed": 2,
+      "training_seconds": 301.02401306899264,
+      "tb_path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/runs/control_ab/arm1_hand01/Isaacsimenvs-SimToolReal-Direct-v0_seed2_0908_220316",
+      "curves": {
+        "episode/return": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 56.17619323730469
+          },
+          "last": {
+            "step": 10000384,
+            "value": 521.7178955078125
+          },
+          "peak": {
+            "step": 9984000,
+            "value": 534.037841796875
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 56.17619323730469
+          },
+          "last_10_windows_unweighted_mean": 521.3700531005859,
+          "positive_windows": 195
+        },
+        "episode/cumulative/lift_bonus_rew": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 12.295082092285156
+          },
+          "peak": {
+            "step": 9625600,
+            "value": 27.272727966308594
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 15.382217407226562,
+          "positive_windows": 74
+        },
+        "episode/cumulative/bonus_rew": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0
+          },
+          "peak": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 0.0,
+          "positive_windows": 0
+        },
+        "episode/cumulative/keypoint_rew": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.1687675267457962
+          },
+          "peak": {
+            "step": 9932800,
+            "value": 0.2880709171295166
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 0.11771252267062664,
+          "positive_windows": 33
+        },
+        "episode/final/all_goals_hit": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0
+          },
+          "peak": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "minimum": {
+            "step": 102400,
+            "value": 0.0
+          },
+          "last_10_windows_unweighted_mean": 0.0,
+          "positive_windows": 0
+        },
+        "actor/entropy": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": -123.90120697021484
+          },
+          "last": {
+            "step": 10000384,
+            "value": 19.292741775512695
+          },
+          "peak": {
+            "step": 6297600,
+            "value": 19.547182083129883
+          },
+          "minimum": {
+            "step": 102400,
+            "value": -123.90120697021484
+          },
+          "last_10_windows_unweighted_mean": 19.309299278259278,
+          "positive_windows": 190
+        },
+        "temperature/value": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 0.01000299770385027
+          },
+          "last": {
+            "step": 10000384,
+            "value": 0.0012424122542142868
+          },
+          "peak": {
+            "step": 256000,
+            "value": 0.01017284020781517
+          },
+          "minimum": {
+            "step": 10000384,
+            "value": 0.0012424122542142868
+          },
+          "last_10_windows_unweighted_mean": 0.0012904030620120466,
+          "positive_windows": 195
+        },
+        "critic/loss": {
+          "points": 195,
+          "first": {
+            "step": 102400,
+            "value": 4.889439582824707
+          },
+          "last": {
+            "step": 10000384,
+            "value": 1.9847279787063599
+          },
+          "peak": {
+            "step": 102400,
+            "value": 4.889439582824707
+          },
+          "minimum": {
+            "step": 6656000,
+            "value": 0.3348790407180786
+          },
+          "last_10_windows_unweighted_mean": 1.938687014579773,
+          "positive_windows": 195
+        }
+      },
+      "final_reward_terms": {
+        "fingertip_delta_rew": 27.62589454650879,
+        "lifting_rew": 576.6742553710938,
+        "lift_bonus_rew": 12.295082092285156,
+        "keypoint_rew": 0.1687675267457962,
+        "kuka_actions_penalty": -53.549407958984375,
+        "hand_actions_penalty": -41.500186920166016,
+        "bonus_rew": 0.0,
+        "total_reward": 521.7178955078125
+      },
+      "approx_q_from_window_means": {
+        "points": 195,
+        "first": {
+          "step": 102400,
+          "value": -0.6421241462892411
+        },
+        "last": {
+          "step": 10000384,
+          "value": 4.53732597053909
+        },
+        "peak": {
+          "step": 6860800,
+          "value": 4.964711613255929
+        },
+        "minimum": {
+          "step": 307200,
+          "value": -0.6561912962505234
+        },
+        "last_10_windows_unweighted_mean": 4.590708308349927,
+        "positive_windows": 184
+      },
+      "final_reset_critic_means": {
+        "q_recorded": 4.786024831235409,
+        "q_deterministic": 4.786240790039301,
+        "uniform_action_q_range": 0.0037014447152614594,
+        "minq_top_atom_mass": 0.1701518698828295,
+        "minq_top5_atoms_mass": 0.9281077943742275,
+        "deterministic_dq_da_l2": 0.0019327831114424043,
+        "target_mass_above_support": 0.0,
+        "target_mass_below_support": 0.0,
+        "target_unprojected_max": 4.982214625924826,
+        "target_expected_clipping_shift": 0.0,
+        "actor_pretanh_std_mean": 0.8453184212557971,
+        "next_entropy_bonus": 0.022443863679654896
+      },
+      "final_reset_q_to_entropy_gradient_norm_ratio": 0.19531539579232535,
+      "evaluations": {
+        "deterministic": {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/evaluations/arm1_hand01_seed2/deterministic",
+          "summary_sha256": "3b7899c691b229f9ebfc7c5160e6ef6a699b9653abd2600fb6d8b97618240b95",
+          "episodes": 128,
+          "counts": {
+            "success": 0,
+            "ever_task_lift": 0,
+            "ever_sustained_lift_near_palm_proxy": 0,
+            "ever_near_object_proxy": 128,
+            "ever_off_table_proxy": 0,
+            "dropped_below_reset_after_task_lift": 0
+          },
+          "mean_return": 609.1487952452153,
+          "mean_length": 600.0,
+          "mean_position_error_m": 0.15889594121836126,
+          "actions": {
+            "arm_7": {
+              "mean_abs": 0.023953209768903132,
+              "mean_abs_delta": 0.005398400061282397,
+              "fraction_abs_ge_0.999": 0.0
+            },
+            "hand_22": {
+              "mean_abs": 0.036273415985051544,
+              "mean_abs_delta": 0.0018292813778149745,
+              "fraction_abs_ge_0.999": 0.0
+            }
+          },
+          "model_unchanged": true,
+          "termination_counts": {
+            "terminated": 0,
+            "truncated": 128
+          }
+        },
+        "stochastic": {
+          "path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/control_ab/evaluations/arm1_hand01_seed2/stochastic",
+          "summary_sha256": "57a1b3fee9f3e36f249b3272d2a31586afaf26836a3a3d0f33629036f1646b0a",
+          "episodes": 128,
+          "counts": {
+            "success": 0,
+            "ever_task_lift": 3,
+            "ever_sustained_lift_near_palm_proxy": 3,
+            "ever_near_object_proxy": 126,
+            "ever_off_table_proxy": 4,
+            "dropped_below_reset_after_task_lift": 2
+          },
+          "mean_return": 524.3724875924236,
+          "mean_length": 598.3046875,
+          "mean_position_error_m": 0.17873943503946066,
+          "actions": {
+            "arm_7": {
+              "mean_abs": 0.4949772672654568,
+              "mean_abs_delta": 0.33432441965566045,
+              "fraction_abs_ge_0.999": 2.9846235923302628e-05
+            },
+            "hand_22": {
+              "mean_abs": 0.5107890872111768,
+              "mean_abs_delta": 0.33065887533233623,
+              "fraction_abs_ge_0.999": 3.501845294410222e-05
+            }
+          },
+          "model_unchanged": true,
+          "termination_counts": {
+            "terminated": 1,
+            "truncated": 127
+          }
+        }
+      },
+      "optimizer_applied_steps": {
+        "actor.pt": [
+          9667
+        ],
+        "critic.pt": [
+          19335
+        ],
+        "temperature.pt": [
+          9669
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "10M transitions per seed is a bounded diagnostic, not a convergence impossibility test.",
+    "Only hand filter changes; arm remains 1.0. This is NOT the successful BC setup with both filters 0.1.",
+    "Training lift rates are within logging windows; episode-count weights were not preserved in TB, so no overall training episode rate is reconstructed.",
+    "Evaluation repeats one fixed initial setup; three training seeds are the independent algorithm replicates.",
+    "Sustained-lift/near-palm and proximity are geometric proxies, not verified stable contact.",
+    "Approximate Q inferred from window-mean actor loss, alpha and entropy is not a directly logged Q or clipping frequency.",
+    "Final critic probes use a new frozen-policy evaluation dataset, not the historical training replay; phase-balanced weighting and BN contexts differ.",
+    "No historical top-atom/target-clipping instrumentation exists in these TB curves; offline final probes cannot supply a temporal saturation peak."
+  ]
+}

@@ -1,8 +1,8 @@
-"""Isaac Lab port of Dex4D's official XArm6 + LEAP teacher task.
+"""Isaac Lab port of Dex4D's teacher task for supported robot profiles.
 
 This module rewrites the simulator-facing lifecycle for ``DirectRLEnv`` while
-keeping the legacy 22-D action, 1041-D observation, reward, goal switching,
-reset, curriculum, push, and domain-randomization contracts.
+keeping the original reward, goal switching, reset, curriculum, push, and
+domain-randomization contracts.
 """
 
 from __future__ import annotations
@@ -406,7 +406,7 @@ class Dex4DEnv(DirectRLEnv):
             palm_pos=self._palm_pos_l,
             fingertip_positions=self._tip_pos_l,
             hand_joint_pos=self._joint_pos[:, self._robot_profile.num_arm_dofs :],
-            finger_distance_scale=4.0 / len(self._fingertip_body_ids),
+            finger_distance_scale=self._robot_profile.finger_distance_scale,
         )
         self._goal_distance = self._metrics["goal_obj_dist"]
         self._object_hand_distance = self._metrics["obj_hand_dist"]
@@ -692,4 +692,10 @@ class Dex4DEnv(DirectRLEnv):
         asset.root_physx_view.set_material_properties(materials, ids_cpu)
 
 
-__all__ = ["Dex4DEnv", "Dex4DEnvCfg", "Dex4DStage12EnvCfg"]
+__all__ = [
+    "Dex4DEnv",
+    "Dex4DEnvCfg",
+    "Dex4DStage12EnvCfg",
+    "Dex4DM6WujiEnvCfg",
+    "Dex4DM6WujiStage12EnvCfg",
+]

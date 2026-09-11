@@ -1,0 +1,41 @@
+70:      enable_dl_denoiser: null
+84:  seed: null
+89:    num_envs: 24576
+100:  observation_noise_model: null
+103:  action_noise_model: null
+110:    robot_urdf: assets/urdf/kuka_sharpa_description/iiwa14_left_sharpa_adjusted_restricted.urdf
+111:    table_urdf: assets/urdf/table_narrow.urdf
+120:    object_urdf: ''
+132:    robot_friction: 0.5
+187:    use_camera_delay: false
+188:    camera_delay_max: 0
+189:    use_student_obs_delay: false
+190:    student_obs_delay_max: 0
+195:    camera_backend: tiled
+235:    camera_pos_noise_m:
+239:    camera_rot_noise_deg:
+256:    arm_moving_average: 0.1
+257:    hand_moving_average: 0.1
+276:    reset_position_noise_x: 0.1
+277:    reset_position_noise_y: 0.1
+278:    reset_position_noise_z: 0.02
+317:  domain_randomization:
+318:    use_obs_delay: true
+319:    obs_delay_max: 3
+320:    use_action_delay: true
+321:    action_delay_max: 3
+322:    use_object_state_delay_noise: true
+323:    object_state_delay_max: 10
+324:    object_state_xyz_noise_std: 0.01
+325:    object_state_rotation_noise_degrees: 5.0
+326:    object_scale_noise_multiplier_range:
+329:    joint_velocity_obs_noise_std: 0.1
+353:    seed: 0
+392:    load_checkpoint: false
+395:      name: 0_s2r_public_release_lab_24576_seed0_scratch_expl005_lixiyuan_restart1_20260815
+409:      num_actors: ${....env.scene.num_envs}
+457:      expl_type: mixed_expl_learn_param
+458:      expl_reward_type: entropy
+459:      expl_reward_coef_embd_size: 32
+460:      expl_reward_coef_scale: 0.005
+461:      expl_coef_block_size: 4096

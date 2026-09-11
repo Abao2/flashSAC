@@ -26,9 +26,9 @@ device: "cuda:0"
 headless: true
 action_bounds: 1.0
 
-# DirectRLEnv auto-resets before returning observations, so there is no genuine
-# terminal observation to bootstrap from at a timeout.
-bootstrap_timeouts: false
+# The task explicitly captures the pre-reset policy/critic observation, so a
+# time-limit truncation can bootstrap without crossing into the next episode.
+bootstrap_timeouts: true
 
 # Whole-trajectory success used by FlashSAC evaluation. Goal count is logged
 # separately as episode/final/successes.

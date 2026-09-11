@@ -1,0 +1,178 @@
+{
+  "source": "/home/abao/flashsac-robotics/diagnostics/str_fourway_audit_20260911/interface/native",
+  "trace_sha256": "a38b2827ffcd6a40246b81a99aaa693da254d2786160eb5de2e4dd34cfe1d056",
+  "metadata_sha256": "23aaa4f252cb86807eb1db41f923de762abab9be7e4a7cbe79f03eac4438eb4a",
+  "actor_sha256": "7f01a2e2fd58ec4b0b041ab47b6a8afbadd0347ed5b23f604c486adca11efcd5",
+  "action_tape_sha256": "a2cab3aac7701283d5214e0910d27087fc9fb7005032fd21f5c32476d5a9e0f9",
+  "scope": "CPU analysis of 600 steps x 32 envs, frozen 100M actor, strict tolerance; includes all auto-reset episodes, not a success-rate evaluation or full-paper benchmark.",
+  "row_count": 19200,
+  "scalar_action_count": 556800,
+  "all_trace_values_finite": true,
+  "actions": {
+    "min": -0.9999979138374329,
+    "max": 0.9999871253967285,
+    "outside_minus1_plus1_count": 0,
+    "received_vs_clipped_raw_max_abs_error": 0,
+    "abs_ge099_count": 50763
+  },
+  "targets": {
+    "oracle_vs_applied_max_abs_error_rad": 0,
+    "physx_vs_applied_max_abs_error_rad": 0,
+    "arm_per_policy_step_delta_abs_rad": {
+      "count": 134400,
+      "mean": 0.0072971871864302516,
+      "p50": 0.0031100213527679443,
+      "p90": 0.022668054699897768,
+      "p95": 0.024489716812968253,
+      "p99": 0.024966835975646973,
+      "max": 0.02499997615814209
+    },
+    "hand_per_policy_step_delta_abs_rad": {
+      "count": 422400,
+      "mean": 0.007706830966097805,
+      "p50": 0.0005173563840799034,
+      "p90": 0.023305934667587295,
+      "p95": 0.04357447028160095,
+      "p99": 0.09748966932296754,
+      "max": 0.1865537166595459
+    },
+    "outside_limits_with_1e_minus6_tolerance_count": 0,
+    "at_limit_within_1e_minus5_fraction": 0.0026670258620689656
+  },
+  "control_timing": {
+    "step_dt_s": 0.01666666666,
+    "physics_dt_s": 0.00833333333,
+    "decimation": 2,
+    "unique_apply_calls_per_step": [
+      2
+    ],
+    "all_apply_call_counts_correct": true
+  },
+  "target_tracking_error": {
+    "definition": "Absolute commanded target minus actual joint position at end of physics step BEFORE auto reset. These need not be equal: PD dynamics and object contacts produce lag/deflection. Errors alone do not prove controller/interface failure.",
+    "all_arm_rad": {
+      "count": 134400,
+      "mean": 0.030255405066141716,
+      "p50": 0.015424005687236786,
+      "p90": 0.06834700107574465,
+      "p95": 0.10215343534946439,
+      "p99": 0.2367623302340517,
+      "max": 1.3226735591888428
+    },
+    "all_hand_rad": {
+      "count": 422400,
+      "mean": 0.14764189120829896,
+      "p50": 0.03277209401130676,
+      "p90": 0.4555757582187653,
+      "p95": 0.7424803406000131,
+      "p99": 1.3246432542800903,
+      "max": 1.7444912195205688
+    },
+    "after_10_nonreset_steps_row_count": 18580,
+    "after_10_nonreset_steps_arm_rad": {
+      "count": 130060,
+      "mean": 0.02989420596459089,
+      "p50": 0.014511466026306152,
+      "p90": 0.06782645583152772,
+      "p95": 0.10266114473342894,
+      "p99": 0.24136152073741016,
+      "max": 1.3226735591888428
+    },
+    "after_10_nonreset_steps_hand_rad": {
+      "count": 408760,
+      "mean": 0.1508896359977348,
+      "p50": 0.0331636406481266,
+      "p90": 0.46240981221199057,
+      "p95": 0.7561930149793622,
+      "p99": 1.3246506941318512,
+      "max": 1.7444912195205688
+    },
+    "per_lab_joint_mean_rad": [
+      0.027276363223791122,
+      0.05631941556930542,
+      0.02496609091758728,
+      0.039340466260910034,
+      0.023712575435638428,
+      0.020868711173534393,
+      0.01930404268205166,
+      0.16752639412879944,
+      0.14803975820541382,
+      0.11709265410900116,
+      0.16273395717144012,
+      0.03073926270008087,
+      0.10536906868219376,
+      0.019353624433279037,
+      0.016110025346279144,
+      0.016926448792219162,
+      0.06394410133361816,
+      0.25109219551086426,
+      0.37761062383651733,
+      0.4077393412590027,
+      0.33676478266716003,
+      0.011127670295536518,
+      0.08844694495201111,
+      0.17376276850700378,
+      0.2160140424966812,
+      0.09597212821245193,
+      0.1615753024816513,
+      0.21372734010219574,
+      0.06644083559513092
+    ]
+  },
+  "termination_and_final_obs": {
+    "terminated_rows": 30,
+    "timeout_rows": 11,
+    "both_flags_rows": 0,
+    "valid_final_rows": 41,
+    "valid_mask_equals_done": true,
+    "invalid_final_rows_zero": true,
+    "valid_final_different_from_reset_obs_rows": 41,
+    "valid_final_vs_reset_max_difference": {
+      "count": 41,
+      "mean": 7.5456493656809736,
+      "p50": 9.239811897277832,
+      "p90": 10,
+      "p95": 10,
+      "p99": 10.017714309692384,
+      "max": 10.029523849487305
+    },
+    "timeout_final_different_from_reset_rows": 11,
+    "terminal_state_oracle_max_abs_errors": {
+      "normalized_joint_positions": 0,
+      "joint_velocities": 0,
+      "previous_action_targets": 0,
+      "lifted_latch": 0,
+      "log_goal_count": 0,
+      "log_goal_progress": 2.384185791015625e-7,
+      "scaled_current_reward": 0
+    },
+    "post_reset_checks": {
+      "episode_counter_zero_all_done": true,
+      "goal_counter_zero_all_done": true,
+      "lift_latch_zero_all_done": true,
+      "joint_position_changed_on_all_done": true,
+      "non_done_joint_position_pre_post_max_diff": 0
+    },
+    "terminal_state_oracle_all_within_1e_minus6": true
+  },
+  "reward": {
+    "returned_vs_total_term_max_diff": 0,
+    "sum_of_components_vs_total_max_diff": 0
+  },
+  "limitations": [
+    "This is native control-chain analysis; wrapper equivalence requires separate compare output.",
+    "Actor outputs were already within [-1,1], so GPU rollout does not test out-of-range input clipping; CPU control-oracle negative check covers formula only.",
+    "No actuator torque/contact force logging; tracking errors do not identify force saturation, Kp/Kd miscalibration or grasp quality.",
+    "Final obs invalid rows were deliberately zero-filled; tests compare only valid pre-reset rows.",
+    "Episode counters reset on goal changes as well as whole-episode resets; the warm-up exclusion above uses actual term/trunc only."
+  ],
+  "interpretation": [
+    "On the sampled native trajectory, raw action -> clipped action -> independent control oracle -> applied target -> PhysX target is consistent, max absolute difference zero.",
+    "Physical joint positions do not instantly equal targets. Mean arm error 0.0303 rad; hand 0.1476 rad. This is observed tracking lag/deflection, not evidence of miswired commands. Contact/torque measurements would be needed to attribute it.",
+    "All 41 ending transitions retain valid pre-reset observations, including all 11 timeouts; every valid final observation differs from the new reset observation.",
+    "Seven terminal-field oracles agree with captured pre-reset states to at most 2.39e-7, independent of comparing identical stale buffers.",
+    "The task uses noDR, arm EMA 1.0, hand EMA 0.1, 32 envs, deterministic frozen 100M actor, 600 policy steps at tolerance 0.02905653603374958."
+  ]
+}
+
+

@@ -1,0 +1,566 @@
+{
+  "status": "CPU_AUDIT_COMPLETE_GPU_ROLLOUT_NOT_RUN",
+  "scope": "full STR n3 100M and 500M read-only CPU audit",
+  "limitations": [
+    "Replay retains only the latest 10M rows, not the entire training history.",
+    "n-step rows overlap; counts are neither episode counts nor success rates.",
+    "No episode IDs, per-frame object initial z, contact forces, or asset identity in replay.",
+    "The lifted flag is latched. It does not prove current/stable holding.",
+    "Object size is measurable; size cannot uniquely identify tool family.",
+    "A Q-action spread is not evidence that its ranking matches real future returns."
+  ],
+  "task_differences_from_original": {
+    "action.arm_moving_average": {
+      "original": 0.1,
+      "experiment": 1.0
+    },
+    "domain_randomization.force_scale": {
+      "original": 20.0,
+      "experiment": 0.0
+    },
+    "domain_randomization.joint_velocity_obs_noise_std": {
+      "original": 0.1,
+      "experiment": 0.0
+    },
+    "domain_randomization.object_state_rotation_noise_degrees": {
+      "original": 5.0,
+      "experiment": 0.0
+    },
+    "domain_randomization.object_state_xyz_noise_std": {
+      "original": 0.01,
+      "experiment": 0.0
+    },
+    "domain_randomization.torque_scale": {
+      "original": 2.0,
+      "experiment": 0.0
+    },
+    "domain_randomization.use_action_delay": {
+      "original": true,
+      "experiment": false
+    },
+    "domain_randomization.use_object_state_delay_noise": {
+      "original": true,
+      "experiment": false
+    },
+    "domain_randomization.use_obs_delay": {
+      "original": true,
+      "experiment": false
+    }
+  },
+  "critic_field_slices": {
+    "joint_pos": [
+      140,
+      169
+    ],
+    "joint_vel": [
+      169,
+      198
+    ],
+    "prev_action_targets": [
+      198,
+      227
+    ],
+    "palm_pos": [
+      227,
+      230
+    ],
+    "palm_rot": [
+      230,
+      234
+    ],
+    "palm_vel": [
+      234,
+      240
+    ],
+    "object_rot": [
+      240,
+      244
+    ],
+    "object_vel": [
+      244,
+      250
+    ],
+    "fingertip_pos_rel_palm": [
+      250,
+      265
+    ],
+    "keypoints_rel_palm": [
+      265,
+      277
+    ],
+    "keypoints_rel_goal": [
+      277,
+      289
+    ],
+    "object_scales": [
+      289,
+      292
+    ],
+    "closest_keypoint_max_dist": [
+      292,
+      293
+    ],
+    "closest_fingertip_dist": [
+      293,
+      298
+    ],
+    "lifted_object": [
+      298,
+      299
+    ],
+    "progress": [
+      299,
+      300
+    ],
+    "successes": [
+      300,
+      301
+    ],
+    "reward": [
+      301,
+      302
+    ]
+  },
+  "source_sha256": {
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/obs_utils.py": "2f36d5c5f50eb59e0debff98fc08d447d8c40b5cdb82d8aad54527c704437cc0",
+    "/home/abao/simtoolreal/isaacsimenvs/tasks/simtoolreal/utils/action_utils.py": "2e38294d4555062c6a022c46d1d9cd48b4074df4c80c0adc0b2006b7bed723d6"
+  },
+  "replays": {
+    "100M": {
+      "checkpoint": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/candidate/models/seed0/step48830",
+      "replay_rows": 10000000,
+      "ring_current_idx": 9999744,
+      "counts": {
+        "goals_so_far_ge_1": 5778791,
+        "goals_so_far_ge_2": 4668186,
+        "goals_so_far_ge_5": 2879263,
+        "goals_so_far_ge_10": 1485628,
+        "goals_so_far_ge_20": 488057,
+        "ever_lifted_flag": 8443538,
+        "next_goal_count_increased_nonterminal": 160018,
+        "terminated_nstep_rows": 41877,
+        "truncated_nstep_rows": 21003,
+        "overlapping_term_trunc": 0,
+        "action_components_outside_unit_interval": 0
+      },
+      "row_fractions": {
+        "goals_so_far_ge_1": 0.5778791,
+        "goals_so_far_ge_2": 0.4668186,
+        "goals_so_far_ge_5": 0.2879263,
+        "goals_so_far_ge_10": 0.1485628,
+        "goals_so_far_ge_20": 0.0488057,
+        "ever_lifted_flag": 0.8443538,
+        "next_goal_count_increased_nonterminal": 0.0160018,
+        "terminated_nstep_rows": 0.0041877,
+        "truncated_nstep_rows": 0.0021003,
+        "overlapping_term_trunc": 0.0
+      },
+      "goals_so_far_histogram": {
+        "0": 4221209,
+        "1": 1110605,
+        "2": 754932,
+        "3": 563218,
+        "4": 470773,
+        "5": 399238,
+        "6": 315495,
+        "7": 282108,
+        "8": 210045,
+        "9": 186749,
+        "10": 165351,
+        "11": 137250,
+        "12": 127423,
+        "13": 106489,
+        "14": 103952,
+        "15": 88273,
+        "16": 78512,
+        "17": 75452,
+        "18": 63950,
+        "19": 50919,
+        "20": 51113,
+        "21": 46646,
+        "22": 45612,
+        "23": 35400,
+        "24": 35475,
+        "25": 28976,
+        "26": 26313,
+        "27": 25108,
+        "28": 22366,
+        "29": 18661,
+        "30": 15326,
+        "31": 11809,
+        "32": 12598,
+        "33": 11456,
+        "34": 9887,
+        "35": 10810,
+        "36": 9513,
+        "37": 11015,
+        "38": 10367,
+        "39": 5251,
+        "40": 6996,
+        "41": 6153,
+        "42": 6273,
+        "43": 5977,
+        "44": 5252,
+        "45": 2961,
+        "46": 2778,
+        "47": 2223,
+        "48": 2668,
+        "49": 3074
+      },
+      "sample_rows": 2048,
+      "sample_index_sha256": "4a59c4956e875daf54898bf6a399b22d1eb1fbdaed5d1d9e736097fb4eb6889d",
+      "sampled_current_object_z_m": {
+        "mean": 0.6860817868509912,
+        "p10": 0.5406825602054596,
+        "median": 0.6761839985847473,
+        "p90": 0.9005559802055358,
+        "min": 0.10574084520339966,
+        "max": 1.0279592275619507
+      },
+      "sampled_max_keypoint_error_m": {
+        "mean": 0.2207748358578101,
+        "p10": 0.04737665094435215,
+        "median": 0.11609619483351707,
+        "p90": 0.515633749961853,
+        "min": 0.014810686931014061,
+        "max": 1.1419687271118164
+      },
+      "sampled_object_scale_xyz": {
+        "x": {
+          "mean": 3.390639845165424,
+          "p10": 1.9054574012756347,
+          "median": 3.0818209648132324,
+          "p90": 5.052722406387328,
+          "min": 1.2548166513442993,
+          "max": 7.492252826690674
+        },
+        "y": {
+          "mean": 0.6489407623012085,
+          "p10": 0.3734245300292969,
+          "median": 0.6221324503421783,
+          "p90": 0.9481931626796721,
+          "min": 0.25012147426605225,
+          "max": 1.7281032800674438
+        },
+        "z": {
+          "mean": 0.6109650196449365,
+          "p10": 0.34468042850494385,
+          "median": 0.5866169035434723,
+          "p90": 0.896437519788742,
+          "min": 0.15769518911838531,
+          "max": 1.7484911680221558
+        }
+      },
+      "sampled_unique_scale_triplets": 953,
+      "sampled_actor_vs_clean_corresponding_fields_max_abs": {
+        "joint_pos": 0.0,
+        "joint_vel": 0.0,
+        "prev_action_targets": 0.0,
+        "palm_pos": 0.0,
+        "palm_rot": 0.0,
+        "object_rot": 0.0,
+        "fingertip_pos_rel_palm": 0.0,
+        "keypoints_rel_palm": 0.0,
+        "keypoints_rel_goal": 0.0,
+        "object_scales": 0.0
+      },
+      "sampled_action_abs": {
+        "mean": 0.6311755335532482,
+        "p10": 0.14631174355745316,
+        "median": 0.7012743949890137,
+        "p90": 0.9903214275836945,
+        "min": 1.9978731870651245e-05,
+        "max": 0.9999986886978149
+      },
+      "sampled_near_saturated_action_fraction": 0.10166352242231369
+    },
+    "500M": {
+      "checkpoint": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_continue_20260910/candidate/models/seed0/step195320",
+      "replay_rows": 10000000,
+      "ring_current_idx": 11008,
+      "counts": {
+        "goals_so_far_ge_1": 4183638,
+        "goals_so_far_ge_2": 3092718,
+        "goals_so_far_ge_5": 1416074,
+        "goals_so_far_ge_10": 462674,
+        "goals_so_far_ge_20": 64857,
+        "ever_lifted_flag": 8396752,
+        "next_goal_count_increased_nonterminal": 131318,
+        "terminated_nstep_rows": 70526,
+        "truncated_nstep_rows": 21851,
+        "overlapping_term_trunc": 0,
+        "action_components_outside_unit_interval": 0
+      },
+      "row_fractions": {
+        "goals_so_far_ge_1": 0.4183638,
+        "goals_so_far_ge_2": 0.3092718,
+        "goals_so_far_ge_5": 0.1416074,
+        "goals_so_far_ge_10": 0.0462674,
+        "goals_so_far_ge_20": 0.0064857,
+        "ever_lifted_flag": 0.8396752,
+        "next_goal_count_increased_nonterminal": 0.0131318,
+        "terminated_nstep_rows": 0.0070526,
+        "truncated_nstep_rows": 0.0021851,
+        "overlapping_term_trunc": 0.0
+      },
+      "goals_so_far_histogram": {
+        "0": 5816362,
+        "1": 1090920,
+        "2": 726777,
+        "3": 545908,
+        "4": 403959,
+        "5": 296939,
+        "6": 221461,
+        "7": 181789,
+        "8": 143999,
+        "9": 109212,
+        "10": 83434,
+        "11": 70767,
+        "12": 53341,
+        "13": 44983,
+        "14": 40159,
+        "15": 29861,
+        "16": 23595,
+        "17": 19934,
+        "18": 18890,
+        "19": 12853,
+        "20": 11128,
+        "21": 8518,
+        "22": 9536,
+        "23": 4906,
+        "24": 3162,
+        "25": 4524,
+        "26": 3963,
+        "27": 2549,
+        "28": 2644,
+        "29": 1546,
+        "30": 2429,
+        "31": 1786,
+        "32": 962,
+        "33": 897,
+        "34": 616,
+        "35": 810,
+        "36": 905,
+        "37": 528,
+        "38": 347,
+        "39": 714,
+        "40": 225,
+        "41": 219,
+        "42": 260,
+        "43": 102,
+        "44": 847,
+        "45": 117,
+        "46": 275,
+        "47": 174,
+        "48": 69,
+        "49": 99
+      },
+      "sample_rows": 2048,
+      "sample_index_sha256": "4a59c4956e875daf54898bf6a399b22d1eb1fbdaed5d1d9e736097fb4eb6889d",
+      "sampled_current_object_z_m": {
+        "mean": 0.6587025911576347,
+        "p10": 0.5386737406253814,
+        "median": 0.6117662787437439,
+        "p90": 0.880005931854248,
+        "min": 0.10127377510070801,
+        "max": 1.3684747219085693
+      },
+      "sampled_max_keypoint_error_m": {
+        "mean": 0.3033134294792035,
+        "p10": 0.05046718269586563,
+        "median": 0.29171042144298553,
+        "p90": 0.5699833631515503,
+        "min": 0.018889371305704117,
+        "max": 1.268730878829956
+      },
+      "sampled_object_scale_xyz": {
+        "x": {
+          "mean": 3.451248295721598,
+          "p10": 1.9317817687988281,
+          "median": 3.185033679008484,
+          "p90": 5.086097526550292,
+          "min": 1.2548166513442993,
+          "max": 7.492252826690674
+        },
+        "y": {
+          "mean": 0.6417357847822132,
+          "p10": 0.3616656005382538,
+          "median": 0.6148357689380646,
+          "p90": 0.9411122441291807,
+          "min": 0.25012147426605225,
+          "max": 1.7281032800674438
+        },
+        "z": {
+          "mean": 0.6130492630327353,
+          "p10": 0.3398270308971405,
+          "median": 0.5900703072547913,
+          "p90": 0.9054966807365413,
+          "min": 0.15001459419727325,
+          "max": 1.7484911680221558
+        }
+      },
+      "sampled_unique_scale_triplets": 951,
+      "sampled_actor_vs_clean_corresponding_fields_max_abs": {
+        "joint_pos": 0.0,
+        "joint_vel": 0.0,
+        "prev_action_targets": 0.0,
+        "palm_pos": 0.0,
+        "palm_rot": 0.0,
+        "object_rot": 0.0,
+        "fingertip_pos_rel_palm": 0.0,
+        "keypoints_rel_palm": 0.0,
+        "keypoints_rel_goal": 0.0,
+        "object_scales": 0.0
+      },
+      "sampled_action_abs": {
+        "mean": 0.6307294405007586,
+        "p10": 0.14733935743570328,
+        "median": 0.6931815147399902,
+        "p90": 0.9941264092922211,
+        "min": 2.8870999813079834e-06,
+        "max": 1.0
+      },
+      "sampled_near_saturated_action_fraction": 0.12819908559322357
+    }
+  },
+  "frozen_q_common_state_sensitivity": {
+    "100M": {
+      "alpha": 6.024410322424956e-05,
+      "reward_denominator": 1464.18916015625,
+      "scope": "Same common replay states for both checkpoints; no physical action rollout; not Q accuracy.",
+      "mean_action_q": {
+        "mean": 0.21427137393438755,
+        "p10": 0.0018705444643273951,
+        "median": 0.026274263858795166,
+        "p90": 0.7287190556526185,
+        "min": -0.04694075882434845,
+        "max": 1.5580865144729614
+      },
+      "twin_q_gap": {
+        "mean": 0.0250970170057343,
+        "p10": 0.00040872360114008194,
+        "median": 0.005459722131490707,
+        "p90": 0.07417234182357789,
+        "min": 5.022622644901276e-06,
+        "max": 0.3636016249656677
+      },
+      "uniform_action_q_range": {
+        "mean": 0.026619376673984618,
+        "p10": 0.0003796761855483055,
+        "median": 0.005410405108705163,
+        "p90": 0.08110999763011932,
+        "min": 2.2333526430884376e-05,
+        "max": 0.2300063967704773
+      },
+      "mean_action_dq_da_arm_l2": {
+        "mean": 0.01014920583497414,
+        "p10": 0.0002002233304665424,
+        "median": 0.002828812808729708,
+        "p90": 0.028370844200253494,
+        "min": 6.080638740968425e-06,
+        "max": 0.10462192445993423
+      },
+      "mean_action_dq_da_hand_l2": {
+        "mean": 0.011320652759149397,
+        "p10": 0.0001354070394882001,
+        "median": 0.002720615826547146,
+        "p90": 0.030884786881506456,
+        "min": 9.374963156005833e-06,
+        "max": 0.16370710730552673
+      },
+      "actor_pretanh_std": {
+        "mean": 0.6464604637003504,
+        "p10": 0.4457744300365448,
+        "median": 0.6267026662826538,
+        "p90": 0.8812742054462434,
+        "min": 0.339706689119339,
+        "max": 1.0395139455795288
+      },
+      "actor_mean_action_abs": {
+        "mean": 0.49585368947009556,
+        "p10": 0.1907298356294632,
+        "median": 0.5786658823490143,
+        "p90": 0.7435820996761322,
+        "min": 0.09449582546949387,
+        "max": 0.814668595790863
+      },
+      "minq_top5_atoms_mass": {
+        "mean": 9.590302183317724e-08,
+        "p10": 5.704043815057958e-09,
+        "median": 4.619385052251346e-08,
+        "p90": 2.5711183866405964e-07,
+        "min": 7.141907065744135e-10,
+        "max": 9.216399803335662e-07
+      }
+    },
+    "500M": {
+      "alpha": 3.859370917780325e-05,
+      "reward_denominator": 1464.18916015625,
+      "scope": "Same common replay states for both checkpoints; no physical action rollout; not Q accuracy.",
+      "mean_action_q": {
+        "mean": 0.11929566232452515,
+        "p10": 0.0004292625002563,
+        "median": 0.008567520417273045,
+        "p90": 0.45028704106807765,
+        "min": -0.04389150068163872,
+        "max": 1.1682624816894531
+      },
+      "twin_q_gap": {
+        "mean": 0.025749745541453706,
+        "p10": 0.00014935312792658807,
+        "median": 0.0023961359402164817,
+        "p90": 0.0806899130344391,
+        "min": 1.490727299824357e-06,
+        "max": 0.3471044898033142
+      },
+      "uniform_action_q_range": {
+        "mean": 0.023428643769676682,
+        "p10": 0.00017515281215310096,
+        "median": 0.0022957453038543463,
+        "p90": 0.08476980328559884,
+        "min": 3.487196227069944e-05,
+        "max": 0.274513304233551
+      },
+      "mean_action_dq_da_arm_l2": {
+        "mean": 0.009000459753179868,
+        "p10": 6.797643072786741e-05,
+        "median": 0.0011100952397100627,
+        "p90": 0.030001474171876923,
+        "min": 8.569728379370645e-06,
+        "max": 0.11078186333179474
+      },
+      "mean_action_dq_da_hand_l2": {
+        "mean": 0.013728964464933213,
+        "p10": 7.896996976342052e-05,
+        "median": 0.0015768217854201794,
+        "p90": 0.04700413867831232,
+        "min": 1.2171279195172247e-05,
+        "max": 0.14194710552692413
+      },
+      "actor_pretanh_std": {
+        "mean": 0.6857275114161894,
+        "p10": 0.4633789509534836,
+        "median": 0.7058713734149933,
+        "p90": 0.8789677500724793,
+        "min": 0.4027290344238281,
+        "max": 0.9197449088096619
+      },
+      "actor_mean_action_abs": {
+        "mean": 0.4851658658881206,
+        "p10": 0.13636448681354524,
+        "median": 0.5655575692653656,
+        "p90": 0.7895378053188324,
+        "min": 0.07992789149284363,
+        "max": 0.8856069445610046
+      },
+      "minq_top5_atoms_mass": {
+        "mean": 1.26321608685699e-08,
+        "p10": 1.263526686057226e-10,
+        "median": 1.0198025757190976e-09,
+        "p90": 3.503879675292866e-08,
+        "min": 1.4078700011355139e-11,
+        "max": 3.7970767152728513e-07
+      }
+    }
+  }
+}

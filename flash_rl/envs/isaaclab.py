@@ -166,16 +166,14 @@ class IsaacLabVectorEnv(
         task_cfg_overrides: Mapping[str, Any] | DictConfig | None = None,
         bootstrap_timeouts: bool = False,
         success_path: str | None = None,
+        render_mode: str | None = None,
     ):
-        if bootstrap_timeouts:
-            raise ValueError(
-                "bootstrap_timeouts=true is unsafe for Isaac Lab DirectRLEnv: autoreset does not expose the real "
-                "terminal observation. Keep it false until the task provides one explicitly."
-            )
-
         from isaaclab.app import AppLauncher
 
-        app_launcher = AppLauncher(headless=headless, device=device, enable_cameras=not headless)
+        app_launcher = AppLauncher(
+            headless=headless, device=device,
+            enable_cameras=not headless or render_mode == "rgb_array",
+        )
         self.simulation_app = app_launcher.app
 
         # Isaac/Omniverse packages must be imported only after SimulationApp starts.
@@ -202,7 +200,15 @@ class IsaacLabVectorEnv(
         self.device = device
         self.bootstrap_timeouts = bootstrap_timeouts
         self.success_path = success_path
-        self.envs = gym.make(env_name, cfg=env_cfg, render_mode=None)
+        self.envs = gym.make(env_name, cfg=env_cfg, render_mode=render_mode)
+
+        if bootstrap_timeouts and not getattr(
+            cast(Any, self.envs.unwrapped), "supports_timeout_bootstrap", False
+        ):
+            raise ValueError(
+                f"{env_name} does not declare a pre-reset final_obs contract; "
+                "bootstrap_timeouts=true would bootstrap across auto-reset episodes."
+            )
 
         self.num_envs = cast(Any, self.envs.unwrapped).num_envs
         self.max_episode_steps = cast(Any, self.envs.unwrapped).max_episode_length
@@ -330,7 +336,18 @@ class IsaacLabVectorEnv(
         if self.to_numpy:
             obs = obs.cpu().numpy()
             infos = recursive_to_numpy(infos)  # type: ignore
-        infos.update({"actor_observation_size": self.obs_size, "asymmetric_obs": self.asymmetric_obs})
+        infos.update(
+            {
+                "actor_observation_size": self.obs_size,
+                "critic_observation_size": (
+                    self.critic_obs_size if self.asymmetric_obs else self.obs_size
+                ),
+                "critic_observation_offset": (
+                    self.obs_size[-1] if self.asymmetric_obs else 0
+                ),
+                "asymmetric_obs": self.asymmetric_obs,
+            }
+        )
         return obs, infos
 
     def step(self, actions: Union[torch.Tensor, F32NDArray]) -> tuple[
@@ -370,10 +387,46 @@ class IsaacLabVectorEnv(
         infos["time_outs"] = truncations
         infos["observations"] = {"critic": critic_obs}
 
-        # DirectRLEnv returns reset observations for done environments. Masking
-        # timeouts as terminal prevents bootstrapping from a different episode.
-        if not self.bootstrap_timeouts:
+        final_obs = infos.get("final_obs")
+        if isinstance(final_obs, Mapping):
+            final_policy = final_obs.get("policy")
+            final_critic = final_obs.get("critic")
+            if not isinstance(final_policy, torch.Tensor) or (
+                self.asymmetric_obs and not isinstance(final_critic, torch.Tensor)
+            ):
+                raise RuntimeError("final_obs must contain tensor policy/critic observations")
+            final_obs = (
+                torch.cat((final_policy, final_critic), dim=-1)
+                if self.asymmetric_obs
+                else final_policy
+            )
+            infos["final_obs"] = final_obs
+
+        if self.bootstrap_timeouts:
+            if final_obs is None:
+                # SimToolReal only publishes final_obs on steps where at least
+                # one environment ends. Keep this guard asynchronous on CUDA.
+                torch._assert_async(
+                    ~truncations.any(),
+                    "timeout bootstrap requires final_obs on truncated transitions",
+                )
+            elif not isinstance(final_obs, torch.Tensor) or final_obs.shape != obs.shape:
+                actual = None if final_obs is None else getattr(final_obs, "shape", type(final_obs).__name__)
+                raise RuntimeError(
+                    f"timeout bootstrap requires final_obs shape {tuple(obs.shape)}, got {actual}"
+                )
+            else:
+                # Keep validation on-device. Converting this scalar to Python
+                # would synchronize CUDA every policy step at large env counts.
+                torch._assert_async(
+                    torch.isfinite(final_obs[truncations]).all(),
+                    "timeout bootstrap received non-finite final_obs",
+                )
+        elif not self.bootstrap_timeouts:
+            # Without a validated pre-reset final_obs contract, treating a
+            # timeout as terminal avoids bootstrapping from the next episode.
             terminations = dones
+            truncations = torch.zeros_like(truncations)
 
         if self.to_numpy:
             obs = obs.cpu().numpy()
@@ -408,6 +461,7 @@ def make_isaaclab_env(
     task_cfg_overrides: Mapping[str, Any] | DictConfig | None = None,
     bootstrap_timeouts: bool = False,
     success_path: str | None = None,
+    render_mode: str | None = None,
 ) -> IsaacLabVectorEnv:
     if action_bounds is None and env_name not in ACTION_BOUNDS:
         print(f"Action bounds not defined for {env_name}; using default value 1.0.")
@@ -425,5 +479,6 @@ def make_isaaclab_env(
         task_cfg_overrides=task_cfg_overrides,
         bootstrap_timeouts=bootstrap_timeouts,
         success_path=success_path,
+        render_mode=render_mode,
     )
     return env

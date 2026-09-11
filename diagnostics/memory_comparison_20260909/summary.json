@@ -1,0 +1,2570 @@
+{
+  "created_utc": "2026-09-09T09:14:41.360112+00:00",
+  "notes": [
+    "CPU-only TensorBoard training snapshot; no evaluation or deployment evidence.",
+    "Each statistic is an unweighted mean of logged windows in the preceding 10M transitions, not an episode-weighted overall rate.",
+    "Lift fraction = lift bonus / 300: an episode crossed the task height threshold at least once; not stable grasping success.",
+    "Goals/episode counts reached goals, not the fraction completing the 50-goal chain.",
+    "Missing data are PENDING/null, not zero. Seeds and distinct run directories remain separate.",
+    "A reuses existing full STR obs140 feed-forward runs. B uses state162 feed-forward actor.",
+    "C uses a finite 32-frame LSTM actor with obs140 and history-Q (current state162 + 32 * 141 = 4674 inputs before actions).",
+    "C changes actor/critic capacity and critic information; it is not an actor-only causal ablation or official full-episode STR LSTM.",
+    "Matched references use identical window endpoints no later than either run's last observation; do not compare baseline100M with candidate10M as a win/loss."
+  ],
+  "queue": {
+    "status": "stopped_by_user_after_seed0",
+    "path": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/queue_status.json",
+    "jobs": {
+      "state162_ff_seed0": "completed",
+      "obs140_lstm32_historyq_seed0": "completed",
+      "state162_ff_seed1": "stopped_by_user",
+      "obs140_lstm32_historyq_seed1": "cancelled_by_user"
+    }
+  },
+  "baseline_queue": {
+    "status": "finished_with_failures",
+    "path": "/home/abao/flashsac-robotics/diagnostics/full_nodr_20260909_1004/queue_status.json",
+    "jobs": {
+      "seed0_train100m": "completed",
+      "seed0_eval_tol0.075": "failed",
+      "seed0_eval_tol0.01": "failed",
+      "seed1_train100m": "completed",
+      "seed1_eval_tol0.075": "failed",
+      "seed1_eval_tol0.01": "failed",
+      "seed2_train100m": "completed",
+      "seed2_eval_tol0.075": "failed",
+      "seed2_eval_tol0.01": "failed"
+    }
+  },
+  "groups": {
+    "A": {
+      "0": {
+        "path": "/home/abao/flashsac-robotics/diagnostics/full_nodr_20260909_1004/runs/str_full_nodr/full_distribution_seed0",
+        "status": "SEE_RUNS",
+        "runs": [
+          {
+            "directory": "/home/abao/flashsac-robotics/diagnostics/full_nodr_20260909_1004/runs/str_full_nodr/full_distribution_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_102500",
+            "status": "OBSERVED",
+            "last_observed_transition": 100003840,
+            "budget_observed": true,
+            "last_10m": {
+              "start_exclusive": 90003840,
+              "end_inclusive": 100003840,
+              "metrics": {
+                "return": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 82.01268698952414,
+                  "last": 89.56883239746094
+                },
+                "lift_event_fraction": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 0.11210925298106389,
+                  "last": 0.13114753723144532
+                },
+                "goals_per_episode": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 0.0007464855184985532,
+                  "last": 0.0
+                },
+                "keypoint_reward": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 1.148407702042599,
+                  "last": 1.0433125495910645
+                },
+                "tolerance": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 0.07500000298023224,
+                  "last": 0.07500000298023224
+                },
+                "alpha": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 1.307356575410387e-06,
+                  "last": 1.3065088069197373e-06
+                },
+                "entropy": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": -13.872401227854718,
+                  "last": -13.604124069213867
+                }
+              }
+            },
+            "milestones": {
+              "20000000": {
+                "start_exclusive": 10000000,
+                "end_inclusive": 20000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 22.481174522516678,
+                    "last": 28.473329544067383
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.09930939414874226,
+                    "last": 0.12396694183349609
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.0003600088850956182,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.9814301656216992,
+                    "last": 1.3623499870300293
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.000624675692738585,
+                    "last": 0.00029219521093182266
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 19.501896936066295,
+                    "last": 19.601015090942383
+                  }
+                }
+              },
+              "40000000": {
+                "start_exclusive": 30000000,
+                "end_inclusive": 40000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 49.41001319885254,
+                    "last": 50.37229537963867
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 0.10028233593013011,
+                    "last": 0.08928571701049805
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 0.0004919039902790468,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 0.9469537494742141,
+                    "last": 0.4625905454158783
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 4.721399345355018e-05,
+                    "last": 2.381996819167398e-05
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 17.369161469595774,
+                    "last": 16.148027420043945
+                  }
+                }
+              },
+              "60000000": {
+                "start_exclusive": 50000000,
+                "end_inclusive": 60000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 72.41572665185043,
+                    "last": 78.0143051147461
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 0.10271406698063067,
+                    "last": 0.11946903228759766
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 0.0006988505765642087,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 1.0352529966339623,
+                    "last": 0.8933876752853394
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 3.939297552203721e-06,
+                    "last": 2.0823119939450407e-06
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 7.731430928731702,
+                    "last": 1.8687375783920288
+                  }
+                }
+              },
+              "80000000": {
+                "start_exclusive": 70000000,
+                "end_inclusive": 80000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 81.24930591972507,
+                    "last": 82.33197784423828
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 0.11028533656580919,
+                    "last": 0.1092436981201172
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 0.0005251144353604438,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 1.0710710192821464,
+                    "last": 1.1779290437698364
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 9.200790066884389e-07,
+                    "last": 1.1302734037599294e-06
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": -13.971646698153748,
+                    "last": -13.309718132019043
+                  }
+                }
+              },
+              "100000000": {
+                "start_exclusive": 90000000,
+                "end_inclusive": 100000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 81.93558346495337,
+                    "last": 101.88250732421875
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 0.11191498477442735,
+                    "last": 0.15865384419759115
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 0.0007541027176669057,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 1.1494801015574105,
+                    "last": 1.9813352823257446
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 1.307365226109271e-06,
+                    "last": 1.3060043784207664e-06
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": -13.875138749881666,
+                    "last": -13.97590160369873
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "1": {
+        "path": "/home/abao/flashsac-robotics/diagnostics/full_nodr_20260909_1004/runs/str_full_nodr/full_distribution_seed1",
+        "status": "SEE_RUNS",
+        "runs": [
+          {
+            "directory": "/home/abao/flashsac-robotics/diagnostics/full_nodr_20260909_1004/runs/str_full_nodr/full_distribution_seed1/Isaacsimenvs-SimToolReal-Direct-v0_seed1_0909_110726",
+            "status": "OBSERVED",
+            "last_observed_transition": 100003840,
+            "budget_observed": true,
+            "last_10m": {
+              "start_exclusive": 90003840,
+              "end_inclusive": 100003840,
+              "metrics": {
+                "return": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 80.56963205819179,
+                  "last": 59.89079666137695
+                },
+                "lift_event_fraction": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 0.10776574215102276,
+                  "last": 0.0451127815246582
+                },
+                "goals_per_episode": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 0.0008478494680891133,
+                  "last": 0.0
+                },
+                "keypoint_reward": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 1.0635134556678811,
+                  "last": 0.36880791187286377
+                },
+                "tolerance": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 0.07500000298023224,
+                  "last": 0.07500000298023224
+                },
+                "alpha": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 9.055186699862877e-07,
+                  "last": 8.140149247992667e-07
+                },
+                "entropy": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": -13.59139808500656,
+                  "last": -14.754271507263184
+                }
+              }
+            },
+            "milestones": {
+              "20000000": {
+                "start_exclusive": 10000000,
+                "end_inclusive": 20000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 19.875037597150218,
+                    "last": 14.341679573059082
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.10077669098263695,
+                    "last": 0.09448818842569986
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.0003835709352160291,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.9847942706273527,
+                    "last": 0.8172675371170044
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.0006445094406110596,
+                    "last": 0.00030149321537464857
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 19.54251038298315,
+                    "last": 19.61385154724121
+                  }
+                }
+              },
+              "40000000": {
+                "start_exclusive": 30000000,
+                "end_inclusive": 40000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 53.82553454807827,
+                    "last": 55.2963752746582
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 0.1037351452898817,
+                    "last": 0.1101321538289388
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 0.0005243710403767776,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 1.0018585397272695,
+                    "last": 1.0943585634231567
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 4.885140277815945e-05,
+                    "last": 2.4549926820327528e-05
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 17.441934410406617,
+                    "last": 16.76152992248535
+                  }
+                }
+              },
+              "60000000": {
+                "start_exclusive": 50000000,
+                "end_inclusive": 60000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 70.27841497204967,
+                    "last": 75.35028839111328
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 0.10423788889986543,
+                    "last": 0.07981220881144206
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 0.001010592623623376,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 0.9831486759112054,
+                    "last": 0.7110471129417419
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 4.0272217148347255e-06,
+                    "last": 2.103227188854362e-06
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 9.815147387612726,
+                    "last": 4.13046932220459
+                  }
+                }
+              },
+              "80000000": {
+                "start_exclusive": 70000000,
+                "end_inclusive": 80000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 77.50377421476404,
+                    "last": 72.30255889892578
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 0.1055486299553696,
+                    "last": 0.09053497950236003
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 0.0009452208843348282,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 1.0498702320821431,
+                    "last": 0.9832807779312134
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 8.332356597348939e-07,
+                    "last": 8.487675131618744e-07
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": -13.69118543547027,
+                    "last": -13.748540878295898
+                  }
+                }
+              },
+              "100000000": {
+                "start_exclusive": 90000000,
+                "end_inclusive": 100000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 80.78064058264907,
+                    "last": 81.47264099121094
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 0.10840505807578159,
+                    "last": 0.12562814076741535
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 0.0008565009932736961,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 1.070602287747422,
+                    "last": 1.3239322900772095
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 9.064523816718696e-07,
+                    "last": 8.100573154479207e-07
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": -13.579532029677411,
+                    "last": -14.311488151550293
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "2": {
+        "path": "/home/abao/flashsac-robotics/diagnostics/full_nodr_20260909_1004/runs/str_full_nodr/full_distribution_seed2",
+        "status": "SEE_RUNS",
+        "runs": [
+          {
+            "directory": "/home/abao/flashsac-robotics/diagnostics/full_nodr_20260909_1004/runs/str_full_nodr/full_distribution_seed2/Isaacsimenvs-SimToolReal-Direct-v0_seed2_0909_114851",
+            "status": "OBSERVED",
+            "last_observed_transition": 100003840,
+            "budget_observed": true,
+            "last_10m": {
+              "start_exclusive": 90003840,
+              "end_inclusive": 100003840,
+              "metrics": {
+                "return": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 79.88340123494466,
+                  "last": 106.49510955810547
+                },
+                "lift_event_fraction": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 0.1074268947305904,
+                  "last": 0.14598539988199868
+                },
+                "goals_per_episode": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 0.0007858358728087912,
+                  "last": 0.014598540030419827
+                },
+                "keypoint_reward": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 1.0958268368484998,
+                  "last": 1.9495733976364136
+                },
+                "tolerance": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 0.07500000298023224,
+                  "last": 0.07500000298023224
+                },
+                "alpha": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 8.422040700036568e-07,
+                  "last": 7.736422844573099e-07
+                },
+                "entropy": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": -13.86687894300981,
+                  "last": -13.767202377319336
+                }
+              }
+            },
+            "milestones": {
+              "20000000": {
+                "start_exclusive": 10000000,
+                "end_inclusive": 20000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 27.911458862071136,
+                    "last": 29.67083168029785
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.10236764304491938,
+                    "last": 0.11068702697753906
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.00038943529528166564,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 1.0604934366990109,
+                    "last": 0.9112749695777893
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.0006311902249521785,
+                    "last": 0.00029529407038353384
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 19.49392678786297,
+                    "last": 19.56221580505371
+                  }
+                }
+              },
+              "40000000": {
+                "start_exclusive": 30000000,
+                "end_inclusive": 40000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 50.662695534375246,
+                    "last": 48.036563873291016
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 0.0993650823709916,
+                    "last": 0.08558558781941732
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 0.0004989300873510692,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 0.986701317283572,
+                    "last": 1.1138103008270264
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 4.766900858566241e-05,
+                    "last": 2.3987697204574943e-05
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 18.0034909929548,
+                    "last": 17.111888885498047
+                  }
+                }
+              },
+              "60000000": {
+                "start_exclusive": 50000000,
+                "end_inclusive": 60000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 69.03192803294388,
+                    "last": 83.22276306152344
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 0.10340714176086216,
+                    "last": 0.1523809560139974
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 0.0005459186774630522,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 1.0676274926392073,
+                    "last": 1.2029451131820679
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 3.913693546433633e-06,
+                    "last": 2.019409748754697e-06
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 11.292667728109459,
+                    "last": 7.482053279876709
+                  }
+                }
+              },
+              "80000000": {
+                "start_exclusive": 70000000,
+                "end_inclusive": 80000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 77.32046656705896,
+                    "last": 83.83072662353516
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 0.10685552746260248,
+                    "last": 0.10550458908081055
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 0.0008415458866452076,
+                    "last": 0.004587156232446432
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 1.081803331265644,
+                    "last": 0.6460931301116943
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 6.431902877512603e-07,
+                    "last": 7.690661618653394e-07
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": -13.645080595600362,
+                    "last": -13.65954303741455
+                  }
+                }
+              },
+              "100000000": {
+                "start_exclusive": 90000000,
+                "end_inclusive": 100000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 79.61185319083077,
+                    "last": 76.3985595703125
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 0.10703344059639236,
+                    "last": 0.10052909851074218
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 0.0006448899120168419,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 1.0871151372486232,
+                    "last": 1.3458744287490845
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 8.429036800602521e-07,
+                    "last": 7.649919666619098e-07
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": -13.867896050822978,
+                    "last": -15.372396469116211
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "B": {
+      "0": {
+        "path": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/runs/str_memory_comparison/state162_ff_seed0",
+        "status": "SEE_RUNS",
+        "runs": [
+          {
+            "directory": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/runs/str_memory_comparison/state162_ff_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_151523",
+            "status": "OBSERVED",
+            "last_observed_transition": 100003840,
+            "budget_observed": true,
+            "last_10m": {
+              "start_exclusive": 90003840,
+              "end_inclusive": 100003840,
+              "metrics": {
+                "return": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 82.20421076302577,
+                  "last": 97.72211456298828
+                },
+                "lift_event_fraction": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 0.1081104726823492,
+                  "last": 0.13953488667805988
+                },
+                "goals_per_episode": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 0.0004927650790172394,
+                  "last": 0.0
+                },
+                "keypoint_reward": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 1.0227169584144244,
+                  "last": 0.9425889253616333
+                },
+                "tolerance": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 0.07500000298023224,
+                  "last": 0.07500000298023224
+                },
+                "alpha": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 1.435464077480396e-06,
+                  "last": 1.5977577731973724e-06
+                },
+                "entropy": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": -13.957670028763587,
+                  "last": -14.162480354309082
+                }
+              }
+            },
+            "milestones": {
+              "20000000": {
+                "start_exclusive": 10000000,
+                "end_inclusive": 20000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 23.977482810312388,
+                    "last": 33.423736572265625
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.10183211488788631,
+                    "last": 0.0942622947692871
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.0006144629026364003,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 1.0468050177608217,
+                    "last": 0.6999377012252808
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.0006435464904881177,
+                    "last": 0.0003011044464074075
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 19.477074447943238,
+                    "last": 19.530315399169922
+                  }
+                }
+              },
+              "40000000": {
+                "start_exclusive": 30000000,
+                "end_inclusive": 40000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 50.62088382487394,
+                    "last": 57.846710205078125
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 0.10084015937078566,
+                    "last": 0.1388888931274414
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 8.451490548952502e-05,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 0.9794124468248717,
+                    "last": 1.5343793630599976
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 4.8779414546330296e-05,
+                    "last": 2.453441084071528e-05
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 17.21893446786063,
+                    "last": 16.360008239746094
+                  }
+                }
+              },
+              "60000000": {
+                "start_exclusive": 50000000,
+                "end_inclusive": 60000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 68.9084655525758,
+                    "last": 77.66873168945312
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 0.10384510433550963,
+                    "last": 0.09623430887858073
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 0.0006086178479197714,
+                    "last": 0.0041841003112494946
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 0.9985914187333018,
+                    "last": 1.0365914106369019
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 4.0316450610692665e-06,
+                    "last": 2.0975157895009033e-06
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 9.588060113572583,
+                    "last": 4.666506767272949
+                  }
+                }
+              },
+              "80000000": {
+                "start_exclusive": 70000000,
+                "end_inclusive": 80000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 79.89113764860193,
+                    "last": 88.4422836303711
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 0.10583746517596601,
+                    "last": 0.07296137491861979
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 0.0005402827958519361,
+                    "last": 0.004291845485568047
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 1.0003730061711098,
+                    "last": 0.5355470180511475
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 9.541341245615198e-07,
+                    "last": 1.1735537555068731e-06
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": -14.184647112476583,
+                    "last": -14.592096328735352
+                  }
+                }
+              },
+              "100000000": {
+                "start_exclusive": 90000000,
+                "end_inclusive": 100000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 82.0458648058833,
+                    "last": 73.11149597167969
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 0.10778981539667869,
+                    "last": 0.09523809432983399
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 0.000497793294109252,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 1.023534591404759,
+                    "last": 0.849196195602417
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 1.433808019360835e-06,
+                    "last": 1.588971599630895e-06
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": -13.955580127482511,
+                    "last": -14.191245079040527
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "1": {
+        "path": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/runs/str_memory_comparison/state162_ff_seed1",
+        "status": "SEE_RUNS",
+        "runs": [
+          {
+            "directory": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/runs/str_memory_comparison/state162_ff_seed1/Isaacsimenvs-SimToolReal-Direct-v0_seed1_0909_170236",
+            "status": "OBSERVED",
+            "last_observed_transition": 30003200,
+            "budget_observed": false,
+            "last_10m": {
+              "start_exclusive": 20003200,
+              "end_inclusive": 30003200,
+              "metrics": {
+                "return": {
+                  "status": "OBSERVED",
+                  "windows": 98,
+                  "first_step": 20070400,
+                  "last_step": 30003200,
+                  "mean": 22.76141259986527,
+                  "last": 32.913543701171875
+                },
+                "lift_event_fraction": {
+                  "status": "OBSERVED",
+                  "windows": 98,
+                  "first_step": 20070400,
+                  "last_step": 30003200,
+                  "mean": 0.09912379547041289,
+                  "last": 0.13545817057291668
+                },
+                "goals_per_episode": {
+                  "status": "OBSERVED",
+                  "windows": 98,
+                  "first_step": 20070400,
+                  "last_step": 30003200,
+                  "mean": 0.00043630389002512914,
+                  "last": 0.0
+                },
+                "keypoint_reward": {
+                  "status": "OBSERVED",
+                  "windows": 98,
+                  "first_step": 20070400,
+                  "last_step": 30003200,
+                  "mean": 0.9439763861651324,
+                  "last": 1.4326499700546265
+                },
+                "tolerance": {
+                  "status": "OBSERVED",
+                  "windows": 98,
+                  "first_step": 20070400,
+                  "last_step": 30003200,
+                  "mean": 0.07500000298023224,
+                  "last": 0.07500000298023224
+                },
+                "alpha": {
+                  "status": "OBSERVED",
+                  "windows": 98,
+                  "first_step": 20070400,
+                  "last_step": 30003200,
+                  "mean": 0.00016490781267841195,
+                  "last": 8.232318941736594e-05
+                },
+                "entropy": {
+                  "status": "OBSERVED",
+                  "windows": 98,
+                  "first_step": 20070400,
+                  "last_step": 30003200,
+                  "mean": 19.666906570901677,
+                  "last": 19.651409149169922
+                }
+              }
+            },
+            "milestones": {
+              "20000000": {
+                "start_exclusive": 10000000,
+                "end_inclusive": 20000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 24.860583276164775,
+                    "last": 23.274335861206055
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.10183835295592847,
+                    "last": 0.09056603749593099
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.0007147788953948386,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 1.0042266129535071,
+                    "last": 0.7310190200805664
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.0006264795906181276,
+                    "last": 0.0002930589544121176
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 19.511226731903697,
+                    "last": 19.59792137145996
+                  }
+                }
+              },
+              "40000000": {
+                "status": "PENDING"
+              },
+              "60000000": {
+                "status": "PENDING"
+              },
+              "80000000": {
+                "status": "PENDING"
+              },
+              "100000000": {
+                "status": "PENDING"
+              }
+            }
+          }
+        ]
+      },
+      "2": {
+        "path": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/runs/str_memory_comparison/state162_ff_seed2",
+        "status": "PENDING",
+        "runs": []
+      }
+    },
+    "C": {
+      "0": {
+        "path": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/runs/str_memory_comparison/obs140_lstm32_historyq_seed0",
+        "status": "SEE_RUNS",
+        "runs": [
+          {
+            "directory": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/runs/str_memory_comparison/obs140_lstm32_historyq_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_155902",
+            "status": "OBSERVED",
+            "last_observed_transition": 100003840,
+            "budget_observed": true,
+            "last_10m": {
+              "start_exclusive": 90003840,
+              "end_inclusive": 100003840,
+              "metrics": {
+                "return": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 73.52196071123836,
+                  "last": 45.800743103027344
+                },
+                "lift_event_fraction": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 0.10663733736031786,
+                  "last": 0.04065040588378906
+                },
+                "goals_per_episode": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 0.0002750430227906415,
+                  "last": 0.0
+                },
+                "keypoint_reward": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 1.071469312966472,
+                  "last": 0.4549482464790344
+                },
+                "tolerance": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 0.07500000298023224,
+                  "last": 0.07500000298023224
+                },
+                "alpha": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": 2.755535208530321e-06,
+                  "last": 2.678122427823837e-06
+                },
+                "entropy": {
+                  "status": "OBSERVED",
+                  "windows": 99,
+                  "first_step": 90009600,
+                  "last_step": 100003840,
+                  "mean": -13.799301137827863,
+                  "last": -13.969876289367676
+                }
+              }
+            },
+            "milestones": {
+              "20000000": {
+                "start_exclusive": 10000000,
+                "end_inclusive": 20000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 19.67010753008784,
+                    "last": 18.637577056884766
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.09956265884191812,
+                    "last": 0.08196721394856771
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.0002647941594715325,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 1.0108864097570887,
+                    "last": 1.0300730466842651
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 0.0006196510060975442,
+                    "last": 0.0002904997963923961
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 10035200,
+                    "last_step": 19968000,
+                    "mean": 19.385749875282755,
+                    "last": 19.120994567871094
+                  }
+                }
+              },
+              "40000000": {
+                "start_exclusive": 30000000,
+                "end_inclusive": 40000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 50.65930695436439,
+                    "last": 59.05427551269531
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 0.09822942960829963,
+                    "last": 0.10169491449991862
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 0.0003208788491937579,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 0.9200705473824423,
+                    "last": 0.779453694820404
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 4.736783344293256e-05,
+                    "last": 2.4070213839877397e-05
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 30003200,
+                    "last_step": 39936000,
+                    "mean": 15.17585986974288,
+                    "last": 12.81521224975586
+                  }
+                }
+              },
+              "60000000": {
+                "start_exclusive": 50000000,
+                "end_inclusive": 60000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 65.92673834574592,
+                    "last": 79.0363540649414
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 0.10518106034531216,
+                    "last": 0.14925373077392579
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 0.00013429156418160064,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 1.0405788412413646,
+                    "last": 1.8686227798461914
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": 4.561225455525102e-06,
+                    "last": 2.7049670734413667e-06
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 97,
+                    "first_step": 50073600,
+                    "last_step": 59904000,
+                    "mean": -6.6877186273791125,
+                    "last": -11.201420783996582
+                  }
+                }
+              },
+              "80000000": {
+                "start_exclusive": 70000000,
+                "end_inclusive": 80000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 68.7485597960803,
+                    "last": 64.64349365234375
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 0.10291749305465595,
+                    "last": 0.10138249079386394
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 0.0004171477915833191,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 1.062890466682765,
+                    "last": 1.4741199016571045
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": 3.721198291547195e-06,
+                    "last": 3.285240609329776e-06
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 70041600,
+                    "last_step": 79974400,
+                    "mean": -13.705816220264046,
+                    "last": -13.624421119689941
+                  }
+                }
+              },
+              "100000000": {
+                "start_exclusive": 90000000,
+                "end_inclusive": 100000000,
+                "metrics": {
+                  "return": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 73.80483027866909,
+                    "last": 67.70246887207031
+                  },
+                  "lift_event_fraction": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 0.10731067339579264,
+                    "last": 0.1079812240600586
+                  },
+                  "goals_per_episode": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 0.00027784958424768885,
+                    "last": 0.0
+                  },
+                  "keypoint_reward": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 1.0777603442571602,
+                    "last": 0.8861896395683289
+                  },
+                  "tolerance": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 0.07500000298023224,
+                    "last": 0.07500000298023224
+                  },
+                  "alpha": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": 2.7563251348640605e-06,
+                    "last": 2.662759470695164e-06
+                  },
+                  "entropy": {
+                    "status": "OBSERVED",
+                    "windows": 98,
+                    "first_step": 90009600,
+                    "last_step": 99942400,
+                    "mean": -13.79756057505705,
+                    "last": -14.123440742492676
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "1": {
+        "path": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/runs/str_memory_comparison/obs140_lstm32_historyq_seed1",
+        "status": "PENDING",
+        "runs": []
+      },
+      "2": {
+        "path": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/runs/str_memory_comparison/obs140_lstm32_historyq_seed2",
+        "status": "PENDING",
+        "runs": []
+      }
+    }
+  },
+  "matched": [
+    {
+      "candidate": "B",
+      "seed": 0,
+      "status": "OBSERVED",
+      "runs": [
+        {
+          "baseline_directory": "/home/abao/flashsac-robotics/diagnostics/full_nodr_20260909_1004/runs/str_full_nodr/full_distribution_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_102500",
+          "candidate_directory": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/runs/str_memory_comparison/state162_ff_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_151523",
+          "end_transition": 100003840,
+          "A": {
+            "start_exclusive": 90003840,
+            "end_inclusive": 100003840,
+            "metrics": {
+              "return": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 82.01268698952414,
+                "last": 89.56883239746094
+              },
+              "lift_event_fraction": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 0.11210925298106389,
+                "last": 0.13114753723144532
+              },
+              "goals_per_episode": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 0.0007464855184985532,
+                "last": 0.0
+              },
+              "keypoint_reward": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 1.148407702042599,
+                "last": 1.0433125495910645
+              },
+              "tolerance": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 0.07500000298023224,
+                "last": 0.07500000298023224
+              },
+              "alpha": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 1.307356575410387e-06,
+                "last": 1.3065088069197373e-06
+              },
+              "entropy": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": -13.872401227854718,
+                "last": -13.604124069213867
+              }
+            }
+          },
+          "B": {
+            "start_exclusive": 90003840,
+            "end_inclusive": 100003840,
+            "metrics": {
+              "return": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 82.20421076302577,
+                "last": 97.72211456298828
+              },
+              "lift_event_fraction": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 0.1081104726823492,
+                "last": 0.13953488667805988
+              },
+              "goals_per_episode": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 0.0004927650790172394,
+                "last": 0.0
+              },
+              "keypoint_reward": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 1.0227169584144244,
+                "last": 0.9425889253616333
+              },
+              "tolerance": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 0.07500000298023224,
+                "last": 0.07500000298023224
+              },
+              "alpha": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 1.435464077480396e-06,
+                "last": 1.5977577731973724e-06
+              },
+              "entropy": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": -13.957670028763587,
+                "last": -14.162480354309082
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "candidate": "C",
+      "seed": 0,
+      "status": "OBSERVED",
+      "runs": [
+        {
+          "baseline_directory": "/home/abao/flashsac-robotics/diagnostics/full_nodr_20260909_1004/runs/str_full_nodr/full_distribution_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_102500",
+          "candidate_directory": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/runs/str_memory_comparison/obs140_lstm32_historyq_seed0/Isaacsimenvs-SimToolReal-Direct-v0_seed0_0909_155902",
+          "end_transition": 100003840,
+          "A": {
+            "start_exclusive": 90003840,
+            "end_inclusive": 100003840,
+            "metrics": {
+              "return": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 82.01268698952414,
+                "last": 89.56883239746094
+              },
+              "lift_event_fraction": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 0.11210925298106389,
+                "last": 0.13114753723144532
+              },
+              "goals_per_episode": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 0.0007464855184985532,
+                "last": 0.0
+              },
+              "keypoint_reward": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 1.148407702042599,
+                "last": 1.0433125495910645
+              },
+              "tolerance": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 0.07500000298023224,
+                "last": 0.07500000298023224
+              },
+              "alpha": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 1.307356575410387e-06,
+                "last": 1.3065088069197373e-06
+              },
+              "entropy": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": -13.872401227854718,
+                "last": -13.604124069213867
+              }
+            }
+          },
+          "C": {
+            "start_exclusive": 90003840,
+            "end_inclusive": 100003840,
+            "metrics": {
+              "return": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 73.52196071123836,
+                "last": 45.800743103027344
+              },
+              "lift_event_fraction": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 0.10663733736031786,
+                "last": 0.04065040588378906
+              },
+              "goals_per_episode": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 0.0002750430227906415,
+                "last": 0.0
+              },
+              "keypoint_reward": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 1.071469312966472,
+                "last": 0.4549482464790344
+              },
+              "tolerance": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 0.07500000298023224,
+                "last": 0.07500000298023224
+              },
+              "alpha": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": 2.755535208530321e-06,
+                "last": 2.678122427823837e-06
+              },
+              "entropy": {
+                "status": "OBSERVED",
+                "windows": 99,
+                "first_step": 90009600,
+                "last_step": 100003840,
+                "mean": -13.799301137827863,
+                "last": -13.969876289367676
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "candidate": "B",
+      "seed": 1,
+      "status": "OBSERVED",
+      "runs": [
+        {
+          "baseline_directory": "/home/abao/flashsac-robotics/diagnostics/full_nodr_20260909_1004/runs/str_full_nodr/full_distribution_seed1/Isaacsimenvs-SimToolReal-Direct-v0_seed1_0909_110726",
+          "candidate_directory": "/home/abao/flashsac-robotics/diagnostics/memory_comparison_20260909/runs/str_memory_comparison/state162_ff_seed1/Isaacsimenvs-SimToolReal-Direct-v0_seed1_0909_170236",
+          "end_transition": 30003200,
+          "A": {
+            "start_exclusive": 20003200,
+            "end_inclusive": 30003200,
+            "metrics": {
+              "return": {
+                "status": "OBSERVED",
+                "windows": 98,
+                "first_step": 20070400,
+                "last_step": 30003200,
+                "mean": 33.25319006005112,
+                "last": 37.20329666137695
+              },
+              "lift_event_fraction": {
+                "status": "OBSERVED",
+                "windows": 98,
+                "first_step": 20070400,
+                "last_step": 30003200,
+                "mean": 0.0978899537300577,
+                "last": 0.07017543792724609
+              },
+              "goals_per_episode": {
+                "status": "OBSERVED",
+                "windows": 98,
+                "first_step": 20070400,
+                "last_step": 30003200,
+                "mean": 0.00044158472422966546,
+                "last": 0.0
+              },
+              "keypoint_reward": {
+                "status": "OBSERVED",
+                "windows": 98,
+                "first_step": 20070400,
+                "last_step": 30003200,
+                "mean": 0.9819997327060116,
+                "last": 0.8156739473342896
+              },
+              "tolerance": {
+                "status": "OBSERVED",
+                "windows": 98,
+                "first_step": 20070400,
+                "last_step": 30003200,
+                "mean": 0.07500000298023224,
+                "last": 0.07500000298023224
+              },
+              "alpha": {
+                "status": "OBSERVED",
+                "windows": 98,
+                "first_step": 20070400,
+                "last_step": 30003200,
+                "mean": 0.00017004383765624324,
+                "last": 8.519818948116153e-05
+              },
+              "entropy": {
+                "status": "OBSERVED",
+                "windows": 98,
+                "first_step": 20070400,
+                "last_step": 30003200,
+                "mean": 19.385788995392467,
+                "last": 18.798267364501953
+              }
+            }
+          },
+          "B": {
+            "start_exclusive": 20003200,
+            "end_inclusive": 30003200,
+            "metrics": {
+              "return": {
+                "status": "OBSERVED",
+                "windows": 98,
+                "first_step": 20070400,
+                "last_step": 30003200,
+                "mean": 22.76141259986527,
+                "last": 32.913543701171875
+              },
+              "lift_event_fraction": {
+                "status": "OBSERVED",
+                "windows": 98,
+                "first_step": 20070400,
+                "last_step": 30003200,
+                "mean": 0.09912379547041289,
+                "last": 0.13545817057291668
+              },
+              "goals_per_episode": {
+                "status": "OBSERVED",
+                "windows": 98,
+                "first_step": 20070400,
+                "last_step": 30003200,
+                "mean": 0.00043630389002512914,
+                "last": 0.0
+              },
+              "keypoint_reward": {
+                "status": "OBSERVED",
+                "windows": 98,
+                "first_step": 20070400,
+                "last_step": 30003200,
+                "mean": 0.9439763861651324,
+                "last": 1.4326499700546265
+              },
+              "tolerance": {
+                "status": "OBSERVED",
+                "windows": 98,
+                "first_step": 20070400,
+                "last_step": 30003200,
+                "mean": 0.07500000298023224,
+                "last": 0.07500000298023224
+              },
+              "alpha": {
+                "status": "OBSERVED",
+                "windows": 98,
+                "first_step": 20070400,
+                "last_step": 30003200,
+                "mean": 0.00016490781267841195,
+                "last": 8.232318941736594e-05
+              },
+              "entropy": {
+                "status": "OBSERVED",
+                "windows": 98,
+                "first_step": 20070400,
+                "last_step": 30003200,
+                "mean": 19.666906570901677,
+                "last": 19.651409149169922
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "candidate": "C",
+      "seed": 1,
+      "status": "PENDING",
+      "runs": []
+    },
+    {
+      "candidate": "B",
+      "seed": 2,
+      "status": "PENDING",
+      "runs": []
+    },
+    {
+      "candidate": "C",
+      "seed": 2,
+      "status": "PENDING",
+      "runs": []
+    }
+  ]
+}

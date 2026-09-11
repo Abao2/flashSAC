@@ -1,0 +1,703 @@
+{
+  "purpose": "Bounded frozen-policy diagnosis; no training/checkpoint mutations; local only.",
+  "jobs": [
+    {
+      "id": "bc_current_full_eval",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+        "--policy",
+        "bc",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/memory_official_filter01_labeled_full/bc_current.pt",
+        "--episodes",
+        "64",
+        "--num-envs",
+        "16",
+        "--override",
+        "env.task_cfg_overrides.action.arm_moving_average=0.1",
+        "--override",
+        "env.task_cfg_overrides.action.hand_moving_average=0.1",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/bc_current_full_eval"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/bc_current_full_eval.log",
+      "kind": "diagnostic",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/bc_current_full_eval/summary.json"
+    },
+    {
+      "id": "bc_repeat_full_eval",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+        "--policy",
+        "bc",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/memory_official_filter01_labeled_full/bc_repeat.pt",
+        "--episodes",
+        "64",
+        "--num-envs",
+        "16",
+        "--override",
+        "env.task_cfg_overrides.action.arm_moving_average=0.1",
+        "--override",
+        "env.task_cfg_overrides.action.hand_moving_average=0.1",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/bc_repeat_full_eval"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/bc_repeat_full_eval.log",
+      "kind": "diagnostic",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/bc_repeat_full_eval/summary.json"
+    },
+    {
+      "id": "bc_history_full_eval",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+        "--policy",
+        "bc",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/memory_official_filter01_labeled_full/bc_history.pt",
+        "--episodes",
+        "64",
+        "--num-envs",
+        "16",
+        "--override",
+        "env.task_cfg_overrides.action.arm_moving_average=0.1",
+        "--override",
+        "env.task_cfg_overrides.action.hand_moving_average=0.1",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/bc_history_full_eval"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/bc_history_full_eval.log",
+      "kind": "diagnostic",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/bc_history_full_eval/summary.json"
+    },
+    {
+      "id": "official_arm01_only",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+        "--policy",
+        "official",
+        "--episodes",
+        "16",
+        "--num-envs",
+        "16",
+        "--override",
+        "env.task_cfg_overrides.action.arm_moving_average=0.1",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/official_arm01_only"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/official_arm01_only.log",
+      "kind": "diagnostic",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/official_arm01_only/summary.json"
+    },
+    {
+      "id": "official_hand01_only",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+        "--policy",
+        "official",
+        "--episodes",
+        "16",
+        "--num-envs",
+        "16",
+        "--override",
+        "env.task_cfg_overrides.action.hand_moving_average=0.1",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/official_hand01_only"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/official_hand01_only.log",
+      "kind": "diagnostic",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/official_hand01_only/summary.json"
+    },
+    {
+      "id": "official_filter01_raw",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+        "--policy",
+        "official",
+        "--episodes",
+        "16",
+        "--num-envs",
+        "16",
+        "--entry",
+        "raw",
+        "--override",
+        "env.task_cfg_overrides.action.arm_moving_average=0.1",
+        "--override",
+        "env.task_cfg_overrides.action.hand_moving_average=0.1",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/official_filter01_raw"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/official_filter01_raw.log",
+      "kind": "diagnostic",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/official_filter01_raw/summary.json"
+    },
+    {
+      "id": "flash_deterministic",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+        "--policy",
+        "flash",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-0908-153538/step9760",
+        "--episodes",
+        "128",
+        "--num-envs",
+        "16",
+        "--sampling",
+        "deterministic",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_deterministic"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_deterministic.log",
+      "kind": "diagnostic",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_deterministic/summary.json"
+    },
+    {
+      "id": "critic_flash_deterministic",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_critic.py",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-0908-153538/step9760",
+        "--data",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_deterministic/transitions.npz",
+        "--output",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/critic_flash_deterministic.json",
+        "--next-obs-is-final",
+        "--device",
+        "cpu",
+        "--threads",
+        "4",
+        "--max-samples-per-phase",
+        "128"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/critic_flash_deterministic.log",
+      "kind": "cpu",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/critic_flash_deterministic.json"
+    },
+    {
+      "id": "flash_native_seed0",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+        "--policy",
+        "flash",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-0908-153538/step9760",
+        "--episodes",
+        "128",
+        "--num-envs",
+        "16",
+        "--sampling",
+        "stochastic",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_native_seed0"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_native_seed0.log",
+      "kind": "diagnostic",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_native_seed0/summary.json"
+    },
+    {
+      "id": "critic_flash_native_seed0",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_critic.py",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-0908-153538/step9760",
+        "--data",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_native_seed0/transitions.npz",
+        "--output",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/critic_flash_native_seed0.json",
+        "--next-obs-is-final",
+        "--device",
+        "cpu",
+        "--threads",
+        "4",
+        "--max-samples-per-phase",
+        "128"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/critic_flash_native_seed0.log",
+      "kind": "cpu",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/critic_flash_native_seed0.json"
+    },
+    {
+      "id": "flash_native_seed1",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+        "--policy",
+        "flash",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-0908-153538/step9760",
+        "--episodes",
+        "128",
+        "--num-envs",
+        "16",
+        "--sampling",
+        "stochastic",
+        "--seed",
+        "1",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_native_seed1"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_native_seed1.log",
+      "kind": "diagnostic",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_native_seed1/summary.json"
+    },
+    {
+      "id": "flash_amp05",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+        "--policy",
+        "flash",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-0908-153538/step9760",
+        "--episodes",
+        "128",
+        "--num-envs",
+        "16",
+        "--sampling",
+        "stochastic",
+        "--noise-multiplier",
+        "0.5",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_amp05"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_amp05.log",
+      "kind": "diagnostic",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_amp05/summary.json"
+    },
+    {
+      "id": "flash_amp15",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+        "--policy",
+        "flash",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-0908-153538/step9760",
+        "--episodes",
+        "128",
+        "--num-envs",
+        "16",
+        "--sampling",
+        "stochastic",
+        "--noise-multiplier",
+        "1.5",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_amp15"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_amp15.log",
+      "kind": "diagnostic",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_amp15/summary.json"
+    },
+    {
+      "id": "flash_repeat1",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+        "--policy",
+        "flash",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-0908-153538/step9760",
+        "--episodes",
+        "128",
+        "--num-envs",
+        "16",
+        "--sampling",
+        "stochastic",
+        "--noise-repeat",
+        "1",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_repeat1"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_repeat1.log",
+      "kind": "diagnostic",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_repeat1/summary.json"
+    },
+    {
+      "id": "flash_repeat4",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+        "--policy",
+        "flash",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-0908-153538/step9760",
+        "--episodes",
+        "128",
+        "--num-envs",
+        "16",
+        "--sampling",
+        "stochastic",
+        "--noise-repeat",
+        "4",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_repeat4"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_repeat4.log",
+      "kind": "diagnostic",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_repeat4/summary.json"
+    },
+    {
+      "id": "flash_repeat16",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+        "--policy",
+        "flash",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-0908-153538/step9760",
+        "--episodes",
+        "128",
+        "--num-envs",
+        "16",
+        "--sampling",
+        "stochastic",
+        "--noise-repeat",
+        "16",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_repeat16"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_repeat16.log",
+      "kind": "diagnostic",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_repeat16/summary.json"
+    },
+    {
+      "id": "critic_flash_repeat16",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_critic.py",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-0908-153538/step9760",
+        "--data",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_repeat16/transitions.npz",
+        "--output",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/critic_flash_repeat16.json",
+        "--next-obs-is-final",
+        "--device",
+        "cpu",
+        "--threads",
+        "4",
+        "--max-samples-per-phase",
+        "128"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/critic_flash_repeat16.log",
+      "kind": "cpu",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/critic_flash_repeat16.json"
+    },
+    {
+      "id": "flash_filter01_native_seed0",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+        "--policy",
+        "flash",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-0908-153538/step9760",
+        "--episodes",
+        "128",
+        "--num-envs",
+        "16",
+        "--sampling",
+        "stochastic",
+        "--override",
+        "env.task_cfg_overrides.action.arm_moving_average=0.1",
+        "--override",
+        "env.task_cfg_overrides.action.hand_moving_average=0.1",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_filter01_native_seed0"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_filter01_native_seed0.log",
+      "kind": "diagnostic",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_filter01_native_seed0/summary.json"
+    },
+    {
+      "id": "critic_flash_filter01_native_seed0",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_critic.py",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-0908-153538/step9760",
+        "--data",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_filter01_native_seed0/transitions.npz",
+        "--output",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/critic_flash_filter01_native_seed0.json",
+        "--next-obs-is-final",
+        "--device",
+        "cpu",
+        "--threads",
+        "4",
+        "--max-samples-per-phase",
+        "128"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/critic_flash_filter01_native_seed0.log",
+      "kind": "cpu",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/critic_flash_filter01_native_seed0.json"
+    },
+    {
+      "id": "flash_filter01_native_seed1",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+        "--policy",
+        "flash",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-0908-153538/step9760",
+        "--episodes",
+        "128",
+        "--num-envs",
+        "16",
+        "--sampling",
+        "stochastic",
+        "--seed",
+        "1",
+        "--override",
+        "env.task_cfg_overrides.action.arm_moving_average=0.1",
+        "--override",
+        "env.task_cfg_overrides.action.hand_moving_average=0.1",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_filter01_native_seed1"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_filter01_native_seed1.log",
+      "kind": "diagnostic",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_filter01_native_seed1/summary.json"
+    },
+    {
+      "id": "flash_filter01_deterministic",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_rollouts.py",
+        "--policy",
+        "flash",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-0908-153538/step9760",
+        "--episodes",
+        "128",
+        "--num-envs",
+        "16",
+        "--sampling",
+        "deterministic",
+        "--override",
+        "env.task_cfg_overrides.action.arm_moving_average=0.1",
+        "--override",
+        "env.task_cfg_overrides.action.hand_moving_average=0.1",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_filter01_deterministic"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_filter01_deterministic.log",
+      "kind": "diagnostic",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/flash_filter01_deterministic/summary.json"
+    },
+    {
+      "id": "first_action_smoke",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_first_action.py",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-0908-153538/step9760",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/first_action_smoke",
+        "--replicates",
+        "2",
+        "--horizon",
+        "5"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/first_action_smoke.log",
+      "kind": "diagnostic",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/first_action_smoke/summary.json"
+    },
+    {
+      "id": "first_action_seed0",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_first_action.py",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-0908-153538/step9760",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/first_action_seed0",
+        "--replicates",
+        "32",
+        "--horizon",
+        "600",
+        "--seed",
+        "0"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/first_action_seed0.log",
+      "kind": "diagnostic",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/first_action_seed0/summary.json"
+    },
+    {
+      "id": "first_action_seed1",
+      "argv": [
+        "/home/abao/Documents/Codex/flashsac-official-play/.venv/bin/python",
+        "/home/abao/flashsac-robotics/scripts/diagnose_str_first_action.py",
+        "--checkpoint",
+        "/home/abao/flashsac-robotics/models/simtoolreal_diagnostics/state162_eraser_onegoal_seed0/Isaacsimenvs-SimToolReal-Direct-v0/seed0-0908-153538/step9760",
+        "--output-dir",
+        "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/first_action_seed1",
+        "--replicates",
+        "32",
+        "--horizon",
+        "600",
+        "--seed",
+        "1"
+      ],
+      "cwd": "/home/abao/flashsac-robotics",
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "MKL_NUM_THREADS": "4"
+      },
+      "log": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/first_action_seed1.log",
+      "kind": "diagnostic",
+      "timeout_seconds": 900,
+      "expected_completion_file": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/first_action_seed1/summary.json"
+    }
+  ]
+}

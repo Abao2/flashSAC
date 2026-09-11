@@ -1,0 +1,14 @@
+defaults:
+  - simtoolreal_full_nodr
+  - _self_
+
+# Finite-history diagnostic, NOT upstream FlashSAC or official STR's full LSTM.
+# Actor140 sees32 consecutive frames. Q sees current privileged162 + the same
+# history, so its value is conditioned on the history-dependent continuation.
+# Extra information/parameters are a confound; this is not an actor-only proof.
+group_name: str_memory_comparison
+exp_name: obs140_lstm32_historyq_seed${seed}
+agent:
+  actor_history_length: 32
+  actor_lstm_hidden_dim: 128
+

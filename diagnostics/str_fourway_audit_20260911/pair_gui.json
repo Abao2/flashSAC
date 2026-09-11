@@ -1,0 +1,239 @@
+{
+  "initial_max_abs_errors": {
+    "policy": 0.0,
+    "critic": 0.0,
+    "joint_pos": 0.0,
+    "joint_vel": 0.0,
+    "object_pos": 0.0,
+    "object_quat": 0.0,
+    "goal_pos": 0.0,
+    "goal_quat": 0.0,
+    "targets": 0.0
+  },
+  "flash_checkpoint": "/home/abao/flashsac-robotics/diagnostics/credit_nstep3_20260910/candidate/models/seed0/step48830",
+  "task": "claw_hammer/swing_down",
+  "goals": 37,
+  "arm_ema": 1.0,
+  "hand_ema": 0.1,
+  "tolerance": 0.01,
+  "episodes": [
+    {
+      "env": 0,
+      "policy": "official",
+      "goals": 37,
+      "step": 578,
+      "terminated": true,
+      "truncated": false
+    },
+    {
+      "env": 1,
+      "policy": "flash100M",
+      "goals": 0,
+      "step": 598,
+      "terminated": false,
+      "truncated": true
+    },
+    {
+      "env": 0,
+      "policy": "official",
+      "goals": 37,
+      "step": 1172,
+      "terminated": true,
+      "truncated": false
+    },
+    {
+      "env": 1,
+      "policy": "flash100M",
+      "goals": 0,
+      "step": 1197,
+      "terminated": false,
+      "truncated": true
+    },
+    {
+      "env": 1,
+      "policy": "flash100M",
+      "goals": 0,
+      "step": 1796,
+      "terminated": false,
+      "truncated": true
+    },
+    {
+      "env": 0,
+      "policy": "official",
+      "goals": 37,
+      "step": 1996,
+      "terminated": true,
+      "truncated": false
+    },
+    {
+      "env": 1,
+      "policy": "flash100M",
+      "goals": 0,
+      "step": 2395,
+      "terminated": false,
+      "truncated": true
+    },
+    {
+      "env": 0,
+      "policy": "official",
+      "goals": 37,
+      "step": 2581,
+      "terminated": true,
+      "truncated": false
+    },
+    {
+      "env": 1,
+      "policy": "flash100M",
+      "goals": 0,
+      "step": 2994,
+      "terminated": false,
+      "truncated": true
+    },
+    {
+      "env": 0,
+      "policy": "official",
+      "goals": 37,
+      "step": 3233,
+      "terminated": true,
+      "truncated": false
+    },
+    {
+      "env": 1,
+      "policy": "flash100M",
+      "goals": 0,
+      "step": 3593,
+      "terminated": false,
+      "truncated": true
+    },
+    {
+      "env": 1,
+      "policy": "flash100M",
+      "goals": 0,
+      "step": 4192,
+      "terminated": false,
+      "truncated": true
+    },
+    {
+      "env": 0,
+      "policy": "official",
+      "goals": 37,
+      "step": 4286,
+      "terminated": true,
+      "truncated": false
+    },
+    {
+      "env": 1,
+      "policy": "flash100M",
+      "goals": 0,
+      "step": 4791,
+      "terminated": false,
+      "truncated": true
+    },
+    {
+      "env": 0,
+      "policy": "official",
+      "goals": 37,
+      "step": 4991,
+      "terminated": true,
+      "truncated": false
+    },
+    {
+      "env": 1,
+      "policy": "flash100M",
+      "goals": 0,
+      "step": 5390,
+      "terminated": false,
+      "truncated": true
+    },
+    {
+      "env": 0,
+      "policy": "official",
+      "goals": 37,
+      "step": 5562,
+      "terminated": true,
+      "truncated": false
+    },
+    {
+      "env": 1,
+      "policy": "flash100M",
+      "goals": 0,
+      "step": 5989,
+      "terminated": false,
+      "truncated": true
+    },
+    {
+      "env": 0,
+      "policy": "official",
+      "goals": 37,
+      "step": 6178,
+      "terminated": true,
+      "truncated": false
+    },
+    {
+      "env": 1,
+      "policy": "flash100M",
+      "goals": 0,
+      "step": 6588,
+      "terminated": false,
+      "truncated": true
+    },
+    {
+      "env": 0,
+      "policy": "official",
+      "goals": 37,
+      "step": 6941,
+      "terminated": true,
+      "truncated": false
+    },
+    {
+      "env": 1,
+      "policy": "flash100M",
+      "goals": 0,
+      "step": 7187,
+      "terminated": false,
+      "truncated": true
+    },
+    {
+      "env": 0,
+      "policy": "official",
+      "goals": 37,
+      "step": 7604,
+      "terminated": true,
+      "truncated": false
+    },
+    {
+      "env": 1,
+      "policy": "flash100M",
+      "goals": 0,
+      "step": 7786,
+      "terminated": false,
+      "truncated": true
+    },
+    {
+      "env": 0,
+      "policy": "official",
+      "goals": 37,
+      "step": 8289,
+      "terminated": true,
+      "truncated": false
+    },
+    {
+      "env": 1,
+      "policy": "flash100M",
+      "goals": 0,
+      "step": 8385,
+      "terminated": false,
+      "truncated": true
+    },
+    {
+      "env": 1,
+      "policy": "flash100M",
+      "goals": 0,
+      "step": 8984,
+      "terminated": false,
+      "truncated": true
+    }
+  ],
+  "steps": 9175,
+  "status": "complete"
+}

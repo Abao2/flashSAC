@@ -1,0 +1,59 @@
+{
+  "all_six_configs_resolved": true,
+  "pairwise_changes_limited_to_hand_filter_seed_output_tags": true,
+  "permitted_variable_fields": [
+    "agent.seed",
+    "env.seed",
+    "env.task_cfg_overrides.action.hand_moving_average",
+    "exp_name",
+    "save_path",
+    "seed"
+  ],
+  "differences_from_arm1_hand1_seed0": {
+    "arm1_hand1_seed0": [],
+    "arm1_hand01_seed0": [
+      "env.task_cfg_overrides.action.hand_moving_average",
+      "exp_name",
+      "save_path"
+    ],
+    "arm1_hand1_seed1": [
+      "agent.seed",
+      "env.seed",
+      "save_path",
+      "seed"
+    ],
+    "arm1_hand01_seed1": [
+      "agent.seed",
+      "env.seed",
+      "env.task_cfg_overrides.action.hand_moving_average",
+      "exp_name",
+      "save_path",
+      "seed"
+    ],
+    "arm1_hand1_seed2": [
+      "agent.seed",
+      "env.seed",
+      "save_path",
+      "seed"
+    ],
+    "arm1_hand01_seed2": [
+      "agent.seed",
+      "env.seed",
+      "env.task_cfg_overrides.action.hand_moving_average",
+      "exp_name",
+      "save_path",
+      "seed"
+    ]
+  },
+  "shared_configuration_sha256": "f3ce2aaf6f7401c08a4dc568ed303394f2d0d64894f343757fe207ae9386cf75",
+  "num_env_steps_each": 10000384,
+  "num_train_envs_each": 1024,
+  "num_interaction_steps_each": 9766,
+  "save_checkpoint_each": 9766,
+  "replay_transitions_each": 10000000,
+  "learning_rate_decay_updates_each": 19532,
+  "from_scratch_each": true,
+  "num_jobs": 24,
+  "total_training_transitions_planned": 60002304,
+  "note": "Hydra-resolved trainer configs; the common Isaac registered task YAML is applied at environment creation. No task reward/termination/observations overridden beyond existing state-teacher baseline."
+}

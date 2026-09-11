@@ -1,0 +1,13 @@
+{
+  "status": "running",
+  "checkpoint": "/home/abao/flashsac-robotics/diagnostics/control_ab_20260909_arm1/models/seed0/step48830/actor.pt",
+  "actor_sha256": "07f9a6127b7cb63c8fe9f863aff9532ef2bfe3a08d671ac100160ae0e0742928",
+  "learning": false,
+  "seed": 0,
+  "num_envs": 64,
+  "max_steps_per_mode": 1200,
+  "frozen_tolerance": 0.075,
+  "protocol": "Same first reset in each mode; first episode per env only; censor at step cap. NOT paper evaluation.",
+  "pairing_intervention": "Reseed all RNGs; zero previous reward before each full reset; freeze tolerance.",
+  "contact_note": "No contact-force measurement. Height and fingertip distances are geometric proxies, NOT grasp success."
+}

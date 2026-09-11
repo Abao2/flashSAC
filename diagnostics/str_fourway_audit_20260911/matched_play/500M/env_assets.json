@@ -1,0 +1,386 @@
+[
+  {
+    "env_id": 0,
+    "asset_idx": 0,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/041_brush_handle_(0-06034850130656892, 0-02991604735559837)_head_(0-05080682098370897, 0-05912385064983504, 0-02618536222999391)_d492-3_380-482806136067.urdf"
+  },
+  {
+    "env_id": 1,
+    "asset_idx": 1,
+    "asset_type": "hammer",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/040_hammer_handle_(0-23238399970591805, 0-034291918454001244, 0-02490296065076597)_head_(0-027380840774255094, 0-06465445263356973, 0-03481888411165528)_d336-6_1954-9367539305335.urdf"
+  },
+  {
+    "env_id": 2,
+    "asset_idx": 2,
+    "asset_type": "hammer",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/074_hammer_handle_(0-16368091545730354, 0-02988840609405163, 0-015863381400249663)_head_(0-0226598506946711, 0-10187844545030414, 0-04297892452719647)_d512-1_1574-2073484913399.urdf"
+  },
+  {
+    "env_id": 3,
+    "asset_idx": 3,
+    "asset_type": "screwdriver",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/026_screwdriver_handle_(0-11041176050046111, 0-03921532038946706)_head_(0-10564333109935127, 0-011045927327039639, 0-010249895143298394)_d546-4_939-3667522406307.urdf"
+  },
+  {
+    "env_id": 4,
+    "asset_idx": 4,
+    "asset_type": "hammer",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/096_hammer_handle_(0-2018824585429435, 0-024313732766512157)_head_(0-035542324050813826, 0-08140855358357715, 0-029501765234973096)_d387-9_1900-7762905546913.urdf"
+  },
+  {
+    "env_id": 5,
+    "asset_idx": 5,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/098_brush_handle_(0-06763358736814049, 0-03970667603845222, 0-014188134278998671)_head_(0-08434295031287393, 0-109413730969692, 0-03412116229276062)_d579-7_409-2363170524516.urdf"
+  },
+  {
+    "env_id": 6,
+    "asset_idx": 6,
+    "asset_type": "spatula",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/084_spatula_handle_(0-15964670754135438, 0-02267979900836352)_head_(0-14088264977168624, 0-06041600269149931, 0-02352796737820012)_d507-5_532-6515890156998.urdf"
+  },
+  {
+    "env_id": 7,
+    "asset_idx": 7,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/004_brush_handle_(0-0954921539098168, 0-02087749637784031, 0-011328107069209947)_head_(0-11313412754865179, 0-07780308204219902, 0-02490558609948735)_d378-5_580-1962255537851.urdf"
+  },
+  {
+    "env_id": 8,
+    "asset_idx": 8,
+    "asset_type": "eraser",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/015_eraser_handle_(0-1130032114912277, 0-020709831723586185, 0-03288159993817646)_head_None_d482-5_None.urdf"
+  },
+  {
+    "env_id": 9,
+    "asset_idx": 9,
+    "asset_type": "eraser",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/053_eraser_handle_(0-1463733085503255, 0-0600068791376038, 0-03208294604095926)_head_None_d325-0_None.urdf"
+  },
+  {
+    "env_id": 10,
+    "asset_idx": 10,
+    "asset_type": "spatula",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/003_spatula_handle_(0-17850639210464314, 0-014946408001245614)_head_(0-10466772648973116, 0-06537914910387038, 0-021079865110062615)_d301-9_411-069655705373.urdf"
+  },
+  {
+    "env_id": 11,
+    "asset_idx": 11,
+    "asset_type": "screwdriver",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/024_screwdriver_handle_(0-11460423444701172, 0-03933002029755893, 0-03680355079382942)_head_(0-08639050193205701, 0-014389150390760204, 0-014397909274757646)_d445-8_1010-3635308291916.urdf"
+  },
+  {
+    "env_id": 12,
+    "asset_idx": 12,
+    "asset_type": "marker",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/058_marker_handle_(0-11129920261348103, 0-01507970213502519)_head_(0-027790386220875263, 0-006857336313121884, 0-005975832586093252)_d322-7_547-4229712041023.urdf"
+  },
+  {
+    "env_id": 13,
+    "asset_idx": 13,
+    "asset_type": "hammer",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/090_hammer_handle_(0-29444880057884915, 0-02012808249058029)_head_(0-042680650439466714, 0-10169144464759286, 0-05514062245205391)_d516-7_1759-299054762775.urdf"
+  },
+  {
+    "env_id": 14,
+    "asset_idx": 14,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/086_brush_handle_(0-060446880162239855, 0-021778720451250955)_head_(0-10404222501806483, 0-1079748930520616, 0-023410607787875508)_d535-2_585-1819114739619.urdf"
+  },
+  {
+    "env_id": 15,
+    "asset_idx": 15,
+    "asset_type": "eraser",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/067_eraser_handle_(0-07409324051563808, 0-031642927843804715, 0-04460008647160414)_head_None_d440-8_None.urdf"
+  },
+  {
+    "env_id": 16,
+    "asset_idx": 16,
+    "asset_type": "screwdriver",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/037_screwdriver_handle_(0-10821863311108679, 0-02897569642487506, 0-025314174415463693)_head_(0-0861612534721992, 0-010921124196190131, 0-01446994855003935)_d504-3_982-899215996501.urdf"
+  },
+  {
+    "env_id": 17,
+    "asset_idx": 17,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/055_brush_handle_(0-06478202771194136, 0-014641571557323301)_head_(0-05885249717824998, 0-04685109002930363, 0-04810908013970758)_d357-4_513-9042875585222.urdf"
+  },
+  {
+    "env_id": 18,
+    "asset_idx": 18,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/073_brush_handle_(0-058457278077984745, 0-021081479427477554, 0-020116184451846594)_head_(0-08967642735073261, 0-07480967943911704, 0-027622937640694713)_d524-9_307-02988661021647.urdf"
+  },
+  {
+    "env_id": 19,
+    "asset_idx": 19,
+    "asset_type": "eraser",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/046_eraser_handle_(0-07242830444264035, 0-06219064318291531, 0-04301645253213826)_head_None_d539-3_None.urdf"
+  },
+  {
+    "env_id": 20,
+    "asset_idx": 20,
+    "asset_type": "eraser",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/081_eraser_handle_(0-13625486954587623, 0-05130273544904007, 0-023763935832583682)_head_None_d445-6_None.urdf"
+  },
+  {
+    "env_id": 21,
+    "asset_idx": 21,
+    "asset_type": "screwdriver",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/097_screwdriver_handle_(0-11817496204437941, 0-03278548420194323)_head_(0-1340002785410945, 0-012763535378592726, 0-011982768409949815)_d307-6_1838-6925747494627.urdf"
+  },
+  {
+    "env_id": 22,
+    "asset_idx": 22,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/056_brush_handle_(0-1904739996965339, 0-03476604524561247, 0-025826214286253334)_head_(0-07121460328225712, 0-04276448830081223, 0-04750034342365894)_d502-9_489-1905884949241.urdf"
+  },
+  {
+    "env_id": 23,
+    "asset_idx": 23,
+    "asset_type": "spatula",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/038_spatula_handle_(0-10005979388347953, 0-016347739375326492)_head_(0-06964869669562111, 0-03846983448209678, 0-010829946510198127)_d324-5_525-5475437870043.urdf"
+  },
+  {
+    "env_id": 24,
+    "asset_idx": 24,
+    "asset_type": "marker",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/036_marker_handle_(0-12925827467661838, 0-02303484899021368)_head_(0-026947758611427473, 0-005311970342991386, 0-006676395250391478)_d429-6_522-8644481003817.urdf"
+  },
+  {
+    "env_id": 25,
+    "asset_idx": 25,
+    "asset_type": "spatula",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/094_spatula_handle_(0-10253486042639386, 0-02112558610511812)_head_(0-06336956543994363, 0-06741577958671195, 0-02502846635062605)_d428-2_432-19946502728806.urdf"
+  },
+  {
+    "env_id": 26,
+    "asset_idx": 26,
+    "asset_type": "eraser",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/096_eraser_handle_(0-14428444263153087, 0-052054305179107974, 0-03558264583273245)_head_None_d440-3_None.urdf"
+  },
+  {
+    "env_id": 27,
+    "asset_idx": 27,
+    "asset_type": "hammer",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/063_hammer_handle_(0-2710252108900896, 0-03981010284001347, 0-021189265153671397)_head_(0-027481749942300935, 0-07265754654829706, 0-03701745754465667)_d407-0_1442-9296208897101.urdf"
+  },
+  {
+    "env_id": 28,
+    "asset_idx": 28,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/033_brush_handle_(0-08748525824553349, 0-011968022948350886, 0-023812306247732725)_head_(0-06940808914444303, 0-11976782945542758, 0-035015804623595756)_d348-7_463-1633763483353.urdf"
+  },
+  {
+    "env_id": 29,
+    "asset_idx": 29,
+    "asset_type": "eraser",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/072_eraser_handle_(0-13463658624872152, 0-05838823088571689, 0-02569829435596206)_head_None_d389-4_None.urdf"
+  },
+  {
+    "env_id": 30,
+    "asset_idx": 30,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/015_brush_handle_(0-08547123683580418, 0-01634520247845304, 0-02472070800852131)_head_(0-06176826683184076, 0-040245211277525214, 0-054368740396062244)_d551-7_390-47606096206545.urdf"
+  },
+  {
+    "env_id": 31,
+    "asset_idx": 31,
+    "asset_type": "hammer",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/058_hammer_handle_(0-16067829726903435, 0-026379512605875226, 0-027673129664541815)_head_(0-03641587307958646, 0-11876650318360245, 0-024481556086722093)_d313-6_1085-1650527908796.urdf"
+  },
+  {
+    "env_id": 32,
+    "asset_idx": 32,
+    "asset_type": "hammer",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/063_hammer_handle_(0-1630480139867115, 0-02112679819606048)_head_(0-038151581655345566, 0-06652353243425248, 0-022939869893200505)_d432-2_1267-1547368503718.urdf"
+  },
+  {
+    "env_id": 33,
+    "asset_idx": 33,
+    "asset_type": "screwdriver",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/083_screwdriver_handle_(0-07683004518255863, 0-03477459640715915)_head_(0-14463398900557378, 0-014137531599366105, 0-013486046909548183)_d429-3_978-5551632861387.urdf"
+  },
+  {
+    "env_id": 34,
+    "asset_idx": 34,
+    "asset_type": "hammer",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/093_hammer_handle_(0-22846467662552233, 0-03258797276270525, 0-025436230334769258)_head_(0-04564590531541189, 0-098576391112697, 0-04170897773390385)_d468-4_1559-7217487279215.urdf"
+  },
+  {
+    "env_id": 35,
+    "asset_idx": 35,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/021_brush_handle_(0-1774400262473687, 0-024404048189151192, 0-017464147382102536)_head_(0-08502508522690731, 0-07502593298990659, 0-025548534696019583)_d336-7_373-41467910711026.urdf"
+  },
+  {
+    "env_id": 36,
+    "asset_idx": 36,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/056_brush_handle_(0-1563350009377374, 0-026474889238245994)_head_(0-09623288049551018, 0-03941632838731796, 0-039946488989751915)_d484-6_409-8859158619567.urdf"
+  },
+  {
+    "env_id": 37,
+    "asset_idx": 37,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/079_brush_handle_(0-14205619543156212, 0-02587074804457662)_head_(0-11212941502713339, 0-08295336746713221, 0-03756230393971403)_d512-8_445-81726257080425.urdf"
+  },
+  {
+    "env_id": 38,
+    "asset_idx": 38,
+    "asset_type": "hammer",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/017_hammer_handle_(0-20776465929028878, 0-03702273343033714, 0-019753830077344166)_head_(0-0540872600127416, 0-08863347871421398, 0-042437518861415446)_d457-4_1023-8840706632429.urdf"
+  },
+  {
+    "env_id": 39,
+    "asset_idx": 39,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/013_brush_handle_(0-13004253969638163, 0-03832123834842782, 0-01792554524983401)_head_(0-05167189339234, 0-08150169676694619, 0-0266538035938534)_d357-4_452-7340155562566.urdf"
+  },
+  {
+    "env_id": 40,
+    "asset_idx": 40,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/094_brush_handle_(0-10660227158454676, 0-01774680439779949, 0-014869340881335201)_head_(0-051948873588381045, 0-034933128936895555, 0-05298073758664632)_d526-4_450-86265601967546.urdf"
+  },
+  {
+    "env_id": 41,
+    "asset_idx": 41,
+    "asset_type": "screwdriver",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/006_screwdriver_handle_(0-11918394626317068, 0-028587701563238886, 0-027133740530307943)_head_(0-07174587174203917, 0-013318948430877945, 0-014816972171067751)_d474-1_881-1350763106578.urdf"
+  },
+  {
+    "env_id": 42,
+    "asset_idx": 42,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/060_brush_handle_(0-16584013352562588, 0-011510541720517737)_head_(0-06358901393121806, 0-040732150185275484, 0-07674110202219006)_d379-6_372-04547880660425.urdf"
+  },
+  {
+    "env_id": 43,
+    "asset_idx": 43,
+    "asset_type": "screwdriver",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/048_screwdriver_handle_(0-08357046902233572, 0-0324504313422692)_head_(0-11616980688306566, 0-011785605796502514, 0-013937745429293897)_d478-1_869-1770986388299.urdf"
+  },
+  {
+    "env_id": 44,
+    "asset_idx": 44,
+    "asset_type": "eraser",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/039_eraser_handle_(0-09525065722937218, 0-044550988133445504, 0-03603667911557856)_head_None_d410-5_None.urdf"
+  },
+  {
+    "env_id": 45,
+    "asset_idx": 45,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/010_brush_handle_(0-1994336739566958, 0-024236006878673222, 0-02632113514228647)_head_(0-07631798553503974, 0-045126201939605884, 0-05698308944515762)_d323-1_350-62483151946884.urdf"
+  },
+  {
+    "env_id": 46,
+    "asset_idx": 46,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/053_brush_handle_(0-17164027890089162, 0-02201069880519492, 0-02894305872012709)_head_(0-0650824035093011, 0-03240963644876936, 0-07257685859489629)_d405-7_534-2097912514886.urdf"
+  },
+  {
+    "env_id": 47,
+    "asset_idx": 47,
+    "asset_type": "eraser",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/012_eraser_handle_(0-09679026321095881, 0-04854269681393808, 0-06547976955554723)_head_None_d397-9_None.urdf"
+  },
+  {
+    "env_id": 48,
+    "asset_idx": 48,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/009_brush_handle_(0-07575649834605323, 0-020596677779241405)_head_(0-11321682549345168, 0-110496142158309, 0-02929165528878492)_d447-7_311-91336227167415.urdf"
+  },
+  {
+    "env_id": 49,
+    "asset_idx": 49,
+    "asset_type": "screwdriver",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/058_screwdriver_handle_(0-0880116959400214, 0-029055899295767885)_head_(0-13242924024055053, 0-012381678666505493, 0-012487699260730512)_d460-2_1386-6773981509418.urdf"
+  },
+  {
+    "env_id": 50,
+    "asset_idx": 50,
+    "asset_type": "screwdriver",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/074_screwdriver_handle_(0-09163645680098523, 0-03186549407738941)_head_(0-13534235732045088, 0-010908069838783013, 0-011854705040788826)_d501-9_1440-0639545184351.urdf"
+  },
+  {
+    "env_id": 51,
+    "asset_idx": 51,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/000_brush_handle_(0-06935546133341375, 0-022909492841271726, 0-015494100656142873)_head_(0-09676136167587919, 0-06236776199234137, 0-03160457064398284)_d302-7_410-7053197233518.urdf"
+  },
+  {
+    "env_id": 52,
+    "asset_idx": 52,
+    "asset_type": "screwdriver",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/038_screwdriver_handle_(0-11894905575874044, 0-03405239644065068)_head_(0-11520682499622051, 0-013858134554893039, 0-01249447832267971)_d336-3_1449-6891288171023.urdf"
+  },
+  {
+    "env_id": 53,
+    "asset_idx": 53,
+    "asset_type": "eraser",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/066_eraser_handle_(0-11554439875297616, 0-051586120916329206, 0-045937392355735476)_head_None_d387-3_None.urdf"
+  },
+  {
+    "env_id": 54,
+    "asset_idx": 54,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/057_brush_handle_(0-1785543542495867, 0-01830214353709865)_head_(0-09211806260343255, 0-031213661379013647, 0-05066712299355961)_d421-7_315-8807806706455.urdf"
+  },
+  {
+    "env_id": 55,
+    "asset_idx": 55,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/074_brush_handle_(0-1989248197522963, 0-018157884735603806)_head_(0-11717145033264638, 0-045853249535032344, 0-06019015394218767)_d514-2_323-3636967273872.urdf"
+  },
+  {
+    "env_id": 56,
+    "asset_idx": 56,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/049_brush_handle_(0-13657996196338423, 0-011317843300639454)_head_(0-11010704384506473, 0-058223312921354506, 0-03571333203888913)_d383-7_341-59575873399115.urdf"
+  },
+  {
+    "env_id": 57,
+    "asset_idx": 57,
+    "asset_type": "screwdriver",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/086_screwdriver_handle_(0-10180886823541163, 0-03678477427120348, 0-026775042863850813)_head_(0-09535572702328954, 0-01217297980429356, 0-013869398278650781)_d508-5_1907-3086286160733.urdf"
+  },
+  {
+    "env_id": 58,
+    "asset_idx": 58,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/025_brush_handle_(0-06180465127930986, 0-025819326869271797, 0-0180557106809299)_head_(0-09045139570086363, 0-1024520748599704, 0-03929380957656922)_d444-6_591-6160423870465.urdf"
+  },
+  {
+    "env_id": 59,
+    "asset_idx": 59,
+    "asset_type": "hammer",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/001_hammer_handle_(0-2847831282790619, 0-0321285811931918, 0-015137955774249444)_head_(0-05255180078827794, 0-09793118207877155, 0-02650467757379565)_d585-2_1563-6924935165366.urdf"
+  },
+  {
+    "env_id": 60,
+    "asset_idx": 60,
+    "asset_type": "eraser",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/052_eraser_handle_(0-09933431037623852, 0-039545871342058114, 0-06882282647177052)_head_None_d509-1_None.urdf"
+  },
+  {
+    "env_id": 61,
+    "asset_idx": 61,
+    "asset_type": "brush",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/083_brush_handle_(0-148567825859191, 0-017301878404636116)_head_(0-056698308124060084, 0-11402091046552233, 0-021820726298908834)_d365-9_331-6540939203603.urdf"
+  },
+  {
+    "env_id": 62,
+    "asset_idx": 62,
+    "asset_type": "screwdriver",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/053_screwdriver_handle_(0-07234259542638016, 0-029142543367313492)_head_(0-08401774176846619, 0-01433385177253, 0-011412393719885134)_d562-1_1216-7324468366091.urdf"
+  },
+  {
+    "env_id": 63,
+    "asset_idx": 63,
+    "asset_type": "eraser",
+    "asset_path": "/tmp/simtoolreal_assets_refnc3yl/059_eraser_handle_(0-1254702030815082, 0-058312273638018955, 0-03520473179856419)_head_None_d563-3_None.urdf"
+  }
+]

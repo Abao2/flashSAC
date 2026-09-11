@@ -1,0 +1,280 @@
+{
+  "status": "passed_cpu_loader_equivalence",
+  "created_utc": "2026-09-08T17:23:47.321915+00:00",
+  "checkpoint": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830",
+  "state_source": "Concatenated same512 expert and512 old10M native-failure states from critic_followup.json",
+  "rows": 1024,
+  "native_load": "Exact native agent.load all6 checkpoint files including optimizer,scaler,normalizer. Networks wrapped in torch.compile backend=eager to preserve _orig_mod namespaces; get_mean_and_std also uses backend=eager. Initialization normalization occurred before load only.",
+  "frozen_load": "Actual FrozenPolicy flash branch, cfg.use_compile=False; loads actor network_state_dict only, strips _orig_mod, .eval andrequires_gradFalse.",
+  "cpu_only_overrides": "device/buffer_device CPU; small native2048 or frozen1 replay; helper decorators executed via original eager math. No Isaac/GPU/Inductor compiled kernels or network optimizer updates.",
+  "loaded_actor_params_buffers_exact_equal": true,
+  "native_network_module_training_flag": true,
+  "frozen_network_module_training_flag": false,
+  "full_native_agent_counter": 97466,
+  "native_loaded_alpha": 0.000020653529645642266,
+  "frozen_unused_fresh_alpha": 0.009999999776482582,
+  "layouts": [
+    {
+      "batch": 32,
+      "strided_stride_elements": [
+        324,
+        1
+      ],
+      "contiguous_stride_elements": [
+        162,
+        1
+      ],
+      "native_vs_frozen_strided_mean": {
+        "exact_equal": true,
+        "max_abs": 0,
+        "rmse": 0
+      },
+      "native_vs_frozen_strided_std": {
+        "exact_equal": true,
+        "max_abs": 0,
+        "rmse": 0
+      },
+      "native_vs_frozen_contiguous_mean": {
+        "exact_equal": true,
+        "max_abs": 0,
+        "rmse": 0
+      },
+      "native_vs_frozen_contiguous_std": {
+        "exact_equal": true,
+        "max_abs": 0,
+        "rmse": 0
+      },
+      "strided_vs_contiguous_mean": {
+        "exact_equal": false,
+        "max_abs": 0.00004267692565917969,
+        "rmse": 0.000010317038686480373
+      },
+      "strided_vs_contiguous_std": {
+        "exact_equal": false,
+        "max_abs": 0.000030994415283203125,
+        "rmse": 0.000008135200914693996
+      },
+      "strided_vs_contiguous_tanh_mean_action": {
+        "exact_equal": false,
+        "max_abs": 0.00003598257899284363,
+        "rmse": 0.000003860068773064995
+      }
+    },
+    {
+      "batch": 1024,
+      "strided_stride_elements": [
+        324,
+        1
+      ],
+      "contiguous_stride_elements": [
+        162,
+        1
+      ],
+      "native_vs_frozen_strided_mean": {
+        "exact_equal": true,
+        "max_abs": 0,
+        "rmse": 0
+      },
+      "native_vs_frozen_strided_std": {
+        "exact_equal": true,
+        "max_abs": 0,
+        "rmse": 0
+      },
+      "native_vs_frozen_contiguous_mean": {
+        "exact_equal": true,
+        "max_abs": 0,
+        "rmse": 0
+      },
+      "native_vs_frozen_contiguous_std": {
+        "exact_equal": true,
+        "max_abs": 0,
+        "rmse": 0
+      },
+      "strided_vs_contiguous_mean": {
+        "exact_equal": false,
+        "max_abs": 0.00005626678466796875,
+        "rmse": 0.000009691474588180427
+      },
+      "strided_vs_contiguous_std": {
+        "exact_equal": false,
+        "max_abs": 0.00003123283386230469,
+        "rmse": 0.000006118166311352979
+      },
+      "strided_vs_contiguous_tanh_mean_action": {
+        "exact_equal": false,
+        "max_abs": 0.00005194172263145447,
+        "rmse": 0.000004347080448496854
+      }
+    }
+  ],
+  "deterministic_native_vs_frozen": {
+    "exact_equal": true,
+    "max_abs": 0,
+    "rmse": 0
+  },
+  "module_train_vs_eval_explicit_training_false": {
+    "exact_equal": true,
+    "max_abs": 0,
+    "rmse": 0
+  },
+  "stochastic_native_vs_frozen_same_rng": [
+    {
+      "step": 1,
+      "action_comparison": {
+        "exact_equal": true,
+        "max_abs": 0,
+        "rmse": 0
+      },
+      "noise_count": 1,
+      "noise_repeat_n": 1
+    },
+    {
+      "step": 2,
+      "action_comparison": {
+        "exact_equal": true,
+        "max_abs": 0,
+        "rmse": 0
+      },
+      "noise_count": 1,
+      "noise_repeat_n": 1
+    },
+    {
+      "step": 3,
+      "action_comparison": {
+        "exact_equal": true,
+        "max_abs": 0,
+        "rmse": 0
+      },
+      "noise_count": 1,
+      "noise_repeat_n": 1
+    },
+    {
+      "step": 4,
+      "action_comparison": {
+        "exact_equal": true,
+        "max_abs": 0,
+        "rmse": 0
+      },
+      "noise_count": 1,
+      "noise_repeat_n": 8
+    },
+    {
+      "step": 5,
+      "action_comparison": {
+        "exact_equal": true,
+        "max_abs": 0,
+        "rmse": 0
+      },
+      "noise_count": 2,
+      "noise_repeat_n": 8
+    },
+    {
+      "step": 6,
+      "action_comparison": {
+        "exact_equal": true,
+        "max_abs": 0,
+        "rmse": 0
+      },
+      "noise_count": 3,
+      "noise_repeat_n": 8
+    },
+    {
+      "step": 7,
+      "action_comparison": {
+        "exact_equal": true,
+        "max_abs": 0,
+        "rmse": 0
+      },
+      "noise_count": 4,
+      "noise_repeat_n": 8
+    },
+    {
+      "step": 8,
+      "action_comparison": {
+        "exact_equal": true,
+        "max_abs": 0,
+        "rmse": 0
+      },
+      "noise_count": 5,
+      "noise_repeat_n": 8
+    },
+    {
+      "step": 9,
+      "action_comparison": {
+        "exact_equal": true,
+        "max_abs": 0,
+        "rmse": 0
+      },
+      "noise_count": 6,
+      "noise_repeat_n": 8
+    },
+    {
+      "step": 10,
+      "action_comparison": {
+        "exact_equal": true,
+        "max_abs": 0,
+        "rmse": 0
+      },
+      "noise_count": 7,
+      "noise_repeat_n": 8
+    },
+    {
+      "step": 11,
+      "action_comparison": {
+        "exact_equal": true,
+        "max_abs": 0,
+        "rmse": 0
+      },
+      "noise_count": 8,
+      "noise_repeat_n": 8
+    },
+    {
+      "step": 12,
+      "action_comparison": {
+        "exact_equal": true,
+        "max_abs": 0,
+        "rmse": 0
+      },
+      "noise_count": 1,
+      "noise_repeat_n": 1
+    }
+  ],
+  "process_transition": {
+    "all_input_arrays_unchanged": {
+      "observation": true,
+      "next_observation": true,
+      "action": true,
+      "reward": true,
+      "terminated": true,
+      "truncated": true
+    },
+    "buffer_snapshot_survives_original_next_obs_mutation": true,
+    "normalize_rewards_does_not_modify_sampled_raw_reward": true,
+    "reward_stats_updated_only_in_disposable_agent": true,
+    "n_step": 1
+  },
+  "actor_parameters_and_BN_buffers_unchanged_after_all_probes": true,
+  "source_checkpoint_hashes": {
+    "actor": "b5c9ac919b74ad78620e7f8a0ee2b41296aac72e4fdf736a85fd11b97f47f438",
+    "critic": "9bc785d5ce0a1ac62543dfe107dd11d9fd400f2de8882a9c367fea2b12ae12a1",
+    "target_critic": "801ae7569698d9e8b6b5978665f3398d686d498f3a86ec2ed23fe5191c05acad",
+    "temperature": "f5d85d570622d10b30f6ae9790a191377865db0fd124ee02e34757e9194585f5",
+    "reward_normalizer": "a569ecb15900bef0a167a6b65c85188a391a6c11489f44c436e2f33915c4e60e",
+    "agent_state": "2fe7bd25a6706ad36bbab6bce3a3e8527870c8601fbc8959ce7c1b3d93db49d5"
+  },
+  "limits": [
+    "CPU eager graph execution validates deserialization, explicit train/eval flags, layouts and sampling math. It does NOT prove native CUDA Inductor graphs/TF32/AMP/runtime graph caches produce identical actions.",
+    "Strided-versus-contiguous differences are recorded even when small. A long contact simulation can amplify roundoff; this audit does not prove small differences cannot affect rollout success.",
+    "All tests use identical offline states. They do not prove online training and frozen rollout visit identical states or have matching reset/startup/num_env protocols.",
+    "process_transition checks use n_step1, CPU copied arrays, and no optimizer update. Source code paths use explicit copies, but asynchronous CUDA behavior is not exercised.",
+    "Changing entropy alpha does not set collector noise multiplier: native uses1 when training,0 deterministic; FrozenPolicy native modeuses noise_multiplier1. Exact stochastic parity here holds despite alpha2e−5 vs.01."
+  ],
+  "code_inspection": {
+    "explicit_bn": "UnitBatchNorm.forward calls F.batch_norm(...training=training), and actor/block pass this explicit flag; actor sampling always requests training=False.",
+    "module_training": "No dropout or self.training-dependent actor path found in FlashSAC network/layer code. .train/.eval flag toggling also tested empirically.",
+    "load_normalization": "Network.load uses load_state_dict, optional optimizer/scheduler restore; no normalization or .train/.eval action inside load. Initialization normalization precedes checkpoint load; optimizer weight normalization is not run by inference.",
+    "training_transition_copy": "train.py copies next_observations for replay before final_obs substitution, processes transition, then restores next_observation reference to post-reset observations for the next action.",
+    "buffer_copy": "TorchUniformBuffer._to_tensor clones tensors or creates torch.tensor(array); n-step computations clone their working values.",
+    "normalizer": "RewardNormalizer.update_reward_stats assigns new running tensors; normalize_rewards returns rewards / denominator, not in-place division."
+  }
+}

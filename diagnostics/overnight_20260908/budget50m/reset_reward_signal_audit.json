@@ -1,0 +1,117 @@
+{
+  "created_utc": "2026-09-08T17:30:43.249225+00:00",
+  "device": "cpu",
+  "observation_source": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/evaluations/arm1_hand01_seed0/step48830/deterministic/transitions.npz",
+  "observation_source_sha256": "139da2cfd4683332fc81e20a09f9fe9cb2ef07cae8adc8eb85a706c0598e66a9",
+  "row_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "selection": "First 32 clean-reset initial states; same real observations and common MC Gaussian noise for both models.",
+  "changed_field": "reward",
+  "slice": [
+    161,
+    162
+  ],
+  "encoding": "obs_reward = raw.reward_buf * 0.01",
+  "successful_reward_source": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/frozen_bc_std005_eigen/transitions.npz",
+  "successful_reward_source_sha256": "d9c506915e7a706862e662945f381987d09be79e2eaf8055b643b40ea46a6af9",
+  "successful_terminal_count": 128,
+  "selected_raw_reward_median": 100.14024353027344,
+  "selected_encoded_reward": 1.0014024353027344,
+  "observed_encoded_success_reward_range": [
+    1.0002955198287964,
+    1.0034557580947876
+  ],
+  "models": {
+    "native_hand01_50M": {
+      "actor_path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/budget50m/models/arm1_hand01/seed0/step48830/actor.pt",
+      "actor_sha256": "b5c9ac919b74ad78620e7f8a0ee2b41296aac72e4fdf736a85fd11b97f47f438",
+      "network_unchanged": true,
+      "fresh_reward_zero": {
+        "pretanh_mean_abs_mean": 1.3747732639312744,
+        "pretanh_sigma_mean": 0.49657389521598816,
+        "pretanh_sigma_median": 0.48858407139778137,
+        "deterministic_action_abs_mean": 0.7491374015808105,
+        "conditional_tanh_action_std_mean_8mc": 0.19822974503040314
+      },
+      "reward_replaced_with_success_median": {
+        "pretanh_mean_abs_mean": 1.4071729183197021,
+        "pretanh_sigma_mean": 0.49351170659065247,
+        "pretanh_sigma_median": 0.48959434032440186,
+        "deterministic_action_abs_mean": 0.7564524412155151,
+        "conditional_tanh_action_std_mean_8mc": 0.19576098024845123
+      },
+      "mean_absolute_pretanh_mu_delta": 0.07722271233797073,
+      "mean_absolute_pretanh_sigma_delta": 0.03479515388607979,
+      "max_absolute_pretanh_sigma_delta": 0.1481236219406128,
+      "mean_absolute_deterministic_action_delta": 0.01958928443491459,
+      "max_absolute_deterministic_action_delta": 0.13669884204864502,
+      "arm_mean_absolute_deterministic_delta": 0.006333831697702408,
+      "hand_mean_absolute_deterministic_delta": 0.023806927725672722,
+      "cpu_reference_vs_recorded_eval_action_max_error": 2.086162567138672e-06
+    },
+    "selected_bc_control": {
+      "actor_path": "/home/abao/flashsac-robotics/diagnostics/overnight_20260908/warmstart/bc_std005_eigen/actor.pt",
+      "actor_sha256": "f20e3dbea5620c0ea18fb30bd8b03ccdc9eef1b8155c4c83333e3b82251b0f1b",
+      "network_unchanged": true,
+      "fresh_reward_zero": {
+        "pretanh_mean_abs_mean": 2.30716609954834,
+        "pretanh_sigma_mean": 0.02365357242524624,
+        "pretanh_sigma_median": 0.023653535172343254,
+        "deterministic_action_abs_mean": 0.9432998895645142,
+        "conditional_tanh_action_std_mean_8mc": 0.0019844297785311937
+      },
+      "reward_replaced_with_success_median": {
+        "pretanh_mean_abs_mean": 2.303882360458374,
+        "pretanh_sigma_mean": 0.02574041299521923,
+        "pretanh_sigma_median": 0.025740396231412888,
+        "deterministic_action_abs_mean": 0.9435794353485107,
+        "conditional_tanh_action_std_mean_8mc": 0.0021532075479626656
+      },
+      "mean_absolute_pretanh_mu_delta": 0.07190577685832977,
+      "mean_absolute_pretanh_sigma_delta": 0.002086843363940716,
+      "max_absolute_pretanh_sigma_delta": 0.0020869821310043335,
+      "mean_absolute_deterministic_action_delta": 0.0026828728150576353,
+      "max_absolute_deterministic_action_delta": 0.007746279239654541,
+      "arm_mean_absolute_deterministic_delta": 0.004142299294471741,
+      "hand_mean_absolute_deterministic_delta": 0.0022185107227414846
+    }
+  },
+  "limitations": [
+    "Single-action CPU counterfactual, no environment transition or success result.",
+    "Selected BC normally uses arm .1/hand .1; this matched-state actor-only control has no controller application.",
+    "Conditional tanh action std is an 8-sample-per-state estimate, not behavior trajectory variance or filtered motor noise.",
+    "A successful reward carried into reset can change actions without explaining the actual train/eval mismatch."
+  ]
+}

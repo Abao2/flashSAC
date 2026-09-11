@@ -1,0 +1,32 @@
+[
+  {
+    "id": "original_kuka_xug6_merged",
+    "label": "原STR / SAPG，KUKA+Sharpa，全DR（xug6合并历史，block5）",
+    "curves_file": "/home/abao/flashsac-robotics/diagnostics/reward_comparison_20260909/remote_sources/xug6_original/scalars_binned100m.json",
+    "already_binned": true,
+    "early_curves_file": "/home/abao/flashsac-robotics/diagnostics/reward_comparison_20260909/remote_sources/xug6_original/scalars_early_raw_100m.json",
+    "include_early": true,
+    "metrics": {
+      "return": {"tag": "rewards/step", "unit": "分 / episode", "step_multiplier": 1},
+      "fingertip": {"tag": "episode_cumulative/fingertip_delta_rew", "unit": "分 / episode", "step_multiplier": 1},
+      "lifting": {"tag": "episode_cumulative/lifting_rew", "unit": "分 / episode", "step_multiplier": 1},
+      "lift_bonus": {"tag": "episode_cumulative/lift_bonus_rew", "unit": "分 / episode", "step_multiplier": 1},
+      "keypoint": {"tag": "episode_cumulative/keypoint_rew", "unit": "分 / episode", "step_multiplier": 1},
+      "goals": {"tag": "episode_final/successes", "unit": "goals / episode", "step_multiplier": 1}
+    }
+  },
+  {
+    "id": "wuji_nodr_xug52_resume",
+    "label": "STR / SAPG，M6+Wuji左手，无DR（xug52续训段，block5）",
+    "curves_file": "/home/abao/flashsac-robotics/diagnostics/reward_comparison_20260909/remote_sources/xug52_wuji_no_dr/scalars_binned100m.json",
+    "already_binned": true,
+    "metrics": {
+      "return": {"tag": "rewards/step", "unit": "分 / episode", "step_multiplier": 1},
+      "fingertip": {"tag": "episode_cumulative/fingertip_delta_rew", "unit": "分 / episode", "step_multiplier": 1},
+      "lifting": {"tag": "episode_cumulative/lifting_rew", "unit": "分 / episode", "step_multiplier": 1},
+      "lift_bonus": {"tag": "episode_cumulative/lift_bonus_rew", "unit": "分 / episode", "step_multiplier": 1},
+      "keypoint": {"tag": "episode_cumulative/keypoint_rew", "unit": "分 / episode", "step_multiplier": 1},
+      "goals": {"tag": "episode_final/successes", "unit": "goals / episode", "step_multiplier": 1}
+    }
+  }
+]

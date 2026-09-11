@@ -1,0 +1,7 @@
+# 初始化阶段主动重启
+
+首次回放在场景初始化时停止，未产生有效rollout、视频或评测结果。
+
+静态审查发现：跨模式reset不能在torch.inference_mode上下文外修改前一模式创建的inference tensor。回放循环已改为torch.no_grad；actor仍为纯推理，权重未改。
+
+同时配置JSON保存支持Isaac配置中的非原生JSON值。修复后运行目录是相邻的play_20260909_v2。此次停止没有终止任何训练或用户进程。
