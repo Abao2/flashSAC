@@ -1,6 +1,7 @@
 """Uniform replay with on-demand, episode-safe actor observation windows."""
+
 from operator import index
-from typing import Optional
+from typing import cast
 
 import gymnasium as gym
 import torch
@@ -50,8 +51,9 @@ class TorchHistoryBuffer(TorchUniformBuffer):
         self._configured_num_envs = shape[0] if len(shape) == 2 else None
         if max_length < self._history_length * (self._configured_num_envs or 1):
             raise ValueError("max_length must be at least history_length * num_envs")
-        super().__init__(observation_space, action_space, n_step, gamma, max_length,
-                         min_length, sample_batch_size, device_type)
+        super().__init__(
+            observation_space, action_space, n_step, gamma, max_length, min_length, sample_batch_size, device_type
+        )
 
     def reset(self) -> None:
         super().reset()
@@ -71,8 +73,13 @@ class TorchHistoryBuffer(TorchUniformBuffer):
             raise ValueError("Vector batch size/environment ordering must stay fixed")
         if self._max_length < self._history_length * num_envs:
             raise ValueError("max_length must be at least history_length * num_envs")
-        expected = {"next_observation": shape, "action": (num_envs, self._actions.shape[1]),
-                    "reward": (num_envs,), "terminated": (num_envs,), "truncated": (num_envs,)}
+        expected = {
+            "next_observation": shape,
+            "action": (num_envs, self._actions.shape[1]),
+            "reward": (num_envs,),
+            "terminated": (num_envs,),
+            "truncated": (num_envs,),
+        }
         if any(tuple(transition[key].shape) != tuple(wanted) for key, wanted in expected.items()):
             raise ValueError("Transition fields must use the same fixed vector batch")
         if self._num_envs is None:
@@ -87,9 +94,10 @@ class TorchHistoryBuffer(TorchUniformBuffer):
         self._env_episode_ids += (stored["terminated"].bool() | stored["truncated"].bool()).long()
         self._total_written += num_envs
 
-    def sample(self, sample_idxs: Optional[NDArray] = None) -> Batch:
+    def sample(self, sample_idxs: NDArray | torch.Tensor | None = None) -> Batch:
         if not self._num_in_buffer:
             raise ValueError("Cannot sample an empty history buffer")
+        assert self._num_envs is not None  # Established by the first successful add().
         margin = (self._history_length - 1) * self._num_envs
         oldest = self._total_written - self._max_length + margin if self._num_in_buffer == self._max_length else 0
         if sample_idxs is None:
@@ -109,16 +117,22 @@ class TorchHistoryBuffer(TorchUniformBuffer):
         batch = super().sample(slots)
         previous_ids = absolute[:, None] - self._history_lags[None, :] * self._num_envs
         previous_slots = previous_ids.remainder(self._max_length)
-        valid = ((previous_ids >= 0) & (self._write_ids[previous_slots] == previous_ids)
-                 & (self._episode_ids[previous_slots] == self._episode_ids[slots, None]))
-        history = torch.zeros((len(slots), self._history_length, self._actor_observation_dim + 1),
-                              dtype=self._observations.dtype, device=self._device)
-        history[..., :-1] = torch.where(valid[..., None],
-            self._observations[previous_slots, :self._actor_observation_dim], 0)
+        valid = (
+            (previous_ids >= 0)
+            & (self._write_ids[previous_slots] == previous_ids)
+            & (self._episode_ids[previous_slots] == self._episode_ids[slots, None])
+        )
+        history = torch.zeros(
+            (len(slots), self._history_length, self._actor_observation_dim + 1),
+            dtype=self._observations.dtype,
+            device=self._device,
+        )
+        history[..., :-1] = torch.where(
+            valid[..., None], self._observations[previous_slots, : self._actor_observation_dim], 0
+        )
         history[..., -1] = valid
-        final = torch.ones((len(slots), 1, self._actor_observation_dim + 1),
-                           dtype=history.dtype, device=self._device)
-        final[:, 0, :-1] = batch["next_observation"][:, :self._actor_observation_dim]
+        final = torch.ones((len(slots), 1, self._actor_observation_dim + 1), dtype=history.dtype, device=self._device)
+        final[:, 0, :-1] = cast(torch.Tensor, batch["next_observation"])[:, : self._actor_observation_dim]
         batch["actor_history"] = history
         batch["actor_next_history"] = torch.cat((history[:, 1:], final), dim=1)
         return batch

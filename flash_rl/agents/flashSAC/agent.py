@@ -9,6 +9,7 @@ import torch.optim as optim
 from torch.amp.grad_scaler import GradScaler
 
 from flash_rl.agents.base_agent import BaseAgent
+from flash_rl.agents.flashSAC.history_network import FlashSACHistoryActor
 from flash_rl.agents.flashSAC.network import (
     FlashSACActor,
     FlashSACDoubleCritic,
@@ -99,10 +100,9 @@ def _init_flashsac_networks(
     )
 
     # Initialize actor
-    actor_class = FlashSACActor
+    actor_class: type[FlashSACActor] | type[FlashSACHistoryActor] = FlashSACActor
     actor_kwargs: dict[str, Any] = {}
     if cfg.actor_history_length > 1:
-        from flash_rl.agents.flashSAC.history_network import FlashSACHistoryActor
         actor_class = FlashSACHistoryActor
         actor_kwargs = dict(history_length=cfg.actor_history_length, lstm_hidden_dim=cfg.actor_lstm_hidden_dim)
     actor_net = actor_class(
@@ -467,13 +467,15 @@ class FlashSACAgent(BaseAgent[FlashSACConfig]):
             )
 
         # Replay buffer
-        buffer_class = TorchUniformBuffer
+        buffer_class: type[TorchUniformBuffer] = TorchUniformBuffer
         buffer_kwargs: dict[str, Any] = {}
         if cfg.actor_history_length > 1:
             from flash_rl.buffers.history_buffer import TorchHistoryBuffer
+
             buffer_class = TorchHistoryBuffer
-            buffer_kwargs = dict(actor_observation_dim=self._actor_observation_dim,
-                                 history_length=cfg.actor_history_length)
+            buffer_kwargs = dict(
+                actor_observation_dim=self._actor_observation_dim, history_length=cfg.actor_history_length
+            )
         self._replay_buffer = buffer_class(
             observation_space=observation_space,
             action_space=action_space,
@@ -491,7 +493,8 @@ class FlashSACAgent(BaseAgent[FlashSACConfig]):
         frame = torch.cat((observations, torch.ones_like(observations[:, :1])), dim=-1).unsqueeze(1)
         if self._online_actor_history is None:
             self._online_actor_history = observations.new_zeros(
-                observations.shape[0], self._cfg.actor_history_length - 1, observations.shape[-1] + 1)
+                observations.shape[0], self._cfg.actor_history_length - 1, observations.shape[-1] + 1
+            )
         if self._online_actor_history.shape[0] != observations.shape[0]:
             raise ValueError("Online history requires a fixed vector-environment batch")
         return torch.cat((self._online_actor_history, frame), dim=1)
@@ -516,7 +519,9 @@ class FlashSACAgent(BaseAgent[FlashSACConfig]):
             # Generic evaluate/record does not provide per-env episode boundaries.
             # Fail explicitly rather than silently leaking history across resets.
             if not training:
-                raise RuntimeError("History-policy playback requires an explicit sequential rollout; generic eval is unsupported")
+                raise RuntimeError(
+                    "History-policy playback requires an explicit sequential rollout; generic eval is unsupported"
+                )
             observations = self._actor_history_context(observations)
 
         with torch.no_grad():
@@ -542,12 +547,15 @@ class FlashSACAgent(BaseAgent[FlashSACConfig]):
         self._replay_buffer.add(transition)
 
         if self._cfg.actor_history_length > 1:
-            current = torch.as_tensor(transition["observation"], dtype=torch.float32,
-                                      device=self._device)[:, :self._actor_observation_dim]
+            current = torch.as_tensor(transition["observation"], dtype=torch.float32, device=self._device)[
+                :, : self._actor_observation_dim
+            ]
             context = self._actor_history_context(current)
             self._online_actor_history = context[:, 1:].clone()
-            done = (torch.as_tensor(transition["terminated"], device=self._device).bool()
-                    | torch.as_tensor(transition["truncated"], device=self._device).bool())
+            done = (
+                torch.as_tensor(transition["terminated"], device=self._device).bool()
+                | torch.as_tensor(transition["truncated"], device=self._device).bool()
+            )
             self._online_actor_history[done] = 0
 
         # update reward normalizer

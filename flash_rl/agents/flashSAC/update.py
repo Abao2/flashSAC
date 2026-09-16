@@ -1,4 +1,4 @@
-from typing import Any, Optional
+from typing import Any, Optional, cast
 
 import torch
 from torch.amp.grad_scaler import GradScaler
@@ -233,7 +233,7 @@ def update_critic(
                 reward=batch["reward"],  # type: ignore
                 done=batch["terminated"],  # type: ignore
                 actor_entropy=next_actor_entropy,
-                gamma=batch.get("discount", gamma**n_step),
+                gamma=cast(float | torch.Tensor, batch.get("discount", gamma**n_step)),
                 num_bins=num_bins,
                 min_v=min_v,
                 max_v=max_v,
