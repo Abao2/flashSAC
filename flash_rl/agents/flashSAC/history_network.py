@@ -1,5 +1,7 @@
 """Finite-window recurrent actor; this is not an episode-long recurrent policy."""
 
+from typing import cast
+
 import torch
 import torch.nn as nn
 
@@ -51,23 +53,29 @@ class FlashSACHistoryActor(nn.Module):
         positions = torch.arange(self.history_length, device=observations.device)
         # Move the valid suffix to the left; no pack/padded hidden-state advance.
         indices = (positions[None, :] + self.history_length - lengths[:, None]).clamp_max(self.history_length - 1)
-        frames = observations[..., :self.input_dim].gather(1, indices[..., None].expand(-1, -1, self.input_dim))
-        frames = torch.where((positions[None, :] < lengths[:, None])[..., None], frames, 0.)
+        frames = observations[..., : self.input_dim].gather(1, indices[..., None].expand(-1, -1, self.input_dim))
+        frames = torch.where((positions[None, :] < lengths[:, None])[..., None], frames, 0.0)
         sequence, _ = self.lstm(self.frame_norm(frames))  # Omitted state means zeros on every call.
-        memory = sequence.gather(1, (lengths - 1)[:, None, None].expand(-1, 1, self.lstm_hidden_dim))
+        memory = cast(torch.Tensor, sequence).gather(
+            1, (lengths - 1)[:, None, None].expand(-1, 1, self.lstm_hidden_dim)
+        )
         return memory[:, 0, :]
 
     def _actor_input(self, observations: torch.Tensor) -> torch.Tensor:
         memory = self.encode_history(observations)
         # Only B current embeddings enter the original head's BatchNorm, never B*H padding.
-        return torch.cat((observations[:, -1, :self.input_dim], memory), dim=-1)
+        return torch.cat((observations[:, -1, : self.input_dim], memory), dim=-1)
 
     def get_mean_and_std(
-        self, observations: torch.Tensor, training: bool,
+        self,
+        observations: torch.Tensor,
+        training: bool,
     ) -> tuple[torch.Tensor, torch.Tensor]:
         return self.head.get_mean_and_std(self._actor_input(observations), training)
 
     def forward(
-        self, observations: torch.Tensor, training: bool,
+        self,
+        observations: torch.Tensor,
+        training: bool,
     ) -> tuple[torch.Tensor, dict[str, torch.Tensor]]:
-        return self.head(self._actor_input(observations), training)
+        return cast(tuple[torch.Tensor, dict[str, torch.Tensor]], self.head(self._actor_input(observations), training))

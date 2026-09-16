@@ -44,7 +44,9 @@ def _to_plain_mapping(value: Mapping[str, Any] | DictConfig | None) -> dict[str,
         result = OmegaConf.to_container(value, resolve=True)
         if not isinstance(result, dict):
             raise TypeError("task_cfg_overrides must resolve to a mapping")
-        return result
+        if not all(isinstance(key, str) for key in result):
+            raise TypeError("task_cfg_overrides must use string keys")
+        return cast(dict[str, Any], result)
     return dict(value)
 
 
@@ -171,7 +173,8 @@ class IsaacLabVectorEnv(
         from isaaclab.app import AppLauncher
 
         app_launcher = AppLauncher(
-            headless=headless, device=device,
+            headless=headless,
+            device=device,
             enable_cameras=not headless or render_mode == "rgb_array",
         )
         self.simulation_app = app_launcher.app
@@ -202,9 +205,7 @@ class IsaacLabVectorEnv(
         self.success_path = success_path
         self.envs = gym.make(env_name, cfg=env_cfg, render_mode=render_mode)
 
-        if bootstrap_timeouts and not getattr(
-            cast(Any, self.envs.unwrapped), "supports_timeout_bootstrap", False
-        ):
+        if bootstrap_timeouts and not getattr(cast(Any, self.envs.unwrapped), "supports_timeout_bootstrap", False):
             raise ValueError(
                 f"{env_name} does not declare a pre-reset final_obs contract; "
                 "bootstrap_timeouts=true would bootstrap across auto-reset episodes."
@@ -217,20 +218,27 @@ class IsaacLabVectorEnv(
         # Get observation/action spaces
         # NOTE: Action range: [-1, 1] * action_bounds (https://github.com/google-deepmind/mujoco_playground/issues/19)
         env_observation_spaces = observation_subspaces(cast(Any, self.envs.unwrapped).single_observation_space)
-        self.obs_size = env_observation_spaces["policy"].shape
+        policy_shape = env_observation_spaces["policy"].shape
+        if policy_shape is None:
+            raise TypeError("Isaac Lab policy observations must have a fixed shape")
+        self.obs_size = policy_shape
         self.asymmetric_obs = "critic" in env_observation_spaces
+        self.critic_obs_size: tuple[int, ...] | int
+        combined_obs_size: tuple[int, ...]
         if self.asymmetric_obs:
             # NOTE: Env will treat concatenate actor & critic states as the observation,
             # but will give 'actual' observation size in the info.
-            self.critic_obs_size = env_observation_spaces["critic"].shape
+            critic_shape = env_observation_spaces["critic"].shape
+            if critic_shape is None:
+                raise TypeError("Isaac Lab critic observations must have a fixed shape")
+            self.critic_obs_size = critic_shape
             # NOTE: setting to [0, 0] since we only need the shape and dtype
             combined_obs_size = combined_observation_shape(self.obs_size, self.critic_obs_size)
-            self.single_observation_space = gym.spaces.Box(
-                low=0.0, high=0.0, shape=combined_obs_size, dtype=np.float32
-            )
+            self.single_observation_space = gym.spaces.Box(low=0.0, high=0.0, shape=combined_obs_size, dtype=np.float32)
             self.observation_space = batch_space(self.single_observation_space, self.num_envs)
         else:
             self.critic_obs_size = 0
+            combined_obs_size = self.obs_size
             self.single_observation_space = gym.spaces.Box(low=0.0, high=0.0, shape=self.obs_size, dtype=np.float32)
             self.observation_space = batch_space(self.single_observation_space, self.num_envs)
 
@@ -242,7 +250,7 @@ class IsaacLabVectorEnv(
         self.action_space = batch_space(self.single_action_space, self.num_envs)
         print(
             f"[FlashSAC][IsaacLab] task={env_name} envs={self.num_envs} "
-            f"actor_obs={self.obs_size[-1]} critic_input={self.single_observation_space.shape[-1]} "
+            f"actor_obs={self.obs_size[-1]} critic_input={combined_obs_size[-1]} "
             f"actions={self.action_size[-1]} bootstrap_timeouts={self.bootstrap_timeouts}"
         )
         self._episode_returns = torch.zeros(self.num_envs, device=self.device)
@@ -339,12 +347,8 @@ class IsaacLabVectorEnv(
         infos.update(
             {
                 "actor_observation_size": self.obs_size,
-                "critic_observation_size": (
-                    self.critic_obs_size if self.asymmetric_obs else self.obs_size
-                ),
-                "critic_observation_offset": (
-                    self.obs_size[-1] if self.asymmetric_obs else 0
-                ),
+                "critic_observation_size": (self.critic_obs_size if self.asymmetric_obs else self.obs_size),
+                "critic_observation_offset": (self.obs_size[-1] if self.asymmetric_obs else 0),
                 "asymmetric_obs": self.asymmetric_obs,
             }
         )
@@ -391,15 +395,14 @@ class IsaacLabVectorEnv(
         if isinstance(final_obs, Mapping):
             final_policy = final_obs.get("policy")
             final_critic = final_obs.get("critic")
-            if not isinstance(final_policy, torch.Tensor) or (
-                self.asymmetric_obs and not isinstance(final_critic, torch.Tensor)
-            ):
+            if not isinstance(final_policy, torch.Tensor):
                 raise RuntimeError("final_obs must contain tensor policy/critic observations")
-            final_obs = (
-                torch.cat((final_policy, final_critic), dim=-1)
-                if self.asymmetric_obs
-                else final_policy
-            )
+            if self.asymmetric_obs:
+                if not isinstance(final_critic, torch.Tensor):
+                    raise RuntimeError("final_obs must contain tensor policy/critic observations")
+                final_obs = torch.cat((final_policy, final_critic), dim=-1)
+            else:
+                final_obs = final_policy
             infos["final_obs"] = final_obs
 
         if self.bootstrap_timeouts:
@@ -412,9 +415,7 @@ class IsaacLabVectorEnv(
                 )
             elif not isinstance(final_obs, torch.Tensor) or final_obs.shape != obs.shape:
                 actual = None if final_obs is None else getattr(final_obs, "shape", type(final_obs).__name__)
-                raise RuntimeError(
-                    f"timeout bootstrap requires final_obs shape {tuple(obs.shape)}, got {actual}"
-                )
+                raise RuntimeError(f"timeout bootstrap requires final_obs shape {tuple(obs.shape)}, got {actual}")
             else:
                 # Keep validation on-device. Converting this scalar to Python
                 # would synchronize CUDA every policy step at large env counts.
@@ -441,7 +442,7 @@ class IsaacLabVectorEnv(
             return
         self._closed = True
         if hasattr(self, "envs") and hasattr(self.envs, "close"):
-            self.envs.close(**kwargs)
+            self.envs.close(**kwargs)  # type: ignore[no-untyped-call]  # Gymnasium's close is untyped.
         if hasattr(self, "simulation_app"):
             self.simulation_app.close()
 

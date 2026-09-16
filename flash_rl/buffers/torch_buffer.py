@@ -1,6 +1,6 @@
 import os
 from collections import deque
-from typing import Any, Optional, cast
+from typing import Any, cast
 
 import gymnasium as gym
 import numpy as np
@@ -171,7 +171,7 @@ class TorchUniformBuffer(BaseBuffer):
     def can_sample(self) -> bool:
         return self._num_in_buffer >= self._min_length
 
-    def sample(self, sample_idxs: Optional[NDArray] = None) -> Batch:
+    def sample(self, sample_idxs: NDArray | torch.Tensor | None = None) -> Batch:
         if sample_idxs is None:
             idxs = torch.randint(0, self._num_in_buffer, (self._sample_batch_size,), device=self._device)
         else:
