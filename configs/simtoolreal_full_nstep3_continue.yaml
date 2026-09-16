@@ -2,7 +2,9 @@ defaults:
   - simtoolreal_full_arm1_nstep3
   - _self_
 
-# Continue the100M candidate, not another fresh A/B. Native budget is ADDITIONAL.
+# LEGACY ONLY: continue the original cumulative-success 100M candidate.
+# Do not use this historical template to resume a new consecutive-success run.
+# Its replay encodes the old reward/goal-switch semantics; native budget is ADDITIONAL.
 group_name: str_continuation
 exp_name: full_nstep3_resume100m_seed${seed}
 num_env_steps: 400015360
@@ -12,3 +14,8 @@ save_buffer_per_interaction_step: 48830
 # Provenance only: the resume CLI restores these without changing task rules.
 resume_env_step_offset: 100003840
 resume_tolerance: 0.03228504075
+
+env:
+  task_cfg_overrides:
+    termination:
+      force_consecutive_near_goal_steps: false

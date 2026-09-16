@@ -66,8 +66,15 @@ def load_config(config_name="simtoolreal_full_nodr", num_envs=None):
 
 
 def validate_task(task, original, sizes):
+    # The Lab registration defaults are not the official training recipe.
+    # Allow exactly the launcher's consecutive-success override, never all
+    # termination changes. Goal-count/timeout/tolerance contracts remain strict.
+    assert task["termination"]["success_steps"] == 10
+    assert task["termination"]["force_consecutive_near_goal_steps"] is True
     for section in ("assets", "obs", "action", "reward", "reset", "termination"):
         for key, expected in original[section].items():
+            if section == "termination" and key == "force_consecutive_near_goal_steps":
+                expected = True
             actual = task[section][key]
             assert actual == expected, f"Original task changed: {section}.{key}: {actual!r} != {expected!r}"
     for key in ("action_space", "decimation", "episode_length_s"):
@@ -97,7 +104,10 @@ def validate_task(task, original, sizes):
     assert not task["scene"]["replicate_physics"] and not task["scene"]["clone_in_fabric"]
     return {"actor_dim": actor, "critic_dim": critic, "combined_dim": actor + critic,
             "action_dim": 29, "asset_pool_size": sum(asset_pool_counts().values()),
-            "asset_pool_type_counts": asset_pool_counts(), "original_reward_controller_reset_preserved": True,
+            "asset_pool_type_counts": asset_pool_counts(),
+            "reward_coefficients_controller_reset_preserved": True,
+            "official_consecutive_success_enabled": True,
+            "success_steps": 10,
             "dr_disabled": True, "resolved_task_config": task}
 
 
@@ -226,7 +236,11 @@ def main(argv=None):
 
         try:
             cfg, original, task = load_config(args.config, args.num_envs if args.gpu else None)
-            assert set(cfg.env.task_cfg_overrides) == {"domain_randomization"}, "Only DR task overrides are allowed"
+            assert set(cfg.env.task_cfg_overrides) == {"domain_randomization", "termination"}, \
+                "Only DR and explicit official success semantics overrides are allowed"
+            assert OmegaConf.to_container(cfg.env.task_cfg_overrides.termination, resolve=True) == {
+                "success_steps": 10, "force_consecutive_near_goal_steps": True,
+            }, "Unexpected success/termination override"
             assert cfg.env.env_cfg_yaml_entry_point == "env_cfg_yaml_entry_point"
             assert cfg.env.bootstrap_timeouts and cfg.agent.asymmetric_observation
             assert cfg.agent_load_path is None and cfg.buffer_load_path is None, "Fresh 140D actor required"

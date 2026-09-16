@@ -4,7 +4,8 @@ defaults:
 
 # Restore the registered STR task distribution, not state_teacher diagnostics.
 # Actor140 / critic162, six object families, random resets and rotating goal
-# chains, original reward, controller and tolerance curriculum are inherited.
+# chains, reward coefficients, controller and tolerance curriculum are inherited.
+# Consecutive-success semantics match the official launcher via the base config.
 # DR is deliberately disabled: this is not strict paper/sim-to-real reproduction.
 group_name: "str_full_nodr"
 exp_name: "full_distribution_seed${seed}"

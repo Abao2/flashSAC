@@ -7,6 +7,14 @@ group_name: "simtoolreal"
 exp_name: "flashsac_paper"
 logger_type: "tensorboard"
 
+# Match the official STR training launcher, not the Lab YAML's cumulative default.
+# Ten consecutive near-goal policy steps earn one complete goal bonus.
+env:
+  task_cfg_overrides:
+    termination:
+      success_steps: 10
+      force_consecutive_near_goal_steps: true
+
 # FlashSAC paper-scale GPU-simulator budget.
 num_env_steps: 50_000_896
 num_train_envs: 1024

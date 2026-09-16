@@ -52,9 +52,14 @@ def test_fresh_path_leaves_factories_untouched():
     assert vars(train) == before
 
 
-def test_continuation_budget_is_additional_and_preserves_task_and_agent():
+def test_legacy_continuation_preserves_cumulative_task_agent_and_additional_budget():
     baseline, _, baseline_task = load_config("simtoolreal_full_arm1_nstep3")
     candidate, _, candidate_task = load_config("simtoolreal_full_nstep3_continue")
+    assert baseline_task["termination"]["force_consecutive_near_goal_steps"] is True
+    assert candidate_task["termination"]["force_consecutive_near_goal_steps"] is False
+    # The sole task difference is intentional preservation of the old replay's
+    # cumulative success semantics; all other task and learner settings match.
+    candidate_task["termination"]["force_consecutive_near_goal_steps"] = True
     assert candidate_task == baseline_task and candidate.agent == baseline.agent
     assert candidate.num_train_envs == 2048 and candidate.updates_per_interaction_step == 4
     assert candidate.num_env_steps == 400015360 and candidate.num_interaction_steps == 195320

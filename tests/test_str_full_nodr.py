@@ -13,6 +13,8 @@ def test_restored_config_cpu_and_fresh_output(tmp_path):
     report = json.loads(output.read_text())
     assert report["status"] == "PASS" and report["mode"] == "cpu_config"
     assert report["cpu"]["combined_dim"] == 302
+    assert report["cpu"]["official_consecutive_success_enabled"] is True
+    assert report["cpu"]["success_steps"] == 10
     assert "gpu" not in report
     saved = output.read_bytes()
     with pytest.raises(FileExistsError):
@@ -25,6 +27,9 @@ def test_restored_config_cpu_and_fresh_output(tmp_path):
     ("reward", "reach_goal_bonus", 10.),
     ("reset", "fixed_goal_pose", [0., 0., .8, 1., 0., 0., 0.]),
     ("termination", "max_consecutive_successes", 1),
+    ("termination", "force_consecutive_near_goal_steps", False),
+    ("termination", "success_steps", 1),
+    ("termination", "success_steps", 9),
     ("domain_randomization", "joint_velocity_obs_noise_std", .1),
     ("domain_randomization", "object_friction_scale_range", [.8, 1.2]),
 ])
